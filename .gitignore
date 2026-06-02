@@ -1,0 +1,18 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+coverage
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Local agent config (machine-specific)
+.claude
+
+# TS build info
+*.tsbuildinfo
