@@ -1,4 +1,5 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
 import { LearnPage } from './pages/LearnPage';
 import { LessonPage } from './pages/LessonPage';
 import { PuzzlePage } from './pages/PuzzlePage';
@@ -16,6 +17,7 @@ const NAV = [
 export function App() {
   return (
     <div className="app">
+      <ScrollToTop />
       <header className="topbar">
         <NavLink to="/" className="brand" end>
           <span className="brand-mark" aria-hidden>
