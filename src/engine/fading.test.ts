@@ -77,15 +77,16 @@ describe('effectiveStage', () => {
 });
 
 describe('scaffoldingFor', () => {
-  it('pre-highlights the definition and offers all hints at Stage A', () => {
+  it('offers the full ladder (from the definition rung) at Stage A', () => {
     const s = scaffoldingFor('A');
-    expect(s.preHighlightDefinition).toBe(true);
     expect(s.hintAvailability).toBe('all');
+    expect(s.startingTier).toBe(1);
+    expect(s.showClueTypeBadge).toBe(true);
   });
-  it('surfaces hints only after solving at Stage D', () => {
+  it('surfaces hints only after solving, starting above the definition, at Stage D', () => {
     const s = scaffoldingFor('D');
-    expect(s.preHighlightDefinition).toBe(false);
     expect(s.showClueTypeBadge).toBe(false);
     expect(s.hintAvailability).toBe('afterSolve');
+    expect(s.startingTier).toBe(2);
   });
 });

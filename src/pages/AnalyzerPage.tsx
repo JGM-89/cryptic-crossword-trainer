@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { CLUES } from '../data';
 import { INDICATORS } from '../data/reference';
 import { CLUE_TYPE_LABELS, type Clue } from '../types';
-import { ClueText } from '../components/ClueText';
+import { ClueText, type Highlight } from '../components/ClueText';
 
 /** Indicators from the reference lists that literally appear in the clue. */
 function detectIndicators(clue: string): { clueType: string; phrase: string }[] {
@@ -40,6 +40,27 @@ export function AnalyzerPage() {
 
   const steps = ['Definition', 'Clue type', 'Indicators', 'Full parse'];
 
+  const highlights: Highlight[] = [];
+  if (step >= 1) {
+    highlights.push({
+      start: clue.definitionSpan.start,
+      end: clue.definitionSpan.end,
+      className: 'definition',
+      title: 'Definition',
+    });
+  }
+  if (step >= 3 && clue.wordplay.indicator) {
+    const idx = clue.clue.toLowerCase().indexOf(clue.wordplay.indicator.toLowerCase());
+    if (idx !== -1) {
+      highlights.push({
+        start: idx,
+        end: idx + clue.wordplay.indicator.length,
+        className: 'indicator-mark',
+        title: 'Indicator',
+      });
+    }
+  }
+
   return (
     <div className="page analyzer">
       <header className="lesson-page-head">
@@ -63,11 +84,7 @@ export function AnalyzerPage() {
 
       <div className="analyzer-stage">
         <p className="analyzer-clue">
-          <ClueText
-            clue={clue.clue}
-            definitionSpan={clue.definitionSpan}
-            highlight={step >= 1}
-          />
+          <ClueText clue={clue.clue} highlights={highlights} />
         </p>
 
         <div className="analyzer-steps">

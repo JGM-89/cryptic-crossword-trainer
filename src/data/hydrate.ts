@@ -63,7 +63,7 @@ function tier3Text(clueType: ClueType, wp: Wordplay): string {
     case 'anagram':
       return `${ind} tells you to rearrange the letters of "${wp.fodder}".`;
     case 'charade':
-      return `Join the pieces: ${wp.fodder}.`;
+      return `Charades have no indicator word — just join the pieces: ${wp.fodder}.`;
     case 'container':
       return `${ind} tells you to put one piece inside another: ${wp.fodder}.`;
     case 'reversal':

@@ -1,28 +1,41 @@
-import type { DefinitionSpan } from '../types';
+export interface Highlight {
+  start: number;
+  end: number;
+  className: string;
+  title?: string;
+}
 
 interface Props {
   clue: string;
-  definitionSpan: DefinitionSpan;
-  /** When true, the definition portion is visually highlighted (Stage A). */
-  highlight: boolean;
+  /** Non-overlapping spans to highlight (e.g. definition, indicator). */
+  highlights: Highlight[];
 }
 
-/** Renders the clue, optionally underlining the definition span in place. */
-export function ClueText({ clue, definitionSpan, highlight }: Props) {
-  if (!highlight) return <span className="clue-text">{clue}</span>;
+/**
+ * Renders the clue, wrapping any highlighted spans in <mark>. Highlights are
+ * revealed progressively as the learner opens the matching hint rung, so the
+ * clue is never pre-annotated.
+ */
+export function ClueText({ clue, highlights }: Props) {
+  const spans = highlights
+    .filter((h) => h.start >= 0 && h.end > h.start && h.end <= clue.length)
+    .sort((a, b) => a.start - b.start);
 
-  const { start, end } = definitionSpan;
-  const before = clue.slice(0, start);
-  const def = clue.slice(start, end);
-  const after = clue.slice(end);
+  if (spans.length === 0) return <span className="clue-text">{clue}</span>;
 
-  return (
-    <span className="clue-text">
-      {before}
-      <mark className="definition" title="This is the definition">
-        {def}
-      </mark>
-      {after}
-    </span>
-  );
+  const parts: React.ReactNode[] = [];
+  let cursor = 0;
+  spans.forEach((h, i) => {
+    if (h.start < cursor) return; // skip any overlap defensively
+    if (h.start > cursor) parts.push(clue.slice(cursor, h.start));
+    parts.push(
+      <mark key={i} className={h.className} title={h.title}>
+        {clue.slice(h.start, h.end)}
+      </mark>,
+    );
+    cursor = h.end;
+  });
+  if (cursor < clue.length) parts.push(clue.slice(cursor));
+
+  return <span className="clue-text">{parts}</span>;
 }

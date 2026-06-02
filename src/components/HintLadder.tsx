@@ -1,35 +1,25 @@
-import { useState } from 'react';
 import type { Hint } from '../types';
 
 interface Props {
   hints: readonly Hint[];
   /** Lowest rung to offer first (Stage A → 1; later stages → 2). */
   startingTier: 1 | 2;
-  /** Called the first time any hint is revealed (counts against a clean solve). */
-  onHintUsed?: () => void;
-  /** When true, all rungs (including the full parse) are shown at once. */
+  /** How many of the offered rungs are currently revealed (controlled). */
+  revealedCount: number;
+  /** Reveal one more rung. */
+  onReveal: () => void;
+  /** When true, every offered rung is shown at once (post-solve recap). */
   revealAll?: boolean;
 }
 
 /**
  * The four-rung hint ladder with progressive disclosure (Fifteensquared-style):
- * definition → clue type → indicator+fodder → full parse. Each rung is opened
- * deliberately so the learner only takes as much help as they need.
+ * definition → clue type → indicator+fodder → full parse. State lives in the
+ * parent so revealing a rung can also light up the matching span in the clue.
  */
-export function HintLadder({ hints, startingTier, onHintUsed, revealAll }: Props) {
+export function HintLadder({ hints, startingTier, revealedCount, onReveal, revealAll }: Props) {
   const offered = hints.filter((h) => h.tier >= startingTier);
-  const [revealed, setRevealed] = useState(0);
-  const usedRef = useState({ fired: false })[0];
-
-  const shown = revealAll ? offered.length : revealed;
-
-  function reveal() {
-    if (!usedRef.fired) {
-      usedRef.fired = true;
-      onHintUsed?.();
-    }
-    setRevealed((n) => Math.min(n + 1, offered.length));
-  }
+  const shown = revealAll ? offered.length : revealedCount;
 
   return (
     <div className="hint-ladder">
@@ -51,7 +41,7 @@ export function HintLadder({ hints, startingTier, onHintUsed, revealAll }: Props
         })}
       </ol>
       {!revealAll && shown < offered.length && (
-        <button type="button" className="btn btn-ghost" onClick={reveal}>
+        <button type="button" className="btn btn-ghost" onClick={onReveal}>
           {shown === 0 ? 'Need a hint?' : 'Reveal next hint'}
         </button>
       )}

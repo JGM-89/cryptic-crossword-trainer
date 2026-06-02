@@ -360,6 +360,13 @@ h1 {
   border-radius: 3px;
   box-decoration-break: clone;
 }
+.indicator-mark {
+  background: transparent;
+  color: inherit;
+  padding: 0 0.05em;
+  border-bottom: 2px solid var(--brand);
+  border-radius: 0;
+}
 
 .badge {
   flex-shrink: 0;

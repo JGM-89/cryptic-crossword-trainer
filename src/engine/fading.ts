@@ -93,47 +93,25 @@ export type HintAvailability =
 
 export interface Scaffolding {
   stage: Stage;
-  preHighlightDefinition: boolean;
   showClueTypeBadge: boolean;
   hintAvailability: HintAvailability;
-  /** Lowest hint rung offered first (Stage A offers rung 1; B starts one lower idea). */
+  /** Lowest hint rung offered first (Stage A/B offer the definition rung; C/D start higher). */
   startingTier: 1 | 2;
 }
 
+// The definition and indicator are highlighted in the clue only when the learner
+// opens the matching hint rung — never pre-annotated. The stage controls how
+// readily those rungs are offered (see HintAvailability + startingTier).
 export function scaffoldingFor(stage: Stage): Scaffolding {
   switch (stage) {
     case 'A':
-      return {
-        stage,
-        preHighlightDefinition: true,
-        showClueTypeBadge: true,
-        hintAvailability: 'all',
-        startingTier: 1,
-      };
+      return { stage, showClueTypeBadge: true, hintAvailability: 'all', startingTier: 1 };
     case 'B':
-      return {
-        stage,
-        preHighlightDefinition: false,
-        showClueTypeBadge: true,
-        hintAvailability: 'onRequest',
-        startingTier: 1,
-      };
+      return { stage, showClueTypeBadge: true, hintAvailability: 'onRequest', startingTier: 1 };
     case 'C':
-      return {
-        stage,
-        preHighlightDefinition: false,
-        showClueTypeBadge: false,
-        hintAvailability: 'afterAttempt',
-        startingTier: 2,
-      };
+      return { stage, showClueTypeBadge: false, hintAvailability: 'afterAttempt', startingTier: 2 };
     case 'D':
-      return {
-        stage,
-        preHighlightDefinition: false,
-        showClueTypeBadge: false,
-        hintAvailability: 'afterSolve',
-        startingTier: 2,
-      };
+      return { stage, showClueTypeBadge: false, hintAvailability: 'afterSolve', startingTier: 2 };
   }
 }
 

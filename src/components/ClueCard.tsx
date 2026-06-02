@@ -3,7 +3,7 @@ import type { Clue } from '../types';
 import { CLUE_TYPE_LABELS } from '../types';
 import type { Scaffolding, SolveOutcome } from '../engine/fading';
 import { AnswerStrip } from './AnswerStrip';
-import { ClueText } from './ClueText';
+import { ClueText, type Highlight } from './ClueText';
 import { HintLadder } from './HintLadder';
 
 interface Props {
@@ -15,6 +15,13 @@ interface Props {
 
 const lettersOnly = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
 
+/** Locate a phrase in the clue (case-insensitive); null if absent. */
+function locate(clue: string, phrase: string): { start: number; end: number } | null {
+  if (!phrase) return null;
+  const idx = clue.toLowerCase().indexOf(phrase.toLowerCase());
+  return idx === -1 ? null : { start: idx, end: idx + phrase.length };
+}
+
 export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) {
   const target = useMemo(() => lettersOnly(clue.solution), [clue.solution]);
   const [value, setValue] = useState<string[]>(() => Array(target.length).fill(''));
@@ -25,9 +32,36 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
   const [hintUsed, setHintUsed] = useState(false);
   const [wrongOnce, setWrongOnce] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const [revealedCount, setRevealedCount] = useState(0);
   const startRef = useRef<number>(Date.now());
 
-  const isDouble = clue.clueType === 'double-definition';
+  // Which actual hint tiers are on offer (Stage C/D start at the clue-type rung).
+  const offeredTiers = useMemo(
+    () => clue.hints.map((h) => h.tier).filter((t) => t >= scaffolding.startingTier),
+    [clue.hints, scaffolding.startingTier],
+  );
+  const showAllHints = solved || revealed;
+  const revealedTiers = new Set(
+    showAllHints ? offeredTiers : offeredTiers.slice(0, revealedCount),
+  );
+
+  // Highlights light up as the matching hint rung opens (Hint 1 → definition,
+  // Hint 3 → indicator). Once solved we show both as a recap.
+  const highlights: Highlight[] = [];
+  if (revealedTiers.has(1) || solved) {
+    highlights.push({
+      start: clue.definitionSpan.start,
+      end: clue.definitionSpan.end,
+      className: 'definition',
+      title: 'Definition',
+    });
+  }
+  if ((revealedTiers.has(3) || solved) && clue.wordplay.indicator) {
+    const ind = locate(clue.clue, clue.wordplay.indicator);
+    if (ind) {
+      highlights.push({ ...ind, className: 'indicator-mark', title: 'Indicator' });
+    }
+  }
 
   function finish(outcome: SolveOutcome) {
     if (solved) return;
@@ -39,17 +73,12 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
   function check() {
     if (solved) return;
     const guess = value.join('');
-    if (guess.length < target.length) {
+    if (guess.length < target.length || guess !== target) {
       setStatus('wrong');
       setWrongOnce(true);
       return;
     }
-    if (guess === target) {
-      finish({ usedHint: hintUsed, timeMs: Date.now() - startRef.current });
-    } else {
-      setStatus('wrong');
-      setWrongOnce(true);
-    }
+    finish({ usedHint: hintUsed, hintsUsed: revealedCount, timeMs: Date.now() - startRef.current });
   }
 
   function revealAnswer() {
@@ -59,24 +88,22 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
     finish({ usedHint: true, hintsUsed: 4, timeMs: Date.now() - startRef.current });
   }
 
-  // When should the hint ladder be visible, given the scaffolding stage?
+  function revealNextHint() {
+    if (!hintUsed) setHintUsed(true);
+    setRevealedCount((n) => Math.min(n + 1, offeredTiers.length));
+  }
+
   const showLadder =
     scaffolding.hintAvailability === 'all' ||
     scaffolding.hintAvailability === 'onRequest' ||
     (scaffolding.hintAvailability === 'afterAttempt' && (wrongOnce || solved)) ||
     (scaffolding.hintAvailability === 'afterSolve' && solved);
 
-  const revealAllHints = solved || revealed;
-
   return (
     <article className={`clue-card ${solved ? 'solved' : ''}`}>
       <div className="clue-card-head">
         <p className="clue-line">
-          <ClueText
-            clue={clue.clue}
-            definitionSpan={clue.definitionSpan}
-            highlight={scaffolding.preHighlightDefinition && !solved}
-          />
+          <ClueText clue={clue.clue} highlights={highlights} />
         </p>
         {scaffolding.showClueTypeBadge && (
           <span className={`badge badge-${clue.clueType}`}>
@@ -114,13 +141,7 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
 
       {status === 'wrong' && !solved && (
         <p className="feedback wrong" role="alert">
-          Not quite — check the crossing idea, then try again.
-        </p>
-      )}
-
-      {isDouble && (scaffolding.showClueTypeBadge || solved) && (
-        <p className="device-note">
-          Double definition: both halves of the clue define the same answer.
+          Not quite — try a hint, then have another go.
         </p>
       )}
 
@@ -128,8 +149,9 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
         <HintLadder
           hints={clue.hints}
           startingTier={scaffolding.startingTier}
-          onHintUsed={() => setHintUsed(true)}
-          revealAll={revealAllHints}
+          revealedCount={revealedCount}
+          onReveal={revealNextHint}
+          revealAll={showAllHints}
         />
       )}
     </article>
