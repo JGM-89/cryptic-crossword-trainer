@@ -3,45 +3,55 @@
     "answer": "DISCLAIMER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Disc mailer redesigned as a denial (10)",
+    "clue": "Dire claims, oddly drafted, make up the legal waiver (10)",
     "def": {
-      "text": "a denial",
+      "text": "legal waiver",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "redesigned",
-      "fodder": "DISC MAILER",
+      "indicator": "oddly drafted",
+      "fodder": "DIRE CLAIMS",
       "operations": [
         {
           "op": "anagram",
-          "input": "DISCMAILER",
+          "input": "DIRECLAIMS",
           "output": "DISCLAIMER"
         }
       ]
     },
-    "parse": "(DISC MAILER)* = DISCLAIMER, defined by 'a denial'."
+    "parse": "(DIRE CLAIMS)* = DISCLAIMER; a 'legal waiver'."
   },
   {
     "answer": "NIGHTMARES",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Harming set wildly, these are bad dreams (10)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Dark hours' horses become bad dreams (10)",
     "def": {
       "text": "bad dreams",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "wildly",
-      "fodder": "HARMING SET",
+      "indicator": "",
+      "fodder": "NIGHT + MARES",
       "operations": [
         {
-          "op": "anagram",
-          "input": "HARMINGSET",
+          "op": "synonym",
+          "input": "Dark hours",
+          "output": "NIGHT"
+        },
+        {
+          "op": "synonym",
+          "input": "horses",
+          "output": "MARES"
+        },
+        {
+          "op": "concat",
+          "input": "NIGHT+MARES",
           "output": "NIGHTMARES"
         }
       ]
     },
-    "parse": "(HARMING SET)* = NIGHTMARES, defined by 'bad dreams'."
+    "parse": "NIGHT (dark hours) + MARES (horses) = NIGHTMARES; bad dreams."
   },
   {
     "answer": "TELEVISION",
@@ -58,34 +68,49 @@
       "operations": [
         {
           "op": "anagram",
-          "input": "NOVELISE IT",
+          "input": "NOVELISEIT",
           "output": "TELEVISION"
         }
       ]
     },
-    "parse": "(NOVELISE IT)* = TELEVISION, defined by 'the box'."
+    "parse": "(NOVELISE IT)* = TELEVISION, with 'broadcast' as the anagram signal; 'the box'."
   },
   {
     "answer": "LABORATORY",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Workshop where staff ably rota or shift around (10)",
+    "clue": "Work a Conservative put into the workshop (10)",
     "def": {
-      "text": "Workshop",
-      "position": "start"
+      "text": "workshop",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "shift around",
-      "fodder": "ABLY ROTA OR",
+      "indicator": "",
+      "fodder": "LABOR + A + TORY",
       "operations": [
         {
-          "op": "anagram",
-          "input": "ABLYROTAOR",
+          "op": "synonym",
+          "input": "Work",
+          "output": "LABOR"
+        },
+        {
+          "op": "synonym",
+          "input": "a",
+          "output": "A"
+        },
+        {
+          "op": "synonym",
+          "input": "Conservative",
+          "output": "TORY"
+        },
+        {
+          "op": "concat",
+          "input": "LABOR+A+TORY",
           "output": "LABORATORY"
         }
       ]
     },
-    "parse": "(ABLY ROTA OR)* = LABORATORY, defined by 'Workshop'."
+    "parse": "LABOR (work) + A + TORY (a Conservative) = LABORATORY; a 'workshop'."
   },
   {
     "answer": "DEPARTMENT",
@@ -107,15 +132,15 @@
         }
       ]
     },
-    "parse": "(TRAMPED NET)* = DEPARTMENT, defined by 'division'."
+    "parse": "(TRAMPED NET)* = DEPARTMENT; 'division'."
   },
   {
     "answer": "UNDERRATED",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Below assessed value, sadly undervalued (10)",
+    "clue": "Below par and assessed, but really too cheaply valued (10)",
     "def": {
-      "text": "undervalued",
+      "text": "too cheaply valued",
       "position": "end"
     },
     "wordplay": {
@@ -124,7 +149,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "below",
+          "input": "Below",
           "output": "UNDER"
         },
         {
@@ -139,15 +164,15 @@
         }
       ]
     },
-    "parse": "UNDER (below) + RATED (assessed) = UNDERRATED, defined by 'undervalued'."
+    "parse": "UNDER (below) + RATED (assessed) = UNDERRATED; 'too cheaply valued'."
   },
   {
     "answer": "BRIDGEHEAD",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Card game's foam top gives a military foothold (10)",
+    "clue": "Card game's froth gains a foothold for the invasion (10)",
     "def": {
-      "text": "military foothold",
+      "text": "foothold for the invasion",
       "position": "end"
     },
     "wordplay": {
@@ -161,7 +186,7 @@
         },
         {
           "op": "synonym",
-          "input": "foam top",
+          "input": "froth",
           "output": "HEAD"
         },
         {
@@ -171,7 +196,7 @@
         }
       ]
     },
-    "parse": "BRIDGE (card game) + HEAD (foam top, as on beer) = BRIDGEHEAD, defined by 'military foothold'."
+    "parse": "BRIDGE (card game) + HEAD (froth on a pint) = BRIDGEHEAD; a 'foothold for the invasion'."
   },
   {
     "answer": "BARGAINING",
@@ -207,77 +232,107 @@
   },
   {
     "answer": "INFORMATION",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Put a form into in-tray, oddly, to get the data (11)",
+    "clue": "Intelligence found in formation (11)",
     "def": {
-      "text": "the data",
-      "position": "end"
+      "text": "Intelligence",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "A FORM INTO IN",
+      "indicator": "",
+      "fodder": "IN + FORMATION",
       "operations": [
         {
-          "op": "anagram",
-          "input": "AFORMINTOIN",
+          "op": "literal",
+          "input": "in",
+          "output": "IN"
+        },
+        {
+          "op": "synonym",
+          "input": "formation",
+          "output": "FORMATION"
+        },
+        {
+          "op": "concat",
+          "input": "IN+FORMATION",
           "output": "INFORMATION"
         }
       ]
     },
-    "parse": "(A FORM INTO IN)* = INFORMATION, defined by 'the data'."
+    "parse": "Reading the surface 'in formation' as a charade: IN + FORMATION (an arrangement of troops) = INFORMATION, defined by 'Intelligence'."
   },
   {
     "answer": "PRECAUTIONS",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Scout in pear orchard, oddly, takes safety measures (11)",
+    "clue": "Before warnings become safety measures (11)",
     "def": {
       "text": "safety measures",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "SCOUT IN PEAR",
+      "indicator": "",
+      "fodder": "PRE + CAUTIONS",
       "operations": [
         {
-          "op": "anagram",
-          "input": "SCOUTINPEAR",
+          "op": "synonym",
+          "input": "Before",
+          "output": "PRE"
+        },
+        {
+          "op": "synonym",
+          "input": "warnings",
+          "output": "CAUTIONS"
+        },
+        {
+          "op": "concat",
+          "input": "PRE+CAUTIONS",
           "output": "PRECAUTIONS"
         }
       ]
     },
-    "parse": "(SCOUT IN PEAR)* = PRECAUTIONS, defined by 'safety measures'."
+    "parse": "PRE (before) + CAUTIONS (warnings) = PRECAUTIONS, defined by 'safety measures'."
   },
   {
     "answer": "PARTNERSHIP",
-    "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Phrase print reworked in a business collaboration (11)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Mate's vessel for a business collaboration (11)",
     "def": {
       "text": "a business collaboration",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reworked",
-      "fodder": "PHRASE PRINT",
+      "indicator": "",
+      "fodder": "PARTNER + SHIP",
       "operations": [
         {
-          "op": "anagram",
-          "input": "PHRASEPRINT",
+          "op": "synonym",
+          "input": "Mate",
+          "output": "PARTNER"
+        },
+        {
+          "op": "synonym",
+          "input": "vessel",
+          "output": "SHIP"
+        },
+        {
+          "op": "concat",
+          "input": "PARTNER+SHIP",
           "output": "PARTNERSHIP"
         }
       ]
     },
-    "parse": "(PHRASE PRINT)* = PARTNERSHIP, defined by 'a business collaboration'."
+    "parse": "PARTNER (mate) + SHIP (vessel) = PARTNERSHIP, defined by 'a business collaboration'."
   },
   {
     "answer": "STOCKBROKER",
     "clueType": "charade",
-    "difficulty": 4,
-    "clue": "Supply agent making a market dealer (11)",
+    "difficulty": 3,
+    "clue": "Soup base, agent for the shares dealer (11)",
     "def": {
-      "text": "market dealer",
+      "text": "shares dealer",
       "position": "end"
     },
     "wordplay": {
@@ -286,7 +341,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Supply",
+          "input": "Soup base",
           "output": "STOCK"
         },
         {
@@ -301,39 +356,39 @@
         }
       ]
     },
-    "parse": "STOCK (supply) + BROKER (agent) = STOCKBROKER, defined by 'market dealer'."
+    "parse": "STOCK (soup base) + BROKER (agent) = STOCKBROKER, a shares dealer."
   },
   {
     "answer": "CONSTRAINED",
-    "clueType": "container",
-    "difficulty": 4,
-    "clue": "Effort wrapped in cone-shaped paper, kept in check (11)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Swindle, tense, kept in check (11)",
     "def": {
       "text": "kept in check",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "wrapped in",
-      "fodder": "STRAIN in CONED",
+      "indicator": "",
+      "fodder": "CON + STRAINED",
       "operations": [
         {
           "op": "synonym",
-          "input": "Effort",
-          "output": "STRAIN"
+          "input": "Swindle",
+          "output": "CON"
         },
         {
           "op": "synonym",
-          "input": "cone-shaped",
-          "output": "CONED"
+          "input": "tense",
+          "output": "STRAINED"
         },
         {
-          "op": "insert",
-          "input": "STRAIN in CONED",
+          "op": "concat",
+          "input": "CON+STRAINED",
           "output": "CONSTRAINED"
         }
       ]
     },
-    "parse": "STRAIN (effort) inside CONED (cone-shaped) = CONSTRAINED, defined by 'kept in check'."
+    "parse": "CON (swindle) + STRAINED (tense) = CONSTRAINED, defined by 'kept in check'."
   },
   {
     "answer": "RELATIONSHIP",
@@ -360,14 +415,14 @@
   {
     "answer": "CONVERSATION",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Conservation, reworked, becomes lively chat (12)",
+    "difficulty": 3,
+    "clue": "Reformed conservation becomes a quiet word (12)",
     "def": {
-      "text": "lively chat",
+      "text": "a quiet word",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reworked",
+      "indicator": "Reformed",
       "fodder": "CONSERVATION",
       "operations": [
         {
@@ -377,13 +432,13 @@
         }
       ]
     },
-    "parse": "(CONSERVATION)* = CONVERSATION, defined by 'lively chat'."
+    "parse": "(CONSERVATION)* 'Reformed' = CONVERSATION; 'a quiet word' (a chat) is the definition."
   },
   {
     "answer": "HEADQUARTERS",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Boss accommodates the command centre (12)",
+    "clue": "Boss lodges officers at the command centre (12)",
     "def": {
       "text": "command centre",
       "position": "end"
@@ -399,7 +454,7 @@
         },
         {
           "op": "synonym",
-          "input": "accommodates",
+          "input": "lodges officers",
           "output": "QUARTERS"
         },
         {
@@ -409,15 +464,15 @@
         }
       ]
     },
-    "parse": "HEAD (boss) + QUARTERS (accommodates, billets) = HEADQUARTERS, defined by 'command centre'."
+    "parse": "HEAD (boss) + QUARTERS (lodges, billets officers) = HEADQUARTERS; the command centre."
   },
   {
     "answer": "UNDERSTANDING",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Dread stunning collapse, lacking comprehension (13)",
+    "clue": "Dread stunning collapse — that took some grasping (13)",
     "def": {
-      "text": "comprehension",
+      "text": "grasping",
       "position": "end"
     },
     "wordplay": {
@@ -431,59 +486,59 @@
         }
       ]
     },
-    "parse": "(DREAD STUNNING)* = UNDERSTANDING, defined by 'comprehension'."
+    "parse": "(DREAD STUNNING)* 'collapse' = UNDERSTANDING; 'grasping' (comprehension) defines it."
   },
   {
     "answer": "CONSIDERATION",
     "clueType": "anagram",
-    "difficulty": 5,
-    "clue": "Rationed icons, sadly, reflect thoughtfulness (13)",
+    "difficulty": 4,
+    "clue": "Icons rationed out of regard for others (13)",
     "def": {
-      "text": "thoughtfulness",
+      "text": "regard for others",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "sadly",
-      "fodder": "RATIONED ICONS",
+      "indicator": "out",
+      "fodder": "ICONS RATIONED",
       "operations": [
         {
           "op": "anagram",
-          "input": "RATIONEDICONS",
+          "input": "ICONSRATIONED",
           "output": "CONSIDERATION"
         }
       ]
     },
-    "parse": "(RATIONED ICONS)* = CONSIDERATION, thoughtfulness."
+    "parse": "(ICONS RATIONED)* 'out' = CONSIDERATION; 'regard for others' (thoughtfulness) defines it."
   },
   {
     "answer": "ENTERTAINMENT",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Neat interment arranged as the evening's amusement (13)",
+    "clue": "Treat men in net, somehow, to a bit of amusement (13)",
     "def": {
       "text": "amusement",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "arranged",
-      "fodder": "NEAT INTERMENT",
+      "indicator": "somehow",
+      "fodder": "TREAT MEN IN NET",
       "operations": [
         {
           "op": "anagram",
-          "input": "NEATINTERMENT",
+          "input": "TREATMENINNET",
           "output": "ENTERTAINMENT"
         }
       ]
     },
-    "parse": "(NEAT INTERMENT)* = ENTERTAINMENT, defined by 'amusement'."
+    "parse": "(TREAT MEN IN NET)* 'somehow' = ENTERTAINMENT; 'amusement' defines it."
   },
   {
     "answer": "THOUGHTLESSLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Idea diminished, in a manner showing no care (13)",
+    "clue": "Idea reduced, in a way that shows no care (13)",
     "def": {
-      "text": "showing no care",
+      "text": "that shows no care",
       "position": "end"
     },
     "wordplay": {
@@ -497,12 +552,12 @@
         },
         {
           "op": "synonym",
-          "input": "diminished",
+          "input": "reduced",
           "output": "LESS"
         },
         {
-          "op": "literal",
-          "input": "in a manner",
+          "op": "synonym",
+          "input": "in a way",
           "output": "LY"
         },
         {
@@ -512,15 +567,15 @@
         }
       ]
     },
-    "parse": "THOUGHT (idea) + LESS (diminished) + LY (in a manner) = THOUGHTLESSLY, defined by 'showing no care'."
+    "parse": "THOUGHT (idea) + LESS (reduced) + LY ('in a way', adverb-forming) = THOUGHTLESSLY; carelessly."
   },
   {
     "answer": "GRANDMOTHERLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Splendid mum, in a manner, like a granny (13)",
+    "clue": "Splendid mum, in a way, like a doting granny (13)",
     "def": {
-      "text": "like a granny",
+      "text": "like a doting granny",
       "position": "end"
     },
     "wordplay": {
@@ -538,8 +593,8 @@
           "output": "MOTHER"
         },
         {
-          "op": "literal",
-          "input": "in a manner",
+          "op": "synonym",
+          "input": "in a way",
           "output": "LY"
         },
         {
@@ -549,6 +604,6 @@
         }
       ]
     },
-    "parse": "GRAND (splendid) + MOTHER (mum) + LY (in a manner) = GRANDMOTHERLY, defined by 'like a granny'."
+    "parse": "GRAND (splendid) + MOTHER (mum) + LY ('in a way') = GRANDMOTHERLY; like a doting granny."
   }
 ]

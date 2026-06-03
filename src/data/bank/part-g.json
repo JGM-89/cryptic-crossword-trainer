@@ -1,91 +1,111 @@
 [
   {
     "answer": "ICON",
-    "clueType": "initialism",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Images conjure one notion, primarily — a symbol (4)",
+    "clue": "One swindle leaves a lasting image (4)",
     "def": {
-      "text": "a symbol",
+      "text": "a lasting image",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "primarily",
-      "fodder": "Images conjure one notion",
+      "indicator": "",
+      "fodder": "I+CON",
       "operations": [
         {
-          "op": "initials",
-          "input": "Images conjure one notion",
+          "op": "abbreviate",
+          "input": "One",
+          "output": "I"
+        },
+        {
+          "op": "synonym",
+          "input": "swindle",
+          "output": "CON"
+        },
+        {
+          "op": "concat",
+          "input": "I+CON",
           "output": "ICON"
         }
       ]
     },
-    "parse": "Initial letters of Images Conjure One Notion = ICON, a symbol."
+    "parse": "I (one) + CON (swindle) = ICON, a lasting image."
   },
   {
     "answer": "SMOG",
-    "clueType": "initialism",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Sulphur masks our greenery, primarily — pollution (4)",
+    "clue": "Pollution shrouding parts of cosmogony (4)",
     "def": {
-      "text": "pollution",
-      "position": "end"
+      "text": "Pollution",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "primarily",
-      "fodder": "Sulphur masks our greenery",
+      "indicator": "parts of",
+      "fodder": "cosmogony",
       "operations": [
         {
-          "op": "initials",
-          "input": "Sulphur masks our greenery",
+          "op": "hidden",
+          "input": "co<SMOG>ony",
           "output": "SMOG"
         }
       ]
     },
-    "parse": "Initial letters of Sulphur Masks Our Greenery = SMOG, pollution."
+    "parse": "Hidden in coSMOGony = SMOG, pollution."
   },
   {
     "answer": "SCAMP",
-    "clueType": "initialism",
-    "difficulty": 4,
-    "clue": "Sneaky children always make pranks, primarily — what a rascal (5)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Son pitched a tent — the young rogue (5)",
     "def": {
-      "text": "what a rascal",
+      "text": "the young rogue",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "primarily",
-      "fodder": "Sneaky children always make pranks",
+      "indicator": "",
+      "fodder": "S+CAMP",
       "operations": [
         {
-          "op": "initials",
-          "input": "Sneaky children always make pranks",
+          "op": "abbreviate",
+          "input": "Son",
+          "output": "S"
+        },
+        {
+          "op": "synonym",
+          "input": "pitched a tent",
+          "output": "CAMP"
+        },
+        {
+          "op": "concat",
+          "input": "S+CAMP",
           "output": "SCAMP"
         }
       ]
     },
-    "parse": "Initial letters of Sneaky Children Always Make Pranks = SCAMP, a rascal."
+    "parse": "S (son) + CAMP (pitched a tent) = SCAMP, a young rogue."
   },
   {
     "answer": "BRAIN",
-    "clueType": "alternation",
-    "difficulty": 4,
-    "clue": "Regularly, the barbarian's a boffin (5)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Bairn developed a fine mind (5)",
     "def": {
-      "text": "boffin",
+      "text": "a fine mind",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Regularly",
-      "fodder": "barbarian",
+      "indicator": "developed",
+      "fodder": "Bairn",
       "operations": [
         {
-          "op": "alternate",
-          "input": "bArBaRiAn — odd letters B,R,A,I,N",
+          "op": "anagram",
+          "input": "BAIRN",
           "output": "BRAIN"
         }
       ]
     },
-    "parse": "Odd letters of bArBaRiAn = BRAIN, a boffin."
+    "parse": "(BAIRN)* = BRAIN, a fine mind."
   },
   {
     "answer": "VILE",

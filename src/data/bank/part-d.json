@@ -616,10 +616,10 @@
   {
     "answer": "NOWHERE",
     "clueType": "charade",
-    "difficulty": 2,
-    "clue": "At this moment, on the spot and lost (7)",
+    "difficulty": 3,
+    "clue": "At this moment, on the spot, in no place (7)",
     "def": {
-      "text": "lost",
+      "text": "in no place",
       "position": "end"
     },
     "wordplay": {
@@ -643,7 +643,7 @@
         }
       ]
     },
-    "parse": "NOW (at this moment) + HERE (on the spot) = NOWHERE; lost, as in 'miles from anywhere'."
+    "parse": "NOW (at this moment) + HERE (on the spot) = NOWHERE; in no place."
   },
   {
     "answer": "EARLOBE",
