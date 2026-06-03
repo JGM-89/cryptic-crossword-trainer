@@ -46,4 +46,34 @@ describe('validateClue catches broken clues', () => {
     const errors = validateClue(broken);
     expect(errors.join(' ')).toMatch(/indirect anagram|literally present/);
   });
+
+  it('flags an unrecognised abbreviation (old → B)', () => {
+    const charade = CLUES.find((c) => c.clueType === 'charade') ?? good;
+    const broken = {
+      ...charade,
+      wordplay: {
+        ...charade.wordplay,
+        operations: [
+          ...charade.wordplay.operations,
+          { op: 'abbreviate' as const, input: 'old', output: 'B' },
+        ],
+      },
+    };
+    const errors = validateClue(broken);
+    expect(errors.join(' ')).toMatch(/unrecognised abbreviation/);
+  });
+
+  it('accepts a first-letter device (boy primarily → B)', () => {
+    const charade = CLUES.find((c) => c.clueType === 'charade') ?? good;
+    const clue = {
+      ...charade,
+      clue: 'Her boy, primarily, in something (4)',
+      wordplay: {
+        ...charade.wordplay,
+        operations: [{ op: 'abbreviate' as const, input: 'boy primarily', output: 'B' }],
+      },
+    };
+    // The abbreviation check itself must not flag the acrostic.
+    expect(validateClue(clue).join(' ')).not.toMatch(/unrecognised abbreviation/);
+  });
 });

@@ -5,8 +5,31 @@
 // Run as a unit test (integrity.test.ts) and importable for a build-time guard.
 
 import type { Clue } from '../types';
+import { ABBR } from './abbreviations';
 
 const lettersOnly = (s: string): string => (s ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+
+// Initial-letter ("acrostic") indicators — a piece like "boy primarily" → B is a
+// fair first-letter device, not a dictionary abbreviation, so accept it.
+const INITIAL_RE =
+  /\b(primarily|initially|firstly|first|head|heads|heading|leading|leader|starts?|starting|top|opening|foremost|front|begins?|beginning)\b/;
+
+/**
+ * Is turning the cue `input` into the letters `output` a *recognised* mapping?
+ * Either a standard abbreviation (ABBR) or an explicit first-letter device.
+ */
+function abbreviationRecognised(input: string, output: string): boolean {
+  const out = lettersOnly(output);
+  const cue = input.trim().toLowerCase();
+  const keys = [cue, cue.replace(/['’]s$/, ''), cue.replace(/s$/, '')];
+  if (keys.some((k) => (ABBR[k] ?? []).includes(out))) return true;
+  // First-letter device: "<word> primarily / initially / leading …" → its initial.
+  if (out.length === 1 && INITIAL_RE.test(cue)) {
+    const words = cue.replace(INITIAL_RE, ' ').split(/[^a-z]+/).filter(Boolean);
+    if (words.some((w) => w[0].toUpperCase() === out)) return true;
+  }
+  return false;
+}
 
 /** Sort letters so two strings can be compared as multisets. */
 const sortLetters = (s: string): string => lettersOnly(s).split('').sort().join('');
@@ -104,6 +127,18 @@ export function validateClue(clue: Clue): string[] {
     }
     default:
       break; // charade / container / homophone / double-def / cryptic-def / alternation / lit: checked via the parse.
+  }
+
+  // 5b. Abbreviations must be fair: every `abbreviate` piece has to be a
+  // recognised cue→letters mapping, and the cue must appear in the surface
+  // (no indirect abbreviation — the analogue of the indirect-anagram rule).
+  for (const op of clue.wordplay.operations) {
+    if (op.op !== 'abbreviate') continue;
+    if (!abbreviationRecognised(op.input, op.output)) {
+      errors.push(`unrecognised abbreviation "${op.input}" → "${op.output}"`);
+    } else if (!clueLetters.includes(lettersOnly(op.input))) {
+      errors.push(`abbreviation cue "${op.input}" is absent from the surface (indirect)`);
+    }
   }
 
   // 6. The final wordplay operation should output the solution.
