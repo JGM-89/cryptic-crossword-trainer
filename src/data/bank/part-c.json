@@ -1,113 +1,153 @@
 [
   {
     "answer": "DANGER",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 2,
-    "clue": "Hazard from garden, developed (6)",
+    "clue": "Daughter's rage poses a hazard (6)",
     "def": {
-      "text": "Hazard",
-      "position": "start"
+      "text": "hazard",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "developed",
-      "fodder": "garden",
+      "indicator": "",
+      "fodder": "D + ANGER",
       "operations": [
         {
-          "op": "anagram",
-          "input": "GARDEN",
+          "op": "abbreviate",
+          "input": "Daughter",
+          "output": "D"
+        },
+        {
+          "op": "synonym",
+          "input": "rage",
+          "output": "ANGER"
+        },
+        {
+          "op": "concat",
+          "input": "D+ANGER",
           "output": "DANGER"
         }
       ]
     },
-    "parse": "(GARDEN)* = DANGER, a hazard."
+    "parse": "D (daughter) + ANGER (rage) = DANGER, a hazard."
   },
   {
     "answer": "SACRED",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 2,
-    "clue": "Holy cedars chopped down (6)",
+    "clue": "Holy bag dyed red (6)",
     "def": {
       "text": "Holy",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "chopped",
-      "fodder": "cedars",
+      "indicator": "",
+      "fodder": "SAC + RED",
       "operations": [
         {
-          "op": "anagram",
-          "input": "CEDARS",
+          "op": "synonym",
+          "input": "bag",
+          "output": "SAC"
+        },
+        {
+          "op": "synonym",
+          "input": "red",
+          "output": "RED"
+        },
+        {
+          "op": "concat",
+          "input": "SAC+RED",
           "output": "SACRED"
         }
       ]
     },
-    "parse": "(CEDARS)* = SACRED, meaning holy."
+    "parse": "SAC (bag) + RED = SACRED, meaning holy."
   },
   {
     "answer": "STREAM",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Circus tamers organised a flow of water (6)",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "River runs through vapour, making a brook (6)",
     "def": {
-      "text": "flow of water",
+      "text": "brook",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "organised",
-      "fodder": "Tamers",
+      "indicator": "through",
+      "fodder": "R in STEAM",
       "operations": [
         {
-          "op": "anagram",
-          "input": "TAMERS",
+          "op": "abbreviate",
+          "input": "River",
+          "output": "R"
+        },
+        {
+          "op": "synonym",
+          "input": "vapour",
+          "output": "STEAM"
+        },
+        {
+          "op": "insert",
+          "input": "R in STEAM",
           "output": "STREAM"
         }
       ]
     },
-    "parse": "(TAMERS)* = STREAM, a flow of water."
+    "parse": "R (river) inside STEAM (vapour) = STREAM, a brook."
   },
   {
     "answer": "SILENT",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Quiet as the fans listen wildly (6)",
+    "clue": "Tinsel strewn about, all quiet (6)",
     "def": {
-      "text": "Quiet",
-      "position": "start"
+      "text": "quiet",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "wildly",
-      "fodder": "listen",
+      "indicator": "strewn",
+      "fodder": "Tinsel",
       "operations": [
         {
           "op": "anagram",
-          "input": "LISTEN",
+          "input": "TINSEL",
           "output": "SILENT"
         }
       ]
     },
-    "parse": "(LISTEN)* = SILENT, meaning quiet."
+    "parse": "(TINSEL)* = SILENT, meaning quiet."
   },
   {
     "answer": "DEARTH",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Hatred turned into shortage (6)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Daughter's world shows a scarcity (6)",
     "def": {
-      "text": "shortage",
+      "text": "scarcity",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "turned",
-      "fodder": "hatred",
+      "indicator": "",
+      "fodder": "D + EARTH",
       "operations": [
         {
-          "op": "anagram",
-          "input": "HATRED",
+          "op": "abbreviate",
+          "input": "Daughter",
+          "output": "D"
+        },
+        {
+          "op": "synonym",
+          "input": "world",
+          "output": "EARTH"
+        },
+        {
+          "op": "concat",
+          "input": "D+EARTH",
           "output": "DEARTH"
         }
       ]
     },
-    "parse": "(HATRED)* = DEARTH, a shortage."
+    "parse": "D (daughter) + EARTH (world) = DEARTH, a scarcity."
   },
   {
     "answer": "RESCUE",
@@ -120,7 +160,7 @@
     },
     "wordplay": {
       "indicator": "somehow",
-      "fodder": "secure",
+      "fodder": "Secure",
       "operations": [
         {
           "op": "anagram",
@@ -134,67 +174,68 @@
   {
     "answer": "GARDEN",
     "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Danger out of control in the plot (6)",
+    "difficulty": 3,
+    "clue": "Gander wandered into the plot (6)",
     "def": {
       "text": "plot",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "out of control",
-      "fodder": "Danger",
+      "indicator": "wandered",
+      "fodder": "Gander",
       "operations": [
         {
           "op": "anagram",
-          "input": "DANGER",
+          "input": "GANDER",
           "output": "GARDEN"
         }
       ]
     },
-    "parse": "(DANGER)* = GARDEN, a plot."
+    "parse": "(GANDER)* = GARDEN, a plot."
   },
   {
     "answer": "LISTEN",
     "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Attend to tinsel, scattered about (6)",
+    "difficulty": 3,
+    "clue": "Heed the silent broadcast (6)",
     "def": {
-      "text": "Attend to",
+      "text": "Heed",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "scattered",
-      "fodder": "tinsel",
+      "indicator": "broadcast",
+      "fodder": "silent",
       "operations": [
         {
           "op": "anagram",
-          "input": "TINSEL",
+          "input": "SILENT",
           "output": "LISTEN"
         }
       ]
     },
-    "parse": "(TINSEL)* = LISTEN, to attend to."
+    "parse": "(SILENT)* = LISTEN; to heed. 'Broadcast' is the anagram indicator, the surface hinting at radio."
   },
   {
     "answer": "CARPET",
     "clueType": "charade",
-    "difficulty": 2,
-    "clue": "Vehicle the animal lies on, the floor covering (6)",
+    "difficulty": 3,
+    "clue": "Rug by the motor, with the cat (6)",
     "def": {
-      "text": "floor covering",
-      "position": "end"
+      "text": "Rug",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "CAR + PET",
       "operations": [
         {
           "op": "synonym",
-          "input": "Vehicle",
+          "input": "the motor",
           "output": "CAR"
         },
         {
           "op": "synonym",
-          "input": "animal",
+          "input": "the cat",
           "output": "PET"
         },
         {
@@ -204,29 +245,30 @@
         }
       ]
     },
-    "parse": "CAR (vehicle) + PET (animal) = CARPET, a floor covering."
+    "parse": "CAR (the motor) + PET (the cat) = CARPET, a rug."
   },
   {
     "answer": "PANTRY",
     "clueType": "charade",
-    "difficulty": 2,
-    "clue": "Cooking vessel's attempt at the larder (6)",
+    "difficulty": 3,
+    "clue": "Attempt to follow the pot into the larder (6)",
     "def": {
       "text": "larder",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "PAN+TRY",
       "operations": [
         {
           "op": "synonym",
-          "input": "Cooking vessel",
-          "output": "PAN"
+          "input": "Attempt",
+          "output": "TRY"
         },
         {
           "op": "synonym",
-          "input": "attempt",
-          "output": "TRY"
+          "input": "the pot",
+          "output": "PAN"
         },
         {
           "op": "concat",
@@ -235,90 +277,73 @@
         }
       ]
     },
-    "parse": "PAN (cooking vessel) + TRY (attempt) = PANTRY, a larder."
+    "parse": "PAN (the pot) + TRY (attempt) following it = PANTRY, a larder. 'Follow' places TRY after PAN."
   },
   {
     "answer": "OUTFIT",
-    "clueType": "charade",
-    "difficulty": 2,
-    "clue": "Not at home but in good shape, sporting a costume (6)",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Get-up for the whole team (6)",
     "def": {
-      "text": "costume",
-      "position": "end"
+      "text": "Get-up",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "Get-up / the whole team",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Not at home",
-          "output": "OUT"
-        },
-        {
-          "op": "synonym",
-          "input": "in good shape",
-          "output": "FIT"
-        },
-        {
-          "op": "concat",
-          "input": "OUT+FIT",
+          "op": "literal",
+          "input": "two definitions",
           "output": "OUTFIT"
         }
       ]
     },
-    "parse": "OUT (not at home) + FIT (in good shape) = OUTFIT, a costume."
+    "parse": "Double definition: a get-up (clothing), and an outfit — a team, group or unit."
   },
   {
     "answer": "HATRED",
-    "clueType": "charade",
-    "difficulty": 2,
-    "clue": "Headgear in communist's loathing (6)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Loathing of cotton thread, unravelled (6)",
     "def": {
-      "text": "loathing",
-      "position": "end"
+      "text": "Loathing",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
+      "indicator": "unravelled",
+      "fodder": "thread",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Headgear",
-          "output": "HAT"
-        },
-        {
-          "op": "synonym",
-          "input": "communist",
-          "output": "RED"
-        },
-        {
-          "op": "concat",
-          "input": "HAT+RED",
+          "op": "anagram",
+          "input": "THREAD",
           "output": "HATRED"
         }
       ]
     },
-    "parse": "HAT (headgear) + RED (communist) = HATRED, loathing."
+    "parse": "(THREAD)* = HATRED; loathing. The cotton thread is 'unravelled' into the answer."
   },
   {
     "answer": "MANAGE",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Chap getting older to run things (6)",
+    "clue": "Fellow grows older but can still cope (6)",
     "def": {
-      "text": "run things",
+      "text": "cope",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "MAN+AGE",
       "operations": [
         {
           "op": "synonym",
-          "input": "Chap",
+          "input": "Fellow",
           "output": "MAN"
         },
         {
           "op": "synonym",
-          "input": "getting older",
+          "input": "grows older",
           "output": "AGE"
         },
         {
@@ -328,28 +353,29 @@
         }
       ]
     },
-    "parse": "MAN (chap) + AGE (getting older) = MANAGE, to run things."
+    "parse": "MAN (fellow) + AGE (grow older) = MANAGE, to cope."
   },
   {
     "answer": "FORGET",
     "clueType": "charade",
-    "difficulty": 2,
-    "clue": "In favour of acquiring something to overlook (6)",
+    "difficulty": 3,
+    "clue": "Lose track of backing acquisition (6)",
     "def": {
-      "text": "overlook",
-      "position": "end"
+      "text": "Lose track of",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "FOR+GET",
       "operations": [
         {
           "op": "synonym",
-          "input": "In favour of",
+          "input": "backing",
           "output": "FOR"
         },
         {
           "op": "synonym",
-          "input": "acquiring",
+          "input": "acquisition",
           "output": "GET"
         },
         {
@@ -359,19 +385,20 @@
         }
       ]
     },
-    "parse": "FOR (in favour of) + GET (acquiring) = FORGET, to overlook."
+    "parse": "FOR (backing, in favour of) + GET (an acquisition) = FORGET, to lose track of."
   },
   {
     "answer": "INKPOT",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Writing fluid in a vessel, the desk container (6)",
+    "clue": "Writing fluid in a vessel makes a desk well (6)",
     "def": {
-      "text": "desk container",
+      "text": "a desk well",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "INK + POT",
       "operations": [
         {
           "op": "synonym",
@@ -390,59 +417,51 @@
         }
       ]
     },
-    "parse": "INK (writing fluid) + POT (vessel) = INKPOT, a desk container."
+    "parse": "INK (writing fluid) + POT (vessel) = INKPOT; a desk well (the penny drop: an inkwell)."
   },
   {
     "answer": "SECRET",
-    "clueType": "container",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Musical note tucked inside faction, kept hidden (6)",
+    "clue": "Building erects something best kept under wraps (6)",
     "def": {
-      "text": "kept hidden",
+      "text": "something best kept under wraps",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "tucked inside",
+      "indicator": "Building",
+      "fodder": "erects",
       "operations": [
         {
-          "op": "inner",
-          "input": "Musical note",
-          "output": "RE"
-        },
-        {
-          "op": "outer",
-          "input": "faction",
-          "output": "SECT"
-        },
-        {
-          "op": "insert",
-          "input": "RE in SECT",
+          "op": "anagram",
+          "input": "ERECTS",
           "output": "SECRET"
         }
       ]
     },
-    "parse": "RE (musical note) inside SECT (faction): SEC-RE-T = SECRET, kept hidden."
+    "parse": "Anagram of ERECTS (indicated by 'Building') = SECRET; something best kept under wraps."
   },
   {
     "answer": "PLANET",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Energy held by the factory, a world (6)",
+    "clue": "Energy bottled up in the works, a whole world (6)",
     "def": {
-      "text": "world",
+      "text": "a whole world",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "held by",
+      "indicator": "bottled up in",
+      "fodder": "E in PLANT",
       "operations": [
         {
-          "op": "inner",
+          "op": "abbreviate",
           "input": "Energy",
           "output": "E"
         },
         {
-          "op": "outer",
-          "input": "factory",
+          "op": "synonym",
+          "input": "the works",
           "output": "PLANT"
         },
         {
@@ -452,28 +471,29 @@
         }
       ]
     },
-    "parse": "E (energy) inside PLANT (factory): PLAN-E-T = PLANET, a world."
+    "parse": "E (energy) inside PLANT (the works), indicated by 'bottled up in' = PLANET; a whole world."
   },
   {
     "answer": "MARKET",
     "clueType": "container",
-    "difficulty": 3,
-    "clue": "Vessel held by police force in the bazaar (6)",
+    "difficulty": 4,
+    "clue": "The Met arrests vessel at the bazaar (6)",
     "def": {
       "text": "bazaar",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "held by",
+      "indicator": "arrests",
+      "fodder": "ARK in MET",
       "operations": [
         {
-          "op": "inner",
-          "input": "Vessel",
+          "op": "synonym",
+          "input": "vessel",
           "output": "ARK"
         },
         {
-          "op": "outer",
-          "input": "police force",
+          "op": "synonym",
+          "input": "The Met",
           "output": "MET"
         },
         {
@@ -483,91 +503,84 @@
         }
       ]
     },
-    "parse": "ARK (vessel) inside MET (police force): M-ARK-ET = MARKET, a bazaar."
+    "parse": "ARK (vessel) inside MET (the Met, London's police), indicated by 'arrests' = MARKET; a bazaar."
   },
   {
     "answer": "BASKET",
-    "clueType": "container",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Request held by a wager in the hamper (6)",
+    "clue": "Sunbathe with the alien carrying a hamper (6)",
     "def": {
-      "text": "hamper",
+      "text": "a hamper",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "held by",
+      "indicator": "",
+      "fodder": "BASK + ET",
       "operations": [
         {
-          "op": "inner",
-          "input": "Request",
-          "output": "ASK"
+          "op": "synonym",
+          "input": "Sunbathe",
+          "output": "BASK"
         },
         {
-          "op": "outer",
-          "input": "wager",
-          "output": "BET"
+          "op": "synonym",
+          "input": "the alien",
+          "output": "ET"
         },
         {
-          "op": "insert",
-          "input": "ASK in BET",
+          "op": "concat",
+          "input": "BASK+ET",
           "output": "BASKET"
         }
       ]
     },
-    "parse": "ASK (request) inside BET (wager): B-ASK-ET = BASKET, a hamper."
+    "parse": "BASK (sunbathe) + ET (the alien) = BASKET; a hamper."
   },
   {
     "answer": "HAMPER",
-    "clueType": "container",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Current unit embraced by her, set to hinder (6)",
+    "clue": "Picnic basket can be a hindrance (6)",
     "def": {
-      "text": "hinder",
+      "text": "a hindrance",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "embraced by",
+      "indicator": "",
+      "fodder": "Picnic basket / a hindrance",
       "operations": [
         {
-          "op": "inner",
-          "input": "Current unit",
-          "output": "AMP"
-        },
-        {
-          "op": "outer",
-          "input": "her",
-          "output": "HER"
-        },
-        {
-          "op": "insert",
-          "input": "AMP in HER",
+          "op": "literal",
+          "input": "two definitions",
           "output": "HAMPER"
         }
       ]
     },
-    "parse": "AMP (current unit) inside HER: H-AMP-ER = HAMPER, to hinder."
+    "parse": "Double definition: a hamper (picnic basket), and a hamper / to hamper (a hindrance, to hinder)."
   },
   {
     "answer": "WALLET",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Everything inside damp purse (6)",
+    "clue": "Soaked through, the lot lost in this billfold (6)",
     "def": {
-      "text": "purse",
+      "text": "billfold",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "inside",
+      "indicator": "lost in",
+      "fodder": "ALL in WET",
       "operations": [
         {
-          "op": "inner",
-          "input": "Everything",
-          "output": "ALL"
+          "op": "synonym",
+          "input": "Soaked through",
+          "output": "WET"
         },
         {
-          "op": "outer",
-          "input": "damp",
-          "output": "WET"
+          "op": "synonym",
+          "input": "the lot",
+          "output": "ALL"
         },
         {
           "op": "insert",
@@ -576,7 +589,7 @@
         }
       ]
     },
-    "parse": "ALL (everything) inside WET (damp): W-ALL-ET = WALLET, a purse."
+    "parse": "ALL (the lot) inside WET (soaked through), indicated by 'lost in' = WALLET; a billfold."
   },
   {
     "answer": "PARSON",
@@ -588,70 +601,89 @@
       "position": "start"
     },
     "wordplay": {
-      "indicator": "seen in",
+      "indicator": "cases",
+      "fodder": "cheap arson",
       "operations": [
         {
           "op": "hidden",
-          "input": "cheaP ARSON",
+          "input": "chea<P ARSON> cases",
           "output": "PARSON"
         }
       ]
     },
-    "parse": "Hidden in cheaP ARSON = PARSON, a clergyman."
+    "parse": "Hidden in chea(P ARSON) cases = PARSON, a clergyman."
   },
   {
     "answer": "ESTATE",
-    "clueType": "hidden",
+    "clueType": "charade",
     "difficulty": 2,
-    "clue": "Property buried in west at eastern edge (6)",
+    "clue": "Eastern country house and grounds (6)",
     "def": {
-      "text": "Property",
-      "position": "start"
+      "text": "house and grounds",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "buried in",
+      "indicator": "",
+      "fodder": "E+STATE",
       "operations": [
         {
-          "op": "hidden",
-          "input": "wEST AT Eastern",
+          "op": "abbreviate",
+          "input": "Eastern",
+          "output": "E"
+        },
+        {
+          "op": "synonym",
+          "input": "country",
+          "output": "STATE"
+        },
+        {
+          "op": "concat",
+          "input": "E+STATE",
           "output": "ESTATE"
         }
       ]
     },
-    "parse": "Hidden in wEST AT Eastern = ESTATE, a property."
+    "parse": "E (Eastern) + STATE (country) = ESTATE, a house and grounds."
   },
   {
     "answer": "DEMEAN",
-    "clueType": "hidden",
-    "difficulty": 2,
-    "clue": "Part of homemade meanness can degrade (6)",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Cathedral head taking me in to degrade (6)",
     "def": {
       "text": "degrade",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Part of",
+      "indicator": "taking ... in",
+      "fodder": "ME in DEAN",
       "operations": [
         {
-          "op": "hidden",
-          "input": "homemaDE MEANness",
+          "op": "synonym",
+          "input": "Cathedral head",
+          "output": "DEAN"
+        },
+        {
+          "op": "insert",
+          "input": "ME in DEAN",
           "output": "DEMEAN"
         }
       ]
     },
-    "parse": "Hidden in homemaDE MEANness = DEMEAN, to degrade."
+    "parse": "ME inside DEAN (cathedral head) = DEMEAN, to degrade."
   },
   {
     "answer": "REWARD",
     "clueType": "reversal",
     "difficulty": 2,
-    "clue": "Prize drawer knocked back (6)",
+    "clue": "Carpenter's drawer turned up a prize (6)",
     "def": {
-      "text": "Prize",
-      "position": "start"
+      "text": "prize",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "knocked back",
+      "indicator": "turned up",
+      "fodder": "drawer",
       "operations": [
         {
           "op": "reverse",
@@ -664,36 +696,38 @@
   },
   {
     "answer": "DENIER",
-    "clueType": "reversal",
-    "difficulty": 2,
-    "clue": "One who says no, reined back (6)",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Stocking's gauge for one refusing to admit it (6)",
     "def": {
-      "text": "One who says no",
-      "position": "start"
+      "text": "one refusing to admit it",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "back",
+      "indicator": "",
+      "fodder": "Stocking's gauge / one refusing to admit it",
       "operations": [
         {
-          "op": "reverse",
-          "input": "REINED",
+          "op": "literal",
+          "input": "two definitions",
           "output": "DENIER"
         }
       ]
     },
-    "parse": "REINED reversed = DENIER, one who denies."
+    "parse": "Double definition: DENIER, the gauge of a stocking's yarn, and one who denies."
   },
   {
     "answer": "REPAID",
     "clueType": "reversal",
     "difficulty": 2,
-    "clue": "Settled, having diaper turned over (6)",
+    "clue": "Settled up, with nappy turned over (6)",
     "def": {
-      "text": "Settled",
+      "text": "Settled up",
       "position": "start"
     },
     "wordplay": {
       "indicator": "turned over",
+      "fodder": "diaper",
       "operations": [
         {
           "op": "reverse",
@@ -702,124 +736,150 @@
         }
       ]
     },
-    "parse": "DIAPER reversed = REPAID, settled a debt."
+    "parse": "DIAPER (nappy) reversed = REPAID, settled up."
   },
   {
     "answer": "ANGLER",
-    "clueType": "deletion",
-    "difficulty": 2,
-    "clue": "Beheaded dangler turns out to be a fisherman (6)",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Fisherman's learner held in fury (6)",
     "def": {
-      "text": "fisherman",
-      "position": "end"
+      "text": "Fisherman",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "Beheaded",
+      "indicator": "held in",
+      "fodder": "L in ANGER",
       "operations": [
         {
-          "op": "delete",
-          "input": "DANGLER − D",
+          "op": "abbreviate",
+          "input": "learner",
+          "output": "L"
+        },
+        {
+          "op": "synonym",
+          "input": "fury",
+          "output": "ANGER"
+        },
+        {
+          "op": "insert",
+          "input": "L in ANGER",
           "output": "ANGLER"
         }
       ]
     },
-    "parse": "DANGLER minus first letter D = ANGLER, a fisherman."
+    "parse": "L (learner) inside ANGER (fury) = ANGLER, a fisherman."
   },
   {
     "answer": "EARNED",
-    "clueType": "deletion",
-    "difficulty": 2,
-    "clue": "Merited, having learned and been beheaded (6)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Got to endear oneself, working hard (6)",
     "def": {
-      "text": "Merited",
+      "text": "Got",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "beheaded",
+      "indicator": "working",
+      "fodder": "endear",
       "operations": [
         {
-          "op": "delete",
-          "input": "LEARNED − L",
+          "op": "anagram",
+          "input": "ENDEAR",
           "output": "EARNED"
         }
       ]
     },
-    "parse": "LEARNED minus first letter L = EARNED, merited."
+    "parse": "Anagram (indicated by 'working') of ENDEAR = EARNED; 'got', as in earned a living."
   },
   {
     "answer": "PLEASE",
-    "clueType": "deletion",
-    "difficulty": 2,
-    "clue": "Pleased to lose its tail, but still delight (6)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Delight to find the baby asleep, disturbed (6)",
     "def": {
-      "text": "delight",
-      "position": "end"
+      "text": "Delight",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "to lose its tail",
+      "indicator": "disturbed",
+      "fodder": "asleep",
       "operations": [
         {
-          "op": "delete",
-          "input": "PLEASED − D",
+          "op": "anagram",
+          "input": "ASLEEP",
           "output": "PLEASE"
         }
       ]
     },
-    "parse": "PLEASED minus last letter D = PLEASE, to delight."
+    "parse": "Anagram (indicated by 'disturbed') of ASLEEP = PLEASE; to delight."
   },
   {
     "answer": "BATTER",
-    "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Pound the cricketer (6)",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Pummel some combat terrorists (6)",
     "def": {
-      "text": "Pound",
+      "text": "Pummel",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "",
+      "indicator": "some",
+      "fodder": "combat terrorists",
       "operations": [
         {
-          "op": "literal",
-          "input": "two definitions",
+          "op": "hidden",
+          "input": "com<BAT TER>rorists",
           "output": "BATTER"
         }
       ]
     },
-    "parse": "BATTER = to pound; and a cricketer (batter)."
+    "parse": "BATTER is hidden in 'comBAT TERrorists' (indicated by 'some'); to pummel."
   },
   {
     "answer": "TENDER",
-    "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Gentle, or an offer (6)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Mind the Queen, being gentle (6)",
     "def": {
-      "text": "Gentle",
-      "position": "start"
+      "text": "gentle",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "TEND + ER",
       "operations": [
         {
-          "op": "literal",
-          "input": "two definitions",
+          "op": "synonym",
+          "input": "Mind",
+          "output": "TEND"
+        },
+        {
+          "op": "abbreviate",
+          "input": "Queen",
+          "output": "ER"
+        },
+        {
+          "op": "concat",
+          "input": "TEND+ER",
           "output": "TENDER"
         }
       ]
     },
-    "parse": "TENDER = gentle; and an offer (a bid)."
+    "parse": "TEND (mind, look after) + ER (the Queen) = TENDER; gentle."
   },
   {
     "answer": "SECOND",
     "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Support a moment (6)",
+    "difficulty": 3,
+    "clue": "Back the flawed article (6)",
     "def": {
-      "text": "Support",
+      "text": "Back",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
+      "fodder": "Back / the flawed article",
       "operations": [
         {
           "op": "literal",
@@ -828,27 +888,28 @@
         }
       ]
     },
-    "parse": "SECOND = to support (a motion); and a moment of time."
+    "parse": "Double definition: SECOND, to back or support a motion; and a second, a flawed article sold cheap."
   },
   {
     "answer": "MEDDLE",
     "clueType": "homophone",
     "difficulty": 2,
-    "clue": "Interfere with award, we hear (6)",
+    "clue": "Interfere with what's won, reportedly (6)",
     "def": {
       "text": "Interfere",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "we hear",
+      "indicator": "reportedly",
+      "fodder": "medal",
       "operations": [
         {
           "op": "homophone",
-          "input": "MEDAL",
+          "input": "medal",
           "output": "MEDDLE"
         }
       ]
     },
-    "parse": "MEDDLE sounds like MEDAL (award); means to interfere."
+    "parse": "MEDAL ('what's won') sounds like MEDDLE (indicated by 'reportedly'); to interfere."
   }
 ]

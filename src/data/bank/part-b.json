@@ -1,25 +1,35 @@
 [
   {
     "answer": "STEAM",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Mates worked up a head of pressure (5)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Small side built up a head of pressure (5)",
     "def": {
       "text": "a head of pressure",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "worked up",
-      "fodder": "Mates",
+      "indicator": "",
+      "fodder": "S + TEAM",
       "operations": [
         {
-          "op": "anagram",
-          "input": "Mates",
+          "op": "abbreviate",
+          "input": "Small",
+          "output": "S"
+        },
+        {
+          "op": "synonym",
+          "input": "side",
+          "output": "TEAM"
+        },
+        {
+          "op": "concat",
+          "input": "S+TEAM",
           "output": "STEAM"
         }
       ]
     },
-    "parse": "Anagram of MATES (indicated by 'worked up') gives STEAM, a head of pressure."
+    "parse": "S (small) + TEAM (side) = STEAM; a head of pressure."
   },
   {
     "answer": "TRACE",
@@ -36,150 +46,170 @@
       "operations": [
         {
           "op": "anagram",
-          "input": "Crate",
+          "input": "CRATE",
           "output": "TRACE"
         }
       ]
     },
-    "parse": "Anagram of CRATE (indicated by 'smashed') gives TRACE, a faint mark."
+    "parse": "Anagram of CRATE (indicated by 'smashed') = TRACE; a faint mark."
   },
   {
     "answer": "REACT",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Cater badly and you'll respond (5)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "About a stage turn, respond (5)",
     "def": {
       "text": "respond",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "badly",
-      "fodder": "Cater",
+      "indicator": "",
+      "fodder": "RE + ACT",
       "operations": [
         {
-          "op": "anagram",
-          "input": "Cater",
+          "op": "abbreviate",
+          "input": "About",
+          "output": "RE"
+        },
+        {
+          "op": "synonym",
+          "input": "turn",
+          "output": "ACT"
+        },
+        {
+          "op": "concat",
+          "input": "RE+ACT",
           "output": "REACT"
         }
       ]
     },
-    "parse": "Anagram of CATER (indicated by 'badly') gives REACT, to respond."
+    "parse": "RE (about) + ACT (a stage turn) = REACT; to respond."
   },
   {
     "answer": "DROVE",
-    "clueType": "anagram",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Roved aimlessly and steered the car (5)",
+    "clue": "Herd that once steered the car (5)",
     "def": {
-      "text": "steered the car",
-      "position": "end"
+      "text": "Herd",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "aimlessly",
-      "fodder": "Roved",
+      "indicator": "",
+      "fodder": "Herd / steered the car",
       "operations": [
         {
-          "op": "anagram",
-          "input": "Roved",
+          "op": "literal",
+          "input": "two definitions",
           "output": "DROVE"
         }
       ]
     },
-    "parse": "Anagram of ROVED (indicated by 'aimlessly') gives DROVE, steered the car."
+    "parse": "Double definition: a drove (herd) of cattle, and 'drove' as the past tense of drive — steered the car."
   },
   {
     "answer": "ALERT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Later, drunk, but still watchful (5)",
+    "clue": "On the watch, set to alter wildly (5)",
     "def": {
-      "text": "watchful",
-      "position": "end"
+      "text": "On the watch",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "drunk",
-      "fodder": "Later",
+      "indicator": "wildly",
+      "fodder": "alter",
       "operations": [
         {
           "op": "anagram",
-          "input": "Later",
+          "input": "ALTER",
           "output": "ALERT"
         }
       ]
     },
-    "parse": "Anagram of LATER (indicated by 'drunk') gives ALERT, watchful."
+    "parse": "Anagram of ALTER (indicated by 'wildly') = ALERT; on the watch."
   },
   {
     "answer": "ANGEL",
-    "clueType": "anagram",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Glean fresh heavenly messenger (5)",
+    "clue": "Heavenly being backing the show (5)",
     "def": {
-      "text": "heavenly messenger",
-      "position": "end"
+      "text": "Heavenly being",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "fresh",
-      "fodder": "Glean",
+      "indicator": "",
+      "fodder": "Heavenly being / backing the show",
       "operations": [
         {
-          "op": "anagram",
-          "input": "Glean",
+          "op": "literal",
+          "input": "two definitions",
           "output": "ANGEL"
         }
       ]
     },
-    "parse": "Anagram of GLEAN (indicated by 'fresh') gives ANGEL, a heavenly messenger."
+    "parse": "Double definition: an angel (heavenly being), and an angel — the financial backer of a theatre show."
   },
   {
     "answer": "PALER",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Pearl set off, looking more wan (5)",
+    "clue": "Friend's hesitation leaves him looking more wan (5)",
     "def": {
       "text": "looking more wan",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "set off",
-      "fodder": "Pearl",
+      "indicator": "",
+      "fodder": "PAL + ER",
       "operations": [
         {
-          "op": "anagram",
-          "input": "Pearl",
+          "op": "synonym",
+          "input": "Friend",
+          "output": "PAL"
+        },
+        {
+          "op": "synonym",
+          "input": "hesitation",
+          "output": "ER"
+        },
+        {
+          "op": "concat",
+          "input": "PAL+ER",
           "output": "PALER"
         }
       ]
     },
-    "parse": "Anagram of PEARL (indicated by 'set off') gives PALER, looking more wan."
+    "parse": "PAL (friend) + ER (hesitation) = PALER; looking more wan."
   },
   {
     "answer": "SLATE",
-    "clueType": "anagram",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Stale crumbling roofing material (5)",
+    "clue": "Pan the roofing material (5)",
     "def": {
-      "text": "roofing material",
-      "position": "end"
+      "text": "Pan",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "crumbling",
-      "fodder": "Stale",
+      "indicator": "",
+      "fodder": "Pan / roofing material",
       "operations": [
         {
-          "op": "anagram",
-          "input": "Stale",
+          "op": "literal",
+          "input": "two definitions",
           "output": "SLATE"
         }
       ]
     },
-    "parse": "Anagram of STALE (indicated by 'crumbling') gives SLATE, a roofing material."
+    "parse": "Double definition: to slate (pan, criticise harshly), and slate the roofing material."
   },
   {
     "answer": "OFTEN",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Belonging to a number, frequently (5)",
+    "clue": "Belonging to ten, frequently (5)",
     "def": {
       "text": "frequently",
       "position": "end"
@@ -195,25 +225,25 @@
         },
         {
           "op": "synonym",
-          "input": "a number",
+          "input": "ten",
           "output": "TEN"
         },
         {
           "op": "concat",
-          "input": "OF + TEN",
+          "input": "OF+TEN",
           "output": "OFTEN"
         }
       ]
     },
-    "parse": "OF (belonging to) + TEN (a number) = OFTEN, frequently."
+    "parse": "OF (belonging to) + TEN = OFTEN; frequently."
   },
   {
     "answer": "MANGO",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Fellow's permission to leave brings tropical fruit (5)",
+    "clue": "Chap's leave produces a tropical fruit (5)",
     "def": {
-      "text": "tropical fruit",
+      "text": "a tropical fruit",
       "position": "end"
     },
     "wordplay": {
@@ -222,34 +252,34 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Fellow",
+          "input": "Chap",
           "output": "MAN"
         },
         {
           "op": "synonym",
-          "input": "permission to leave",
+          "input": "leave",
           "output": "GO"
         },
         {
           "op": "concat",
-          "input": "MAN + GO",
+          "input": "MAN+GO",
           "output": "MANGO"
         }
       ]
     },
-    "parse": "MAN (fellow) + GO (permission to leave) = MANGO, a tropical fruit."
+    "parse": "MAN (chap) + GO (leave) = MANGO, a tropical fruit."
   },
   {
     "answer": "PANIC",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Alarm found in some marzipan icing (5)",
+    "clue": "Some marzipan icing brings on alarm (5)",
     "def": {
-      "text": "Alarm",
-      "position": "start"
+      "text": "alarm",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "some",
+      "indicator": "Some",
       "fodder": "marzipan icing",
       "operations": [
         {
@@ -259,77 +289,57 @@
         }
       ]
     },
-    "parse": "Hidden in “marziPAN ICing” → PANIC, an alarm."
+    "parse": "PANIC hidden in 'marziPAN ICing', spanning the word break; alarm."
   },
   {
     "answer": "CATER",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Feline's hesitation will provide food (5)",
+    "clue": "Trace out, then provide the food (5)",
     "def": {
-      "text": "provide food",
+      "text": "provide the food",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "CAT + ER",
+      "indicator": "out",
+      "fodder": "trace",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Feline",
-          "output": "CAT"
-        },
-        {
-          "op": "synonym",
-          "input": "hesitation",
-          "output": "ER"
-        },
-        {
-          "op": "concat",
-          "input": "CAT + ER",
+          "op": "anagram",
+          "input": "TRACE",
           "output": "CATER"
         }
       ]
     },
-    "parse": "CAT (feline) + ER (hesitation) = CATER, to provide food."
+    "parse": "Anagram of TRACE (indicated by 'out') = CATER; to provide the food."
   },
   {
     "answer": "SPEAR",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Small fruit makes the hunter's weapon (5)",
+    "clue": "Cooked pears on a hunter's weapon (5)",
     "def": {
-      "text": "the hunter's weapon",
+      "text": "a hunter's weapon",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "S + PEAR",
+      "indicator": "Cooked",
+      "fodder": "pears",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Small",
-          "output": "S"
-        },
-        {
-          "op": "synonym",
-          "input": "fruit",
-          "output": "PEAR"
-        },
-        {
-          "op": "concat",
-          "input": "S + PEAR",
+          "op": "anagram",
+          "input": "PEARS",
           "output": "SPEAR"
         }
       ]
     },
-    "parse": "S (small) + PEAR (a fruit) = SPEAR, the hunter's weapon."
+    "parse": "Anagram ('cooked') of PEARS = SPEAR, a hunter's weapon."
   },
   {
     "answer": "TENOR",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Number, or possibly the general drift (5)",
+    "clue": "Number or singer's part gives the general drift (5)",
     "def": {
       "text": "the general drift",
       "position": "end"
@@ -344,26 +354,26 @@
           "output": "TEN"
         },
         {
-          "op": "literal",
+          "op": "synonym",
           "input": "or",
           "output": "OR"
         },
         {
           "op": "concat",
-          "input": "TEN + OR",
+          "input": "TEN+OR",
           "output": "TENOR"
         }
       ]
     },
-    "parse": "TEN (a number) + OR = TENOR, the general drift of something."
+    "parse": "TEN (number) + OR = TENOR; the general drift or purport."
   },
   {
     "answer": "DRAIN",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Daughter in wet weather uses the pipe (5)",
+    "clue": "Daughter caught in a downpour will sap one's strength (5)",
     "def": {
-      "text": "the pipe",
+      "text": "sap one's strength",
       "position": "end"
     },
     "wordplay": {
@@ -377,62 +387,62 @@
         },
         {
           "op": "synonym",
-          "input": "wet weather",
+          "input": "downpour",
           "output": "RAIN"
         },
         {
           "op": "concat",
-          "input": "D + RAIN",
+          "input": "D+RAIN",
           "output": "DRAIN"
         }
       ]
     },
-    "parse": "D (daughter) + RAIN (wet weather) = DRAIN, a pipe."
+    "parse": "D (daughter) + RAIN (a downpour) = DRAIN; to sap one's strength."
   },
   {
     "answer": "PLANT",
-    "clueType": "container",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Scheme to hold new shrub (5)",
+    "clue": "Scheme to secure time at the factory (5)",
     "def": {
-      "text": "shrub",
+      "text": "the factory",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "to hold",
-      "fodder": "N in PLAT",
+      "indicator": "",
+      "fodder": "PLAN + T",
       "operations": [
         {
           "op": "synonym",
           "input": "Scheme",
-          "output": "PLAT"
+          "output": "PLAN"
         },
         {
           "op": "abbreviate",
-          "input": "new",
-          "output": "N"
+          "input": "time",
+          "output": "T"
         },
         {
-          "op": "insert",
-          "input": "N in PLAT",
+          "op": "concat",
+          "input": "PLAN+T",
           "output": "PLANT"
         }
       ]
     },
-    "parse": "N (new) inside PLAT (a plot or scheme) = PLANT, a shrub."
+    "parse": "PLAN (scheme) + T (time) = PLANT, the factory."
   },
   {
     "answer": "CHARM",
-    "clueType": "container",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Church embracing one limb's appeal (5)",
+    "clue": "Church limb has a certain appeal (5)",
     "def": {
       "text": "appeal",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "embracing",
-      "fodder": "ARM in CH",
+      "indicator": "",
+      "fodder": "CH+ARM",
       "operations": [
         {
           "op": "abbreviate",
@@ -441,98 +451,78 @@
         },
         {
           "op": "synonym",
-          "input": "one limb",
+          "input": "limb",
           "output": "ARM"
         },
         {
-          "op": "insert",
-          "input": "ARM in CH",
+          "op": "concat",
+          "input": "CH+ARM",
           "output": "CHARM"
         }
       ]
     },
-    "parse": "ARM (one limb) inside CH (church) = CHARM, appeal."
+    "parse": "CH (Church) + ARM (limb) = CHARM, appeal."
   },
   {
     "answer": "STAIN",
-    "clueType": "container",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Wrongdoing penned in thanks leaves a mark (5)",
+    "clue": "Satin worked into a mark (5)",
     "def": {
       "text": "a mark",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "penned in",
-      "fodder": "TA in SIN",
+      "indicator": "worked",
+      "fodder": "Satin",
       "operations": [
         {
-          "op": "synonym",
-          "input": "thanks",
-          "output": "TA"
-        },
-        {
-          "op": "synonym",
-          "input": "Wrongdoing",
-          "output": "SIN"
-        },
-        {
-          "op": "insert",
-          "input": "TA in SIN",
+          "op": "anagram",
+          "input": "Satin",
           "output": "STAIN"
         }
       ]
     },
-    "parse": "TA (thanks) inside SIN (wrongdoing) = S-TA-IN = STAIN, a mark."
+    "parse": "Anagram of SATIN (indicated by 'worked') gives STAIN, a mark."
   },
   {
     "answer": "STAIR",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Saint's manner makes a step (5)",
+    "clue": "Sitar reworked into a step (5)",
     "def": {
-      "text": "step",
+      "text": "a step",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "ST + AIR",
+      "indicator": "reworked",
+      "fodder": "Sitar",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Saint",
-          "output": "ST"
-        },
-        {
-          "op": "synonym",
-          "input": "manner",
-          "output": "AIR"
-        },
-        {
-          "op": "concat",
-          "input": "ST+AIR",
+          "op": "anagram",
+          "input": "Sitar",
           "output": "STAIR"
         }
       ]
     },
-    "parse": "ST (saint) + AIR (manner) = STAIR; a step."
+    "parse": "Anagram of SITAR (indicated by 'reworked') gives STAIR, a step."
   },
   {
     "answer": "PAINT",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Trousers holding one bit of colour (5)",
+    "clue": "Gasp, taking in one, makes a coat (5)",
     "def": {
-      "text": "colour",
+      "text": "a coat",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "holding",
+      "indicator": "taking in",
       "fodder": "I in PANT",
       "operations": [
         {
           "op": "synonym",
-          "input": "Trousers",
+          "input": "Gasp",
           "output": "PANT"
         },
         {
@@ -547,107 +537,107 @@
         }
       ]
     },
-    "parse": "I (one) inside PANT (trousers) = PAINT, a colour."
+    "parse": "I (one) inside PANT (gasp) = PAINT; a coat."
   },
   {
     "answer": "ASHEN",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "A flash entered the room, leaving him pale (5)",
+    "clue": "A flash entered, leaving him pale (5)",
     "def": {
       "text": "pale",
       "position": "end"
     },
     "wordplay": {
       "indicator": "entered",
-      "fodder": "flASH ENtered",
+      "fodder": "flash entered",
       "operations": [
         {
           "op": "hidden",
-          "input": "ASHEN in flASH ENtered",
+          "input": "fl<ASH EN>tered",
           "output": "ASHEN"
         }
       ]
     },
-    "parse": "Hidden in 'flASH ENtered' is ASHEN, meaning pale."
+    "parse": "Hidden in 'flASH ENtered' = ASHEN, pale."
   },
   {
     "answer": "ORGAN",
-    "clueType": "hidden",
+    "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Doctor gander, perhaps, examining a body part (5)",
+    "clue": "Groan badly about a body part (5)",
     "def": {
       "text": "a body part",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "examining",
-      "fodder": "doctOR GANder",
+      "indicator": "badly",
+      "fodder": "Groan",
       "operations": [
         {
-          "op": "hidden",
-          "input": "ORGAN in doctOR GANder",
+          "op": "anagram",
+          "input": "Groan",
           "output": "ORGAN"
         }
       ]
     },
-    "parse": "Hidden in 'doctOR GANder' is ORGAN, a body part."
+    "parse": "Anagram of GROAN (indicated by 'badly') gives ORGAN, a body part."
   },
   {
     "answer": "EAGER",
-    "clueType": "hidden",
+    "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Bringing some tea, Gerald seems keen (5)",
+    "clue": "Agree to change, being keen (5)",
     "def": {
       "text": "keen",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Some",
-      "fodder": "tEA GERald",
+      "indicator": "to change",
+      "fodder": "Agree",
       "operations": [
         {
-          "op": "hidden",
-          "input": "EAGER in tEA GERald",
+          "op": "anagram",
+          "input": "Agree",
           "output": "EAGER"
         }
       ]
     },
-    "parse": "Hidden in 'tEA GERald' is EAGER, meaning keen."
+    "parse": "Anagram of AGREE (indicated by 'to change') gives EAGER, keen."
   },
   {
     "answer": "NADIR",
-    "clueType": "hidden",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Banana directory holds the lowest point (5)",
+    "clue": "Drain redesigned to reach the lowest point (5)",
     "def": {
       "text": "the lowest point",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "holds",
-      "fodder": "banaNA DIRectory",
+      "indicator": "redesigned",
+      "fodder": "Drain",
       "operations": [
         {
-          "op": "hidden",
-          "input": "NADIR in banaNA DIRectory",
+          "op": "anagram",
+          "input": "Drain",
           "output": "NADIR"
         }
       ]
     },
-    "parse": "Hidden in 'banaNA DIRectory' is NADIR, the lowest point."
+    "parse": "Anagram of DRAIN (indicated by 'redesigned') gives NADIR, the lowest point."
   },
   {
     "answer": "REPEL",
     "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Outcast returned to drive away (5)",
+    "clue": "Drive off social outcast going the wrong way (5)",
     "def": {
-      "text": "drive away",
-      "position": "end"
+      "text": "Drive off",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "returned",
+      "indicator": "going the wrong way",
       "fodder": "LEPER",
       "operations": [
         {
@@ -657,63 +647,73 @@
         }
       ]
     },
-    "parse": "LEPER (an outcast) reversed gives REPEL, to drive away."
+    "parse": "LEPER (social outcast) reversed (going the wrong way) gives REPEL, to drive off."
   },
   {
     "answer": "STRAW",
-    "clueType": "reversal",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Skin blemishes turning up for the drinker's tube (5)",
+    "clue": "What you sip through, the last of it breaking the camel's back (5)",
     "def": {
-      "text": "the drinker's tube",
-      "position": "end"
+      "text": "What you sip through",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "turning up",
-      "fodder": "WARTS",
+      "indicator": "",
+      "fodder": "What you sip through / the last of it breaking the camel's back",
       "operations": [
         {
-          "op": "reverse",
-          "input": "WARTS",
+          "op": "literal",
+          "input": "two definitions",
           "output": "STRAW"
         }
       ]
     },
-    "parse": "WARTS (skin blemishes) reversed gives STRAW, the drinker's tube."
+    "parse": "STRAW: a tube you sip through, and the proverbial last straw that breaks the camel's back. Double definition."
   },
   {
     "answer": "DEVIL",
-    "clueType": "reversal",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Existed, turned around, as the evil one (5)",
+    "clue": "Old Nick's daughter is wicked (5)",
     "def": {
-      "text": "the evil one",
-      "position": "end"
+      "text": "Old Nick",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "turned around",
-      "fodder": "LIVED",
+      "indicator": "",
+      "fodder": "D+EVIL",
       "operations": [
         {
-          "op": "reverse",
-          "input": "LIVED",
+          "op": "abbreviate",
+          "input": "daughter",
+          "output": "D"
+        },
+        {
+          "op": "synonym",
+          "input": "wicked",
+          "output": "EVIL"
+        },
+        {
+          "op": "concat",
+          "input": "D+EVIL",
           "output": "DEVIL"
         }
       ]
     },
-    "parse": "LIVED (existed) reversed gives DEVIL, the evil one."
+    "parse": "D (daughter) + EVIL (wicked) = DEVIL, otherwise known as Old Nick."
   },
   {
     "answer": "REGAL",
     "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Beer brought up in a kingly manner (5)",
+    "clue": "Beer sent back, befitting a queen (5)",
     "def": {
-      "text": "in a kingly manner",
+      "text": "befitting a queen",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "brought up",
+      "indicator": "sent back",
       "fodder": "LAGER",
       "operations": [
         {
@@ -723,108 +723,108 @@
         }
       ]
     },
-    "parse": "LAGER (beer) reversed (brought up, in a down clue) gives REGAL, in a kingly manner."
+    "parse": "LAGER (beer) reversed (sent back) gives REGAL, befitting a queen."
   },
   {
     "answer": "CRAVE",
-    "clueType": "deletion",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Cowardly type, curtailed, will long for it (5)",
+    "clue": "Hunger to carve up a roast (5)",
     "def": {
-      "text": "long for it",
-      "position": "end"
+      "text": "Hunger",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "curtailed",
-      "fodder": "CRAVEN − N",
+      "indicator": "up",
+      "fodder": "carve",
       "operations": [
         {
-          "op": "delete",
-          "input": "CRAVEN − N",
+          "op": "anagram",
+          "input": "CARVE",
           "output": "CRAVE"
         }
       ]
     },
-    "parse": "CRAVEN (a cowardly type) curtailed (final N removed) gives CRAVE, to long for."
+    "parse": "Anagram (up) of CARVE gives CRAVE, to hunger for."
   },
   {
     "answer": "RANGE",
-    "clueType": "deletion",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Grange, beheaded, becomes a row of hills (5)",
+    "clue": "Anger boiled over into a mountain chain (5)",
     "def": {
-      "text": "a row of hills",
+      "text": "a mountain chain",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "beheaded",
-      "fodder": "GRANGE − G",
+      "indicator": "boiled over",
+      "fodder": "Anger",
       "operations": [
         {
-          "op": "delete",
-          "input": "GRANGE − G",
+          "op": "anagram",
+          "input": "ANGER",
           "output": "RANGE"
         }
       ]
     },
-    "parse": "GRANGE beheaded (first G removed) gives RANGE, a row of hills."
+    "parse": "Anagram (boiled over) of ANGER gives RANGE, a mountain chain."
   },
   {
     "answer": "EARTH",
-    "clueType": "deletion",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Hearth, beheaded, is our world (5)",
+    "clue": "Heart pounding for our planet (5)",
     "def": {
-      "text": "our world",
+      "text": "our planet",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "beheaded",
-      "fodder": "HEARTH − H",
+      "indicator": "pounding",
+      "fodder": "Heart",
       "operations": [
         {
-          "op": "delete",
-          "input": "HEARTH − H",
+          "op": "anagram",
+          "input": "HEART",
           "output": "EARTH"
         }
       ]
     },
-    "parse": "HEARTH beheaded (first H removed) gives EARTH, our world."
+    "parse": "Anagram (pounding) of HEART gives EARTH, our planet."
   },
   {
     "answer": "WHERE",
-    "clueType": "deletion",
+    "clueType": "homophone",
     "difficulty": 3,
-    "clue": "Whereas, curtailed, asking in which place (5)",
+    "clue": "In what place to put clothes on, we hear? (5)",
     "def": {
-      "text": "asking in which place",
-      "position": "end"
+      "text": "In what place",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "curtailed",
-      "fodder": "WHEREAS − AS",
+      "indicator": "we hear",
+      "fodder": "wear",
       "operations": [
         {
-          "op": "delete",
-          "input": "WHEREAS − AS",
+          "op": "homophone",
+          "input": "wear",
           "output": "WHERE"
         }
       ]
     },
-    "parse": "WHEREAS curtailed (final AS removed) gives WHERE, asking in which place."
+    "parse": "WEAR (put clothes on) sounds like (we hear) WHERE, meaning in what place."
   },
   {
     "answer": "LIGHT",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Not heavy illumination (5)",
+    "clue": "Set fire to the lamp (5)",
     "def": {
-      "text": "Not heavy",
+      "text": "Set fire to",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "two definitions",
+      "fodder": "Set fire to / the lamp",
       "operations": [
         {
           "op": "literal",
@@ -833,20 +833,20 @@
         }
       ]
     },
-    "parse": "Double definition: LIGHT means 'not heavy' and 'illumination'."
+    "parse": "Double definition: LIGHT as a verb meaning 'set fire to'; and LIGHT the noun, a lamp."
   },
   {
     "answer": "STERN",
     "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Strict at the back of the boat (5)",
+    "difficulty": 3,
+    "clue": "Grim end of the boat (5)",
     "def": {
-      "text": "Strict",
+      "text": "Grim",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "two definitions",
+      "fodder": "Grim / end of the boat",
       "operations": [
         {
           "op": "literal",
@@ -855,20 +855,20 @@
         }
       ]
     },
-    "parse": "Double definition: STERN means 'strict' and 'the back of the boat'."
+    "parse": "Double definition: STERN, 'grim'; and the stern, the rear end of a boat."
   },
   {
     "answer": "TRUNK",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Large case for an elephant's nose (5)",
+    "clue": "Chest a bull elephant raises (5)",
     "def": {
-      "text": "Large case",
+      "text": "Chest",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "two definitions",
+      "fodder": "Chest / a bull elephant raises",
       "operations": [
         {
           "op": "literal",
@@ -877,20 +877,20 @@
         }
       ]
     },
-    "parse": "Double definition: TRUNK is a 'large case' and 'an elephant's nose'."
+    "parse": "Double definition: TRUNK, a chest; and a TRUNK, what a bull elephant raises (its nose)."
   },
   {
     "answer": "SOUND",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Healthy, or a noise (5)",
+    "clue": "Sensible to probe the patient (5)",
     "def": {
-      "text": "Healthy",
+      "text": "Sensible",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "two definitions",
+      "fodder": "Sensible / probe",
       "operations": [
         {
           "op": "literal",
@@ -899,50 +899,50 @@
         }
       ]
     },
-    "parse": "Double definition: SOUND means 'healthy' and 'noise'."
+    "parse": "Double definition: SOUND, 'sensible'; and to SOUND, to probe (as one sounds a wound or a depth)."
   },
   {
     "answer": "GUEST",
-    "clueType": "homophone",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Reportedly surmised the dinner visitor (5)",
+    "clue": "Some vague stipulations admit a visitor (5)",
     "def": {
-      "text": "the dinner visitor",
+      "text": "a visitor",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Reportedly",
-      "fodder": "GUESSED",
+      "indicator": "Some",
+      "fodder": "vague stipulations",
       "operations": [
         {
-          "op": "homophone",
-          "input": "GUESSED",
+          "op": "hidden",
+          "input": "va<GUE ST>ipulations",
           "output": "GUEST"
         }
       ]
     },
-    "parse": "GUESSED (surmised) sounds like GUEST, a dinner visitor."
+    "parse": "GUEST is hidden in 'vaGUE STipulations' (indicated by 'Some'); a visitor is admitted."
   },
   {
     "answer": "WAIST",
     "clueType": "homophone",
     "difficulty": 3,
-    "clue": "Squander, we hear, around the middle (5)",
+    "clue": "Squander, reportedly, where the belt sits (5)",
     "def": {
-      "text": "the middle",
+      "text": "where the belt sits",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "we hear",
-      "fodder": "WASTE",
+      "indicator": "reportedly",
+      "fodder": "waste",
       "operations": [
         {
           "op": "homophone",
-          "input": "WASTE",
+          "input": "waste",
           "output": "WAIST"
         }
       ]
     },
-    "parse": "WASTE (squander) sounds like WAIST, the middle of the body."
+    "parse": "WASTE ('squander') sounds like WAIST (indicated by 'reportedly'), where the belt sits."
   }
 ]
