@@ -23,7 +23,10 @@ export function HintLadder({ hints, startingTier, revealedCount, onReveal, revea
 
   return (
     <div className="hint-ladder">
-      <p className="ladder-title">Hint ladder — four rungs, disclosed one at a time</p>
+      <p className="ladder-title">
+        Hint ladder — {offered.length} {offered.length === 1 ? 'rung' : 'rungs'}, disclosed one
+        at a time
+      </p>
       <ol className="hint-list">
         {offered.map((hint, i) => {
           const isShown = i < shown;

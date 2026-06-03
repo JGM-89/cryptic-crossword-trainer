@@ -30,7 +30,6 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
   );
   const [solved, setSolved] = useState(Boolean(alreadySolved));
   const [hintUsed, setHintUsed] = useState(false);
-  const [wrongOnce, setWrongOnce] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [revealedCount, setRevealedCount] = useState(0);
   const startRef = useRef<number>(Date.now());
@@ -75,7 +74,6 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
     const guess = value.join('');
     if (guess.length < target.length || guess !== target) {
       setStatus('wrong');
-      setWrongOnce(true);
       return;
     }
     finish({ usedHint: hintUsed, hintsUsed: revealedCount, timeMs: Date.now() - startRef.current });
@@ -92,12 +90,6 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
     if (!hintUsed) setHintUsed(true);
     setRevealedCount((n) => Math.min(n + 1, offeredTiers.length));
   }
-
-  const showLadder =
-    scaffolding.hintAvailability === 'all' ||
-    scaffolding.hintAvailability === 'onRequest' ||
-    (scaffolding.hintAvailability === 'afterAttempt' && (wrongOnce || solved)) ||
-    (scaffolding.hintAvailability === 'afterSolve' && solved);
 
   return (
     <article className={`clue-card ${solved ? 'solved' : ''}`}>
@@ -145,15 +137,18 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
         </p>
       )}
 
-      {showLadder && (
-        <HintLadder
-          hints={clue.hints}
-          startingTier={scaffolding.startingTier}
-          revealedCount={revealedCount}
-          onReveal={revealNextHint}
-          revealAll={showAllHints}
-        />
-      )}
+      {/* In Learn, hints are always one tap away — every card keeps a "Need a
+          hint?" affordance so none looks empty. The per-device fade is carried
+          by the starting rung (advanced devices skip the definition rung) and
+          the device badge, not by hiding the ladder. (Play / the daily grid use
+          MiniGrid and stay fully unaided.) */}
+      <HintLadder
+        hints={clue.hints}
+        startingTier={scaffolding.startingTier}
+        revealedCount={revealedCount}
+        onReveal={revealNextHint}
+        revealAll={showAllHints}
+      />
     </article>
   );
 }
