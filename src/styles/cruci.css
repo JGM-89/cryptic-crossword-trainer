@@ -100,6 +100,67 @@
   /* ── Layout ─────────────────────────────────────────────────────────────*/
   --maxw: 1080px;
   --grain: 0.5;  /* paper-grain overlay opacity multiplier (0–1) */
+
+  /* ── Cross-theme constants & grid tokens ────────────────────────────────
+     --ink-on-hi is dark text for use ON the honey highlight, which stays light
+     in both themes (definition mark, cursor cell, ::selection). The grid tokens
+     keep block / fill / line distinguishable across themes.                   */
+  --ink-on-hi:  #221d15;
+  --grid-fill:  var(--surface);
+  --grid-block: #2a261f;
+  --grid-line:  var(--ink);
+}
+
+/* ── Dark mode ──────────────────────────────────────────────────────────────
+   OS-driven (prefers-color-scheme). Warm dark paper, light ink, the same bottle
+   green re-tuned for AA on dark. -ink text tokens go light; light "soft"/"bg"
+   surfaces become dark tints; the honey highlight is untouched (see --ink-on-hi).*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:          #16130f;
+    --surface:        #211c16;
+    --surface-sunken: #2b251d;
+    --ink:            #efe7d8;
+    --ink-soft:       #b7ac97;
+    --ink-faint:      #8c8169;
+    --line:           #36302a;
+    --line-strong:    #4a4136;
+
+    --accent:       #2f6650;
+    --accent-ink:   #8fc3a8;   /* links / accent text on dark (AA)            */
+    --accent-deep:  #3a7a5f;   /* hover reads brighter on dark                */
+    --accent-soft:  #24302b;
+    --accent-line:  #3c4f44;
+
+    --good:      #5aa873;
+    --good-ink:  #8fd0a3;
+    --good-bg:   #1d2a20;
+    --bad:       #e0796b;
+    --bad-ink:   #f0a094;
+    --bad-bg:    #311e1a;
+    --warn:      #c98a2e;
+
+    /* Stage hues lifted slightly so the dots read on dark surfaces. */
+    --stage-A: #5b8cc0; --stage-A-soft: #243140;
+    --stage-B: #9a7fd0; --stage-B-soft: #2c2740;
+    --stage-C: #c79038; --stage-C-soft: #3a3220;
+    --stage-D: #4f9276; --stage-D-soft: #22302b;
+
+    --band-gentle:   #5aa873;
+    --band-moderate: #c79038;
+    --band-tougher:  #e0796b;
+
+    /* Grid: block clearly darker than fill, lighter hairlines. */
+    --grid-fill:  #2a241c;
+    --grid-block: #0d0b08;
+    --grid-line:  #4a4136;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow:    0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 26px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.4), 0 24px 56px rgba(0, 0, 0, 0.6);
+
+    --grain: 0.35;
+  }
 }
 
 * { box-sizing: border-box; }
@@ -152,7 +213,7 @@ p { text-wrap: pretty; }
 a { color: var(--accent-ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
 a:hover { color: var(--accent-deep); }
 
-::selection { background: var(--def-hi); color: var(--ink); }
+::selection { background: var(--def-hi); color: var(--ink-on-hi); }
 
 :focus-visible {
   outline: 2.5px solid var(--accent-ink);

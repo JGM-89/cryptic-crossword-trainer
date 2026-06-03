@@ -121,6 +121,7 @@
 .definition {
   background: linear-gradient(180deg, transparent 8%, var(--def-hi) 8%, var(--def-hi) 88%, transparent 88%);
   box-shadow: 0 0 0 0.5px var(--def-hi-edge);
+  color: var(--ink-on-hi);  /* honey stays light in both themes → keep dark text */
   padding: 0 0.12em; border-radius: 2px;
   box-decoration-break: clone; -webkit-box-decoration-break: clone;
 }
@@ -210,11 +211,11 @@
    ink so white cells read crisp; high-contrast active/cursor/correct/wrong.  */
 .puzzle-layout { display: grid; grid-template-columns: auto minmax(280px, 1fr); gap: var(--space-6); align-items: start; }
 .mini-grid {
-  --cell: 2.7rem;
+  --cell: var(--cell-max, 2.7rem);
   display: grid; gap: 1px;
-  background: var(--ink);          /* grid lines */
+  background: var(--grid-line, var(--ink));  /* grid lines */
   padding: 2px;
-  border: 2px solid var(--ink);
+  border: 2px solid var(--grid-line, var(--ink));
   border-radius: 3px;
   width: max-content; max-width: 100%;
   outline: none;
@@ -224,16 +225,17 @@
 .grid-cell {
   position: relative;
   width: var(--cell); height: var(--cell);
-  background: var(--surface);
+  background: var(--grid-fill, var(--surface));
   display: grid; place-items: center;
   font-family: var(--mono); font-weight: 600;
   font-size: calc(var(--cell) * 0.48);
   color: var(--ink);
   cursor: pointer; user-select: none;
 }
-.grid-cell.black { background: #2a261f; cursor: default; }   /* warm-tuned block, not pure black */
+.grid-cell.black { background: var(--grid-block, #2a261f); cursor: default; }  /* warm block, not pure black */
 .grid-cell.in-entry { background: var(--accent-soft); }
-.grid-cell.cursor { background: var(--def-hi); box-shadow: inset 0 0 0 2.5px var(--accent); }
+/* The cursor cell is honey in both themes, so its letter must stay dark. */
+.grid-cell.cursor { background: var(--def-hi); color: var(--ink-on-hi); box-shadow: inset 0 0 0 2.5px var(--accent); }
 .grid-cell.correct { color: var(--good-ink); }
 .grid-cell.wrong { color: var(--bad); }
 .grid-cell.wrong::after { content:''; position:absolute; inset:0; box-shadow: inset 0 0 0 2px var(--bad); }
@@ -429,4 +431,12 @@
   margin: 0; padding: 0; border: 0; font-size: 16px;
   opacity: 0; pointer-events: none;
   background: transparent; color: transparent; caret-color: transparent;
+}
+
+/* On narrow screens, shrink cells so a 13×13 (--cols) fits the viewport width
+   instead of overflowing. MiniGrid sets --cols and --cell-max inline. */
+@media (max-width: 760px) {
+  .mini-grid {
+    --cell: min(var(--cell-max, 2.7rem), calc((100vw - 3rem) / var(--cols, 7)));
+  }
 }

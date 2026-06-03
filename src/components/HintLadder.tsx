@@ -36,7 +36,9 @@ export function HintLadder({ hints, startingTier, revealedCount, onReveal, revea
               {isShown ? (
                 <span className="hint-text">{hint.text}</span>
               ) : (
-                <span className="hint-text">— hidden —</span>
+                <span className="hint-text" aria-hidden>
+                  — hidden —
+                </span>
               )}
             </li>
           );

@@ -85,7 +85,10 @@ export function MiniGrid({
   // tabIndex <div> never does. Letters arrive via its onChange (cross-platform);
   // arrows/backspace via onKeyDown.
   const inputRef = useRef<HTMLInputElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const hydratedRef = useRef(false);
+  // Screen-reader announcement for check / reveal / completion (aria-live).
+  const [statusMsg, setStatusMsg] = useState('');
 
   function revealHint(entryId: string, level: number) {
     setHintLevel((h) => ({ ...h, [entryId]: Math.max(h[entryId] ?? 0, level) }));
@@ -118,6 +121,15 @@ export function MiniGrid({
 
   const activeCells = grid.entryCells.get(activeEntryId) ?? [];
   const activeKey = activeCells[cursor];
+
+  // Keep the active cell in view — e.g. above the on-screen keyboard on mobile,
+  // where a 13×13 grid extends below the fold.
+  useEffect(() => {
+    if (!activeKey) return;
+    gridRef.current
+      ?.querySelector(`[data-cell="${activeKey}"]`)
+      ?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, [activeKey]);
 
   function selectEntry(id: string, cellKey?: string) {
     setActiveEntryId(id);
@@ -205,6 +217,20 @@ export function MiniGrid({
       (k) => nextStatus[k] === 'correct',
     );
     if (everyCellCorrect) onComplete();
+
+    // Announce the outcome for screen readers.
+    if (everyCellCorrect) {
+      setStatusMsg('Puzzle complete — every answer is correct.');
+    } else {
+      const solvedNow = puzzle.entries.filter((e) =>
+        (grid.entryCells.get(e.id) ?? []).every((k) => nextStatus[k] === 'correct'),
+      ).length;
+      const wrong = Object.values(nextStatus).filter((s) => s === 'wrong').length;
+      setStatusMsg(
+        `${solvedNow} of ${puzzle.entries.length} clues solved.` +
+          (wrong ? ` ${wrong} letter${wrong === 1 ? '' : 's'} wrong.` : ''),
+      );
+    }
   }
 
   function revealActive() {
@@ -222,6 +248,7 @@ export function MiniGrid({
     onReveal(activeEntryId);
     const entry = entriesById.get(activeEntryId);
     if (entry && !solvedEntries.has(entry.id)) onEntrySolved(entry);
+    if (entry) setStatusMsg(`Revealed ${entry.number} ${entry.direction}: ${entry.solution}.`);
   }
 
   const across = puzzle.entries.filter((e) => e.direction === 'across');
@@ -230,13 +257,16 @@ export function MiniGrid({
   return (
     <div className="puzzle-layout">
       <div
+        ref={gridRef}
         className="mini-grid"
         role="grid"
         aria-label={puzzle.title}
         style={{
           gridTemplateColumns: `repeat(${puzzle.cols}, var(--cell))`,
-          // shrink cells for big grids so a 13x13 fits comfortably
-          ['--cell' as string]: puzzle.cols >= 11 ? '2rem' : '2.7rem',
+          // Cap the cell at 2rem (big grids) / 2.7rem, but let CSS shrink it to
+          // fit narrow screens via --cols (see .mini-grid in cruci-app.css).
+          ['--cols' as string]: puzzle.cols,
+          ['--cell-max' as string]: puzzle.cols >= 11 ? '2rem' : '2.7rem',
         }}
       >
         <input
@@ -257,16 +287,22 @@ export function MiniGrid({
           const c = idx % puzzle.cols;
           const k = key(r, c);
           const info = grid.cells.get(k);
-          if (!info) return <div key={k} className="grid-cell black" />;
+          if (!info) return <div key={k} className="grid-cell black" aria-hidden />;
           const isActiveEntry = activeCells.includes(k);
           const isCursor = k === activeKey;
           const st = cellStatus[k];
+          const letter = (fill[k] ?? '').toUpperCase();
           return (
             <div
               key={k}
               className={`grid-cell ${isActiveEntry ? 'in-entry' : ''} ${
                 isCursor ? 'cursor' : ''
               } ${st ?? ''}`}
+              role="gridcell"
+              data-cell={k}
+              aria-label={`Row ${r + 1}, column ${c + 1}${
+                letter ? `, ${letter}` : ', empty'
+              }${st ? `, ${st}` : ''}`}
               onClick={() => clickCell(k)}
             >
               {info.number && <span className="grid-number">{info.number}</span>}
@@ -277,6 +313,9 @@ export function MiniGrid({
       </div>
 
       <div className="puzzle-side">
+        <p className="sr-only" role="status" aria-live="polite">
+          {statusMsg}
+        </p>
         <div className="puzzle-controls">
           <button type="button" className="btn btn-primary" onClick={check}>
             Check grid
