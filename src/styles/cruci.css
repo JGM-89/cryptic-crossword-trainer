@@ -239,46 +239,41 @@ a:hover { color: var(--accent-deep); }
    "Cruci" in Spectral with the dot of the i set inside a small crossword
    cell. The cell is the quiet recurring brand motif.                        */
 .wordmark {
-  display: inline-flex;
-  align-items: stretch;
   font-family: var(--serif);
   font-weight: 600;
   color: var(--ink);
-  line-height: 1;
   text-decoration: none;
+  white-space: nowrap;
 }
-/* the leading "C" sits in a numbered crossword cell — same cell as the app
-   icon, so the mark and the word are one family (and it always aligns). */
+/* the leading "C" sits in a tight square crossword cell — same cell as the app
+   icon. The C is optically centred in the box; the box is dropped onto the text
+   baseline so it sits level with "ruci". */
+/* the leading "C" is inline-block text — its baseline is the C's own baseline,
+   so it matches "ruci" by construction; the box is the element's own border. */
 .wordmark .wm-cell {
-  display: inline-grid;
-  place-items: center;
-  background: var(--surface);
-  color: var(--accent-ink);
-  border: 0.07em solid var(--ink);
-  font-weight: 700;
-  width: 1.15em;
-  aspect-ratio: 1;
+  display: inline-block;
   font-size: 0.82em;
   line-height: 1;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--surface);
+  border: 0.08em solid var(--ink);
+  padding: 0.06em 0.2em 0;
+  margin-right: 0.08em;
   position: relative;
 }
-.wordmark .wm-cell::before {
+.wordmark .wm-cell::after { /* corner clue-number */
   content: '1';
   position: absolute;
-  top: 4%;
-  left: 11%;
+  top: 0.02em;
+  left: 0.08em;
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 0.28em;
+  font-size: 0.3em;
   color: var(--ink-soft);
   line-height: 1;
 }
-.wordmark .wm-word {
-  display: flex;
-  align-items: flex-end;
-  letter-spacing: -0.01em;
-  padding-left: 0.06em;
-}
+.wordmark .wm-word { letter-spacing: -0.01em; }
 
 /* ── Identity · monogram / app icon ───────────────────────────────────────
    A single grid cell holding a serif C.                                     */
