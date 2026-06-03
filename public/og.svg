@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f4ece0"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none" stroke="#dccfb6" stroke-width="2"/>
+  <!-- mark -->
+  <rect x="96" y="187" width="256" height="256" rx="22" fill="#fcf8f0" stroke="#221d15" stroke-width="15"/>
+  <text x="118" y="244" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="38" font-weight="600" fill="#6b6051">1</text>
+  <text x="224" y="403" font-family="Georgia, 'Times New Roman', serif" font-size="228" font-weight="700" fill="#214536" text-anchor="middle">C</text>
+  <!-- wordmark + tagline -->
+  <text x="420" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="700" fill="#221d15">Cruci</text>
+  <text x="424" y="372" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-style="italic" fill="#6b6051">Every clue has a seam. Find it.</text>
+  <text x="424" y="430" font-family="'Public Sans', -apple-system, sans-serif" font-size="26" font-weight="700" letter-spacing="3" fill="#214536">LEARN · PLAY · ANALYZE</text>
+</svg>

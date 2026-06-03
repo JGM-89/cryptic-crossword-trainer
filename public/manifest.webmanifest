@@ -1,0 +1,16 @@
+{
+  "name": "Cruci — learn cryptic crosswords",
+  "short_name": "Cruci",
+  "description": "Learn to solve cryptic crosswords one device at a time, with hints that quietly fade as you improve.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4ece0",
+  "theme_color": "#275140",
+  "icons": [
+    { "src": "icon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any maskable" },
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ]
+}
