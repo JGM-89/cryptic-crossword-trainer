@@ -23,12 +23,12 @@ export function App() {
     <div className="app">
       <ScrollToTop />
       <header className="topbar">
-        <NavLink to="/" className="brand" end>
-          <span className="brand-mark" aria-hidden>
-            ▦
-          </span>
-          <span>
-            Cryptic <strong>Trainer</strong>
+        <NavLink to="/" className="brand" end aria-label="Cruci home">
+          <span className="wordmark" aria-label="Cruci">
+            <span className="wm-cell" aria-hidden>
+              C
+            </span>
+            <span className="wm-word">ruci</span>
           </span>
         </NavLink>
         <nav className="nav" aria-label="Primary">
@@ -56,8 +56,14 @@ export function App() {
 
       <footer className="footer">
         <p>
-          A scaffolding-that-fades cryptic crossword trainer. All clues originally
-          authored and verified. <NavLink to="/about">How it works →</NavLink>
+          <span className="wordmark" aria-label="Cruci">
+            <span className="wm-cell" aria-hidden>
+              C
+            </span>
+            <span className="wm-word">ruci</span>
+          </span>{' '}
+          — find the seam. All clues originally authored and verified.{' '}
+          <NavLink to="/about">How it works →</NavLink>
         </p>
       </footer>
     </div>

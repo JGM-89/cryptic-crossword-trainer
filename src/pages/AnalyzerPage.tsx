@@ -64,6 +64,7 @@ export function AnalyzerPage() {
   return (
     <div className="page analyzer">
       <header className="lesson-page-head">
+        <p className="eyebrow">The workbench</p>
         <h1>Clue analyzer</h1>
         <p className="lede">
           Pick any clue and peel it apart one layer at a time — where the definition is,
@@ -72,7 +73,7 @@ export function AnalyzerPage() {
       </header>
 
       <label className="analyzer-select">
-        <span>Choose a clue</span>
+        <span className="field-label">Choose a clue</span>
         <select value={selectedId} onChange={(e) => pick(e.target.value)}>
           {CLUES.map((c) => (
             <option key={c.id} value={c.id}>
@@ -104,39 +105,50 @@ export function AnalyzerPage() {
         </div>
 
         <div className="analyzer-readout">
+          {step === 0 && (
+            <p className="muted">Step through the buttons above to reveal each layer.</p>
+          )}
           {step >= 1 && (
-            <p>
-              <strong>Definition:</strong> “{clue.definitionSpan.text}” (at the{' '}
-              {clue.definitionSpan.position}).
-            </p>
+            <div className="readout-row">
+              <span className="rk">Definition</span>
+              <span className="rv">
+                “{clue.definitionSpan.text}” — at the {clue.definitionSpan.position}.
+              </span>
+            </div>
           )}
           {step >= 2 && (
-            <p>
-              <strong>Device:</strong> {CLUE_TYPE_LABELS[clue.clueType]}.
-            </p>
+            <div className="readout-row">
+              <span className="rk">Device</span>
+              <span className="rv">{CLUE_TYPE_LABELS[clue.clueType]}.</span>
+            </div>
           )}
           {step >= 3 && (
-            <div>
-              <strong>Indicators spotted:</strong>{' '}
-              {detected.length ? (
-                <ul className="indicator-hits">
-                  {detected.map((d, i) => (
-                    <li key={i}>
-                      <code>{d.phrase}</code> <span className="muted">→ {d.clueType}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <span className="muted">
-                  none from the standard lists (charades and double definitions often have none).
-                </span>
-              )}
+            <div className="readout-row">
+              <span className="rk">Indicators</span>
+              <span className="rv">
+                {detected.length ? (
+                  <ul className="indicator-hits">
+                    {detected.map((d, i) => (
+                      <li key={i}>
+                        <code className="tok">{d.phrase}</code>{' '}
+                        <span className="muted">→ {d.clueType}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="muted">
+                    none from the standard lists (charades and double definitions often have
+                    none).
+                  </span>
+                )}
+              </span>
             </div>
           )}
           {step >= 4 && (
-            <p className="analyzer-parse">
-              <strong>Parse:</strong> {clue.hints[3].text}
-            </p>
+            <div className="readout-row">
+              <span className="rk">Full parse</span>
+              <span className="rv">{clue.hints[3].text}</span>
+            </div>
           )}
         </div>
       </div>

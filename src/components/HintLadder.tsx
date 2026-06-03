@@ -23,26 +23,28 @@ export function HintLadder({ hints, startingTier, revealedCount, onReveal, revea
 
   return (
     <div className="hint-ladder">
+      <p className="ladder-title">Hint ladder — four rungs, disclosed one at a time</p>
       <ol className="hint-list">
         {offered.map((hint, i) => {
           const isShown = i < shown;
           return (
             <li key={hint.tier} className={`hint ${isShown ? 'shown' : 'hidden'}`}>
-              <span className="hint-label">
-                Hint {hint.tier} · {hint.label}
+              <span className="rung-num" aria-hidden>
+                {hint.tier}
               </span>
+              <span className="hint-label">{hint.label}</span>
               {isShown ? (
                 <span className="hint-text">{hint.text}</span>
               ) : (
-                <span className="hint-text muted">— hidden —</span>
+                <span className="hint-text">— hidden —</span>
               )}
             </li>
           );
         })}
       </ol>
       {!revealAll && shown < offered.length && (
-        <button type="button" className="btn btn-ghost" onClick={onReveal}>
-          {shown === 0 ? 'Need a hint?' : 'Reveal next hint'}
+        <button type="button" className="btn btn-ghost hint-reveal-btn" onClick={onReveal}>
+          {shown === 0 ? 'Need a hint?' : 'Reveal next rung →'}
         </button>
       )}
     </div>

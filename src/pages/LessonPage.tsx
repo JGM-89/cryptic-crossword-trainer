@@ -41,7 +41,7 @@ export function LessonPage() {
       </nav>
       <header className="lesson-page-head">
         <span className={`stage-pill stage-${stage}`}>
-          Stage {stage} · {STAGE_LABELS[stage]}
+          <span className="pill-letter">{stage}</span> {STAGE_LABELS[stage]}
         </span>
         <h1>{lesson.title}</h1>
         <p className="lede">{lesson.blurb}</p>

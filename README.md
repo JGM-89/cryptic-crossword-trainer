@@ -1,6 +1,6 @@
-# Cryptic Crossword Trainer
+# Cruci
 
-A static web app that teaches you to solve cryptic crosswords **one device at a time**, with a four-rung hint ladder and **scaffolding that fades** as your competence grows — until you are solving a plain daily cryptic with no help at all.
+**Cruci** (*“kroo-see”* — from *cruciverbalist*, a lover of crosswords) is a static web app that teaches you to solve cryptic crosswords **one device at a time**, with a four-rung hint ladder and **scaffolding that fades** as your competence grows — until you are solving a plain daily cryptic with no help at all.
 
 🔗 **Live:** https://jgm-89.github.io/cryptic-crossword-trainer/
 

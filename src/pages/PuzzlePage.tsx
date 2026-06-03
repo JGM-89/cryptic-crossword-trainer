@@ -40,7 +40,9 @@ export function PuzzlePage() {
         <Link to="/learn">← All lessons</Link>
       </nav>
       <header className="lesson-page-head">
-        <span className="stage-pill stage-D">Stage D · Independent</span>
+        <span className="stage-pill stage-D">
+          <span className="pill-letter">D</span> Independent
+        </span>
         <h1>{puzzle.title}</h1>
         <p className="lede">{puzzle.blurb}</p>
       </header>

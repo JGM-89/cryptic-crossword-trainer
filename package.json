@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "A cryptic crossword trainer with fading scaffolding — learn to solve cryptics one clue type at a time.",
+  "description": "Cruci — learn to solve cryptic crosswords one device at a time, with scaffolding that fades.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -11,6 +11,26 @@ interface Props {
   highlights: Highlight[];
 }
 
+/** A trailing enumeration like "(5)", "(3,4)" or "(2-3)" at the very end. */
+const ENUM_RE = /^([\s\S]*?)(\s*)(\([\d][\d,\-–.\s]*\))\s*$/;
+
+/**
+ * Render a plain tail of clue text, wrapping a trailing enumeration in a muted
+ * mono `.enum` span (purely cosmetic — the highlight offsets never reach here).
+ */
+function renderTail(text: string, key: React.Key): React.ReactNode {
+  const m = ENUM_RE.exec(text);
+  if (!m) return text;
+  const [, main, ws, enumPart] = m;
+  return (
+    <span key={key}>
+      {main}
+      {ws}
+      <span className="enum">{enumPart}</span>
+    </span>
+  );
+}
+
 /**
  * Renders the clue, wrapping any highlighted spans in <mark>. Highlights are
  * revealed progressively as the learner opens the matching hint rung, so the
@@ -21,7 +41,7 @@ export function ClueText({ clue, highlights }: Props) {
     .filter((h) => h.start >= 0 && h.end > h.start && h.end <= clue.length)
     .sort((a, b) => a.start - b.start);
 
-  if (spans.length === 0) return <span className="clue-text">{clue}</span>;
+  if (spans.length === 0) return <span className="clue-text">{renderTail(clue, 'tail')}</span>;
 
   const parts: React.ReactNode[] = [];
   let cursor = 0;
@@ -35,7 +55,7 @@ export function ClueText({ clue, highlights }: Props) {
     );
     cursor = h.end;
   });
-  if (cursor < clue.length) parts.push(clue.slice(cursor));
+  if (cursor < clue.length) parts.push(renderTail(clue.slice(cursor), 'tail'));
 
   return <span className="clue-text">{parts}</span>;
 }

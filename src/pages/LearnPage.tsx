@@ -14,14 +14,15 @@ export function LearnPage() {
 
   return (
     <div className="page learn">
-      <section className="hero">
-        <h1>Learn cryptic crosswords, one device at a time</h1>
+      <header className="lesson-page-head">
+        <p className="eyebrow">The course</p>
+        <h1>Learn to solve, one device at a time</h1>
         <p className="lede">
           Every clue is a <strong>definition</strong> plus some <strong>wordplay</strong>.
           We teach one kind of wordplay per lesson, with a four-step hint ladder — and the
           help quietly fades as you get the hang of each device.
         </p>
-      </section>
+      </header>
 
       <CompetenceBoard />
 
@@ -31,7 +32,8 @@ export function LearnPage() {
           <section key={stage.stage} className="stage-block">
             <header className="stage-header">
               <span className={`stage-pill stage-${stage.stage}`}>
-                Stage {stage.stage} · {STAGE_LABELS[stage.stage]}
+                <span className="pill-letter">{stage.stage}</span>{' '}
+                {STAGE_LABELS[stage.stage]}
               </span>
               <h2>{stage.title}</h2>
             </header>
@@ -97,7 +99,7 @@ function LessonTile({
       <div className="lesson-tile-head">
         <h3>{lesson.title}</h3>
         {complete && <span className="tick">✓</span>}
-        {locked && <span className="lock" aria-label="Locked">🔒</span>}
+        {locked && <span className="lock-ico" aria-label="Locked">Locked</span>}
       </div>
       <p className="lesson-blurb">{lesson.blurb}</p>
       {!isPuzzle && (

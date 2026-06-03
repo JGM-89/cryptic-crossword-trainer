@@ -8,27 +8,31 @@ import { CLUES } from '../data';
 const CARDS = [
   {
     to: '/learn',
-    emoji: '📚',
+    mark: 'L',
     title: 'Learn',
     body: 'A guided course — one device at a time, with hints that fade as you improve.',
+    go: 'Start the course →',
   },
   {
     to: '/play',
-    emoji: '▦',
+    mark: 'P',
     title: 'Play',
     body: 'An archive of cryptic crosswords, from quick minis to full 13×13 grids.',
+    go: '180 puzzles →',
   },
   {
     to: '/analyzer',
-    emoji: '🔍',
+    mark: 'A',
     title: 'Analyzer',
     body: 'Pull any clue apart: its definition, its device, and the indicator words.',
+    go: 'Open the analyzer →',
   },
   {
     to: '/reference',
-    emoji: '📖',
+    mark: 'R',
     title: 'Reference',
     body: 'The indicator vocabulary and the standard abbreviation “code words”.',
+    go: 'Browse the lists →',
   },
 ];
 
@@ -42,22 +46,23 @@ export function HomePage() {
   return (
     <div className="page home">
       <section className="home-hero">
-        <p className="home-eyebrow">Cryptic Crossword Trainer</p>
-        <h1>
-          Learn to solve cryptic crosswords —<br />
-          and actually enjoy it.
-        </h1>
+        <p className="home-eyebrow">British cryptic crosswords, taught properly</p>
+        <h1>Every clue has a seam. We teach you to find it.</h1>
+        <p className="home-equation">
+          One clue = <span className="definition">a{' '}definition</span> +{' '}
+          <span className="indicator-mark">some{' '}wordplay</span> — each leading,
+          independently, to the same answer.
+        </p>
         <p className="lede">
-          Every cryptic clue is a <strong>definition</strong> at one end and some{' '}
-          <strong>wordplay</strong> at the other, each leading to the same answer. We teach you
-          to find the seam — one device at a time, with help that quietly fades — until you’re
+          Cruci teaches you to stop reading the clue as a sentence and spot the boundary between
+          its two halves — one device at a time, with help that quietly fades, until you’re
           solving a full grid unaided.
         </p>
         <div className="home-cta">
-          <Link className="btn btn-primary" to="/learn">
+          <Link className="btn btn-primary btn-lg" to="/learn">
             {started ? 'Keep learning' : 'Start learning'} →
           </Link>
-          <Link className="btn btn-ghost" to="/play">
+          <Link className="btn btn-ghost btn-lg" to="/play">
             Play a cryptic
           </Link>
         </div>
@@ -65,7 +70,12 @@ export function HomePage() {
 
       <section className="home-stats" aria-label="Your progress">
         <div className="stat">
-          <span className="stat-num">{STAGE_LABELS[stage]}</span>
+          <span className={`cc-stage stage-${stage}`} aria-hidden>
+            {stage}
+          </span>
+          <span className="stat-num" style={{ fontSize: 'var(--fs-700)' }}>
+            {STAGE_LABELS[stage]}
+          </span>
           <span className="stat-label">Top mastery (Stage {stage})</span>
         </div>
         <div className="stat">
@@ -82,18 +92,25 @@ export function HomePage() {
         </div>
       </section>
 
+      <div className="section-head">
+        <h2>Four ways in</h2>
+        <span className="muted">Pick up wherever you left off</span>
+      </div>
+
       <section className="home-cards">
         {CARDS.map((c) => (
           <Link key={c.to} to={c.to} className="home-card">
-            <span className="home-card-emoji" aria-hidden>
-              {c.emoji}
+            <span className="card-mark" aria-hidden>
+              {c.mark}
             </span>
             <h2>{c.title}</h2>
             <p>{c.body}</p>
+            <span className="card-go">{c.go}</span>
           </Link>
         ))}
       </section>
 
+      <hr className="rule" />
       <section className="home-foot">
         <p className="muted">
           Free, open-source, and fully in your browser — no account, nothing sent to a server.{' '}
