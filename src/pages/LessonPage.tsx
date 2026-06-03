@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { allLessons, findLesson, getClue } from '../data';
+import { allLessons, findLesson, getAnyClue } from '../data';
 import { STAGE_LABELS, type Clue } from '../types';
 import { useProgress } from '../state/ProgressContext';
 import { effectiveStage, scaffoldingFor } from '../engine/fading';
@@ -22,13 +22,13 @@ export function LessonPage() {
     return (
       <div className="page">
         <p>Lesson not found.</p>
-        <Link to="/">← Back to lessons</Link>
+        <Link to="/learn">← Back to lessons</Link>
       </div>
     );
   }
 
   const { lesson, stage } = found;
-  const clues = lesson.clueIds.map(getClue).filter(Boolean) as Clue[];
+  const clues = lesson.clueIds.map(getAnyClue).filter(Boolean) as Clue[];
   const complete = isLessonComplete(state, lesson);
   const nextIsPuzzle = nextLessonId
     ? findLesson(nextLessonId)?.lesson.clueIds.length === 0
@@ -37,7 +37,7 @@ export function LessonPage() {
   return (
     <div className="page lesson">
       <nav className="crumb">
-        <Link to="/">← All lessons</Link>
+        <Link to="/learn">← All lessons</Link>
       </nav>
       <header className="lesson-page-head">
         <span className={`stage-pill stage-${stage}`}>
@@ -77,7 +77,7 @@ export function LessonPage() {
               Next lesson →
             </Link>
           ) : (
-            <Link className="btn btn-primary" to="/">
+            <Link className="btn btn-primary" to="/learn">
               Back to the map
             </Link>
           )}

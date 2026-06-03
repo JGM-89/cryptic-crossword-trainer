@@ -4,8 +4,21 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Listening organ on the corn (3)",
-    "def": { "text": "Listening organ", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Listening organ / on the corn", "operations": [ { "op": "literal", "input": "two definitions", "output": "EAR" } ] },
+    "def": {
+      "text": "Listening organ",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Listening organ / on the corn",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "EAR"
+        }
+      ]
+    },
     "parse": "Double definition: a listening organ, and the seed-bearing part on corn."
   },
   {
@@ -13,17 +26,43 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Strike at cricket with a flying mammal (3)",
-    "def": { "text": "Strike at cricket", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Strike at cricket / a flying mammal", "operations": [ { "op": "literal", "input": "two definitions", "output": "BAT" } ] },
+    "def": {
+      "text": "Strike at cricket",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Strike at cricket / a flying mammal",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "BAT"
+        }
+      ]
+    },
     "parse": "Double definition: to bat in cricket, and the flying mammal."
   },
   {
     "answer": "PEN",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Writer using a sheep enclosure (3)",
-    "def": { "text": "Writer", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Writer / sheep enclosure", "operations": [ { "op": "literal", "input": "two definitions", "output": "PEN" } ] },
+    "clue": "Writer kept in a sheep enclosure (3)",
+    "def": {
+      "text": "Writer",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Writer / sheep enclosure",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "PEN"
+        }
+      ]
+    },
     "parse": "Double definition: a writing implement, and an enclosure for sheep."
   },
   {
@@ -31,17 +70,43 @@
     "clueType": "hidden",
     "difficulty": 2,
     "clue": "Final amount, given good manners in etiquette (3)",
-    "def": { "text": "Final amount", "position": "start" },
-    "wordplay": { "indicator": "in", "fodder": "in etiquette", "operations": [ { "op": "hidden", "input": "iN ETiquette", "output": "NET" } ] },
+    "def": {
+      "text": "Final amount",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "in",
+      "fodder": "in etiquette",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "iN ETiquette",
+          "output": "NET"
+        }
+      ]
+    },
     "parse": "NET hidden in 'iN ETiquette', spanning two words; the final amount."
   },
   {
     "answer": "ART",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Painting a guitar tuner conceals (3)",
-    "def": { "text": "Painting", "position": "start" },
-    "wordplay": { "indicator": "conceals", "fodder": "guitar tuner", "operations": [ { "op": "hidden", "input": "guitAR Tuner", "output": "ART" } ] },
+    "clue": "A guitar tuner conceals fine painting (3)",
+    "def": {
+      "text": "fine painting",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "conceals",
+      "fodder": "guitar tuner",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "guitAR Tuner",
+          "output": "ART"
+        }
+      ]
+    },
     "parse": "ART hidden in 'guitAR Tuner', spanning two words; painting."
   },
   {
@@ -49,8 +114,21 @@
     "clueType": "hidden",
     "difficulty": 2,
     "clue": "Night bird seen in window ledges (3)",
-    "def": { "text": "Night bird", "position": "start" },
-    "wordplay": { "indicator": "seen in", "fodder": "window ledges", "operations": [ { "op": "hidden", "input": "windOW Ledges", "output": "OWL" } ] },
+    "def": {
+      "text": "Night bird",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "seen in",
+      "fodder": "window ledges",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "windOW Ledges",
+          "output": "OWL"
+        }
+      ]
+    },
     "parse": "OWL hidden in 'windOW Ledges'; a night bird."
   },
   {
@@ -58,8 +136,21 @@
     "clueType": "reversal",
     "difficulty": 2,
     "clue": "Deity revealed when dog turns over (3)",
-    "def": { "text": "Deity", "position": "start" },
-    "wordplay": { "indicator": "turns over", "fodder": "dog", "operations": [ { "op": "reverse", "input": "DOG", "output": "GOD" } ] },
+    "def": {
+      "text": "Deity",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "turns over",
+      "fodder": "dog",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "DOG",
+          "output": "GOD"
+        }
+      ]
+    },
     "parse": "DOG reversed gives GOD; a deity."
   },
   {
@@ -67,8 +158,21 @@
     "clueType": "reversal",
     "difficulty": 2,
     "clue": "Gratuity from the pit, sent back (3)",
-    "def": { "text": "Gratuity", "position": "start" },
-    "wordplay": { "indicator": "sent back", "fodder": "pit", "operations": [ { "op": "reverse", "input": "PIT", "output": "TIP" } ] },
+    "def": {
+      "text": "Gratuity",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "sent back",
+      "fodder": "pit",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "PIT",
+          "output": "TIP"
+        }
+      ]
+    },
     "parse": "PIT reversed gives TIP; a gratuity."
   },
   {
@@ -76,26 +180,65 @@
     "clueType": "reversal",
     "difficulty": 2,
     "clue": "Informer turning up to spread tar (3)",
-    "def": { "text": "Informer", "position": "start" },
-    "wordplay": { "indicator": "turning up", "fodder": "tar", "operations": [ { "op": "reverse", "input": "TAR", "output": "RAT" } ] },
+    "def": {
+      "text": "Informer",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "turning up",
+      "fodder": "tar",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "TAR",
+          "output": "RAT"
+        }
+      ]
+    },
     "parse": "TAR reversed gives RAT; an informer."
   },
   {
     "answer": "CAR",
     "clueType": "deletion",
     "difficulty": 2,
-    "clue": "Vehicle leaving a beheaded scar (3)",
-    "def": { "text": "Vehicle", "position": "start" },
-    "wordplay": { "indicator": "beheaded", "fodder": "scar", "operations": [ { "op": "delete", "input": "SCAR − S", "output": "CAR" } ] },
+    "clue": "Vehicle that's a beheaded scar (3)",
+    "def": {
+      "text": "Vehicle",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "beheaded",
+      "fodder": "scar",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "SCAR − S",
+          "output": "CAR"
+        }
+      ]
+    },
     "parse": "SCAR beheaded (first letter removed) gives CAR; a vehicle."
   },
   {
     "answer": "AGE",
     "clueType": "deletion",
     "difficulty": 2,
-    "clue": "Era for the headless cage (3)",
-    "def": { "text": "Era", "position": "start" },
-    "wordplay": { "indicator": "headless", "fodder": "cage", "operations": [ { "op": "delete", "input": "CAGE − C", "output": "AGE" } ] },
+    "clue": "Era ushered in by a headless cage (3)",
+    "def": {
+      "text": "Era",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "headless",
+      "fodder": "cage",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "CAGE − C",
+          "output": "AGE"
+        }
+      ]
+    },
     "parse": "CAGE with its head removed gives AGE; an era."
   },
   {
@@ -103,8 +246,31 @@
     "clueType": "charade",
     "difficulty": 2,
     "clue": "Company's old male swan (3)",
-    "def": { "text": "male swan", "position": "end" },
-    "wordplay": { "indicator": "", "fodder": "CO + B", "operations": [ { "op": "abbreviate", "input": "Company", "output": "CO" }, { "op": "abbreviate", "input": "old", "output": "B" }, { "op": "concat", "input": "CO+B", "output": "COB" } ] },
+    "def": {
+      "text": "male swan",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "CO + B",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Company",
+          "output": "CO"
+        },
+        {
+          "op": "abbreviate",
+          "input": "old",
+          "output": "B"
+        },
+        {
+          "op": "concat",
+          "input": "CO+B",
+          "output": "COB"
+        }
+      ]
+    },
     "parse": "CO (company) + B (old, born) = COB; a male swan."
   },
   {
@@ -112,8 +278,36 @@
     "clueType": "charade",
     "difficulty": 2,
     "clue": "Bachelor scoring a run at the counter (3)",
-    "def": { "text": "counter", "position": "end" },
-    "wordplay": { "indicator": "", "fodder": "B + A + R", "operations": [ { "op": "abbreviate", "input": "Bachelor", "output": "B" }, { "op": "literal", "input": "a", "output": "A" }, { "op": "abbreviate", "input": "run", "output": "R" }, { "op": "concat", "input": "B+A+R", "output": "BAR" } ] },
+    "def": {
+      "text": "counter",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "B + A + R",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Bachelor",
+          "output": "B"
+        },
+        {
+          "op": "literal",
+          "input": "a",
+          "output": "A"
+        },
+        {
+          "op": "abbreviate",
+          "input": "run",
+          "output": "R"
+        },
+        {
+          "op": "concat",
+          "input": "B+A+R",
+          "output": "BAR"
+        }
+      ]
+    },
     "parse": "B (Bachelor) + A + R (run, cricket) = BAR; a counter where drinks are served."
   },
   {
@@ -121,17 +315,43 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Colour of the communist (3)",
-    "def": { "text": "Colour", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Colour / communist", "operations": [ { "op": "literal", "input": "two definitions", "output": "RED" } ] },
+    "def": {
+      "text": "Colour",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Colour / communist",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "RED"
+        }
+      ]
+    },
     "parse": "Double definition: the colour, and a communist."
   },
   {
     "answer": "MEAN",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Cruel name changed (4)",
-    "def": { "text": "Cruel", "position": "start" },
-    "wordplay": { "indicator": "changed", "fodder": "name", "operations": [ { "op": "anagram", "input": "NAME", "output": "MEAN" } ] },
+    "clue": "Cruel name, changed for the worse (4)",
+    "def": {
+      "text": "Cruel",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "changed",
+      "fodder": "name",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "NAME",
+          "output": "MEAN"
+        }
+      ]
+    },
     "parse": "(NAME)* = MEAN, meaning cruel."
   },
   {
@@ -139,8 +359,21 @@
     "clueType": "anagram",
     "difficulty": 2,
     "clue": "Sea movement could be edit, reworked (4)",
-    "def": { "text": "Sea movement", "position": "start" },
-    "wordplay": { "indicator": "reworked", "fodder": "edit", "operations": [ { "op": "anagram", "input": "EDIT", "output": "TIDE" } ] },
+    "def": {
+      "text": "Sea movement",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "reworked",
+      "fodder": "edit",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "EDIT",
+          "output": "TIDE"
+        }
+      ]
+    },
     "parse": "(EDIT)* = TIDE; a sea movement."
   },
   {
@@ -148,8 +381,21 @@
     "clueType": "anagram",
     "difficulty": 2,
     "clue": "Green fruit from a damaged mile (4)",
-    "def": { "text": "Green fruit", "position": "start" },
-    "wordplay": { "indicator": "damaged", "fodder": "mile", "operations": [ { "op": "anagram", "input": "MILE", "output": "LIME" } ] },
+    "def": {
+      "text": "Green fruit",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "damaged",
+      "fodder": "mile",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "MILE",
+          "output": "LIME"
+        }
+      ]
+    },
     "parse": "(MILE)* = LIME; a green fruit."
   },
   {
@@ -157,8 +403,21 @@
     "clueType": "anagram",
     "difficulty": 2,
     "clue": "Docile when meat is cooked (4)",
-    "def": { "text": "Docile", "position": "start" },
-    "wordplay": { "indicator": "cooked", "fodder": "meat", "operations": [ { "op": "anagram", "input": "MEAT", "output": "TAME" } ] },
+    "def": {
+      "text": "Docile",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "cooked",
+      "fodder": "meat",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "MEAT",
+          "output": "TAME"
+        }
+      ]
+    },
     "parse": "(MEAT)* = TAME; docile."
   },
   {
@@ -166,8 +425,21 @@
     "clueType": "reversal",
     "difficulty": 2,
     "clue": "Celebrity rats running away (4)",
-    "def": { "text": "Celebrity", "position": "start" },
-    "wordplay": { "indicator": "running away", "fodder": "rats", "operations": [ { "op": "reverse", "input": "RATS", "output": "STAR" } ] },
+    "def": {
+      "text": "Celebrity",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "running away",
+      "fodder": "rats",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "RATS",
+          "output": "STAR"
+        }
+      ]
+    },
     "parse": "RATS reversed gives STAR; a celebrity."
   },
   {
@@ -175,8 +447,21 @@
     "clueType": "reversal",
     "difficulty": 2,
     "clue": "Sketch the hospital ward, going backwards (4)",
-    "def": { "text": "Sketch", "position": "start" },
-    "wordplay": { "indicator": "going backwards", "fodder": "ward", "operations": [ { "op": "reverse", "input": "WARD", "output": "DRAW" } ] },
+    "def": {
+      "text": "Sketch",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "going backwards",
+      "fodder": "ward",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "WARD",
+          "output": "DRAW"
+        }
+      ]
+    },
     "parse": "WARD (hospital ward) reversed gives DRAW; to sketch."
   },
   {
@@ -184,8 +469,21 @@
     "clueType": "homophone",
     "difficulty": 2,
     "clue": "Listen in this place, reportedly (4)",
-    "def": { "text": "Listen", "position": "start" },
-    "wordplay": { "indicator": "reportedly", "fodder": "here", "operations": [ { "op": "homophone", "input": "here", "output": "HEAR" } ] },
+    "def": {
+      "text": "Listen",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "reportedly",
+      "fodder": "here",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "here",
+          "output": "HEAR"
+        }
+      ]
+    },
     "parse": "Sounds like 'here' (this place); to hear/listen."
   },
   {
@@ -193,8 +491,21 @@
     "clueType": "homophone",
     "difficulty": 2,
     "clue": "Flatfish, the spirit we hear (4)",
-    "def": { "text": "Flatfish", "position": "start" },
-    "wordplay": { "indicator": "we hear", "fodder": "soul", "operations": [ { "op": "homophone", "input": "soul", "output": "SOLE" } ] },
+    "def": {
+      "text": "Flatfish",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "we hear",
+      "fodder": "soul",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "soul",
+          "output": "SOLE"
+        }
+      ]
+    },
     "parse": "Sounds like 'soul' (spirit); a flatfish (sole)."
   },
   {
@@ -202,8 +513,21 @@
     "clueType": "hidden",
     "difficulty": 2,
     "clue": "Touch down, small and delicate (4)",
-    "def": { "text": "Touch down", "position": "start" },
-    "wordplay": { "indicator": "small and", "fodder": "small and delicate", "operations": [ { "op": "hidden", "input": "smalL AND delicate", "output": "LAND" } ] },
+    "def": {
+      "text": "Touch down",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "small and",
+      "fodder": "small and delicate",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "smalL AND delicate",
+          "output": "LAND"
+        }
+      ]
+    },
     "parse": "LAND hidden in 'smalL AND Delicate', spanning words; to touch down."
   },
   {
@@ -211,26 +535,75 @@
     "clueType": "hidden",
     "difficulty": 2,
     "clue": "Blood channel found in cave interior (4)",
-    "def": { "text": "Blood channel", "position": "start" },
-    "wordplay": { "indicator": "found in", "fodder": "cave interior", "operations": [ { "op": "hidden", "input": "caVE INterior", "output": "VEIN" } ] },
+    "def": {
+      "text": "Blood channel",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "found in",
+      "fodder": "cave interior",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "caVE INterior",
+          "output": "VEIN"
+        }
+      ]
+    },
     "parse": "VEIN hidden in 'caVE INterior'; a blood channel."
   },
   {
     "answer": "ONCE",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "At one time, the bacon centre cut out (4)",
-    "def": { "text": "At one time", "position": "start" },
-    "wordplay": { "indicator": "cut out", "fodder": "bacon centre", "operations": [ { "op": "hidden", "input": "bacON CEntre", "output": "ONCE" } ] },
+    "clue": "At one time, the bacon centre was carved (4)",
+    "def": {
+      "text": "At one time",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "cut out",
+      "fodder": "bacon centre",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "bacON CEntre",
+          "output": "ONCE"
+        }
+      ]
+    },
     "parse": "ONCE hidden in 'bacON CEntre', spanning two words; at one time."
   },
   {
     "answer": "HERB",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Plant her boy primarily for seasoning (4)",
-    "def": { "text": "Plant", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "HER + B", "operations": [ { "op": "literal", "input": "her", "output": "HER" }, { "op": "abbreviate", "input": "boy primarily", "output": "B" }, { "op": "concat", "input": "HER+B", "output": "HERB" } ] },
+    "clue": "Tarragon? Her boy, primarily, grows it (4)",
+    "def": {
+      "text": "Tarragon",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "HER + B",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "her",
+          "output": "HER"
+        },
+        {
+          "op": "abbreviate",
+          "input": "boy primarily",
+          "output": "B"
+        },
+        {
+          "op": "concat",
+          "input": "HER+B",
+          "output": "HERB"
+        }
+      ]
+    },
     "parse": "HER + B (boy's first letter) = HERB; a seasoning plant."
   },
   {
@@ -238,17 +611,63 @@
     "clueType": "charade",
     "difficulty": 3,
     "clue": "Talk cold, wearing the hat (4)",
-    "def": { "text": "Talk", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "C + HAT", "operations": [ { "op": "abbreviate", "input": "cold", "output": "C" }, { "op": "literal", "input": "hat", "output": "HAT" }, { "op": "concat", "input": "C+HAT", "output": "CHAT" } ] },
+    "def": {
+      "text": "Talk",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "C + HAT",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "cold",
+          "output": "C"
+        },
+        {
+          "op": "literal",
+          "input": "hat",
+          "output": "HAT"
+        },
+        {
+          "op": "concat",
+          "input": "C+HAT",
+          "output": "CHAT"
+        }
+      ]
+    },
     "parse": "C (cold) + HAT = CHAT; to talk."
   },
   {
     "answer": "SCAR",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Mark the southern car (4)",
-    "def": { "text": "Mark", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "S + CAR", "operations": [ { "op": "abbreviate", "input": "southern", "output": "S" }, { "op": "synonym", "input": "car", "output": "CAR" }, { "op": "concat", "input": "S+CAR", "output": "SCAR" } ] },
+    "clue": "Mark left by a southern car crash (4)",
+    "def": {
+      "text": "Mark",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "S + CAR",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "southern",
+          "output": "S"
+        },
+        {
+          "op": "synonym",
+          "input": "car",
+          "output": "CAR"
+        },
+        {
+          "op": "concat",
+          "input": "S+CAR",
+          "output": "SCAR"
+        }
+      ]
+    },
     "parse": "S (southern) + CAR (vehicle) = SCAR; a mark."
   },
   {
@@ -256,8 +675,31 @@
     "clueType": "charade",
     "difficulty": 3,
     "clue": "Toasty worker holding an arm (4)",
-    "def": { "text": "Toasty", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "W + ARM", "operations": [ { "op": "abbreviate", "input": "worker", "output": "W" }, { "op": "synonym", "input": "arm", "output": "ARM" }, { "op": "concat", "input": "W+ARM", "output": "WARM" } ] },
+    "def": {
+      "text": "Toasty",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "W + ARM",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "worker",
+          "output": "W"
+        },
+        {
+          "op": "synonym",
+          "input": "arm",
+          "output": "ARM"
+        },
+        {
+          "op": "concat",
+          "input": "W+ARM",
+          "output": "WARM"
+        }
+      ]
+    },
     "parse": "W (worker, abbrev.) + ARM (limb) = WARM; toasty."
   },
   {
@@ -265,8 +707,21 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Apartment that is perfectly level (4)",
-    "def": { "text": "Apartment", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Apartment / perfectly level", "operations": [ { "op": "literal", "input": "two definitions", "output": "FLAT" } ] },
+    "def": {
+      "text": "Apartment",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Apartment / perfectly level",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "FLAT"
+        }
+      ]
+    },
     "parse": "Double definition: an apartment, and perfectly level."
   },
   {
@@ -274,8 +729,21 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Gesture like a roller at sea (4)",
-    "def": { "text": "Gesture", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Gesture / roller at sea", "operations": [ { "op": "literal", "input": "two definitions", "output": "WAVE" } ] },
+    "def": {
+      "text": "Gesture",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Gesture / roller at sea",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "WAVE"
+        }
+      ]
+    },
     "parse": "Double definition: to wave a hand, and a roller at sea."
   },
   {
@@ -283,8 +751,21 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Belonging to me, the coal pit (4)",
-    "def": { "text": "Belonging to me", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Belonging to me / coal pit", "operations": [ { "op": "literal", "input": "two definitions", "output": "MINE" } ] },
+    "def": {
+      "text": "Belonging to me",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Belonging to me / coal pit",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "MINE"
+        }
+      ]
+    },
     "parse": "Double definition: mine (belonging to me), and a coal mine."
   },
   {
@@ -292,8 +773,21 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Romantic outing on a certain day (4)",
-    "def": { "text": "Romantic outing", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Romantic outing / certain day", "operations": [ { "op": "literal", "input": "two definitions", "output": "DATE" } ] },
+    "def": {
+      "text": "Romantic outing",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Romantic outing / certain day",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "DATE"
+        }
+      ]
+    },
     "parse": "Double definition: a romantic date, and a calendar day."
   },
   {
@@ -301,17 +795,53 @@
     "clueType": "double-definition",
     "difficulty": 2,
     "clue": "Breeze that you do to a clock (4)",
-    "def": { "text": "Breeze", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "Breeze / wind a clock", "operations": [ { "op": "literal", "input": "two definitions", "output": "WIND" } ] },
+    "def": {
+      "text": "Breeze",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Breeze / wind a clock",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "WIND"
+        }
+      ]
+    },
     "parse": "Double definition: a breeze, and to wind a clock."
   },
   {
     "answer": "SPAR",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Box, a quiet little while held inside (4)",
-    "def": { "text": "Box", "position": "start" },
-    "wordplay": { "indicator": "held inside", "fodder": "P in SAR", "operations": [ { "op": "abbreviate", "input": "quiet", "output": "P" }, { "op": "synonym", "input": "little while", "output": "SAR" }, { "op": "insert", "input": "P in S_AR", "output": "SPAR" } ] },
+    "clue": "Box for a quiet little while inside (4)",
+    "def": {
+      "text": "Box",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "held inside",
+      "fodder": "P in SAR",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "quiet",
+          "output": "P"
+        },
+        {
+          "op": "synonym",
+          "input": "little while",
+          "output": "SAR"
+        },
+        {
+          "op": "insert",
+          "input": "P in S_AR",
+          "output": "SPAR"
+        }
+      ]
+    },
     "parse": "P (quiet, piano) inserted into SAR (a brief spell) gives SPAR; to box."
   },
   {
@@ -319,8 +849,21 @@
     "clueType": "deletion",
     "difficulty": 3,
     "clue": "Warmth from the wheat, beheaded (4)",
-    "def": { "text": "Warmth", "position": "start" },
-    "wordplay": { "indicator": "beheaded", "fodder": "wheat", "operations": [ { "op": "delete", "input": "WHEAT − W", "output": "HEAT" } ] },
+    "def": {
+      "text": "Warmth",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "beheaded",
+      "fodder": "wheat",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "WHEAT − W",
+          "output": "HEAT"
+        }
+      ]
+    },
     "parse": "WHEAT beheaded (first letter removed) gives HEAT; warmth."
   },
   {
@@ -328,8 +871,21 @@
     "clueType": "deletion",
     "difficulty": 3,
     "clue": "Cooker that's woven without the wrap (4)",
-    "def": { "text": "Cooker", "position": "start" },
-    "wordplay": { "indicator": "without the wrap", "fodder": "woven", "operations": [ { "op": "delete", "input": "WOVEN − W", "output": "OVEN" } ] },
+    "def": {
+      "text": "Cooker",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "without the wrap",
+      "fodder": "woven",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "WOVEN − W",
+          "output": "OVEN"
+        }
+      ]
+    },
     "parse": "WOVEN with its head (W) removed gives OVEN; a cooker."
   },
   {
@@ -337,8 +893,21 @@
     "clueType": "deletion",
     "difficulty": 3,
     "clue": "Revise the credit, cutting the front off (4)",
-    "def": { "text": "Revise", "position": "start" },
-    "wordplay": { "indicator": "cutting the front off", "fodder": "credit", "operations": [ { "op": "delete", "input": "CREDIT − CR", "output": "EDIT" } ] },
+    "def": {
+      "text": "Revise",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "cutting the front off",
+      "fodder": "credit",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "CREDIT − CR",
+          "output": "EDIT"
+        }
+      ]
+    },
     "parse": "CREDIT cutting CR from the front gives EDIT; to revise."
   },
   {
@@ -346,8 +915,21 @@
     "clueType": "deletion",
     "difficulty": 3,
     "clue": "Injure the charm, beheaded (4)",
-    "def": { "text": "Injure", "position": "start" },
-    "wordplay": { "indicator": "beheaded", "fodder": "charm", "operations": [ { "op": "delete", "input": "CHARM − C", "output": "HARM" } ] },
+    "def": {
+      "text": "Injure",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "beheaded",
+      "fodder": "charm",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "CHARM − C",
+          "output": "HARM"
+        }
+      ]
+    },
     "parse": "CHARM beheaded gives HARM; to injure."
   },
   {
@@ -355,8 +937,21 @@
     "clueType": "cryptic-definition",
     "difficulty": 3,
     "clue": "A mark that might ruin your copybook? (4)",
-    "def": { "text": "A mark that might ruin your copybook?", "position": "start" },
-    "wordplay": { "indicator": "", "fodder": "pun on a blot on the copybook", "operations": [ { "op": "literal", "input": "pun", "output": "BLOT" } ] },
+    "def": {
+      "text": "A mark that might ruin your copybook?",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "pun on a blot on the copybook",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "pun",
+          "output": "BLOT"
+        }
+      ]
+    },
     "parse": "Cryptic definition punning on 'a blot on one's copybook'; an ink mark."
   }
 ]

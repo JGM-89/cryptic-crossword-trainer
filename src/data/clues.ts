@@ -108,7 +108,7 @@ export const RAW_CLUES: RawClue[] = [
     id: 'anagram-002',
     clueType: 'anagram',
     difficulty: 1,
-    clue: 'Hear silent broadcast (6)',
+    clue: 'Hear a silent broadcast (6)',
     solution: 'LISTEN',
     enumeration: '6',
     def: { text: 'Hear', position: 'start' },

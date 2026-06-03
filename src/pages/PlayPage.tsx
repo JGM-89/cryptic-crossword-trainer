@@ -1,14 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { loadArchiveMeta, type ArchiveMeta, type DifficultyBand } from '../data/archive';
+import { loadArchiveMeta, type ArchiveMeta, type DifficultyBand, type Tier } from '../data/archive';
 import { PUZZLES } from '../data';
 import { getCompleted } from '../state/playProgress';
 
 const BANDS: (DifficultyBand | 'All')[] = ['All', 'Gentle', 'Moderate', 'Tougher'];
+const TIERS: { key: Tier; label: string; note: string }[] = [
+  { key: 'mini', label: 'Mini', note: '7×7 & 9×9 — quick solves' },
+  { key: 'large', label: 'Large', note: '13×13 — full cryptics' },
+];
 
 export function PlayPage() {
   const [meta, setMeta] = useState<ArchiveMeta[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [tier, setTier] = useState<Tier>('mini');
   const [band, setBand] = useState<DifficultyBand | 'All'>('All');
   const [completed, setCompleted] = useState<Set<string>>(() => getCompleted());
 
@@ -18,8 +23,11 @@ export function PlayPage() {
   }, []);
 
   const filtered = useMemo(
-    () => (meta ?? []).filter((p) => band === 'All' || p.band === band),
-    [meta, band],
+    () =>
+      (meta ?? []).filter(
+        (p) => p.tier === tier && (band === 'All' || p.band === band),
+      ),
+    [meta, tier, band],
   );
   const doneCount = useMemo(
     () => (meta ?? []).filter((p) => completed.has(`archive-${p.id}`)).length,
@@ -33,10 +41,27 @@ export function PlayPage() {
       <header className="lesson-page-head">
         <h1>Play</h1>
         <p className="lede">
-          A growing archive of full cryptic crosswords. Every grid interlocks real,
-          hand-clued answers; every clue is checked for fairness. Pick one and solve.
+          An archive of cryptic crosswords — quick <strong>Mini</strong> grids and full{' '}
+          <strong>Large</strong> ones. Every grid interlocks real, hand-clued answers, each
+          checked for fairness. Pick one and solve.
         </p>
       </header>
+
+      <div className="tier-tabs" role="tablist" aria-label="Puzzle size">
+        {TIERS.map((t) => (
+          <button
+            key={t.key}
+            type="button"
+            role="tab"
+            aria-selected={tier === t.key}
+            className={`tier-tab ${tier === t.key ? 'active' : ''}`}
+            onClick={() => setTier(t.key)}
+          >
+            <span className="tier-label">{t.label}</span>
+            <span className="tier-note">{t.note}</span>
+          </button>
+        ))}
+      </div>
 
       <section className="featured">
         <h2>Featured — hand-crafted</h2>
@@ -53,7 +78,10 @@ export function PlayPage() {
 
       <section>
         <div className="play-toolbar">
-          <h2>The archive {meta && <span className="muted">· {meta.length} puzzles</span>}</h2>
+          <h2>
+            {tier === 'mini' ? 'Mini' : 'Large'} puzzles{' '}
+            {meta && <span className="muted">· {filtered.length} shown</span>}
+          </h2>
           <div className="band-filter" role="group" aria-label="Filter by difficulty">
             {BANDS.map((b) => (
               <button
@@ -70,7 +98,7 @@ export function PlayPage() {
 
         {meta && (
           <p className="muted play-progress-note">
-            Solved {doneCount} of {meta.length}.
+            Solved {doneCount} of {meta.length} across the archive.
           </p>
         )}
 

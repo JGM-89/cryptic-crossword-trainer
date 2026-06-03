@@ -647,6 +647,29 @@ h1 {
   color: var(--ink-soft);
   font-style: italic;
 }
+.pc-hints {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.1rem 0 0.4rem 1.7rem;
+}
+.pc-hint-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  font-family: -apple-system, sans-serif;
+  color: var(--brand-ink);
+}
+.pc-hint-btn:hover {
+  background: var(--surface-2);
+}
+.pc-hint-note {
+  margin: 0 0 0.4rem 1.7rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
 .puzzle-done {
   background: var(--good-bg);
   border: 1px solid var(--good);
@@ -782,7 +805,133 @@ h1 {
   color: var(--ink-soft);
 }
 
+/* ── Home / landing ─────────────────────────────────────── */
+.home-hero {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.home-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brand);
+  margin: 0 0 0.4rem;
+  font-family: -apple-system, sans-serif;
+}
+.home-hero h1 {
+  margin: 0 0 0.8rem;
+}
+.home-hero .lede {
+  margin: 0 auto 1.4rem;
+}
+.home-cta {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.home-cta .btn {
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+}
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-ink);
+  font-family: -apple-system, sans-serif;
+}
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+.home-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.home-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 25, 40, 0.12);
+}
+.home-card-emoji {
+  font-size: 1.6rem;
+}
+.home-card h2 {
+  margin: 0.4rem 0 0.3rem;
+  font-size: 1.15rem;
+}
+.home-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.home-foot {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 /* ── Play archive ───────────────────────────────────────── */
+.tier-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.2rem 0;
+}
+.tier-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+  font-family: -apple-system, sans-serif;
+}
+.tier-tab.active {
+  border-color: var(--brand);
+  background: #eef3ff;
+  box-shadow: inset 0 0 0 1px var(--brand);
+}
+.tier-label {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.tier-note {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
 .featured {
   margin-bottom: 1.8rem;
 }

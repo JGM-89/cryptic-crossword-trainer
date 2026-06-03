@@ -18,7 +18,7 @@ export function PuzzlePage() {
     return (
       <div className="page">
         <p>Puzzle not found.</p>
-        <Link to="/">← Back to lessons</Link>
+        <Link to="/learn">← Back to lessons</Link>
       </div>
     );
   }
@@ -37,7 +37,7 @@ export function PuzzlePage() {
   return (
     <div className="page puzzle-page">
       <nav className="crumb">
-        <Link to="/">← All lessons</Link>
+        <Link to="/learn">← All lessons</Link>
       </nav>
       <header className="lesson-page-head">
         <span className="stage-pill stage-D">Stage D · Independent</span>

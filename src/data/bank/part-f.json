@@ -47,7 +47,7 @@
     "answer": "TELEVISION",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Evil nose it conceals, broadcast on the box (10)",
+    "clue": "Evil nose it transmits, broadcast on the box (10)",
     "def": {
       "text": "the box",
       "position": "end"
@@ -69,7 +69,7 @@
     "answer": "LABORATORY",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Workshop building ably rota or shifts around (10)",
+    "clue": "Workshop where staff ably rota or shift around (10)",
     "def": {
       "text": "Workshop",
       "position": "start"
@@ -209,7 +209,7 @@
     "answer": "INFORMATION",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "A form into in tray, oddly, holds the data (11)",
+    "clue": "Put a form into in-tray, oddly, to get the data (11)",
     "def": {
       "text": "the data",
       "position": "end"
@@ -361,7 +361,7 @@
     "answer": "CONVERSATION",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "A convent rois disturbed by lively chat (12)",
+    "clue": "A convent Rois, disturbed, starts lively chat (12)",
     "def": {
       "text": "lively chat",
       "position": "end"
@@ -437,23 +437,23 @@
     "answer": "CONSIDERATION",
     "clueType": "anagram",
     "difficulty": 5,
-    "clue": "Nordic note ais muddled out of thoughtfulness (13)",
+    "clue": "Rationed icons, sadly, reflect thoughtfulness (13)",
     "def": {
       "text": "thoughtfulness",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "muddled",
-      "fodder": "NORDIC NOTE AIS",
+      "indicator": "sadly",
+      "fodder": "RATIONED ICONS",
       "operations": [
         {
           "op": "anagram",
-          "input": "NORDICNOTEAIS",
+          "input": "RATIONEDICONS",
           "output": "CONSIDERATION"
         }
       ]
     },
-    "parse": "(NORDIC NOTE AIS)* = CONSIDERATION, defined by 'thoughtfulness'."
+    "parse": "(RATIONED ICONS)* = CONSIDERATION, thoughtfulness."
   },
   {
     "answer": "ENTERTAINMENT",

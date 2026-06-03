@@ -4,8 +4,21 @@
     "clueType": "initialism",
     "difficulty": 3,
     "clue": "Images conjure one notion, primarily — a symbol (4)",
-    "def": { "text": "a symbol", "position": "end" },
-    "wordplay": { "indicator": "primarily", "fodder": "Images conjure one notion", "operations": [ { "op": "initials", "input": "Images conjure one notion", "output": "ICON" } ] },
+    "def": {
+      "text": "a symbol",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "primarily",
+      "fodder": "Images conjure one notion",
+      "operations": [
+        {
+          "op": "initials",
+          "input": "Images conjure one notion",
+          "output": "ICON"
+        }
+      ]
+    },
     "parse": "Initial letters of Images Conjure One Notion = ICON, a symbol."
   },
   {
@@ -13,8 +26,21 @@
     "clueType": "initialism",
     "difficulty": 3,
     "clue": "Sulphur masks our greenery, primarily — pollution (4)",
-    "def": { "text": "pollution", "position": "end" },
-    "wordplay": { "indicator": "primarily", "fodder": "Sulphur masks our greenery", "operations": [ { "op": "initials", "input": "Sulphur masks our greenery", "output": "SMOG" } ] },
+    "def": {
+      "text": "pollution",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "primarily",
+      "fodder": "Sulphur masks our greenery",
+      "operations": [
+        {
+          "op": "initials",
+          "input": "Sulphur masks our greenery",
+          "output": "SMOG"
+        }
+      ]
+    },
     "parse": "Initial letters of Sulphur Masks Our Greenery = SMOG, pollution."
   },
   {
@@ -22,17 +48,43 @@
     "clueType": "initialism",
     "difficulty": 4,
     "clue": "Sneaky children always make pranks, primarily — what a rascal (5)",
-    "def": { "text": "what a rascal", "position": "end" },
-    "wordplay": { "indicator": "primarily", "fodder": "Sneaky children always make pranks", "operations": [ { "op": "initials", "input": "Sneaky children always make pranks", "output": "SCAMP" } ] },
+    "def": {
+      "text": "what a rascal",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "primarily",
+      "fodder": "Sneaky children always make pranks",
+      "operations": [
+        {
+          "op": "initials",
+          "input": "Sneaky children always make pranks",
+          "output": "SCAMP"
+        }
+      ]
+    },
     "parse": "Initial letters of Sneaky Children Always Make Pranks = SCAMP, a rascal."
   },
   {
     "answer": "BRAIN",
     "clueType": "alternation",
     "difficulty": 4,
-    "clue": "Regularly barbarian boffin (5)",
-    "def": { "text": "boffin", "position": "end" },
-    "wordplay": { "indicator": "Regularly", "fodder": "barbarian", "operations": [ { "op": "alternate", "input": "bArBaRiAn — odd letters B,R,A,I,N", "output": "BRAIN" } ] },
+    "clue": "Regularly, the barbarian's a boffin (5)",
+    "def": {
+      "text": "boffin",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Regularly",
+      "fodder": "barbarian",
+      "operations": [
+        {
+          "op": "alternate",
+          "input": "bArBaRiAn — odd letters B,R,A,I,N",
+          "output": "BRAIN"
+        }
+      ]
+    },
     "parse": "Odd letters of bArBaRiAn = BRAIN, a boffin."
   },
   {
@@ -40,8 +92,21 @@
     "clueType": "lit",
     "difficulty": 3,
     "clue": "Terribly evil (4)",
-    "def": { "text": "Terribly evil", "position": "start" },
-    "wordplay": { "indicator": "Terribly", "fodder": "EVIL", "operations": [ { "op": "anagram", "input": "EVIL", "output": "VILE" } ] },
+    "def": {
+      "text": "Terribly evil",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "Terribly",
+      "fodder": "EVIL",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "EVIL",
+          "output": "VILE"
+        }
+      ]
+    },
     "parse": "(EVIL)* = VILE — and “terribly evil” defines VILE too. An &lit."
   },
   {
@@ -49,8 +114,21 @@
     "clueType": "lit",
     "difficulty": 4,
     "clue": "Moon starers organised? (11)",
-    "def": { "text": "Moon starers organised?", "position": "start" },
-    "wordplay": { "indicator": "organised", "fodder": "MOON STARERS", "operations": [ { "op": "anagram", "input": "MOONSTARERS", "output": "ASTRONOMERS" } ] },
+    "def": {
+      "text": "Moon starers organised?",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "organised",
+      "fodder": "MOON STARERS",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "MOONSTARERS",
+          "output": "ASTRONOMERS"
+        }
+      ]
+    },
     "parse": "(MOON STARERS)* = ASTRONOMERS — and the whole clue defines them. A famous &lit."
   }
 ]

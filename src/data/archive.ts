@@ -20,16 +20,21 @@ export interface RawPuzzle {
   entries: RawEntry[];
 }
 
+export type Tier = 'mini' | 'large';
+
 export interface ArchiveMeta {
   id: number;
   title: string;
   size: number;
+  tier: Tier;
   difficulty: number;
   clueCount: number;
   band: DifficultyBand;
 }
 
 export type DifficultyBand = 'Gentle' | 'Moderate' | 'Tougher';
+
+export const tierOf = (size: number): Tier => (size < 13 ? 'mini' : 'large');
 
 export function bandOf(difficulty: number): DifficultyBand {
   if (difficulty < 2.4) return 'Gentle';
@@ -62,6 +67,7 @@ export async function loadArchiveMeta(): Promise<ArchiveMeta[]> {
     id: p.id,
     title: p.title,
     size: p.size,
+    tier: tierOf(p.size),
     difficulty: p.difficulty,
     clueCount: p.entries.length,
     band: bandOf(p.difficulty),

@@ -2,10 +2,10 @@
 //
 // Builds each grid by PLACING words from the verified clue bank so that they
 // cross one another (a real interlocking crossword that is fillable by
-// construction — every entry is a hand-clued bank word). Deterministic (seeded)
-// so re-runs are stable.
+// construction — every entry is a hand-clued bank word). Generates a mix of
+// sizes: 7×7 and 9×9 minis plus 13×13 large. Deterministic (seeded).
 //
-//   node scripts/generate-puzzles.mjs [count]
+//   node scripts/generate-puzzles.mjs
 //
 // Output: public/archive.json
 
@@ -18,11 +18,12 @@ const ROOT = join(__dirname, '..');
 const BANK_DIR = join(ROOT, 'src', 'data', 'bank');
 const OUT = join(ROOT, 'public', 'archive.json');
 
-const SIZE = 13;
-const BLOCK = '#';
-const TARGET = Number(process.argv[2] ?? 120);
-const MIN_WORDS = 26; // keep only well-filled grids
-const PLACE_TARGET = 40; // aim high; placement stops when it runs dry
+// Tiers: size, how many, and fill parameters tuned to the size.
+const TIERS = [
+  { size: 7, count: 30, seedMin: 5, seedMax: 7, wordMax: 7, minWords: 8, placeTarget: 16 },
+  { size: 9, count: 30, seedMin: 6, seedMax: 8, wordMax: 8, minWords: 13, placeTarget: 24 },
+  { size: 13, count: 120, seedMin: 7, seedMax: 9, wordMax: 9, minWords: 26, placeTarget: 40 },
+];
 
 function mulberry32(seed) {
   let a = seed >>> 0;
@@ -41,7 +42,6 @@ function shuffle(arr, rng) {
   }
   return a;
 }
-const inb = (r, c) => r >= 0 && c >= 0 && r < SIZE && c < SIZE;
 
 function loadBank() {
   const files = readdirSync(BANK_DIR).filter((f) => /^part-[a-z]\.json$/.test(f));
@@ -59,8 +59,10 @@ function loadBank() {
 }
 
 // ── Grid construction by word placement ───────────────────────────────
-function generate(rng, answers) {
-  const G = Array.from({ length: SIZE }, () => Array(SIZE).fill(null));
+function generate(rng, answers, cfg) {
+  const S = cfg.size;
+  const inb = (r, c) => r >= 0 && c >= 0 && r < S && c < S;
+  const G = Array.from({ length: S }, () => Array(S).fill(null));
   const used = new Set();
   const placed = [];
 
@@ -71,8 +73,8 @@ function generate(rng, answers) {
     if (!inb(r, c) || !inb(er, ec)) return -1;
     const br = dir === 'a' ? r : r - 1, bc = dir === 'a' ? c - 1 : c;
     const ar = dir === 'a' ? r : r + L, ac = dir === 'a' ? c + L : c;
-    if (inb(br, bc) && G[br][bc] !== null) return -1; // must end-cap before
-    if (inb(ar, ac) && G[ar][ac] !== null) return -1; // and after
+    if (inb(br, bc) && G[br][bc] !== null) return -1;
+    if (inb(ar, ac) && G[ar][ac] !== null) return -1;
     let cross = 0;
     for (let i = 0; i < L; i++) {
       const rr = dir === 'a' ? r : r + i, cc = dir === 'a' ? c + i : c;
@@ -81,7 +83,6 @@ function generate(rng, answers) {
         if (cur !== w[i]) return -1;
         cross++;
       } else {
-        // forbid parallel adjacency: perpendicular neighbours of a fresh cell empty
         const n1 = dir === 'a' ? [rr - 1, cc] : [rr, cc - 1];
         const n2 = dir === 'a' ? [rr + 1, cc] : [rr, cc + 1];
         if (inb(...n1) && G[n1[0]][n1[1]] !== null) return -1;
@@ -99,12 +100,13 @@ function generate(rng, answers) {
     placed.push({ w, r, c, dir });
   }
 
-  const seed = shuffle(answers.filter((w) => w.length >= 7 && w.length <= 9), rng)[0];
+  const seedPool = answers.filter((w) => w.length >= cfg.seedMin && w.length <= cfg.seedMax);
+  const seed = shuffle(seedPool, rng)[0];
   if (!seed) return null;
-  put(seed, 6, Math.floor((SIZE - seed.length) / 2), 'a');
+  put(seed, Math.floor(S / 2), Math.floor((S - seed.length) / 2), 'a');
 
   let tries = 0;
-  while (placed.length < PLACE_TARGET && tries < 6000) {
+  while (placed.length < cfg.placeTarget && tries < 6000) {
     tries++;
     const base = placed[Math.floor(rng() * placed.length)];
     const bd = base.dir === 'a' ? 'd' : 'a';
@@ -113,7 +115,9 @@ function generate(rng, answers) {
     const cc = base.dir === 'a' ? base.c + pos : base.c;
     const letter = base.w[pos];
     const cand = shuffle(
-      answers.filter((w) => !used.has(w) && w.length >= 3 && w.length <= 9 && w.includes(letter)),
+      answers.filter(
+        (w) => !used.has(w) && w.length >= 3 && w.length <= cfg.wordMax && w.includes(letter),
+      ),
       rng,
     );
     for (const w of cand) {
@@ -128,33 +132,34 @@ function generate(rng, answers) {
     }
   }
 
-  for (let r = 0; r < SIZE; r++) for (let c = 0; c < SIZE; c++) if (G[r][c] === null) G[r][c] = BLOCK;
+  for (let r = 0; r < S; r++) for (let c = 0; c < S; c++) if (G[r][c] === null) G[r][c] = '#';
   return { G, placed };
 }
 
 // ── Derive entries + numbering from the filled grid ───────────────────
-function buildPuzzle(G, byAnswer, id, seed) {
-  const isBlock = (r, c) => G[r][c] === BLOCK;
+function buildPuzzle(G, byAnswer, id, seed, size) {
+  const S = size;
+  const isBlock = (r, c) => G[r][c] === '#';
   const numberAt = new Map();
   let n = 0;
   const rawEntries = [];
 
-  for (let r = 0; r < SIZE; r++) {
-    for (let c = 0; c < SIZE; c++) {
+  for (let r = 0; r < S; r++) {
+    for (let c = 0; c < S; c++) {
       if (isBlock(r, c)) continue;
-      const startsAcross = (c === 0 || isBlock(r, c - 1)) && c + 1 < SIZE && !isBlock(r, c + 1);
-      const startsDown = (r === 0 || isBlock(r - 1, c)) && r + 1 < SIZE && !isBlock(r + 1, c);
+      const startsAcross = (c === 0 || isBlock(r, c - 1)) && c + 1 < S && !isBlock(r, c + 1);
+      const startsDown = (r === 0 || isBlock(r - 1, c)) && r + 1 < S && !isBlock(r + 1, c);
       if (startsAcross || startsDown) {
-        if (!numberAt.has(r * SIZE + c)) numberAt.set(r * SIZE + c, ++n);
+        if (!numberAt.has(r * S + c)) numberAt.set(r * S + c, ++n);
       }
       if (startsAcross) {
         let cc = c, word = '';
-        while (cc < SIZE && !isBlock(r, cc)) { word += G[r][cc]; cc++; }
+        while (cc < S && !isBlock(r, cc)) { word += G[r][cc]; cc++; }
         if (word.length >= 3) rawEntries.push({ dir: 'across', r, c, word });
       }
       if (startsDown) {
         let rr = r, word = '';
-        while (rr < SIZE && !isBlock(rr, c)) { word += G[rr][c]; rr++; }
+        while (rr < S && !isBlock(rr, c)) { word += G[rr][c]; rr++; }
         if (word.length >= 3) rawEntries.push({ dir: 'down', r, c, word });
       }
     }
@@ -163,9 +168,9 @@ function buildPuzzle(G, byAnswer, id, seed) {
   const entries = [];
   for (const e of rawEntries) {
     const bank = byAnswer.get(e.word);
-    if (!bank) return null; // run not a bank word → reject grid
+    if (!bank) return null;
     entries.push({
-      number: numberAt.get(e.r * SIZE + e.c),
+      number: numberAt.get(e.r * S + e.c),
       direction: e.dir,
       row: e.r,
       col: e.c,
@@ -184,8 +189,8 @@ function buildPuzzle(G, byAnswer, id, seed) {
     id,
     seed,
     title: `Cryptic №${id}`,
-    size: SIZE,
-    blackPattern: G.map((row) => row.map((x) => (x === BLOCK ? '#' : '.')).join('')).join(''),
+    size: S,
+    blackPattern: G.map((row) => row.map((x) => (x === '#' ? '#' : '.')).join('')).join(''),
     difficulty: Math.round(avg * 10) / 10,
     entries: entries.sort((a, b) => a.number - b.number || (a.direction < b.direction ? -1 : 1)),
   };
@@ -196,28 +201,33 @@ function main() {
   console.log(`Loaded ${answers.length} bank clues.`);
   const puzzles = [];
   const sigs = new Set();
-  let seed = 1, attempts = 0;
-  while (puzzles.length < TARGET && attempts < TARGET * 80) {
-    attempts++;
-    const rng = mulberry32(seed++);
-    const g = generate(rng, answers);
-    if (!g || g.placed.length < MIN_WORDS) continue;
-    const puz = buildPuzzle(g.G, byAnswer, puzzles.length + 1, seed - 1);
-    if (!puz || puz.entries.length < MIN_WORDS) continue;
-    const sig = puz.entries.map((e) => e.answer).sort().join(',');
-    if (sigs.has(sig)) continue;
-    sigs.add(sig);
-    puzzles.push(puz);
-    if (puzzles.length % 20 === 0) console.log(`  ${puzzles.length} puzzles (${attempts} attempts)…`);
+  let id = 0;
+
+  for (const cfg of TIERS) {
+    let made = 0, seed = cfg.size * 100000 + 1, attempts = 0;
+    while (made < cfg.count && attempts < cfg.count * 120) {
+      attempts++;
+      const rng = mulberry32(seed++);
+      const g = generate(rng, answers, cfg);
+      if (!g || g.placed.length < cfg.minWords) continue;
+      const puz = buildPuzzle(g.G, byAnswer, id + 1, seed - 1, cfg.size);
+      if (!puz || puz.entries.length < cfg.minWords) continue;
+      const sig = `${cfg.size}:` + puz.entries.map((e) => e.answer).sort().join(',');
+      if (sigs.has(sig)) continue;
+      sigs.add(sig);
+      id++;
+      puzzles.push(puz);
+      made++;
+    }
+    console.log(`  ${cfg.size}×${cfg.size}: ${made} puzzles (${attempts} attempts).`);
   }
+
   mkdirSync(dirname(OUT), { recursive: true });
   writeFileSync(OUT, JSON.stringify(puzzles));
   const kb = Math.round(JSON.stringify(puzzles).length / 1024);
-  const counts = puzzles.map((p) => p.entries.length).sort((a, b) => a - b);
   const dev = {};
   for (const p of puzzles) for (const e of p.entries) dev[e.clueType] = (dev[e.clueType] || 0) + 1;
-  console.log(`Wrote ${puzzles.length} puzzles to ${OUT} (${kb} KB), ${attempts} attempts.`);
-  console.log(`Clues/puzzle min/med/max: ${counts[0]}/${counts[counts.length >> 1]}/${counts[counts.length - 1]}`);
+  console.log(`Wrote ${puzzles.length} puzzles to ${OUT} (${kb} KB).`);
   console.log('Device usage across archive:', dev);
 }
 

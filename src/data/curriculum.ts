@@ -9,10 +9,31 @@
 import {
   CLUE_TYPE_LABELS,
   CLUE_TYPE_ORDER,
+  type ClueType,
   type Curriculum,
   type Lesson,
 } from '../types';
-import { cluesOfType } from './corpus';
+import { CLUES, cluesOfType } from './corpus';
+import { BANK } from './bank/index';
+
+// Stage B/C draw FRESH clues from the bank so they don't share IDs with Stage A
+// (which would make finishing A auto-complete them). Picks are disjoint across
+// lessons and never reuse an answer already taught in Stage A.
+const norm = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
+const stageAAnswers = new Set(CLUES.map((c) => norm(c.solution)));
+const bankUsed = new Set<string>();
+
+function bankPick(type: ClueType, n: number): string[] {
+  const out: string[] = [];
+  for (const c of BANK) {
+    if (out.length >= n) break;
+    if (c.clueType !== type) continue;
+    if (stageAAnswers.has(norm(c.solution)) || bankUsed.has(c.id)) continue;
+    bankUsed.add(c.id);
+    out.push(c.id);
+  }
+  return out;
+}
 
 const stageALessons: Lesson[] = CLUE_TYPE_ORDER.map((type, i) => ({
   id: `A-${type}`,
@@ -55,9 +76,9 @@ const stageBLessons: Lesson[] = [
     clueType: 'mixed',
     blurb: 'The definition is no longer highlighted — but the first hint is always one tap away.',
     clueIds: [
-      ...pick('hidden', 2),
-      ...pick('anagram', 2),
-      ...pick('charade', 2),
+      ...bankPick('hidden', 2),
+      ...bankPick('anagram', 2),
+      ...bankPick('charade', 2),
     ],
   },
   {
@@ -66,9 +87,9 @@ const stageBLessons: Lesson[] = [
     clueType: 'mixed',
     blurb: 'Spot the device yourself this time. Reach for a hint only when you need one.',
     clueIds: [
-      ...pick('container', 2),
-      ...pick('reversal', 2),
-      ...pick('deletion', 2),
+      ...bankPick('container', 2),
+      ...bankPick('reversal', 2),
+      ...bankPick('deletion', 2),
     ],
   },
 ];
@@ -81,24 +102,18 @@ const stageCLessons: Lesson[] = [
     clueType: 'mixed',
     blurb: 'A full mix of every device. No hints unless you ask, or you answer wrongly.',
     clueIds: [
-      ...pick('hidden', 1),
-      ...pick('anagram', 1),
-      ...pick('charade', 1),
-      ...pick('container', 1),
-      ...pick('reversal', 1),
-      ...pick('deletion', 1),
-      ...pick('homophone', 1),
-      ...pick('double-definition', 1),
-      ...pick('cryptic-definition', 1),
+      ...bankPick('hidden', 1),
+      ...bankPick('anagram', 1),
+      ...bankPick('charade', 1),
+      ...bankPick('container', 1),
+      ...bankPick('reversal', 1),
+      ...bankPick('deletion', 1),
+      ...bankPick('homophone', 1),
+      ...bankPick('double-definition', 1),
+      ...bankPick('cryptic-definition', 1),
     ],
   },
 ];
-
-function pick(type: Parameters<typeof cluesOfType>[0], n: number): string[] {
-  return cluesOfType(type)
-    .slice(0, n)
-    .map((c) => c.id);
-}
 
 export const CURRICULUM: Curriculum = {
   stages: [

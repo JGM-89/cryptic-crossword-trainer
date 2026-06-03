@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
+import { HomePage } from './pages/HomePage';
 import { LearnPage } from './pages/LearnPage';
 import { LessonPage } from './pages/LessonPage';
 import { PuzzlePage } from './pages/PuzzlePage';
@@ -10,7 +11,7 @@ import { ReferencePage } from './pages/ReferencePage';
 import { AboutPage } from './pages/AboutPage';
 
 const NAV = [
-  { to: '/', label: 'Learn', end: true },
+  { to: '/learn', label: 'Learn', end: false },
   { to: '/play', label: 'Play', end: false },
   { to: '/analyzer', label: 'Analyzer', end: false },
   { to: '/reference', label: 'Reference', end: false },
@@ -41,7 +42,8 @@ export function App() {
 
       <main className="content">
         <Routes>
-          <Route path="/" element={<LearnPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/learn" element={<LearnPage />} />
           <Route path="/lesson/:lessonId" element={<LessonPage />} />
           <Route path="/puzzle/:puzzleId" element={<PuzzlePage />} />
           <Route path="/play" element={<PlayPage />} />

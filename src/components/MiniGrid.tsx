@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Direction, Puzzle, PuzzleEntry } from '../types';
+import { CLUE_TYPE_LABELS } from '../types';
+import { ClueText, type Highlight } from './ClueText';
 
 const key = (r: number, c: number) => `${r},${c}`;
 
@@ -76,8 +78,14 @@ export function MiniGrid({
   const [cellStatus, setCellStatus] = useState<Record<string, 'correct' | 'wrong'>>({});
   const [activeEntryId, setActiveEntryId] = useState<string>(puzzle.entries[0].id);
   const [cursor, setCursor] = useState(0);
+  // Per-entry hint level: 0 none, 1 definition, 2 + clue type.
+  const [hintLevel, setHintLevel] = useState<Record<string, number>>({});
   const containerRef = useRef<HTMLDivElement>(null);
   const hydratedRef = useRef(false);
+
+  function revealHint(entryId: string, level: number) {
+    setHintLevel((h) => ({ ...h, [entryId]: Math.max(h[entryId] ?? 0, level) }));
+  }
 
   // Restore any autosaved fill for this puzzle.
   useEffect(() => {
@@ -279,9 +287,48 @@ export function MiniGrid({
                     >
                       <span className="pc-num">{entry.number}</span>
                       <span className="pc-text">
-                        {entry.clue} {isSolved && '✓'}
+                        {(() => {
+                          const lvl = hintLevel[entry.id] ?? 0;
+                          const hl: Highlight[] =
+                            lvl >= 1 || isSolved || isRevealed
+                              ? [
+                                  {
+                                    start: entry.definitionSpan.start,
+                                    end: entry.definitionSpan.end,
+                                    className: 'definition',
+                                    title: 'Definition',
+                                  },
+                                ]
+                              : [];
+                          return <ClueText clue={entry.clue} highlights={hl} />;
+                        })()}{' '}
+                        {isSolved && '✓'}
                       </span>
                     </button>
+
+                    {!isSolved && entry.id === activeEntryId && (
+                      <div className="pc-hints">
+                        <button
+                          type="button"
+                          className="pc-hint-btn"
+                          onClick={() => revealHint(entry.id, 1)}
+                        >
+                          Definition
+                        </button>
+                        <button
+                          type="button"
+                          className="pc-hint-btn"
+                          onClick={() => revealHint(entry.id, 2)}
+                        >
+                          Clue type
+                        </button>
+                      </div>
+                    )}
+                    {(hintLevel[entry.id] ?? 0) >= 2 && !isSolved && (
+                      <p className="pc-hint-note">
+                        Device: <strong>{CLUE_TYPE_LABELS[entry.clueType]}</strong>
+                      </p>
+                    )}
                     {(isSolved || isRevealed) && (
                       <p className="pc-parse">{entry.hints[3].text}</p>
                     )}
