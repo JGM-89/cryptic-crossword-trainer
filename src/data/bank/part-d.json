@@ -69,23 +69,23 @@
     "answer": "NEUTRAL",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Unalter wildly to stay impartial (7)",
+    "clue": "Run late, somehow, and stay impartial (7)",
     "def": {
       "text": "impartial",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "wildly",
-      "fodder": "UNALTER",
+      "indicator": "somehow",
+      "fodder": "RUN LATE",
       "operations": [
         {
           "op": "anagram",
-          "input": "UNALTER",
+          "input": "RUN LATE",
           "output": "NEUTRAL"
         }
       ]
     },
-    "parse": "(UNALTER)* = NEUTRAL, impartial."
+    "parse": "(RUN LATE)* = NEUTRAL, impartial."
   },
   {
     "answer": "MONSTER",

@@ -241,40 +241,25 @@
   },
   {
     "answer": "PANIC",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Frying vessel takes one copper, causing alarm (5)",
+    "clue": "Alarm found in some marzipan icing (5)",
     "def": {
-      "text": "alarm",
-      "position": "end"
+      "text": "Alarm",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "PAN + I + C",
+      "indicator": "some",
+      "fodder": "marzipan icing",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Frying vessel",
-          "output": "PAN"
-        },
-        {
-          "op": "abbreviate",
-          "input": "one",
-          "output": "I"
-        },
-        {
-          "op": "abbreviate",
-          "input": "copper",
-          "output": "C"
-        },
-        {
-          "op": "concat",
-          "input": "PAN + I + C",
+          "op": "hidden",
+          "input": "marziPAN ICing",
           "output": "PANIC"
         }
       ]
     },
-    "parse": "PAN (frying vessel) + I (one) + C (copper, chemical symbol) = PANIC, alarm."
+    "parse": "Hidden in “marziPAN ICing” → PANIC, an alarm."
   },
   {
     "answer": "CATER",
@@ -502,35 +487,35 @@
   },
   {
     "answer": "STAIR",
-    "clueType": "container",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Air trapped in church step (5)",
+    "clue": "Saint's manner makes a step (5)",
     "def": {
       "text": "step",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "trapped in",
-      "fodder": "AIR in ST",
+      "indicator": "",
+      "fodder": "ST + AIR",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Air",
-          "output": "AIR"
-        },
-        {
           "op": "abbreviate",
-          "input": "church",
+          "input": "Saint",
           "output": "ST"
         },
         {
-          "op": "insert",
-          "input": "AIR in ST",
+          "op": "synonym",
+          "input": "manner",
+          "output": "AIR"
+        },
+        {
+          "op": "concat",
+          "input": "ST+AIR",
           "output": "STAIR"
         }
       ]
     },
-    "parse": "AIR inside ST (street/saint, here 'church') gives STAIR, a step."
+    "parse": "ST (saint) + AIR (manner) = STAIR; a step."
   },
   {
     "answer": "PAINT",

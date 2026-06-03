@@ -47,23 +47,23 @@
     "answer": "TELEVISION",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Evil nose it transmits, broadcast on the box (10)",
+    "clue": "Novelise it for broadcast on the box (10)",
     "def": {
       "text": "the box",
       "position": "end"
     },
     "wordplay": {
       "indicator": "broadcast",
-      "fodder": "EVIL NOSE IT",
+      "fodder": "NOVELISE IT",
       "operations": [
         {
           "op": "anagram",
-          "input": "EVILNOSEIT",
+          "input": "NOVELISE IT",
           "output": "TELEVISION"
         }
       ]
     },
-    "parse": "(EVIL NOSE IT)* = TELEVISION, defined by 'the box'."
+    "parse": "(NOVELISE IT)* = TELEVISION, defined by 'the box'."
   },
   {
     "answer": "LABORATORY",
@@ -361,23 +361,23 @@
     "answer": "CONVERSATION",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "A convent Rois, disturbed, starts lively chat (12)",
+    "clue": "Conservation, reworked, becomes lively chat (12)",
     "def": {
       "text": "lively chat",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "disturbed",
-      "fodder": "A CONVENT ROIS",
+      "indicator": "reworked",
+      "fodder": "CONSERVATION",
       "operations": [
         {
           "op": "anagram",
-          "input": "ACONVENTROIS",
+          "input": "CONSERVATION",
           "output": "CONVERSATION"
         }
       ]
     },
-    "parse": "(A CONVENT ROIS)* = CONVERSATION, defined by 'lively chat'."
+    "parse": "(CONSERVATION)* = CONVERSATION, defined by 'lively chat'."
   },
   {
     "answer": "HEADQUARTERS",

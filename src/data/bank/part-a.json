@@ -245,7 +245,7 @@
     "answer": "COB",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Company's old male swan (3)",
+    "clue": "Company's black male swan (3)",
     "def": {
       "text": "male swan",
       "position": "end"
@@ -261,7 +261,7 @@
         },
         {
           "op": "abbreviate",
-          "input": "old",
+          "input": "black",
           "output": "B"
         },
         {
@@ -271,7 +271,7 @@
         }
       ]
     },
-    "parse": "CO (company) + B (old, born) = COB; a male swan."
+    "parse": "CO (company) + B (black) = COB; a male swan."
   },
   {
     "answer": "BAR",
@@ -674,10 +674,10 @@
     "answer": "WARM",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Toasty worker holding an arm (4)",
+    "clue": "Western branch is friendly (4)",
     "def": {
-      "text": "Toasty",
-      "position": "start"
+      "text": "friendly",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
@@ -685,12 +685,12 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "worker",
+          "input": "Western",
           "output": "W"
         },
         {
           "op": "synonym",
-          "input": "arm",
+          "input": "branch",
           "output": "ARM"
         },
         {
@@ -700,7 +700,7 @@
         }
       ]
     },
-    "parse": "W (worker, abbrev.) + ARM (limb) = WARM; toasty."
+    "parse": "W (west) + ARM (branch) = WARM; friendly."
   },
   {
     "answer": "FLAT",
