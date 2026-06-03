@@ -417,3 +417,16 @@
    A few wrappers the React app emits that aren't part of the core token system.*/
 .home-foot { text-align: center; margin-bottom: var(--space-4); }
 .home-foot a { font-family: var(--sans); }
+
+/* Crossword keyboard input — a hidden, focusable proxy <input> inside the grid.
+   Focusing a real input (not a tabIndex div) is what brings up the on-screen
+   keyboard on mobile; it must stay rendered & focusable (no display/visibility
+   none) for that to work. 16px font-size avoids iOS focus-zoom. */
+.mini-grid { position: relative; }
+.mini-grid:focus-within { box-shadow: 0 0 0 3px var(--accent-soft), 0 0 0 5px var(--accent); }
+.grid-input {
+  position: absolute; top: 0; left: 0; width: 1px; height: 1px;
+  margin: 0; padding: 0; border: 0; font-size: 16px;
+  opacity: 0; pointer-events: none;
+  background: transparent; color: transparent; caret-color: transparent;
+}

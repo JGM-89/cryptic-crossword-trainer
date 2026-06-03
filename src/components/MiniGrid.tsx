@@ -80,7 +80,11 @@ export function MiniGrid({
   const [cursor, setCursor] = useState(0);
   // Per-entry hint level: 0 none, 1 definition, 2 + clue type.
   const [hintLevel, setHintLevel] = useState<Record<string, number>>({});
-  const containerRef = useRef<HTMLDivElement>(null);
+  // A hidden, focusable proxy input. Focusing a real <input> inside the
+  // cell-tap gesture is what summons the on-screen keyboard on mobile — a
+  // tabIndex <div> never does. Letters arrive via its onChange (cross-platform);
+  // arrows/backspace via onKeyDown.
+  const inputRef = useRef<HTMLInputElement>(null);
   const hydratedRef = useRef(false);
 
   function revealHint(entryId: string, level: number) {
@@ -119,7 +123,8 @@ export function MiniGrid({
     setActiveEntryId(id);
     const keys = grid.entryCells.get(id) ?? [];
     setCursor(cellKey ? Math.max(0, keys.indexOf(cellKey)) : 0);
-    containerRef.current?.focus();
+    // Focus the proxy input within the tap gesture so mobile shows the keyboard.
+    inputRef.current?.focus();
   }
 
   function clickCell(k: string) {
@@ -154,11 +159,16 @@ export function MiniGrid({
     setCursor((c) => Math.min(Math.max(c + dir, 0), activeCells.length - 1));
   }
 
+  // Typed letters (hardware or on-screen keyboard) come through here. The input
+  // is controlled to '' so it clears after each keystroke; we take the last
+  // letter typed and place it.
+  function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
+    const ch = e.target.value.replace(/[^a-zA-Z]/g, '').slice(-1);
+    if (ch) placeLetter(ch.toUpperCase());
+  }
+
   function handleKeyDown(e: React.KeyboardEvent) {
-    if (/^[a-zA-Z]$/.test(e.key)) {
-      e.preventDefault();
-      placeLetter(e.key.toUpperCase());
-    } else if (e.key === 'Backspace') {
+    if (e.key === 'Backspace') {
       e.preventDefault();
       if (activeKey && fill[activeKey]) {
         setFill((f) => ({ ...f, [activeKey]: '' }));
@@ -220,18 +230,28 @@ export function MiniGrid({
   return (
     <div className="puzzle-layout">
       <div
-        ref={containerRef}
         className="mini-grid"
         role="grid"
-        tabIndex={0}
         aria-label={puzzle.title}
-        onKeyDown={handleKeyDown}
         style={{
           gridTemplateColumns: `repeat(${puzzle.cols}, var(--cell))`,
           // shrink cells for big grids so a 13x13 fits comfortably
           ['--cell' as string]: puzzle.cols >= 11 ? '2rem' : '2.7rem',
         }}
       >
+        <input
+          ref={inputRef}
+          className="grid-input"
+          value=""
+          inputMode="text"
+          autoCapitalize="characters"
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck={false}
+          aria-label={`${puzzle.title} — type letters; arrow keys move, backspace deletes`}
+          onChange={handleInput}
+          onKeyDown={handleKeyDown}
+        />
         {Array.from({ length: puzzle.rows * puzzle.cols }).map((_, idx) => {
           const r = Math.floor(idx / puzzle.cols);
           const c = idx % puzzle.cols;
