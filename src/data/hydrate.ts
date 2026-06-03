@@ -45,6 +45,9 @@ const DEVICE_DESCRIPTIONS: Record<ClueType, string> = {
   homophone: 'The answer sounds like another word.',
   'double-definition': 'The clue gives two definitions of the same answer and no other wordplay.',
   'cryptic-definition': 'The whole clue is one punning definition — there is no separate wordplay.',
+  initialism: 'The answer is spelled out by the initial letters of consecutive words.',
+  alternation: 'The answer is made of the alternate (every other) letters of the fodder.',
+  lit: 'The entire clue is both the definition and the wordplay at once (&lit).',
 };
 
 function locateDefinition(clue: string, def: { text: string; position: 'start' | 'end' }): DefinitionSpan {
@@ -76,6 +79,12 @@ function tier3Text(clueType: ClueType, wp: Wordplay): string {
       return 'Both halves of the clue point at the same answer — look for a second meaning.';
     case 'cryptic-definition':
       return 'Read the clue as a whole and look for the pun or double meaning.';
+    case 'initialism':
+      return `Take the first letter of each word in “${wp.fodder}”.`;
+    case 'alternation':
+      return `Take alternate letters of “${wp.fodder}”.`;
+    case 'lit':
+      return 'The whole clue works twice over — as a definition and as wordplay.';
   }
 }
 

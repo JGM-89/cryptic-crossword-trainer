@@ -12,7 +12,11 @@ export type ClueType =
   | 'deletion'
   | 'homophone'
   | 'double-definition'
-  | 'cryptic-definition';
+  | 'cryptic-definition'
+  // Advanced devices — used in the Play archive, not the (beginner) curriculum.
+  | 'initialism'
+  | 'alternation'
+  | 'lit';
 
 export const CLUE_TYPE_ORDER: ClueType[] = [
   'hidden',
@@ -36,6 +40,9 @@ export const CLUE_TYPE_LABELS: Record<ClueType, string> = {
   homophone: 'Homophone',
   'double-definition': 'Double definition',
   'cryptic-definition': 'Cryptic definition',
+  initialism: 'Initial letters',
+  alternation: 'Alternate letters',
+  lit: '&lit (all-in-one)',
 };
 
 /** A single wordplay operation in the parse (anagram of SENATOR -> TREASON, etc.). */
@@ -50,7 +57,9 @@ export interface WordplayOp {
     | 'homophone'
     | 'synonym'
     | 'abbreviate'
-    | 'literal';
+    | 'literal'
+    | 'initials'
+    | 'alternate';
   input: string;
   output: string;
   note?: string;

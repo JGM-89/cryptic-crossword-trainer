@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Direction, Puzzle, PuzzleEntry } from '../types';
 
 const key = (r: number, c: number) => `${r},${c}`;
@@ -53,6 +53,8 @@ interface Props {
   revealedEntries: Set<string>;
   onReveal: (entryId: string) => void;
   solvedEntries: Set<string>;
+  /** When set, the grid fill is autosaved to localStorage under this key. */
+  storageKey?: string;
 }
 
 export function MiniGrid({
@@ -62,6 +64,7 @@ export function MiniGrid({
   revealedEntries,
   onReveal,
   solvedEntries,
+  storageKey,
 }: Props) {
   const grid = useMemo(() => buildGrid(puzzle), [puzzle]);
   const entriesById = useMemo(
@@ -74,6 +77,32 @@ export function MiniGrid({
   const [activeEntryId, setActiveEntryId] = useState<string>(puzzle.entries[0].id);
   const [cursor, setCursor] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const hydratedRef = useRef(false);
+
+  // Restore any autosaved fill for this puzzle.
+  useEffect(() => {
+    if (!storageKey) return;
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) {
+        const saved = JSON.parse(raw) as { fill?: Record<string, string> };
+        if (saved.fill) setFill(saved.fill);
+      }
+    } catch {
+      /* ignore */
+    }
+    hydratedRef.current = true;
+  }, [storageKey]);
+
+  // Persist the fill as the solver types.
+  useEffect(() => {
+    if (!storageKey || !hydratedRef.current) return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({ fill }));
+    } catch {
+      /* ignore */
+    }
+  }, [fill, storageKey]);
 
   const activeCells = grid.entryCells.get(activeEntryId) ?? [];
   const activeKey = activeCells[cursor];
@@ -189,7 +218,11 @@ export function MiniGrid({
         tabIndex={0}
         aria-label={puzzle.title}
         onKeyDown={handleKeyDown}
-        style={{ gridTemplateColumns: `repeat(${puzzle.cols}, 1fr)` }}
+        style={{
+          gridTemplateColumns: `repeat(${puzzle.cols}, var(--cell))`,
+          // shrink cells for big grids so a 13x13 fits comfortably
+          ['--cell' as string]: puzzle.cols >= 11 ? '2rem' : '2.7rem',
+        }}
       >
         {Array.from({ length: puzzle.rows * puzzle.cols }).map((_, idx) => {
           const r = Math.floor(idx / puzzle.cols);

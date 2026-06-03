@@ -6,7 +6,7 @@
 
 import type { Clue } from '../types';
 
-const lettersOnly = (s: string): string => s.toUpperCase().replace(/[^A-Z]/g, '');
+const lettersOnly = (s: string): string => (s ?? '').toUpperCase().replace(/[^A-Z]/g, '');
 
 /** Sort letters so two strings can be compared as multisets. */
 const sortLetters = (s: string): string => lettersOnly(s).split('').sort().join('');
@@ -92,8 +92,18 @@ export function validateClue(clue: Clue): string[] {
       }
       break;
     }
+    case 'initialism': {
+      // Solution must equal the initial letters of the fodder words.
+      const initials = clue.wordplay.fodder
+        .split(/\s+/)
+        .map((w) => w.replace(/[^A-Za-z]/g, '')[0] ?? '')
+        .join('')
+        .toUpperCase();
+      if (initials !== sol) errors.push('solution is not the initials of the fodder');
+      break;
+    }
     default:
-      break; // charade / container / homophone / double-def / cryptic-def: structural check is in the parse.
+      break; // charade / container / homophone / double-def / cryptic-def / alternation / lit: checked via the parse.
   }
 
   // 6. The final wordplay operation should output the solution.

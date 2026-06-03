@@ -33,9 +33,13 @@ A device advances a stage after a short streak of **unaided** solves; using a hi
 ## Features
 
 - **Learn** — a curriculum of nine devices (hidden → anagram → charade → container → reversal → deletion → homophone → double-definition → cryptic-definition), lessons that unlock in order, and a per-device mastery board.
-- **Daily Cryptic** — a machine-verified 5×5 interlocking grid (Stage D).
+- **Play** — an archive of **100+ full 13×13 cryptic crosswords**, each a real interlocking grid assembled from a bank of ~210 hand-clued, verified answers, spanning every device including **&lit**, **initialism** and **alternation**. Autosaves your grid, tracks completion, filters by difficulty. Plus a hand-crafted, fully-checked showcase mini.
 - **Clue analyzer** — pick any clue and peel it apart: definition span, device, and the indicator words that give it away.
 - **Reference** — searchable indicator vocabulary and the standard abbreviation "code words".
+
+### How the archive is built
+
+`scripts/generate-puzzles.mjs` is a build-time crossword compiler. It places answers from the verified bank (`src/data/bank/*.json`) so they cross one another — a real interlocking crossword that is *fillable by construction* because every entry is a hand-clued word. The result is written to `public/archive.json` (fetched lazily at runtime) and guarded by tests that re-validate every clue and check for drift. Regenerate with `node scripts/generate-puzzles.mjs 120`.
 
 ## The clues
 

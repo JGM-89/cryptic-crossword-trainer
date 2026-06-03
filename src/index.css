@@ -548,12 +548,14 @@ h1 {
   align-items: start;
 }
 .mini-grid {
+  --cell: 2.7rem;
   display: grid;
   gap: 2px;
   background: var(--ink);
   padding: 2px;
   border-radius: 6px;
   width: max-content;
+  max-width: 100%;
   outline: none;
 }
 .mini-grid:focus {
@@ -561,14 +563,14 @@ h1 {
 }
 .grid-cell {
   position: relative;
-  width: 2.7rem;
-  height: 2.7rem;
+  width: var(--cell);
+  height: var(--cell);
   background: var(--surface);
   display: grid;
   place-items: center;
   font-family: var(--mono);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: calc(var(--cell) * 0.46);
   cursor: pointer;
   user-select: none;
 }
@@ -778,6 +780,115 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--ink-soft);
+}
+
+/* ── Play archive ───────────────────────────────────────── */
+.featured {
+  margin-bottom: 1.8rem;
+}
+.featured h2,
+.play-toolbar h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.6rem;
+}
+.featured-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(120deg, #eef3ff, var(--surface));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+}
+.featured-card h3 {
+  margin: 0 0 0.2rem;
+}
+.featured-go {
+  font-weight: 700;
+  color: var(--brand);
+  white-space: nowrap;
+}
+.play-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.band-filter {
+  display: flex;
+  gap: 0.35rem;
+}
+.chip-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: -apple-system, sans-serif;
+}
+.chip-btn.active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+.play-progress-note {
+  margin: 0.2rem 0 1rem;
+  font-size: 0.9rem;
+}
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.7rem;
+}
+.puzzle-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease;
+}
+.puzzle-tile:hover {
+  transform: translateY(-2px);
+}
+.puzzle-tile.done {
+  border-color: var(--good);
+  background: linear-gradient(0deg, var(--good-bg), var(--surface) 70%);
+}
+.pt-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pt-title {
+  font-weight: 700;
+  font-family: -apple-system, sans-serif;
+}
+.pt-band {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+  font-family: -apple-system, sans-serif;
+}
+.band-gentle { background: var(--good); }
+.band-moderate { background: var(--stage-C); }
+.band-tougher { background: var(--bad); }
+.pt-meta {
+  font-size: 0.8rem;
 }
 
 /* ── Prose ──────────────────────────────────────────────── */

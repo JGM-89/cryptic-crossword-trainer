@@ -3,12 +3,15 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { LearnPage } from './pages/LearnPage';
 import { LessonPage } from './pages/LessonPage';
 import { PuzzlePage } from './pages/PuzzlePage';
+import { PlayPage } from './pages/PlayPage';
+import { SolvePage } from './pages/SolvePage';
 import { AnalyzerPage } from './pages/AnalyzerPage';
 import { ReferencePage } from './pages/ReferencePage';
 import { AboutPage } from './pages/AboutPage';
 
 const NAV = [
   { to: '/', label: 'Learn', end: true },
+  { to: '/play', label: 'Play', end: false },
   { to: '/analyzer', label: 'Analyzer', end: false },
   { to: '/reference', label: 'Reference', end: false },
   { to: '/about', label: 'About', end: false },
@@ -41,6 +44,8 @@ export function App() {
           <Route path="/" element={<LearnPage />} />
           <Route path="/lesson/:lessonId" element={<LessonPage />} />
           <Route path="/puzzle/:puzzleId" element={<PuzzlePage />} />
+          <Route path="/play" element={<PlayPage />} />
+          <Route path="/play/:puzzleId" element={<SolvePage />} />
           <Route path="/analyzer" element={<AnalyzerPage />} />
           <Route path="/reference" element={<ReferencePage />} />
           <Route path="/about" element={<AboutPage />} />

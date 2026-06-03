@@ -1,0 +1,554 @@
+[
+  {
+    "answer": "DISCLAIMER",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Disc mailer redesigned as a denial (10)",
+    "def": {
+      "text": "a denial",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "redesigned",
+      "fodder": "DISC MAILER",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "DISCMAILER",
+          "output": "DISCLAIMER"
+        }
+      ]
+    },
+    "parse": "(DISC MAILER)* = DISCLAIMER, defined by 'a denial'."
+  },
+  {
+    "answer": "NIGHTMARES",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Harming set wildly, these are bad dreams (10)",
+    "def": {
+      "text": "bad dreams",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "wildly",
+      "fodder": "HARMING SET",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "HARMINGSET",
+          "output": "NIGHTMARES"
+        }
+      ]
+    },
+    "parse": "(HARMING SET)* = NIGHTMARES, defined by 'bad dreams'."
+  },
+  {
+    "answer": "TELEVISION",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Evil nose it conceals, broadcast on the box (10)",
+    "def": {
+      "text": "the box",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "broadcast",
+      "fodder": "EVIL NOSE IT",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "EVILNOSEIT",
+          "output": "TELEVISION"
+        }
+      ]
+    },
+    "parse": "(EVIL NOSE IT)* = TELEVISION, defined by 'the box'."
+  },
+  {
+    "answer": "LABORATORY",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Workshop building ably rota or shifts around (10)",
+    "def": {
+      "text": "Workshop",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "shifts around",
+      "fodder": "ABLY ROTA OR",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ABLYROTAOR",
+          "output": "LABORATORY"
+        }
+      ]
+    },
+    "parse": "(ABLY ROTA OR)* = LABORATORY, defined by 'Workshop'."
+  },
+  {
+    "answer": "DEPARTMENT",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Tramped net wildly through the store's menswear division (10)",
+    "def": {
+      "text": "division",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "wildly",
+      "fodder": "TRAMPED NET",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "TRAMPEDNET",
+          "output": "DEPARTMENT"
+        }
+      ]
+    },
+    "parse": "(TRAMPED NET)* = DEPARTMENT, defined by 'division'."
+  },
+  {
+    "answer": "UNDERRATED",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Below assessed value, sadly undervalued (10)",
+    "def": {
+      "text": "undervalued",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "UNDER + RATED",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "below",
+          "output": "UNDER"
+        },
+        {
+          "op": "synonym",
+          "input": "assessed",
+          "output": "RATED"
+        },
+        {
+          "op": "concat",
+          "input": "UNDER+RATED",
+          "output": "UNDERRATED"
+        }
+      ]
+    },
+    "parse": "UNDER (below) + RATED (assessed) = UNDERRATED, defined by 'undervalued'."
+  },
+  {
+    "answer": "BRIDGEHEAD",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Card game's foam top gives a military foothold (10)",
+    "def": {
+      "text": "military foothold",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "BRIDGE + HEAD",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Card game",
+          "output": "BRIDGE"
+        },
+        {
+          "op": "synonym",
+          "input": "foam top",
+          "output": "HEAD"
+        },
+        {
+          "op": "concat",
+          "input": "BRIDGE+HEAD",
+          "output": "BRIDGEHEAD"
+        }
+      ]
+    },
+    "parse": "BRIDGE (card game) + HEAD (foam top, as on beer) = BRIDGEHEAD, defined by 'military foothold'."
+  },
+  {
+    "answer": "BARGAINING",
+    "clueType": "container",
+    "difficulty": 4,
+    "clue": "Profit going into scarcely dressed haggling (10)",
+    "def": {
+      "text": "haggling",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "going into",
+      "fodder": "GAIN in BARING",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Profit",
+          "output": "GAIN"
+        },
+        {
+          "op": "synonym",
+          "input": "scarcely dressed",
+          "output": "BARING"
+        },
+        {
+          "op": "insert",
+          "input": "GAIN in BARING",
+          "output": "BARGAINING"
+        }
+      ]
+    },
+    "parse": "GAIN (profit) inside BARING (scarcely dressed) = BARGAINING, defined by 'haggling'."
+  },
+  {
+    "answer": "INFORMATION",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "A form into in tray, oddly, holds the data (11)",
+    "def": {
+      "text": "the data",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "oddly",
+      "fodder": "A FORM INTO IN",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "AFORMINTOIN",
+          "output": "INFORMATION"
+        }
+      ]
+    },
+    "parse": "(A FORM INTO IN)* = INFORMATION, defined by 'the data'."
+  },
+  {
+    "answer": "PRECAUTIONS",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Scout in pear orchard, oddly, takes safety measures (11)",
+    "def": {
+      "text": "safety measures",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "oddly",
+      "fodder": "SCOUT IN PEAR",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "SCOUTINPEAR",
+          "output": "PRECAUTIONS"
+        }
+      ]
+    },
+    "parse": "(SCOUT IN PEAR)* = PRECAUTIONS, defined by 'safety measures'."
+  },
+  {
+    "answer": "PARTNERSHIP",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "Phrase print reworked in a business collaboration (11)",
+    "def": {
+      "text": "a business collaboration",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "reworked",
+      "fodder": "PHRASE PRINT",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "PHRASEPRINT",
+          "output": "PARTNERSHIP"
+        }
+      ]
+    },
+    "parse": "(PHRASE PRINT)* = PARTNERSHIP, defined by 'a business collaboration'."
+  },
+  {
+    "answer": "STOCKBROKER",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Supply agent making a market dealer (11)",
+    "def": {
+      "text": "market dealer",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "STOCK + BROKER",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Supply",
+          "output": "STOCK"
+        },
+        {
+          "op": "synonym",
+          "input": "agent",
+          "output": "BROKER"
+        },
+        {
+          "op": "concat",
+          "input": "STOCK+BROKER",
+          "output": "STOCKBROKER"
+        }
+      ]
+    },
+    "parse": "STOCK (supply) + BROKER (agent) = STOCKBROKER, defined by 'market dealer'."
+  },
+  {
+    "answer": "CONSTRAINED",
+    "clueType": "container",
+    "difficulty": 4,
+    "clue": "Effort wrapped in cone-shaped paper, kept in check (11)",
+    "def": {
+      "text": "kept in check",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "wrapped in",
+      "fodder": "STRAIN in CONED",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Effort",
+          "output": "STRAIN"
+        },
+        {
+          "op": "synonym",
+          "input": "cone-shaped",
+          "output": "CONED"
+        },
+        {
+          "op": "insert",
+          "input": "STRAIN in CONED",
+          "output": "CONSTRAINED"
+        }
+      ]
+    },
+    "parse": "STRAIN (effort) inside CONED (cone-shaped) = CONSTRAINED, defined by 'kept in check'."
+  },
+  {
+    "answer": "RELATIONSHIP",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "Spoil the rain somehow, ruining a budding romance (12)",
+    "def": {
+      "text": "a budding romance",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "somehow",
+      "fodder": "SPOIL THE RAIN",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "SPOILTHERAIN",
+          "output": "RELATIONSHIP"
+        }
+      ]
+    },
+    "parse": "(SPOIL THE RAIN)* = RELATIONSHIP, defined by 'a budding romance'."
+  },
+  {
+    "answer": "CONVERSATION",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "A convent rois disturbed by lively chat (12)",
+    "def": {
+      "text": "lively chat",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "disturbed",
+      "fodder": "A CONVENT ROIS",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ACONVENTROIS",
+          "output": "CONVERSATION"
+        }
+      ]
+    },
+    "parse": "(A CONVENT ROIS)* = CONVERSATION, defined by 'lively chat'."
+  },
+  {
+    "answer": "HEADQUARTERS",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Boss accommodates the command centre (12)",
+    "def": {
+      "text": "command centre",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "HEAD + QUARTERS",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Boss",
+          "output": "HEAD"
+        },
+        {
+          "op": "synonym",
+          "input": "accommodates",
+          "output": "QUARTERS"
+        },
+        {
+          "op": "concat",
+          "input": "HEAD+QUARTERS",
+          "output": "HEADQUARTERS"
+        }
+      ]
+    },
+    "parse": "HEAD (boss) + QUARTERS (accommodates, billets) = HEADQUARTERS, defined by 'command centre'."
+  },
+  {
+    "answer": "UNDERSTANDING",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "Dread stunning collapse, lacking comprehension (13)",
+    "def": {
+      "text": "comprehension",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "collapse",
+      "fodder": "DREAD STUNNING",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "DREADSTUNNING",
+          "output": "UNDERSTANDING"
+        }
+      ]
+    },
+    "parse": "(DREAD STUNNING)* = UNDERSTANDING, defined by 'comprehension'."
+  },
+  {
+    "answer": "CONSIDERATION",
+    "clueType": "anagram",
+    "difficulty": 5,
+    "clue": "Nordic note ais muddled out of thoughtfulness (13)",
+    "def": {
+      "text": "thoughtfulness",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "muddled",
+      "fodder": "NORDIC NOTE AIS",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "NORDICNOTEAIS",
+          "output": "CONSIDERATION"
+        }
+      ]
+    },
+    "parse": "(NORDIC NOTE AIS)* = CONSIDERATION, defined by 'thoughtfulness'."
+  },
+  {
+    "answer": "ENTERTAINMENT",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "Neat interment arranged as the evening's amusement (13)",
+    "def": {
+      "text": "amusement",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "arranged",
+      "fodder": "NEAT INTERMENT",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "NEATINTERMENT",
+          "output": "ENTERTAINMENT"
+        }
+      ]
+    },
+    "parse": "(NEAT INTERMENT)* = ENTERTAINMENT, defined by 'amusement'."
+  },
+  {
+    "answer": "THOUGHTLESSLY",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Idea diminished, in a manner showing no care (13)",
+    "def": {
+      "text": "showing no care",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "THOUGHT + LESS + LY",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Idea",
+          "output": "THOUGHT"
+        },
+        {
+          "op": "synonym",
+          "input": "diminished",
+          "output": "LESS"
+        },
+        {
+          "op": "literal",
+          "input": "in a manner",
+          "output": "LY"
+        },
+        {
+          "op": "concat",
+          "input": "THOUGHT+LESS+LY",
+          "output": "THOUGHTLESSLY"
+        }
+      ]
+    },
+    "parse": "THOUGHT (idea) + LESS (diminished) + LY (in a manner) = THOUGHTLESSLY, defined by 'showing no care'."
+  },
+  {
+    "answer": "GRANDMOTHERLY",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Splendid old woman, in a manner kindly like a granny (13)",
+    "def": {
+      "text": "like a granny",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "GRAND + MOTHER + LY",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Splendid",
+          "output": "GRAND"
+        },
+        {
+          "op": "synonym",
+          "input": "old woman",
+          "output": "MOTHER"
+        },
+        {
+          "op": "literal",
+          "input": "in a manner",
+          "output": "LY"
+        },
+        {
+          "op": "concat",
+          "input": "GRAND+MOTHER+LY",
+          "output": "GRANDMOTHERLY"
+        }
+      ]
+    },
+    "parse": "GRAND (splendid) + MOTHER (old woman) + LY (in a manner) = GRANDMOTHERLY, defined by 'like a granny'."
+  }
+]

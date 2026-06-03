@@ -1,0 +1,866 @@
+[
+  {
+    "answer": "TREASON",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Senator arranged crime (7)",
+    "def": {
+      "text": "crime",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "arranged",
+      "fodder": "SENATOR",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "SENATOR",
+          "output": "TREASON"
+        }
+      ]
+    },
+    "parse": "(SENATOR)* = TREASON, a crime."
+  },
+  {
+    "answer": "DESSERT",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Tressed locks curled to make pudding (7)",
+    "def": {
+      "text": "pudding",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "curled",
+      "fodder": "TRESSED",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "TRESSED",
+          "output": "DESSERT"
+        }
+      ]
+    },
+    "parse": "(TRESSED)* = DESSERT, a pudding."
+  },
+  {
+    "answer": "EARNEST",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Eastern novel and sincere (7)",
+    "def": {
+      "text": "sincere",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "novel",
+      "fodder": "EASTERN",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "EASTERN",
+          "output": "EARNEST"
+        }
+      ]
+    },
+    "parse": "(EASTERN)* = EARNEST, sincere."
+  },
+  {
+    "answer": "NEUTRAL",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Unalter wildly to stay impartial (7)",
+    "def": {
+      "text": "impartial",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "wildly",
+      "fodder": "UNALTER",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "UNALTER",
+          "output": "NEUTRAL"
+        }
+      ]
+    },
+    "parse": "(UNALTER)* = NEUTRAL, impartial."
+  },
+  {
+    "answer": "MONSTER",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Mentors organised a brute (7)",
+    "def": {
+      "text": "brute",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "organised",
+      "fodder": "MENTORS",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "MENTORS",
+          "output": "MONSTER"
+        }
+      ]
+    },
+    "parse": "(MENTORS)* = MONSTER, a brute."
+  },
+  {
+    "answer": "GENERAL",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Enlarge wildly as an officer (7)",
+    "def": {
+      "text": "officer",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "wildly",
+      "fodder": "ENLARGE",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ENLARGE",
+          "output": "GENERAL"
+        }
+      ]
+    },
+    "parse": "(ENLARGE)* = GENERAL, an officer."
+  },
+  {
+    "answer": "CRAVING",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Carving rough wood, with a yen (7)",
+    "def": {
+      "text": "a yen",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "rough",
+      "fodder": "CARVING",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "CARVING",
+          "output": "CRAVING"
+        }
+      ]
+    },
+    "parse": "(CARVING)* = CRAVING, a yen."
+  },
+  {
+    "answer": "RECITAL",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Article badly written for the performance (7)",
+    "def": {
+      "text": "performance",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "badly written",
+      "fodder": "ARTICLE",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ARTICLE",
+          "output": "RECITAL"
+        }
+      ]
+    },
+    "parse": "(ARTICLE)* = RECITAL, a performance."
+  },
+  {
+    "answer": "PANCAKE",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Pot's dessert is a flat treat (7)",
+    "def": {
+      "text": "flat treat",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "pot",
+          "output": "PAN"
+        },
+        {
+          "op": "synonym",
+          "input": "dessert",
+          "output": "CAKE"
+        },
+        {
+          "op": "concat",
+          "input": "PAN+CAKE",
+          "output": "PANCAKE"
+        }
+      ]
+    },
+    "parse": "PAN + CAKE = PANCAKE, a flat treat."
+  },
+  {
+    "answer": "CARPORT",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Vehicle reaches harbour shelter (7)",
+    "def": {
+      "text": "shelter",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "vehicle",
+          "output": "CAR"
+        },
+        {
+          "op": "synonym",
+          "input": "harbour",
+          "output": "PORT"
+        },
+        {
+          "op": "concat",
+          "input": "CAR+PORT",
+          "output": "CARPORT"
+        }
+      ]
+    },
+    "parse": "CAR + PORT = CARPORT, a shelter."
+  },
+  {
+    "answer": "FORWARD",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "In support of hospital area, the striker (7)",
+    "def": {
+      "text": "striker",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "in support of",
+          "output": "FOR"
+        },
+        {
+          "op": "synonym",
+          "input": "hospital area",
+          "output": "WARD"
+        },
+        {
+          "op": "concat",
+          "input": "FOR+WARD",
+          "output": "FORWARD"
+        }
+      ]
+    },
+    "parse": "FOR + WARD = FORWARD, a striker."
+  },
+  {
+    "answer": "HEADWAY",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Leader's route shows progress (7)",
+    "def": {
+      "text": "progress",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "leader",
+          "output": "HEAD"
+        },
+        {
+          "op": "synonym",
+          "input": "route",
+          "output": "WAY"
+        },
+        {
+          "op": "concat",
+          "input": "HEAD+WAY",
+          "output": "HEADWAY"
+        }
+      ]
+    },
+    "parse": "HEAD + WAY = HEADWAY, progress."
+  },
+  {
+    "answer": "WARFARE",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Conflict's price after fighting (7)",
+    "def": {
+      "text": "Conflict",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "fighting",
+          "output": "WAR"
+        },
+        {
+          "op": "synonym",
+          "input": "price",
+          "output": "FARE"
+        },
+        {
+          "op": "concat",
+          "input": "WAR+FARE",
+          "output": "WARFARE"
+        }
+      ]
+    },
+    "parse": "WAR + FARE = WARFARE, conflict."
+  },
+  {
+    "answer": "OUTLOOK",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Not in for a glance, giving the prospect (7)",
+    "def": {
+      "text": "prospect",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "not in",
+          "output": "OUT"
+        },
+        {
+          "op": "synonym",
+          "input": "glance",
+          "output": "LOOK"
+        },
+        {
+          "op": "concat",
+          "input": "OUT+LOOK",
+          "output": "OUTLOOK"
+        }
+      ]
+    },
+    "parse": "OUT + LOOK = OUTLOOK, a prospect."
+  },
+  {
+    "answer": "PASSAGE",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Permit time for a corridor (7)",
+    "def": {
+      "text": "corridor",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "permit",
+          "output": "PASS"
+        },
+        {
+          "op": "synonym",
+          "input": "time",
+          "output": "AGE"
+        },
+        {
+          "op": "concat",
+          "input": "PASS+AGE",
+          "output": "PASSAGE"
+        }
+      ]
+    },
+    "parse": "PASS + AGE = PASSAGE, a corridor."
+  },
+  {
+    "answer": "EARRING",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Listener's call for jewellery (7)",
+    "def": {
+      "text": "jewellery",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "listener",
+          "output": "EAR"
+        },
+        {
+          "op": "synonym",
+          "input": "call",
+          "output": "RING"
+        },
+        {
+          "op": "concat",
+          "input": "EAR+RING",
+          "output": "EARRING"
+        }
+      ]
+    },
+    "parse": "EAR + RING = EARRING, jewellery."
+  },
+  {
+    "answer": "PIRATES",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Furious about parking and shilling, the buccaneers (7)",
+    "def": {
+      "text": "buccaneers",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "about",
+      "inner": "IRATE",
+      "outer": "PS",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "furious",
+          "output": "IRATE"
+        },
+        {
+          "op": "literal",
+          "input": "parking and shilling",
+          "output": "PS"
+        },
+        {
+          "op": "insert",
+          "input": "IRATE in PS",
+          "output": "PIRATES"
+        }
+      ]
+    },
+    "parse": "IRATE (furious) inside P, S (parking, shilling) = PIRATES, buccaneers."
+  },
+  {
+    "answer": "BRACKET",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Rack stored in wager support (7)",
+    "def": {
+      "text": "support",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "stored in",
+      "inner": "RACK",
+      "outer": "BET",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "rack",
+          "output": "RACK"
+        },
+        {
+          "op": "synonym",
+          "input": "wager",
+          "output": "BET"
+        },
+        {
+          "op": "insert",
+          "input": "RACK in BET",
+          "output": "BRACKET"
+        }
+      ]
+    },
+    "parse": "RACK inside BET (wager) = BRACKET, a support."
+  },
+  {
+    "answer": "PORTRAY",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Scrap held in worship to depict (7)",
+    "def": {
+      "text": "depict",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "held in",
+      "inner": "ORT",
+      "outer": "PRAY",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "scrap",
+          "output": "ORT"
+        },
+        {
+          "op": "synonym",
+          "input": "worship",
+          "output": "PRAY"
+        },
+        {
+          "op": "insert",
+          "input": "ORT in PRAY",
+          "output": "PORTRAY"
+        }
+      ]
+    },
+    "parse": "ORT (food scrap) inside PRAY (worship) = PORTRAY, to depict."
+  },
+  {
+    "answer": "BLASTED",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Final entry in cot, blew up (7)",
+    "def": {
+      "text": "blew up",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "entry in",
+      "inner": "LAST",
+      "outer": "BED",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "final",
+          "output": "LAST"
+        },
+        {
+          "op": "synonym",
+          "input": "cot",
+          "output": "BED"
+        },
+        {
+          "op": "insert",
+          "input": "LAST in BED",
+          "output": "BLASTED"
+        }
+      ]
+    },
+    "parse": "LAST (final) inside BED (cot) = BLASTED, blew up."
+  },
+  {
+    "answer": "BRANDED",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Currency tucked in cot, marked (7)",
+    "def": {
+      "text": "marked",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "tucked in",
+      "inner": "RAND",
+      "outer": "BED",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "currency",
+          "output": "RAND"
+        },
+        {
+          "op": "synonym",
+          "input": "cot",
+          "output": "BED"
+        },
+        {
+          "op": "insert",
+          "input": "RAND in BED",
+          "output": "BRANDED"
+        }
+      ]
+    },
+    "parse": "RAND (currency) inside BED (cot) = BRANDED, marked."
+  },
+  {
+    "answer": "BROADEN",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Highway held by Scottish peak to widen (7)",
+    "def": {
+      "text": "widen",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "held by",
+      "inner": "ROAD",
+      "outer": "BEN",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "highway",
+          "output": "ROAD"
+        },
+        {
+          "op": "synonym",
+          "input": "Scottish peak",
+          "output": "BEN"
+        },
+        {
+          "op": "insert",
+          "input": "ROAD in BEN",
+          "output": "BROADEN"
+        }
+      ]
+    },
+    "parse": "ROAD (highway) inside BEN (Scottish peak) = BROADEN, to widen."
+  },
+  {
+    "answer": "NOWHERE",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "You know hereafter you're going to a place that is lost (7)",
+    "def": {
+      "text": "a place that is lost",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "in",
+      "inner": "",
+      "outer": "",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "know hereafter",
+          "output": "NOWHERE"
+        }
+      ]
+    },
+    "parse": "Hidden in 'kNOW HEREafter' = NOWHERE, nowhere being lost."
+  },
+  {
+    "answer": "EARLOBE",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Stud goes near lobe of one's flesh (7)",
+    "def": {
+      "text": "flesh",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "of",
+      "inner": "",
+      "outer": "",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "near lobe",
+          "output": "EARLOBE"
+        }
+      ]
+    },
+    "parse": "Hidden in 'nEAR LOBE' = EARLOBE, a bit of flesh."
+  },
+  {
+    "answer": "CARAVAN",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Oscar Avanti's mobile home (7)",
+    "def": {
+      "text": "mobile home",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "'s",
+      "inner": "",
+      "outer": "",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "Oscar Avanti",
+          "output": "CARAVAN"
+        }
+      ]
+    },
+    "parse": "Hidden in 'osCAR AVANti' = CARAVAN, a mobile home."
+  },
+  {
+    "answer": "DELIVER",
+    "clueType": "reversal",
+    "difficulty": 3,
+    "clue": "Abused, turning to hand over (7)",
+    "def": {
+      "text": "hand over",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "turning",
+      "fodder": "REVILED",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "REVILED",
+          "output": "DELIVER"
+        }
+      ]
+    },
+    "parse": "REVILED (abused) reversed = DELIVER, to hand over."
+  },
+  {
+    "answer": "GATEMAN",
+    "clueType": "reversal",
+    "difficulty": 3,
+    "clue": "Label turned up for the doorkeeper (7)",
+    "def": {
+      "text": "doorkeeper",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "turned up",
+      "fodder": "NAMETAG",
+      "operations": [
+        {
+          "op": "reverse",
+          "input": "NAMETAG",
+          "output": "GATEMAN"
+        }
+      ]
+    },
+    "parse": "NAMETAG (label) reversed = GATEMAN, a doorkeeper."
+  },
+  {
+    "answer": "EARNING",
+    "clueType": "deletion",
+    "difficulty": 2,
+    "clue": "Beheaded yearning gives a wage (7)",
+    "def": {
+      "text": "wage",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Beheaded",
+      "fodder": "YEARNING",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "YEARNING − Y",
+          "output": "EARNING"
+        }
+      ]
+    },
+    "parse": "YEARNING minus its head Y = EARNING, a wage."
+  },
+  {
+    "answer": "STRANGE",
+    "difficulty": 2,
+    "clue": "Curtailed stranger seems odd (7)",
+    "clueType": "deletion",
+    "def": {
+      "text": "odd",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Curtailed",
+      "fodder": "STRANGER",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "STRANGER − R",
+          "output": "STRANGE"
+        }
+      ]
+    },
+    "parse": "STRANGER minus final R = STRANGE, odd."
+  },
+  {
+    "answer": "STARLET",
+    "clueType": "deletion",
+    "difficulty": 2,
+    "clue": "Endless starlets, each a young actress (7)",
+    "def": {
+      "text": "young actress",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Endless",
+      "fodder": "STARLETS",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "STARLETS − S",
+          "output": "STARLET"
+        }
+      ]
+    },
+    "parse": "STARLETS minus final S = STARLET, a young actress."
+  },
+  {
+    "answer": "BATTERY",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Power cell, or a gun unit (7)",
+    "def": {
+      "text": "Power cell",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "BATTERY"
+        }
+      ]
+    },
+    "parse": "Double definition: a power cell, and an artillery unit."
+  },
+  {
+    "answer": "CRICKET",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Chirping insect plays a summer sport (7)",
+    "def": {
+      "text": "Chirping insect",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "CRICKET"
+        }
+      ]
+    },
+    "parse": "Double definition: the chirping insect, and the bat-and-ball sport."
+  },
+  {
+    "answer": "CHARGER",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Warhorse acts as a power supply (7)",
+    "def": {
+      "text": "Warhorse",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "CHARGER"
+        }
+      ]
+    },
+    "parse": "Double definition: a warhorse, and a device that supplies power."
+  }
+]
