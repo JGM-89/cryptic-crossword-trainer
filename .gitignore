@@ -16,3 +16,4 @@ coverage
 
 # TS build info
 *.tsbuildinfo
+tmp/

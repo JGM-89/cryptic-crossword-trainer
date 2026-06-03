@@ -23,25 +23,25 @@
   },
   {
     "answer": "BAT",
-    "clueType": "double-definition",
+    "clueType": "reversal",
     "difficulty": 2,
-    "clue": "Strike at cricket with a flying mammal (3)",
+    "clue": "Cricketer's club from a returned bill (3)",
     "def": {
-      "text": "Strike at cricket",
+      "text": "Cricketer's club",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "Strike at cricket / a flying mammal",
+      "indicator": "returned",
+      "fodder": "tab",
       "operations": [
         {
-          "op": "literal",
-          "input": "two definitions",
+          "op": "reverse",
+          "input": "TAB",
           "output": "BAT"
         }
       ]
     },
-    "parse": "Double definition: to bat in cricket, and the flying mammal."
+    "parse": "TAB (a bill) reversed by 'returned' = BAT, the cricketer's club."
   },
   {
     "answer": "PEN",
@@ -67,25 +67,25 @@
   },
   {
     "answer": "NET",
-    "clueType": "hidden",
+    "clueType": "reversal",
     "difficulty": 2,
-    "clue": "Final amount, given good manners in etiquette (3)",
+    "clue": "What's left when ten's knocked over (3)",
     "def": {
-      "text": "Final amount",
+      "text": "What's left",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "in",
-      "fodder": "in etiquette",
+      "indicator": "knocked over",
+      "fodder": "ten",
       "operations": [
         {
-          "op": "hidden",
-          "input": "iN ETiquette",
+          "op": "reverse",
+          "input": "TEN",
           "output": "NET"
         }
       ]
     },
-    "parse": "NET hidden in 'iN ETiquette', spanning two words; the final amount."
+    "parse": "TEN reversed by 'knocked over' = NET; what's left, the net amount."
   },
   {
     "answer": "ART",
@@ -113,23 +113,23 @@
     "answer": "OWL",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Night bird seen in window ledges (3)",
+    "clue": "Bird lurking below ledges (3)",
     "def": {
-      "text": "Night bird",
+      "text": "Bird",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "seen in",
-      "fodder": "window ledges",
+      "indicator": "lurking",
+      "fodder": "below ledges",
       "operations": [
         {
           "op": "hidden",
-          "input": "windOW Ledges",
+          "input": "belOW Ledges",
           "output": "OWL"
         }
       ]
     },
-    "parse": "OWL hidden in 'windOW Ledges'; a night bird."
+    "parse": "OWL hidden in 'belOW Ledges', spanning two words; a bird."
   },
   {
     "answer": "GOD",
@@ -151,19 +151,19 @@
         }
       ]
     },
-    "parse": "DOG reversed gives GOD; a deity."
+    "parse": "DOG reversed by 'turns over' = GOD; a deity."
   },
   {
     "answer": "TIP",
     "clueType": "reversal",
     "difficulty": 2,
-    "clue": "Gratuity from the pit, sent back (3)",
+    "clue": "Pointer rising from the pit (3)",
     "def": {
-      "text": "Gratuity",
+      "text": "Pointer",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "sent back",
+      "indicator": "rising",
       "fodder": "pit",
       "operations": [
         {
@@ -173,155 +173,130 @@
         }
       ]
     },
-    "parse": "PIT reversed gives TIP; a gratuity."
+    "parse": "PIT reversed ('rising', in a down clue) = TIP; a pointer or hint."
   },
   {
     "answer": "RAT",
-    "clueType": "reversal",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Informer turning up to spread tar (3)",
+    "clue": "Informer caught in pirate's clutches (3)",
     "def": {
       "text": "Informer",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "turning up",
-      "fodder": "tar",
+      "indicator": "in",
+      "fodder": "in pirate's",
       "operations": [
         {
-          "op": "reverse",
-          "input": "TAR",
+          "op": "hidden",
+          "input": "pi<RAT>e's",
           "output": "RAT"
         }
       ]
     },
-    "parse": "TAR reversed gives RAT; an informer."
+    "parse": "Hidden in 'piRATe's' = RAT; an informer."
   },
   {
     "answer": "CAR",
-    "clueType": "deletion",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Vehicle that's a beheaded scar (3)",
+    "clue": "Old banger lurking in Madagascar (3)",
     "def": {
-      "text": "Vehicle",
+      "text": "Old banger",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "beheaded",
-      "fodder": "scar",
+      "indicator": "lurking in",
+      "fodder": "Madagascar",
       "operations": [
         {
-          "op": "delete",
-          "input": "SCAR − S",
+          "op": "hidden",
+          "input": "Madagas<CAR>",
           "output": "CAR"
         }
       ]
     },
-    "parse": "SCAR beheaded (first letter removed) gives CAR; a vehicle."
+    "parse": "Hidden in 'MadagasCAR' = CAR; an old banger (informal for a car)."
   },
   {
     "answer": "AGE",
-    "clueType": "deletion",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Era ushered in by a headless cage (3)",
+    "clue": "Era found in vintage wine (3)",
     "def": {
       "text": "Era",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "headless",
-      "fodder": "cage",
+      "indicator": "found in",
+      "fodder": "vintage",
       "operations": [
         {
-          "op": "delete",
-          "input": "CAGE − C",
+          "op": "hidden",
+          "input": "vint<AGE>",
           "output": "AGE"
         }
       ]
     },
-    "parse": "CAGE with its head removed gives AGE; an era."
+    "parse": "Hidden in 'vintAGE' = AGE; an era (and vintage itself is about age)."
   },
   {
     "answer": "COB",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Company's black male swan (3)",
+    "clue": "Swan gliding past disco bar (3)",
     "def": {
-      "text": "male swan",
-      "position": "end"
+      "text": "Swan",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "CO + B",
+      "indicator": "past",
+      "fodder": "disco bar",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Company",
-          "output": "CO"
-        },
-        {
-          "op": "abbreviate",
-          "input": "black",
-          "output": "B"
-        },
-        {
-          "op": "concat",
-          "input": "CO+B",
+          "op": "hidden",
+          "input": "dis<CO B>ar",
           "output": "COB"
         }
       ]
     },
-    "parse": "CO (company) + B (black) = COB; a male swan."
+    "parse": "Hidden in 'disCO Bar' = COB; a male swan."
   },
   {
     "answer": "BAR",
-    "clueType": "charade",
+    "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Bachelor scoring a run at the counter (3)",
+    "clue": "Exclude the legal profession (3)",
     "def": {
-      "text": "counter",
-      "position": "end"
+      "text": "Exclude",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "B + A + R",
+      "fodder": "Exclude / the legal profession",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Bachelor",
-          "output": "B"
-        },
-        {
           "op": "literal",
-          "input": "a",
-          "output": "A"
-        },
-        {
-          "op": "abbreviate",
-          "input": "run",
-          "output": "R"
-        },
-        {
-          "op": "concat",
-          "input": "B+A+R",
+          "input": "two definitions",
           "output": "BAR"
         }
       ]
     },
-    "parse": "B (Bachelor) + A + R (run, cricket) = BAR; a counter where drinks are served."
+    "parse": "Double definition: to bar (exclude), and the Bar (the legal profession)."
   },
   {
     "answer": "RED",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Colour of the communist (3)",
+    "clue": "Embarrassed revolutionary (3)",
     "def": {
-      "text": "Colour",
+      "text": "Embarrassed",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Colour / communist",
+      "fodder": "Embarrassed / revolutionary",
       "operations": [
         {
           "op": "literal",
@@ -330,41 +305,41 @@
         }
       ]
     },
-    "parse": "Double definition: the colour, and a communist."
+    "parse": "Double definition: red (embarrassed, as in going red), and a Red (revolutionary/communist)."
   },
   {
     "answer": "MEAN",
-    "clueType": "anagram",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Cruel name, changed for the worse (4)",
+    "clue": "Cruel streak in his demeanour (4)",
     "def": {
       "text": "Cruel",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "changed",
-      "fodder": "name",
+      "indicator": "in",
+      "fodder": "demeanour",
       "operations": [
         {
-          "op": "anagram",
-          "input": "NAME",
+          "op": "hidden",
+          "input": "de<MEAN>our",
           "output": "MEAN"
         }
       ]
     },
-    "parse": "(NAME)* = MEAN, meaning cruel."
+    "parse": "Hidden in 'deMEANour' = MEAN; cruel."
   },
   {
     "answer": "TIDE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Sea movement could be edit, reworked (4)",
+    "clue": "Current revision of edit (4)",
     "def": {
-      "text": "Sea movement",
+      "text": "Current",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "reworked",
+      "indicator": "revision of",
       "fodder": "edit",
       "operations": [
         {
@@ -374,19 +349,19 @@
         }
       ]
     },
-    "parse": "(EDIT)* = TIDE; a sea movement."
+    "parse": "(EDIT)* anagrammed by 'revision of' = TIDE; a current/flow."
   },
   {
     "answer": "LIME",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Green fruit from a damaged mile (4)",
+    "clue": "Sharp citrus runs a mile (4)",
     "def": {
-      "text": "Green fruit",
+      "text": "Sharp citrus",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "damaged",
+      "indicator": "runs",
       "fodder": "mile",
       "operations": [
         {
@@ -396,139 +371,139 @@
         }
       ]
     },
-    "parse": "(MILE)* = LIME; a green fruit."
+    "parse": "Anagram (runs) of MILE = LIME; a sharp green citrus."
   },
   {
     "answer": "TAME",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Docile when meat is cooked (4)",
+    "clue": "Dull team playing (4)",
     "def": {
-      "text": "Docile",
+      "text": "Dull",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "cooked",
-      "fodder": "meat",
+      "indicator": "playing",
+      "fodder": "team",
       "operations": [
         {
           "op": "anagram",
-          "input": "MEAT",
+          "input": "TEAM",
           "output": "TAME"
         }
       ]
     },
-    "parse": "(MEAT)* = TAME; docile."
+    "parse": "Anagram (playing) of TEAM = TAME; dull or unexciting."
   },
   {
     "answer": "STAR",
-    "clueType": "reversal",
+    "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Celebrity rats running away (4)",
+    "clue": "Leading actor's asterisk (4)",
     "def": {
-      "text": "Celebrity",
+      "text": "Leading actor",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "running away",
-      "fodder": "rats",
+      "indicator": "",
+      "fodder": "Leading actor / asterisk",
       "operations": [
         {
-          "op": "reverse",
-          "input": "RATS",
+          "op": "literal",
+          "input": "two definitions",
           "output": "STAR"
         }
       ]
     },
-    "parse": "RATS reversed gives STAR; a celebrity."
+    "parse": "Double definition: a leading actor, and the asterisk symbol (*)."
   },
   {
     "answer": "DRAW",
-    "clueType": "reversal",
+    "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Sketch the hospital ward, going backwards (4)",
+    "clue": "Sketch a tied match (4)",
     "def": {
       "text": "Sketch",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "going backwards",
-      "fodder": "ward",
+      "indicator": "",
+      "fodder": "Sketch / tied match",
       "operations": [
         {
-          "op": "reverse",
-          "input": "WARD",
+          "op": "literal",
+          "input": "two definitions",
           "output": "DRAW"
         }
       ]
     },
-    "parse": "WARD (hospital ward) reversed gives DRAW; to sketch."
+    "parse": "Double definition: to sketch, and a tied match with no winner."
   },
   {
     "answer": "HEAR",
-    "clueType": "homophone",
+    "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Listen in this place, reportedly (4)",
+    "clue": "Take in a wild hare (4)",
     "def": {
-      "text": "Listen",
+      "text": "Take in",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "reportedly",
-      "fodder": "here",
+      "indicator": "wild",
+      "fodder": "hare",
       "operations": [
         {
-          "op": "homophone",
-          "input": "here",
+          "op": "anagram",
+          "input": "HARE",
           "output": "HEAR"
         }
       ]
     },
-    "parse": "Sounds like 'here' (this place); to hear/listen."
+    "parse": "Anagram (wild) of HARE = HEAR; to take in / to listen."
   },
   {
     "answer": "SOLE",
-    "clueType": "homophone",
+    "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Flatfish, the spirit we hear (4)",
+    "clue": "Only the underside of a shoe (4)",
     "def": {
-      "text": "Flatfish",
+      "text": "Only",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "we hear",
-      "fodder": "soul",
+      "indicator": "",
+      "fodder": "Only / underside of a shoe",
       "operations": [
         {
-          "op": "homophone",
-          "input": "soul",
+          "op": "literal",
+          "input": "two definitions",
           "output": "SOLE"
         }
       ]
     },
-    "parse": "Sounds like 'soul' (spirit); a flatfish (sole)."
+    "parse": "Double definition: sole meaning only, and the sole on the underside of a shoe."
   },
   {
     "answer": "LAND",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Touch down, small and delicate (4)",
+    "clue": "Touch down in a small and tidy field (4)",
     "def": {
       "text": "Touch down",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "small and",
-      "fodder": "small and delicate",
+      "indicator": "in",
+      "fodder": "small and tidy",
       "operations": [
         {
           "op": "hidden",
-          "input": "smalL AND delicate",
+          "input": "smal<L AND >tidy",
           "output": "LAND"
         }
       ]
     },
-    "parse": "LAND hidden in 'smalL AND Delicate', spanning words; to touch down."
+    "parse": "Hidden in smaL-L-AND-tidy → LAND; to touch down."
   },
   {
     "answer": "VEIN",
@@ -545,42 +520,52 @@
       "operations": [
         {
           "op": "hidden",
-          "input": "caVE INterior",
+          "input": "ca<VE IN>terior",
           "output": "VEIN"
         }
       ]
     },
-    "parse": "VEIN hidden in 'caVE INterior'; a blood channel."
+    "parse": "Hidden in ca-VE-IN-terior (found in) = VEIN; a blood channel."
   },
   {
     "answer": "ONCE",
-    "clueType": "hidden",
-    "difficulty": 2,
-    "clue": "At one time, part of a bacon centre (4)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Working in church, formerly (4)",
     "def": {
-      "text": "At one time",
-      "position": "start"
+      "text": "formerly",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "part of",
-      "fodder": "bacon centre",
+      "indicator": "",
+      "fodder": "ON + CE",
       "operations": [
         {
-          "op": "hidden",
-          "input": "bacON CEntre",
+          "op": "synonym",
+          "input": "Working",
+          "output": "ON"
+        },
+        {
+          "op": "abbreviate",
+          "input": "church",
+          "output": "CE"
+        },
+        {
+          "op": "concat",
+          "input": "ON+CE",
           "output": "ONCE"
         }
       ]
     },
-    "parse": "ONCE hidden in 'bacON CEntre', spanning two words; at one time."
+    "parse": "ON (working, as a machine switched on) + CE (Church of England) = ONCE; formerly."
   },
   {
     "answer": "HERB",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Tarragon? Her boy, primarily, grows it (4)",
+    "clue": "Sage perhaps belonging to her, the bishop (4)",
     "def": {
-      "text": "Tarragon",
+      "text": "Sage perhaps",
       "position": "start"
     },
     "wordplay": {
@@ -594,7 +579,7 @@
         },
         {
           "op": "abbreviate",
-          "input": "boy primarily",
+          "input": "bishop",
           "output": "B"
         },
         {
@@ -604,80 +589,60 @@
         }
       ]
     },
-    "parse": "HER + B (boy's first letter) = HERB; a seasoning plant."
+    "parse": "HER + B (bishop, in chess) = HERB; sage is a herb, so 'perhaps' flags the definition by example."
   },
   {
     "answer": "CHAT",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Talk cold, wearing the hat (4)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "A natter during which a tutor speaks (4)",
     "def": {
-      "text": "Talk",
+      "text": "A natter",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "C + HAT",
+      "indicator": "during which",
+      "fodder": "which a tutor",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "cold",
-          "output": "C"
-        },
-        {
-          "op": "literal",
-          "input": "hat",
-          "output": "HAT"
-        },
-        {
-          "op": "concat",
-          "input": "C+HAT",
+          "op": "hidden",
+          "input": "whiCH A Tutor",
           "output": "CHAT"
         }
       ]
     },
-    "parse": "C (cold) + HAT = CHAT; to talk."
+    "parse": "CHAT hidden in 'whiCH A Tutor', spanning words; a natter."
   },
   {
     "answer": "SCAR",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Mark left by a southern car crash (4)",
+    "clue": "Cars wrecked, leaving a lasting mark (4)",
     "def": {
-      "text": "Mark",
-      "position": "start"
+      "text": "a lasting mark",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "S + CAR",
+      "indicator": "wrecked",
+      "fodder": "Cars",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "southern",
-          "output": "S"
-        },
-        {
-          "op": "synonym",
-          "input": "car",
-          "output": "CAR"
-        },
-        {
-          "op": "concat",
-          "input": "S+CAR",
+          "op": "anagram",
+          "input": "CARS",
           "output": "SCAR"
         }
       ]
     },
-    "parse": "S (southern) + CAR (vehicle) = SCAR; a mark."
+    "parse": "(CARS)* = SCAR; a lasting mark."
   },
   {
     "answer": "WARM",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Western branch is friendly (4)",
+    "clue": "Welcoming western branch (4)",
     "def": {
-      "text": "friendly",
-      "position": "end"
+      "text": "Welcoming",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
@@ -685,7 +650,7 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "Western",
+          "input": "western",
           "output": "W"
         },
         {
@@ -700,20 +665,20 @@
         }
       ]
     },
-    "parse": "W (west) + ARM (branch) = WARM; friendly."
+    "parse": "W (western) + ARM (branch) = WARM; welcoming."
   },
   {
     "answer": "FLAT",
     "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Apartment that is perfectly level (4)",
+    "difficulty": 3,
+    "clue": "Below the right pitch in this apartment (4)",
     "def": {
-      "text": "Apartment",
+      "text": "Below the right pitch",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Apartment / perfectly level",
+      "fodder": "Below the right pitch / apartment",
       "operations": [
         {
           "op": "literal",
@@ -722,20 +687,20 @@
         }
       ]
     },
-    "parse": "Double definition: an apartment, and perfectly level."
+    "parse": "Double definition: flat (below the right pitch, in music), and a flat (apartment)."
   },
   {
     "answer": "WAVE",
     "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Gesture like a roller at sea (4)",
+    "difficulty": 3,
+    "clue": "Greet the breaker (4)",
     "def": {
-      "text": "Gesture",
+      "text": "Greet",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Gesture / roller at sea",
+      "fodder": "Greet / breaker",
       "operations": [
         {
           "op": "literal",
@@ -744,20 +709,20 @@
         }
       ]
     },
-    "parse": "Double definition: to wave a hand, and a roller at sea."
+    "parse": "Double definition: to wave (greet), and a breaker (a wave) at sea."
   },
   {
     "answer": "MINE",
     "clueType": "double-definition",
-    "difficulty": 2,
-    "clue": "Belonging to me, the coal pit (4)",
+    "difficulty": 3,
+    "clue": "Explosive device that's not yours (4)",
     "def": {
-      "text": "Belonging to me",
+      "text": "Explosive device",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Belonging to me / coal pit",
+      "fodder": "Explosive device / not yours",
       "operations": [
         {
           "op": "literal",
@@ -766,20 +731,20 @@
         }
       ]
     },
-    "parse": "Double definition: mine (belonging to me), and a coal mine."
+    "parse": "Double definition: a mine (explosive device), and mine (not yours, i.e. belonging to me)."
   },
   {
     "answer": "DATE",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Romantic outing on a certain day (4)",
+    "clue": "Fruit of a romantic evening out (4)",
     "def": {
-      "text": "Romantic outing",
+      "text": "Fruit",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Romantic outing / certain day",
+      "fodder": "Fruit / romantic evening out",
       "operations": [
         {
           "op": "literal",
@@ -788,20 +753,20 @@
         }
       ]
     },
-    "parse": "Double definition: a romantic date, and a calendar day."
+    "parse": "Double definition: a DATE is the sticky fruit, and a DATE is a romantic evening out. The whole phrase reads as one idiom, masking the split."
   },
   {
     "answer": "WIND",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Breeze that you do to a clock (4)",
+    "clue": "Coil that the autumn gales bring (4)",
     "def": {
-      "text": "Breeze",
+      "text": "Coil",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Breeze / wind a clock",
+      "fodder": "Coil / autumn gales",
       "operations": [
         {
           "op": "literal",
@@ -810,138 +775,148 @@
         }
       ]
     },
-    "parse": "Double definition: a breeze, and to wind a clock."
+    "parse": "Double definition: to WIND is to coil, and WIND is what autumn gales bring. The two senses sound different (rhyming with 'mind' vs 'pinned'), sharpening the penny-drop."
   },
   {
     "answer": "SPAR",
-    "clueType": "double-definition",
+    "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Box, or a ship's pole (4)",
+    "clue": "Trade blows when criticism is turned back (4)",
     "def": {
-      "text": "Box",
+      "text": "Trade blows",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "Box / ship's pole",
+      "indicator": "turned back",
+      "fodder": "raps",
       "operations": [
         {
-          "op": "literal",
-          "input": "two definitions",
+          "op": "reverse",
+          "input": "RAPS",
           "output": "SPAR"
         }
       ]
     },
-    "parse": "Double definition: to box (spar), and a ship's pole (a spar)."
+    "parse": "RAPS (criticism — knocks, rebukes) reversed by 'turned back' = SPAR, to trade blows."
   },
   {
     "answer": "HEAT",
-    "clueType": "deletion",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Warmth from the wheat, beheaded (4)",
+    "clue": "Some of the heather's warmth (4)",
     "def": {
-      "text": "Warmth",
-      "position": "start"
+      "text": "warmth",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "beheaded",
-      "fodder": "wheat",
+      "indicator": "Some of",
+      "fodder": "the heather",
       "operations": [
         {
-          "op": "delete",
-          "input": "WHEAT − W",
+          "op": "hidden",
+          "input": "t<HE A>ther",
           "output": "HEAT"
         }
       ]
     },
-    "parse": "WHEAT beheaded (first letter removed) gives HEAT; warmth."
+    "parse": "HEAT is concealed in an unbroken run across 'tHE heATher', flagged by 'Some of'. Definition: warmth."
   },
   {
     "answer": "OVEN",
-    "clueType": "deletion",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Cooker that's woven without the wrap (4)",
+    "clue": "Cooker found in stove? Never! (4)",
     "def": {
       "text": "Cooker",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "without the wrap",
-      "fodder": "woven",
+      "indicator": "in",
+      "fodder": "stove Never",
       "operations": [
         {
-          "op": "delete",
-          "input": "WOVEN − W",
+          "op": "hidden",
+          "input": "st<OVE N>ever",
           "output": "OVEN"
         }
       ]
     },
-    "parse": "WOVEN with its head (W) removed gives OVEN; a cooker."
+    "parse": "OVEN hides in 'stOVE Never', flagged by 'in'. Definition: Cooker. The surface reads as a startled denial."
   },
   {
     "answer": "EDIT",
-    "clueType": "deletion",
+    "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Revise the credit, cutting the front off (4)",
+    "clue": "Revise as the tide turns (4)",
     "def": {
       "text": "Revise",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "cutting the front off",
-      "fodder": "credit",
+      "indicator": "turns",
+      "fodder": "tide",
       "operations": [
         {
-          "op": "delete",
-          "input": "CREDIT − CR",
+          "op": "reverse",
+          "input": "TIDE",
           "output": "EDIT"
         }
       ]
     },
-    "parse": "CREDIT cutting CR from the front gives EDIT; to revise."
+    "parse": "TIDE reversed by 'turns' = EDIT, to revise. 'as the tide turns' is a natural idiom doing the cryptic work."
   },
   {
     "answer": "HARM",
-    "clueType": "deletion",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Injure the charm, beheaded (4)",
+    "clue": "A hard limb can do damage (4)",
     "def": {
-      "text": "Injure",
-      "position": "start"
+      "text": "damage",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "beheaded",
-      "fodder": "charm",
+      "indicator": "",
+      "fodder": "H + ARM",
       "operations": [
         {
-          "op": "delete",
-          "input": "CHARM − C",
+          "op": "abbreviate",
+          "input": "Hard",
+          "output": "H"
+        },
+        {
+          "op": "synonym",
+          "input": "limb",
+          "output": "ARM"
+        },
+        {
+          "op": "concat",
+          "input": "H+ARM",
           "output": "HARM"
         }
       ]
     },
-    "parse": "CHARM beheaded gives HARM; to injure."
+    "parse": "H (hard) + ARM (limb) = HARM, to do damage."
   },
   {
     "answer": "BLOT",
-    "clueType": "cryptic-definition",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "A mark that might ruin your copybook? (4)",
+    "clue": "Stain made when bolt comes loose (4)",
     "def": {
-      "text": "A mark that might ruin your copybook?",
+      "text": "Stain",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "pun on a blot on the copybook",
+      "indicator": "comes loose",
+      "fodder": "bolt",
       "operations": [
         {
-          "op": "literal",
-          "input": "pun",
+          "op": "anagram",
+          "input": "BOLT",
           "output": "BLOT"
         }
       ]
     },
-    "parse": "Cryptic definition punning on 'a blot on one's copybook'; an ink mark."
+    "parse": "BOLT, with letters loosened by 'comes loose', rearranges to BLOT, a stain."
   }
 ]
