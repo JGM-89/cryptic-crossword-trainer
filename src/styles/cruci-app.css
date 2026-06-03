@@ -420,6 +420,54 @@
 .home-foot { text-align: center; margin-bottom: var(--space-4); }
 .home-foot a { font-family: var(--sans); }
 
+/* ── Puzzle-complete celebration ──────────────────────────────────────────── */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center; padding: var(--space-4);
+  background: color-mix(in srgb, var(--ink) 46%, transparent);
+  animation: fade-in 0.16s ease both;
+}
+.modal-card {
+  position: relative; z-index: 1; width: 100%; max-width: 420px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  padding: var(--space-7) var(--space-6) var(--space-6);
+  text-align: center; animation: modal-in 0.18s ease both;
+}
+.modal-card:focus { outline: none; }
+.pc-dismiss {
+  position: absolute; top: var(--space-2); right: var(--space-3);
+  background: none; border: 0; cursor: pointer; line-height: 1;
+  font-size: 1.6rem; color: var(--ink-faint); padding: 0.2rem 0.4rem;
+}
+.pc-dismiss:hover { color: var(--ink); }
+.pc-mark {
+  display: grid; place-items: center;
+  width: 3.4rem; height: 3.4rem; margin: 0 auto var(--space-4);
+  border: 2px solid var(--accent); border-radius: 7px;
+  background: var(--accent-soft); color: var(--accent-ink);
+  font-size: 1.7rem; font-weight: 800;
+}
+.pc-card h2 { margin: 0 0 var(--space-2); }
+.pc-card > p { margin: 0 auto var(--space-5); color: var(--ink-soft); font-size: var(--fs-600); max-width: 32ch; }
+.pc-actions { display: flex; flex-direction: column; gap: var(--space-2); }
+.pc-actions .btn { width: 100%; justify-content: center; }
+
+.confetti { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.confetti-piece {
+  position: absolute; top: -8%; width: 8px; height: 13px; border-radius: 1px;
+  animation-name: confetti-fall; animation-timing-function: cubic-bezier(0.3, 0.6, 0.5, 1);
+  animation-fill-mode: forwards;
+}
+.confetti-piece.wide { width: 12px; height: 8px; }
+@keyframes confetti-fall {
+  0%   { transform: translate(0, -10vh) rotate(0); opacity: 1; }
+  100% { transform: translate(var(--drift, 0), 110vh) rotate(540deg); opacity: 0.85; }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .confetti { display: none; } }
+
 /* Top-bar right cluster: nav (scrolls on mobile) + the theme toggle (fixed). */
 .topbar-end { display: flex; align-items: center; gap: var(--space-2); min-width: 0; }
 .theme-toggle {

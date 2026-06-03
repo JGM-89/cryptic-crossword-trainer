@@ -4,6 +4,7 @@ import { getPuzzle } from '../data';
 import type { PuzzleEntry } from '../types';
 import { useProgress } from '../state/ProgressContext';
 import { MiniGrid } from '../components/MiniGrid';
+import { PuzzleComplete } from '../components/PuzzleComplete';
 
 export function PuzzlePage() {
   const { puzzleId } = useParams();
@@ -12,6 +13,7 @@ export function PuzzlePage() {
 
   const [solvedEntries, setSolvedEntries] = useState<Set<string>>(new Set());
   const [revealedEntries, setRevealedEntries] = useState<Set<string>>(new Set());
+  const [justSolved, setJustSolved] = useState(false);
   const done = puzzle ? state.completedPuzzles[puzzle.id] === true : false;
 
   if (!puzzle) {
@@ -56,12 +58,26 @@ export function PuzzlePage() {
       <MiniGrid
         puzzle={puzzle}
         onEntrySolved={handleEntrySolved}
-        onComplete={() => completePuzzle(puzzle.id)}
+        onComplete={() => {
+          if (!done) setJustSolved(true); // celebrate only on a fresh solve
+          completePuzzle(puzzle.id);
+        }}
         revealedEntries={revealedEntries}
         onReveal={(id) =>
           setRevealedEntries((prev) => new Set(prev).add(id))
         }
         solvedEntries={solvedEntries}
+      />
+
+      <PuzzleComplete
+        open={justSolved}
+        title="Grid complete!"
+        subtitle={`${puzzle.title} — you solved a full cryptic, unaided where it counts.`}
+        actions={[
+          { label: 'Back to Learn →', to: '/learn', primary: true },
+          { label: 'Play the archive', to: '/play' },
+        ]}
+        onClose={() => setJustSolved(false)}
       />
     </div>
   );

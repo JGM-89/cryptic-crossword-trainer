@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getArchivePuzzle } from '../data/archive';
+import { getArchivePuzzle, loadArchiveMeta } from '../data/archive';
 import type { Puzzle } from '../types';
 import { MiniGrid } from '../components/MiniGrid';
+import { PuzzleComplete, type CompleteAction } from '../components/PuzzleComplete';
 import { fillKey, isCompleted, markCompleted } from '../state/playProgress';
 
 export function SolvePage() {
@@ -13,9 +14,17 @@ export function SolvePage() {
   const [solvedEntries, setSolvedEntries] = useState<Set<string>>(new Set());
   const [revealedEntries, setRevealedEntries] = useState<Set<string>>(new Set());
   const [done, setDone] = useState(false);
+  const [justSolved, setJustSolved] = useState(false);
+  const [band, setBand] = useState<string | null>(null);
+  const [nextId, setNextId] = useState<number | null>(null);
 
   useEffect(() => {
     let active = true;
+    // Reset per-puzzle state when navigating between puzzles.
+    setSolvedEntries(new Set());
+    setRevealedEntries(new Set());
+    setJustSolved(false);
+    setMissing(false);
     getArchivePuzzle(id).then((p) => {
       if (!active) return;
       if (!p) setMissing(true);
@@ -24,6 +33,21 @@ export function SolvePage() {
         setDone(isCompleted(p.id));
       }
     });
+    // Pull the band + next puzzle in the same tier for the completion card.
+    loadArchiveMeta()
+      .then((meta) => {
+        if (!active) return;
+        const cur = meta.find((m) => m.id === id);
+        setBand(cur?.band ?? null);
+        if (cur) {
+          const sameTier = meta.filter((m) => m.tier === cur.tier);
+          const i = sameTier.findIndex((m) => m.id === id);
+          setNextId(i >= 0 && i + 1 < sameTier.length ? sameTier[i + 1].id : null);
+        } else {
+          setNextId(null);
+        }
+      })
+      .catch(() => {});
     return () => {
       active = false;
     };
@@ -62,6 +86,7 @@ export function SolvePage() {
       )}
 
       <MiniGrid
+        key={puzzle.id}
         puzzle={puzzle}
         storageKey={fillKey(puzzle.id)}
         onEntrySolved={(entry) =>
@@ -74,11 +99,27 @@ export function SolvePage() {
         }
         onComplete={() => {
           markCompleted(puzzle.id);
+          if (!done) setJustSolved(true); // celebrate only on a fresh solve
           setDone(true);
         }}
         revealedEntries={revealedEntries}
         onReveal={(eid) => setRevealedEntries((prev) => new Set(prev).add(eid))}
         solvedEntries={solvedEntries}
+      />
+
+      <PuzzleComplete
+        open={justSolved}
+        title="Solved!"
+        subtitle={`${puzzle.title}${band ? ` · ${band}` : ''} — every answer checks out.`}
+        actions={
+          [
+            nextId != null
+              ? { label: 'Next puzzle →', to: `/play/${nextId}`, primary: true }
+              : null,
+            { label: 'Back to the archive', to: '/play' },
+          ].filter(Boolean) as CompleteAction[]
+        }
+        onClose={() => setJustSolved(false)}
       />
     </div>
   );
