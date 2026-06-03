@@ -52,6 +52,14 @@ All teaching clues are **originally authored** and machine-checked for fairness 
 
 No third-party puzzles, grids, or blog annotations are reproduced. George Ho's openly-licensed clue dataset (ODbL) is used only as a build-time reference, never republished.
 
+### Authoring & checking clues
+
+Clues are written to a documented style guide and produced/checked with an AI-agent pipeline:
+
+- **[docs/clue-style.md](./docs/clue-style.md)** — the per-clue contract: Ximenean fairness rules, surface craft, a 5-axis grading rubric, device conventions, and the exact `BankEntry` JSON shape.
+- **[docs/clue-pipeline.md](./docs/clue-pipeline.md)** — the end-to-end runbook: how to chunk a bank part, dispatch setter agents, assemble winners, gate, audit, and regenerate — including the copy-paste agent prompt templates.
+- Check any candidate against the real validator: `npm run clues:validate -- <file.json>` (`scripts/validate-clue.ts`). Helpers: `clues:chunk`, `clues:assemble`, `clues:patch`, `clues:regen`.
+
 ## Tech
 
 Vite + React + TypeScript, deployed to GitHub Pages via Actions. State persists in IndexedDB (with a localStorage fallback). No runtime backend.
