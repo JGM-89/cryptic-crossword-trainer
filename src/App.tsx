@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
+import { ThemeToggle } from './components/ThemeToggle';
 import { HomePage } from './pages/HomePage';
 import { LearnPage } from './pages/LearnPage';
 import { LessonPage } from './pages/LessonPage';
@@ -31,13 +32,16 @@ export function App() {
             <span className="wm-word">ruci</span>
           </span>
         </NavLink>
-        <nav className="nav" aria-label="Primary">
-          {NAV.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.end} className="nav-link">
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="topbar-end">
+          <nav className="nav" aria-label="Primary">
+            {NAV.map((item) => (
+              <NavLink key={item.to} to={item.to} end={item.end} className="nav-link">
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className="content">

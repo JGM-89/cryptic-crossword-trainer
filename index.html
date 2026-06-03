@@ -10,8 +10,21 @@
     <!-- Installable PWA + home-screen icon -->
     <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
     <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
-    <meta name="theme-color" content="#f4ece0" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4ece0" />
+
+    <!-- Apply a saved dark choice before paint so dark users don't flash light.
+         Light is the default; dark is opt-in via the in-app toggle. -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('cruci-color-mode') === 'dark') {
+            document.documentElement.classList.add('theme-dark');
+            var m = document.querySelector('meta[name="theme-color"]');
+            if (m) m.setAttribute('content', '#16171b');
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- Social / link previews -->
     <meta property="og:type" content="website" />
