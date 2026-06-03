@@ -18,7 +18,7 @@ const CARDS = [
     mark: 'P',
     title: 'Play',
     body: 'An archive of cryptic crosswords, from quick minis to full 13×13 grids.',
-    go: '180 puzzles →',
+    go: '230 puzzles →',
   },
   {
     to: '/analyzer',

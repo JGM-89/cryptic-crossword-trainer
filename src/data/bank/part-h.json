@@ -1,0 +1,2116 @@
+[
+  {
+    "answer": "ROPE",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Line in euro performance figures (4)",
+    "def": {
+      "text": "Line",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "in",
+      "fodder": "euro performance",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "eu<RO PE>rformance",
+          "output": "ROPE"
+        }
+      ]
+    },
+    "parse": "Hidden in euRO PErformance = ROPE; a line."
+  },
+  {
+    "answer": "DESK",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Some side skirt makes a bureau (4)",
+    "def": {
+      "text": "bureau",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Some",
+      "fodder": "side skirt",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "si<DE SK>irt",
+          "output": "DESK"
+        }
+      ]
+    },
+    "parse": "Hidden in siDE SKirt = DESK; a bureau (writing table)."
+  },
+  {
+    "answer": "FERN",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Plant that buffer needs trimming (4)",
+    "def": {
+      "text": "Plant",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "needs",
+      "fodder": "buffer needs",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "buf<FER N>eeds",
+          "output": "FERN"
+        }
+      ]
+    },
+    "parse": "Hidden in bufFER Needs = FERN; a plant."
+  },
+  {
+    "answer": "DRAB",
+    "clueType": "reversal",
+    "difficulty": 3,
+    "clue": "Dull poet keeps returning (4)",
+    "def": {
+      "text": "Dull",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "returning",
+      "fodder": "bard",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "poet",
+          "output": "BARD"
+        },
+        {
+          "op": "reverse",
+          "input": "BARD",
+          "output": "DRAB"
+        }
+      ]
+    },
+    "parse": "BARD (poet) reversed = DRAB; dull."
+  },
+  {
+    "answer": "LEAF",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Disturbed flea on the page (4)",
+    "def": {
+      "text": "page",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Disturbed",
+      "fodder": "flea",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "FLEA",
+          "output": "LEAF"
+        }
+      ]
+    },
+    "parse": "(FLEA)* = LEAF, a page of a book."
+  },
+  {
+    "answer": "NEAR",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Earn redistributed nearby (4)",
+    "def": {
+      "text": "nearby",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "redistributed",
+      "fodder": "earn",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "EARN",
+          "output": "NEAR"
+        }
+      ]
+    },
+    "parse": "Anagram of EARN (redistributed) = NEAR; nearby."
+  },
+  {
+    "answer": "ACRE",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Race wildly over a plot (4)",
+    "def": {
+      "text": "plot",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "wildly",
+      "fodder": "race",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "RACE",
+          "output": "ACRE"
+        }
+      ]
+    },
+    "parse": "(RACE)* = ACRE; a plot of land."
+  },
+  {
+    "answer": "VOTE",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Veto reorganised after the poll (4)",
+    "def": {
+      "text": "poll",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "reorganised",
+      "fodder": "veto",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "VETO",
+          "output": "VOTE"
+        }
+      ]
+    },
+    "parse": "(VETO)* = VOTE; a poll."
+  },
+  {
+    "answer": "GOAT",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Toga unravelled on kid's parent (4)",
+    "def": {
+      "text": "kid's parent",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "unravelled",
+      "fodder": "toga",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "TOGA",
+          "output": "GOAT"
+        }
+      ]
+    },
+    "parse": "(TOGA)* = GOAT, parent of a kid."
+  },
+  {
+    "answer": "COIN",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Firm and fashionable money (4)",
+    "def": {
+      "text": "money",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "CO + IN",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Firm",
+          "output": "CO"
+        },
+        {
+          "op": "synonym",
+          "input": "fashionable",
+          "output": "IN"
+        },
+        {
+          "op": "concat",
+          "input": "CO+IN",
+          "output": "COIN"
+        }
+      ]
+    },
+    "parse": "CO (firm) + IN (fashionable) = COIN; money."
+  },
+  {
+    "answer": "OPAL",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Ring friend up for a gem (4)",
+    "def": {
+      "text": "gem",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "O + PAL",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Ring",
+          "output": "O"
+        },
+        {
+          "op": "synonym",
+          "input": "friend",
+          "output": "PAL"
+        },
+        {
+          "op": "concat",
+          "input": "O+PAL",
+          "output": "OPAL"
+        }
+      ]
+    },
+    "parse": "O (ring) + PAL (friend) = OPAL; a gem."
+  },
+  {
+    "answer": "MILD",
+    "clueType": "deletion",
+    "difficulty": 3,
+    "clue": "Fungus mostly gentle (4)",
+    "def": {
+      "text": "gentle",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "mostly",
+      "fodder": "mildew",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "MILDEW − EW",
+          "output": "MILD"
+        }
+      ]
+    },
+    "parse": "MILDEW (fungus) mostly, dropping the last two letters = MILD; gentle."
+  },
+  {
+    "answer": "REIN",
+    "clueType": "homophone",
+    "difficulty": 3,
+    "clue": "Control reign, reportedly (4)",
+    "def": {
+      "text": "Control",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "reportedly",
+      "fodder": "reign",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "reign",
+          "output": "REIN"
+        }
+      ]
+    },
+    "parse": "REIGN sounds like REIN; to control."
+  },
+  {
+    "answer": "IDOL",
+    "clueType": "homophone",
+    "difficulty": 3,
+    "clue": "Idle, reportedly, but a hero (4)",
+    "def": {
+      "text": "hero",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "reportedly",
+      "fodder": "idle",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "idle",
+          "output": "IDOL"
+        }
+      ]
+    },
+    "parse": "IDLE sounds like IDOL; a hero one worships."
+  },
+  {
+    "answer": "SAGE",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Herb that's wise and old (4)",
+    "def": {
+      "text": "Herb",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Herb / wise and old",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "SAGE"
+        }
+      ]
+    },
+    "parse": "SAGE: a culinary herb, and a wise old person."
+  },
+  {
+    "answer": "SWAN",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Wander like a graceful bird (4)",
+    "def": {
+      "text": "Wander",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Wander / graceful bird",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "SWAN"
+        }
+      ]
+    },
+    "parse": "SWAN: to wander aimlessly, and a graceful waterbird."
+  },
+  {
+    "answer": "PORT",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Left some fortified wine (4)",
+    "def": {
+      "text": "Left",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Left / fortified wine",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "PORT"
+        }
+      ]
+    },
+    "parse": "PORT: the left side aboard ship, and a fortified wine."
+  },
+  {
+    "answer": "GLEN",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Single network reveals a Scottish valley (4)",
+    "def": {
+      "text": "Scottish valley",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "reveals",
+      "fodder": "single network",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "sin<GLE N>etwork",
+          "output": "GLEN"
+        }
+      ]
+    },
+    "parse": "Hidden in sinGLE Network = GLEN; a Scottish valley."
+  },
+  {
+    "answer": "GLOVE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Good affection shown for boxer's wear (5)",
+    "def": {
+      "text": "boxer's wear",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "G + LOVE",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Good",
+          "output": "G"
+        },
+        {
+          "op": "synonym",
+          "input": "affection",
+          "output": "LOVE"
+        },
+        {
+          "op": "concat",
+          "input": "G+LOVE",
+          "output": "GLOVE"
+        }
+      ]
+    },
+    "parse": "G (good) + LOVE (affection) = GLOVE; boxer's wear."
+  },
+  {
+    "answer": "CRANE",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Stretch the neck of a wading bird (5)",
+    "def": {
+      "text": "Stretch the neck",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Stretch the neck / a wading bird",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "CRANE"
+        }
+      ]
+    },
+    "parse": "Double definition: to crane (stretch the neck), and a crane (a long-necked wading bird)."
+  },
+  {
+    "answer": "SPINE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Son's conifer is the backbone (5)",
+    "def": {
+      "text": "the backbone",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "S + PINE",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Son",
+          "output": "S"
+        },
+        {
+          "op": "synonym",
+          "input": "conifer",
+          "output": "PINE"
+        },
+        {
+          "op": "concat",
+          "input": "S+PINE",
+          "output": "SPINE"
+        }
+      ]
+    },
+    "parse": "S (son) + PINE (conifer) = SPINE, the backbone."
+  },
+  {
+    "answer": "TRACK",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Follow the railway line (5)",
+    "def": {
+      "text": "Follow",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Follow / the railway line",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "TRACK"
+        }
+      ]
+    },
+    "parse": "Double definition: to track (follow), and a track (a railway line)."
+  },
+  {
+    "answer": "GRAVE",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Serious place for the dead (5)",
+    "def": {
+      "text": "Serious",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Serious / place for the dead",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "GRAVE"
+        }
+      ]
+    },
+    "parse": "Double definition: grave (serious, solemn), and a grave (a burial place for the dead)."
+  },
+  {
+    "answer": "SHORE",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Prop up the beach (5)",
+    "def": {
+      "text": "the beach",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Prop up / the beach",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "SHORE"
+        }
+      ]
+    },
+    "parse": "Double definition: to shore (prop up, as in shore up), and the shore (the beach)."
+  },
+  {
+    "answer": "BERTH",
+    "clueType": "homophone",
+    "difficulty": 2,
+    "clue": "A delivery, reportedly, of a ship's bunk (5)",
+    "def": {
+      "text": "a ship's bunk",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "reportedly",
+      "fodder": "birth",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "birth",
+          "output": "BERTH"
+        }
+      ]
+    },
+    "parse": "BIRTH (a delivery) sounds like BERTH (indicated by 'reportedly'); a ship's bunk."
+  },
+  {
+    "answer": "ROGUE",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Rouge spread on a scoundrel (5)",
+    "def": {
+      "text": "a scoundrel",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "spread",
+      "fodder": "Rouge",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ROUGE",
+          "output": "ROGUE"
+        }
+      ]
+    },
+    "parse": "Anagram (indicated by 'spread') of ROUGE = ROGUE; a scoundrel."
+  },
+  {
+    "answer": "MAGIC",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Graduate soldier caught in sorcery (5)",
+    "def": {
+      "text": "sorcery",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "MA + GI + C",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Graduate",
+          "output": "MA"
+        },
+        {
+          "op": "abbreviate",
+          "input": "soldier",
+          "output": "GI"
+        },
+        {
+          "op": "abbreviate",
+          "input": "caught",
+          "output": "C"
+        },
+        {
+          "op": "concat",
+          "input": "MA+GI+C",
+          "output": "MAGIC"
+        }
+      ]
+    },
+    "parse": "MA (graduate) + GI (soldier) + C (caught) = MAGIC; sorcery."
+  },
+  {
+    "answer": "NOBLE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Toff turning to the French, being well-bred (5)",
+    "def": {
+      "text": "well-bred",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "NOB + LE",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Toff",
+          "output": "NOB"
+        },
+        {
+          "op": "abbreviate",
+          "input": "the French",
+          "output": "LE"
+        },
+        {
+          "op": "concat",
+          "input": "NOB+LE",
+          "output": "NOBLE"
+        }
+      ]
+    },
+    "parse": "NOB (toff) + LE (the French) = NOBLE; well-bred."
+  },
+  {
+    "answer": "FROST",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Forts stormed in the cold (5)",
+    "def": {
+      "text": "the cold",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "stormed",
+      "fodder": "Forts",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "FORTS",
+          "output": "FROST"
+        }
+      ]
+    },
+    "parse": "Anagram (indicated by 'stormed') of FORTS = FROST; the cold, an icy coating."
+  },
+  {
+    "answer": "PRIDE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Quiet journey shows self-esteem (5)",
+    "def": {
+      "text": "self-esteem",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "P + RIDE",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Quiet",
+          "output": "P"
+        },
+        {
+          "op": "synonym",
+          "input": "journey",
+          "output": "RIDE"
+        },
+        {
+          "op": "concat",
+          "input": "P+RIDE",
+          "output": "PRIDE"
+        }
+      ]
+    },
+    "parse": "P (quiet) + RIDE (journey) = PRIDE; self-esteem."
+  },
+  {
+    "answer": "SCOPE",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Range concealed by periscope (5)",
+    "def": {
+      "text": "Range",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "concealed by",
+      "fodder": "periscope",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "peri<SCOPE>",
+          "output": "SCOPE"
+        }
+      ]
+    },
+    "parse": "Hidden in 'periSCOPE' (indicated by 'concealed by') = SCOPE, a range."
+  },
+  {
+    "answer": "WAGER",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Pay run on a bet (5)",
+    "def": {
+      "text": "a bet",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "WAGE + R",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Pay",
+          "output": "WAGE"
+        },
+        {
+          "op": "abbreviate",
+          "input": "run",
+          "output": "R"
+        },
+        {
+          "op": "concat",
+          "input": "WAGE+R",
+          "output": "WAGER"
+        }
+      ]
+    },
+    "parse": "WAGE (pay) + R (run, in cricket) = WAGER, a bet."
+  },
+  {
+    "answer": "ROAST",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Cook rotas, surprisingly (5)",
+    "def": {
+      "text": "Cook",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "surprisingly",
+      "fodder": "rotas",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ROTAS",
+          "output": "ROAST"
+        }
+      ]
+    },
+    "parse": "Anagram (indicated by 'surprisingly') of ROTAS = ROAST; to cook."
+  },
+  {
+    "answer": "CHASM",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Gulf which a small boat conceals (5)",
+    "def": {
+      "text": "Gulf",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "conceals",
+      "fodder": "which a small",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "whi<CH A SM>all",
+          "output": "CHASM"
+        }
+      ]
+    },
+    "parse": "Hidden in 'whiCH A SMall' (indicated by 'conceals') = CHASM, a gulf."
+  },
+  {
+    "answer": "STEEL",
+    "clueType": "homophone",
+    "difficulty": 2,
+    "clue": "Pinch, by the sound of it, takes nerve (5)",
+    "def": {
+      "text": "nerve",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "by the sound of it",
+      "fodder": "steal",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "steal",
+          "output": "STEEL"
+        }
+      ]
+    },
+    "parse": "STEAL (pinch) sounds like STEEL (indicated by 'by the sound of it'); nerve, resolve."
+  },
+  {
+    "answer": "DROWN",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Doctor will admit to going under (5)",
+    "def": {
+      "text": "going under",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "DR + OWN",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Doctor",
+          "output": "DR"
+        },
+        {
+          "op": "synonym",
+          "input": "admit to",
+          "output": "OWN"
+        },
+        {
+          "op": "concat",
+          "input": "DR+OWN",
+          "output": "DROWN"
+        }
+      ]
+    },
+    "parse": "DR (doctor) + OWN (admit to, as in own up) = DROWN; going under, sinking."
+  },
+  {
+    "answer": "THRONE",
+    "clueType": "homophone",
+    "difficulty": 3,
+    "clue": "Discarded, by the sound of it, royal seat (6)",
+    "def": {
+      "text": "royal seat",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "by the sound of it",
+      "fodder": "thrown",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "thrown",
+          "output": "THRONE"
+        }
+      ]
+    },
+    "parse": "THROWN (discarded) sounds like THRONE; a 'royal seat'."
+  },
+  {
+    "answer": "SQUASH",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Crush at a racket game (6)",
+    "def": {
+      "text": "Crush",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Crush / racket game",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "SQUASH"
+        }
+      ]
+    },
+    "parse": "Double definition: to SQUASH (crush) and SQUASH (the racket game)."
+  },
+  {
+    "answer": "TANGLE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Time to fish leaves a mess (6)",
+    "def": {
+      "text": "a mess",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "T + ANGLE",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Time",
+          "output": "T"
+        },
+        {
+          "op": "synonym",
+          "input": "to fish",
+          "output": "ANGLE"
+        },
+        {
+          "op": "concat",
+          "input": "T+ANGLE",
+          "output": "TANGLE"
+        }
+      ]
+    },
+    "parse": "T (time) + ANGLE (to fish) = TANGLE; 'a mess'."
+  },
+  {
+    "answer": "CANTER",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Trance broken in a gentle run (6)",
+    "def": {
+      "text": "a gentle run",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "broken",
+      "fodder": "TRANCE",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "TRANCE",
+          "output": "CANTER"
+        }
+      ]
+    },
+    "parse": "(TRANCE)* = CANTER; 'a gentle run'."
+  },
+  {
+    "answer": "HERMIT",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Gather mittens for the recluse (6)",
+    "def": {
+      "text": "recluse",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "Gather",
+      "fodder": "Gather mittens",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "gat<HER MIT>tens",
+          "output": "HERMIT"
+        }
+      ]
+    },
+    "parse": "Hidden in 'gat<HER MIT>tens'; a 'recluse'."
+  },
+  {
+    "answer": "DETAIL",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Dilate awkwardly to give a particular (6)",
+    "def": {
+      "text": "a particular",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "awkwardly",
+      "fodder": "DILATE",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "DILATE",
+          "output": "DETAIL"
+        }
+      ]
+    },
+    "parse": "(DILATE)* = DETAIL; 'a particular'."
+  },
+  {
+    "answer": "PARROT",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Level, going off, mimic (6)",
+    "def": {
+      "text": "mimic",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "PAR + ROT",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Level",
+          "output": "PAR"
+        },
+        {
+          "op": "synonym",
+          "input": "going off",
+          "output": "ROT"
+        },
+        {
+          "op": "concat",
+          "input": "PAR+ROT",
+          "output": "PARROT"
+        }
+      ]
+    },
+    "parse": "PAR (level) + ROT (going off) = PARROT; to 'mimic'."
+  },
+  {
+    "answer": "MEADOW",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Drink nothing in western pasture (6)",
+    "def": {
+      "text": "pasture",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "MEAD + O + W",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Drink",
+          "output": "MEAD"
+        },
+        {
+          "op": "abbreviate",
+          "input": "nothing",
+          "output": "O"
+        },
+        {
+          "op": "abbreviate",
+          "input": "western",
+          "output": "W"
+        },
+        {
+          "op": "concat",
+          "input": "MEAD+O+W",
+          "output": "MEADOW"
+        }
+      ]
+    },
+    "parse": "MEAD (drink) + O (nothing) + W (western) = MEADOW; a 'pasture'."
+  },
+  {
+    "answer": "PADDLE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Quiet muddle with an oar (6)",
+    "def": {
+      "text": "an oar",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "P + ADDLE",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Quiet",
+          "output": "P"
+        },
+        {
+          "op": "synonym",
+          "input": "muddle",
+          "output": "ADDLE"
+        },
+        {
+          "op": "concat",
+          "input": "P+ADDLE",
+          "output": "PADDLE"
+        }
+      ]
+    },
+    "parse": "P (quietly) + ADDLE (muddle/confuse) = PADDLE; 'an oar'."
+  },
+  {
+    "answer": "ORCHID",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Bloom seen as a doctor chided the nurse (6)",
+    "def": {
+      "text": "Bloom",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "seen as",
+      "fodder": "doctor chided",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "doct<OR CHID>ed",
+          "output": "ORCHID"
+        }
+      ]
+    },
+    "parse": "Hidden in 'doct<OR CHID>ed'; a 'bloom'."
+  },
+  {
+    "answer": "DAMSON",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Mother's boy delivers a plum (6)",
+    "def": {
+      "text": "a plum",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "DAM + SON",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Mother",
+          "output": "DAM"
+        },
+        {
+          "op": "synonym",
+          "input": "boy",
+          "output": "SON"
+        },
+        {
+          "op": "concat",
+          "input": "DAM+SON",
+          "output": "DAMSON"
+        }
+      ]
+    },
+    "parse": "DAM (mother) + SON (boy) = DAMSON; a 'plum'."
+  },
+  {
+    "answer": "HAMLET",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Poor actor let loose in a small village (6)",
+    "def": {
+      "text": "a small village",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "HAM + LET",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Poor actor",
+          "output": "HAM"
+        },
+        {
+          "op": "synonym",
+          "input": "let",
+          "output": "LET"
+        },
+        {
+          "op": "concat",
+          "input": "HAM+LET",
+          "output": "HAMLET"
+        }
+      ]
+    },
+    "parse": "HAM (poor actor) + LET (allow) = HAMLET; 'a small village'."
+  },
+  {
+    "answer": "GARNET",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Argent worked into a red gemstone (6)",
+    "def": {
+      "text": "a red gemstone",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "worked",
+      "fodder": "ARGENT",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ARGENT",
+          "output": "GARNET"
+        }
+      ]
+    },
+    "parse": "(ARGENT)* = GARNET; 'a red gemstone'."
+  },
+  {
+    "answer": "PLUNGE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Quiet thrust into a dive (6)",
+    "def": {
+      "text": "a dive",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "P + LUNGE",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "Quiet",
+          "output": "P"
+        },
+        {
+          "op": "synonym",
+          "input": "thrust",
+          "output": "LUNGE"
+        },
+        {
+          "op": "concat",
+          "input": "P+LUNGE",
+          "output": "PLUNGE"
+        }
+      ]
+    },
+    "parse": "P (quietly) + LUNGE (thrust) = PLUNGE; 'a dive'."
+  },
+  {
+    "answer": "DRAGON",
+    "clueType": "container",
+    "difficulty": 4,
+    "clue": "Newspaper held by a don — a fierce beast (6)",
+    "def": {
+      "text": "a fierce beast",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "held by",
+      "fodder": "RAG in DON",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Newspaper",
+          "output": "RAG"
+        },
+        {
+          "op": "synonym",
+          "input": "a don",
+          "output": "DON"
+        },
+        {
+          "op": "insert",
+          "input": "RAG in DON",
+          "output": "DRAGON"
+        }
+      ]
+    },
+    "parse": "RAG (newspaper) inside D·ON (a don) = DRAGON; 'a fierce beast'."
+  },
+  {
+    "answer": "MARGIN",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Damage spirit at the edge (6)",
+    "def": {
+      "text": "the edge",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "MAR + GIN",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Damage",
+          "output": "MAR"
+        },
+        {
+          "op": "synonym",
+          "input": "spirit",
+          "output": "GIN"
+        },
+        {
+          "op": "concat",
+          "input": "MAR+GIN",
+          "output": "MARGIN"
+        }
+      ]
+    },
+    "parse": "MAR (damage) + GIN (spirit) = MARGIN; 'the edge'."
+  },
+  {
+    "answer": "MORNING",
+    "clueType": "homophone",
+    "difficulty": 2,
+    "clue": "Grieving, by the sound of it, in the early hours (7)",
+    "def": {
+      "text": "the early hours",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "by the sound of it",
+      "fodder": "mourning",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "mourning",
+          "output": "MORNING"
+        }
+      ]
+    },
+    "parse": "MOURNING (grieving) sounds like MORNING = the early hours."
+  },
+  {
+    "answer": "WEATHER",
+    "clueType": "homophone",
+    "difficulty": 2,
+    "clue": "Whether, we hear, it will rain or shine (7)",
+    "def": {
+      "text": "it will rain or shine",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "we hear",
+      "fodder": "whether",
+      "operations": [
+        {
+          "op": "homophone",
+          "input": "whether",
+          "output": "WEATHER"
+        }
+      ]
+    },
+    "parse": "WHETHER sounds like WEATHER, whether it will rain or shine."
+  },
+  {
+    "answer": "KITCHEN",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Thicken, cooked, becomes the cook's room (7)",
+    "def": {
+      "text": "the cook's room",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "cooked",
+      "fodder": "thicken",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "THICKEN",
+          "output": "KITCHEN"
+        }
+      ]
+    },
+    "parse": "Anagram of THICKEN (cooked) = KITCHEN; the cook's room."
+  },
+  {
+    "answer": "GRENADE",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Enraged soldier hurls explosive (7)",
+    "def": {
+      "text": "explosive",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "hurls",
+      "fodder": "Enraged",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "ENRAGED",
+          "output": "GRENADE"
+        }
+      ]
+    },
+    "parse": "(ENRAGED)* = GRENADE, an explosive."
+  },
+  {
+    "answer": "CAPTAIN",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Skipper drunk in a pact (7)",
+    "def": {
+      "text": "Skipper",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "drunk",
+      "fodder": "in a pact",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "INAPACT",
+          "output": "CAPTAIN"
+        }
+      ]
+    },
+    "parse": "(IN A PACT)* = CAPTAIN, a skipper."
+  },
+  {
+    "answer": "GRANITE",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Tearing up hard rock (7)",
+    "def": {
+      "text": "hard rock",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "up",
+      "fodder": "Tearing",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "TEARING",
+          "output": "GRANITE"
+        }
+      ]
+    },
+    "parse": "(TEARING)* = GRANITE, a hard rock."
+  },
+  {
+    "answer": "DESPAIR",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Hopelessness when praised, surprisingly (7)",
+    "def": {
+      "text": "Hopelessness",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "surprisingly",
+      "fodder": "praised",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "PRAISED",
+          "output": "DESPAIR"
+        }
+      ]
+    },
+    "parse": "Anagram of PRAISED (surprisingly) = DESPAIR; hopelessness."
+  },
+  {
+    "answer": "TERRAIN",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Ground revealed after rainfall (7)",
+    "def": {
+      "text": "Ground",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "revealed",
+      "fodder": "after rainfall",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "af<TER RAIN>fall",
+          "output": "TERRAIN"
+        }
+      ]
+    },
+    "parse": "Hidden in afTER RAINfall = TERRAIN, the ground."
+  },
+  {
+    "answer": "MANKIND",
+    "clueType": "charade",
+    "difficulty": 2,
+    "clue": "Fellow, gentle, representing humanity (7)",
+    "def": {
+      "text": "humanity",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "MAN+KIND",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Fellow",
+          "output": "MAN"
+        },
+        {
+          "op": "synonym",
+          "input": "gentle",
+          "output": "KIND"
+        },
+        {
+          "op": "concat",
+          "input": "MAN+KIND",
+          "output": "MANKIND"
+        }
+      ]
+    },
+    "parse": "MAN (fellow) + KIND (gentle) = MANKIND, humanity."
+  },
+  {
+    "answer": "CABINET",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Taxi one snared by ministers (7)",
+    "def": {
+      "text": "ministers",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "CAB+I+NET",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Taxi",
+          "output": "CAB"
+        },
+        {
+          "op": "abbreviate",
+          "input": "one",
+          "output": "I"
+        },
+        {
+          "op": "synonym",
+          "input": "snared",
+          "output": "NET"
+        },
+        {
+          "op": "concat",
+          "input": "CAB+I+NET",
+          "output": "CABINET"
+        }
+      ]
+    },
+    "parse": "CAB (taxi) + I (one) + NET (snared) = CABINET, the ministers."
+  },
+  {
+    "answer": "PADDOCK",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Quarters by the wharf make a field (7)",
+    "def": {
+      "text": "a field",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "PAD+DOCK",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Quarters",
+          "output": "PAD"
+        },
+        {
+          "op": "synonym",
+          "input": "wharf",
+          "output": "DOCK"
+        },
+        {
+          "op": "concat",
+          "input": "PAD+DOCK",
+          "output": "PADDOCK"
+        }
+      ]
+    },
+    "parse": "PAD (quarters) + DOCK (wharf) = PADDOCK, a field."
+  },
+  {
+    "answer": "STATION",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "At once charged particle reaches the depot (7)",
+    "def": {
+      "text": "the depot",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "STAT+ION",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "At once",
+          "output": "STAT"
+        },
+        {
+          "op": "synonym",
+          "input": "charged particle",
+          "output": "ION"
+        },
+        {
+          "op": "concat",
+          "input": "STAT+ION",
+          "output": "STATION"
+        }
+      ]
+    },
+    "parse": "STAT (at once) + ION (charged particle) = STATION, the depot."
+  },
+  {
+    "answer": "PRESENT",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Gift for those in attendance (7)",
+    "def": {
+      "text": "Gift",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Gift / those in attendance",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "PRESENT"
+        }
+      ]
+    },
+    "parse": "Double definition: PRESENT = a gift, and PRESENT = those in attendance (here)."
+  },
+  {
+    "answer": "RETREAT",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Withdraw to a quiet sanctuary (7)",
+    "def": {
+      "text": "Withdraw",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Withdraw / a quiet sanctuary",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "RETREAT"
+        }
+      ]
+    },
+    "parse": "Double definition: RETREAT = to withdraw, and RETREAT = a quiet sanctuary."
+  },
+  {
+    "answer": "HUSBAND",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Spouse must conserve resources (7)",
+    "def": {
+      "text": "Spouse",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Spouse / conserve resources",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "HUSBAND"
+        }
+      ]
+    },
+    "parse": "Double definition: HUSBAND = a spouse, and to HUSBAND = to conserve resources."
+  },
+  {
+    "answer": "TROOPER",
+    "clueType": "deletion",
+    "difficulty": 3,
+    "clue": "Cavalrymen curtailed produce a mounted policeman (7)",
+    "def": {
+      "text": "a mounted policeman",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "curtailed",
+      "fodder": "troopers",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "TROOPERS − S",
+          "output": "TROOPER"
+        }
+      ]
+    },
+    "parse": "TROOPERS (cavalrymen) curtailed (last letter dropped) = TROOPER, a mounted policeman."
+  },
+  {
+    "answer": "SCRAMBLE",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Cook eggs as one clambers around (8)",
+    "def": {
+      "text": "Cook eggs",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "around",
+      "fodder": "clambers",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "CLAMBERS",
+          "output": "SCRAMBLE"
+        }
+      ]
+    },
+    "parse": "(CLAMBERS)* = SCRAMBLE; to scramble eggs."
+  },
+  {
+    "answer": "RESIGNED",
+    "clueType": "lit",
+    "difficulty": 4,
+    "clue": "Designer working, having quit? (8)",
+    "def": {
+      "text": "Designer working, having quit?",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "working",
+      "fodder": "Designer",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "DESIGNER",
+          "output": "RESIGNED"
+        }
+      ]
+    },
+    "parse": "(DESIGNER)* = RESIGNED — and one who has quit is resigned. An &lit."
+  },
+  {
+    "answer": "OVERSEAS",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "Abroad, some discover seasonal labour (8)",
+    "def": {
+      "text": "Abroad",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "some",
+      "fodder": "discover seasonal",
+      "operations": [
+        {
+          "op": "hidden",
+          "input": "disc<OVERSEAS>onal",
+          "output": "OVERSEAS"
+        }
+      ]
+    },
+    "parse": "Hidden in discOVERSEASonal = OVERSEAS, meaning abroad."
+  },
+  {
+    "answer": "SNAPSHOT",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Break a wild attempt for a quick photo (8)",
+    "def": {
+      "text": "a quick photo",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "SNAP+SHOT",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Break",
+          "output": "SNAP"
+        },
+        {
+          "op": "synonym",
+          "input": "a wild attempt",
+          "output": "SHOT"
+        },
+        {
+          "op": "concat",
+          "input": "SNAP+SHOT",
+          "output": "SNAPSHOT"
+        }
+      ]
+    },
+    "parse": "SNAP (break) + SHOT (a wild attempt, a guess) = SNAPSHOT, a quick photo."
+  },
+  {
+    "answer": "CONTRACT",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Agreement reached as run splits contact (8)",
+    "def": {
+      "text": "Agreement",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "splits",
+      "fodder": "R in CONTACT",
+      "operations": [
+        {
+          "op": "abbreviate",
+          "input": "run",
+          "output": "R"
+        },
+        {
+          "op": "synonym",
+          "input": "contact",
+          "output": "CONTACT"
+        },
+        {
+          "op": "insert",
+          "input": "R in CONTACT",
+          "output": "CONTRACT"
+        }
+      ]
+    },
+    "parse": "R (run) inside CONTACT = CONTRACT, an agreement."
+  },
+  {
+    "answer": "PHEASANT",
+    "clueType": "container",
+    "difficulty": 3,
+    "clue": "Peasant gripping hard — game bird (8)",
+    "def": {
+      "text": "game bird",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "gripping",
+      "fodder": "H in PEASANT",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Peasant",
+          "output": "PEASANT"
+        },
+        {
+          "op": "abbreviate",
+          "input": "hard",
+          "output": "H"
+        },
+        {
+          "op": "insert",
+          "input": "H in PEASANT",
+          "output": "PHEASANT"
+        }
+      ]
+    },
+    "parse": "H (hard) inside PEASANT (gripping it) = PHEASANT, a game bird."
+  },
+  {
+    "answer": "OFFSHORE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Rotten beach is out at sea (8)",
+    "def": {
+      "text": "out at sea",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "OFF+SHORE",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Rotten",
+          "output": "OFF"
+        },
+        {
+          "op": "synonym",
+          "input": "beach",
+          "output": "SHORE"
+        },
+        {
+          "op": "concat",
+          "input": "OFF+SHORE",
+          "output": "OFFSHORE"
+        }
+      ]
+    },
+    "parse": "OFF (rotten) + SHORE (beach) = OFFSHORE, out at sea."
+  },
+  {
+    "answer": "ORCHESTRA",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "Cart horse trained for the pit (9)",
+    "def": {
+      "text": "for the pit",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "trained",
+      "fodder": "Cart horse",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "CARTHORSE",
+          "output": "ORCHESTRA"
+        }
+      ]
+    },
+    "parse": "(CART HORSE)* = ORCHESTRA, which plays in the pit."
+  },
+  {
+    "answer": "STREAMING",
+    "clueType": "anagram",
+    "difficulty": 4,
+    "clue": "Emigrants resettled, watching online (9)",
+    "def": {
+      "text": "watching online",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "resettled",
+      "fodder": "Emigrants",
+      "operations": [
+        {
+          "op": "anagram",
+          "input": "EMIGRANTS",
+          "output": "STREAMING"
+        }
+      ]
+    },
+    "parse": "(EMIGRANTS)* = STREAMING, as in watching video online."
+  },
+  {
+    "answer": "CARPENTRY",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Complain at unlawful entry to the joinery (9)",
+    "def": {
+      "text": "joinery",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "CARP+ENTRY",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Complain",
+          "output": "CARP"
+        },
+        {
+          "op": "synonym",
+          "input": "unlawful entry",
+          "output": "ENTRY"
+        },
+        {
+          "op": "concat",
+          "input": "CARP+ENTRY",
+          "output": "CARPENTRY"
+        }
+      ]
+    },
+    "parse": "CARP (complain) + ENTRY (unlawful entry) = CARPENTRY, joinery."
+  },
+  {
+    "answer": "WHIRLPOOL",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Spin the betting kitty into a deadly vortex (9)",
+    "def": {
+      "text": "deadly vortex",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "WHIRL+POOL",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Spin",
+          "output": "WHIRL"
+        },
+        {
+          "op": "synonym",
+          "input": "betting kitty",
+          "output": "POOL"
+        },
+        {
+          "op": "concat",
+          "input": "WHIRL+POOL",
+          "output": "WHIRLPOOL"
+        }
+      ]
+    },
+    "parse": "WHIRL (spin) + POOL (a betting kitty) = WHIRLPOOL, a deadly vortex."
+  },
+  {
+    "answer": "MILESTONE",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Distance marker shows a significant point (9)",
+    "def": {
+      "text": "a significant point",
+      "position": "end"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "MILE+STONE",
+      "operations": [
+        {
+          "op": "synonym",
+          "input": "Distance",
+          "output": "MILE"
+        },
+        {
+          "op": "synonym",
+          "input": "marker",
+          "output": "STONE"
+        },
+        {
+          "op": "concat",
+          "input": "MILE+STONE",
+          "output": "MILESTONE"
+        }
+      ]
+    },
+    "parse": "MILE (a distance) + STONE (a marker) = MILESTONE, a significant point."
+  },
+  {
+    "answer": "CARTRIDGE",
+    "clueType": "deletion",
+    "difficulty": 3,
+    "clue": "Refill the printer when cartridges almost run dry (9)",
+    "def": {
+      "text": "Refill",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "almost",
+      "fodder": "cartridges",
+      "operations": [
+        {
+          "op": "delete",
+          "input": "CARTRIDGES − S",
+          "output": "CARTRIDGE"
+        }
+      ]
+    },
+    "parse": "CARTRIDGES curtailed (almost) = CARTRIDGE, an ink refill."
+  },
+  {
+    "answer": "CROCODILE",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Snapper? Marshalling pupils in pairs (9)",
+    "def": {
+      "text": "Snapper",
+      "position": "start"
+    },
+    "wordplay": {
+      "indicator": "",
+      "fodder": "Snapper / pupils in pairs",
+      "operations": [
+        {
+          "op": "literal",
+          "input": "two definitions",
+          "output": "CROCODILE"
+        }
+      ]
+    },
+    "parse": "CROCODILE: a snapping reptile (flagged 'Snapper?'), and a crocodile — a line of schoolchildren walking in pairs."
+  }
+]

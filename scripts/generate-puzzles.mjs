@@ -20,9 +20,9 @@ const OUT = join(ROOT, 'public', 'archive.json');
 
 // Tiers: size, how many, and fill parameters tuned to the size.
 const TIERS = [
-  { size: 7, count: 30, seedMin: 5, seedMax: 7, wordMax: 7, minWords: 8, placeTarget: 16 },
-  { size: 9, count: 30, seedMin: 6, seedMax: 8, wordMax: 8, minWords: 13, placeTarget: 24 },
-  { size: 13, count: 120, seedMin: 7, seedMax: 9, wordMax: 9, minWords: 26, placeTarget: 40 },
+  { size: 7, count: 40, seedMin: 5, seedMax: 7, wordMax: 7, minWords: 8, placeTarget: 16 },
+  { size: 9, count: 40, seedMin: 6, seedMax: 8, wordMax: 8, minWords: 13, placeTarget: 24 },
+  { size: 13, count: 150, seedMin: 7, seedMax: 9, wordMax: 9, minWords: 26, placeTarget: 40 },
 ];
 
 function mulberry32(seed) {
