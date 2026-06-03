@@ -75,7 +75,7 @@
       "position": "start"
     },
     "wordplay": {
-      "indicator": "shifts around",
+      "indicator": "shift around",
       "fodder": "ABLY ROTA OR",
       "operations": [
         {
@@ -518,7 +518,7 @@
     "answer": "GRANDMOTHERLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Splendid old woman, in a manner kindly like a granny (13)",
+    "clue": "Splendid mum, in a manner, like a granny (13)",
     "def": {
       "text": "like a granny",
       "position": "end"
@@ -534,7 +534,7 @@
         },
         {
           "op": "synonym",
-          "input": "old woman",
+          "input": "mum",
           "output": "MOTHER"
         },
         {
@@ -549,6 +549,6 @@
         }
       ]
     },
-    "parse": "GRAND (splendid) + MOTHER (old woman) + LY (in a manner) = GRANDMOTHERLY, defined by 'like a granny'."
+    "parse": "GRAND (splendid) + MOTHER (mum) + LY (in a manner) = GRANDMOTHERLY, defined by 'like a granny'."
   }
 ]

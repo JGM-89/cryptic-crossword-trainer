@@ -265,7 +265,7 @@
     "answer": "CATER",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Feline immediately set to provide food (5)",
+    "clue": "Feline's hesitation will provide food (5)",
     "def": {
       "text": "provide food",
       "position": "end"
@@ -281,7 +281,7 @@
         },
         {
           "op": "synonym",
-          "input": "immediately",
+          "input": "hesitation",
           "output": "ER"
         },
         {
@@ -291,7 +291,7 @@
         }
       ]
     },
-    "parse": "CAT (feline) + ER (Accident and Emergency, where things happen immediately) = CATER, to provide food."
+    "parse": "CAT (feline) + ER (hesitation) = CATER, to provide food."
   },
   {
     "answer": "SPEAR",

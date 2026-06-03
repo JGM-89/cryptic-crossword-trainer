@@ -273,7 +273,7 @@
       "position": "end"
     },
     "wordplay": {
-      "indicator": "arranged",
+      "indicator": "reworked",
       "fodder": "A SORE SIGN",
       "operations": [
         {
@@ -283,7 +283,7 @@
         }
       ]
     },
-    "parse": "Anagram of A SORE SIGN (arranged) gives ORGANISES, makes tidy."
+    "parse": "Anagram of A SORE SIGN (reworked) gives ORGANISES, puts in order."
   },
   {
     "answer": "DETERMINE",
@@ -911,13 +911,13 @@
     "answer": "OVERNIGHT",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Campers discover nightfall, a watch lasting (9)",
+    "clue": "During the night, some discover nightfall (9)",
     "def": {
-      "text": "lasting",
-      "position": "end"
+      "text": "During the night",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "lasting",
+      "indicator": "some",
       "fodder": "discover nightfall",
       "operations": [
         {
@@ -927,7 +927,7 @@
         }
       ]
     },
-    "parse": "Hidden in 'discOVER NIGHTfall' is OVERNIGHT."
+    "parse": "Hidden in 'discOVER NIGHTfall' → OVERNIGHT; during the night."
   },
   {
     "answer": "OVERHEAD",

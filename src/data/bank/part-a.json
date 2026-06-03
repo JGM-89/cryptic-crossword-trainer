@@ -556,13 +556,13 @@
     "answer": "ONCE",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "At one time, the bacon centre was carved (4)",
+    "clue": "At one time, part of a bacon centre (4)",
     "def": {
       "text": "At one time",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "cut out",
+      "indicator": "part of",
       "fodder": "bacon centre",
       "operations": [
         {
@@ -814,35 +814,25 @@
   },
   {
     "answer": "SPAR",
-    "clueType": "container",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Box for a quiet little while inside (4)",
+    "clue": "Box, or a ship's pole (4)",
     "def": {
       "text": "Box",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "held inside",
-      "fodder": "P in SAR",
+      "indicator": "",
+      "fodder": "Box / ship's pole",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "quiet",
-          "output": "P"
-        },
-        {
-          "op": "synonym",
-          "input": "little while",
-          "output": "SAR"
-        },
-        {
-          "op": "insert",
-          "input": "P in S_AR",
+          "op": "literal",
+          "input": "two definitions",
           "output": "SPAR"
         }
       ]
     },
-    "parse": "P (quiet, piano) inserted into SAR (a brief spell) gives SPAR; to box."
+    "parse": "Double definition: to box (spar), and a ship's pole (a spar)."
   },
   {
     "answer": "HEAT",
