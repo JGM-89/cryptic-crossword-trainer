@@ -3,9 +3,9 @@
     "answer": "ICON",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "One swindle leaves a lasting image (4)",
+    "clue": "One con makes a saint's image (4)",
     "def": {
-      "text": "a lasting image",
+      "text": "a saint's image",
       "position": "end"
     },
     "wordplay": {
@@ -19,7 +19,7 @@
         },
         {
           "op": "synonym",
-          "input": "swindle",
+          "input": "con",
           "output": "CON"
         },
         {
@@ -29,29 +29,29 @@
         }
       ]
     },
-    "parse": "I (one) + CON (swindle) = ICON, a lasting image."
+    "parse": "I (one) + CON (swindle) = ICON, a saint's image; \"makes\" links wordplay to definition."
   },
   {
     "answer": "SMOG",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Pollution shrouding parts of cosmogony (4)",
+    "clue": "Pollution hidden by a famous mogul (4)",
     "def": {
       "text": "Pollution",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "parts of",
-      "fodder": "cosmogony",
+      "indicator": "hidden by",
+      "fodder": "famous mogul",
       "operations": [
         {
           "op": "hidden",
-          "input": "co<SMOG>ony",
+          "input": "famou<SMOG>ul",
           "output": "SMOG"
         }
       ]
     },
-    "parse": "Hidden in coSMOGony = SMOG, pollution."
+    "parse": "Hidden in famouSMOGul = SMOG, pollution."
   },
   {
     "answer": "SCAMP",

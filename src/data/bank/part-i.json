@@ -194,7 +194,7 @@
     "answer": "HARE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Disturbed, hear a runner (4)",
+    "clue": "Disturbed, you hear a runner (4)",
     "def": {
       "text": "a runner",
       "position": "end"
@@ -210,7 +210,7 @@
         }
       ]
     },
-    "parse": "Anagram of HEAR (disturbed) = HARE, a swift runner."
+    "parse": "Anagram of HEAR (Disturbed) = HARE, a runner — the animal bolting when startled."
   },
   {
     "answer": "NEST",
@@ -270,14 +270,14 @@
     "answer": "TOAD",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "A dot moved across the amphibian (4)",
+    "clue": "A dot moved — an amphibian (4)",
     "def": {
-      "text": "amphibian",
+      "text": "an amphibian",
       "position": "end"
     },
     "wordplay": {
       "indicator": "moved",
-      "fodder": "A DOT",
+      "fodder": "A dot",
       "operations": [
         {
           "op": "anagram",
@@ -286,7 +286,7 @@
         }
       ]
     },
-    "parse": "(A DOT)* = TOAD; an 'amphibian'."
+    "parse": "(A DOT)* (moved) = TOAD, an amphibian — a far-off speck that turns out to hop."
   },
   {
     "answer": "MEND",
@@ -961,7 +961,7 @@
     "answer": "WONDER",
     "clueType": "deletion",
     "difficulty": 3,
-    "clue": "Wonders endlessly, full of awe (6)",
+    "clue": "She wonders endlessly, gazing in awe (6)",
     "def": {
       "text": "awe",
       "position": "end"
@@ -977,7 +977,7 @@
         }
       ]
     },
-    "parse": "WONDERS (wonders) without its last letter = WONDER; a sense of awe."
+    "parse": "WONDERS (she wonders) with its last letter dropped (endlessly) = WONDER, a sense of awe."
   },
   {
     "answer": "MARBLE",
@@ -1216,7 +1216,7 @@
     "answer": "CISTERN",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Cretins, foolishly, by the water tank (7)",
+    "clue": "Cretins, foolishly, paddling in the water tank (7)",
     "def": {
       "text": "the water tank",
       "position": "end"
@@ -1232,7 +1232,7 @@
         }
       ]
     },
-    "parse": "(CRETINS)* = CISTERN, the water tank."
+    "parse": "(CRETINS)* (foolishly) = CISTERN, the water tank — idiots wading in it."
   },
   {
     "answer": "MONARCH",
@@ -1302,7 +1302,7 @@
     "answer": "CEILING",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Church one left the fish below the upper limit (7)",
+    "clue": "Church served one ling under the upper limit (7)",
     "def": {
       "text": "the upper limit",
       "position": "end"
@@ -1323,7 +1323,7 @@
         },
         {
           "op": "synonym",
-          "input": "the fish",
+          "input": "ling",
           "output": "LING"
         },
         {
@@ -1333,7 +1333,7 @@
         }
       ]
     },
-    "parse": "CE (church) + I (one) + LING (a fish) = CEILING, the upper limit."
+    "parse": "CE (church) + I (one) + LING (a fish) = CEILING, the upper limit — a parish meal served within its budget cap."
   },
   {
     "answer": "SARDINE",
@@ -1361,9 +1361,9 @@
     "answer": "HABITAT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Custom area, time-honoured, an animal's home (7)",
+    "clue": "Routine area, in time, makes a creature's home (7)",
     "def": {
-      "text": "an animal's home",
+      "text": "a creature's home",
       "position": "end"
     },
     "wordplay": {
@@ -1372,7 +1372,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Custom",
+          "input": "Routine",
           "output": "HABIT"
         },
         {
@@ -1392,7 +1392,7 @@
         }
       ]
     },
-    "parse": "HABIT (custom) + A (area) + T (time) = HABITAT, an animal's home."
+    "parse": "HABIT (routine) + A (area) + T (time) = HABITAT, a creature's home."
   },
   {
     "answer": "CHAMBER",
@@ -1484,7 +1484,7 @@
     "answer": "HARVEST",
     "clueType": "deletion",
     "difficulty": 3,
-    "clue": "Reaps endlessly the autumn gathering (7)",
+    "clue": "The farmer harvests endlessly come the autumn gathering (7)",
     "def": {
       "text": "the autumn gathering",
       "position": "end"
@@ -1500,7 +1500,7 @@
         }
       ]
     },
-    "parse": "HARVESTS (reaps) endlessly (last letter dropped) = HARVEST, the autumn gathering."
+    "parse": "HARVESTS (the farmer harvests) with its last letter dropped (endlessly) = HARVEST, the autumn gathering."
   },
   {
     "answer": "BLANKET",
@@ -1560,14 +1560,14 @@
     "answer": "SHOULDER",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Take on the responsibility a soldier carries his rifle on (8)",
+    "clue": "Carry the burden where a soldier rests his rifle (8)",
     "def": {
-      "text": "Take on the responsibility",
+      "text": "Carry the burden",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Take on the responsibility / part a soldier carries his rifle on",
+      "fodder": "Carry the burden / where a soldier rests his rifle",
       "operations": [
         {
           "op": "literal",
@@ -1576,7 +1576,7 @@
         }
       ]
     },
-    "parse": "Double definition: to SHOULDER (take on) a burden, and the SHOULDER a soldier rests his rifle on."
+    "parse": "Double definition: to SHOULDER (carry the burden), and the SHOULDER where a soldier rests his rifle."
   },
   {
     "answer": "ELEPHANT",
@@ -1879,13 +1879,13 @@
     "answer": "CHALLENGE",
     "clueType": "deletion",
     "difficulty": 3,
-    "clue": "Almost test all the contenders with a dare (9)",
+    "clue": "Climbing this almost challenges the fittest, a dare (9)",
     "def": {
       "text": "a dare",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Almost",
+      "indicator": "almost",
       "fodder": "challenges",
       "operations": [
         {

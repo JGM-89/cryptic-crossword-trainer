@@ -25,7 +25,7 @@
     "answer": "NIGHTMARES",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Dark hours' horses become bad dreams (10)",
+    "clue": "After dark the mares, spooked, became the children's bad dreams (10)",
     "def": {
       "text": "bad dreams",
       "position": "end"
@@ -36,12 +36,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Dark hours",
+          "input": "After dark",
           "output": "NIGHT"
         },
         {
           "op": "synonym",
-          "input": "horses",
+          "input": "mares",
           "output": "MARES"
         },
         {
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "parse": "NIGHT (dark hours) + MARES (horses) = NIGHTMARES; bad dreams."
+    "parse": "NIGHT (after dark) + MARES (the horses) = NIGHTMARES; bad dreams."
   },
   {
     "answer": "TELEVISION",
@@ -79,9 +79,9 @@
     "answer": "LABORATORY",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Work a Conservative put into the workshop (10)",
+    "clue": "Hard work landed a Tory in the research workshop (10)",
     "def": {
-      "text": "workshop",
+      "text": "research workshop",
       "position": "end"
     },
     "wordplay": {
@@ -90,7 +90,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Work",
+          "input": "Hard work",
           "output": "LABOR"
         },
         {
@@ -100,7 +100,7 @@
         },
         {
           "op": "synonym",
-          "input": "Conservative",
+          "input": "Tory",
           "output": "TORY"
         },
         {
@@ -110,19 +110,19 @@
         }
       ]
     },
-    "parse": "LABOR (work) + A + TORY (a Conservative) = LABORATORY; a 'workshop'."
+    "parse": "LABOR (hard work) + A + TORY (a Tory) = LABORATORY; a 'research workshop'."
   },
   {
     "answer": "DEPARTMENT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Tramped net wildly through the store's menswear division (10)",
+    "clue": "Tramped net, all scrambled, became the menswear division (10)",
     "def": {
       "text": "division",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "wildly",
+      "indicator": "scrambled",
       "fodder": "TRAMPED NET",
       "operations": [
         {
@@ -132,15 +132,15 @@
         }
       ]
     },
-    "parse": "(TRAMPED NET)* = DEPARTMENT; 'division'."
+    "parse": "(TRAMPED NET)* 'scrambled' = DEPARTMENT; 'division' (e.g. the menswear division) defines it."
   },
   {
     "answer": "UNDERRATED",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Below par and assessed, but really too cheaply valued (10)",
+    "clue": "Below par but well rated, the rookie was undervalued (10)",
     "def": {
-      "text": "too cheaply valued",
+      "text": "undervalued",
       "position": "end"
     },
     "wordplay": {
@@ -154,7 +154,7 @@
         },
         {
           "op": "synonym",
-          "input": "assessed",
+          "input": "rated",
           "output": "RATED"
         },
         {
@@ -164,13 +164,13 @@
         }
       ]
     },
-    "parse": "UNDER (below) + RATED (assessed) = UNDERRATED; 'too cheaply valued'."
+    "parse": "UNDER (below) + RATED (rated, assessed) = UNDERRATED; 'undervalued' defines it (a golfer below par yet well rated, who was still underrated)."
   },
   {
     "answer": "BRIDGEHEAD",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Card game's froth gains a foothold for the invasion (10)",
+    "clue": "Bridge over the head of the beer won a foothold for the invasion (10)",
     "def": {
       "text": "foothold for the invasion",
       "position": "end"
@@ -181,12 +181,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Card game",
+          "input": "Bridge",
           "output": "BRIDGE"
         },
         {
           "op": "synonym",
-          "input": "froth",
+          "input": "head",
           "output": "HEAD"
         },
         {
@@ -196,30 +196,30 @@
         }
       ]
     },
-    "parse": "BRIDGE (card game) + HEAD (froth on a pint) = BRIDGEHEAD; a 'foothold for the invasion'."
+    "parse": "BRIDGE (card game) + HEAD (froth on a pint of beer) = BRIDGEHEAD; a 'foothold for the invasion'."
   },
   {
     "answer": "BARGAINING",
     "clueType": "container",
     "difficulty": 4,
-    "clue": "Profit going into scarcely dressed haggling (10)",
+    "clue": "The trader, baring all and hugging profit, loved the haggling (10)",
     "def": {
-      "text": "haggling",
+      "text": "the haggling",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "going into",
+      "indicator": "hugging",
       "fodder": "GAIN in BARING",
       "operations": [
         {
           "op": "synonym",
-          "input": "Profit",
-          "output": "GAIN"
+          "input": "baring",
+          "output": "BARING"
         },
         {
           "op": "synonym",
-          "input": "scarcely dressed",
-          "output": "BARING"
+          "input": "profit",
+          "output": "GAIN"
         },
         {
           "op": "insert",
@@ -228,7 +228,7 @@
         }
       ]
     },
-    "parse": "GAIN (profit) inside BARING (scarcely dressed) = BARGAINING, defined by 'haggling'."
+    "parse": "GAIN (profit) inside BARING = BARGAINING; the haggling."
   },
   {
     "answer": "INFORMATION",
@@ -330,7 +330,7 @@
     "answer": "STOCKBROKER",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Soup base, agent for the shares dealer (11)",
+    "clue": "The chef's stock won over the broker, a shares dealer (11)",
     "def": {
       "text": "shares dealer",
       "position": "end"
@@ -341,12 +341,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Soup base",
+          "input": "stock",
           "output": "STOCK"
         },
         {
           "op": "synonym",
-          "input": "agent",
+          "input": "broker",
           "output": "BROKER"
         },
         {
@@ -356,13 +356,13 @@
         }
       ]
     },
-    "parse": "STOCK (soup base) + BROKER (agent) = STOCKBROKER, a shares dealer."
+    "parse": "STOCK (the chef's stock, soup base) + BROKER (agent) = STOCKBROKER, a shares dealer."
   },
   {
     "answer": "CONSTRAINED",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Swindle, tense, kept in check (11)",
+    "clue": "Swindle leaves the nerves strained, but they're kept in check (11)",
     "def": {
       "text": "kept in check",
       "position": "end"
@@ -378,7 +378,7 @@
         },
         {
           "op": "synonym",
-          "input": "tense",
+          "input": "strained",
           "output": "STRAINED"
         },
         {
@@ -388,7 +388,7 @@
         }
       ]
     },
-    "parse": "CON (swindle) + STRAINED (tense) = CONSTRAINED, defined by 'kept in check'."
+    "parse": "CON (swindle) + STRAINED (nerves strained, tense) = CONSTRAINED, defined by 'kept in check'."
   },
   {
     "answer": "RELATIONSHIP",
@@ -470,13 +470,13 @@
     "answer": "UNDERSTANDING",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Dread stunning collapse — that took some grasping (13)",
+    "clue": "Their dread, stunning to behold, broke down — that took some grasping (13)",
     "def": {
-      "text": "grasping",
+      "text": "that took some grasping",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "collapse",
+      "indicator": "broke down",
       "fodder": "DREAD STUNNING",
       "operations": [
         {
@@ -486,7 +486,7 @@
         }
       ]
     },
-    "parse": "(DREAD STUNNING)* 'collapse' = UNDERSTANDING; 'grasping' (comprehension) defines it."
+    "parse": "(DREAD STUNNING)* 'broke down' = UNDERSTANDING; 'that took some grasping' (comprehension) defines it."
   },
   {
     "answer": "CONSIDERATION",
@@ -514,13 +514,13 @@
     "answer": "ENTERTAINMENT",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Treat men in net, somehow, to a bit of amusement (13)",
+    "clue": "Treat men in net, tangled, for some amusement (13)",
     "def": {
       "text": "amusement",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "somehow",
+      "indicator": "tangled",
       "fodder": "TREAT MEN IN NET",
       "operations": [
         {
@@ -530,20 +530,20 @@
         }
       ]
     },
-    "parse": "(TREAT MEN IN NET)* 'somehow' = ENTERTAINMENT; 'amusement' defines it."
+    "parse": "(TREAT MEN IN NET)* 'tangled' = ENTERTAINMENT; 'amusement' defines it."
   },
   {
     "answer": "THOUGHTLESSLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Idea reduced, in a way that shows no care (13)",
+    "clue": "Idea reduced, in a way showing no care (13)",
     "def": {
-      "text": "that shows no care",
+      "text": "showing no care",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "THOUGHT + LESS + LY",
+      "fodder": "THOUGHT+LESS+LY",
       "operations": [
         {
           "op": "synonym",
@@ -567,20 +567,20 @@
         }
       ]
     },
-    "parse": "THOUGHT (idea) + LESS (reduced) + LY ('in a way', adverb-forming) = THOUGHTLESSLY; carelessly."
+    "parse": "THOUGHT (idea) + LESS (reduced) + LY (in a way) = THOUGHTLESSLY, showing no care."
   },
   {
     "answer": "GRANDMOTHERLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Splendid mum, in a way, like a doting granny (13)",
+    "clue": "Splendid mother, in a way, fondly indulgent (13)",
     "def": {
-      "text": "like a doting granny",
+      "text": "fondly indulgent",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "GRAND + MOTHER + LY",
+      "fodder": "GRAND+MOTHER+LY",
       "operations": [
         {
           "op": "synonym",
@@ -589,7 +589,7 @@
         },
         {
           "op": "synonym",
-          "input": "mum",
+          "input": "mother",
           "output": "MOTHER"
         },
         {
@@ -604,6 +604,6 @@
         }
       ]
     },
-    "parse": "GRAND (splendid) + MOTHER (mum) + LY ('in a way') = GRANDMOTHERLY; like a doting granny."
+    "parse": "GRAND (splendid) + MOTHER + LY (in a way) = GRANDMOTHERLY, fondly indulgent."
   }
 ]

@@ -28,7 +28,10 @@ it scores zero regardless of the rest.** Axes 2–5 are 1–5.
 2. **Definition (1–5).** Precise but not the dictionary's first, obvious synonym. Oblique,
    disguised definitions score higher.
 3. **Surface (1–5).** Reads as natural, picturable English — a real phrase or sentence that
-   could occur in conversation or writing — and actively *misdirects* away from the parse.
+   could occur in conversation or writing — in one consistent register/tense, and actively
+   *misdirects* away from the parse. Prefer concrete, visualisable nouns over vague abstractions
+   ("thing/stuff/business"). A **5** could appear verbatim in a novel or a headline; a **2** only
+   makes sense inside a crossword.
 4. **Economy (1–5).** Every word earns its keep in the cryptic reading. **No filler** added only
    to prop up the surface. (Length is fine if it "tells a story" with no idle words.)
 5. **Wit / originality (1–5).** A fair penny-drop ("aha"); fresh route; avoids the most obvious
@@ -78,12 +81,18 @@ ladder (same parse `CHAR + A`, defined "position of authority"):
 - ✓ `Cleaning-lady holds a position of authority (5)` — a real, picturable statement.
 
 **Tests to apply to every surface:**
-- **Image test** — does it conjure a picture or a plausible statement (a mini-narrative)?
+- **Image test** — does it conjure a picture or a plausible statement (a mini-narrative)? Concrete
+  nouns and a real action beat abstract nouns and vague verbs.
 - **Conversation test** — could this sentence appear *outside* a crossword? If it only exists in
   crossword-land ("Doctor and the Queen hold four for motorist!"), it's crosswordy — rewrite.
 - **Economy test** — can you delete a word without breaking the *cryptic* reading? If a word is
   there only for the surface, it's a fault. (No padding adverbs like "…wildly…", no random
   proper nouns dragged in to fix anagram fodder.)
+- **Register/tense test** — one voice and one tense throughout; no jarring formal↔slang jump, no
+  archaic word beside a modern one. Prefer the present tense (it reads most naturally and keeps the
+  cryptic grammar clean).
+- **Link-word test** — every joining word (`is`/`for`/`from`/`with`/`gives`…) must read naturally
+  in the surface *and* do honest cryptic work. A link present only to smooth the surface is padding.
 - **Taste test** — avoid grim or off imagery even when technically clean.
 
 **Fair misdirection toolkit:** disguise the definition (use an oblique synonym); mislead the
@@ -96,6 +105,24 @@ its *cryptic* job (an apparent anagram indicator that's really the definition). 
 surfaces; mechanical abbreviation charades ("Graduate engineer's bald"→BARE); formulaic
 repetition (a whole run of "beheaded X" deletions); obscure/archaic synonyms; clues that scream
 the answer; over-clever multi-device pile-ups.
+
+**Surface faults — quick diagnostic table.** Run each candidate past these; any hit is a rewrite.
+
+| Smell | One-line test | Fix |
+|---|---|---|
+| **Padding / filler** | Delete the word — does the *cryptic* reading still hold? | If yes, the word served only the surface — cut it or find a link that does cryptic work. |
+| **Crossword-ese** | Would anyone say this outside a puzzle? | Rewrite into a sentence that could occur in prose or speech. |
+| **No image / abstract** | Can you *picture* it? | Swap vague nouns ("thing/stuff/matter") for concrete ones; give it a real subject and verb. |
+| **Non-sequitur** | Taken literally, does the scene make sense? | Re-choose synonyms so the words cohere into one scenario. |
+| **Register/tense clash** | One voice, one tense? | Unify; default to present tense. |
+| **Proper-noun padding** | Is that capitalised name there for the story or just for fodder? | Drop it or rebuild the wordplay; capitals must earn the surface (the capitalisation trick is fair, dragged-in names are not). |
+| **Scream** | Does the surface give the answer away before the parse? | Strengthen misdirection — disguise the definition, bend the part of speech. |
+| **Device pile-up** | More than ~two devices to track? | Simplify; one clean penny-drop beats three muddy ones. |
+
+> **Authorities, in one breath:** Afrit — *"say what you mean"* (the parse is sacred, the surface
+> may lie). Ximenes — precise definition, immaculate grammar, nothing extraneous. Azed — a clue
+> should *tell a story*. Alberich — a clue that conjures no picture is unsatisfactory even when the
+> cryptic grammar is perfect. Don Manley — read it aloud; if you stumble, the surface is wrong.
 
 ---
 
@@ -274,7 +301,11 @@ Match `difficulty` honestly; it feeds the puzzle difficulty bands.
 2. Fix a **precise, oblique definition**.
 3. Assemble fair **wordplay**; emit the JSON per §6.
 4. **Soundness pass** — read it as the wordplay demands; check indicators, grammar, every letter.
-5. **Surface pass** — rewrite word choice into a real, picturable sentence that misdirects.
+   Apply the **placeholder test**: mentally replace the fodder with `[fodder]` and the definition
+   with `[answer]`; the link words that remain must still parse as a sentence (this catches
+   tense/number mismatches and links that only the surface needed).
+5. **Surface pass** — rewrite word choice into a real, picturable sentence that misdirects; one
+   register and tense; concrete nouns; nothing that only exists in crossword-land.
 6. **Economy pass** — delete/justify every word; kill filler.
 7. **Wit pass** — is there a penny-drop? Does it avoid the obvious arrangement?
 8. **Validate** with the harness; **vary the device** across candidates so the best-of-N explores

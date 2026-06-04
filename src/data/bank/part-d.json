@@ -25,13 +25,13 @@
     "answer": "DESSERT",
     "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Braided locks turned back for the pudding (7)",
+    "clue": "Hair plaited, turned round, makes the pudding (7)",
     "def": {
       "text": "the pudding",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "turned back",
+      "indicator": "turned round",
       "fodder": "tressed",
       "operations": [
         {
@@ -41,29 +41,29 @@
         }
       ]
     },
-    "parse": "TRESSED (braided locks) reversed = DESSERT, the pudding."
+    "parse": "TRESSED (hair plaited) reversed = DESSERT, the pudding."
   },
   {
     "answer": "EARNEST",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Listener's home is sincere (7)",
+    "clue": "The eavesdropper's nest was deadly serious (7)",
     "def": {
-      "text": "sincere",
+      "text": "deadly serious",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "EAR+NEST",
+      "fodder": "EAR + NEST",
       "operations": [
         {
           "op": "synonym",
-          "input": "Listener",
+          "input": "eavesdropper",
           "output": "EAR"
         },
         {
           "op": "synonym",
-          "input": "home",
+          "input": "nest",
           "output": "NEST"
         },
         {
@@ -73,7 +73,7 @@
         }
       ]
     },
-    "parse": "EAR (listener) + NEST (home) = EARNEST, sincere."
+    "parse": "EAR (eavesdropper, a listener) + NEST (nest) = EARNEST, meaning deadly serious; the surface pictures a spy's hideout."
   },
   {
     "answer": "NEUTRAL",
@@ -123,14 +123,14 @@
     "answer": "GENERAL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Enlarge oddly to become a senior officer (7)",
+    "clue": "Troops told to enlarge wildly under the senior officer (7)",
     "def": {
-      "text": "a senior officer",
+      "text": "the senior officer",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "Enlarge",
+      "indicator": "wildly",
+      "fodder": "enlarge",
       "operations": [
         {
           "op": "anagram",
@@ -139,7 +139,7 @@
         }
       ]
     },
-    "parse": "(ENLARGE)* = GENERAL, a senior officer."
+    "parse": "(ENLARGE)* = GENERAL, the senior officer; 'wildly' is the anagram indicator."
   },
   {
     "answer": "CRAVING",
@@ -177,14 +177,14 @@
     "answer": "RECITAL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Claret I drunk before the concert (7)",
+    "clue": "Claret I quaffed, all shaken up, before the concert (7)",
     "def": {
-      "text": "concert",
+      "text": "the concert",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "drunk",
-      "fodder": "CLARET I",
+      "indicator": "all shaken up",
+      "fodder": "Claret I",
       "operations": [
         {
           "op": "anagram",
@@ -193,7 +193,7 @@
         }
       ]
     },
-    "parse": "(CLARET I)* = RECITAL, a concert; 'drunk' is the anagram indicator, winking at the claret."
+    "parse": "(CLARET I)* = RECITAL, the concert; 'all shaken up' is the anagram indicator, the 'I' a first-person drinker."
   },
   {
     "answer": "PANCAKE",
@@ -263,9 +263,9 @@
     "answer": "FORWARD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Backing the patients' room, push on (7)",
+    "clue": "All for the hospital ward, a bold striker (7)",
     "def": {
-      "text": "push on",
+      "text": "a bold striker",
       "position": "end"
     },
     "wordplay": {
@@ -274,12 +274,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Backing",
+          "input": "All for",
           "output": "FOR"
         },
         {
           "op": "synonym",
-          "input": "patients' room",
+          "input": "hospital ward",
           "output": "WARD"
         },
         {
@@ -289,15 +289,15 @@
         }
       ]
     },
-    "parse": "FOR (backing, in support of) + WARD (patients' room) = FORWARD, to push on."
+    "parse": "FOR (all for, in support of) + WARD (hospital ward) = FORWARD, a bold striker in football."
   },
   {
     "answer": "HEADWAY",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Leader's route shows progress (7)",
+    "clue": "Lead the way to make real progress (7)",
     "def": {
-      "text": "progress",
+      "text": "real progress",
       "position": "end"
     },
     "wordplay": {
@@ -306,12 +306,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Leader",
+          "input": "Lead",
           "output": "HEAD"
         },
         {
           "op": "synonym",
-          "input": "route",
+          "input": "the way",
           "output": "WAY"
         },
         {
@@ -321,16 +321,16 @@
         }
       ]
     },
-    "parse": "HEAD (leader) + WAY (route) = HEADWAY, progress."
+    "parse": "HEAD (lead) + WAY (the way) = HEADWAY, real progress."
   },
   {
     "answer": "WARFARE",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Conflict's price after fighting (7)",
+    "clue": "Fighting's price is endless conflict (7)",
     "def": {
-      "text": "Conflict",
-      "position": "start"
+      "text": "endless conflict",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
@@ -338,7 +338,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "fighting",
+          "input": "Fighting",
           "output": "WAR"
         },
         {
@@ -353,7 +353,7 @@
         }
       ]
     },
-    "parse": "WAR (fighting) + FARE (price) = WARFARE; the definition is 'conflict'."
+    "parse": "WAR (fighting) + FARE (price) = WARFARE; the definition is 'endless conflict'."
   },
   {
     "answer": "OUTLOOK",
@@ -391,31 +391,31 @@
     "answer": "PASSAGE",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Compass agents concealing a corridor (7)",
+    "clue": "The brass compass, aged badly, hides a corridor (7)",
     "def": {
       "text": "a corridor",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "concealing",
-      "fodder": "comPASS AGEnts",
+      "indicator": "hides",
+      "fodder": "compass aged",
       "operations": [
         {
           "op": "hidden",
-          "input": "com<PASS AGE>nts",
+          "input": "com<PASS AGE>d",
           "output": "PASSAGE"
         }
       ]
     },
-    "parse": "Hidden in comPASS AGEnts = PASSAGE, a corridor."
+    "parse": "Hidden in 'comPASS AGEd' = PASSAGE, a corridor; the run spans 'compass' into 'aged'."
   },
   {
     "answer": "EARRING",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Listener's call for jewellery (7)",
+    "clue": "Bend an ear to the call, eyeing a golden hoop (7)",
     "def": {
-      "text": "jewellery",
+      "text": "a golden hoop",
       "position": "end"
     },
     "wordplay": {
@@ -424,7 +424,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Listener's",
+          "input": "ear",
           "output": "EAR"
         },
         {
@@ -439,7 +439,7 @@
         }
       ]
     },
-    "parse": "EAR (listener) + RING (call) = EARRING, a piece of jewellery."
+    "parse": "EAR (ear) + RING (a call, on the phone) = EARRING, a golden hoop of jewellery."
   },
   {
     "answer": "PIRATES",
@@ -467,9 +467,9 @@
     "answer": "BRACKET",
     "clueType": "container",
     "difficulty": 4,
-    "clue": "Instrument of torture held in a bet, this income band (7)",
+    "clue": "Instrument of torture held in a bet, a tax band (7)",
     "def": {
-      "text": "this income band",
+      "text": "a tax band",
       "position": "end"
     },
     "wordplay": {
@@ -493,7 +493,7 @@
         }
       ]
     },
-    "parse": "RACK (instrument of torture) inside BET (a bet) = B(RACK)ET = BRACKET, an income band."
+    "parse": "RACK (instrument of torture) inside BET = BRACKET; a tax band."
   },
   {
     "answer": "PORTRAY",
@@ -553,9 +553,9 @@
     "answer": "BRANDED",
     "clueType": "container",
     "difficulty": 4,
-    "clue": "South African money stashed in sleep, stigmatised (7)",
+    "clue": "South African money stashed in bed, marked out (7)",
     "def": {
-      "text": "stigmatised",
+      "text": "marked out",
       "position": "end"
     },
     "wordplay": {
@@ -569,7 +569,7 @@
         },
         {
           "op": "synonym",
-          "input": "sleep",
+          "input": "bed",
           "output": "BED"
         },
         {
@@ -579,7 +579,7 @@
         }
       ]
     },
-    "parse": "RAND (South African money) inside BED (sleep) = B(RAND)ED = BRANDED, stigmatised."
+    "parse": "RAND (South African money) inside BED = B(RAND)ED = BRANDED, marked out; cash hidden under the mattress."
   },
   {
     "answer": "BROADEN",
@@ -617,7 +617,7 @@
     "answer": "NOWHERE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "At this moment, on the spot, in no place (7)",
+    "clue": "Now present, then suddenly in no place (7)",
     "def": {
       "text": "in no place",
       "position": "end"
@@ -628,12 +628,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "At this moment",
+          "input": "Now",
           "output": "NOW"
         },
         {
           "op": "synonym",
-          "input": "on the spot",
+          "input": "present",
           "output": "HERE"
         },
         {
@@ -643,37 +643,37 @@
         }
       ]
     },
-    "parse": "NOW (at this moment) + HERE (on the spot) = NOWHERE; in no place."
+    "parse": "NOW (now) + HERE (present, on the spot) = NOWHERE; in no place. The surface paints something vanishing."
   },
   {
     "answer": "EARLOBE",
     "clueType": "hidden",
-    "difficulty": 2,
-    "clue": "Stud goes near lobe of one's flesh (7)",
+    "difficulty": 3,
+    "clue": "This year, lobelias conceal a bit of the ear (7)",
     "def": {
-      "text": "flesh",
+      "text": "a bit of the ear",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "goes",
-      "fodder": "nEAR LOBE",
+      "indicator": "conceal",
+      "fodder": "year lobelias",
       "operations": [
         {
           "op": "hidden",
-          "input": "n<EAR LOBE>",
+          "input": "y<EAR LOBE>lias",
           "output": "EARLOBE"
         }
       ]
     },
-    "parse": "Hidden in 'nEAR LOBE of one's...' = EARLOBE, a piece of flesh (where an earring stud sits)."
+    "parse": "Hidden in yEAR LOBElias = EARLOBE, a bit of the ear."
   },
   {
     "answer": "CARAVAN",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Vehicle with a delivery vehicle towed as holiday home (7)",
+    "clue": "Auto plus a van makes a mobile holiday home (7)",
     "def": {
-      "text": "holiday home",
+      "text": "a mobile holiday home",
       "position": "end"
     },
     "wordplay": {
@@ -682,7 +682,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Vehicle",
+          "input": "Auto",
           "output": "CAR"
         },
         {
@@ -692,7 +692,7 @@
         },
         {
           "op": "synonym",
-          "input": "delivery vehicle",
+          "input": "van",
           "output": "VAN"
         },
         {
@@ -702,7 +702,7 @@
         }
       ]
     },
-    "parse": "CAR (vehicle) + A + VAN (delivery vehicle) = CARAVAN; a holiday home on wheels."
+    "parse": "CAR (auto) + A + VAN (van) = CARAVAN, a mobile holiday home."
   },
   {
     "answer": "DELIVER",

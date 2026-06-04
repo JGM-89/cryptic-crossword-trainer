@@ -3,14 +3,14 @@
     "answer": "EAR",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Listening organ on the corn (3)",
+    "clue": "Listening organ, like one of corn (3)",
     "def": {
       "text": "Listening organ",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Listening organ / on the corn",
+      "fodder": "Listening organ / one of corn",
       "operations": [
         {
           "op": "literal",
@@ -19,7 +19,7 @@
         }
       ]
     },
-    "parse": "Double definition: a listening organ, and the seed-bearing part on corn."
+    "parse": "Double definition: an EAR (listening organ), and an EAR of corn. 'one of corn' frames the natural idiom 'ear of corn'."
   },
   {
     "answer": "BAT",
@@ -91,13 +91,13 @@
     "answer": "ART",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "A guitar tuner conceals fine painting (3)",
+    "clue": "A guitar tuner shows real skill (3)",
     "def": {
-      "text": "fine painting",
+      "text": "real skill",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "conceals",
+      "indicator": "shows",
       "fodder": "guitar tuner",
       "operations": [
         {
@@ -107,7 +107,7 @@
         }
       ]
     },
-    "parse": "ART hidden in 'guitAR Tuner', spanning two words; painting."
+    "parse": "ART hidden in 'guitAR Tuner', spanning two words, flagged by 'shows'; ART as in real skill."
   },
   {
     "answer": "OWL",
@@ -135,13 +135,13 @@
     "answer": "GOD",
     "clueType": "reversal",
     "difficulty": 2,
-    "clue": "Deity revealed when dog turns over (3)",
+    "clue": "Deity a dog rolls over for (3)",
     "def": {
       "text": "Deity",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "turns over",
+      "indicator": "rolls over",
       "fodder": "dog",
       "operations": [
         {
@@ -151,7 +151,7 @@
         }
       ]
     },
-    "parse": "DOG reversed by 'turns over' = GOD; a deity."
+    "parse": "DOG reversed by 'rolls over' = GOD; a deity. Surface: a dog rolls over on command."
   },
   {
     "answer": "TIP",
@@ -223,23 +223,23 @@
     "answer": "AGE",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Era found in vintage wine (3)",
+    "clue": "Era hidden in a garage workshop (3)",
     "def": {
       "text": "Era",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "found in",
-      "fodder": "vintage",
+      "indicator": "hidden in",
+      "fodder": "garage",
       "operations": [
         {
           "op": "hidden",
-          "input": "vint<AGE>",
+          "input": "gar<AGE>",
           "output": "AGE"
         }
       ]
     },
-    "parse": "Hidden in 'vintAGE' = AGE; an era (and vintage itself is about age)."
+    "parse": "Hidden in 'garAGE' = AGE; an era. The carrier 'garage workshop' points away from time."
   },
   {
     "answer": "COB",
@@ -267,14 +267,14 @@
     "answer": "BAR",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Exclude the legal profession (3)",
+    "clue": "Lawyers bent on barring nobody (3)",
     "def": {
-      "text": "Exclude",
+      "text": "Lawyers",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Exclude / the legal profession",
+      "fodder": "Lawyers / barring nobody",
       "operations": [
         {
           "op": "literal",
@@ -283,7 +283,7 @@
         }
       ]
     },
-    "parse": "Double definition: to bar (exclude), and the Bar (the legal profession)."
+    "parse": "Double definition: the BAR (the legal profession, lawyers), and to BAR (exclude). Surface paints lawyers determined to shut no one out."
   },
   {
     "answer": "RED",
@@ -355,13 +355,13 @@
     "answer": "LIME",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Sharp citrus runs a mile (4)",
+    "clue": "Sharp citrus from a jumbled mile (4)",
     "def": {
       "text": "Sharp citrus",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "runs",
+      "indicator": "jumbled",
       "fodder": "mile",
       "operations": [
         {
@@ -371,7 +371,7 @@
         }
       ]
     },
-    "parse": "Anagram (runs) of MILE = LIME; a sharp green citrus."
+    "parse": "Anagram of MILE (jumbled) = LIME, a sharp citrus."
   },
   {
     "answer": "TAME",
@@ -399,14 +399,14 @@
     "answer": "STAR",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Leading actor's asterisk (4)",
+    "clue": "Asterisk beside the leading actor (4)",
     "def": {
-      "text": "Leading actor",
-      "position": "start"
+      "text": "leading actor",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Leading actor / asterisk",
+      "fodder": "Asterisk / leading actor",
       "operations": [
         {
           "op": "literal",
@@ -415,20 +415,20 @@
         }
       ]
     },
-    "parse": "Double definition: a leading actor, and the asterisk symbol (*)."
+    "parse": "Double definition: a star is the asterisk symbol (*), and a star is the leading actor. The typographic surface misdirects from the showbiz sense."
   },
   {
     "answer": "DRAW",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Sketch a tied match (4)",
+    "clue": "Sketch the final's tied result (4)",
     "def": {
       "text": "Sketch",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Sketch / tied match",
+      "fodder": "Sketch / tied result",
       "operations": [
         {
           "op": "literal",
@@ -437,7 +437,7 @@
         }
       ]
     },
-    "parse": "Double definition: to sketch, and a tied match with no winner."
+    "parse": "Double definition: to DRAW (sketch), and a DRAW (a tied result). One picture: an artist captures the deadlocked final."
   },
   {
     "answer": "HEAR",
@@ -563,9 +563,9 @@
     "answer": "HERB",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Sage perhaps belonging to her, the bishop (4)",
+    "clue": "Sage, perhaps, is her bishop (4)",
     "def": {
-      "text": "Sage perhaps",
+      "text": "Sage, perhaps",
       "position": "start"
     },
     "wordplay": {
@@ -589,29 +589,29 @@
         }
       ]
     },
-    "parse": "HER + B (bishop, in chess) = HERB; sage is a herb, so 'perhaps' flags the definition by example."
+    "parse": "HER + B (bishop, in chess) = HERB; sage is a herb, so 'perhaps' flags the definition by example. Surface: a woman's chess bishop is hers."
   },
   {
     "answer": "CHAT",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "A natter during which a tutor speaks (4)",
+    "clue": "Natter shown by the rich attire (4)",
     "def": {
-      "text": "A natter",
+      "text": "Natter",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "during which",
-      "fodder": "which a tutor",
+      "indicator": "shown by",
+      "fodder": "rich attire",
       "operations": [
         {
           "op": "hidden",
-          "input": "whiCH A Tutor",
+          "input": "ri<CH AT>tire",
           "output": "CHAT"
         }
       ]
     },
-    "parse": "CHAT hidden in 'whiCH A Tutor', spanning words; a natter."
+    "parse": "CHAT hidden in 'riCH ATtire', spanning two words, flagged by 'shown by'; a natter."
   },
   {
     "answer": "SCAR",
@@ -639,10 +639,10 @@
     "answer": "WARM",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Welcoming western branch (4)",
+    "clue": "Western branch of the family is welcoming (4)",
     "def": {
-      "text": "Welcoming",
-      "position": "start"
+      "text": "welcoming",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
@@ -650,7 +650,7 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "western",
+          "input": "Western",
           "output": "W"
         },
         {
@@ -665,13 +665,13 @@
         }
       ]
     },
-    "parse": "W (western) + ARM (branch) = WARM; welcoming."
+    "parse": "W (western) + ARM (a branch, as of a family) = WARM; welcoming. Surface: the western branch of the family is welcoming."
   },
   {
     "answer": "FLAT",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Below the right pitch in this apartment (4)",
+    "clue": "Below the right pitch in a rented apartment (4)",
     "def": {
       "text": "Below the right pitch",
       "position": "start"
@@ -687,7 +687,7 @@
         }
       ]
     },
-    "parse": "Double definition: flat (below the right pitch, in music), and a flat (apartment)."
+    "parse": "Double definition: FLAT (below the right pitch, in music), and a FLAT (a rented apartment). Surface sets a real scene rather than the demonstrative 'this apartment' prop."
   },
   {
     "answer": "WAVE",
@@ -759,14 +759,14 @@
     "answer": "WIND",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Coil that the autumn gales bring (4)",
+    "clue": "Coil tightened in the gale (4)",
     "def": {
       "text": "Coil",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Coil / autumn gales",
+      "fodder": "Coil / gale",
       "operations": [
         {
           "op": "literal",
@@ -775,7 +775,7 @@
         }
       ]
     },
-    "parse": "Double definition: to WIND is to coil, and WIND is what autumn gales bring. The two senses sound different (rhyming with 'mind' vs 'pinned'), sharpening the penny-drop."
+    "parse": "Double definition: to WIND is to coil, and a WIND is a gale. The two senses sound different (rhyming with 'mind' vs 'pinned'), sharpening the penny-drop. Surface paints a coil tightened in a gale, with no false 'gale brings a coil' causality."
   },
   {
     "answer": "SPAR",
@@ -825,23 +825,23 @@
     "answer": "OVEN",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Cooker found in stove? Never! (4)",
+    "clue": "Cooker hidden in a love nest (4)",
     "def": {
       "text": "Cooker",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "in",
-      "fodder": "stove Never",
+      "indicator": "hidden in",
+      "fodder": "love nest",
       "operations": [
         {
           "op": "hidden",
-          "input": "st<OVE N>ever",
+          "input": "l<OVE N>est",
           "output": "OVEN"
         }
       ]
     },
-    "parse": "OVEN hides in 'stOVE Never', flagged by 'in'. Definition: Cooker. The surface reads as a startled denial."
+    "parse": "OVEN hides in 'lOVE Nest', flagged by 'hidden in'. Definition: Cooker."
   },
   {
     "answer": "EDIT",

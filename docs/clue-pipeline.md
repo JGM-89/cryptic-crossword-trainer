@@ -25,6 +25,7 @@ agents write to). If you're a fresh session continuing this work: read this file
 | **Teaching corpus** | `src/data/clues.ts` | Stage-A lesson clues. **Deliberately left as-is** — tuned for clarity over wit. Don't run the engine on it. |
 | **Archive compiler** | `scripts/generate-puzzles.mjs` | Places bank words into grids → `public/archive.json`. `TIERS` controls puzzle counts. Rerun after ANY bank edit. |
 | **Pipeline helpers** | `scripts/clue-chunk.mjs`, `scripts/clue-assemble.mjs`, `scripts/clue-patch.mjs` | Chunk / merge-back / patch. |
+| **Surface lint** | `scripts/lint-surfaces.mjs` | Heuristic surface health-check. `--rank` lists every clue weakest-first (triage); `--ids` lists clues tripping the CI gate; `--src=part-x.json` restricts scope. The GATE subset (a word-list with no connector at any length, or raw ALL-CAPS fodder) is mirrored verbatim in `surfaces.test.ts` + `validate-clue.ts`; the rest (function-word ratio, proper-noun density, vague nouns, terseness) is **advisory only**. |
 | **Tests (the gate)** | `src/data/bank/bank.test.ts`, `integrity.test.ts`, `surfaces.test.ts`, `archive.test.ts` | bank: every clue valid + no dup answers. surfaces: no bare word-lists. archive: no bank↔archive drift. |
 | **Working dir** | `tmp/` | Ephemeral (gitignored). Chunks land in `tmp/in/`, agent outputs in `tmp/clue-winners/`. Safe to delete. |
 
@@ -56,6 +57,16 @@ npx vitest run src/data/bank/bank.test.ts src/data/integrity.test.ts src/data/su
 ```
 (If red, the assemble step already refused on answer-set mismatch; otherwise a clue failed
 `validateClue` — fix it and re-run.)
+
+**4b. Surface grade & polish** (raise axis 3) — dispatch ONE **SURFACE GRADER** agent over the
+freshly-assembled `part-<part>.json`; it scores every surface and returns the weak ones (surface ≤ 3),
+weakest first. Feed that list to ONE **SURFACE POLISH** agent (templates below), which rewrites
+ONLY the flagged surfaces — same `answer` + same `clueType`, hard-gated through the validator —
+and emits `tmp/fixes-pol-<part>.json`. Apply with `node scripts/clue-patch.mjs <part>
+tmp/fixes-pol-<part>.json`, then re-run the **mechanical gate** (step 4). `node
+scripts/lint-surfaces.mjs --rank --src=part-<part>.json` is a fast pre-triage / health-check.
+(Surface rewrites keep the answer, so grids stay valid — but they DO change clue text, so the
+archive regen at step 7 is still required.)
 
 **5. Semantic audit** — dispatch ONE auditor agent with the **AUDITOR prompt template** (it reads
 the freshly-written `part-b.json`). It flags BROKEN/DUBIOUS clues the validator can't catch (bogus
@@ -189,5 +200,47 @@ entry ok:true AND no duplicate answers among them. Return a list: ANSWER | clue.
 except tmp/ outputs.
 ```
 
+### SURFACE GRADER — one per part (read-only)
+```
+Strict cryptic-crossword editor grading the SURFACE quality of finished clues (axis 3 of the style
+guide: natural, picturable English that misdirects). The clues already pass the mechanical gate and
+a semantic audit — judge ONLY the surface reading, not the mechanics.
+
+Read `docs/clue-style.md` §1 (the 5-axis rubric) and §3 (surface craft + the faults table) in
+<ABSOLUTE REPO PATH>, then read `src/data/bank/part-<part>.json`. For EACH clue, score the SURFACE
+(1–5) and WIT (1–5) per the rubric, applying the faults table (padding/filler, crossword-ese, no
+image/abstract, non-sequitur, register/tense clash, proper-noun padding, screams the answer, device
+pile-up) and the image / conversation / economy / register tests. Standard cryptic GK and fair
+misdirection are GOOD, not faults — do not flag a clue merely for being a particular device.
+
+Return a markdown table, WEAKEST FIRST, of every clue scoring surface ≤ 3 (or wit ≤ 2):
+ANSWER | SURFACE | WIT | FAULT (quote the weak word(s)) | rewrite direction (one line; keep the SAME
+answer and device). End with "N of M clues flagged (surface ≤ 3)". Read-only — suggest, don't edit.
+```
+
+### SURFACE POLISH — rewrites the flagged clues (one per part)
+```
+Expert cryptic setter POLISHING the surface of clues a grader flagged as weak. Repo: <ABSOLUTE REPO
+PATH>. FIRST read `docs/clue-style.md` in full (esp. §3 surface craft + faults table, §6 output
+contract, §8 writing loop). Skim `src/data/abbreviations.ts` for the only allowed abbreviation cues.
+
+You are given the grader's flagged list for `src/data/bank/part-<part>.json` (pasted below) plus the
+current entries. For EACH flagged answer, rewrite ONLY the surface into natural, picturable English
+that still misdirects — best-of-N: draft 2–3 surfaces, keep the best per the rubric (surface ≥ 4,
+surface + wit ≥ 7). HARD CONSTRAINTS: keep the SAME `answer` (identical letters) and the SAME
+`clueType` (device); you MAY reword the surface, the `indicator`, the `fodder`, the `def` synonym,
+and the `parse`, provided the wordplay still resolves, the `indicator` appears VERBATIM in the new
+surface, and the (enum) still matches. Leave already-strong clues alone.
+
+HARD-GATE every rewrite: write them to `tmp/cand-pol-<part>.json` and run
+`npx tsx scripts/validate-clue.ts tmp/cand-pol-<part>.json`; fix until EVERY entry is ok:true.
+
+OUTPUT: write the fixes as a JSON OBJECT keyed by ANSWER (uppercase) → full BankEntry to
+`tmp/fixes-pol-<part>.json` (the shape `scripts/clue-patch.mjs` consumes — answers not in the object
+are left untouched). Confirm `npx tsx scripts/validate-clue.ts` over the object's values is all
+ok:true. Return a table: ANSWER | old surface | new surface | why it reads better. Edit NO repo file
+except your tmp/ outputs; answers and devices must stay identical.
+```
+
 > Tip: dispatch the ~5 setters for a part in a single message (parallel). Keep the human in the
-> loop between parts — read each setter/auditor summary before assembling.
+> loop between parts — read each setter/auditor/grader summary before assembling or patching.

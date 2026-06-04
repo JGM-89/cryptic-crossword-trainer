@@ -25,45 +25,45 @@
     "answer": "DESK",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Some side skirt makes a bureau (4)",
+    "clue": "The wide skirting board hides a bureau (4)",
     "def": {
-      "text": "bureau",
+      "text": "a bureau",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Some",
-      "fodder": "side skirt",
+      "indicator": "hides",
+      "fodder": "wide skirting",
       "operations": [
         {
           "op": "hidden",
-          "input": "si<DE SK>irt",
+          "input": "wi<DE SK>irting",
           "output": "DESK"
         }
       ]
     },
-    "parse": "Hidden in siDE SKirt = DESK; a bureau (writing table)."
+    "parse": "Hidden in wiDE SKirting = DESK; a bureau (writing table)."
   },
   {
     "answer": "FERN",
     "clueType": "hidden",
-    "difficulty": 3,
-    "clue": "Plant that buffer needs trimming (4)",
+    "difficulty": 2,
+    "clue": "Cheap stalls offer nothing, hiding a real plant (4)",
     "def": {
-      "text": "Plant",
-      "position": "start"
+      "text": "a real plant",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "needs",
-      "fodder": "buffer needs",
+      "indicator": "hiding",
+      "fodder": "offer nothing",
       "operations": [
         {
           "op": "hidden",
-          "input": "buf<FER N>eeds",
+          "input": "of<FER N>othing",
           "output": "FERN"
         }
       ]
     },
-    "parse": "Hidden in bufFER Needs = FERN; a plant."
+    "parse": "Hidden in ofFER Nothing = FERN, a plant."
   },
   {
     "answer": "DRAB",
@@ -118,13 +118,13 @@
     "answer": "NEAR",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Earn redistributed nearby (4)",
+    "clue": "We struggle to earn badly when retirement's close by (4)",
     "def": {
-      "text": "nearby",
+      "text": "close by",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "redistributed",
+      "indicator": "badly",
       "fodder": "earn",
       "operations": [
         {
@@ -134,7 +134,7 @@
         }
       ]
     },
-    "parse": "Anagram of EARN (redistributed) = NEAR; nearby."
+    "parse": "Anagram of EARN (badly) = NEAR; close by."
   },
   {
     "answer": "ACRE",
@@ -162,13 +162,13 @@
     "answer": "VOTE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Veto reorganised after the poll (4)",
+    "clue": "The president's veto, badly handled, became a poll (4)",
     "def": {
-      "text": "poll",
+      "text": "a poll",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reorganised",
+      "indicator": "badly handled",
       "fodder": "veto",
       "operations": [
         {
@@ -178,20 +178,20 @@
         }
       ]
     },
-    "parse": "(VETO)* = VOTE; a poll."
+    "parse": "Anagram of VETO (badly handled) = VOTE; a poll."
   },
   {
     "answer": "GOAT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Toga unravelled on kid's parent (4)",
+    "clue": "Toga slipping off the kid's parent (4)",
     "def": {
       "text": "kid's parent",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "unravelled",
-      "fodder": "toga",
+      "indicator": "slipping",
+      "fodder": "Toga",
       "operations": [
         {
           "op": "anagram",
@@ -200,7 +200,7 @@
         }
       ]
     },
-    "parse": "(TOGA)* = GOAT, parent of a kid."
+    "parse": "Anagram of TOGA (slipping) = GOAT; a kid's parent."
   },
   {
     "answer": "COIN",
@@ -401,24 +401,24 @@
   {
     "answer": "GLEN",
     "clueType": "hidden",
-    "difficulty": 3,
-    "clue": "Single network reveals a Scottish valley (4)",
+    "difficulty": 2,
+    "clue": "Some eagle nests in a Scottish valley (4)",
     "def": {
-      "text": "Scottish valley",
+      "text": "a Scottish valley",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reveals",
-      "fodder": "single network",
+      "indicator": "Some",
+      "fodder": "eagle nests",
       "operations": [
         {
           "op": "hidden",
-          "input": "sin<GLE N>etwork",
+          "input": "ea<GLE N>ests",
           "output": "GLEN"
         }
       ]
     },
-    "parse": "Hidden in sinGLE Network = GLEN; a Scottish valley."
+    "parse": "Hidden in eaGLE Nests = GLEN, a Scottish valley."
   },
   {
     "answer": "GLOVE",
@@ -819,23 +819,23 @@
     "answer": "CHASM",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Gulf which a small boat conceals (5)",
+    "clue": "They had to ditch a small dinghy in the gulf (5)",
     "def": {
-      "text": "Gulf",
-      "position": "start"
+      "text": "the gulf",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "conceals",
-      "fodder": "which a small",
+      "indicator": "in",
+      "fodder": "ditch a small",
       "operations": [
         {
           "op": "hidden",
-          "input": "whi<CH A SM>all",
+          "input": "dit<CH A SM>all",
           "output": "CHASM"
         }
       ]
     },
-    "parse": "Hidden in 'whiCH A SMall' (indicated by 'conceals') = CHASM, a gulf."
+    "parse": "Hidden in ditCH A SMall = CHASM; the gulf."
   },
   {
     "answer": "STEEL",
@@ -993,36 +993,36 @@
     "answer": "HERMIT",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Gather mittens for the recluse (6)",
+    "clue": "Some of her mittens fit a recluse (6)",
     "def": {
-      "text": "recluse",
+      "text": "a recluse",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Gather",
-      "fodder": "Gather mittens",
+      "indicator": "Some of",
+      "fodder": "her mittens",
       "operations": [
         {
           "op": "hidden",
-          "input": "gat<HER MIT>tens",
+          "input": "<HER MIT>tens",
           "output": "HERMIT"
         }
       ]
     },
-    "parse": "Hidden in 'gat<HER MIT>tens'; a 'recluse'."
+    "parse": "Hidden in HER MITtens = HERMIT, a recluse."
   },
   {
     "answer": "DETAIL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Dilate awkwardly to give a particular (6)",
+    "clue": "Pupils dilate oddly at one fine point (6)",
     "def": {
-      "text": "a particular",
+      "text": "one fine point",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "awkwardly",
-      "fodder": "DILATE",
+      "indicator": "oddly",
+      "fodder": "dilate",
       "operations": [
         {
           "op": "anagram",
@@ -1031,29 +1031,29 @@
         }
       ]
     },
-    "parse": "(DILATE)* = DETAIL; 'a particular'."
+    "parse": "Anagram of DILATE (oddly) = DETAIL; one fine point."
   },
   {
     "answer": "PARROT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Level, going off, mimic (6)",
+    "clue": "Standards left to rot in the mimic (6)",
     "def": {
-      "text": "mimic",
+      "text": "the mimic",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "PAR + ROT",
+      "fodder": "PAR+ROT",
       "operations": [
         {
           "op": "synonym",
-          "input": "Level",
+          "input": "Standards",
           "output": "PAR"
         },
         {
           "op": "synonym",
-          "input": "going off",
+          "input": "rot",
           "output": "ROT"
         },
         {
@@ -1063,24 +1063,24 @@
         }
       ]
     },
-    "parse": "PAR (level) + ROT (going off) = PARROT; to 'mimic'."
+    "parse": "PAR (standard) + ROT (to rot) = PARROT; the mimic."
   },
   {
     "answer": "MEADOW",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Drink nothing in western pasture (6)",
+    "clue": "A drink and nothing else in the western pasture (6)",
     "def": {
       "text": "pasture",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "MEAD + O + W",
+      "fodder": "MEAD+O+W",
       "operations": [
         {
           "op": "synonym",
-          "input": "Drink",
+          "input": "drink",
           "output": "MEAD"
         },
         {
@@ -1100,7 +1100,7 @@
         }
       ]
     },
-    "parse": "MEAD (drink) + O (nothing) + W (western) = MEADOW; a 'pasture'."
+    "parse": "MEAD (drink) + O (nothing) + W (western) = MEADOW; a pasture."
   },
   {
     "answer": "PADDLE",
@@ -1619,7 +1619,7 @@
     "answer": "STATION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "At once charged particle reaches the depot (7)",
+    "clue": "Treat at once an ion at the depot (7)",
     "def": {
       "text": "the depot",
       "position": "end"
@@ -1630,12 +1630,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "At once",
+          "input": "at once",
           "output": "STAT"
         },
         {
           "op": "synonym",
-          "input": "charged particle",
+          "input": "ion",
           "output": "ION"
         },
         {
@@ -1645,7 +1645,7 @@
         }
       ]
     },
-    "parse": "STAT (at once) + ION (charged particle) = STATION, the depot."
+    "parse": "STAT (at once, hospital slang) + ION = STATION; the depot."
   },
   {
     "answer": "PRESENT",

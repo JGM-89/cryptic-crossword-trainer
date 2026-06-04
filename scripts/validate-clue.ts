@@ -14,11 +14,15 @@ import { readFileSync } from 'node:fs';
 import { hydrateBankEntry, type BankEntry } from '../src/data/bank/index.ts';
 import { validateClue } from '../src/data/integrity.ts';
 
-// Mirror of scripts/lint-surfaces.mjs / surfaces.test.ts — keep in sync.
+// GATE subset — mirror of scripts/lint-surfaces.mjs (gateFlags) / surfaces.test.ts.
+// KEEP THE THREE IN SYNC. A bare word-list (no verb/connector at any length) or
+// raw all-caps fodder fails the gate; richer advisory heuristics live in the lint.
 const CONNECTORS = new Set(
   ('a an the in on at of to for with by from and or but is are was makes make made gives give given ' +
-    'has have had as into out up over about after before during not no it he she they we you one some ' +
-    'any each every becomes become without within behind beside between through across back near')
+    'has have had as into out up over about after before during not no yes that this his her ' +
+    'its their our your my one some any each every it he she they we you i am be being been around ' +
+    'becomes become without within behind beside between through across back returns turning held ' +
+    'holding taking inside outside near seen shown sound heard say said we’re we\'re')
     .split(/\s+/),
 );
 const connectorish = (w: string) => {
@@ -29,7 +33,7 @@ function badSurface(clue: string): string[] {
   const body = clue.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const words = body.split(/\s+/).filter((t) => /[a-z]/i.test(t));
   const out: string[] = [];
-  if (!words.some(connectorish) && words.length <= 5) out.push('bare word-list');
+  if (words.length && !words.some(connectorish)) out.push('bare word-list');
   if (/\b[A-Z]{3,}\b/.test(body)) out.push('raw caps fodder');
   return out;
 }

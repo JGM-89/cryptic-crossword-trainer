@@ -67,9 +67,9 @@
     "answer": "STREAM",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "River runs through vapour, making a brook (6)",
+    "clue": "Run threading through the kettle's steam, a brook (6)",
     "def": {
-      "text": "brook",
+      "text": "a brook",
       "position": "end"
     },
     "wordplay": {
@@ -78,12 +78,12 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "River",
+          "input": "Run",
           "output": "R"
         },
         {
           "op": "synonym",
-          "input": "vapour",
+          "input": "steam",
           "output": "STEAM"
         },
         {
@@ -93,13 +93,13 @@
         }
       ]
     },
-    "parse": "R (river) inside STEAM (vapour) = STREAM, a brook."
+    "parse": "R (run) inside STEAM (the kettle's steam), indicated by 'through' = STREAM; a brook."
   },
   {
     "answer": "SILENT",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Tinsel strewn about, all quiet (6)",
+    "clue": "Tinsel strewn across the floor, the house now quiet (6)",
     "def": {
       "text": "quiet",
       "position": "end"
@@ -115,15 +115,15 @@
         }
       ]
     },
-    "parse": "(TINSEL)* = SILENT, meaning quiet."
+    "parse": "(TINSEL)* indicated by 'strewn' = SILENT; quiet. Surface: tinsel strewn after the party, the house now silent."
   },
   {
     "answer": "DEARTH",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Daughter's world shows a scarcity (6)",
+    "clue": "Daughter digs the earth and finds a shortage (6)",
     "def": {
-      "text": "scarcity",
+      "text": "a shortage",
       "position": "end"
     },
     "wordplay": {
@@ -137,7 +137,7 @@
         },
         {
           "op": "synonym",
-          "input": "world",
+          "input": "the earth",
           "output": "EARTH"
         },
         {
@@ -147,20 +147,20 @@
         }
       ]
     },
-    "parse": "D (daughter) + EARTH (world) = DEARTH, a scarcity."
+    "parse": "D (daughter) + EARTH (the earth, the ground) = DEARTH; a shortage."
   },
   {
     "answer": "RESCUE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Secure, somehow, a saving (6)",
+    "clue": "Coastguards work to secure, somehow, a saving (6)",
     "def": {
-      "text": "saving",
+      "text": "a saving",
       "position": "end"
     },
     "wordplay": {
       "indicator": "somehow",
-      "fodder": "Secure",
+      "fodder": "secure",
       "operations": [
         {
           "op": "anagram",
@@ -169,7 +169,7 @@
         }
       ]
     },
-    "parse": "(SECURE)* = RESCUE, a saving."
+    "parse": "(SECURE)* indicated by 'somehow' = RESCUE; a saving. Surface: coastguards working to secure a saving (a rescue at sea)."
   },
   {
     "answer": "GARDEN",
@@ -219,10 +219,10 @@
     "answer": "CARPET",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Rug by the motor, with the cat (6)",
+    "clue": "The car's pet has shed all over the rug (6)",
     "def": {
-      "text": "Rug",
-      "position": "start"
+      "text": "the rug",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
@@ -230,12 +230,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "the motor",
+          "input": "The car",
           "output": "CAR"
         },
         {
           "op": "synonym",
-          "input": "the cat",
+          "input": "pet",
           "output": "PET"
         },
         {
@@ -245,15 +245,15 @@
         }
       ]
     },
-    "parse": "CAR (the motor) + PET (the cat) = CARPET, a rug."
+    "parse": "CAR + PET = CARPET; the rug. Surface: the dog that rides in the car has shed hair all over the carpet."
   },
   {
     "answer": "PANTRY",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Attempt to follow the pot into the larder (6)",
+    "clue": "Pot's empty, so try the larder (6)",
     "def": {
-      "text": "larder",
+      "text": "the larder",
       "position": "end"
     },
     "wordplay": {
@@ -262,13 +262,13 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Attempt",
-          "output": "TRY"
+          "input": "Pot",
+          "output": "PAN"
         },
         {
           "op": "synonym",
-          "input": "the pot",
-          "output": "PAN"
+          "input": "try",
+          "output": "TRY"
         },
         {
           "op": "concat",
@@ -277,7 +277,7 @@
         }
       ]
     },
-    "parse": "PAN (the pot) + TRY (attempt) following it = PANTRY, a larder. 'Follow' places TRY after PAN."
+    "parse": "PAN (pot) + TRY (attempt, 'try') = PANTRY; the larder. Surface: the pot's empty, so try the larder for food."
   },
   {
     "answer": "OUTFIT",
@@ -305,13 +305,13 @@
     "answer": "HATRED",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Loathing of cotton thread, unravelled (6)",
+    "clue": "Loathing runs through it like a frayed thread (6)",
     "def": {
       "text": "Loathing",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "unravelled",
+      "indicator": "frayed",
       "fodder": "thread",
       "operations": [
         {
@@ -321,7 +321,7 @@
         }
       ]
     },
-    "parse": "(THREAD)* = HATRED; loathing. The cotton thread is 'unravelled' into the answer."
+    "parse": "(THREAD)* indicated by 'frayed' = HATRED; loathing. Surface: loathing running through it like a frayed thread."
   },
   {
     "answer": "MANAGE",
@@ -359,10 +359,10 @@
     "answer": "FORGET",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Lose track of backing acquisition (6)",
+    "clue": "Vote for a buy, then overlook (6)",
     "def": {
-      "text": "Lose track of",
-      "position": "start"
+      "text": "overlook",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
@@ -370,12 +370,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "backing",
+          "input": "for",
           "output": "FOR"
         },
         {
           "op": "synonym",
-          "input": "acquisition",
+          "input": "a buy",
           "output": "GET"
         },
         {
@@ -385,15 +385,15 @@
         }
       ]
     },
-    "parse": "FOR (backing, in favour of) + GET (an acquisition) = FORGET, to lose track of."
+    "parse": "FOR (vote for, in favour of) + GET (a buy, an acquisition) = FORGET; to overlook."
   },
   {
     "answer": "INKPOT",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Writing fluid in a vessel makes a desk well (6)",
+    "clue": "Ink in a pot, a writer's well (6)",
     "def": {
-      "text": "a desk well",
+      "text": "a writer's well",
       "position": "end"
     },
     "wordplay": {
@@ -402,12 +402,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Writing fluid",
+          "input": "Ink",
           "output": "INK"
         },
         {
           "op": "synonym",
-          "input": "vessel",
+          "input": "a pot",
           "output": "POT"
         },
         {
@@ -417,19 +417,19 @@
         }
       ]
     },
-    "parse": "INK (writing fluid) + POT (vessel) = INKPOT; a desk well (the penny drop: an inkwell)."
+    "parse": "INK + POT = INKPOT; a writer's well (the penny-drop: an inkwell)."
   },
   {
     "answer": "SECRET",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Building erects something best kept under wraps (6)",
+    "clue": "A cathedral erects, strangely, a confidence (6)",
     "def": {
-      "text": "something best kept under wraps",
+      "text": "a confidence",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Building",
+      "indicator": "strangely",
       "fodder": "erects",
       "operations": [
         {
@@ -439,7 +439,7 @@
         }
       ]
     },
-    "parse": "Anagram of ERECTS (indicated by 'Building') = SECRET; something best kept under wraps."
+    "parse": "(ERECTS)* indicated by 'strangely' = SECRET; a confidence (something told in confidence)."
   },
   {
     "answer": "PLANET",
@@ -563,23 +563,23 @@
     "answer": "WALLET",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Soaked through, the lot lost in this billfold (6)",
+    "clue": "The lot wrapped in wet, a billfold (6)",
     "def": {
-      "text": "billfold",
+      "text": "a billfold",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "lost in",
+      "indicator": "wrapped in",
       "fodder": "ALL in WET",
       "operations": [
         {
           "op": "synonym",
-          "input": "Soaked through",
+          "input": "wet",
           "output": "WET"
         },
         {
           "op": "synonym",
-          "input": "the lot",
+          "input": "The lot",
           "output": "ALL"
         },
         {
@@ -589,7 +589,7 @@
         }
       ]
     },
-    "parse": "ALL (the lot) inside WET (soaked through), indicated by 'lost in' = WALLET; a billfold."
+    "parse": "ALL (the lot) inside WET, indicated by 'wrapped in' = W(ALL)ET = WALLET; a billfold. Surface: everything wrapped in wet (a soaked wallet)."
   },
   {
     "answer": "PARSON",
@@ -742,10 +742,10 @@
     "answer": "ANGLER",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Fisherman's learner held in fury (6)",
+    "clue": "Learner held in a rage by the river turns fisherman (6)",
     "def": {
-      "text": "Fisherman",
-      "position": "start"
+      "text": "fisherman",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "held in",
@@ -753,12 +753,12 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "learner",
+          "input": "Learner",
           "output": "L"
         },
         {
           "op": "synonym",
-          "input": "fury",
+          "input": "a rage",
           "output": "ANGER"
         },
         {
@@ -768,7 +768,7 @@
         }
       ]
     },
-    "parse": "L (learner) inside ANGER (fury) = ANGLER, a fisherman."
+    "parse": "L (learner) inside ANGER (a rage), indicated by 'held in' = ANGLER; a fisherman."
   },
   {
     "answer": "EARNED",
@@ -894,13 +894,13 @@
     "answer": "MEDDLE",
     "clueType": "homophone",
     "difficulty": 2,
-    "clue": "Interfere with what's won, reportedly (6)",
+    "clue": "Interfere with an Olympic prize, by the sound of it (6)",
     "def": {
       "text": "Interfere",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "reportedly",
+      "indicator": "by the sound of it",
       "fodder": "medal",
       "operations": [
         {
@@ -910,6 +910,6 @@
         }
       ]
     },
-    "parse": "MEDAL ('what's won') sounds like MEDDLE (indicated by 'reportedly'); to interfere."
+    "parse": "MEDAL (an Olympic prize) sounds like MEDDLE, indicated by 'by the sound of it'; to interfere."
   }
 ]

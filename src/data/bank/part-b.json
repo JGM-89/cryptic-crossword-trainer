@@ -57,7 +57,7 @@
     "answer": "REACT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "About a stage turn, respond (5)",
+    "clue": "Buzz about the act? Watch the crowd respond (5)",
     "def": {
       "text": "respond",
       "position": "end"
@@ -68,12 +68,12 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "About",
+          "input": "about",
           "output": "RE"
         },
         {
           "op": "synonym",
-          "input": "turn",
+          "input": "act",
           "output": "ACT"
         },
         {
@@ -83,20 +83,20 @@
         }
       ]
     },
-    "parse": "RE (about) + ACT (a stage turn) = REACT; to respond."
+    "parse": "RE (about) + ACT (the act) = REACT; to respond."
   },
   {
     "answer": "DROVE",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Herd that once steered the car (5)",
+    "clue": "Herd that took to the open road (5)",
     "def": {
       "text": "Herd",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Herd / steered the car",
+      "fodder": "Herd / took to the open road",
       "operations": [
         {
           "op": "literal",
@@ -105,19 +105,19 @@
         }
       ]
     },
-    "parse": "Double definition: a drove (herd) of cattle, and 'drove' as the past tense of drive — steered the car."
+    "parse": "Double definition: a drove (herd), and drove — took to the open road, past tense of drive."
   },
   {
     "answer": "ALERT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "On the watch, set to alter wildly (5)",
+    "clue": "Rashly alter, but stay on guard (5)",
     "def": {
-      "text": "On the watch",
-      "position": "start"
+      "text": "stay on guard",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "wildly",
+      "indicator": "Rashly",
       "fodder": "alter",
       "operations": [
         {
@@ -127,7 +127,7 @@
         }
       ]
     },
-    "parse": "Anagram of ALTER (indicated by 'wildly') = ALERT; on the watch."
+    "parse": "Anagram of ALTER (rashly) = ALERT, to stay on guard."
   },
   {
     "answer": "ANGEL",
@@ -209,7 +209,7 @@
     "answer": "OFTEN",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Belonging to ten, frequently (5)",
+    "clue": "A boy of ten falls ill frequently (5)",
     "def": {
       "text": "frequently",
       "position": "end"
@@ -220,7 +220,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Belonging to",
+          "input": "of",
           "output": "OF"
         },
         {
@@ -235,13 +235,13 @@
         }
       ]
     },
-    "parse": "OF (belonging to) + TEN = OFTEN; frequently."
+    "parse": "OF + TEN (a boy of ten) = OFTEN; frequently."
   },
   {
     "answer": "MANGO",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Chap's leave produces a tropical fruit (5)",
+    "clue": "Watch the man go to fetch a tropical fruit (5)",
     "def": {
       "text": "a tropical fruit",
       "position": "end"
@@ -252,12 +252,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Chap",
+          "input": "man",
           "output": "MAN"
         },
         {
           "op": "synonym",
-          "input": "leave",
+          "input": "go",
           "output": "GO"
         },
         {
@@ -267,7 +267,7 @@
         }
       ]
     },
-    "parse": "MAN (chap) + GO (leave) = MANGO, a tropical fruit."
+    "parse": "MAN (man) + GO (go) = MANGO, a tropical fruit."
   },
   {
     "answer": "PANIC",
@@ -295,14 +295,14 @@
     "answer": "CATER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Trace out, then provide the food (5)",
+    "clue": "Trace out the guest list, then provide the food (5)",
     "def": {
       "text": "provide the food",
       "position": "end"
     },
     "wordplay": {
       "indicator": "out",
-      "fodder": "trace",
+      "fodder": "Trace",
       "operations": [
         {
           "op": "anagram",
@@ -311,19 +311,19 @@
         }
       ]
     },
-    "parse": "Anagram of TRACE (indicated by 'out') = CATER; to provide the food."
+    "parse": "Anagram ('out') of TRACE = CATER; to provide the food."
   },
   {
     "answer": "SPEAR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Cooked pears on a hunter's weapon (5)",
+    "clue": "Cook the pears? Grab the hunter's weapon! (5)",
     "def": {
-      "text": "a hunter's weapon",
+      "text": "the hunter's weapon",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Cooked",
+      "indicator": "Cook",
       "fodder": "pears",
       "operations": [
         {
@@ -333,13 +333,13 @@
         }
       ]
     },
-    "parse": "Anagram ('cooked') of PEARS = SPEAR, a hunter's weapon."
+    "parse": "Anagram ('Cook') of PEARS = SPEAR, the hunter's weapon."
   },
   {
     "answer": "TENOR",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Number or singer's part gives the general drift (5)",
+    "clue": "Ten or so in the choir caught the general drift (5)",
     "def": {
       "text": "the general drift",
       "position": "end"
@@ -350,7 +350,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Number",
+          "input": "Ten",
           "output": "TEN"
         },
         {
@@ -365,7 +365,7 @@
         }
       ]
     },
-    "parse": "TEN (number) + OR = TENOR; the general drift or purport."
+    "parse": "TEN + OR (ten or so) = TENOR; the general drift or purport."
   },
   {
     "answer": "DRAIN",
@@ -435,14 +435,14 @@
     "answer": "CHARM",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Church limb has a certain appeal (5)",
+    "clue": "The Church's long arm has real appeal (5)",
     "def": {
       "text": "appeal",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CH+ARM",
+      "fodder": "CH + ARM",
       "operations": [
         {
           "op": "abbreviate",
@@ -451,7 +451,7 @@
         },
         {
           "op": "synonym",
-          "input": "limb",
+          "input": "arm",
           "output": "ARM"
         },
         {
@@ -461,7 +461,7 @@
         }
       ]
     },
-    "parse": "CH (Church) + ARM (limb) = CHARM, appeal."
+    "parse": "CH (Church) + ARM (the long arm) = CHARM; appeal."
   },
   {
     "answer": "STAIN",
@@ -489,31 +489,31 @@
     "answer": "STAIR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Sitar reworked into a step (5)",
+    "clue": "The sitar, tossed about, lands on a step (5)",
     "def": {
       "text": "a step",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reworked",
-      "fodder": "Sitar",
+      "indicator": "tossed about",
+      "fodder": "sitar",
       "operations": [
         {
           "op": "anagram",
-          "input": "Sitar",
+          "input": "SITAR",
           "output": "STAIR"
         }
       ]
     },
-    "parse": "Anagram of SITAR (indicated by 'reworked') gives STAIR, a step."
+    "parse": "Anagram ('tossed about') of SITAR = STAIR; a step."
   },
   {
     "answer": "PAINT",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Gasp, taking in one, makes a coat (5)",
+    "clue": "Pant, taking in one, to finish the coat (5)",
     "def": {
-      "text": "a coat",
+      "text": "the coat",
       "position": "end"
     },
     "wordplay": {
@@ -522,7 +522,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Gasp",
+          "input": "Pant",
           "output": "PANT"
         },
         {
@@ -537,7 +537,7 @@
         }
       ]
     },
-    "parse": "I (one) inside PANT (gasp) = PAINT; a coat."
+    "parse": "I (one) inside PANT = PAINT; the coat."
   },
   {
     "answer": "ASHEN",
@@ -565,67 +565,67 @@
     "answer": "ORGAN",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Groan badly about a body part (5)",
+    "clue": "Members groan, upset at the party paper (5)",
     "def": {
-      "text": "a body part",
+      "text": "the party paper",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "badly",
-      "fodder": "Groan",
+      "indicator": "upset",
+      "fodder": "groan",
       "operations": [
         {
           "op": "anagram",
-          "input": "Groan",
+          "input": "GROAN",
           "output": "ORGAN"
         }
       ]
     },
-    "parse": "Anagram of GROAN (indicated by 'badly') gives ORGAN, a body part."
+    "parse": "Anagram ('upset') of GROAN = ORGAN; the party paper (an organ being a party's official publication)."
   },
   {
     "answer": "EAGER",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Agree to change, being keen (5)",
+    "clue": "Queuing fans agree wildly, so keen (5)",
     "def": {
       "text": "keen",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "to change",
-      "fodder": "Agree",
+      "indicator": "wildly",
+      "fodder": "agree",
       "operations": [
         {
           "op": "anagram",
-          "input": "Agree",
+          "input": "AGREE",
           "output": "EAGER"
         }
       ]
     },
-    "parse": "Anagram of AGREE (indicated by 'to change') gives EAGER, keen."
+    "parse": "Anagram ('wildly') of AGREE = EAGER; keen."
   },
   {
     "answer": "NADIR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Drain redesigned to reach the lowest point (5)",
+    "clue": "Engineers redesigned the drain at the valley's lowest point (5)",
     "def": {
-      "text": "the lowest point",
+      "text": "the valley's lowest point",
       "position": "end"
     },
     "wordplay": {
       "indicator": "redesigned",
-      "fodder": "Drain",
+      "fodder": "drain",
       "operations": [
         {
           "op": "anagram",
-          "input": "Drain",
+          "input": "DRAIN",
           "output": "NADIR"
         }
       ]
     },
-    "parse": "Anagram of DRAIN (indicated by 'redesigned') gives NADIR, the lowest point."
+    "parse": "Anagram ('redesigned') of DRAIN = NADIR; the lowest point."
   },
   {
     "answer": "REPEL",
@@ -795,10 +795,10 @@
     "answer": "WHERE",
     "clueType": "homophone",
     "difficulty": 3,
-    "clue": "In what place to put clothes on, we hear? (5)",
+    "clue": "Clothes to wear, we hear, but in what place? (5)",
     "def": {
-      "text": "In what place",
-      "position": "start"
+      "text": "in what place",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "we hear",
@@ -811,7 +811,7 @@
         }
       ]
     },
-    "parse": "WEAR (put clothes on) sounds like (we hear) WHERE, meaning in what place."
+    "parse": "WEAR (clothes to wear) sounds like (we hear) WHERE; in what place."
   },
   {
     "answer": "LIGHT",
@@ -927,13 +927,13 @@
     "answer": "WAIST",
     "clueType": "homophone",
     "difficulty": 3,
-    "clue": "Squander, reportedly, where the belt sits (5)",
+    "clue": "Throw it away, we hear, around the figure's middle (5)",
     "def": {
-      "text": "where the belt sits",
+      "text": "around the figure's middle",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reportedly",
+      "indicator": "we hear",
       "fodder": "waste",
       "operations": [
         {
@@ -943,6 +943,6 @@
         }
       ]
     },
-    "parse": "WASTE ('squander') sounds like WAIST (indicated by 'reportedly'), where the belt sits."
+    "parse": "WASTE (throw it away) sounds like (we hear) WAIST; around the figure's middle, where the belt sits."
   }
 ]

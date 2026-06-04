@@ -3,9 +3,9 @@
     "answer": "CREATING",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Reacting wildly, making (8)",
+    "clue": "A culture reacting wildly is forming (8)",
     "def": {
-      "text": "making",
+      "text": "forming",
       "position": "end"
     },
     "wordplay": {
@@ -19,7 +19,7 @@
         }
       ]
     },
-    "parse": "Anagram of REACTING (wildly) gives CREATING, meaning making."
+    "parse": "Anagram of REACTING (wildly) = CREATING; forming. Surface: a culture (bacterial) reacting wildly and forming — REACTING anchored to a real subject."
   },
   {
     "answer": "RELATION",
@@ -167,9 +167,9 @@
     "answer": "MINISTER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Interims spent covering for the parson (8)",
+    "clue": "Interims spent in the pulpit made the parson (8)",
     "def": {
-      "text": "parson",
+      "text": "the parson",
       "position": "end"
     },
     "wordplay": {
@@ -183,15 +183,15 @@
         }
       ]
     },
-    "parse": "Anagram of INTERIMS (spent) gives MINISTER, a parson."
+    "parse": "Anagram of INTERIMS (spent) = MINISTER; the parson. Surface: the interims a stand-in spent in the pulpit made him the parson — a concrete relief-preacher scene."
   },
   {
     "answer": "RESIDENT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Inserted awkwardly, like a long-term tenant (8)",
+    "clue": "A guest inserted awkwardly, now a long-term tenant (8)",
     "def": {
-      "text": "like a long-term tenant",
+      "text": "a long-term tenant",
       "position": "end"
     },
     "wordplay": {
@@ -205,7 +205,7 @@
         }
       ]
     },
-    "parse": "Anagram of INSERTED (awkwardly) gives RESIDENT, a long-term tenant."
+    "parse": "Anagram of INSERTED (awkwardly) = RESIDENT; a long-term tenant. Surface: a guest awkwardly wedged into a household who has stayed for good."
   },
   {
     "answer": "REACTION",
@@ -243,13 +243,13 @@
     "answer": "CONTAINER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Ancient or modern, rebuilt as a crate (9)",
+    "clue": "Sold ancient or refurbished, a crate (9)",
     "def": {
       "text": "a crate",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "rebuilt",
+      "indicator": "refurbished",
       "fodder": "ANCIENT OR",
       "operations": [
         {
@@ -259,20 +259,20 @@
         }
       ]
     },
-    "parse": "Anagram of ANCIENT OR (rebuilt) gives CONTAINER, a crate."
+    "parse": "Anagram of ANCIENT OR (refurbished) = CONTAINER; a crate. Every word now works: 'modern' padding cut, the indicator 'refurbished' sits on the fodder."
   },
   {
     "answer": "GRADIENTS",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Treading, slipping, on the slopes (9)",
+    "difficulty": 4,
+    "clue": "Treading's awkward on the steep slopes (9)",
     "def": {
-      "text": "the slopes",
+      "text": "the steep slopes",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "slipping",
-      "fodder": "TREADINGS",
+      "indicator": "awkward",
+      "fodder": "treading's",
       "operations": [
         {
           "op": "anagram",
@@ -281,13 +281,13 @@
         }
       ]
     },
-    "parse": "Anagram of TREADINGS (slipping) gives GRADIENTS, the slopes."
+    "parse": "Anagram of TREADING'S (awkward) = GRADIENTS, the steep slopes."
   },
   {
     "answer": "ORGANISES",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Rose gains, surprisingly, and runs the show (9)",
+    "clue": "Rose gains, surprisingly, and now runs the show (9)",
     "def": {
       "text": "runs the show",
       "position": "end"
@@ -303,7 +303,7 @@
         }
       ]
     },
-    "parse": "Anagram of ROSE GAINS (surprisingly) gives ORGANISES, runs the show."
+    "parse": "Anagram of ROSE GAINS (surprisingly) = ORGANISES; runs the show. Surface: Rose, an underdog, surprisingly gains ground and now runs the show."
   },
   {
     "answer": "DETERMINE",
@@ -363,10 +363,10 @@
     "answer": "ASCERTAIN",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Establish that Saracen it troubled (9)",
+    "clue": "A Saracen, it troubled the scouts trying to establish (9)",
     "def": {
-      "text": "Establish",
-      "position": "start"
+      "text": "establish",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "troubled",
@@ -379,7 +379,7 @@
         }
       ]
     },
-    "parse": "Anagram of SARACEN IT (troubled) gives ASCERTAIN, to establish."
+    "parse": "Anagram of SARACEN IT (troubled) = ASCERTAIN; to establish. Surface: a Saracen troubles the scouts who are trying to establish the facts."
   },
   {
     "answer": "HARDSHIP",
@@ -727,7 +727,7 @@
     "answer": "STARTLED",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Begin, then guided, surprised (8)",
+    "clue": "The hike will start, led by a guide, leaving us surprised (8)",
     "def": {
       "text": "surprised",
       "position": "end"
@@ -738,12 +738,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Begin",
+          "input": "start",
           "output": "START"
         },
         {
           "op": "synonym",
-          "input": "guided",
+          "input": "led",
           "output": "LED"
         },
         {
@@ -753,7 +753,7 @@
         }
       ]
     },
-    "parse": "START (begin) + LED (guided) = STARTLED; surprised."
+    "parse": "START (the hike begins) + LED (guided) = STARTLED; surprised. The surface is a real scene: a hike starts and is led by a guide."
   },
   {
     "answer": "STEALING",
@@ -855,23 +855,23 @@
     "answer": "SHEARING",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Listen to the choir clipping the sheep (8)",
+    "clue": "Hear, wrapped in song, the clipping of sheep (8)",
     "def": {
-      "text": "clipping the sheep",
+      "text": "the clipping of sheep",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "to",
+      "indicator": "wrapped in",
       "fodder": "HEAR in SING",
       "operations": [
         {
           "op": "synonym",
-          "input": "Listen",
+          "input": "Hear",
           "output": "HEAR"
         },
         {
           "op": "synonym",
-          "input": "the choir",
+          "input": "song",
           "output": "SING"
         },
         {
@@ -881,7 +881,7 @@
         }
       ]
     },
-    "parse": "HEAR (listen) inside SING (what the choir does) = S-HEAR-ING = SHEARING; clipping the sheep."
+    "parse": "HEAR wrapped in SING (song) = S-HEAR-ING = SHEARING; the clipping of sheep. The containment indicator 'wrapped in' replaces the thin 'to'."
   },
   {
     "answer": "INTEREST",
