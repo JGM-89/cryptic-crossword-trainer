@@ -58,6 +58,25 @@ function locateDefinition(clue: string, def: { text: string; position: 'start' |
   return { text: def.text, start: idx, end: idx + def.text.length, position: def.position };
 }
 
+// Unambiguous definition-by-example flags. These words, sitting beside the
+// definition, signal that the definition is an EXAMPLE of the answer (e.g.
+// "Sage, perhaps" → HERB) rather than a synonym — a fairness requirement the
+// solver should be told about, since otherwise the marker looks like a stray
+// word. ("say"/"?" are deliberately excluded: they double as homophone /
+// cryptic-definition markers and would mis-fire.)
+const DEF_EXAMPLE_MARKER = /\b(perhaps|maybe|possibly|for example|e\.g\.)\b/i;
+
+/** A note for the Definition rung when the definition is by example. */
+function defExampleNote(clue: string, span: DefinitionSpan): string {
+  const body = clue.replace(/\s*\([^)]*\)\s*$/, '');
+  // Look only in a window beside the definition, so a marker belonging to the
+  // wordplay elsewhere in the clue doesn't trigger a misleading note.
+  const near = body.slice(Math.max(0, span.start - 16), Math.min(body.length, span.end + 16));
+  const m = near.match(DEF_EXAMPLE_MARKER);
+  if (!m) return '';
+  return ` The word “${m[1].toLowerCase()}” flags this as definition by example — the definition names just one example of the answer’s category, not an exact synonym.`;
+}
+
 function tier3Text(clueType: ClueType, wp: Wordplay): string {
   const ind = wp.indicator ? `"${wp.indicator}"` : 'no explicit indicator, but';
   switch (clueType) {
@@ -96,7 +115,7 @@ export function hydrateClue(raw: RawClue): Clue {
     label: 'Definition',
     text:
       raw.hintOverrides?.[1] ??
-      `The definition is at the ${raw.def.position === 'start' ? 'START' : 'END'}: “${raw.def.text}”.`,
+      `The definition is at the ${raw.def.position === 'start' ? 'START' : 'END'}: “${raw.def.text}”.${defExampleNote(raw.clue, definitionSpan)}`,
   };
   const hint2: Hint = {
     tier: 2,

@@ -531,7 +531,7 @@
     "answer": "ONCE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Working in church, formerly (4)",
+    "clue": "Working with church, formerly (4)",
     "def": {
       "text": "formerly",
       "position": "end"
@@ -557,7 +557,7 @@
         }
       ]
     },
-    "parse": "ON (working, as a machine switched on) + CE (Church of England) = ONCE; formerly."
+    "parse": "ON (working, as a machine switched on) + CE (Church of England), joined = ONCE; formerly."
   },
   {
     "answer": "HERB",
