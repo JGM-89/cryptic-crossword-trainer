@@ -170,9 +170,13 @@ Read `src/data/bank/part-<part>.json` in <ABSOLUTE REPO PATH>. For EACH clue ver
 (2) double-definitions: BOTH halves genuinely mean the answer (distinct senses); (3) charade/
 container/reversal/homophone/hidden/&lit/deletion actually produce the answer and the definition is
 a true synonym in the right part of speech; (4) homophones genuinely sound alike; (5) def-by-example
-is flagged with ?/perhaps where needed; (6) the surface reads as natural English (flag genuine
-nonsense only). Standard cryptic GK is allowed (cob=male swan, P=quiet, TAR=sailor, etc.). Only
-flag GENUINE errors.
+is flagged with ?/perhaps where needed; (6) LINK WORDS / INDICATORS read correctly for the ACTUAL
+device — flag a charade/concatenation that uses a containment word ("in/inside/within/around/about")
+as its joiner, since it implies the wrong device and can spell a false answer (e.g. "Working in
+church" = ON "in" CE wrongly reads as a container → CONE, not the charade ONCE), an indicator of the
+wrong type for its device, or any word with NO role in the cryptic reading (extraneous padding that
+breaks "every word works"); (7) the surface reads as natural English (flag genuine nonsense only).
+Standard cryptic GK is allowed (cob=male swan, P=quiet, TAR=sailor, etc.). Only flag GENUINE errors.
 
 Return a markdown table of FLAGGED clues only: ANSWER | SEVERITY (BROKEN = wordplay/def doesn't
 actually work; DUBIOUS = questionable) | PROBLEM (quote the bad part) | SUGGESTED FIX (a concrete
