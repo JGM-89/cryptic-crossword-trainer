@@ -6,6 +6,39 @@
 
 ---
 
+## ▶ NEXT SESSION — start here (paused 2026-06-05, 1am; new chat to reset context)
+
+The device-free **sentence-realism floor-raise of 111 bank clues is DONE + live** (every clue must
+read as a real sentence a person would say; see `docs/clue-style.md` Axis 1b). Remaining work, in
+priority order — full detail in `~/.claude/plans/how-do-we-better-serene-marshmallow.md` (top section):
+
+1. **D — fix 2 broken clues + validator gap.** MILD ("Fungus mostly gentle") and TROOPER
+   ("Cavalrymen curtailed…") are **indirect deletions** (source word MILDEW/TROOPERS isn't in the
+   clue — illegal). Re-clue both device-free; add a check to `scripts/validate-clue.ts` + `integrity.ts`
+   that anagram/deletion fodder must appear in the clue surface. (Scan found exactly these 2.)
+2. **F — fix the Stage-A TEACHING CORPUS `src/data/clues.ts` (44 clues). HIGHEST IMPACT — the actual
+   lessons.** It was excluded from all prior passes ("deliberately simple") and that was the mistake.
+   Apply the real-sentence bar + fairness, but keep them SIMPLE/clear, use gentle already-taught
+   abbreviations/synonyms only, and make each device's intro example the most direct construction.
+   Owner-flagged: PIGTAIL (too easy), MANKIND ("Chap's sort is all humanity" — meaningless), HOTDOG
+   (HOT=excited loose), STRAW reversal-002 (reversing a synonym = too abstract for a first reversal),
+   the recipe-like deletion surfaces ("Beach, losing its head, for every one").
+3. **E — teach conventions INLINE in the hint ladder** (`src/data/hydrate.ts`, same pattern as the
+   def-by-example note): when a clue uses a standard abbreviation, gloss it ("'about' = RE — a common
+   crossword abbreviation"). Fixes the "fair but opaque to beginners" problem (e.g. SECRET's RE=about).
+4. **B — future-proof the pipeline**: rewrite `docs/clue-pipeline.md` EXPANSION/SETTER templates for
+   device-free + sentence-realism-as-#1-gate + no-orphan; make the sentence-realism judge→fix→review a
+   MANDATORY step.
+5. **C — full second adversarial sentence-realism pass over the other ~255 bank clues** (the ones the
+   single judging pass *passed* but never double-checked); device-free rebuild + human review of fails.
+
+Then: regen → `npm test` → build → commit → deploy. Process that works (after earlier failures):
+**device-free re-clue → adversarial sentence-realism judge → human reviews EVERY change** (don't
+trust agent self-reports). Helpers: `clue-chunk/assemble/patch.mjs`, `validate-clue.ts`,
+`lint-surfaces.mjs`, `clues:regen`.
+
+---
+
 ## Where things stand (2026-06-04)
 
 - **Live:** https://jgm-89.github.io/cryptic-crossword-trainer/ (GitHub Pages, CI-gated).
