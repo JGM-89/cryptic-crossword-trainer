@@ -25,9 +25,9 @@
     "answer": "NIGHTMARES",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "After dark the mares, spooked, became the children's bad dreams (10)",
+    "clue": "After dark, the mares of our worst dreams (10)",
     "def": {
-      "text": "bad dreams",
+      "text": "worst dreams",
       "position": "end"
     },
     "wordplay": {
@@ -41,7 +41,7 @@
         },
         {
           "op": "synonym",
-          "input": "mares",
+          "input": "the mares",
           "output": "MARES"
         },
         {
@@ -51,7 +51,7 @@
         }
       ]
     },
-    "parse": "NIGHT (after dark) + MARES (the horses) = NIGHTMARES; bad dreams."
+    "parse": "NIGHT (after dark) + MARES (the horses) = NIGHTMARES; 'worst dreams'."
   },
   {
     "answer": "TELEVISION",
@@ -114,65 +114,70 @@
   },
   {
     "answer": "DEPARTMENT",
-    "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Tramped net, all scrambled, became the menswear division (10)",
+    "clueType": "charade",
+    "difficulty": 4,
+    "clue": "Leave men, given time, in the government office (10)",
     "def": {
-      "text": "division",
+      "text": "the government office",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "scrambled",
-      "fodder": "TRAMPED NET",
+      "indicator": "",
+      "fodder": "DEPART+MEN+T",
       "operations": [
         {
-          "op": "anagram",
-          "input": "TRAMPEDNET",
+          "op": "synonym",
+          "input": "Leave",
+          "output": "DEPART"
+        },
+        {
+          "op": "synonym",
+          "input": "men",
+          "output": "MEN"
+        },
+        {
+          "op": "abbreviate",
+          "input": "time",
+          "output": "T"
+        },
+        {
+          "op": "concat",
+          "input": "DEPART+MEN+T",
           "output": "DEPARTMENT"
         }
       ]
     },
-    "parse": "(TRAMPED NET)* 'scrambled' = DEPARTMENT; 'division' (e.g. the menswear division) defines it."
+    "parse": "DEPART (leave) + MEN + T (time) = DEPARTMENT; the government office."
   },
   {
     "answer": "UNDERRATED",
-    "clueType": "charade",
-    "difficulty": 4,
-    "clue": "Below and rated, yet undervalued (10)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Trader, nude, dancing — but undervalued (10)",
     "def": {
       "text": "undervalued",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "UNDER+RATED",
+      "indicator": "dancing",
+      "fodder": "TRADER NUDE",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Below",
-          "output": "UNDER"
-        },
-        {
-          "op": "synonym",
-          "input": "rated",
-          "output": "RATED"
-        },
-        {
-          "op": "concat",
-          "input": "UNDER+RATED",
+          "op": "anagram",
+          "input": "TRADERNUDE",
           "output": "UNDERRATED"
         }
       ]
     },
-    "parse": "UNDER (below) + RATED = UNDERRATED, undervalued."
+    "parse": "(TRADER NUDE)* 'dancing' = UNDERRATED; 'undervalued'."
   },
   {
     "answer": "BRIDGEHEAD",
     "clueType": "charade",
-    "difficulty": 4,
-    "clue": "Bridge over the head of the beer won a foothold for the invasion (10)",
+    "difficulty": 3,
+    "clue": "Bridge over a beer's head wins the invasion's foothold (10)",
     "def": {
-      "text": "foothold for the invasion",
+      "text": "the invasion's foothold",
       "position": "end"
     },
     "wordplay": {
@@ -186,7 +191,7 @@
         },
         {
           "op": "synonym",
-          "input": "head",
+          "input": "a beer's head",
           "output": "HEAD"
         },
         {
@@ -196,39 +201,39 @@
         }
       ]
     },
-    "parse": "BRIDGE (card game) + HEAD (froth on a pint of beer) = BRIDGEHEAD; a 'foothold for the invasion'."
+    "parse": "BRIDGE (card game) + HEAD (froth on a beer) = BRIDGEHEAD; 'the invasion's foothold'."
   },
   {
     "answer": "BARGAINING",
-    "clueType": "container",
+    "clueType": "charade",
     "difficulty": 4,
-    "clue": "The trader, baring all and hugging profit, loved the haggling (10)",
+    "clue": "The bar is gaining through haggling (10)",
     "def": {
-      "text": "the haggling",
+      "text": "haggling",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "hugging",
-      "fodder": "GAIN in BARING",
+      "indicator": "",
+      "fodder": "BAR+GAINING",
       "operations": [
         {
           "op": "synonym",
-          "input": "baring",
-          "output": "BARING"
+          "input": "The bar",
+          "output": "BAR"
         },
         {
           "op": "synonym",
-          "input": "profit",
-          "output": "GAIN"
+          "input": "gaining",
+          "output": "GAINING"
         },
         {
-          "op": "insert",
-          "input": "GAIN in BARING",
+          "op": "concat",
+          "input": "BAR+GAINING",
           "output": "BARGAINING"
         }
       ]
     },
-    "parse": "GAIN (profit) inside BARING = BARGAINING; the haggling."
+    "parse": "BAR + GAINING = BARGAINING, haggling."
   },
   {
     "answer": "INFORMATION",
@@ -266,7 +271,7 @@
     "answer": "PRECAUTIONS",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Before warnings become safety measures (11)",
+    "clue": "Ahead of the warnings, take safety measures (11)",
     "def": {
       "text": "safety measures",
       "position": "end"
@@ -277,12 +282,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Before",
+          "input": "Ahead of",
           "output": "PRE"
         },
         {
           "op": "synonym",
-          "input": "warnings",
+          "input": "the warnings",
           "output": "CAUTIONS"
         },
         {
@@ -292,7 +297,7 @@
         }
       ]
     },
-    "parse": "PRE (before) + CAUTIONS (warnings) = PRECAUTIONS, defined by 'safety measures'."
+    "parse": "PRE (ahead of) + CAUTIONS (warnings) = PRECAUTIONS; 'safety measures'."
   },
   {
     "answer": "PARTNERSHIP",
@@ -361,19 +366,19 @@
   {
     "answer": "CONSTRAINED",
     "clueType": "charade",
-    "difficulty": 4,
-    "clue": "Con, tense, but kept in check (11)",
+    "difficulty": 3,
+    "clue": "The convict, tense, is held in check (11)",
     "def": {
-      "text": "kept in check",
+      "text": "held in check",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CON+STRAINED",
+      "fodder": "CON + STRAINED",
       "operations": [
         {
           "op": "synonym",
-          "input": "Con",
+          "input": "The convict",
           "output": "CON"
         },
         {
@@ -388,41 +393,51 @@
         }
       ]
     },
-    "parse": "CON (swindle) + STRAINED (tense) = CONSTRAINED, kept in check."
+    "parse": "CON (convict) + STRAINED (tense) = CONSTRAINED; 'held in check'."
   },
   {
     "answer": "RELATIONSHIP",
-    "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Spoil the rain somehow, ruining a budding romance (12)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "A relation aboard ship sparked a budding romance (12)",
     "def": {
       "text": "a budding romance",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "somehow",
-      "fodder": "SPOIL THE RAIN",
+      "indicator": "",
+      "fodder": "RELATION+SHIP",
       "operations": [
         {
-          "op": "anagram",
-          "input": "SPOILTHERAIN",
+          "op": "synonym",
+          "input": "A relation",
+          "output": "RELATION"
+        },
+        {
+          "op": "synonym",
+          "input": "ship",
+          "output": "SHIP"
+        },
+        {
+          "op": "concat",
+          "input": "RELATION+SHIP",
           "output": "RELATIONSHIP"
         }
       ]
     },
-    "parse": "(SPOIL THE RAIN)* = RELATIONSHIP, defined by 'a budding romance'."
+    "parse": "RELATION (family member) + SHIP = RELATIONSHIP; a budding romance."
   },
   {
     "answer": "CONVERSATION",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Reformed conservation becomes a quiet word (12)",
+    "clue": "Conservation, reformed, amounts to mere talk (12)",
     "def": {
-      "text": "a quiet word",
+      "text": "mere talk",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Reformed",
+      "indicator": "reformed",
       "fodder": "CONSERVATION",
       "operations": [
         {
@@ -432,7 +447,7 @@
         }
       ]
     },
-    "parse": "(CONSERVATION)* 'Reformed' = CONVERSATION; 'a quiet word' (a chat) is the definition."
+    "parse": "(CONSERVATION)* 'reformed' = CONVERSATION; 'mere talk' (a chat)."
   },
   {
     "answer": "HEADQUARTERS",
@@ -468,25 +483,35 @@
   },
   {
     "answer": "UNDERSTANDING",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 4,
-    "clue": "Their dread, stunning to behold, broke down — that took some grasping (13)",
+    "clue": "Beneath your standing lies sympathy (13)",
     "def": {
-      "text": "that took some grasping",
+      "text": "sympathy",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "broke down",
-      "fodder": "DREAD STUNNING",
+      "indicator": "",
+      "fodder": "UNDER + STANDING",
       "operations": [
         {
-          "op": "anagram",
-          "input": "DREADSTUNNING",
+          "op": "synonym",
+          "input": "Beneath",
+          "output": "UNDER"
+        },
+        {
+          "op": "synonym",
+          "input": "your standing",
+          "output": "STANDING"
+        },
+        {
+          "op": "concat",
+          "input": "UNDER+STANDING",
           "output": "UNDERSTANDING"
         }
       ]
     },
-    "parse": "(DREAD STUNNING)* 'broke down' = UNDERSTANDING; 'that took some grasping' (comprehension) defines it."
+    "parse": "UNDER (beneath) + STANDING (one's reputation) = UNDERSTANDING; 'sympathy'."
   },
   {
     "answer": "CONSIDERATION",
@@ -508,46 +533,46 @@
         }
       ]
     },
-    "parse": "(ICONS RATIONED)* 'out' = CONSIDERATION; 'regard for others' (thoughtfulness) defines it."
+    "parse": "(ICONS RATIONED)* 'out' = CONSIDERATION; 'regard for others' (thoughtfulness)."
   },
   {
     "answer": "ENTERTAINMENT",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Treat men in net, tangled, for some amusement (13)",
+    "difficulty": 3,
+    "clue": "Riotously enter main tent for a show (13)",
     "def": {
-      "text": "amusement",
+      "text": "a show",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "tangled",
-      "fodder": "TREAT MEN IN NET",
+      "indicator": "Riotously",
+      "fodder": "ENTER MAIN TENT",
       "operations": [
         {
           "op": "anagram",
-          "input": "TREATMENINNET",
+          "input": "ENTERMAINTENT",
           "output": "ENTERTAINMENT"
         }
       ]
     },
-    "parse": "(TREAT MEN IN NET)* 'tangled' = ENTERTAINMENT; 'amusement' defines it."
+    "parse": "(ENTER MAIN TENT)* 'Riotously' = ENTERTAINMENT; 'a show'."
   },
   {
     "answer": "THOUGHTLESSLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Idea reduced, in a way showing no care (13)",
+    "clue": "A notion reduced, in a way, comes over carelessly (13)",
     "def": {
-      "text": "showing no care",
+      "text": "carelessly",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "THOUGHT+LESS+LY",
+      "fodder": "THOUGHT + LESS + LY",
       "operations": [
         {
           "op": "synonym",
-          "input": "Idea",
+          "input": "A notion",
           "output": "THOUGHT"
         },
         {
@@ -567,24 +592,24 @@
         }
       ]
     },
-    "parse": "THOUGHT (idea) + LESS (reduced) + LY (in a way) = THOUGHTLESSLY, showing no care."
+    "parse": "THOUGHT (a notion) + LESS (reduced) + LY (in a way) = THOUGHTLESSLY; 'carelessly'."
   },
   {
     "answer": "GRANDMOTHERLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Splendid mother, in a way, fondly indulgent (13)",
+    "clue": "A splendid mother, in a way, is warmly indulgent (13)",
     "def": {
-      "text": "fondly indulgent",
+      "text": "warmly indulgent",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "GRAND+MOTHER+LY",
+      "fodder": "GRAND + MOTHER + LY",
       "operations": [
         {
           "op": "synonym",
-          "input": "Splendid",
+          "input": "A splendid",
           "output": "GRAND"
         },
         {
@@ -604,6 +629,6 @@
         }
       ]
     },
-    "parse": "GRAND (splendid) + MOTHER + LY (in a way) = GRANDMOTHERLY, fondly indulgent."
+    "parse": "GRAND (splendid) + MOTHER + LY (in a way) = GRANDMOTHERLY; 'warmly indulgent'."
   }
 ]

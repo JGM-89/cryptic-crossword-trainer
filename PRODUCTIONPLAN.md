@@ -9,8 +9,12 @@
 ## Where things stand (2026-06-04)
 
 - **Live:** https://jgm-89.github.io/cryptic-crossword-trainer/ (GitHub Pages, CI-gated).
-- **Bank:** 366 hand-clued single-word answers (`src/data/bank/part-a…i.json`); fairness-validated;
-  surface-polished and adversarially audited (this is **done — do not keep polishing**).
+- **Bank:** 366 hand-clued single-word answers (`src/data/bank/part-a…i.json`); fairness-validated.
+  **Surface floor-raise DONE (2026-06-04):** ~111 clues that read like cryptic *recipes* or fragments
+  were rebuilt **device-free** to a hard **sentence-realism** bar (every clue must be a real sentence
+  a person would say, def integrated, no orphan words). See `docs/clue-style.md` §1 axis 1b. The
+  device-locked surface polish before this was the mistake; freeing the device was the fix. **Now
+  do not keep polishing** — only fix a clue if a real user reports a specific one.
 - **Archive:** 300 generated puzzles (`public/archive.json`) — 50× 7×7, 50× 9×9, 200× 13×13.
 - **Learn:** fading engine + per-device competence (good architecture), but only ~44 teaching clues
   and a single Stage-D puzzle.

@@ -3,14 +3,14 @@
     "answer": "EAR",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Listening organ, or one of corn (3)",
+    "clue": "It catches a whisper and grows on a cob (3)",
     "def": {
-      "text": "Listening organ",
+      "text": "It catches a whisper",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Listening organ / one of corn",
+      "fodder": "It catches a whisper / grows on a cob",
       "operations": [
         {
           "op": "literal",
@@ -19,7 +19,7 @@
         }
       ]
     },
-    "parse": "Double definition: a listening organ; and an ear (one) of corn."
+    "parse": "Double definition: an ear catches a whisper (the organ that hears), and an ear grows on a cob (of corn). Both halves read as one description of the same thing."
   },
   {
     "answer": "BAT",
@@ -223,23 +223,23 @@
     "answer": "AGE",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Era hidden in a garage workshop (3)",
+    "clue": "A generation can be read in any vintage (3)",
     "def": {
-      "text": "Era",
+      "text": "A generation",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "hidden in",
-      "fodder": "garage",
+      "indicator": "in",
+      "fodder": "vintage",
       "operations": [
         {
           "op": "hidden",
-          "input": "gar<AGE>",
+          "input": "vint<AGE>",
           "output": "AGE"
         }
       ]
     },
-    "parse": "Hidden in 'garAGE' = AGE; an era. The carrier 'garage workshop' points away from time."
+    "parse": "AGE is hidden in 'vintAGE' (read in any vintage); a generation. The wine surface points away from time."
   },
   {
     "answer": "COB",
@@ -333,23 +333,23 @@
     "answer": "TIDE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Current revision of edit (4)",
+    "clue": "Tied in knots by the current (4)",
     "def": {
-      "text": "Current",
-      "position": "start"
+      "text": "the current",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "revision of",
-      "fodder": "edit",
+      "indicator": "in knots",
+      "fodder": "Tied",
       "operations": [
         {
           "op": "anagram",
-          "input": "EDIT",
+          "input": "TIED",
           "output": "TIDE"
         }
       ]
     },
-    "parse": "(EDIT)* anagrammed by 'revision of' = TIDE; a current/flow."
+    "parse": "Anagram (in knots) of TIED = TIDE; the current/flow of the sea."
   },
   {
     "answer": "LIME",
@@ -421,14 +421,14 @@
     "answer": "DRAW",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Sketch the final's tied result (4)",
+    "clue": "Sketch a tie (4)",
     "def": {
       "text": "Sketch",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Sketch / tied result",
+      "fodder": "Sketch / a tie",
       "operations": [
         {
           "op": "literal",
@@ -437,7 +437,7 @@
         }
       ]
     },
-    "parse": "Double definition: to DRAW (sketch), and a DRAW (a tied result). One picture: an artist captures the deadlocked final."
+    "parse": "Double definition: to sketch; and a tie (a drawn game)."
   },
   {
     "answer": "HEAR",
@@ -529,35 +529,25 @@
   },
   {
     "answer": "ONCE",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Working with church, formerly (4)",
+    "clue": "A candle in the sconce burned long ago (4)",
     "def": {
-      "text": "formerly",
+      "text": "long ago",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "ON + CE",
+      "indicator": "in",
+      "fodder": "sconce",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Working",
-          "output": "ON"
-        },
-        {
-          "op": "abbreviate",
-          "input": "church",
-          "output": "CE"
-        },
-        {
-          "op": "concat",
-          "input": "ON+CE",
+          "op": "hidden",
+          "input": "sc<ONCE>",
           "output": "ONCE"
         }
       ]
     },
-    "parse": "ON (working, as a machine switched on) + CE (Church of England), joined = ONCE; formerly."
+    "parse": "ONCE is hidden in 'scONCE' (a candle in the sconce); meaning long ago/formerly."
   },
   {
     "answer": "HERB",
@@ -595,23 +585,23 @@
     "answer": "CHAT",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Natter shown by the rich attire (4)",
+    "clue": "Gossip ran through such a tale (4)",
     "def": {
-      "text": "Natter",
+      "text": "Gossip",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "shown by",
-      "fodder": "rich attire",
+      "indicator": "through",
+      "fodder": "such a tale",
       "operations": [
         {
           "op": "hidden",
-          "input": "ri<CH AT>tire",
+          "input": "su<CH A T>ale",
           "output": "CHAT"
         }
       ]
     },
-    "parse": "CHAT hidden in 'riCH ATtire', spanning two words, flagged by 'shown by'; a natter."
+    "parse": "CHAT runs through 'suCH A Tale'; gossip/a natter."
   },
   {
     "answer": "SCAR",
@@ -671,14 +661,14 @@
     "answer": "FLAT",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Below the right pitch in a rented apartment (4)",
+    "clue": "A level apartment (4)",
     "def": {
-      "text": "Below the right pitch",
+      "text": "A level",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Below the right pitch / apartment",
+      "fodder": "A level / apartment",
       "operations": [
         {
           "op": "literal",
@@ -687,7 +677,7 @@
         }
       ]
     },
-    "parse": "Double definition: FLAT (below the right pitch, in music), and a FLAT (a rented apartment). Surface sets a real scene rather than the demonstrative 'this apartment' prop."
+    "parse": "Double definition: FLAT (level) and FLAT (an apartment). 'A level' misdirects toward the exam."
   },
   {
     "answer": "WAVE",
@@ -825,23 +815,23 @@
     "answer": "OVEN",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Cooker hidden in a love nest (4)",
+    "clue": "A cooker features in every proven kitchen (4)",
     "def": {
-      "text": "Cooker",
+      "text": "A cooker",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "hidden in",
-      "fodder": "love nest",
+      "indicator": "in",
+      "fodder": "proven",
       "operations": [
         {
           "op": "hidden",
-          "input": "l<OVE N>est",
+          "input": "pr<OVEN>",
           "output": "OVEN"
         }
       ]
     },
-    "parse": "OVEN hides in 'lOVE Nest', flagged by 'hidden in'. Definition: Cooker."
+    "parse": "OVEN is hidden in 'prOVEN' (in every proven kitchen); a cooker."
   },
   {
     "answer": "EDIT",

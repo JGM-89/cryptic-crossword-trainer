@@ -3,14 +3,14 @@
     "answer": "MILK",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Exploit the dairy supply (4)",
+    "clue": "Get all you can out of a cow (4)",
     "def": {
-      "text": "Exploit",
+      "text": "Get all you can out of",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Exploit / dairy supply",
+      "fodder": "Get all you can out of / a cow",
       "operations": [
         {
           "op": "literal",
@@ -19,7 +19,7 @@
         }
       ]
     },
-    "parse": "MILK: to exploit for all it's worth, and the dairy supply from a cow."
+    "parse": "Double definition: to MILK is to get all you can out of something (exploit it), and to MILK is what you do to a cow."
   },
   {
     "answer": "GIFT",
@@ -133,62 +133,47 @@
   },
   {
     "answer": "SOAP",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Thus a quiet TV serial (4)",
+    "clue": "Drama you can wash with? (4)",
     "def": {
-      "text": "TV serial",
-      "position": "end"
+      "text": "Drama you can wash with?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "SO + A + P",
+      "fodder": "Drama you can wash with",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Thus",
-          "output": "SO"
-        },
-        {
-          "op": "synonym",
-          "input": "a",
-          "output": "A"
-        },
-        {
-          "op": "abbreviate",
-          "input": "quiet",
-          "output": "P"
-        },
-        {
-          "op": "concat",
-          "input": "SO+A+P",
+          "op": "literal",
+          "input": "pun on soap opera and washing soap",
           "output": "SOAP"
         }
       ]
     },
-    "parse": "SO (thus) + A + P (quiet) = SOAP; a 'TV serial'."
+    "parse": "SOAP: a soap opera is drama, and soap is what you wash with — one word, two senses."
   },
   {
     "answer": "MOAT",
     "clueType": "hidden",
-    "difficulty": 2,
-    "clue": "Castle's promo at last reveals its defence (4)",
+    "difficulty": 3,
+    "clue": "The chauffeur's limo at last circles the castle's defence (4)",
     "def": {
-      "text": "defence",
+      "text": "the castle's defence",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reveals",
-      "fodder": "promo at",
+      "indicator": "circles",
+      "fodder": "limo at",
       "operations": [
         {
           "op": "hidden",
-          "input": "pro<MO AT>",
+          "input": "li<MO AT> last",
           "output": "MOAT"
         }
       ]
     },
-    "parse": "Hidden in 'proMO AT' = MOAT; a castle's 'defence'."
+    "parse": "Hidden in 'liMO AT last' (circles) = MOAT, the castle's defence."
   },
   {
     "answer": "HARE",
@@ -214,35 +199,25 @@
   },
   {
     "answer": "NEST",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Direction by the street makes a home (4)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "The keenest birds build a home (4)",
     "def": {
-      "text": "home",
+      "text": "a home",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "NE + ST",
+      "fodder": "keenest",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Direction",
-          "output": "NE"
-        },
-        {
-          "op": "abbreviate",
-          "input": "street",
-          "output": "ST"
-        },
-        {
-          "op": "concat",
-          "input": "NE+ST",
+          "op": "hidden",
+          "input": "kee<NEST>",
           "output": "NEST"
         }
       ]
     },
-    "parse": "NE (north-east, a direction) + ST (street) = NEST; a bird's 'home'."
+    "parse": "Hidden in 'keeNEST' = NEST, a home for birds."
   },
   {
     "answer": "HYMN",
@@ -268,25 +243,25 @@
   },
   {
     "answer": "TOAD",
-    "clueType": "anagram",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "A dot moved — an amphibian (4)",
+    "clue": "Plenty to admire in this amphibian (4)",
     "def": {
-      "text": "an amphibian",
+      "text": "this amphibian",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "moved",
-      "fodder": "A dot",
+      "indicator": "in",
+      "fodder": "to admire",
       "operations": [
         {
-          "op": "anagram",
-          "input": "ADOT",
+          "op": "hidden",
+          "input": "<TO AD>mire",
           "output": "TOAD"
         }
       ]
     },
-    "parse": "(A DOT)* (moved) = TOAD, an amphibian — a far-off speck that turns out to hop."
+    "parse": "Hidden in 'TO ADmire' = TOAD, an amphibian."
   },
   {
     "answer": "MEND",
@@ -454,72 +429,47 @@
   },
   {
     "answer": "FLAME",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "A loud, weak old sweetheart (5)",
+    "clue": "An old sweetheart one might rekindle? (5)",
     "def": {
-      "text": "old sweetheart",
-      "position": "end"
+      "text": "An old sweetheart one might rekindle?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "F + LAME",
+      "fodder": "An old sweetheart one might rekindle",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "loud",
-          "output": "F"
-        },
-        {
-          "op": "synonym",
-          "input": "weak",
-          "output": "LAME"
-        },
-        {
-          "op": "concat",
-          "input": "F+LAME",
+          "op": "literal",
+          "input": "pun on rekindling a flame and an old flame",
           "output": "FLAME"
         }
       ]
     },
-    "parse": "F (loud, forte) + LAME (weak) = FLAME; an old sweetheart."
+    "parse": "FLAME: an old flame is a former sweetheart, and one rekindles a flame — the pun fuses both senses."
   },
   {
     "answer": "CROWN",
-    "clueType": "charade",
-    "difficulty": 4,
-    "clue": "Caught at a quarrel, heading north, for the title (5)",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Royal headgear capping a tooth (5)",
     "def": {
-      "text": "the title",
-      "position": "end"
+      "text": "Royal headgear",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "C+ROW+N",
+      "fodder": "Royal headgear / capping a tooth",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Caught",
-          "output": "C"
-        },
-        {
-          "op": "synonym",
-          "input": "a quarrel",
-          "output": "ROW"
-        },
-        {
-          "op": "abbreviate",
-          "input": "north",
-          "output": "N"
-        },
-        {
-          "op": "concat",
-          "input": "C+ROW+N",
+          "op": "literal",
+          "input": "two definitions",
           "output": "CROWN"
         }
       ]
     },
-    "parse": "C (caught) + ROW (quarrel) + N (north) = CROWN, the title."
+    "parse": "Double definition: a CROWN is royal headgear, and to CROWN a tooth is to cap it (a dental crown)."
   },
   {
     "answer": "DREAM",
@@ -621,35 +571,25 @@
   },
   {
     "answer": "PEACH",
-    "clueType": "charade",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Quiet, with one apiece, is a real beauty (5)",
+    "clue": "A real beauty, but she'll snitch (5)",
     "def": {
-      "text": "a real beauty",
-      "position": "end"
+      "text": "A real beauty",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "P + EACH",
+      "fodder": "A real beauty / she'll snitch",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Quiet",
-          "output": "P"
-        },
-        {
-          "op": "synonym",
-          "input": "apiece",
-          "output": "EACH"
-        },
-        {
-          "op": "concat",
-          "input": "P+EACH",
+          "op": "literal",
+          "input": "two definitions",
           "output": "PEACH"
         }
       ]
     },
-    "parse": "P (quiet) + EACH (apiece) = PEACH; a real beauty, a fine specimen."
+    "parse": "Double definition: a PEACH is a real beauty, and to PEACH is to snitch, to inform on someone."
   },
   {
     "answer": "NURSE",
@@ -729,35 +669,25 @@
   },
   {
     "answer": "CLOUD",
-    "clueType": "charade",
-    "difficulty": 2,
-    "clue": "Cold and loud, threatening to obscure (5)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Could, possibly, cast a shadow (5)",
     "def": {
-      "text": "obscure",
+      "text": "cast a shadow",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "C + LOUD",
+      "indicator": "possibly",
+      "fodder": "Could",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Cold",
-          "output": "C"
-        },
-        {
-          "op": "synonym",
-          "input": "loud",
-          "output": "LOUD"
-        },
-        {
-          "op": "concat",
-          "input": "C+LOUD",
+          "op": "anagram",
+          "input": "COULD",
           "output": "CLOUD"
         }
       ]
     },
-    "parse": "C (cold) + LOUD = CLOUD; to obscure or darken."
+    "parse": "Anagram (possibly) of COULD = CLOUD; to cast a shadow, to obscure."
   },
   {
     "answer": "CASTLE",
@@ -889,7 +819,7 @@
         }
       ]
     },
-    "parse": "Double definition: to saddle is to burden; and a saddle is the rider's seat."
+    "parse": "Double definition: to SADDLE is to burden, and a SADDLE is the rider's seat."
   },
   {
     "answer": "PIGEON",
@@ -1005,14 +935,14 @@
     "answer": "PEPPER",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Add spice and let fly (6)",
+    "clue": "Spice up a speech with gunfire (6)",
     "def": {
-      "text": "let fly",
-      "position": "end"
+      "text": "Spice up",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Add spice / let fly",
+      "fodder": "Spice up / pelt with gunfire",
       "operations": [
         {
           "op": "literal",
@@ -1021,7 +951,7 @@
         }
       ]
     },
-    "parse": "Double definition: to pepper is to add spice; and to pepper is to let fly, to bombard."
+    "parse": "Double definition: to PEPPER is to spice up (season), and to PEPPER is to pelt, as with gunfire."
   },
   {
     "answer": "CANDLE",
@@ -1047,35 +977,25 @@
   },
   {
     "answer": "ORANGE",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Ring the stove for some fruit (6)",
+    "clue": "An ogre turned into a fruit (6)",
     "def": {
-      "text": "fruit",
+      "text": "a fruit",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "O + RANGE",
+      "indicator": "turned",
+      "fodder": "An ogre",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Ring",
-          "output": "O"
-        },
-        {
-          "op": "synonym",
-          "input": "stove",
-          "output": "RANGE"
-        },
-        {
-          "op": "concat",
-          "input": "O+RANGE",
+          "op": "anagram",
+          "input": "ANOGRE",
           "output": "ORANGE"
         }
       ]
     },
-    "parse": "O (ring) + RANGE (stove) = ORANGE; a fruit."
+    "parse": "Anagram (turned) of AN OGRE = ORANGE, a fruit — the fairy-tale brute transformed."
   },
   {
     "answer": "DESIGN",
@@ -1101,35 +1021,25 @@
   },
   {
     "answer": "MENTOR",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Men by the hill find a guide (6)",
+    "clue": "A specimen torn apart reveals the guide (6)",
     "def": {
-      "text": "a guide",
+      "text": "the guide",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "MEN + TOR",
+      "indicator": "reveals",
+      "fodder": "specimen torn",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Men",
-          "output": "MEN"
-        },
-        {
-          "op": "synonym",
-          "input": "hill",
-          "output": "TOR"
-        },
-        {
-          "op": "concat",
-          "input": "MEN+TOR",
+          "op": "hidden",
+          "input": "speci<MENTOR>n",
           "output": "MENTOR"
         }
       ]
     },
-    "parse": "MEN + TOR (hill) = MENTOR; a guide."
+    "parse": "Hidden in 'speciMEN TORn' (revealed by tearing it apart) = MENTOR, the guide."
   },
   {
     "answer": "CHARITY",
@@ -1300,40 +1210,25 @@
   },
   {
     "answer": "CEILING",
-    "clueType": "charade",
-    "difficulty": 4,
-    "clue": "Church served one ling under the upper limit (7)",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "In the office I linger, just below the upper limit (7)",
     "def": {
-      "text": "the upper limit",
+      "text": "upper limit",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "CE+I+LING",
+      "indicator": "In",
+      "fodder": "office I linger",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Church",
-          "output": "CE"
-        },
-        {
-          "op": "abbreviate",
-          "input": "one",
-          "output": "I"
-        },
-        {
-          "op": "synonym",
-          "input": "ling",
-          "output": "LING"
-        },
-        {
-          "op": "concat",
-          "input": "CE+I+LING",
+          "op": "hidden",
+          "input": "off<ICE I LING>er",
           "output": "CEILING"
         }
       ]
     },
-    "parse": "CE (church) + I (one) + LING (a fish) = CEILING, the upper limit — a parish meal served within its budget cap."
+    "parse": "Hidden in 'offICE I LINGer' = CEILING; the 'upper limit'. 'In' signals the concealment."
   },
   {
     "answer": "SARDINE",
@@ -1359,72 +1254,47 @@
   },
   {
     "answer": "HABITAT",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Routine area on time makes a creature's home (7)",
+    "clue": "Some habit attracts a creature to its home (7)",
     "def": {
-      "text": "a creature's home",
+      "text": "its home",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "HABIT+A+T",
+      "indicator": "Some",
+      "fodder": "habit attracts",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Routine",
-          "output": "HABIT"
-        },
-        {
-          "op": "abbreviate",
-          "input": "area",
-          "output": "A"
-        },
-        {
-          "op": "abbreviate",
-          "input": "time",
-          "output": "T"
-        },
-        {
-          "op": "concat",
-          "input": "HABIT+A+T",
+          "op": "hidden",
+          "input": "<HABIT AT>tracts",
           "output": "HABITAT"
         }
       ]
     },
-    "parse": "HABIT (routine) + A (area) + T (time) = HABITAT, a creature's home."
+    "parse": "Hidden in 'HABIT ATtracts' (Some) = HABITAT, a creature's home."
   },
   {
     "answer": "CHAMBER",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Church traffic signal lights up a room (7)",
+    "clue": "Some rich amber lit up the room (7)",
     "def": {
-      "text": "a room",
+      "text": "the room",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "CH+AMBER",
+      "indicator": "Some",
+      "fodder": "rich amber",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Church",
-          "output": "CH"
-        },
-        {
-          "op": "synonym",
-          "input": "traffic signal",
-          "output": "AMBER"
-        },
-        {
-          "op": "concat",
-          "input": "CH+AMBER",
+          "op": "hidden",
+          "input": "ri<CHAMBER>",
           "output": "CHAMBER"
         }
       ]
     },
-    "parse": "CH (church) + AMBER (traffic signal colour) = CHAMBER, a room."
+    "parse": "Hidden in 'riCH AMBER' (Some) = CHAMBER, the room."
   },
   {
     "answer": "PANTHER",
@@ -1482,25 +1352,25 @@
   },
   {
     "answer": "HARVEST",
-    "clueType": "deletion",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "The farmer harvests endlessly come the autumn gathering (7)",
+    "clue": "Her vats, stirred, yield the crop (7)",
     "def": {
-      "text": "the autumn gathering",
+      "text": "the crop",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "endlessly",
-      "fodder": "harvests",
+      "indicator": "stirred",
+      "fodder": "Her vats",
       "operations": [
         {
-          "op": "delete",
-          "input": "HARVESTS − S",
+          "op": "anagram",
+          "input": "HERVATS",
           "output": "HARVEST"
         }
       ]
     },
-    "parse": "HARVESTS (the farmer harvests) with its last letter dropped (endlessly) = HARVEST, the autumn gathering."
+    "parse": "Anagram of HER VATS (stirred) = HARVEST, the crop."
   },
   {
     "answer": "BLANKET",
@@ -1749,23 +1619,23 @@
     "answer": "DISCOVERY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Club night's the very find (9)",
+    "clue": "Disco really is a breakthrough (9)",
     "def": {
-      "text": "find",
+      "text": "a breakthrough",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "DISCO+VERY",
+      "fodder": "DISCO + VERY",
       "operations": [
         {
           "op": "synonym",
-          "input": "Club night",
+          "input": "Disco",
           "output": "DISCO"
         },
         {
           "op": "synonym",
-          "input": "very",
+          "input": "really",
           "output": "VERY"
         },
         {
@@ -1775,29 +1645,29 @@
         }
       ]
     },
-    "parse": "DISCO (club night) + VERY (the very) = DISCOVERY, a find."
+    "parse": "DISCO + VERY (really) = DISCOVERY, a breakthrough; 'is' links wordplay to definition."
   },
   {
     "answer": "WORKSHEET",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Functions on sheet music? That's a page for the pupils (9)",
+    "clue": "Operate the mainsail for the class exercise (9)",
     "def": {
-      "text": "a page for the pupils",
+      "text": "the class exercise",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "WORK+SHEET",
+      "fodder": "WORK + SHEET",
       "operations": [
         {
           "op": "synonym",
-          "input": "Functions",
+          "input": "Operate",
           "output": "WORK"
         },
         {
           "op": "synonym",
-          "input": "sheet",
+          "input": "the mainsail",
           "output": "SHEET"
         },
         {
@@ -1807,7 +1677,7 @@
         }
       ]
     },
-    "parse": "WORK (functions, as a machine works) + SHEET (as in sheet music) = WORKSHEET, a page for pupils."
+    "parse": "WORK (operate) + SHEET (a mainsail's rope, a sheet) = WORKSHEET, the class exercise."
   },
   {
     "answer": "DANGEROUS",
@@ -1877,24 +1747,24 @@
   },
   {
     "answer": "CHALLENGE",
-    "clueType": "deletion",
-    "difficulty": 3,
-    "clue": "Climbing this almost challenges the fittest, a dare (9)",
+    "clueType": "double-definition",
+    "difficulty": 4,
+    "clue": "Sentry's cry takes some nerve (9)",
     "def": {
-      "text": "a dare",
-      "position": "end"
+      "text": "Sentry's cry",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "almost",
-      "fodder": "challenges",
+      "indicator": "",
+      "fodder": "sentry's cry / something that takes nerve",
       "operations": [
         {
-          "op": "delete",
-          "input": "CHALLENGES − S",
+          "op": "literal",
+          "input": "two definitions",
           "output": "CHALLENGE"
         }
       ]
     },
-    "parse": "CHALLENGES (tests) with its last letter dropped (almost) = CHALLENGE, a dare."
+    "parse": "Double definition: a sentry's CHALLENGE (his 'Who goes there?'), and a CHALLENGE, a test that takes nerve."
   }
 ]

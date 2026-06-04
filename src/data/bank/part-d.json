@@ -23,57 +23,57 @@
   },
   {
     "answer": "DESSERT",
-    "clueType": "reversal",
+    "clueType": "container",
     "difficulty": 3,
-    "clue": "Hair plaited, turned round, makes the pudding (7)",
+    "clue": "Saint lost in the desert dreams of pudding (7)",
     "def": {
-      "text": "the pudding",
+      "text": "pudding",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "turned round",
-      "fodder": "tressed",
+      "indicator": "in",
+      "fodder": "S in DESERT",
       "operations": [
         {
-          "op": "reverse",
-          "input": "TRESSED",
+          "op": "abbreviate",
+          "input": "Saint",
+          "output": "S"
+        },
+        {
+          "op": "synonym",
+          "input": "desert",
+          "output": "DESERT"
+        },
+        {
+          "op": "insert",
+          "input": "S in DESERT",
           "output": "DESSERT"
         }
       ]
     },
-    "parse": "TRESSED (hair plaited) reversed = DESSERT, the pudding."
+    "parse": "S (saint) inserted into DESERT (the desert) = DE-S-SERT = DESSERT; a 'pudding'."
   },
   {
     "answer": "EARNEST",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "The eavesdropper's nest was deadly serious (7)",
+    "clue": "Eastern faith, shaken, stays sincere (7)",
     "def": {
-      "text": "deadly serious",
+      "text": "sincere",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "EAR + NEST",
+      "indicator": "shaken",
+      "fodder": "Eastern",
       "operations": [
         {
-          "op": "synonym",
-          "input": "eavesdropper",
-          "output": "EAR"
-        },
-        {
-          "op": "synonym",
-          "input": "nest",
-          "output": "NEST"
-        },
-        {
-          "op": "concat",
-          "input": "EAR+NEST",
+          "op": "anagram",
+          "input": "EASTERN",
           "output": "EARNEST"
         }
       ]
     },
-    "parse": "EAR (eavesdropper, a listener) + NEST (nest) = EARNEST, meaning deadly serious; the surface pictures a spy's hideout."
+    "parse": "(EASTERN)* = EARNEST, meaning sincere; 'shaken' is the anagram indicator and 'Eastern faith' misdirects towards religion."
   },
   {
     "answer": "NEUTRAL",
@@ -177,31 +177,31 @@
     "answer": "RECITAL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Claret I quaffed, all shaken up, before the concert (7)",
+    "clue": "Article badly edited for the concert (7)",
     "def": {
       "text": "the concert",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "all shaken up",
-      "fodder": "Claret I",
+      "indicator": "badly edited",
+      "fodder": "Article",
       "operations": [
         {
           "op": "anagram",
-          "input": "CLARET I",
+          "input": "ARTICLE",
           "output": "RECITAL"
         }
       ]
     },
-    "parse": "(CLARET I)* = RECITAL, the concert; 'all shaken up' is the anagram indicator, the 'I' a first-person drinker."
+    "parse": "(ARTICLE)* = RECITAL, a concert performance; 'badly edited' is the anagram indicator."
   },
   {
     "answer": "PANCAKE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Slate the dessert, a Shrove Tuesday treat (7)",
+    "clue": "Pan the cake served on Shrove Tuesday (7)",
     "def": {
-      "text": "a Shrove Tuesday treat",
+      "text": "served on Shrove Tuesday",
       "position": "end"
     },
     "wordplay": {
@@ -210,12 +210,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Slate",
+          "input": "Pan",
           "output": "PAN"
         },
         {
           "op": "synonym",
-          "input": "dessert",
+          "input": "the cake",
           "output": "CAKE"
         },
         {
@@ -225,7 +225,7 @@
         }
       ]
     },
-    "parse": "PAN (slate, criticise) + CAKE (dessert) = PANCAKE, a Shrove Tuesday treat."
+    "parse": "PAN (criticise, slate) + CAKE = PANCAKE, the treat served on Shrove Tuesday."
   },
   {
     "answer": "CARPORT",
@@ -263,9 +263,9 @@
     "answer": "FORWARD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "All for the hospital ward, a bold striker (7)",
+    "clue": "For the ward, going ahead (7)",
     "def": {
-      "text": "a bold striker",
+      "text": "going ahead",
       "position": "end"
     },
     "wordplay": {
@@ -274,12 +274,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "All for",
+          "input": "For",
           "output": "FOR"
         },
         {
           "op": "synonym",
-          "input": "hospital ward",
+          "input": "the ward",
           "output": "WARD"
         },
         {
@@ -289,7 +289,7 @@
         }
       ]
     },
-    "parse": "FOR (all for, in support of) + WARD (hospital ward) = FORWARD, a bold striker in football."
+    "parse": "FOR + WARD (hospital ward) = FORWARD, meaning going ahead."
   },
   {
     "answer": "HEADWAY",
@@ -389,25 +389,35 @@
   },
   {
     "answer": "PASSAGE",
-    "clueType": "hidden",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "The brass compass, aged badly, hides a corridor (7)",
+    "clue": "The pass, with age, widened to a corridor (7)",
     "def": {
-      "text": "a corridor",
+      "text": "corridor",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "hides",
-      "fodder": "compass aged",
+      "indicator": "",
+      "fodder": "PASS + AGE",
       "operations": [
         {
-          "op": "hidden",
-          "input": "com<PASS AGE>d",
+          "op": "synonym",
+          "input": "pass",
+          "output": "PASS"
+        },
+        {
+          "op": "synonym",
+          "input": "age",
+          "output": "AGE"
+        },
+        {
+          "op": "concat",
+          "input": "PASS+AGE",
           "output": "PASSAGE"
         }
       ]
     },
-    "parse": "Hidden in 'comPASS AGEd' = PASSAGE, a corridor; the run spans 'compass' into 'aged'."
+    "parse": "PASS (a mountain pass) + AGE = PASSAGE; a 'corridor'."
   },
   {
     "answer": "EARRING",
@@ -617,7 +627,7 @@
     "answer": "NOWHERE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Now present, then suddenly in no place (7)",
+    "clue": "Now present, but in no place (7)",
     "def": {
       "text": "in no place",
       "position": "end"
@@ -643,7 +653,7 @@
         }
       ]
     },
-    "parse": "NOW (now) + HERE (present, on the spot) = NOWHERE; in no place. The surface paints something vanishing."
+    "parse": "NOW + HERE (present) = NOWHERE, meaning in no place; the surface splits the answer into 'now here'."
   },
   {
     "answer": "EARLOBE",
@@ -669,40 +679,25 @@
   },
   {
     "answer": "CARAVAN",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Auto plus a van makes a mobile holiday home (7)",
+    "clue": "The vicar, a vandal, hid in the holiday home (7)",
     "def": {
-      "text": "a mobile holiday home",
+      "text": "the holiday home",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "CAR + A + VAN",
+      "indicator": "hid in",
+      "fodder": "vicar a vandal",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Auto",
-          "output": "CAR"
-        },
-        {
-          "op": "synonym",
-          "input": "a",
-          "output": "A"
-        },
-        {
-          "op": "synonym",
-          "input": "van",
-          "output": "VAN"
-        },
-        {
-          "op": "concat",
-          "input": "CAR+A+VAN",
+          "op": "hidden",
+          "input": "vi<CARAVAN>dal",
           "output": "CARAVAN"
         }
       ]
     },
-    "parse": "CAR (auto) + A + VAN (van) = CARAVAN, a mobile holiday home."
+    "parse": "Hidden in viCAR A VANdal = CARAVAN, the holiday home."
   },
   {
     "answer": "DELIVER",
@@ -732,7 +727,7 @@
     "difficulty": 3,
     "clue": "Luggage label sent back to the porter (7)",
     "def": {
-      "text": "porter",
+      "text": "the porter",
       "position": "end"
     },
     "wordplay": {
@@ -751,14 +746,14 @@
   {
     "answer": "EARNING",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Nearing retirement, surprisingly, but still bringing home a wage (7)",
+    "difficulty": 3,
+    "clue": "Nearing collapse, yet bringing in a wage (7)",
     "def": {
-      "text": "bringing home a wage",
+      "text": "bringing in a wage",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "surprisingly",
+      "indicator": "collapse",
       "fodder": "Nearing",
       "operations": [
         {
@@ -768,7 +763,7 @@
         }
       ]
     },
-    "parse": "Anagram of NEARING (surprisingly) = EARNING; bringing home a wage."
+    "parse": "(NEARING)* = EARNING, bringing in a wage; 'collapse' is the anagram indicator."
   },
   {
     "answer": "STRANGE",

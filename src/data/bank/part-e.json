@@ -23,35 +23,25 @@
   },
   {
     "answer": "RELATION",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Right joy comes from a relative (8)",
+    "clue": "Oriental novel reveals a family connection (8)",
     "def": {
-      "text": "relative",
+      "text": "a family connection",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "R + ELATION",
+      "indicator": "novel",
+      "fodder": "Oriental",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Right",
-          "output": "R"
-        },
-        {
-          "op": "synonym",
-          "input": "joy",
-          "output": "ELATION"
-        },
-        {
-          "op": "concat",
-          "input": "R+ELATION",
+          "op": "anagram",
+          "input": "ORIENTAL",
           "output": "RELATION"
         }
       ]
     },
-    "parse": "R (right) + ELATION (joy) = RELATION, a relative."
+    "parse": "Anagram of ORIENTAL (novel) = RELATION; a family connection."
   },
   {
     "answer": "TEACHERS",
@@ -139,7 +129,7 @@
         }
       ]
     },
-    "parse": "Anagram of PANTRIES (rebuilt) gives PAINTERS, decorators."
+    "parse": "Anagram of PANTRIES (rebuilt) = PAINTERS; decorators. Surface: the pantries were rebuilt by the decorators."
   },
   {
     "answer": "STRANGER",
@@ -167,14 +157,14 @@
     "answer": "MINISTER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Interims spent in the pulpit made the parson (8)",
+    "clue": "Sort out interims for the clergyman (8)",
     "def": {
-      "text": "the parson",
+      "text": "the clergyman",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "spent",
-      "fodder": "INTERIMS",
+      "indicator": "Sort out",
+      "fodder": "interims",
       "operations": [
         {
           "op": "anagram",
@@ -183,29 +173,29 @@
         }
       ]
     },
-    "parse": "Anagram of INTERIMS (spent) = MINISTER; the parson. Surface: the interims a stand-in spent in the pulpit made him the parson — a concrete relief-preacher scene."
+    "parse": "Anagram of INTERIMS (Sort out) = MINISTER; the clergyman. Surface: sort out the stand-in interims for the clergyman — a real parish-cover instruction."
   },
   {
     "answer": "RESIDENT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "A guest inserted awkwardly, now a long-term tenant (8)",
+    "clue": "Trendies relocated, now the local (8)",
     "def": {
-      "text": "a long-term tenant",
+      "text": "the local",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "awkwardly",
-      "fodder": "INSERTED",
+      "indicator": "relocated",
+      "fodder": "Trendies",
       "operations": [
         {
           "op": "anagram",
-          "input": "INSERTED",
+          "input": "TRENDIES",
           "output": "RESIDENT"
         }
       ]
     },
-    "parse": "Anagram of INSERTED (awkwardly) = RESIDENT; a long-term tenant. Surface: a guest awkwardly wedged into a household who has stayed for good."
+    "parse": "Anagram of TRENDIES (relocated) = RESIDENT; the local (a resident). Surface: the trendies relocated and are now the local — a gentrification scene."
   },
   {
     "answer": "REACTION",
@@ -243,9 +233,9 @@
     "answer": "CONTAINER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Sold ancient or refurbished, a crate (9)",
+    "clue": "Ancient or refurbished, a vessel (9)",
     "def": {
-      "text": "a crate",
+      "text": "a vessel",
       "position": "end"
     },
     "wordplay": {
@@ -259,29 +249,29 @@
         }
       ]
     },
-    "parse": "Anagram of ANCIENT OR (refurbished) = CONTAINER; a crate. Every word now works: 'modern' padding cut, the indicator 'refurbished' sits on the fodder."
+    "parse": "Anagram of ANCIENT OR (refurbished) = CONTAINER; a vessel. Surface: ancient or refurbished, it is a vessel — an antique-dealer's appraisal; the old orphan 'Sold' is gone."
   },
   {
     "answer": "GRADIENTS",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Treading's awkward on the steep slopes (9)",
+    "clue": "Red giants, scattered, show the steep slopes (9)",
     "def": {
       "text": "the steep slopes",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "awkward",
-      "fodder": "treading's",
+      "indicator": "scattered",
+      "fodder": "Red giants",
       "operations": [
         {
           "op": "anagram",
-          "input": "TREADINGS",
+          "input": "RED GIANTS",
           "output": "GRADIENTS"
         }
       ]
     },
-    "parse": "Anagram of TREADING'S (awkward) = GRADIENTS, the steep slopes."
+    "parse": "Anagram of RED GIANTS (scattered) = GRADIENTS; the steep slopes. Surface: scattered red giants (stars) — an astronomy image that misdirects from slopes."
   },
   {
     "answer": "ORGANISES",
@@ -303,15 +293,15 @@
         }
       ]
     },
-    "parse": "Anagram of ROSE GAINS (surprisingly) = ORGANISES; runs the show. Surface: Rose, an underdog, surprisingly gains ground and now runs the show."
+    "parse": "Anagram of ROSE GAINS (surprisingly) = ORGANISES; runs the show. Surface: Rose, the underdog, surprisingly gains ground and now runs the show."
   },
   {
     "answer": "DETERMINE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Put off my excavation? I'll settle this (9)",
+    "clue": "Discourage tunnelling and settle the matter (9)",
     "def": {
-      "text": "settle this",
+      "text": "settle the matter",
       "position": "end"
     },
     "wordplay": {
@@ -320,12 +310,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Put off",
+          "input": "Discourage",
           "output": "DETER"
         },
         {
           "op": "synonym",
-          "input": "my excavation",
+          "input": "tunnelling",
           "output": "MINE"
         },
         {
@@ -335,13 +325,13 @@
         }
       ]
     },
-    "parse": "DETER (put off) + MINE (my excavation) = DETERMINE, to settle this."
+    "parse": "DETER (discourage) + MINE (tunnelling, to mine) = DETERMINE; settle the matter. Surface: discourage tunnelling and settle the matter — one coherent directive."
   },
   {
     "answer": "CORRELATE",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Cartel ore refined to match up (9)",
+    "clue": "Cartel ore, refined, will match up (9)",
     "def": {
       "text": "match up",
       "position": "end"
@@ -357,29 +347,29 @@
         }
       ]
     },
-    "parse": "Anagram of CARTEL ORE (refined) gives CORRELATE, to match up."
+    "parse": "Anagram of CARTEL ORE (refined) = CORRELATE; match up. Surface: the cartel's ore, once refined, will match up (in a mining/diamond register)."
   },
   {
     "answer": "ASCERTAIN",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "A Saracen, it troubled the scouts trying to establish (9)",
+    "difficulty": 3,
+    "clue": "Shake a canister to find out (9)",
     "def": {
-      "text": "establish",
+      "text": "find out",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "troubled",
-      "fodder": "SARACEN IT",
+      "indicator": "Shake",
+      "fodder": "a canister",
       "operations": [
         {
           "op": "anagram",
-          "input": "SARACEN IT",
+          "input": "ACANISTER",
           "output": "ASCERTAIN"
         }
       ]
     },
-    "parse": "Anagram of SARACEN IT (troubled) = ASCERTAIN; to establish. Surface: a Saracen troubles the scouts who are trying to establish the facts."
+    "parse": "(A CANISTER)* with anagram indicator 'Shake' = ASCERTAIN; to 'find out'."
   },
   {
     "answer": "HARDSHIP",
@@ -417,9 +407,9 @@
     "answer": "FORECAST",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Golfer's warning to the actors? A weather prediction (8)",
+    "clue": "Out front, the actors predict the weather (8)",
     "def": {
-      "text": "A weather prediction",
+      "text": "predict the weather",
       "position": "end"
     },
     "wordplay": {
@@ -428,7 +418,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Golfer's warning",
+          "input": "Out front",
           "output": "FORE"
         },
         {
@@ -443,20 +433,20 @@
         }
       ]
     },
-    "parse": "FORE (golfer's warning) + CAST (the actors) = FORECAST, a weather prediction."
+    "parse": "FORE (out front; fore = at the front) + CAST (the actors) = FORECAST; to forecast is to predict the weather. Surface: out front, the actors predict the weather."
   },
   {
     "answer": "SPEARMINT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Harpoon coins a flavour (9)",
+    "clue": "Harpoon a fortune for a refreshing flavour (9)",
     "def": {
-      "text": "a flavour",
+      "text": "a refreshing flavour",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "SPEAR+MINT",
+      "fodder": "SPEAR + MINT",
       "operations": [
         {
           "op": "synonym",
@@ -465,7 +455,7 @@
         },
         {
           "op": "synonym",
-          "input": "coins",
+          "input": "a fortune",
           "output": "MINT"
         },
         {
@@ -475,7 +465,7 @@
         }
       ]
     },
-    "parse": "SPEAR (harpoon) + MINT (coins, to mint money) = SPEARMINT, a flavour."
+    "parse": "SPEAR (harpoon) + MINT (a fortune; 'worth a mint') = SPEARMINT; a refreshing flavour. Surface: harpoon a fortune — grab a windfall — yields the flavour."
   },
   {
     "answer": "CHAIRLIFT",
@@ -520,7 +510,7 @@
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "HAND+PRINT",
+      "fodder": "HAND + PRINT",
       "operations": [
         {
           "op": "synonym",
@@ -539,29 +529,29 @@
         }
       ]
     },
-    "parse": "HAND (deck-crew member) + PRINT (the press) = HANDPRINT, a mark."
+    "parse": "HAND (deck-crew member) + PRINT (the press) = HANDPRINT; a mark. Surface: the deck-hand's press leaves its mark."
   },
   {
     "answer": "OVERBOARD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Too much for the committee, going to excess (9)",
+    "clue": "Done with the directors and into the sea (9)",
     "def": {
-      "text": "going to excess",
+      "text": "into the sea",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "OVER+BOARD",
+      "fodder": "OVER + BOARD",
       "operations": [
         {
           "op": "synonym",
-          "input": "Too much",
+          "input": "Done with",
           "output": "OVER"
         },
         {
           "op": "synonym",
-          "input": "the committee",
+          "input": "the directors",
           "output": "BOARD"
         },
         {
@@ -571,29 +561,29 @@
         }
       ]
     },
-    "parse": "OVER (too much, excessive) + BOARD (the committee) = OVERBOARD; to go overboard is to go to excess."
+    "parse": "OVER (done with, finished) + BOARD (the directors) = OVERBOARD; a sailor going into the sea."
   },
   {
     "answer": "CARPENTER",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Moan, then come in, joiner (9)",
+    "clue": "Joiner has fish coming in (9)",
     "def": {
-      "text": "joiner",
-      "position": "end"
+      "text": "Joiner",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CARP+ENTER",
+      "fodder": "CARP + ENTER",
       "operations": [
         {
           "op": "synonym",
-          "input": "Moan",
+          "input": "fish",
           "output": "CARP"
         },
         {
           "op": "synonym",
-          "input": "come in",
+          "input": "coming in",
           "output": "ENTER"
         },
         {
@@ -603,29 +593,29 @@
         }
       ]
     },
-    "parse": "CARP (moan) + ENTER (come in) = CARPENTER, a joiner."
+    "parse": "CARP (fish) + ENTER (coming in) = CARPENTER, a joiner."
   },
   {
     "answer": "STARGAZER",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Idol watcher keeps eyes on the heavens (9)",
+    "clue": "Celebrity onlooker, ever the dreamer (9)",
     "def": {
-      "text": "keeps eyes on the heavens",
+      "text": "dreamer",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "STAR+GAZER",
+      "fodder": "STAR + GAZER",
       "operations": [
         {
           "op": "synonym",
-          "input": "Idol",
+          "input": "Celebrity",
           "output": "STAR"
         },
         {
           "op": "synonym",
-          "input": "watcher",
+          "input": "onlooker",
           "output": "GAZER"
         },
         {
@@ -635,15 +625,15 @@
         }
       ]
     },
-    "parse": "STAR (idol) + GAZER (watcher) = STARGAZER, one who keeps eyes on the heavens."
+    "parse": "STAR (celebrity) + GAZER (onlooker) = STARGAZER; an impractical dreamer."
   },
   {
     "answer": "FOOTPRINT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Bottom journalists' lasting impression (9)",
+    "clue": "A measure of newsprint left as a trace (9)",
     "def": {
-      "text": "lasting impression",
+      "text": "trace",
       "position": "end"
     },
     "wordplay": {
@@ -652,12 +642,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Bottom",
+          "input": "A measure",
           "output": "FOOT"
         },
         {
           "op": "synonym",
-          "input": "journalists",
+          "input": "newsprint",
           "output": "PRINT"
         },
         {
@@ -667,7 +657,7 @@
         }
       ]
     },
-    "parse": "FOOT (bottom) + PRINT (journalists, the press) = FOOTPRINT, a lasting impression."
+    "parse": "FOOT (a measure, twelve inches) + PRINT (newsprint, the press) = FOOTPRINT; a trace left behind."
   },
   {
     "answer": "WATERFALL",
@@ -727,23 +717,23 @@
     "answer": "STARTLED",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "The hike will start, led by a guide, leaving us surprised (8)",
+    "clue": "Beginning to be led, the colt took fright (8)",
     "def": {
-      "text": "surprised",
+      "text": "took fright",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "START+LED",
+      "fodder": "START + LED",
       "operations": [
         {
           "op": "synonym",
-          "input": "start",
+          "input": "Beginning",
           "output": "START"
         },
         {
           "op": "synonym",
-          "input": "led",
+          "input": "to be led",
           "output": "LED"
         },
         {
@@ -753,7 +743,7 @@
         }
       ]
     },
-    "parse": "START (the hike begins) + LED (guided) = STARTLED; surprised. The surface is a real scene: a hike starts and is led by a guide."
+    "parse": "START (beginning) + LED (to be led, guided) = STARTLED; took fright. Surface: a colt first being led takes fright."
   },
   {
     "answer": "STEALING",
@@ -791,45 +781,45 @@
     "answer": "SWEARING",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Taking an oath, a listener's caught in the swing of it (8)",
+    "clue": "Wife in searing pain, cursing (8)",
     "def": {
-      "text": "Taking an oath",
-      "position": "start"
+      "text": "cursing",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "caught in",
-      "fodder": "EAR in SWING",
+      "indicator": "in",
+      "fodder": "W in SEARING",
       "operations": [
         {
-          "op": "synonym",
-          "input": "a listener's",
-          "output": "EAR"
+          "op": "abbreviate",
+          "input": "Wife",
+          "output": "W"
         },
         {
           "op": "synonym",
-          "input": "the swing",
-          "output": "SWING"
+          "input": "searing",
+          "output": "SEARING"
         },
         {
           "op": "insert",
-          "input": "EAR in SWING",
+          "input": "W in SEARING",
           "output": "SWEARING"
         }
       ]
     },
-    "parse": "EAR (a listener's) inside SWING = SW-EAR-ING = SWEARING; taking an oath (the literal courtroom sense)."
+    "parse": "W (wife) inside SEARING (searing pain) = S-W-EARING = SWEARING; cursing."
   },
   {
     "answer": "STARLING",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Sailor caught in the catapult, a garden bird (8)",
+    "clue": "Sailor laid up in a sling — songbird? (8)",
     "def": {
-      "text": "a garden bird",
+      "text": "songbird",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "caught in",
+      "indicator": "in",
       "fodder": "TAR in SLING",
       "operations": [
         {
@@ -839,7 +829,7 @@
         },
         {
           "op": "synonym",
-          "input": "the catapult",
+          "input": "a sling",
           "output": "SLING"
         },
         {
@@ -849,61 +839,51 @@
         }
       ]
     },
-    "parse": "TAR (sailor) inside SLING (catapult) = S-TAR-LING = STARLING; a garden bird."
+    "parse": "TAR (sailor) inside SLING (a sling) = S-TAR-LING = STARLING; a songbird (def-by-example flagged with '?'). Surface: a sailor laid up with his arm in a sling."
   },
   {
     "answer": "SHEARING",
-    "clueType": "container",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Hear, wrapped in song, the clipping of sheep (8)",
+    "clue": "Hearings rescheduled — it's a fleecing (8)",
     "def": {
-      "text": "the clipping of sheep",
+      "text": "a fleecing",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "wrapped in",
-      "fodder": "HEAR in SING",
+      "indicator": "rescheduled",
+      "fodder": "HEARINGS",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Hear",
-          "output": "HEAR"
-        },
-        {
-          "op": "synonym",
-          "input": "song",
-          "output": "SING"
-        },
-        {
-          "op": "insert",
-          "input": "HEAR in SING",
+          "op": "anagram",
+          "input": "HEARINGS",
           "output": "SHEARING"
         }
       ]
     },
-    "parse": "HEAR wrapped in SING (song) = S-HEAR-ING = SHEARING; the clipping of sheep. The containment indicator 'wrapped in' replaces the thin 'to'."
+    "parse": "Anagram of HEARINGS (rescheduled) = SHEARING; a fleecing. Surface: court hearings rescheduled, and it amounts to a fleecing (robbery)."
   },
   {
     "answer": "INTEREST",
-    "clueType": "hidden",
-    "difficulty": 2,
-    "clue": "Splinter estimate concealing some curiosity (8)",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Concern shown by the bank (8)",
     "def": {
-      "text": "curiosity",
-      "position": "end"
+      "text": "Concern",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "concealing some",
-      "fodder": "Splinter estimate",
+      "indicator": "",
+      "fodder": "Concern / shown by the bank",
       "operations": [
         {
-          "op": "hidden",
-          "input": "spl<INTER EST>imate",
+          "op": "literal",
+          "input": "two definitions",
           "output": "INTEREST"
         }
       ]
     },
-    "parse": "Hidden in 'splINTER ESTimate' (concealing some) = INTEREST, meaning curiosity."
+    "parse": "Double definition: INTEREST as 'concern' (a matter that interests one) and INTEREST as the charge a bank levies or pays."
   },
   {
     "answer": "OVERHAUL",
@@ -911,7 +891,7 @@
     "difficulty": 3,
     "clue": "Finished dragging the wreck in for a refit (8)",
     "def": {
-      "text": "refit",
+      "text": "a refit",
       "position": "end"
     },
     "wordplay": {
@@ -935,13 +915,13 @@
         }
       ]
     },
-    "parse": "OVER (finished) + HAUL (dragging) = OVERHAUL, a refit."
+    "parse": "OVER (finished) + HAUL (dragging) = OVERHAUL; a refit. Surface: a salvaged wreck finished being dragged in, ready for a refit."
   },
   {
     "answer": "OVERNIGHT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Innings done, the dark closing in, lasting till morning (9)",
+    "clue": "Play done for the day, the dark lasting till morning (9)",
     "def": {
       "text": "lasting till morning",
       "position": "end"
@@ -952,12 +932,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Innings done",
+          "input": "Play done for the day",
           "output": "OVER"
         },
         {
           "op": "synonym",
-          "input": "dark",
+          "input": "the dark",
           "output": "NIGHT"
         },
         {
@@ -967,16 +947,16 @@
         }
       ]
     },
-    "parse": "OVER (innings done, cricket) + NIGHT (dark) = OVERNIGHT, lasting till morning."
+    "parse": "OVER (play done for the day, cricket) + NIGHT (the dark) = OVERNIGHT; lasting till morning."
   },
   {
     "answer": "OVERHEAD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Running cost: the bowler's spell, then the boss (8)",
+    "clue": "Too much froth, and it's a running cost (8)",
     "def": {
-      "text": "Running cost",
-      "position": "start"
+      "text": "a running cost",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
@@ -984,12 +964,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "bowler's spell",
+          "input": "Too much",
           "output": "OVER"
         },
         {
           "op": "synonym",
-          "input": "boss",
+          "input": "froth",
           "output": "HEAD"
         },
         {
@@ -999,29 +979,29 @@
         }
       ]
     },
-    "parse": "OVER (bowler's spell, cricket) + HEAD (boss) = OVERHEAD, a business running cost."
+    "parse": "OVER (too much) + HEAD (froth on a pint) = OVERHEAD; a running cost. Surface: a publican grumbling that too much froth wastes beer."
   },
   {
     "answer": "ASTRONOMY",
-    "clueType": "deletion",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Fine dining minus its opening leaves the study of stars (9)",
+    "clue": "Artsy moon, reimagined, becomes the study of stars (9)",
     "def": {
-      "text": "the study of stars",
+      "text": "study of stars",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "minus its opening",
-      "fodder": "GASTRONOMY",
+      "indicator": "reimagined",
+      "fodder": "Artsy moon",
       "operations": [
         {
-          "op": "delete",
-          "input": "GASTRONOMY − G",
+          "op": "anagram",
+          "input": "ARTSYMOON",
           "output": "ASTRONOMY"
         }
       ]
     },
-    "parse": "GASTRONOMY (fine dining) minus its opening letter G = ASTRONOMY, the study of stars."
+    "parse": "(ARTSY MOON)* with anagram indicator 'reimagined' = ASTRONOMY; the 'study of stars'."
   },
   {
     "answer": "STRESSED",

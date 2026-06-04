@@ -65,35 +65,25 @@
   },
   {
     "answer": "STREAM",
-    "clueType": "container",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Run threading through the kettle's steam, a brook (6)",
+    "clue": "Master swimming in the brook (6)",
     "def": {
-      "text": "a brook",
+      "text": "brook",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "through",
-      "fodder": "R in STEAM",
+      "indicator": "swimming",
+      "fodder": "Master",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Run",
-          "output": "R"
-        },
-        {
-          "op": "synonym",
-          "input": "steam",
-          "output": "STEAM"
-        },
-        {
-          "op": "insert",
-          "input": "R in STEAM",
+          "op": "anagram",
+          "input": "MASTER",
           "output": "STREAM"
         }
       ]
     },
-    "parse": "R (run) inside STEAM (the kettle's steam), indicated by 'through' = STREAM; a brook."
+    "parse": "(MASTER)* with anagram indicator 'swimming' = STREAM; a 'brook'. 'Swimming' both signals the anagram and paints a watery scene."
   },
   {
     "answer": "SILENT",
@@ -249,35 +239,25 @@
   },
   {
     "answer": "PANTRY",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Pot, then try, for the larder (6)",
+    "clue": "Sampling Japan, trying the larder (6)",
     "def": {
       "text": "the larder",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "PAN+TRY",
+      "indicator": "Sampling",
+      "fodder": "Japan trying",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Pot",
-          "output": "PAN"
-        },
-        {
-          "op": "synonym",
-          "input": "try",
-          "output": "TRY"
-        },
-        {
-          "op": "concat",
-          "input": "PAN+TRY",
+          "op": "hidden",
+          "input": "Ja<PAN TRY>ing",
           "output": "PANTRY"
         }
       ]
     },
-    "parse": "PAN (pot) + TRY = PANTRY, the larder."
+    "parse": "Hidden in 'jaPAN TRYing', indicated by 'Sampling' = PANTRY; the larder. Surface: a traveller sampling Japan, trying the larder."
   },
   {
     "answer": "OUTFIT",
@@ -359,87 +339,87 @@
     "answer": "FORGET",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Vote for a buy, then overlook (6)",
+    "clue": "Leave the smithy in time and lose track (6)",
     "def": {
-      "text": "overlook",
+      "text": "lose track",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "FOR+GET",
+      "fodder": "FORGE + T",
       "operations": [
         {
           "op": "synonym",
-          "input": "for",
-          "output": "FOR"
+          "input": "the smithy",
+          "output": "FORGE"
         },
         {
-          "op": "synonym",
-          "input": "a buy",
-          "output": "GET"
+          "op": "abbreviate",
+          "input": "time",
+          "output": "T"
         },
         {
           "op": "concat",
-          "input": "FOR+GET",
+          "input": "FORGE+T",
           "output": "FORGET"
         }
       ]
     },
-    "parse": "FOR (vote for, in favour of) + GET (a buy, an acquisition) = FORGET; to overlook."
+    "parse": "FORGE (the smithy) + T (time) = FORGET; to lose track of."
   },
   {
     "answer": "INKPOT",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Ink by a pot, a writer's well (6)",
+    "clue": "I think potters keep one on the writing desk (6)",
     "def": {
-      "text": "a writer's well",
+      "text": "one on the writing desk",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "INK+POT",
+      "indicator": "keep",
+      "fodder": "think potters",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Ink",
-          "output": "INK"
-        },
-        {
-          "op": "synonym",
-          "input": "a pot",
-          "output": "POT"
-        },
-        {
-          "op": "concat",
-          "input": "INK+POT",
+          "op": "hidden",
+          "input": "th<INK POT>ters",
           "output": "INKPOT"
         }
       ]
     },
-    "parse": "INK + POT (a pot), joined = INKPOT, a writer's well."
+    "parse": "Hidden in 'thINK POTters', indicated by 'keep' = INKPOT; one kept on the writing desk."
   },
   {
     "answer": "SECRET",
-    "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "A cathedral erects, strangely, a confidence (6)",
+    "clueType": "container",
+    "difficulty": 4,
+    "clue": "The cult breaks up about a hidden matter (6)",
     "def": {
-      "text": "a confidence",
+      "text": "a hidden matter",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "strangely",
-      "fodder": "erects",
+      "indicator": "breaks up",
+      "fodder": "RE in SECT",
       "operations": [
         {
-          "op": "anagram",
-          "input": "ERECTS",
+          "op": "synonym",
+          "input": "The cult",
+          "output": "SECT"
+        },
+        {
+          "op": "abbreviate",
+          "input": "about",
+          "output": "RE"
+        },
+        {
+          "op": "insert",
+          "input": "RE in SECT",
           "output": "SECRET"
         }
       ]
     },
-    "parse": "(ERECTS)* indicated by 'strangely' = SECRET; a confidence (something told in confidence)."
+    "parse": "SECT (the cult) is broken open ('breaks up') to admit RE (about): S-E-C-RE-T = SECRET; a hidden matter."
   },
   {
     "answer": "PLANET",
@@ -561,35 +541,35 @@
   },
   {
     "answer": "WALLET",
-    "clueType": "container",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "The lot wrapped in wet, a billfold (6)",
+    "clue": "Scaling the wall, an alien grabbed my billfold (6)",
     "def": {
-      "text": "a billfold",
+      "text": "my billfold",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "wrapped in",
-      "fodder": "ALL in WET",
+      "indicator": "",
+      "fodder": "WALL+ET",
       "operations": [
         {
           "op": "synonym",
-          "input": "wet",
-          "output": "WET"
+          "input": "the wall",
+          "output": "WALL"
         },
         {
           "op": "synonym",
-          "input": "The lot",
-          "output": "ALL"
+          "input": "an alien",
+          "output": "ET"
         },
         {
-          "op": "insert",
-          "input": "ALL in WET",
+          "op": "concat",
+          "input": "WALL+ET",
           "output": "WALLET"
         }
       ]
     },
-    "parse": "ALL (the lot) inside WET, indicated by 'wrapped in' = W(ALL)ET = WALLET; a billfold. Surface: everything wrapped in wet (a soaked wallet)."
+    "parse": "WALL (the wall) + ET (an alien) = WALLET; my billfold."
   },
   {
     "answer": "PARSON",
@@ -740,35 +720,25 @@
   },
   {
     "answer": "ANGLER",
-    "clueType": "container",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Learner held in a rage by the river turns fisherman (6)",
+    "clue": "Schemer casting about on the riverbank? (6)",
     "def": {
-      "text": "fisherman",
-      "position": "end"
+      "text": "Schemer casting about on the riverbank",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "held in",
-      "fodder": "L in ANGER",
+      "indicator": "",
+      "fodder": "pun: one with an angle / one who angles",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Learner",
-          "output": "L"
-        },
-        {
-          "op": "synonym",
-          "input": "a rage",
-          "output": "ANGER"
-        },
-        {
-          "op": "insert",
-          "input": "L in ANGER",
+          "op": "literal",
+          "input": "pun on angle (scheme) and angling (fishing)",
           "output": "ANGLER"
         }
       ]
     },
-    "parse": "L (learner) inside ANGER (a rage), indicated by 'held in' = ANGLER; a fisherman."
+    "parse": "Cryptic definition: an ANGLER casts about on the riverbank, and a schemer is said to have an 'angle'."
   },
   {
     "answer": "EARNED",

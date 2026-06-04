@@ -55,35 +55,25 @@
   },
   {
     "answer": "REACT",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Concerning the act, respond (5)",
+    "clue": "A broken crate makes the warehouse staff respond (5)",
     "def": {
       "text": "respond",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "RE+ACT",
+      "indicator": "broken",
+      "fodder": "crate",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Concerning",
-          "output": "RE"
-        },
-        {
-          "op": "synonym",
-          "input": "the act",
-          "output": "ACT"
-        },
-        {
-          "op": "concat",
-          "input": "RE+ACT",
+          "op": "anagram",
+          "input": "CRATE",
           "output": "REACT"
         }
       ]
     },
-    "parse": "RE (concerning) + ACT (the act) = REACT, to respond."
+    "parse": "Anagram ('broken') of CRATE = REACT; to respond."
   },
   {
     "answer": "DROVE",
@@ -207,35 +197,25 @@
   },
   {
     "answer": "OFTEN",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "A boy of ten falls ill frequently (5)",
+    "clue": "A roof tent shelters campers frequently (5)",
     "def": {
       "text": "frequently",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "OF + TEN",
+      "indicator": "shelters",
+      "fodder": "roof tent",
       "operations": [
         {
-          "op": "synonym",
-          "input": "of",
-          "output": "OF"
-        },
-        {
-          "op": "synonym",
-          "input": "ten",
-          "output": "TEN"
-        },
-        {
-          "op": "concat",
-          "input": "OF+TEN",
+          "op": "hidden",
+          "input": "ro<OFTEN>t",
           "output": "OFTEN"
         }
       ]
     },
-    "parse": "OF + TEN (a boy of ten) = OFTEN; frequently."
+    "parse": "OFTEN hidden in 'roOFTENt' (roof tent), indicated by 'shelters'; frequently."
   },
   {
     "answer": "MANGO",
@@ -295,45 +275,45 @@
     "answer": "CATER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Trace out the guest list, then provide the food (5)",
+    "clue": "A smashed crate won't stop us providing the food (5)",
     "def": {
-      "text": "provide the food",
+      "text": "providing the food",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "out",
-      "fodder": "Trace",
+      "indicator": "smashed",
+      "fodder": "crate",
       "operations": [
         {
           "op": "anagram",
-          "input": "TRACE",
+          "input": "CRATE",
           "output": "CATER"
         }
       ]
     },
-    "parse": "Anagram ('out') of TRACE = CATER; to provide the food."
+    "parse": "Anagram ('smashed') of CRATE = CATER; providing the food."
   },
   {
     "answer": "SPEAR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Cook the pears? Grab the hunter's weapon! (5)",
+    "clue": "A broken spare can still serve as a weapon (5)",
     "def": {
-      "text": "the hunter's weapon",
+      "text": "a weapon",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Cook",
-      "fodder": "pears",
+      "indicator": "broken",
+      "fodder": "spare",
       "operations": [
         {
           "op": "anagram",
-          "input": "PEARS",
+          "input": "SPARE",
           "output": "SPEAR"
         }
       ]
     },
-    "parse": "Anagram ('Cook') of PEARS = SPEAR, the hunter's weapon."
+    "parse": "Anagram ('broken') of SPARE = SPEAR; a weapon."
   },
   {
     "answer": "TENOR",
@@ -509,35 +489,25 @@
   },
   {
     "answer": "PAINT",
-    "clueType": "container",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Pant, taking in one, to finish the coat (5)",
+    "clue": "A spilt pinta ruins the fresh coat (5)",
     "def": {
-      "text": "the coat",
+      "text": "the fresh coat",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "taking in",
-      "fodder": "I in PANT",
+      "indicator": "spilt",
+      "fodder": "pinta",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Pant",
-          "output": "PANT"
-        },
-        {
-          "op": "abbreviate",
-          "input": "one",
-          "output": "I"
-        },
-        {
-          "op": "insert",
-          "input": "I in PANT",
+          "op": "anagram",
+          "input": "PINTA",
           "output": "PAINT"
         }
       ]
     },
-    "parse": "I (one) inside PANT = PAINT; the coat."
+    "parse": "Anagram ('spilt') of PINTA (a pint of milk) = PAINT; the fresh coat."
   },
   {
     "answer": "ASHEN",
@@ -609,13 +579,13 @@
     "answer": "NADIR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Engineers redesigned the drain at the valley's lowest point (5)",
+    "clue": "A drain, ruined, hits the lowest point (5)",
     "def": {
-      "text": "the valley's lowest point",
+      "text": "the lowest point",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "redesigned",
+      "indicator": "ruined",
       "fodder": "drain",
       "operations": [
         {
@@ -625,7 +595,7 @@
         }
       ]
     },
-    "parse": "Anagram ('redesigned') of DRAIN = NADIR; the lowest point."
+    "parse": "Anagram of DRAIN (ruined) = NADIR; the lowest point."
   },
   {
     "answer": "REPEL",
@@ -927,9 +897,9 @@
     "answer": "WAIST",
     "clueType": "homophone",
     "difficulty": 3,
-    "clue": "Throw it away, we hear, around the figure's middle (5)",
+    "clue": "A waste, we hear, around the middle (5)",
     "def": {
-      "text": "around the figure's middle",
+      "text": "middle",
       "position": "end"
     },
     "wordplay": {
@@ -943,6 +913,6 @@
         }
       ]
     },
-    "parse": "WASTE (throw it away) sounds like (we hear) WAIST; around the figure's middle, where the belt sits."
+    "parse": "WASTE sounds like WAIST ('we hear') = WAIST; the 'middle' of the body. The surface plays on a 'waste around the middle'."
   }
 ]

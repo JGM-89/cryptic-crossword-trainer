@@ -17,8 +17,20 @@ entry; surface craft is what makes a clue worth shipping.
 
 ## 1. The quality bar — the 5-axis grading rubric
 
-Grade every candidate on these five axes. **Axis 1 is a hard pass/fail gate; a clue that fails
-it scores zero regardless of the rest.** Axes 2–5 are 1–5.
+Grade every candidate on these five axes. **Axes 1 AND 1b are hard pass/fail gates; a clue that
+fails either scores zero regardless of the rest.** Axes 2–5 are 1–5.
+
+1b. **Surface realism (PASS/FAIL) — the single thing solvers notice first.** The surface must be
+   ONE real, natural sentence (or wholly natural phrase) with a single coherent meaning you could
+   read as plain English *without* knowing the answer (the conversation test — a person could
+   actually say or write it). It FAILS if: (a) it's a **narrated cryptic operation / recipe**
+   ("Run threading through the kettle's steam, a brook"; "Fine dining minus its opening leaves the
+   study of stars"); (b) the **definition is comma/dash-tacked** on the end rather than integrated
+   ("…, a brook"; "Working with church, formerly"); (c) it only reads as a sentence because of a
+   **decorative orphan word** that does no cryptic work ("Her vast *estate*, reshaped, became the
+   crop"); or (d) it's **grammatical but surreal/incoherent** ("part of the rectangle rises above
+   the fisherman"). The fix is usually to **change the device** (the answer is fixed, the
+   construction is free) — see §3. Ranked ABOVE wit: a plain real sentence beats a clever non-one.
 
 1. **Soundness / fairness (PASS/FAIL).** Read the clue exactly as the wordplay demands. The
    cryptic grammar congeals; the definition is a true synonym at one end; every letter is
@@ -38,8 +50,10 @@ it scores zero regardless of the rest.** Axes 2–5 are 1–5.
    arrangement and never "screams the answer."
 
 **Composite & threshold.** Keep the candidate with the highest (surface + economy + wit + def)
-among those that PASS axis 1. A shippable clue needs **fairness = PASS, surface ≥ 4, and
-(surface + wit) ≥ 7**. If no candidate clears the bar, write more.
+among those that PASS axes 1 AND 1b. A shippable clue needs **fairness = PASS, surface realism =
+PASS, surface ≥ 4, and (surface + wit) ≥ 7**. If no candidate clears the bar, write more — and try
+a different device. If an answer genuinely can't reach a witty real sentence, ship a *plain* real
+sentence (clarity beats forced cleverness) or flag it for a human pick.
 
 > Maxims to hang above the desk — Azed: *"Clues should be written to be solved, not to
 > demonstrate what a fiendishly tortuous mind the writer has."* Alberich: *cryptic grammar comes

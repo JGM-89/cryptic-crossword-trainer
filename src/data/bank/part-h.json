@@ -25,57 +25,57 @@
     "answer": "DESK",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "The wide skirting board hides a bureau (4)",
+    "clue": "Trade skills involve a writing table (4)",
     "def": {
-      "text": "a bureau",
+      "text": "a writing table",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "hides",
-      "fodder": "wide skirting",
+      "indicator": "involve",
+      "fodder": "Trade skills",
       "operations": [
         {
           "op": "hidden",
-          "input": "wi<DE SK>irting",
+          "input": "tra<DE SK>ills",
           "output": "DESK"
         }
       ]
     },
-    "parse": "Hidden in wiDE SKirting = DESK; a bureau (writing table)."
+    "parse": "Hidden in traDE SKills = DESK; a writing table."
   },
   {
     "answer": "FERN",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Cheap stalls offer nothing, hiding a real plant (4)",
+    "clue": "Some of the buffer needs to be a green plant (4)",
     "def": {
-      "text": "a real plant",
+      "text": "a green plant",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "hiding",
-      "fodder": "offer nothing",
+      "indicator": "Some of",
+      "fodder": "buffer needs",
       "operations": [
         {
           "op": "hidden",
-          "input": "of<FER N>othing",
+          "input": "buf<FER N>eeds",
           "output": "FERN"
         }
       ]
     },
-    "parse": "Hidden in ofFER Nothing = FERN, a plant."
+    "parse": "Hidden in bufFER Needs = FERN; a green plant."
   },
   {
     "answer": "DRAB",
     "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Dull poet keeps returning (4)",
+    "clue": "Dull poet, looking back (4)",
     "def": {
       "text": "Dull",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "returning",
+      "indicator": "looking back",
       "fodder": "bard",
       "operations": [
         {
@@ -90,7 +90,7 @@
         }
       ]
     },
-    "parse": "BARD (poet) reversed = DRAB; dull."
+    "parse": "BARD (poet) reversed (looking back) = DRAB; dull."
   },
   {
     "answer": "LEAF",
@@ -116,25 +116,35 @@
   },
   {
     "answer": "NEAR",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 2,
-    "clue": "We struggle to earn badly when retirement's close by (4)",
+    "clue": "New listening device, almost there (4)",
     "def": {
-      "text": "close by",
+      "text": "almost there",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "badly",
-      "fodder": "earn",
+      "indicator": "",
+      "fodder": "N + EAR",
       "operations": [
         {
-          "op": "anagram",
-          "input": "EARN",
+          "op": "abbreviate",
+          "input": "New",
+          "output": "N"
+        },
+        {
+          "op": "synonym",
+          "input": "listening device",
+          "output": "EAR"
+        },
+        {
+          "op": "concat",
+          "input": "N+EAR",
           "output": "NEAR"
         }
       ]
     },
-    "parse": "Anagram of EARN (badly) = NEAR; close by."
+    "parse": "N (new) + EAR (listening device) = NEAR; almost there."
   },
   {
     "answer": "ACRE",
@@ -358,14 +368,14 @@
     "answer": "SWAN",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Wander like a graceful bird (4)",
+    "clue": "Drift gracefully, a bird on the lake (4)",
     "def": {
-      "text": "Wander",
+      "text": "Drift gracefully",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Wander / graceful bird",
+      "fodder": "Drift gracefully / a bird on the lake",
       "operations": [
         {
           "op": "literal",
@@ -374,7 +384,7 @@
         }
       ]
     },
-    "parse": "SWAN: to wander aimlessly, and a graceful waterbird."
+    "parse": "Double definition: to SWAN (drift/wander idly), and a SWAN, a graceful bird on the lake."
   },
   {
     "answer": "PORT",
@@ -570,7 +580,7 @@
         }
       ]
     },
-    "parse": "Double definition: to shore (prop up, as in shore up), and the shore (the beach)."
+    "parse": "Double definition: to SHORE (prop up, shore up), and the SHORE (the beach)."
   },
   {
     "answer": "BERTH",
@@ -917,14 +927,14 @@
     "answer": "SQUASH",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Crush at a racket game (6)",
+    "clue": "Crush the orange drink (6)",
     "def": {
       "text": "Crush",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Crush / racket game",
+      "fodder": "Crush / orange drink",
       "operations": [
         {
           "op": "literal",
@@ -933,7 +943,7 @@
         }
       ]
     },
-    "parse": "Double definition: to SQUASH (crush) and SQUASH (the racket game)."
+    "parse": "Double definition: to SQUASH (crush), and SQUASH (an orange cordial drink)."
   },
   {
     "answer": "TANGLE",
@@ -965,7 +975,7 @@
         }
       ]
     },
-    "parse": "T (time) + ANGLE (to fish) = TANGLE; 'a mess'."
+    "parse": "T (time) + ANGLE (to fish) = TANGLE; a mess."
   },
   {
     "answer": "CANTER",
@@ -1037,23 +1047,23 @@
     "answer": "PARROT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Standards left to rot in the mimic (6)",
+    "clue": "Standard nonsense from a copycat (6)",
     "def": {
-      "text": "the mimic",
+      "text": "a copycat",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "PAR+ROT",
+      "fodder": "PAR + ROT",
       "operations": [
         {
           "op": "synonym",
-          "input": "Standards",
+          "input": "Standard",
           "output": "PAR"
         },
         {
           "op": "synonym",
-          "input": "rot",
+          "input": "nonsense",
           "output": "ROT"
         },
         {
@@ -1063,44 +1073,29 @@
         }
       ]
     },
-    "parse": "PAR (standard) + ROT (to rot) = PARROT; the mimic."
+    "parse": "PAR (standard) + ROT (nonsense) = PARROT; a copycat."
   },
   {
     "answer": "MEADOW",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 3,
-    "clue": "A drink and nothing else in the western pasture (6)",
+    "clue": "In came a dowager, crossing the pasture (6)",
     "def": {
       "text": "pasture",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "MEAD+O+W",
+      "indicator": "In",
+      "fodder": "came a dowager",
       "operations": [
         {
-          "op": "synonym",
-          "input": "drink",
-          "output": "MEAD"
-        },
-        {
-          "op": "abbreviate",
-          "input": "nothing",
-          "output": "O"
-        },
-        {
-          "op": "abbreviate",
-          "input": "western",
-          "output": "W"
-        },
-        {
-          "op": "concat",
-          "input": "MEAD+O+W",
+          "op": "hidden",
+          "input": "ca<ME A DOW>ager",
           "output": "MEADOW"
         }
       ]
     },
-    "parse": "MEAD (drink) + O (nothing) + W (western) = MEADOW; a pasture."
+    "parse": "Hidden in 'caME A DOWager' = MEADOW; a 'pasture'. 'In' signals the concealment."
   },
   {
     "answer": "PADDLE",
@@ -1138,23 +1133,23 @@
     "answer": "ORCHID",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Bloom found in a doctor chided the nurse (6)",
+    "clue": "Some senator chided over a flower (6)",
     "def": {
-      "text": "Bloom",
-      "position": "start"
+      "text": "a flower",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "found in",
-      "fodder": "doctor chided",
+      "indicator": "Some",
+      "fodder": "senator chided",
       "operations": [
         {
           "op": "hidden",
-          "input": "doct<OR CHID>ed",
+          "input": "senat<OR CHID>ed",
           "output": "ORCHID"
         }
       ]
     },
-    "parse": "Hidden in doctOR CHIDed = ORCHID, a bloom."
+    "parse": "Hidden in senatOR CHIDed = ORCHID; a flower."
   },
   {
     "answer": "DAMSON",
@@ -1512,7 +1507,7 @@
         }
       ]
     },
-    "parse": "Hidden in afTER RAINfall = TERRAIN, the ground."
+    "parse": "Hidden in afTER RAINfall = TERRAIN; ground."
   },
   {
     "answer": "MANKIND",
@@ -1619,14 +1614,14 @@
     "answer": "STATION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "At once an ion forms the depot (7)",
+    "clue": "At once an ion settles into position (7)",
     "def": {
-      "text": "the depot",
+      "text": "position",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "STAT+ION",
+      "fodder": "STAT + ION",
       "operations": [
         {
           "op": "synonym",
@@ -1645,7 +1640,7 @@
         }
       ]
     },
-    "parse": "STAT (at once) + ION = STATION, the depot."
+    "parse": "STAT (at once) + ION (a charged particle) = STATION; position (one's station)."
   },
   {
     "answer": "PRESENT",
@@ -2071,38 +2066,48 @@
   },
   {
     "answer": "CARTRIDGE",
-    "clueType": "deletion",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Refill the printer when cartridges almost run dry (9)",
+    "clue": "Push the cart up the ridge for a refill (9)",
     "def": {
-      "text": "Refill",
-      "position": "start"
+      "text": "refill",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "almost",
-      "fodder": "cartridges",
+      "indicator": "",
+      "fodder": "CART + RIDGE",
       "operations": [
         {
-          "op": "delete",
-          "input": "CARTRIDGES − S",
+          "op": "synonym",
+          "input": "cart",
+          "output": "CART"
+        },
+        {
+          "op": "synonym",
+          "input": "ridge",
+          "output": "RIDGE"
+        },
+        {
+          "op": "concat",
+          "input": "CART+RIDGE",
           "output": "CARTRIDGE"
         }
       ]
     },
-    "parse": "CARTRIDGES curtailed (almost) = CARTRIDGE, an ink refill."
+    "parse": "CART + RIDGE = CARTRIDGE; a 'refill' (e.g. for a pen or printer)."
   },
   {
     "answer": "CROCODILE",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Snapper? Marshalling pupils in pairs (9)",
+    "clue": "Snapper? Schoolchildren walking two by two (9)",
     "def": {
       "text": "Snapper",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Snapper / pupils in pairs",
+      "fodder": "Snapper / schoolchildren walking two by two",
       "operations": [
         {
           "op": "literal",
@@ -2111,6 +2116,6 @@
         }
       ]
     },
-    "parse": "CROCODILE: a snapping reptile (flagged 'Snapper?'), and a crocodile — a line of schoolchildren walking in pairs."
+    "parse": "Double definition: a CROCODILE is a snapping reptile (def by example, flagged ?), and a CROCODILE is a line of schoolchildren walking in pairs."
   }
 ]
