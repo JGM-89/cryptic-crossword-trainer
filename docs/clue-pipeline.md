@@ -93,7 +93,7 @@ npm run build
 4. Wire it into `src/data/bank/index.ts` (add `import partI from './part-i.json'` and `...partI`).
 5. Optionally bump `TIERS` counts in `scripts/generate-puzzles.mjs` for more/denser puzzles.
 6. Then the usual: `npm test`, `npm run clues:regen`, `npm run build`, commit, deploy. Also update
-   the puzzle/word counts in `README.md` and `src/pages/HomePage.tsx` (the "230 puzzles" string).
+   the puzzle/word counts in `README.md` and `src/pages/HomePage.tsx` (the "300 puzzles" string).
 
 ---
 

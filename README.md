@@ -33,7 +33,7 @@ A device advances a stage after a short streak of **unaided** solves; using a hi
 ## Features
 
 - **Learn** — a curriculum of nine devices (hidden → anagram → charade → container → reversal → deletion → homophone → double-definition → cryptic-definition), lessons that unlock in order, and a per-device mastery board.
-- **Play** — an archive of **230 cryptic crosswords** in two tiers: quick **Mini** grids (7×7 & 9×9) and full **Large** 13×13s. Each is a real interlocking grid assembled from a bank of ~290 hand-clued, verified answers spanning every device including **&lit**, **initialism** and **alternation**. Every clue is written to a documented style guide ([docs/clue-style.md](./docs/clue-style.md)) and machine-checked for fairness. Per-clue hints (definition highlight, then clue type), grid autosave, completion tracking, difficulty filters, and a hand-crafted showcase mini.
+- **Play** — an archive of **300 cryptic crosswords** in two tiers: quick **Mini** grids (7×7 & 9×9) and full **Large** 13×13s. Each is a real interlocking grid assembled from a bank of ~366 hand-clued, verified answers spanning every device including **&lit**, **initialism** and **alternation**. Every clue is written to a documented style guide ([docs/clue-style.md](./docs/clue-style.md)) and machine-checked for fairness. Per-clue hints (definition highlight, then clue type), grid autosave, completion tracking, difficulty filters, and a hand-crafted showcase mini.
 - **Clue analyzer** — pick any clue and peel it apart: definition span, device, and the indicator words that give it away.
 - **Reference** — searchable indicator vocabulary and the standard abbreviation "code words".
 
