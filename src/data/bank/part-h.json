@@ -1138,13 +1138,13 @@
     "answer": "ORCHID",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Bloom seen as a doctor chided the nurse (6)",
+    "clue": "Bloom found in a doctor chided the nurse (6)",
     "def": {
       "text": "Bloom",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "seen as",
+      "indicator": "found in",
       "fodder": "doctor chided",
       "operations": [
         {
@@ -1154,7 +1154,7 @@
         }
       ]
     },
-    "parse": "Hidden in 'doct<OR CHID>ed'; a 'bloom'."
+    "parse": "Hidden in doctOR CHIDed = ORCHID, a bloom."
   },
   {
     "answer": "DAMSON",
@@ -1619,7 +1619,7 @@
     "answer": "STATION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Treat at once an ion at the depot (7)",
+    "clue": "At once an ion forms the depot (7)",
     "def": {
       "text": "the depot",
       "position": "end"
@@ -1630,12 +1630,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "at once",
+          "input": "At once",
           "output": "STAT"
         },
         {
           "op": "synonym",
-          "input": "ion",
+          "input": "an ion",
           "output": "ION"
         },
         {
@@ -1645,7 +1645,7 @@
         }
       ]
     },
-    "parse": "STAT (at once, hospital slang) + ION = STATION; the depot."
+    "parse": "STAT (at once) + ION = STATION, the depot."
   },
   {
     "answer": "PRESENT",

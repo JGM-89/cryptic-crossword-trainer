@@ -137,15 +137,15 @@
   {
     "answer": "UNDERRATED",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Below par but well rated, the rookie was undervalued (10)",
+    "difficulty": 4,
+    "clue": "Below and rated, yet undervalued (10)",
     "def": {
       "text": "undervalued",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "UNDER + RATED",
+      "fodder": "UNDER+RATED",
       "operations": [
         {
           "op": "synonym",
@@ -164,7 +164,7 @@
         }
       ]
     },
-    "parse": "UNDER (below) + RATED (rated, assessed) = UNDERRATED; 'undervalued' defines it (a golfer below par yet well rated, who was still underrated)."
+    "parse": "UNDER (below) + RATED = UNDERRATED, undervalued."
   },
   {
     "answer": "BRIDGEHEAD",
@@ -361,24 +361,24 @@
   {
     "answer": "CONSTRAINED",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Swindle leaves the nerves strained, but they're kept in check (11)",
+    "difficulty": 4,
+    "clue": "Con, tense, but kept in check (11)",
     "def": {
       "text": "kept in check",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CON + STRAINED",
+      "fodder": "CON+STRAINED",
       "operations": [
         {
           "op": "synonym",
-          "input": "Swindle",
+          "input": "Con",
           "output": "CON"
         },
         {
           "op": "synonym",
-          "input": "strained",
+          "input": "tense",
           "output": "STRAINED"
         },
         {
@@ -388,7 +388,7 @@
         }
       ]
     },
-    "parse": "CON (swindle) + STRAINED (nerves strained, tense) = CONSTRAINED, defined by 'kept in check'."
+    "parse": "CON (swindle) + STRAINED (tense) = CONSTRAINED, kept in check."
   },
   {
     "answer": "RELATIONSHIP",

@@ -123,14 +123,14 @@
     "answer": "GENERAL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Troops told to enlarge wildly under the senior officer (7)",
+    "clue": "Enlarge wildly for the senior officer (7)",
     "def": {
       "text": "the senior officer",
       "position": "end"
     },
     "wordplay": {
       "indicator": "wildly",
-      "fodder": "enlarge",
+      "fodder": "Enlarge",
       "operations": [
         {
           "op": "anagram",
@@ -139,7 +139,7 @@
         }
       ]
     },
-    "parse": "(ENLARGE)* = GENERAL, the senior officer; 'wildly' is the anagram indicator."
+    "parse": "Anagram of ENLARGE (wildly) = GENERAL, the senior officer."
   },
   {
     "answer": "CRAVING",
@@ -751,15 +751,15 @@
   {
     "answer": "EARNING",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Nearing retirement, oddly, but still bringing home a wage (7)",
+    "difficulty": 4,
+    "clue": "Nearing retirement, surprisingly, but still bringing home a wage (7)",
     "def": {
       "text": "bringing home a wage",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "NEARING",
+      "indicator": "surprisingly",
+      "fodder": "Nearing",
       "operations": [
         {
           "op": "anagram",
@@ -768,7 +768,7 @@
         }
       ]
     },
-    "parse": "(NEARING)* = EARNING; bringing home a wage."
+    "parse": "Anagram of NEARING (surprisingly) = EARNING; bringing home a wage."
   },
   {
     "answer": "STRANGE",

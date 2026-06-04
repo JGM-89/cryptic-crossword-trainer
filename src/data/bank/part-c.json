@@ -251,7 +251,7 @@
     "answer": "PANTRY",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Pot's empty, so try the larder (6)",
+    "clue": "Pot, then try, for the larder (6)",
     "def": {
       "text": "the larder",
       "position": "end"
@@ -277,7 +277,7 @@
         }
       ]
     },
-    "parse": "PAN (pot) + TRY (attempt, 'try') = PANTRY; the larder. Surface: the pot's empty, so try the larder for food."
+    "parse": "PAN (pot) + TRY = PANTRY, the larder."
   },
   {
     "answer": "OUTFIT",
@@ -390,15 +390,15 @@
   {
     "answer": "INKPOT",
     "clueType": "charade",
-    "difficulty": 2,
-    "clue": "Ink in a pot, a writer's well (6)",
+    "difficulty": 3,
+    "clue": "Ink by a pot, a writer's well (6)",
     "def": {
       "text": "a writer's well",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "INK + POT",
+      "fodder": "INK+POT",
       "operations": [
         {
           "op": "synonym",
@@ -417,7 +417,7 @@
         }
       ]
     },
-    "parse": "INK + POT = INKPOT; a writer's well (the penny-drop: an inkwell)."
+    "parse": "INK + POT (a pot), joined = INKPOT, a writer's well."
   },
   {
     "answer": "SECRET",

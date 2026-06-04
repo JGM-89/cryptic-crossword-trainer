@@ -57,23 +57,23 @@
     "answer": "REACT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Buzz about the act? Watch the crowd respond (5)",
+    "clue": "Concerning the act, respond (5)",
     "def": {
       "text": "respond",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "RE + ACT",
+      "fodder": "RE+ACT",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "about",
+          "op": "synonym",
+          "input": "Concerning",
           "output": "RE"
         },
         {
           "op": "synonym",
-          "input": "act",
+          "input": "the act",
           "output": "ACT"
         },
         {
@@ -83,7 +83,7 @@
         }
       ]
     },
-    "parse": "RE (about) + ACT (the act) = REACT; to respond."
+    "parse": "RE (concerning) + ACT (the act) = REACT, to respond."
   },
   {
     "answer": "DROVE",

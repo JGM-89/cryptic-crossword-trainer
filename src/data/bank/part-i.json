@@ -487,15 +487,15 @@
   {
     "answer": "CROWN",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Caught in a quarrel heading north for the title (5)",
+    "difficulty": 4,
+    "clue": "Caught at a quarrel, heading north, for the title (5)",
     "def": {
       "text": "the title",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "C + ROW + N",
+      "fodder": "C+ROW+N",
       "operations": [
         {
           "op": "abbreviate",
@@ -504,7 +504,7 @@
         },
         {
           "op": "synonym",
-          "input": "quarrel",
+          "input": "a quarrel",
           "output": "ROW"
         },
         {
@@ -519,7 +519,7 @@
         }
       ]
     },
-    "parse": "C (caught) + ROW (quarrel) + N (north) = CROWN; the title, the championship."
+    "parse": "C (caught) + ROW (quarrel) + N (north) = CROWN, the title."
   },
   {
     "answer": "DREAM",
@@ -1134,8 +1134,8 @@
   {
     "answer": "CHARITY",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Cleaner has sex appeal, year after year, in her good works (7)",
+    "difficulty": 4,
+    "clue": "Cleaner has sex appeal one year, in her good works (7)",
     "def": {
       "text": "good works",
       "position": "end"
@@ -1166,7 +1166,7 @@
         }
       ]
     },
-    "parse": "CHAR (cleaner) + IT (sex appeal) + Y (year) = CHARITY, good works."
+    "parse": "CHAR (cleaner) + IT (sex appeal) + Y (year) = CHARITY; good works."
   },
   {
     "answer": "DIAMOND",
@@ -1361,7 +1361,7 @@
     "answer": "HABITAT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Routine area, in time, makes a creature's home (7)",
+    "clue": "Routine area on time makes a creature's home (7)",
     "def": {
       "text": "a creature's home",
       "position": "end"
@@ -1527,8 +1527,8 @@
   {
     "answer": "MUSHROOM",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Sentimental drivel filling spare room? Fungus! (8)",
+    "difficulty": 4,
+    "clue": "Sentimental drivel by a spare room? Fungus! (8)",
     "def": {
       "text": "Fungus",
       "position": "end"
@@ -1554,7 +1554,7 @@
         }
       ]
     },
-    "parse": "MUSH (sentimental drivel) + ROOM (spare room) = MUSHROOM, a fungus."
+    "parse": "MUSH (sentimental drivel) + ROOM (spare room), joined = MUSHROOM, a fungus."
   },
   {
     "answer": "SHOULDER",
@@ -1748,10 +1748,10 @@
   {
     "answer": "DISCOVERY",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Club night's extremely loud finding (9)",
+    "difficulty": 4,
+    "clue": "Club night's the very find (9)",
     "def": {
-      "text": "finding",
+      "text": "find",
       "position": "end"
     },
     "wordplay": {
@@ -1765,7 +1765,7 @@
         },
         {
           "op": "synonym",
-          "input": "extremely",
+          "input": "very",
           "output": "VERY"
         },
         {
@@ -1775,7 +1775,7 @@
         }
       ]
     },
-    "parse": "DISCO (club night) + VERY (extremely) = DISCOVERY, a finding."
+    "parse": "DISCO (club night) + VERY (the very) = DISCOVERY, a find."
   },
   {
     "answer": "WORKSHEET",

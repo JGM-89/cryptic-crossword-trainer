@@ -3,7 +3,7 @@
     "answer": "EAR",
     "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Listening organ, like one of corn (3)",
+    "clue": "Listening organ, or one of corn (3)",
     "def": {
       "text": "Listening organ",
       "position": "start"
@@ -19,7 +19,7 @@
         }
       ]
     },
-    "parse": "Double definition: an EAR (listening organ), and an EAR of corn. 'one of corn' frames the natural idiom 'ear of corn'."
+    "parse": "Double definition: a listening organ; and an ear (one) of corn."
   },
   {
     "answer": "BAT",
