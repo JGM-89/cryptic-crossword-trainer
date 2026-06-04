@@ -1,0 +1,98 @@
+# Cruci — Production Plan & Roadmap
+
+> Living strategy doc. Persists the current direction across work sessions.
+> **Last updated:** 2026-06-04 · **Goal:** _a product people use_ (not a craft/portfolio piece).
+> New session? Read this first, then `docs/clue-pipeline.md` only if doing clue work.
+
+---
+
+## Where things stand (2026-06-04)
+
+- **Live:** https://jgm-89.github.io/cryptic-crossword-trainer/ (GitHub Pages, CI-gated).
+- **Bank:** 366 hand-clued single-word answers (`src/data/bank/part-a…i.json`); fairness-validated;
+  surface-polished and adversarially audited (this is **done — do not keep polishing**).
+- **Archive:** 300 generated puzzles (`public/archive.json`) — 50× 7×7, 50× 9×9, 200× 13×13.
+- **Learn:** fading engine + per-device competence (good architecture), but only ~44 teaching clues
+  and a single Stage-D puzzle.
+- **Infra worth keeping:** fairness validator (`scripts/validate-clue.ts`), style guide
+  (`docs/clue-style.md`), clue pipeline (`docs/clue-pipeline.md`), fading engine (`src/engine/`).
+
+## The decision (why this plan exists)
+
+We over-invested in **clue surface polish**, which has near-zero leverage. Evidence:
+
+- **Repetition is Play's real flaw.** 300 puzzles are built from 342 words (avg 18.7 uses each).
+  **ART is in 58% of all puzzles, AGE 57%, EAR 53%, TIP 46%, RED 45%.** Players see the same short
+  words with the same clue over and over — far more noticeable than any surface nicety.
+- **The mission (teaching) is the thin half** — no review/spaced-repetition, no weak-device
+  diagnostics, a cliff from Stage A to real puzzles. The fading engine already tracks the data to
+  fix this; we just don't surface it.
+- **We're blind** — zero analytics/user signal.
+
+**So:** pause the clue-quality treadmill. Invest in **(1) user signal, (2) content variety,
+(3) teaching depth**.
+
+---
+
+## Phase 1 — high-ROI wins (start here; mostly reuses existing code)
+
+### [ ] 1a. User signal — privacy-first analytics
+- Add cookieless, no-PII analytics (recommended: Plausible cloud **or** self-hosted Umami) via a thin
+  `src/analytics.ts` wrapper. Keep all *progress* local; only anonymous aggregate events leave the
+  browser.
+- Track a few key events: lesson started/completed, hint-rung revealed (by device), puzzle
+  opened/completed, clue solved/given-up.
+- Update the HomePage claim (`src/pages/HomePage.tsx`, ~line 116 "nothing sent to a server") to be
+  accurate: "your progress stays in your browser; anonymous usage stats only."
+
+### [ ] 1b. Content variety — fix repetition in the compiler (`scripts/generate-puzzles.mjs`)
+_No new content needed for the bulk of the win._
+- Track global usage counts while building the archive; in candidate selection (`generate()` → the
+  `answers.filter(...)`/`shuffle` step) **weight toward least-used and longer words**, and **cap**
+  any answer at ~12–15% of puzzles.
+- Strengthen dedup: reject a puzzle sharing > ~40% of answers (Jaccard) with an already-accepted
+  puzzle of the same size (today only exact-signature `sigs` matches are rejected).
+- **Target:** top-answer appearance drops from 58% → ≲15%.
+
+### [ ] 1c. Teaching quick wins (reuse data already in `src/engine/progress.ts`)
+`progress` already stores per-device `solvedNoHint/solvedWithHint/attempts/bestTimeMs` and
+`solvedClues{hintsUsed}`.
+- **Weak-device diagnostics:** a "your devices" readout on `LearnPage`/`HomePage`
+  ("strongest: anagram · needs work: homophone") from existing competence records — no new tracking.
+- **Review mode (spaced-repetition-lite):** new `src/pages/ReviewPage.tsx` that re-serves
+  previously-solved clues, prioritising hint-aided + least-recently-seen. A small **pure scheduler**
+  `src/engine/review.ts` (+ `review.test.ts`, like `fading.ts`) decides what's "due"; reuse
+  `ClueCard`/`HintLadder` and wire a route.
+
+## Phase 2 — deeper investment (after Phase 1 ships + analytics report)
+- **Deepen Learn:** more clues per device; a real **Stage C → D ladder** (graded mini-puzzles, not a
+  single daily); first-run **onboarding**.
+- **Corpus growth — only if 1b proves insufficient:** build the long-deferred **generate-then-verify
+  pipeline** (`README.md:74`) emitting answers+clues through `scripts/validate-clue.ts`, rather than
+  resuming hand-authoring.
+
+---
+
+## Verification (per item)
+- **1b:** `npm run clues:regen`, then recompute top-answer puzzle-appearance % (snippet below) →
+  each ≲15%; `npm test` green (incl. archive-drift); spot-play to confirm grids feel distinct.
+- **1c:** unit-test `review.ts`; manually solve lessons, confirm Review queue surfaces hint-aided
+  clues and the diagnostics match `progress` state.
+- **1a:** events fire in the network tab; no cookies/PII; HomePage copy accurate; site builds/deploys.
+- Everything ships behind the existing CI gate: `npm test` → `npm run build` → Pages deploy.
+
+```js
+// recompute the repetition stat after regen:
+node -e 'const a=require("./public/archive.json");const inP={};for(const p of a){const s=new Set(p.entries.map(e=>e.answer));for(const w of s)inP[w]=(inP[w]||0)+1;}for(const [w,n] of Object.entries(inP).sort((x,y)=>y[1]-x[1]).slice(0,8))console.log(w,Math.round(n/a.length*100)+"%")'
+```
+
+## Explicitly NOT doing now
+- ❌ No more surface-polish passes or full adversarial clue audits (paused — diminishing returns; the
+  bank is good enough). Fix individual clues only if a real user reports one.
+- ❌ No accounts/backend/monetisation yet — revisit once usage data shows real retention.
+
+## Hard rules (unchanged, from `docs/clue-pipeline.md`)
+- Bank edits keep answers identical (grids stay valid) and **require** `npm run clues:regen` (or the
+  archive-drift test fails).
+- Only abbreviation cues in `src/data/abbreviations.ts`.
+- Don't touch the Stage-A teaching corpus (`src/data/clues.ts`) for clue-quality work.
