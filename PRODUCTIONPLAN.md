@@ -37,6 +37,13 @@ Then: regen → `npm test` → build → commit → deploy. Process that works (
 trust agent self-reports). Helpers: `clue-chunk/assemble/patch.mjs`, `validate-clue.ts`,
 `lint-surfaces.mjs`, `clues:regen`.
 
+**HOW TO WRITE TO THE BAR:** the authoritative spec is `docs/clue-style.md` **Axis 1b "Surface
+realism (PASS/FAIL)"** (real sentence / conversation test / integrated def / no recipe / no orphan
+words / "change the device" fix; ranked above wit). ⚠️ The `docs/clue-pipeline.md` EXPANSION/SETTER
+templates are STILL PRE-BAR until task **B** rewrites them — so when doing **F** and **C**, follow
+`clue-style.md §1b` + the device-free→judge→human-review process directly; do NOT blindly reuse the
+old templates (they'd reproduce the recipe/orphan mistakes).
+
 ---
 
 ## Where things stand (2026-06-04)
