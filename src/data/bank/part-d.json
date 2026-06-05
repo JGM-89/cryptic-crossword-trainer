@@ -79,14 +79,14 @@
     "answer": "NEUTRAL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Run late, unusually, to stay impartial (7)",
+    "clue": "When trains run late, somehow I stay impartial (7)",
     "def": {
       "text": "impartial",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "unusually",
-      "fodder": "Run late",
+      "indicator": "somehow",
+      "fodder": "run late",
       "operations": [
         {
           "op": "anagram",
@@ -95,7 +95,7 @@
         }
       ]
     },
-    "parse": "(RUN LATE)* = NEUTRAL, impartial."
+    "parse": "(RUN LATE)* with 'somehow' = NEUTRAL, impartial."
   },
   {
     "answer": "MONSTER",
@@ -123,14 +123,14 @@
     "answer": "GENERAL",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Enlarge wildly for the senior officer (7)",
+    "clue": "A wildly enlarged map guided the commander (7)",
     "def": {
-      "text": "the senior officer",
+      "text": "the commander",
       "position": "end"
     },
     "wordplay": {
       "indicator": "wildly",
-      "fodder": "Enlarge",
+      "fodder": "enlarge",
       "operations": [
         {
           "op": "anagram",
@@ -139,7 +139,7 @@
         }
       ]
     },
-    "parse": "Anagram of ENLARGE (wildly) = GENERAL, the senior officer."
+    "parse": "(ENLARGE)* 'wildly' = GENERAL, the commander; the surface misdirects to an enlarged map."
   },
   {
     "answer": "CRAVING",
@@ -199,9 +199,9 @@
     "answer": "PANCAKE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Pan the cake served on Shrove Tuesday (7)",
+    "clue": "Critics pan a cake tossed on Shrove Tuesday (7)",
     "def": {
-      "text": "served on Shrove Tuesday",
+      "text": "tossed on Shrove Tuesday",
       "position": "end"
     },
     "wordplay": {
@@ -210,12 +210,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Pan",
+          "input": "pan",
           "output": "PAN"
         },
         {
           "op": "synonym",
-          "input": "the cake",
+          "input": "a cake",
           "output": "CAKE"
         },
         {
@@ -225,7 +225,7 @@
         }
       ]
     },
-    "parse": "PAN (criticise, slate) + CAKE = PANCAKE, the treat served on Shrove Tuesday."
+    "parse": "PAN (to pan, criticise) + CAKE = PANCAKE, tossed on Shrove Tuesday."
   },
   {
     "answer": "CARPORT",
@@ -263,9 +263,9 @@
     "answer": "FORWARD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "For the ward, going ahead (7)",
+    "clue": "In favour of the ward, and pressing ahead (7)",
     "def": {
-      "text": "going ahead",
+      "text": "pressing ahead",
       "position": "end"
     },
     "wordplay": {
@@ -274,7 +274,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "For",
+          "input": "In favour of",
           "output": "FOR"
         },
         {
@@ -289,7 +289,7 @@
         }
       ]
     },
-    "parse": "FOR + WARD (hospital ward) = FORWARD, meaning going ahead."
+    "parse": "FOR (in favour of) + WARD = FORWARD, pressing ahead."
   },
   {
     "answer": "HEADWAY",
@@ -359,9 +359,9 @@
     "answer": "OUTLOOK",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Dismissed, with a glance at the forecast (7)",
+    "clue": "Once out, look at what lies ahead (7)",
     "def": {
-      "text": "forecast",
+      "text": "what lies ahead",
       "position": "end"
     },
     "wordplay": {
@@ -370,12 +370,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Dismissed",
+          "input": "out",
           "output": "OUT"
         },
         {
           "op": "synonym",
-          "input": "glance",
+          "input": "look",
           "output": "LOOK"
         },
         {
@@ -385,15 +385,15 @@
         }
       ]
     },
-    "parse": "OUT (dismissed, in cricket) + LOOK (glance) = OUTLOOK, a forecast."
+    "parse": "OUT + LOOK = OUTLOOK, what lies ahead (a prospect)."
   },
   {
     "answer": "PASSAGE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "The pass, with age, widened to a corridor (7)",
+    "clue": "The pass shows its age along this corridor (7)",
     "def": {
-      "text": "corridor",
+      "text": "this corridor",
       "position": "end"
     },
     "wordplay": {
@@ -402,12 +402,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "pass",
+          "input": "The pass",
           "output": "PASS"
         },
         {
           "op": "synonym",
-          "input": "age",
+          "input": "its age",
           "output": "AGE"
         },
         {
@@ -417,15 +417,15 @@
         }
       ]
     },
-    "parse": "PASS (a mountain pass) + AGE = PASSAGE; a 'corridor'."
+    "parse": "PASS (mountain pass) + AGE = PASSAGE, a corridor."
   },
   {
     "answer": "EARRING",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Bend an ear to the call, eyeing a golden hoop (7)",
+    "clue": "Through the ear, a ring of bright jewellery (7)",
     "def": {
-      "text": "a golden hoop",
+      "text": "bright jewellery",
       "position": "end"
     },
     "wordplay": {
@@ -434,12 +434,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "ear",
+          "input": "the ear",
           "output": "EAR"
         },
         {
           "op": "synonym",
-          "input": "call",
+          "input": "a ring",
           "output": "RING"
         },
         {
@@ -449,7 +449,7 @@
         }
       ]
     },
-    "parse": "EAR (ear) + RING (a call, on the phone) = EARRING, a golden hoop of jewellery."
+    "parse": "EAR + RING = EARRING, a piece of bright jewellery."
   },
   {
     "answer": "PIRATES",
@@ -541,14 +541,14 @@
     "answer": "BLASTED",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Stabled horses, oddly enough, blew up (7)",
+    "clue": "Strangely, the stabled lad got slated (7)",
     "def": {
-      "text": "blew up",
+      "text": "slated",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "oddly enough",
-      "fodder": "STABLED",
+      "indicator": "Strangely",
+      "fodder": "stabled",
       "operations": [
         {
           "op": "anagram",
@@ -557,29 +557,29 @@
         }
       ]
     },
-    "parse": "(STABLED)* = BLASTED, blew up."
+    "parse": "(STABLED)* 'Strangely' = BLASTED, meaning slated or severely criticised."
   },
   {
     "answer": "BRANDED",
     "clueType": "container",
     "difficulty": 4,
-    "clue": "South African money stashed in bed, marked out (7)",
+    "clue": "A rand hidden in the bed left him marked (7)",
     "def": {
-      "text": "marked out",
+      "text": "marked",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "stashed in",
+      "indicator": "hidden in",
       "fodder": "RAND in BED",
       "operations": [
         {
           "op": "synonym",
-          "input": "South African money",
+          "input": "A rand",
           "output": "RAND"
         },
         {
           "op": "synonym",
-          "input": "bed",
+          "input": "the bed",
           "output": "BED"
         },
         {
@@ -589,15 +589,15 @@
         }
       ]
     },
-    "parse": "RAND (South African money) inside BED = B(RAND)ED = BRANDED, marked out; cash hidden under the mattress."
+    "parse": "RAND (South African money) inside BED = B(RAND)ED = BRANDED, marked."
   },
   {
     "answer": "BROADEN",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Highway through mountain serves to widen (7)",
+    "clue": "A road through the Ben will widen your view (7)",
     "def": {
-      "text": "widen",
+      "text": "widen your view",
       "position": "end"
     },
     "wordplay": {
@@ -606,12 +606,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Highway",
+          "input": "A road",
           "output": "ROAD"
         },
         {
           "op": "synonym",
-          "input": "mountain",
+          "input": "the Ben",
           "output": "BEN"
         },
         {
@@ -621,15 +621,15 @@
         }
       ]
     },
-    "parse": "ROAD (highway) inside BEN (mountain) = BROADEN; to widen."
+    "parse": "ROAD inside BEN (a Scottish mountain) = B(ROAD)EN = BROADEN, to widen your view."
   },
   {
     "answer": "NOWHERE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Now present, but in no place (7)",
+    "clue": "Now, here, we seem to be getting no place (7)",
     "def": {
-      "text": "in no place",
+      "text": "no place",
       "position": "end"
     },
     "wordplay": {
@@ -637,13 +637,13 @@
       "fodder": "NOW + HERE",
       "operations": [
         {
-          "op": "synonym",
+          "op": "literal",
           "input": "Now",
           "output": "NOW"
         },
         {
           "op": "synonym",
-          "input": "present",
+          "input": "here",
           "output": "HERE"
         },
         {
@@ -653,29 +653,29 @@
         }
       ]
     },
-    "parse": "NOW + HERE (present) = NOWHERE, meaning in no place; the surface splits the answer into 'now here'."
+    "parse": "NOW + HERE = NOWHERE; the surface splits the answer into 'now here', the definition is 'no place'."
   },
   {
     "answer": "EARLOBE",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "This year, lobelias conceal a bit of the ear (7)",
+    "clue": "Wear lobelias and you cover a bit of the ear (7)",
     "def": {
       "text": "a bit of the ear",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "conceal",
-      "fodder": "year lobelias",
+      "indicator": "cover",
+      "fodder": "Wear lobelias",
       "operations": [
         {
           "op": "hidden",
-          "input": "y<EAR LOBE>lias",
+          "input": "w<EAR LOBE>lias",
           "output": "EARLOBE"
         }
       ]
     },
-    "parse": "Hidden in yEAR LOBElias = EARLOBE, a bit of the ear."
+    "parse": "Hidden in 'wEAR LOBElias' = EARLOBE, a bit of the ear."
   },
   {
     "answer": "CARAVAN",
@@ -703,13 +703,13 @@
     "answer": "DELIVER",
     "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Insulted, having turned to rescue (7)",
+    "clue": "Reviled at first, he turned it around to save the day (7)",
     "def": {
-      "text": "rescue",
+      "text": "save the day",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "having turned",
+      "indicator": "turned it around",
       "fodder": "REVILED",
       "operations": [
         {
@@ -719,7 +719,7 @@
         }
       ]
     },
-    "parse": "REVILED (insulted) reversed = DELIVER; to deliver is to rescue or set free."
+    "parse": "REVILED (insulted) reversed = DELIVER; to deliver is to save the day."
   },
   {
     "answer": "GATEMAN",
@@ -791,9 +791,9 @@
     "answer": "STARLET",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Celebrity allowed to become a budding actress (7)",
+    "clue": "The star let her flat to a budding actress (7)",
     "def": {
-      "text": "budding actress",
+      "text": "a budding actress",
       "position": "end"
     },
     "wordplay": {
@@ -802,12 +802,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Celebrity",
+          "input": "The star",
           "output": "STAR"
         },
         {
           "op": "synonym",
-          "input": "allowed",
+          "input": "let",
           "output": "LET"
         },
         {
@@ -817,7 +817,7 @@
         }
       ]
     },
-    "parse": "STAR (celebrity) + LET (allowed) = STARLET, a budding actress."
+    "parse": "STAR (celebrity) + LET (rented out) = STARLET, a budding actress."
   },
   {
     "answer": "BATTERY",
