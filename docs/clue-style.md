@@ -61,6 +61,48 @@ sentence (clarity beats forced cleverness) or flag it for a human pick.
 
 ---
 
+## 1c. The gentle teaching register (Stage-A corpus, `src/data/clues.ts`)
+
+The Stage-A lessons are the FIRST clues a learner ever meets. The trap (which we fell into once) is to
+think "beginner = transparent" and write give-aways that aren't really cryptic — *"A pig's tail is
+also a hairstyle"* (PIGTAIL spelled out), *"Warts, sent back, spell a drinking tube"* (narrates the
+mechanic), *"Hedge, beheaded, is a border"* (narrates again). **That is the single worst thing you can
+do here.** A teaching clue is a **fully real cryptic clue**; it is only *gentle* in its vocabulary and
+device choice, never in its disguise.
+
+**The five rules (all must pass — derived from real published beginner cryptics, e.g. the Guardian
+Quick Cryptic):**
+1. **Real cryptic clue.** Answer and its parts are **disguised**, never written in plain sight; there
+   is a genuine penny-drop.
+2. **One natural statement.** The whole clue reads as a phrase/sentence you'd actually meet, evoking a
+   coherent image. No "crosswordy" strings, no gibberish; grammatically correct.
+3. **Definition woven, not tacked.** Def sits at start or end and is *part of* the sentence — never
+   bolted on after a comma/colon ("…: fast food"), and always a word people use (never "a drinking
+   tube").
+4. **Never narrate the mechanic.** No "spell X backwards", "beheaded, is", "sent back". The device
+   hides inside an ordinary word or idiom doing double duty.
+5. **Gentle, not transparent.** Common words, the most learnable device per slot, well-known
+   abbreviations, one device, one clear definition. Difficulty comes from *fair disguise*, not from
+   obscurity and not from giving the answer away.
+
+**Real gold-standard exemplars (study these):** GOALIE *"Leave with a porky footballer"* (GO+A+LIE);
+LARCH *"Large supporting structure for tree"* (L+ARCH); STALLION *"Eccentric still on a horse"*
+(anag); SILENT *"Refraining from speech, listen out"* (anag); ASTRAY *"Off the rails when on
+carrier?"* (AS+TRAY). The disguise lives in everyday words; the definition is part of the reading.
+
+**In-house exemplars that hit the bar:** DOGMA *"Follow Mother's teaching"* (DOG+MA); HOGWASH *"A
+pig's laundry? Nonsense!"* (HOG+WASH); ANGER *"A ranger loses his head in a rage"* (RANGER−R, where
+"loses his head" doubles as losing one's temper); STAR *"Endless stare at a celebrity"* (STARE−E);
+DIAL *"Laid back to make a call"* (reversal hidden in an idiom); SCAR *"Scare endlessly leaves a
+mark"*. The mechanic always hides inside a natural word/idiom.
+
+**Process when an answer can't reach the bar in its slot:** the Stage-A answers are **not grid-locked**
+(the bank/archive is separate), so **swap the answer, keep the device** — pick a word whose parts hide
+in everyday language (PIGTAIL→DOGMA, MANKIND→HOGWASH, EACH→ANGER). Keep ≥1 clue per device. Validate
+via `integrity.test.ts` + `curriculum.test.ts`; **a human reads every clue against the five rules.**
+
+---
+
 ## 2. Hard fairness rules (the gate)
 
 1. **One definition, at the start OR end** of the clue (never buried mid-clue) — except
