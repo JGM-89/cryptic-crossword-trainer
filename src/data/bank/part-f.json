@@ -116,14 +116,14 @@
     "answer": "DEPARTMENT",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Leave men, given time, in the government office (10)",
+    "clue": "Leave the men time at the ministry (10)",
     "def": {
-      "text": "the government office",
+      "text": "the ministry",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "DEPART+MEN+T",
+      "fodder": "DEPART + MEN + T",
       "operations": [
         {
           "op": "synonym",
@@ -132,7 +132,7 @@
         },
         {
           "op": "synonym",
-          "input": "men",
+          "input": "the men",
           "output": "MEN"
         },
         {
@@ -147,37 +147,47 @@
         }
       ]
     },
-    "parse": "DEPART (leave) + MEN + T (time) = DEPARTMENT; the government office."
+    "parse": "DEPART (leave) + MEN (the men) + T (time) = DEPARTMENT, a ministry."
   },
   {
     "answer": "UNDERRATED",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Trader, nude, dancing — but undervalued (10)",
+    "clue": "Sedated and told off, yet undervalued (10)",
     "def": {
       "text": "undervalued",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "dancing",
-      "fodder": "TRADER NUDE",
+      "indicator": "",
+      "fodder": "UNDER + RATED",
       "operations": [
         {
-          "op": "anagram",
-          "input": "TRADERNUDE",
+          "op": "synonym",
+          "input": "Sedated",
+          "output": "UNDER"
+        },
+        {
+          "op": "synonym",
+          "input": "told off",
+          "output": "RATED"
+        },
+        {
+          "op": "concat",
+          "input": "UNDER+RATED",
           "output": "UNDERRATED"
         }
       ]
     },
-    "parse": "(TRADER NUDE)* 'dancing' = UNDERRATED; 'undervalued'."
+    "parse": "UNDER (sedated, as in 'put under') + RATED (told off, scolded) = UNDERRATED, undervalued."
   },
   {
     "answer": "BRIDGEHEAD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Bridge over a beer's head wins the invasion's foothold (10)",
+    "clue": "A span at the headland gave us a foothold (10)",
     "def": {
-      "text": "the invasion's foothold",
+      "text": "a foothold",
       "position": "end"
     },
     "wordplay": {
@@ -186,12 +196,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Bridge",
+          "input": "A span",
           "output": "BRIDGE"
         },
         {
           "op": "synonym",
-          "input": "a beer's head",
+          "input": "the headland",
           "output": "HEAD"
         },
         {
@@ -201,7 +211,7 @@
         }
       ]
     },
-    "parse": "BRIDGE (card game) + HEAD (froth on a beer) = BRIDGEHEAD; 'the invasion's foothold'."
+    "parse": "BRIDGE (a span) + HEAD (a headland) = BRIDGEHEAD, a foothold secured in enemy territory."
   },
   {
     "answer": "BARGAINING",
@@ -335,9 +345,9 @@
     "answer": "STOCKBROKER",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "The chef's stock won over the broker, a shares dealer (11)",
+    "clue": "The farm stock's agent is a shares dealer (11)",
     "def": {
-      "text": "shares dealer",
+      "text": "a shares dealer",
       "position": "end"
     },
     "wordplay": {
@@ -346,12 +356,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "stock",
+          "input": "farm stock",
           "output": "STOCK"
         },
         {
           "op": "synonym",
-          "input": "broker",
+          "input": "agent",
           "output": "BROKER"
         },
         {
@@ -361,7 +371,7 @@
         }
       ]
     },
-    "parse": "STOCK (the chef's stock, soup base) + BROKER (agent) = STOCKBROKER, a shares dealer."
+    "parse": "STOCK (farm stock, livestock) + BROKER (agent) = STOCKBROKER, a shares dealer."
   },
   {
     "answer": "CONSTRAINED",
@@ -537,33 +547,48 @@
   },
   {
     "answer": "ENTERTAINMENT",
-    "clueType": "anagram",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Riotously enter main tent for a show (13)",
+    "clue": "Amuse the men, given time, in show business (13)",
     "def": {
-      "text": "a show",
+      "text": "show business",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Riotously",
-      "fodder": "ENTER MAIN TENT",
+      "indicator": "",
+      "fodder": "ENTERTAIN + MEN + T",
       "operations": [
         {
-          "op": "anagram",
-          "input": "ENTERMAINTENT",
+          "op": "synonym",
+          "input": "Amuse",
+          "output": "ENTERTAIN"
+        },
+        {
+          "op": "synonym",
+          "input": "the men",
+          "output": "MEN"
+        },
+        {
+          "op": "abbreviate",
+          "input": "time",
+          "output": "T"
+        },
+        {
+          "op": "concat",
+          "input": "ENTERTAIN+MEN+T",
           "output": "ENTERTAINMENT"
         }
       ]
     },
-    "parse": "(ENTER MAIN TENT)* 'Riotously' = ENTERTAINMENT; 'a show'."
+    "parse": "ENTERTAIN (amuse) + MEN + T (time) = ENTERTAINMENT, show business."
   },
   {
     "answer": "THOUGHTLESSLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "A notion reduced, in a way, comes over carelessly (13)",
+    "clue": "With thought running low, somehow, he acted rashly (13)",
     "def": {
-      "text": "carelessly",
+      "text": "rashly",
       "position": "end"
     },
     "wordplay": {
@@ -572,17 +597,17 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "A notion",
+          "input": "thought",
           "output": "THOUGHT"
         },
         {
           "op": "synonym",
-          "input": "reduced",
+          "input": "running low",
           "output": "LESS"
         },
         {
           "op": "synonym",
-          "input": "in a way",
+          "input": "somehow",
           "output": "LY"
         },
         {
@@ -592,13 +617,13 @@
         }
       ]
     },
-    "parse": "THOUGHT (a notion) + LESS (reduced) + LY (in a way) = THOUGHTLESSLY; 'carelessly'."
+    "parse": "THOUGHT + LESS (running low) + LY (somehow, in a manner) = THOUGHTLESSLY, rashly."
   },
   {
     "answer": "GRANDMOTHERLY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "A splendid mother, in a way, is warmly indulgent (13)",
+    "clue": "A splendid mother is, in a way, warmly indulgent (13)",
     "def": {
       "text": "warmly indulgent",
       "position": "end"
@@ -629,6 +654,6 @@
         }
       ]
     },
-    "parse": "GRAND (splendid) + MOTHER + LY (in a way) = GRANDMOTHERLY; 'warmly indulgent'."
+    "parse": "GRAND (splendid) + MOTHER + LY (in a way) = GRANDMOTHERLY, warmly indulgent."
   }
 ]
