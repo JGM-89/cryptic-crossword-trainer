@@ -77,6 +77,60 @@ function defExampleNote(clue: string, span: DefinitionSpan): string {
   return ` The word “${m[1].toLowerCase()}” flags this as definition by example — the definition names just one example of the answer’s category, not an exact synonym.`;
 }
 
+// Initial-letter ("acrostic") cues are encoded as `abbreviate` ops too (e.g.
+// "boy primarily" → B) but they are NOT dictionary abbreviations, so they must
+// not be glossed as such — the clue already says "primarily/initially/…".
+const INITIAL_CUE_RE =
+  /\b(primarily|initially|firstly|first|head|heads|heading|leading|leader|starts?|starting|top|opening|foremost|front|begins?|beginning)\b/i;
+
+// Short, safe "why" notes for standard abbreviations, keyed "cue=LETTERS" so a
+// note only fires when both the cue and the resulting letters match (no risk of
+// glossing e.g. "one"→A with the Roman-numeral reason). Anything not listed
+// still gets the plain "cue = letters" gloss below.
+const ABBR_WHY: Record<string, string> = {
+  'one=I': 'the Roman numeral',
+  'energy=E': 'the symbol from physics',
+  'learner=L': 'the L-plate of a learner driver',
+  'queen=ER': 'Elizabeth Regina',
+  'about=RE': 'as in “re:”',
+  'fifty=L': 'the Roman numeral',
+  'hundred=C': 'the Roman numeral',
+  'thousand=M': 'the Roman numeral',
+  'five=V': 'the Roman numeral',
+  'ten=X': 'the Roman numeral',
+  'nothing=O': 'it looks like a zero',
+  'love=O': 'zero, as in tennis',
+  'duck=O': 'zero, as in cricket',
+  'north=N': 'a compass point',
+  'south=S': 'a compass point',
+  'east=E': 'a compass point',
+  'west=W': 'a compass point',
+};
+
+/**
+ * Teach standard crossword abbreviations inline: when the wordplay turns a cue
+ * word into a letter or two (an `abbreviate` op), spell that convention out for
+ * a learner, since it is fair but otherwise opaque (e.g. "about" = RE). Skips
+ * first-letter devices, which the clue already signals.
+ */
+function abbreviationNote(wp: Wordplay): string {
+  const glosses: string[] = [];
+  const seen = new Set<string>();
+  for (const op of wp.operations) {
+    if (op.op !== 'abbreviate') continue;
+    const cue = (op.input ?? '').trim();
+    const letters = (op.output ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+    if (!cue || !letters || INITIAL_CUE_RE.test(cue)) continue;
+    const key = `${cue.toLowerCase()}=${letters}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const why = ABBR_WHY[key];
+    glosses.push(`“${cue}” = ${letters}${why ? ` (${why})` : ''}`);
+  }
+  if (!glosses.length) return '';
+  return ` Crossword shorthand worth learning — ${glosses.join('; ')}.`;
+}
+
 function tier3Text(clueType: ClueType, wp: Wordplay): string {
   const ind = wp.indicator ? `"${wp.indicator}"` : 'no explicit indicator, but';
   switch (clueType) {
@@ -127,7 +181,9 @@ export function hydrateClue(raw: RawClue): Clue {
   const hint3: Hint = {
     tier: 3,
     label: 'Indicator & fodder',
-    text: raw.hintOverrides?.[3] ?? tier3Text(raw.clueType, raw.wordplay),
+    text:
+      (raw.hintOverrides?.[3] ?? tier3Text(raw.clueType, raw.wordplay)) +
+      abbreviationNote(raw.wordplay),
   };
   const hint4: Hint = { tier: 4, label: 'Full parse', text: raw.parse };
 
