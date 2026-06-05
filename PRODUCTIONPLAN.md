@@ -6,16 +6,20 @@
 
 ---
 
-## ▶ NEXT SESSION — start here (paused 2026-06-05, 1am; new chat to reset context)
+## ▶ NEXT SESSION — start here (updated 2026-06-05 — D DONE; F is next)
 
 The device-free **sentence-realism floor-raise of 111 bank clues is DONE + live** (every clue must
 read as a real sentence a person would say; see `docs/clue-style.md` Axis 1b). Remaining work, in
 priority order — full detail in `~/.claude/plans/how-do-we-better-serene-marshmallow.md` (top section):
 
-1. **D — fix 2 broken clues + validator gap.** MILD ("Fungus mostly gentle") and TROOPER
-   ("Cavalrymen curtailed…") are **indirect deletions** (source word MILDEW/TROOPERS isn't in the
-   clue — illegal). Re-clue both device-free; add a check to `scripts/validate-clue.ts` + `integrity.ts`
-   that anagram/deletion fodder must appear in the clue surface. (Scan found exactly these 2.)
+1. **D — DONE + deployed (2026-06-05, commit `199f972`).** Added the indirect-deletion guard to
+   `integrity.ts` (deletion fodder must appear literally in the surface, mirroring the anagram rule;
+   `validate-clue.ts` inherits it). Re-clued **MILD** → double-def *"Gentle type of ale"* and
+   **TROOPER** → charade *"Mounted policeman escorts soldiers and the Queen"* (TROOP+ER). The new gate
+   also caught a **3rd** indirect deletion the bank-only scan missed — **OVEN** (`deletion-004` in the
+   teaching corpus `clues.ts`, "Witches' group, beheaded…") — fixed to a fair direct deletion
+   *"Coven, losing its head, becomes a cooker"* (its full §1b polish folded into F). Archive regen'd;
+   27 tests + build green.
 2. **F — fix the Stage-A TEACHING CORPUS `src/data/clues.ts` (44 clues). HIGHEST IMPACT — the actual
    lessons.** It was excluded from all prior passes ("deliberately simple") and that was the mistake.
    Apply the real-sentence bar + fairness, but keep them SIMPLE/clear, use gentle already-taught
