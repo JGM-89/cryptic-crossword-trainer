@@ -6,7 +6,7 @@
 
 ---
 
-## ▶ NEXT SESSION — start here (updated 2026-06-05 — D + F DONE; E is next)
+## ▶ NEXT SESSION — start here (updated 2026-06-05 — D + F + E DONE; B + C remain)
 
 The device-free **sentence-realism floor-raise of 111 bank clues is DONE + live** (every clue must
 read as a real sentence a person would say; see `docs/clue-style.md` Axis 1b). Remaining work, in
@@ -30,9 +30,11 @@ priority order — full detail in `~/.claude/plans/how-do-we-better-serene-marsh
    MANKIND→HOGWASH, HOTDOG→BIGWIG, STRAW→PETS, EACH→ANGER, EDGE→STAR; reworded OVEN. Good sections left
    intact. No `clues:regen` (teaching corpus not in archive). 27 tests + build green. (THRONE's
    "Ron"-arbitrary container surface is a known minor weak-spot left for a future light polish.)
-3. **E — teach conventions INLINE in the hint ladder** (`src/data/hydrate.ts`, same pattern as the
-   def-by-example note): when a clue uses a standard abbreviation, gloss it ("'about' = RE — a common
-   crossword abbreviation"). Fixes the "fair but opaque to beginners" problem (e.g. SECRET's RE=about).
+3. **E — DONE + deployed (2026-06-05, commit `2c9184a`).** `hydrateClue` appends `abbreviationNote()`
+   to hint rung 3: every `abbreviate` op is glossed ("Crossword shorthand worth learning — 'energy' =
+   E (the symbol from physics)"), with a curated `ABBR_WHY` map for unambiguous reasons and a plain
+   cue=letters fallback; first-letter devices skipped. The bank hydrates through the same path, so it
+   helps Stage-A lessons AND Stage-B/C bank clues. Fixes "fair but opaque to beginners".
 4. **B — future-proof the pipeline**: rewrite `docs/clue-pipeline.md` EXPANSION/SETTER templates for
    device-free + sentence-realism-as-#1-gate + no-orphan; make the sentence-realism judge→fix→review a
    MANDATORY step.
