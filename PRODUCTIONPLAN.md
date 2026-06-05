@@ -6,7 +6,7 @@
 
 ---
 
-## ▶ NEXT SESSION — start here (updated 2026-06-05 — D DONE; F is next)
+## ▶ NEXT SESSION — start here (updated 2026-06-05 — D + F DONE; E is next)
 
 The device-free **sentence-realism floor-raise of 111 bank clues is DONE + live** (every clue must
 read as a real sentence a person would say; see `docs/clue-style.md` Axis 1b). Remaining work, in
@@ -20,13 +20,16 @@ priority order — full detail in `~/.claude/plans/how-do-we-better-serene-marsh
    teaching corpus `clues.ts`, "Witches' group, beheaded…") — fixed to a fair direct deletion
    *"Coven, losing its head, becomes a cooker"* (its full §1b polish folded into F). Archive regen'd;
    27 tests + build green.
-2. **F — fix the Stage-A TEACHING CORPUS `src/data/clues.ts` (44 clues). HIGHEST IMPACT — the actual
-   lessons.** It was excluded from all prior passes ("deliberately simple") and that was the mistake.
-   Apply the real-sentence bar + fairness, but keep them SIMPLE/clear, use gentle already-taught
-   abbreviations/synonyms only, and make each device's intro example the most direct construction.
-   Owner-flagged: PIGTAIL (too easy), MANKIND ("Chap's sort is all humanity" — meaningless), HOTDOG
-   (HOT=excited loose), STRAW reversal-002 (reversing a synonym = too abstract for a first reversal),
-   the recipe-like deletion surfaces ("Beach, losing its head, for every one").
+2. **F — DONE + deployed (2026-06-05, commit `083fe45`).** Rebuilt the Stage-A teaching corpus to a
+   NEW bar. **Key learning: "beginner ≠ transparent"** — making teaching clues transparent produced
+   non-cryptic give-aways (owner rejected 2 attempts). Researched real published gentle cryptics
+   (Guardian Quick Cryptic, Alberich) and derived **`docs/clue-style.md` §1c "gentle teaching
+   register"**: a teaching clue is a FULLY real cryptic clue (parts disguised, one natural sentence,
+   def woven, mechanic hidden in an idiom), only *gentle* in vocabulary/device — never in disguise.
+   **Teaching answers are NOT grid-locked → swap the answer, keep the device.** Rebuilt PIGTAIL→DOGMA,
+   MANKIND→HOGWASH, HOTDOG→BIGWIG, STRAW→PETS, EACH→ANGER, EDGE→STAR; reworded OVEN. Good sections left
+   intact. No `clues:regen` (teaching corpus not in archive). 27 tests + build green. (THRONE's
+   "Ron"-arbitrary container surface is a known minor weak-spot left for a future light polish.)
 3. **E — teach conventions INLINE in the hint ladder** (`src/data/hydrate.ts`, same pattern as the
    def-by-example note): when a clue uses a standard abbreviation, gloss it ("'about' = RE — a common
    crossword abbreviation"). Fixes the "fair but opaque to beginners" problem (e.g. SECRET's RE=about).
