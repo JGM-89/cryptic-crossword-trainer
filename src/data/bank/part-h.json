@@ -278,25 +278,25 @@
   },
   {
     "answer": "MILD",
-    "clueType": "deletion",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Fungus mostly gentle (4)",
+    "clue": "Gentle type of ale (4)",
     "def": {
-      "text": "gentle",
-      "position": "end"
+      "text": "Gentle",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "mostly",
-      "fodder": "mildew",
+      "indicator": "",
+      "fodder": "Gentle / type of ale",
       "operations": [
         {
-          "op": "delete",
-          "input": "MILDEW − EW",
+          "op": "literal",
+          "input": "two definitions",
           "output": "MILD"
         }
       ]
     },
-    "parse": "MILDEW (fungus) mostly, dropping the last two letters = MILD; gentle."
+    "parse": "Double definition: MILD = gentle, and MILD = a type of (dark) ale."
   },
   {
     "answer": "REIN",
@@ -1710,25 +1710,35 @@
   },
   {
     "answer": "TROOPER",
-    "clueType": "deletion",
+    "clueType": "charade",
     "difficulty": 3,
-    "clue": "Cavalrymen curtailed produce a mounted policeman (7)",
+    "clue": "Mounted policeman escorts soldiers and the Queen (7)",
     "def": {
-      "text": "a mounted policeman",
-      "position": "end"
+      "text": "Mounted policeman",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "curtailed",
-      "fodder": "troopers",
+      "indicator": "",
+      "fodder": "TROOP + ER",
       "operations": [
         {
-          "op": "delete",
-          "input": "TROOPERS − S",
+          "op": "synonym",
+          "input": "soldiers",
+          "output": "TROOP"
+        },
+        {
+          "op": "abbreviate",
+          "input": "Queen",
+          "output": "ER"
+        },
+        {
+          "op": "concat",
+          "input": "TROOP+ER",
           "output": "TROOPER"
         }
       ]
     },
-    "parse": "TROOPERS (cavalrymen) curtailed (last letter dropped) = TROOPER, a mounted policeman."
+    "parse": "TROOP (soldiers) + ER (the Queen, Elizabeth Regina) = TROOPER; a mounted policeman."
   },
   {
     "answer": "SCRAMBLE",

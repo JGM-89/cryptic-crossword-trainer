@@ -113,6 +113,12 @@ export function validateClue(clue: Clue): string[] {
       if (sol.length >= fodderLetters.length || !isSubsequence(sol, fodderLetters)) {
         errors.push('solution is not a deletion (subsequence) of the fodder');
       }
+      // No indirect deletion: the fodder (the longer source word the solver
+      // shortens) must appear literally in the surface, not be reached via a
+      // synonym/definition first. Same fairness rule as indirect anagram.
+      if (!clueLetters.includes(fodderLetters)) {
+        errors.push('deletion fodder is not literally present in the clue (indirect deletion)');
+      }
       break;
     }
     case 'initialism': {
