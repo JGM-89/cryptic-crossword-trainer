@@ -6,7 +6,7 @@
 
 ---
 
-## ▶ NEXT SESSION — start here (updated 2026-06-05 — D + F + E DONE; B + C remain)
+## ▶ NEXT SESSION — start here (updated 2026-06-05 — D + F + E + B DONE; C remains)
 
 The device-free **sentence-realism floor-raise of 111 bank clues is DONE + live** (every clue must
 read as a real sentence a person would say; see `docs/clue-style.md` Axis 1b). Remaining work, in
@@ -35,9 +35,12 @@ priority order — full detail in `~/.claude/plans/how-do-we-better-serene-marsh
    E (the symbol from physics)"), with a curated `ABBR_WHY` map for unambiguous reasons and a plain
    cue=letters fallback; first-letter devices skipped. The bank hydrates through the same path, so it
    helps Stage-A lessons AND Stage-B/C bank clues. Fixes "fair but opaque to beginners".
-4. **B — future-proof the pipeline**: rewrite `docs/clue-pipeline.md` EXPANSION/SETTER templates for
-   device-free + sentence-realism-as-#1-gate + no-orphan; make the sentence-realism judge→fix→review a
-   MANDATORY step.
+4. **B — DONE + deployed (2026-06-05, commit `3c5ef3d`).** `docs/clue-pipeline.md` rewritten: SETTER +
+   EXPANSION lead with the §1b bar (real sentence > woven def > no narrated mechanic > no orphan >
+   fair) + device-free; new SENTENCE-REALISM JUDGE template + MANDATORY loop step 4b (judge →
+   device-free rebuild → human read every change), above the wit polish; new step 4d originality
+   web-check (reword verbatim copies; swap answer if surface is letter-forced); stale "teaching corpus
+   left as-is" lines corrected to §1c.
 5. **C — full second adversarial sentence-realism pass over the other ~255 bank clues** (the ones the
    single judging pass *passed* but never double-checked); device-free rebuild + human review of fails.
 
