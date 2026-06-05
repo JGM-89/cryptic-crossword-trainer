@@ -6,10 +6,18 @@ agents write to). If you're a fresh session continuing this work: read this file
 `clue-style.md`.
 
 > **TL;DR.** The bank (`src/data/bank/part-*.json`) is upgraded one part at a time. For each part:
-> chunk it → hand each chunk to a "setter" agent that writes best-of-N clues and **hard-gates**
-> them through the real validator → assemble the winners back → run the tests → have a "semantic
-> auditor" agent check the things the validator can't → patch its flags → regenerate the archive →
-> commit & deploy. Answers never change (so grids stay stable).
+> chunk it → hand each chunk to a "setter" agent that writes best-of-N clues to the **sentence-realism
+> bar** (`clue-style.md` §1b — a real sentence a person would say, def woven, no narrated mechanic, no
+> orphan words; **ranked above wit**) and **hard-gates** them through the real validator → assemble the
+> winners back → run the tests → an **adversarial sentence-realism judge** (PASS/FAIL, §1b) → a
+> **semantic auditor** for what the validator can't check → **a human reads every changed clue** →
+> patch the flags → regenerate the archive → commit & deploy. Answers never change (so grids stay
+> stable).
+>
+> **Two non-negotiables baked in since the floor-raise (2026-06-05):** (1) **device is free** — re-pick
+> the construction to whatever yields the best *real-sentence* clue (the answer is fixed, the device is
+> not); (2) **the sentence-realism judge → fix → human review is MANDATORY**, not optional — agents
+> reliably rubber-stamp evocative fragments, so don't trust self-reports.
 
 ---
 
@@ -17,12 +25,12 @@ agents write to). If you're a fresh session continuing this work: read this file
 
 | Piece | Path | Role |
 |---|---|---|
-| **Style guide** | `docs/clue-style.md` | The contract: fairness rules, surface craft, 5-axis grading rubric, device conventions, the exact `BankEntry` JSON + `operations` templates. Every agent reads it. |
+| **Style guide** | `docs/clue-style.md` | The contract: fairness rules, surface craft, 5-axis rubric **with §1b "surface realism" as the #1 PASS/FAIL gate** (real sentence / no recipe / def woven / no orphan, above wit) and **§1c the gentle teaching register** for Stage-A, device conventions, the exact `BankEntry` JSON + `operations` templates. Every agent reads it. |
 | **Validator harness** | `scripts/validate-clue.ts` | CLI that runs candidates through the *real* `hydrateBankEntry` + `validateClue` + surface lint. The hard mechanical gate. `npm run clues:validate -- <file.json>` (one object or an array). Exit 0 = all `ok:true`. |
 | **Abbreviation dictionary** | `src/data/abbreviations.ts` | The ONLY abbreviation cues allowed (`old→B` etc. are rejected). The validator enforces it. |
 | **Mechanical validator** | `src/data/integrity.ts` | The fairness logic (also run in CI via the tests). |
 | **The bank** | `src/data/bank/part-a.json … part-h.json` | The clues that fill puzzles. Merged in `src/data/bank/index.ts`. Entries use `answer` (not `solution`) and have no `id`. |
-| **Teaching corpus** | `src/data/clues.ts` | Stage-A lesson clues. **Deliberately left as-is** — tuned for clarity over wit. Don't run the engine on it. |
+| **Teaching corpus** | `src/data/clues.ts` | Stage-A lesson clues. **Rebuilt to the bar 2026-06-05** (was wrongly "left as-is"). If you edit it, follow `clue-style.md` **§1c gentle teaching register** (a real cryptic clue with genuine disguise, but gentle vocab/devices — *never* transparent give-aways) + the realism + originality process below. Uses `solution`/`id` (not `answer`); validate via `integrity.test.ts`. |
 | **Archive compiler** | `scripts/generate-puzzles.mjs` | Places bank words into grids → `public/archive.json`. `TIERS` controls puzzle counts. Rerun after ANY bank edit. |
 | **Pipeline helpers** | `scripts/clue-chunk.mjs`, `scripts/clue-assemble.mjs`, `scripts/clue-patch.mjs` | Chunk / merge-back / patch. |
 | **Surface lint** | `scripts/lint-surfaces.mjs` | Heuristic surface health-check. `--rank` lists every clue weakest-first (triage); `--ids` lists clues tripping the CI gate; `--src=part-x.json` restricts scope. The GATE subset (a word-list with no connector at any length, or raw ALL-CAPS fodder) is mirrored verbatim in `surfaces.test.ts` + `validate-clue.ts`; the rest (function-word ratio, proper-noun density, vague nouns, terseness) is **advisory only**. |
@@ -58,7 +66,17 @@ npx vitest run src/data/bank/bank.test.ts src/data/integrity.test.ts src/data/su
 (If red, the assemble step already refused on answer-set mismatch; otherwise a clue failed
 `validateClue` — fix it and re-run.)
 
-**4b. Surface grade & polish** (raise axis 3) — dispatch ONE **SURFACE GRADER** agent over the
+**4b. Sentence-realism judge (PASS/FAIL, §1b) — MANDATORY.** Dispatch the **SENTENCE-REALISM JUDGE**
+template over the freshly-assembled `part-<part>.json`. Adversarially, for EACH surface it answers
+"is this a real, natural sentence a person would actually say or write — yes/no, why?" Any clue judged
+NOT a real sentence (narrated mechanic/recipe, comma- or dash-tacked definition, an orphan word that
+does no cryptic work, or grammatical-but-surreal) is rebuilt **device-free** to the bar — a setter
+pass restricted to the fails — and re-gated through the validator. **Then a human reads every changed
+clue and rejects any they wouldn't say aloud.** Do NOT trust the agents' self-reports — this gate
+exists because three earlier passes shipped recipe-like fragments that self-graded fine. Realism is
+ranked ABOVE wit, so this runs before any wit polish.
+
+**4c. Surface grade & polish** (raise axis 3, *above* the realism floor) — dispatch ONE **SURFACE GRADER** agent over the
 freshly-assembled `part-<part>.json`; it scores every surface and returns the weak ones (surface ≤ 3),
 weakest first. Feed that list to ONE **SURFACE POLISH** agent (templates below), which rewrites
 ONLY the flagged surfaces — same `answer` + same `clueType`, hard-gated through the validator —
@@ -67,6 +85,17 @@ tmp/fixes-pol-<part>.json`, then re-run the **mechanical gate** (step 4). `node
 scripts/lint-surfaces.mjs --rank --src=part-<part>.json` is a fast pre-triage / health-check.
 (Surface rewrites keep the answer, so grids stay valid — but they DO change clue text, so the
 archive regen at step 7 is still required.)
+
+**4d. Originality check (surfaces only).** Cryptic *constructions* are letter-forced chestnuts
+(DOG+MA, RANGER−R) — shared knowledge, fine to reuse and good to teach. But a *surface* must be our
+own wording, not a verbatim/near-verbatim lift of a published clue. For any surface that reads like a
+stock clue (short, common answers especially), web-search it; if it closely matches a published clue,
+reword the surface (keep the construction). If the surface is so letter-forced that *every* natural
+phrasing is already published (e.g. BIGWIG = big + wig + important-person — every wording exists),
+**swap the answer** for one with more surface freedom. (Teaching answers swap freely; **bank answers
+are grid-locked**, so a swap there means dropping/replacing the entry and regenerating — `clue-assemble`
+refuses an answer-set change otherwise.) "Exists nowhere" is impossible for chestnuts; the standard is
+*our wording, not a copy*.
 
 **5. Semantic audit** — dispatch ONE auditor agent with the **AUDITOR prompt template** (it reads
 the freshly-written `part-b.json`). It flags BROKEN/DUBIOUS clues the validator can't catch (bogus
@@ -117,12 +146,19 @@ npm run build
 - **Only `ABBR` cues.** Any `abbreviate` op whose cue isn't in `src/data/abbreviations.ts` (or an
   explicit first-letter device) is rejected. If a genuinely standard abbreviation is missing, add
   it to `abbreviations.ts` (don't invent ad-hoc ones in a clue).
-- **The validator can't check semantics.** It verifies letters + abbreviations, NOT whether a
-  `synonym` is real or a container/double-def/homophone actually resolves. That's why step 5 (the
-  human/LLM auditor) is mandatory, not optional.
+- **The validator can't check semantics, realism, or originality.** It verifies letters +
+  abbreviations, NOT whether a `synonym` is real, a container/double-def/homophone resolves (the
+  semantic auditor, step 5), whether the surface is a real sentence (the **sentence-realism judge**,
+  step 4b — ranked above everything), or whether the surface duplicates a published clue (the
+  **originality check**, step 4d). All three, plus a human read of every change, are mandatory — not
+  optional.
 - **Bank edit ⇒ regenerate the archive** (`clues:regen`) or `archive.test.ts` fails on drift.
-- **Leave `src/data/clues.ts` (the teaching corpus) alone** — it's intentionally simple for Stage-A
-  lessons and already audited clean.
+- **Teaching corpus (`src/data/clues.ts`) follows §1c.** It was rebuilt to the *gentle teaching
+  register* (2026-06-05) — real cryptic clues with genuine disguise, but gentle vocabulary/devices,
+  **never transparent give-aways**. If you edit it, apply §1c + the realism (4b) and originality (4d)
+  steps. It uses `solution`/`id` (not `answer`/none) and validates through `integrity.test.ts`, not
+  the bank harness. Teaching answers are NOT grid-locked, so swap an answer freely when a word can't
+  reach the bar in its device.
 - `tmp/` is gitignored scratch space; never commit it. The committed durable assets are the style
   guide, the harness, and the three pipeline scripts.
 
@@ -135,22 +171,34 @@ Spawn these as general-purpose subagents. Replace `<part>` / `<n>` / counts as n
 ### SETTER (best-of-N rewrite) — one per chunk
 ```
 Expert cryptic setter improving a clue bank. Repo: <ABSOLUTE REPO PATH>.
-FIRST read `docs/clue-style.md` in full (the contract: fairness, surface craft, the 5-axis
-grading rubric, device conventions, and the exact BankEntry JSON output + per-device `operations`
-templates). Skim `src/data/abbreviations.ts` for the only allowed abbreviation cues.
+FIRST read `docs/clue-style.md` in full — **especially §1b "Surface realism", the #1 PASS/FAIL gate,
+ranked ABOVE wit** (the contract also covers fairness, surface craft, the 5-axis rubric, device
+conventions, and the exact BankEntry JSON output + per-device `operations` templates). Skim
+`src/data/abbreviations.ts` for the only allowed abbreviation cues.
+
+THE BAR (in priority order): a clue must (1) read as **one real, natural sentence a person would
+actually say or write** — pass the conversation test; (2) have its **definition woven in** at the
+start/end (never comma/dash-tacked, always a word people use); (3) **never narrate the mechanic**
+("spell X backwards", "beheaded, is", "minus its head leaves…") — the device hides inside an ordinary
+word or idiom; (4) have **no orphan word** (every word does cryptic work); (5) be **fair** (passes the
+validator). Maximise wit only AFTER all five hold. The **device is free** — re-pick the construction
+to whatever yields the best real sentence (the answer is fixed; the device is not).
 
 Your incumbents are in `tmp/in/<part>-<n>.json` (read it). For EACH answer, do best-of-N:
-1. Write 3–4 GENUINELY DIFFERENT candidate clues (vary the device where the letters allow — not
-   trivial rewordings). Follow the output contract exactly (BankEntry shape, per-device operations,
-   ONE definition at start/end, the `indicator` must appear in the surface, `parse` = full worked
-   solution). Keep the SAME answer (identical letters); the (enum) must match the letter count.
+1. Write 3–4 GENUINELY DIFFERENT candidate clues — **real sentences first**, varying the DEVICE
+   (not trivial rewordings). Follow the output contract exactly (BankEntry shape, per-device
+   operations, ONE definition at start/end, the `indicator` must appear in the surface, `parse` =
+   full worked solution). Keep the SAME answer (identical letters); the (enum) must match.
 2. HARD-GATE every candidate: write them to `tmp/cand-<part><n>.json` and run
    `npx tsx scripts/validate-clue.ts tmp/cand-<part><n>.json`. Discard/fix any `ok:false`.
-3. Grade survivors on the 5-axis rubric; treat the incumbent as a candidate and KEEP it only if it
-   genuinely beats your new ones (don't replace an already-excellent clue). Pick ONE winner per
-   answer — clever, fair, natural-reading English, no filler. Avoid the known faults: formulaic
-   "beheaded X" deletions, forced fodder, bogus synonyms, telegraphic word-lists, answer-screaming
-   definitions, and monotonous runs of one device.
+3. Grade survivors: FIRST apply §1b as a hard PASS/FAIL (real sentence? def woven? no narrated
+   mechanic? no orphan word? — reject any candidate you would not say aloud), THEN rank the
+   survivors on the rest of the 5-axis rubric. Treat the incumbent as a candidate and KEEP it only
+   if it genuinely beats your new ones (don't replace an already-excellent clue). Pick ONE winner per
+   answer — a clever, fair, real sentence with no filler. Avoid the known faults: **recipe / narrated
+   mechanic, comma- or dash-tacked definitions, orphan decorative words, grammatical-but-surreal
+   surfaces**, plus formulaic "beheaded X" deletions, forced fodder, bogus synonyms, telegraphic
+   word-lists, answer-screaming definitions, and monotonous runs of one device.
 
 OUTPUT: write a JSON ARRAY of winners (one complete BankEntry per answer, SAME ORDER as input) to
 `tmp/clue-winners/<part>-<n>.json`, then run `npx tsx scripts/validate-clue.ts
@@ -186,13 +234,21 @@ fair replacement keeping the SAME answer). End with "X broken, Y dubious of N". 
 ### EXPANSION (invent new clues) — one per length band
 ```
 Expert cryptic setter EXPANDING a clue bank with brand-new entries. Repo: <ABSOLUTE REPO PATH>.
-FIRST read `docs/clue-style.md` in full. Skim `src/data/abbreviations.ts`. Read
-`tmp/existing-answers.json` — answers ALREADY in the bank that you must NOT reuse.
+FIRST read `docs/clue-style.md` in full — **especially §1b "Surface realism", the #1 PASS/FAIL gate
+ranked ABOVE wit**. Skim `src/data/abbreviations.ts`. Read `tmp/existing-answers.json` — answers
+ALREADY in the bank that you must NOT reuse.
+
+THE BAR (priority order): every clue must (1) read as one **real, natural sentence** (conversation
+test); (2) have the **definition woven in**, not tacked; (3) **never narrate the mechanic**; (4) have
+**no orphan word**; (5) be **fair** (passes the validator). Wit only after all five hold. The device
+is free.
 
 TASK: invent <N> NEW answers, each a common single English word of EXACTLY <L> letters (A–Z only),
 great for crossword fill (common letters, well-known words), NONE appearing in
-tmp/existing-answers.json. For each, write a high-quality clue (best-of-N: draft a few, pick the
-best) per the style guide — varied devices across the set, clever fair surfaces, no filler.
+tmp/existing-answers.json. For each, write a clue best-of-N — **draft a few real sentences, pick the
+best per the bar above** — varied devices across the set, no filler. Prefer answers with enough
+surface freedom to write a clue that ISN'T just the stock published treatment of that word (very short
+words like ART/AGE/EAR are nearly impossible to clue originally — favour richer answers).
 
 HARD-GATE everything: write candidates to `tmp/cand-exp<L>.json` and run
 `npx tsx scripts/validate-clue.ts tmp/cand-exp<L>.json`; only keep ok:true.
@@ -203,6 +259,27 @@ parse}). Run `npx tsx scripts/validate-clue.ts tmp/clue-winners/exp-<L>.json` an
 entry ok:true AND no duplicate answers among them. Return a list: ANSWER | clue. Edit NO repo file
 except tmp/ outputs.
 ```
+
+### SENTENCE-REALISM JUDGE — one per part (read-only) — MANDATORY (step 4b)
+```
+Strict cryptic editor judging ONLY surface realism (`clue-style.md` §1b), the PASS/FAIL gate ranked
+ABOVE wit. The clues already pass the mechanical validator; you are NOT judging mechanics or wit.
+
+Read `docs/clue-style.md` §1b in <ABSOLUTE REPO PATH>, then read `src/data/bank/part-<part>.json`.
+For EACH clue answer adversarially: "Read as plain English WITHOUT knowing the answer — is the surface
+ONE real, natural sentence a person would actually say or write? Yes or no?" Mark FAIL if any of:
+(a) it narrates a cryptic operation / reads like a recipe ("X minus its head leaves Y", "A threading
+through B"); (b) the definition is comma- or dash-tacked rather than integrated; (c) an orphan /
+decorative word does no cryptic work; (d) it is grammatical but surreal or incoherent; (e) it only
+"works" as crossword-ese you'd never meet in real writing. Be STRICT — default to FAIL if you would
+not say it out loud. Standard cryptic GK and fair misdirection are NOT faults.
+
+Return a markdown table of FAILS only: ANSWER | surface (quoted) | failing test (a–e) | one-line fix
+direction (usually "change the device"). End with "N of M fail §1b". Read-only — judge, don't edit.
+```
+Each FAIL is then rebuilt **device-free** by a SETTER pass restricted to those answers, re-gated
+through the validator, and **read by a human** before assembling. This judge → fix → human-review
+sequence is mandatory, not optional.
 
 ### SURFACE GRADER — one per part (read-only)
 ```
@@ -247,4 +324,6 @@ except your tmp/ outputs; answers and devices must stay identical.
 ```
 
 > Tip: dispatch the ~5 setters for a part in a single message (parallel). Keep the human in the
-> loop between parts — read each setter/auditor/grader summary before assembling or patching.
+> loop between parts — read each setter / **sentence-realism judge** / auditor / grader summary before
+> assembling or patching, and read every changed clue yourself (the realism judge → fix → human-review
+> step is mandatory; agents rubber-stamp their own fragments).
