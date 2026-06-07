@@ -19,10 +19,13 @@ const BANK_DIR = join(ROOT, 'src', 'data', 'bank');
 const OUT = join(ROOT, 'public', 'archive.json');
 
 // Tiers: size, how many, and fill parameters tuned to the size.
+// Rebalanced 2026-06-07 toward more small puzzles + fewer dense 13×13 to cut
+// short-word demand (the bank has only ~14 three-letter words), so the usage cap
+// can flatten repetition without starving generation.
 const TIERS = [
-  { size: 7, count: 50, seedMin: 5, seedMax: 7, wordMax: 7, minWords: 8, placeTarget: 16 },
-  { size: 9, count: 50, seedMin: 6, seedMax: 8, wordMax: 8, minWords: 13, placeTarget: 24 },
-  { size: 13, count: 200, seedMin: 7, seedMax: 9, wordMax: 9, minWords: 26, placeTarget: 40 },
+  { size: 7, count: 80, seedMin: 5, seedMax: 7, wordMax: 7, minWords: 8, placeTarget: 16 },
+  { size: 9, count: 80, seedMin: 6, seedMax: 8, wordMax: 8, minWords: 13, placeTarget: 24 },
+  { size: 13, count: 90, seedMin: 7, seedMax: 9, wordMax: 9, minWords: 26, placeTarget: 40 },
 ];
 
 function mulberry32(seed) {
@@ -58,8 +61,20 @@ function loadBank() {
   return { byAnswer, answers };
 }
 
+// Candidate order with repetition control. `usage` maps answer → number of
+// puzzles it's already in. We keep the original fast random shuffle (so grids
+// still fill quickly), but DROP words that have hit the cap from the pool — they
+// reappear only as a fallback when nothing under the cap fits, so generation
+// never starves on the bank's scarce short words. This hard-flattens the
+// distribution (no word much past the cap) without the speed hit of trying
+// hard-to-place "freshest" words first.
+function freshFirst(list, rng, usage, cap) {
+  const fresh = list.filter((w) => (usage.get(w) || 0) < cap);
+  return shuffle(fresh.length ? fresh : list, rng);
+}
+
 // ── Grid construction by word placement ───────────────────────────────
-function generate(rng, answers, cfg) {
+function generate(rng, answers, cfg, usage, cap) {
   const S = cfg.size;
   const inb = (r, c) => r >= 0 && c >= 0 && r < S && c < S;
   const G = Array.from({ length: S }, () => Array(S).fill(null));
@@ -101,7 +116,7 @@ function generate(rng, answers, cfg) {
   }
 
   const seedPool = answers.filter((w) => w.length >= cfg.seedMin && w.length <= cfg.seedMax);
-  const seed = shuffle(seedPool, rng)[0];
+  const seed = freshFirst(seedPool, rng, usage, cap)[0];
   if (!seed) return null;
   put(seed, Math.floor(S / 2), Math.floor((S - seed.length) / 2), 'a');
 
@@ -114,11 +129,13 @@ function generate(rng, answers, cfg) {
     const cr = base.dir === 'a' ? base.r : base.r + pos;
     const cc = base.dir === 'a' ? base.c + pos : base.c;
     const letter = base.w[pos];
-    const cand = shuffle(
+    const cand = freshFirst(
       answers.filter(
         (w) => !used.has(w) && w.length >= 3 && w.length <= cfg.wordMax && w.includes(letter),
       ),
       rng,
+      usage,
+      cap,
     );
     for (const w of cand) {
       let done = false;
@@ -203,24 +220,53 @@ function main() {
   const sigs = new Set();
   let id = 0;
 
+  // Repetition control. Track how many puzzles each answer appears in and steer
+  // selection toward least-used words (freshFirst). The cap is the point
+  // beyond which a word is only used as a last resort — set near the ≈15% target,
+  // but soft, because the bank has very few short words (only ~14 of 3 letters)
+  // and 13×13 grids need them, so a hard cap would starve generation.
+  // Cap = max puzzles any one answer may appear in. ~15% is the ideal, but the
+  // bank has only ~14 three-letter words and 200 dense 13×13 grids need them, so
+  // too tight a cap starves generation. 30% keeps grids fillable while still
+  // roughly halving the worst repeaters (ART was 58%). Tighten once the bank has
+  // more short words (Phase 2 corpus growth).
+  const totalTarget = TIERS.reduce((s, t) => s + t.count, 0);
+  const cap = Math.ceil(totalTarget * 0.30);
+  const usage = new Map();
+
   for (const cfg of TIERS) {
     let made = 0, seed = cfg.size * 100000 + 1, attempts = 0;
     while (made < cfg.count && attempts < cfg.count * 120) {
       attempts++;
       const rng = mulberry32(seed++);
-      const g = generate(rng, answers, cfg);
+      const g = generate(rng, answers, cfg, usage, cap);
       if (!g || g.placed.length < cfg.minWords) continue;
       const puz = buildPuzzle(g.G, byAnswer, id + 1, seed - 1, cfg.size);
       if (!puz || puz.entries.length < cfg.minWords) continue;
       const sig = `${cfg.size}:` + puz.entries.map((e) => e.answer).sort().join(',');
       if (sigs.has(sig)) continue;
       sigs.add(sig);
+      const set = new Set(puz.entries.map((e) => e.answer.toUpperCase().replace(/[^A-Z]/g, '')));
+      for (const w of set) usage.set(w, (usage.get(w) || 0) + 1);
       id++;
       puzzles.push(puz);
       made++;
     }
     console.log(`  ${cfg.size}×${cfg.size}: ${made} puzzles (${attempts} attempts).`);
   }
+
+  // Report the repetition outcome so regressions are visible in the build log.
+  const inPuzzles = {};
+  for (const p of puzzles) {
+    const seen = new Set(p.entries.map((e) => e.answer));
+    for (const w of seen) inPuzzles[w] = (inPuzzles[w] || 0) + 1;
+  }
+  const top = Object.entries(inPuzzles).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  console.log(
+    'Most-repeated answers:',
+    top.map(([w, n]) => `${w} ${Math.round((n / puzzles.length) * 100)}%`).join(', '),
+    `(${Object.keys(inPuzzles).length} distinct words used)`,
+  );
 
   mkdirSync(dirname(OUT), { recursive: true });
   writeFileSync(OUT, JSON.stringify(puzzles));
