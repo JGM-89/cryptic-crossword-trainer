@@ -6,7 +6,13 @@
 
 ---
 
-## ▶ NEXT SESSION — start here (updated 2026-06-05 — D + F + E + B DONE; C remains)
+## ▶ NEXT SESSION — start here (updated 2026-06-05 — D/F/E/B/C ALL DONE; do Phase-1 product work next)
+
+**The entire clue-quality roadmap (D, F, E, B, C) is finished and deployed.** The highest-leverage
+work now is **Phase 1 below** (analytics 1a, compiler repetition fix 1b, Review mode 1c) — the
+strategy pivot's actual priorities, still untouched. Start there.
+
+
 
 The device-free **sentence-realism floor-raise of 111 bank clues is DONE + live** (every clue must
 read as a real sentence a person would say; see `docs/clue-style.md` Axis 1b). Remaining work, in
@@ -41,8 +47,12 @@ priority order — full detail in `~/.claude/plans/how-do-we-better-serene-marsh
    device-free rebuild → human read every change), above the wit polish; new step 4d originality
    web-check (reword verbatim copies; swap answer if surface is letter-forced); stale "teaching corpus
    left as-is" lines corrected to §1c.
-5. **C — full second adversarial sentence-realism pass over the other ~255 bank clues** (the ones the
-   single judging pass *passed* but never double-checked); device-free rebuild + human review of fails.
+5. **C — DONE + deployed (2026-06-05, commits `2b20510`/`b7f2502`/`ebf8c5a`/`c6d029e`/`c86a741`).**
+   Diagnostic (3 read-only §1b judges) flagged ~132 raw; re-triage removed ~25 standard-indicator
+   false positives → ~105 genuine fails, concentrated in pre-§1b parts d/e/f/h/i. Rebuilt **100 bank
+   clues** to §1b (f 7 + d 14 + e 18 + h 36 + i 25), keeping grid-locked answers, hand-built (the
+   setter-agent route content-filtered). Left standard-indicator clues as-is (REIN/IDOL/STEEL/MORNING/
+   WEATHER/HYMN homophones, STRESSED/DESSERTS reversals, CLOUD). 27 tests + build + deploy green.
 
 Then: regen → `npm test` → build → commit → deploy. Process that works (after earlier failures):
 **device-free re-clue → adversarial sentence-realism judge → human reviews EVERY change** (don't
