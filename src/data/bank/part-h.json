@@ -25,62 +25,62 @@
     "answer": "DESK",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Trade skills involve a writing table (4)",
+    "clue": "Some of the wide skirt hides a writing table (4)",
     "def": {
       "text": "a writing table",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "involve",
-      "fodder": "Trade skills",
+      "indicator": "Some of",
+      "fodder": "wide skirt",
       "operations": [
         {
           "op": "hidden",
-          "input": "tra<DE SK>ills",
+          "input": "wi<DE SK>irt",
           "output": "DESK"
         }
       ]
     },
-    "parse": "Hidden in traDE SKills = DESK; a writing table."
+    "parse": "Hidden in 'wiDE SKirt' = DESK, a writing table."
   },
   {
     "answer": "FERN",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Some of the buffer needs to be a green plant (4)",
+    "clue": "Some golfer needs a green plant (4)",
     "def": {
       "text": "a green plant",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Some of",
-      "fodder": "buffer needs",
+      "indicator": "Some",
+      "fodder": "golfer needs",
       "operations": [
         {
           "op": "hidden",
-          "input": "buf<FER N>eeds",
+          "input": "gol<FER N>eeds",
           "output": "FERN"
         }
       ]
     },
-    "parse": "Hidden in bufFER Needs = FERN; a green plant."
+    "parse": "Hidden in 'golFER Needs' = FERN, a green plant."
   },
   {
     "answer": "DRAB",
     "clueType": "reversal",
     "difficulty": 3,
-    "clue": "Dull poet, looking back (4)",
+    "clue": "Looking back, the poet seemed dull (4)",
     "def": {
-      "text": "Dull",
-      "position": "start"
+      "text": "dull",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "looking back",
+      "indicator": "Looking back",
       "fodder": "bard",
       "operations": [
         {
           "op": "synonym",
-          "input": "poet",
+          "input": "the poet",
           "output": "BARD"
         },
         {
@@ -90,7 +90,7 @@
         }
       ]
     },
-    "parse": "BARD (poet) reversed (looking back) = DRAB; dull."
+    "parse": "BARD (poet) reversed ('looking back') = DRAB, dull."
   },
   {
     "answer": "LEAF",
@@ -118,7 +118,7 @@
     "answer": "NEAR",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "New listening device, almost there (4)",
+    "clue": "A new listening device gets you almost there (4)",
     "def": {
       "text": "almost there",
       "position": "end"
@@ -129,7 +129,7 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "New",
+          "input": "new",
           "output": "N"
         },
         {
@@ -144,7 +144,7 @@
         }
       ]
     },
-    "parse": "N (new) + EAR (listening device) = NEAR; almost there."
+    "parse": "N (new) + EAR (listening device) = NEAR, almost there."
   },
   {
     "answer": "ACRE",
@@ -172,13 +172,13 @@
     "answer": "VOTE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "The president's veto, badly handled, became a poll (4)",
+    "clue": "A president's veto, oddly, can swing the poll (4)",
     "def": {
-      "text": "a poll",
+      "text": "the poll",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "badly handled",
+      "indicator": "oddly",
       "fodder": "veto",
       "operations": [
         {
@@ -188,20 +188,20 @@
         }
       ]
     },
-    "parse": "Anagram of VETO (badly handled) = VOTE; a poll."
+    "parse": "(VETO)* 'oddly' = VOTE, a poll."
   },
   {
     "answer": "GOAT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Toga slipping off the kid's parent (4)",
+    "clue": "A toga, oddly draped on the kid's parent (4)",
     "def": {
-      "text": "kid's parent",
+      "text": "the kid's parent",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "slipping",
-      "fodder": "Toga",
+      "indicator": "oddly draped",
+      "fodder": "toga",
       "operations": [
         {
           "op": "anagram",
@@ -210,7 +210,7 @@
         }
       ]
     },
-    "parse": "Anagram of TOGA (slipping) = GOAT; a kid's parent."
+    "parse": "(TOGA)* 'oddly draped' = GOAT, a kid's parent."
   },
   {
     "answer": "COIN",
@@ -368,7 +368,7 @@
     "answer": "SWAN",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Drift gracefully, a bird on the lake (4)",
+    "clue": "Drift gracefully like a bird on the lake (4)",
     "def": {
       "text": "Drift gracefully",
       "position": "start"
@@ -384,7 +384,7 @@
         }
       ]
     },
-    "parse": "Double definition: to SWAN (drift/wander idly), and a SWAN, a graceful bird on the lake."
+    "parse": "Double definition: to SWAN (drift gracefully) and a SWAN (a bird on the lake)."
   },
   {
     "answer": "PORT",
@@ -434,9 +434,9 @@
     "answer": "GLOVE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Good affection shown for boxer's wear (5)",
+    "clue": "Good love is what the boxer wears (5)",
     "def": {
-      "text": "boxer's wear",
+      "text": "what the boxer wears",
       "position": "end"
     },
     "wordplay": {
@@ -450,7 +450,7 @@
         },
         {
           "op": "synonym",
-          "input": "affection",
+          "input": "love",
           "output": "LOVE"
         },
         {
@@ -460,7 +460,7 @@
         }
       ]
     },
-    "parse": "G (good) + LOVE (affection) = GLOVE; boxer's wear."
+    "parse": "G (good) + LOVE (affection) = GLOVE, what the boxer wears."
   },
   {
     "answer": "CRANE",
@@ -488,9 +488,9 @@
     "answer": "SPINE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Son's conifer is the backbone (5)",
+    "clue": "The son will pine, lacking backbone (5)",
     "def": {
-      "text": "the backbone",
+      "text": "backbone",
       "position": "end"
     },
     "wordplay": {
@@ -499,12 +499,12 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "Son",
+          "input": "son",
           "output": "S"
         },
         {
           "op": "synonym",
-          "input": "conifer",
+          "input": "pine",
           "output": "PINE"
         },
         {
@@ -514,7 +514,7 @@
         }
       ]
     },
-    "parse": "S (son) + PINE (conifer) = SPINE, the backbone."
+    "parse": "S (son) + PINE (to pine / conifer) = SPINE, the backbone; the surface misdirects to a spineless son."
   },
   {
     "answer": "TRACK",
@@ -586,13 +586,13 @@
     "answer": "BERTH",
     "clueType": "homophone",
     "difficulty": 2,
-    "clue": "A delivery, reportedly, of a ship's bunk (5)",
+    "clue": "A birth, by the sound of it, in a ship's bunk (5)",
     "def": {
       "text": "a ship's bunk",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "reportedly",
+      "indicator": "by the sound of it",
       "fodder": "birth",
       "operations": [
         {
@@ -602,19 +602,19 @@
         }
       ]
     },
-    "parse": "BIRTH (a delivery) sounds like BERTH (indicated by 'reportedly'); a ship's bunk."
+    "parse": "BIRTH sounds like BERTH, a ship's bunk."
   },
   {
     "answer": "ROGUE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Rouge spread on a scoundrel (5)",
+    "clue": "Rouge, oddly applied, marks the rascal (5)",
     "def": {
-      "text": "a scoundrel",
+      "text": "the rascal",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "spread",
+      "indicator": "oddly applied",
       "fodder": "Rouge",
       "operations": [
         {
@@ -624,7 +624,7 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'spread') of ROUGE = ROGUE; a scoundrel."
+    "parse": "(ROUGE)* 'oddly applied' = ROGUE, a rascal."
   },
   {
     "answer": "MAGIC",
@@ -667,7 +667,7 @@
     "answer": "NOBLE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Toff turning to the French, being well-bred (5)",
+    "clue": "A toff beside the French is truly well-bred (5)",
     "def": {
       "text": "well-bred",
       "position": "end"
@@ -678,7 +678,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Toff",
+          "input": "toff",
           "output": "NOB"
         },
         {
@@ -693,7 +693,7 @@
         }
       ]
     },
-    "parse": "NOB (toff) + LE (the French) = NOBLE; well-bred."
+    "parse": "NOB (toff) + LE (the French for 'the') = NOBLE, well-bred."
   },
   {
     "answer": "FROST",
@@ -753,13 +753,13 @@
     "answer": "SCOPE",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Range concealed by periscope (5)",
+    "clue": "Part of the periscope reveals the range (5)",
     "def": {
-      "text": "Range",
-      "position": "start"
+      "text": "the range",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "concealed by",
+      "indicator": "Part of",
       "fodder": "periscope",
       "operations": [
         {
@@ -769,13 +769,13 @@
         }
       ]
     },
-    "parse": "Hidden in 'periSCOPE' (indicated by 'concealed by') = SCOPE, a range."
+    "parse": "Hidden in 'periSCOPE' = SCOPE, the range."
   },
   {
     "answer": "WAGER",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Pay run on a bet (5)",
+    "clue": "Pay riding on a single run? Quite a bet (5)",
     "def": {
       "text": "a bet",
       "position": "end"
@@ -807,13 +807,13 @@
     "answer": "ROAST",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Cook rotas, surprisingly (5)",
+    "clue": "Cook sorts out the rotas (5)",
     "def": {
       "text": "Cook",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "surprisingly",
+      "indicator": "sorts out",
       "fodder": "rotas",
       "operations": [
         {
@@ -823,7 +823,7 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'surprisingly') of ROTAS = ROAST; to cook."
+    "parse": "(ROTAS)* 'sorts out' = ROAST, to cook."
   },
   {
     "answer": "CHASM",
@@ -905,13 +905,13 @@
     "answer": "THRONE",
     "clueType": "homophone",
     "difficulty": 3,
-    "clue": "Discarded, by the sound of it, royal seat (6)",
+    "clue": "Thrown out, we hear, it's the king's seat (6)",
     "def": {
-      "text": "royal seat",
+      "text": "the king's seat",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "by the sound of it",
+      "indicator": "we hear",
       "fodder": "thrown",
       "operations": [
         {
@@ -921,7 +921,7 @@
         }
       ]
     },
-    "parse": "THROWN (discarded) sounds like THRONE; a 'royal seat'."
+    "parse": "THROWN sounds like THRONE, the king's seat."
   },
   {
     "answer": "SQUASH",
@@ -981,14 +981,14 @@
     "answer": "CANTER",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Trance broken in a gentle run (6)",
+    "clue": "Broken from his trance, he found a gentle run (6)",
     "def": {
       "text": "a gentle run",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "broken",
-      "fodder": "TRANCE",
+      "indicator": "Broken",
+      "fodder": "trance",
       "operations": [
         {
           "op": "anagram",
@@ -997,7 +997,7 @@
         }
       ]
     },
-    "parse": "(TRANCE)* = CANTER; 'a gentle run'."
+    "parse": "(TRANCE)* 'Broken' = CANTER, a gentle run."
   },
   {
     "answer": "HERMIT",
@@ -1101,9 +1101,9 @@
     "answer": "PADDLE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Quiet muddle with an oar (6)",
+    "clue": "Quiet, in a muddle, he grabbed the oar (6)",
     "def": {
-      "text": "an oar",
+      "text": "the oar",
       "position": "end"
     },
     "wordplay": {
@@ -1127,7 +1127,7 @@
         }
       ]
     },
-    "parse": "P (quietly) + ADDLE (muddle/confuse) = PADDLE; 'an oar'."
+    "parse": "P (quiet) + ADDLE (muddle) = PADDLE, the oar."
   },
   {
     "answer": "ORCHID",
@@ -1219,14 +1219,14 @@
     "answer": "GARNET",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Argent worked into a red gemstone (6)",
+    "clue": "Argent, recast, shines as a red gem (6)",
     "def": {
-      "text": "a red gemstone",
+      "text": "a red gem",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "worked",
-      "fodder": "ARGENT",
+      "indicator": "recast",
+      "fodder": "Argent",
       "operations": [
         {
           "op": "anagram",
@@ -1235,7 +1235,7 @@
         }
       ]
     },
-    "parse": "(ARGENT)* = GARNET; 'a red gemstone'."
+    "parse": "(ARGENT)* 'recast' = GARNET, a red gem."
   },
   {
     "answer": "PLUNGE",
@@ -1273,23 +1273,23 @@
     "answer": "DRAGON",
     "clueType": "container",
     "difficulty": 4,
-    "clue": "Newspaper held by a don — a fierce beast (6)",
+    "clue": "With a rag tucked inside, the don's a fierce beast (6)",
     "def": {
       "text": "a fierce beast",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "held by",
+      "indicator": "tucked inside",
       "fodder": "RAG in DON",
       "operations": [
         {
           "op": "synonym",
-          "input": "Newspaper",
+          "input": "rag",
           "output": "RAG"
         },
         {
-          "op": "synonym",
-          "input": "a don",
+          "op": "literal",
+          "input": "don",
           "output": "DON"
         },
         {
@@ -1299,13 +1299,13 @@
         }
       ]
     },
-    "parse": "RAG (newspaper) inside D·ON (a don) = DRAGON; 'a fierce beast'."
+    "parse": "RAG (newspaper) inside DON = D(RAG)ON = DRAGON, a fierce beast."
   },
   {
     "answer": "MARGIN",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Damage spirit at the edge (6)",
+    "clue": "Damage the gin right at the edge (6)",
     "def": {
       "text": "the edge",
       "position": "end"
@@ -1321,7 +1321,7 @@
         },
         {
           "op": "synonym",
-          "input": "spirit",
+          "input": "gin",
           "output": "GIN"
         },
         {
@@ -1331,7 +1331,7 @@
         }
       ]
     },
-    "parse": "MAR (damage) + GIN (spirit) = MARGIN; 'the edge'."
+    "parse": "MAR (damage) + GIN (spirit) = MARGIN, the edge."
   },
   {
     "answer": "MORNING",
@@ -1381,14 +1381,14 @@
     "answer": "KITCHEN",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Thicken, cooked, becomes the cook's room (7)",
+    "clue": "Thicken the gravy, oddly, where the cook works (7)",
     "def": {
-      "text": "the cook's room",
+      "text": "where the cook works",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "cooked",
-      "fodder": "thicken",
+      "indicator": "oddly",
+      "fodder": "Thicken",
       "operations": [
         {
           "op": "anagram",
@@ -1397,7 +1397,7 @@
         }
       ]
     },
-    "parse": "Anagram of THICKEN (cooked) = KITCHEN; the cook's room."
+    "parse": "(THICKEN)* 'oddly' = KITCHEN, where the cook works."
   },
   {
     "answer": "GRENADE",
@@ -1425,13 +1425,13 @@
     "answer": "CAPTAIN",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Skipper drunk in a pact (7)",
+    "clue": "Drunk and tangled in a pact, the skipper (7)",
     "def": {
-      "text": "Skipper",
-      "position": "start"
+      "text": "the skipper",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "drunk",
+      "indicator": "tangled",
       "fodder": "in a pact",
       "operations": [
         {
@@ -1441,7 +1441,7 @@
         }
       ]
     },
-    "parse": "(IN A PACT)* = CAPTAIN, a skipper."
+    "parse": "(IN A PACT)* 'tangled' = CAPTAIN, the skipper."
   },
   {
     "answer": "GRANITE",
@@ -1469,14 +1469,14 @@
     "answer": "DESPAIR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Hopelessness when praised, surprisingly (7)",
+    "clue": "Praised, strangely, he was full of gloom (7)",
     "def": {
-      "text": "Hopelessness",
-      "position": "start"
+      "text": "gloom",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "surprisingly",
-      "fodder": "praised",
+      "indicator": "strangely",
+      "fodder": "Praised",
       "operations": [
         {
           "op": "anagram",
@@ -1485,7 +1485,7 @@
         }
       ]
     },
-    "parse": "Anagram of PRAISED (surprisingly) = DESPAIR; hopelessness."
+    "parse": "(PRAISED)* 'strangely' = DESPAIR, gloom."
   },
   {
     "answer": "TERRAIN",
@@ -1513,23 +1513,23 @@
     "answer": "MANKIND",
     "clueType": "charade",
     "difficulty": 2,
-    "clue": "Fellow, gentle, representing humanity (7)",
+    "clue": "A fellow, being kind, stands for humanity (7)",
     "def": {
       "text": "humanity",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "MAN+KIND",
+      "fodder": "MAN + KIND",
       "operations": [
         {
           "op": "synonym",
-          "input": "Fellow",
+          "input": "fellow",
           "output": "MAN"
         },
         {
           "op": "synonym",
-          "input": "gentle",
+          "input": "kind",
           "output": "KIND"
         },
         {
@@ -1545,28 +1545,28 @@
     "answer": "CABINET",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Taxi one snared by ministers (7)",
+    "clue": "A taxi and I, netted, join the ministers (7)",
     "def": {
-      "text": "ministers",
+      "text": "the ministers",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CAB+I+NET",
+      "fodder": "CAB + I + NET",
       "operations": [
         {
           "op": "synonym",
-          "input": "Taxi",
+          "input": "A taxi",
           "output": "CAB"
         },
         {
-          "op": "abbreviate",
-          "input": "one",
+          "op": "literal",
+          "input": "I",
           "output": "I"
         },
         {
           "op": "synonym",
-          "input": "snared",
+          "input": "netted",
           "output": "NET"
         },
         {
@@ -1576,20 +1576,20 @@
         }
       ]
     },
-    "parse": "CAB (taxi) + I (one) + NET (snared) = CABINET, the ministers."
+    "parse": "CAB (taxi) + I + NET (netted) = CABINET, the ministers."
   },
   {
     "answer": "PADDOCK",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Quarters by the wharf make a field (7)",
+    "clue": "Quarters by the dock, next to a field (7)",
     "def": {
       "text": "a field",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "PAD+DOCK",
+      "fodder": "PAD + DOCK",
       "operations": [
         {
           "op": "synonym",
@@ -1598,7 +1598,7 @@
         },
         {
           "op": "synonym",
-          "input": "wharf",
+          "input": "the dock",
           "output": "DOCK"
         },
         {
@@ -1614,7 +1614,7 @@
     "answer": "STATION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "At once an ion settles into position (7)",
+    "clue": "At once, the ion settled in position (7)",
     "def": {
       "text": "position",
       "position": "end"
@@ -1629,8 +1629,8 @@
           "output": "STAT"
         },
         {
-          "op": "synonym",
-          "input": "an ion",
+          "op": "literal",
+          "input": "the ion",
           "output": "ION"
         },
         {
@@ -1640,7 +1640,7 @@
         }
       ]
     },
-    "parse": "STAT (at once) + ION (a charged particle) = STATION; position (one's station)."
+    "parse": "STAT (at once) + ION = STATION, one's position."
   },
   {
     "answer": "PRESENT",
@@ -1788,13 +1788,13 @@
     "answer": "OVERSEAS",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Abroad, some discover seasonal labour (8)",
+    "clue": "Some discover seasonal work abroad (8)",
     "def": {
-      "text": "Abroad",
-      "position": "start"
+      "text": "abroad",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "some",
+      "indicator": "Some",
       "fodder": "discover seasonal",
       "operations": [
         {
@@ -1804,20 +1804,20 @@
         }
       ]
     },
-    "parse": "Hidden in discOVERSEASonal = OVERSEAS, meaning abroad."
+    "parse": "Hidden in 'discOVERSEASonal' = OVERSEAS, abroad."
   },
   {
     "answer": "SNAPSHOT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Break a wild attempt for a quick photo (8)",
+    "clue": "Break for a quick shot, and there's your photo (8)",
     "def": {
-      "text": "a quick photo",
+      "text": "your photo",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "SNAP+SHOT",
+      "fodder": "SNAP + SHOT",
       "operations": [
         {
           "op": "synonym",
@@ -1826,7 +1826,7 @@
         },
         {
           "op": "synonym",
-          "input": "a wild attempt",
+          "input": "a quick shot",
           "output": "SHOT"
         },
         {
@@ -1836,19 +1836,19 @@
         }
       ]
     },
-    "parse": "SNAP (break) + SHOT (a wild attempt, a guess) = SNAPSHOT, a quick photo."
+    "parse": "SNAP (break) + SHOT (attempt) = SNAPSHOT, your photo."
   },
   {
     "answer": "CONTRACT",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Agreement reached as run splits contact (8)",
+    "clue": "Agreement, once a run breaks into the contact (8)",
     "def": {
       "text": "Agreement",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "splits",
+      "indicator": "breaks into",
       "fodder": "R in CONTACT",
       "operations": [
         {
@@ -1858,7 +1858,7 @@
         },
         {
           "op": "synonym",
-          "input": "contact",
+          "input": "the contact",
           "output": "CONTACT"
         },
         {
@@ -1874,18 +1874,18 @@
     "answer": "PHEASANT",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Peasant gripping hard — game bird (8)",
+    "clue": "The peasant, holding hard, is a game bird (8)",
     "def": {
-      "text": "game bird",
+      "text": "a game bird",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "gripping",
+      "indicator": "holding",
       "fodder": "H in PEASANT",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Peasant",
+          "op": "literal",
+          "input": "The peasant",
           "output": "PEASANT"
         },
         {
@@ -1900,29 +1900,29 @@
         }
       ]
     },
-    "parse": "H (hard) inside PEASANT (gripping it) = PHEASANT, a game bird."
+    "parse": "H (hard) inside PEASANT = P(H)EASANT = PHEASANT, a game bird."
   },
   {
     "answer": "OFFSHORE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Rotten beach is out at sea (8)",
+    "clue": "Gone off near the shore, now out at sea (8)",
     "def": {
       "text": "out at sea",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "OFF+SHORE",
+      "fodder": "OFF + SHORE",
       "operations": [
         {
           "op": "synonym",
-          "input": "Rotten",
+          "input": "Gone off",
           "output": "OFF"
         },
         {
           "op": "synonym",
-          "input": "beach",
+          "input": "the shore",
           "output": "SHORE"
         },
         {
@@ -1932,7 +1932,7 @@
         }
       ]
     },
-    "parse": "OFF (rotten) + SHORE (beach) = OFFSHORE, out at sea."
+    "parse": "OFF (gone off, rotten) + SHORE (beach) = OFFSHORE, out at sea."
   },
   {
     "answer": "ORCHESTRA",
@@ -1960,14 +1960,14 @@
     "answer": "STREAMING",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "Emigrants resettled, watching online (9)",
+    "clue": "When emigrants resettle, they keep watching online (9)",
     "def": {
       "text": "watching online",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "resettled",
-      "fodder": "Emigrants",
+      "indicator": "resettle",
+      "fodder": "emigrants",
       "operations": [
         {
           "op": "anagram",
@@ -1976,7 +1976,7 @@
         }
       ]
     },
-    "parse": "(EMIGRANTS)* = STREAMING, as in watching video online."
+    "parse": "(EMIGRANTS)* 'resettle' = STREAMING, watching online."
   },
   {
     "answer": "CARPENTRY",
@@ -2014,23 +2014,23 @@
     "answer": "WHIRLPOOL",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Spin the betting kitty into a deadly vortex (9)",
+    "clue": "A spin in the pool became a deadly vortex (9)",
     "def": {
-      "text": "deadly vortex",
+      "text": "a deadly vortex",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "WHIRL+POOL",
+      "fodder": "WHIRL + POOL",
       "operations": [
         {
           "op": "synonym",
-          "input": "Spin",
+          "input": "A spin",
           "output": "WHIRL"
         },
         {
           "op": "synonym",
-          "input": "betting kitty",
+          "input": "the pool",
           "output": "POOL"
         },
         {
@@ -2040,7 +2040,7 @@
         }
       ]
     },
-    "parse": "WHIRL (spin) + POOL (a betting kitty) = WHIRLPOOL, a deadly vortex."
+    "parse": "WHIRL (a spin) + POOL = WHIRLPOOL, a deadly vortex."
   },
   {
     "answer": "MILESTONE",
@@ -2110,14 +2110,14 @@
     "answer": "CROCODILE",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Snapper? Schoolchildren walking two by two (9)",
+    "clue": "Snapper, or schoolchildren two by two? (9)",
     "def": {
       "text": "Snapper",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Snapper / schoolchildren walking two by two",
+      "fodder": "Snapper / schoolchildren two by two",
       "operations": [
         {
           "op": "literal",
@@ -2126,6 +2126,6 @@
         }
       ]
     },
-    "parse": "Double definition: a CROCODILE is a snapping reptile (def by example, flagged ?), and a CROCODILE is a line of schoolchildren walking in pairs."
+    "parse": "Double definition: a CROCODILE is a snapping reptile (the '?' flags def by example) and a line of schoolchildren walking in pairs."
   }
 ]
