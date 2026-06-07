@@ -157,35 +157,35 @@
     "answer": "MOAT",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "The chauffeur's limo at last circles the castle's defence (4)",
+    "clue": "A limo at the gates skirts the castle's defence (4)",
     "def": {
       "text": "the castle's defence",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "circles",
+      "indicator": "skirts",
       "fodder": "limo at",
       "operations": [
         {
           "op": "hidden",
-          "input": "li<MO AT> last",
+          "input": "li<MO AT>",
           "output": "MOAT"
         }
       ]
     },
-    "parse": "Hidden in 'liMO AT last' (circles) = MOAT, the castle's defence."
+    "parse": "Hidden in 'liMO AT' = MOAT, the castle's defence."
   },
   {
     "answer": "HARE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Disturbed, you hear a runner (4)",
+    "clue": "A runner you might hear, oddly (4)",
     "def": {
-      "text": "a runner",
-      "position": "end"
+      "text": "A runner",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "Disturbed",
+      "indicator": "oddly",
       "fodder": "hear",
       "operations": [
         {
@@ -195,7 +195,7 @@
         }
       ]
     },
-    "parse": "Anagram of HEAR (Disturbed) = HARE, a runner — the animal bolting when startled."
+    "parse": "(HEAR)* 'oddly' = HARE, a runner."
   },
   {
     "answer": "NEST",
@@ -299,13 +299,13 @@
     "answer": "RIFE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Fire spreading and widespread (4)",
+    "clue": "Fire, spread about, is now widespread (4)",
     "def": {
       "text": "widespread",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "spreading",
+      "indicator": "spread about",
       "fodder": "Fire",
       "operations": [
         {
@@ -315,7 +315,7 @@
         }
       ]
     },
-    "parse": "(FIRE)* = RIFE; 'widespread'."
+    "parse": "(FIRE)* 'spread about' = RIFE, widespread."
   },
   {
     "answer": "HOUSE",
@@ -409,14 +409,14 @@
     "answer": "GRAPE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Pager goes off in the fruit (5)",
+    "clue": "A pager goes off beside the fruit (5)",
     "def": {
       "text": "the fruit",
       "position": "end"
     },
     "wordplay": {
       "indicator": "goes off",
-      "fodder": "Pager",
+      "fodder": "pager",
       "operations": [
         {
           "op": "anagram",
@@ -425,7 +425,7 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'goes off') of PAGER = GRAPE; the fruit."
+    "parse": "(PAGER)* 'goes off' = GRAPE, the fruit."
   },
   {
     "answer": "FLAME",
@@ -497,13 +497,13 @@
     "answer": "SMILE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Miles out, beam (5)",
+    "clue": "Miles off, she still gave a beam (5)",
     "def": {
-      "text": "beam",
+      "text": "a beam",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "out",
+      "indicator": "off",
       "fodder": "Miles",
       "operations": [
         {
@@ -513,7 +513,7 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'out') of MILES = SMILE; to beam."
+    "parse": "(MILES)* 'off' = SMILE, a beam."
   },
   {
     "answer": "GHOST",
@@ -617,14 +617,14 @@
     "answer": "CHESS",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Such essays cover the board game (5)",
+    "clue": "Do such essays cover the board game? (5)",
     "def": {
       "text": "the board game",
       "position": "end"
     },
     "wordplay": {
       "indicator": "cover",
-      "fodder": "Such essays",
+      "fodder": "such essays",
       "operations": [
         {
           "op": "hidden",
@@ -633,7 +633,7 @@
         }
       ]
     },
-    "parse": "Hidden in 'suCH ESSays' (indicated by 'cover') = CHESS, the board game."
+    "parse": "Hidden in 'suCH ESSays' = CHESS, the board game."
   },
   {
     "answer": "BREAD",
@@ -693,14 +693,14 @@
     "answer": "CASTLE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Stronghold built when cleats are rearranged (6)",
+    "clue": "Cleats scattered across the stronghold (6)",
     "def": {
-      "text": "Stronghold",
-      "position": "start"
+      "text": "the stronghold",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "rearranged",
-      "fodder": "cleats",
+      "indicator": "scattered",
+      "fodder": "Cleats",
       "operations": [
         {
           "op": "anagram",
@@ -709,7 +709,7 @@
         }
       ]
     },
-    "parse": "Anagram (rearranged) of CLEATS = CASTLE; a stronghold."
+    "parse": "(CLEATS)* 'scattered' = CASTLE, the stronghold."
   },
   {
     "answer": "FOREST",
@@ -737,13 +737,13 @@
     "answer": "SILVER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Metal sliver, beaten out (6)",
+    "clue": "Beaten out, the sliver shines as metal (6)",
     "def": {
-      "text": "Metal",
-      "position": "start"
+      "text": "metal",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "beaten out",
+      "indicator": "Beaten out",
       "fodder": "sliver",
       "operations": [
         {
@@ -753,7 +753,7 @@
         }
       ]
     },
-    "parse": "Anagram (beaten out) of SLIVER = SILVER; a metal."
+    "parse": "(SLIVER)* 'Beaten out' = SILVER, a metal."
   },
   {
     "answer": "ISLAND",
@@ -825,14 +825,14 @@
     "answer": "PIGEON",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Bird, an easy target (6)",
+    "clue": "A bird that's an easy target (6)",
     "def": {
-      "text": "Bird",
+      "text": "A bird",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Bird / an easy target",
+      "fodder": "A bird / an easy target",
       "operations": [
         {
           "op": "literal",
@@ -841,7 +841,7 @@
         }
       ]
     },
-    "parse": "Double definition: a pigeon is a bird; and a pigeon is an easy target, a dupe."
+    "parse": "Double definition: a PIGEON is a bird, and a PIGEON is an easy target, a dupe."
   },
   {
     "answer": "BREATH",
@@ -869,7 +869,7 @@
     "answer": "THREAD",
     "clueType": "hidden",
     "difficulty": 4,
-    "clue": "Bill's fourth reading reveals a strand (6)",
+    "clue": "The fourth reading reveals a strand (6)",
     "def": {
       "text": "a strand",
       "position": "end"
@@ -885,13 +885,13 @@
         }
       ]
     },
-    "parse": "Hidden in fourTH READing = THREAD; a strand."
+    "parse": "Hidden in 'fourTH READing' = THREAD, a strand."
   },
   {
     "answer": "WONDER",
     "clueType": "deletion",
     "difficulty": 3,
-    "clue": "She wonders endlessly, gazing in awe (6)",
+    "clue": "She wonders endlessly, lost in awe (6)",
     "def": {
       "text": "awe",
       "position": "end"
@@ -907,19 +907,19 @@
         }
       ]
     },
-    "parse": "WONDERS (she wonders) with its last letter dropped (endlessly) = WONDER, a sense of awe."
+    "parse": "WONDERS with its last letter dropped ('endlessly') = WONDER, awe."
   },
   {
     "answer": "MARBLE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Stone shaped from a ramble (6)",
+    "clue": "A ramble, oddly, over the stone (6)",
     "def": {
-      "text": "Stone",
-      "position": "start"
+      "text": "the stone",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "shaped",
+      "indicator": "oddly",
       "fodder": "ramble",
       "operations": [
         {
@@ -929,20 +929,20 @@
         }
       ]
     },
-    "parse": "Anagram (shaped) of RAMBLE = MARBLE; a stone."
+    "parse": "(RAMBLE)* 'oddly' = MARBLE, a stone."
   },
   {
     "answer": "PEPPER",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Spice up a speech with gunfire (6)",
+    "clue": "Spice up, or spray with gunfire (6)",
     "def": {
       "text": "Spice up",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Spice up / pelt with gunfire",
+      "fodder": "Spice up / spray with gunfire",
       "operations": [
         {
           "op": "literal",
@@ -951,19 +951,19 @@
         }
       ]
     },
-    "parse": "Double definition: to PEPPER is to spice up (season), and to PEPPER is to pelt, as with gunfire."
+    "parse": "Double definition: to PEPPER is to spice up, and to PEPPER is to spray, as with gunfire."
   },
   {
     "answer": "CANDLE",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Lanced, somehow, into a taper (6)",
+    "clue": "Lanced, strangely, it lit up like a taper (6)",
     "def": {
       "text": "a taper",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "somehow",
+      "indicator": "strangely",
       "fodder": "Lanced",
       "operations": [
         {
@@ -973,7 +973,7 @@
         }
       ]
     },
-    "parse": "Anagram (somehow) of LANCED = CANDLE; a taper."
+    "parse": "(LANCED)* 'strangely' = CANDLE, a taper."
   },
   {
     "answer": "ORANGE",
@@ -1001,9 +1001,9 @@
     "answer": "DESIGN",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Plan that's singed when redrawn (6)",
+    "clue": "A plan from the singed sketch, redrawn (6)",
     "def": {
-      "text": "Plan",
+      "text": "A plan",
       "position": "start"
     },
     "wordplay": {
@@ -1017,13 +1017,13 @@
         }
       ]
     },
-    "parse": "Anagram (redrawn) of SINGED = DESIGN; a plan."
+    "parse": "(SINGED)* 'redrawn' = DESIGN, a plan."
   },
   {
     "answer": "MENTOR",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "A specimen torn apart reveals the guide (6)",
+    "clue": "A specimen, torn, reveals the guide (6)",
     "def": {
       "text": "the guide",
       "position": "end"
@@ -1034,34 +1034,34 @@
       "operations": [
         {
           "op": "hidden",
-          "input": "speci<MENTOR>n",
+          "input": "speci<MEN TOR>n",
           "output": "MENTOR"
         }
       ]
     },
-    "parse": "Hidden in 'speciMEN TORn' (revealed by tearing it apart) = MENTOR, the guide."
+    "parse": "Hidden in 'speciMEN TORn' = MENTOR, the guide."
   },
   {
     "answer": "CHARITY",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Cleaner has sex appeal one year, in her good works (7)",
+    "clue": "The cleaner had it all year, doing good works (7)",
     "def": {
       "text": "good works",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CHAR+IT+Y",
+      "fodder": "CHAR + IT + Y",
       "operations": [
         {
           "op": "synonym",
-          "input": "Cleaner",
+          "input": "The cleaner",
           "output": "CHAR"
         },
         {
           "op": "synonym",
-          "input": "sex appeal",
+          "input": "it",
           "output": "IT"
         },
         {
@@ -1076,7 +1076,7 @@
         }
       ]
     },
-    "parse": "CHAR (cleaner) + IT (sex appeal) + Y (year) = CHARITY; good works."
+    "parse": "CHAR (cleaner) + IT (sex appeal) + Y (year) = CHARITY, good works."
   },
   {
     "answer": "DIAMOND",
@@ -1148,23 +1148,23 @@
     "answer": "MONARCH",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Monday's curved gateway for the sovereign (7)",
+    "clue": "On Monday, by the arch, we hailed the sovereign (7)",
     "def": {
       "text": "the sovereign",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "MON+ARCH",
+      "fodder": "MON + ARCH",
       "operations": [
         {
           "op": "synonym",
-          "input": "Monday's",
+          "input": "Monday",
           "output": "MON"
         },
         {
           "op": "synonym",
-          "input": "curved gateway",
+          "input": "the arch",
           "output": "ARCH"
         },
         {
@@ -1300,14 +1300,14 @@
     "answer": "PANTHER",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Gasp at that woman, a real cat (7)",
+    "clue": "Gasp at her, the sleek cat (7)",
     "def": {
-      "text": "a real cat",
+      "text": "the sleek cat",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "PANT+HER",
+      "fodder": "PANT + HER",
       "operations": [
         {
           "op": "synonym",
@@ -1316,7 +1316,7 @@
         },
         {
           "op": "synonym",
-          "input": "that woman",
+          "input": "her",
           "output": "HER"
         },
         {
@@ -1326,19 +1326,19 @@
         }
       ]
     },
-    "parse": "PANT (gasp) + HER (that woman) = PANTHER, a big cat."
+    "parse": "PANT (gasp) + HER = PANTHER, a sleek big cat."
   },
   {
     "answer": "THUNDER",
     "clueType": "hidden",
     "difficulty": 3,
-    "clue": "Part of earth under a storm's roar (7)",
+    "clue": "Some of the earth under us echoed the storm's roar (7)",
     "def": {
-      "text": "a storm's roar",
+      "text": "the storm's roar",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Part of",
+      "indicator": "Some of",
       "fodder": "earth under",
       "operations": [
         {
@@ -1348,7 +1348,7 @@
         }
       ]
     },
-    "parse": "Hidden in earTH UNDER = THUNDER, a storm's roar."
+    "parse": "Hidden in 'earTH UNDER' = THUNDER, a storm's roar."
   },
   {
     "answer": "HARVEST",
@@ -1398,23 +1398,23 @@
     "answer": "MUSHROOM",
     "clueType": "charade",
     "difficulty": 4,
-    "clue": "Sentimental drivel by a spare room? Fungus! (8)",
+    "clue": "Sentimental mush fills the room, like a fungus (8)",
     "def": {
-      "text": "Fungus",
+      "text": "a fungus",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "MUSH+ROOM",
+      "fodder": "MUSH + ROOM",
       "operations": [
         {
           "op": "synonym",
-          "input": "Sentimental drivel",
+          "input": "Sentimental mush",
           "output": "MUSH"
         },
         {
           "op": "synonym",
-          "input": "spare room",
+          "input": "the room",
           "output": "ROOM"
         },
         {
@@ -1424,7 +1424,7 @@
         }
       ]
     },
-    "parse": "MUSH (sentimental drivel) + ROOM (spare room), joined = MUSHROOM, a fungus."
+    "parse": "MUSH (sentimental drivel) + ROOM = MUSHROOM, a fungus."
   },
   {
     "answer": "SHOULDER",
@@ -1452,14 +1452,14 @@
     "answer": "ELEPHANT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "The panel reorganised round a jumbo (8)",
+    "clue": "When the panel reorganised, in came the jumbo (8)",
     "def": {
-      "text": "jumbo",
+      "text": "the jumbo",
       "position": "end"
     },
     "wordplay": {
       "indicator": "reorganised",
-      "fodder": "The panel",
+      "fodder": "the panel",
       "operations": [
         {
           "op": "anagram",
@@ -1468,7 +1468,7 @@
         }
       ]
     },
-    "parse": "(THE PANEL)* = ELEPHANT, a jumbo."
+    "parse": "(THE PANEL)* 'reorganised' = ELEPHANT, a jumbo."
   },
   {
     "answer": "PASSWORD",
@@ -1528,14 +1528,14 @@
     "answer": "CHAMPION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Eat noisily, one performing like a winner (8)",
+    "clue": "Eat noisily while I'm on, like a winner (8)",
     "def": {
       "text": "a winner",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CHAMP+I+ON",
+      "fodder": "CHAMP + I + ON",
       "operations": [
         {
           "op": "synonym",
@@ -1543,13 +1543,13 @@
           "output": "CHAMP"
         },
         {
-          "op": "abbreviate",
-          "input": "one",
+          "op": "literal",
+          "input": "I",
           "output": "I"
         },
         {
           "op": "synonym",
-          "input": "performing",
+          "input": "on",
           "output": "ON"
         },
         {
@@ -1559,13 +1559,13 @@
         }
       ]
     },
-    "parse": "CHAMP (eat noisily) + I (one) + ON (performing) = CHAMPION, a winner."
+    "parse": "CHAMP (eat noisily) + I + ON (performing) = CHAMPION, a winner."
   },
   {
     "answer": "DECANTER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Having recanted, oddly, the wine holder (8)",
+    "clue": "Having recanted, oddly, he filled the wine holder (8)",
     "def": {
       "text": "the wine holder",
       "position": "end"
@@ -1581,7 +1581,7 @@
         }
       ]
     },
-    "parse": "(RECANTED)* = DECANTER, the wine holder."
+    "parse": "(RECANTED)* 'oddly' = DECANTER, the wine holder."
   },
   {
     "answer": "NEWSPAPER",
@@ -1705,13 +1705,13 @@
     "answer": "FORTUNATE",
     "clueType": "anagram",
     "difficulty": 4,
-    "clue": "A true font designed to be lucky (9)",
+    "clue": "A true font, redesigned, turns out lucky (9)",
     "def": {
       "text": "lucky",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "designed",
+      "indicator": "redesigned",
       "fodder": "A true font",
       "operations": [
         {
@@ -1721,7 +1721,7 @@
         }
       ]
     },
-    "parse": "(A TRUE FONT)* = FORTUNATE, meaning lucky."
+    "parse": "(A TRUE FONT)* 'redesigned' = FORTUNATE, lucky."
   },
   {
     "answer": "ADVENTURE",
