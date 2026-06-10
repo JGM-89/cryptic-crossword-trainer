@@ -9,15 +9,18 @@ agents write to). If you're a fresh session continuing this work: read this file
 > chunk it → hand each chunk to a "setter" agent that writes best-of-N clues to the **sentence-realism
 > bar** (`clue-style.md` §1b — a real sentence a person would say, def woven, no narrated mechanic, no
 > orphan words; **ranked above wit**) and **hard-gates** them through the real validator → assemble the
-> winners back → run the tests → an **adversarial sentence-realism judge** (PASS/FAIL, §1b) → a
-> **semantic auditor** for what the validator can't check → **a human reads every changed clue** →
-> patch the flags → regenerate the archive → commit & deploy. Answers never change (so grids stay
-> stable).
+> winners back → run the tests → **≥3 blind realism judges in parallel, majority vote** (§1b, on
+> bare surfaces with no answers) → a **semantic auditor** for what the validator can't check → **a
+> human reads every changed clue** → patch the flags → regenerate the archive → commit & deploy.
+> Answers never change (so grids stay stable).
 >
-> **Two non-negotiables baked in since the floor-raise (2026-06-05):** (1) **device is free** — re-pick
-> the construction to whatever yields the best *real-sentence* clue (the answer is fixed, the device is
-> not); (2) **the sentence-realism judge → fix → human review is MANDATORY**, not optional — agents
-> reliably rubber-stamp evocative fragments, so don't trust self-reports.
+> **Three non-negotiables baked in since the floor-raises (2026-06-05 / 2026-06-10):** (1) **device
+> is free** — re-pick the construction to whatever yields the best *real-sentence* clue (the answer
+> is fixed, the device is not); (2) **realism judging is BLIND and MULTI-JUDGE** — bare surfaces
+> only, ≥3 independent judges, majority vote; single judges reading full entries rubber-stamp
+> ("Control reign, reportedly" survived one); (3) the **mechanical gate now covers surface economy**
+> (orphan spans, charade containment-glue, composition/letter-accounting, indicator-in-surface) via
+> `src/data/surface-rules.ts` + `integrity.ts` — don't hand-wave these, the validator rejects them.
 
 ---
 
@@ -33,7 +36,8 @@ agents write to). If you're a fresh session continuing this work: read this file
 | **Teaching corpus** | `src/data/clues.ts` | Stage-A lesson clues. **Rebuilt to the bar 2026-06-05** (was wrongly "left as-is"). If you edit it, follow `clue-style.md` **§1c gentle teaching register** (a real cryptic clue with genuine disguise, but gentle vocab/devices — *never* transparent give-aways) + the realism + originality process below. Uses `solution`/`id` (not `answer`); validate via `integrity.test.ts`. |
 | **Archive compiler** | `scripts/generate-puzzles.mjs` | Places bank words into grids → `public/archive.json`. `TIERS` controls puzzle counts. Rerun after ANY bank edit. |
 | **Pipeline helpers** | `scripts/clue-chunk.mjs`, `scripts/clue-assemble.mjs`, `scripts/clue-patch.mjs` | Chunk / merge-back / patch. |
-| **Surface lint** | `scripts/lint-surfaces.mjs` | Heuristic surface health-check. `--rank` lists every clue weakest-first (triage); `--ids` lists clues tripping the CI gate; `--src=part-x.json` restricts scope. The GATE subset (a word-list with no connector at any length, or raw ALL-CAPS fodder) is mirrored verbatim in `surfaces.test.ts` + `validate-clue.ts`; the rest (function-word ratio, proper-noun density, vague nouns, terseness) is **advisory only**. |
+| **Surface rules** | `src/data/surface-rules.ts` | THE single shared source for every surface check (no more three-way copy-sync). GATE rules (deterministic, fail CI + the pipeline): bare word-list / raw caps; **containment language gluing a charade** (wrong device); **indicator absent from the surface**; **flagrant orphan words** (multi-word spans no part of the cryptic reading pays for). ADVISORY (ranking only): single decorative orphans, function-word ratio, proper-noun density, vague nouns, terseness (whole-clue devices — double-def/cryptic-def/&lit — are legitimately short and exempt). |
+| **Surface lint** | `scripts/lint-surfaces.ts` | Reporter over `surface-rules.ts`. `npm run clues:lint -- --rank` lists every clue weakest-first (triage); `--ids` lists CI-gate hits; `--src=part-x.json` restricts scope. |
 | **Tests (the gate)** | `src/data/bank/bank.test.ts`, `integrity.test.ts`, `surfaces.test.ts`, `archive.test.ts` | bank: every clue valid + no dup answers. surfaces: no bare word-lists. archive: no bank↔archive drift. |
 | **Working dir** | `tmp/` | Ephemeral (gitignored). Chunks land in `tmp/in/`, agent outputs in `tmp/clue-winners/`. Safe to delete. |
 
@@ -66,23 +70,28 @@ npx vitest run src/data/bank/bank.test.ts src/data/integrity.test.ts src/data/su
 (If red, the assemble step already refused on answer-set mismatch; otherwise a clue failed
 `validateClue` — fix it and re-run.)
 
-**4b. Sentence-realism judge (PASS/FAIL, §1b) — MANDATORY.** Dispatch the **SENTENCE-REALISM JUDGE**
-template over the freshly-assembled `part-<part>.json`. Adversarially, for EACH surface it answers
-"is this a real, natural sentence a person would actually say or write — yes/no, why?" Any clue judged
-NOT a real sentence (narrated mechanic/recipe, comma- or dash-tacked definition, an orphan word that
-does no cryptic work, or grammatical-but-surreal) is rebuilt **device-free** to the bar — a setter
-pass restricted to the fails — and re-gated through the validator. **Then a human reads every changed
-clue and rejects any they wouldn't say aloud.** Do NOT trust the agents' self-reports — this gate
-exists because three earlier passes shipped recipe-like fragments that self-graded fine. Realism is
-ranked ABOVE wit, so this runs before any wit polish.
+**4b. BLIND sentence-realism judging (PASS/FAIL, §1b) — MANDATORY, MULTI-JUDGE.** A single judge
+reading full clue entries rubber-stamps borderline surfaces (proven repeatedly: "Control reign,
+reportedly" survived a "mandatory adversarial" pass). The protocol that works:
+1. **Strip to bare surfaces** — emit `{id, text}` only (no answer, no device, no parse, enum removed)
+   so judges can't be seduced by clever wordplay. (See `tmp/make-blind.mjs` pattern.)
+2. **Dispatch ≥3 independent judges in parallel**, each with a DIFFERENT lens — e.g. (a) newspaper
+   subeditor "would I print this sentence?", (b) read-aloud "could this leave a real mouth?",
+   (c) scene coherence "is there ONE picturable scene a writer could have intended?". Each judge
+   writes a JSON fail-list with one-line reasons.
+3. **Majority vote**: any surface failed by ≥2 of 3 judges is rebuilt **device-free** (setter pass
+   restricted to the fails, hard-gated through the validator). Re-judge the rebuilt surfaces the
+   same blind way; iterate until clean.
+4. **Then a human reads every changed clue** and rejects any they wouldn't say aloud.
+Realism is ranked ABOVE wit, so this runs before any wit polish.
 
 **4c. Surface grade & polish** (raise axis 3, *above* the realism floor) — dispatch ONE **SURFACE GRADER** agent over the
 freshly-assembled `part-<part>.json`; it scores every surface and returns the weak ones (surface ≤ 3),
 weakest first. Feed that list to ONE **SURFACE POLISH** agent (templates below), which rewrites
 ONLY the flagged surfaces — same `answer` + same `clueType`, hard-gated through the validator —
 and emits `tmp/fixes-pol-<part>.json`. Apply with `node scripts/clue-patch.mjs <part>
-tmp/fixes-pol-<part>.json`, then re-run the **mechanical gate** (step 4). `node
-scripts/lint-surfaces.mjs --rank --src=part-<part>.json` is a fast pre-triage / health-check.
+tmp/fixes-pol-<part>.json`, then re-run the **mechanical gate** (step 4). `npm run clues:lint --
+--rank --src=part-<part>.json` is a fast pre-triage / health-check.
 (Surface rewrites keep the answer, so grids stay valid — but they DO change clue text, so the
 archive regen at step 7 is still required.)
 
@@ -146,12 +155,21 @@ npm run build
 - **Only `ABBR` cues.** Any `abbreviate` op whose cue isn't in `src/data/abbreviations.ts` (or an
   explicit first-letter device) is rejected. If a genuinely standard abbreviation is missing, add
   it to `abbreviations.ts` (don't invent ad-hoc ones in a clue).
-- **The validator can't check semantics, realism, or originality.** It verifies letters +
-  abbreviations, NOT whether a `synonym` is real, a container/double-def/homophone resolves (the
-  semantic auditor, step 5), whether the surface is a real sentence (the **sentence-realism judge**,
-  step 4b — ranked above everything), or whether the surface duplicates a published clue (the
-  **originality check**, step 4d). All three, plus a human read of every change, are mandatory — not
-  optional.
+- **The validator now mechanically enforces** (since 2026-06-10, beyond letters + abbreviations):
+  charade `concat` pieces must compose to the answer and be produced by a prior op or sit verbatim
+  in the surface; `insert` must be a TRUE internal insertion in "X in Y"/"Y around X" form;
+  alternation letters are checked; a literal piece may not swallow an indefinite article
+  ("a cake"→CAKE is rejected — the A is unaccounted); charades may not use containment words
+  (in/inside/into/about/around…) as glue; the indicator must appear in the surface; and flagrant
+  orphan words (multi-word decorative spans) are rejected. Plan constructions accordingly: every
+  surface word must be definition, indicator, fodder, an operation's cue, or a genuine link word.
+- **The validator still can't check semantics, realism, or originality.** Whether a `synonym` is
+  real, a double-def/homophone resolves (the semantic auditor, step 5), whether the surface is a
+  real sentence (the **blind multi-judge**, step 4b — ranked above everything), and originality
+  (step 4d) all remain agent/human work. All three, plus a human read of every change, are
+  mandatory — not optional.
+- **Letter-forced short answers (3–4 letters) that can't reach a natural sentence go to a human
+  pick** — don't loop agents on them; the style guide concedes some answers need a human call.
 - **Bank edit ⇒ regenerate the archive** (`clues:regen`) or `archive.test.ts` fails on drift.
 - **Teaching corpus (`src/data/clues.ts`) follows §1c.** It was rebuilt to the *gentle teaching
   register* (2026-06-05) — real cryptic clues with genuine disguise, but gentle vocabulary/devices,
@@ -260,26 +278,29 @@ entry ok:true AND no duplicate answers among them. Return a list: ANSWER | clue.
 except tmp/ outputs.
 ```
 
-### SENTENCE-REALISM JUDGE — one per part (read-only) — MANDATORY (step 4b)
+### BLIND REALISM JUDGE — ≥3 in parallel, different lenses (read-only) — MANDATORY (step 4b)
+First strip the part to bare surfaces: a JSON array of `{id, text}` with NO answer, device, parse,
+or enumeration (judges must see only plain English). Then dispatch ≥3 of these in parallel, varying
+the lens (newspaper subeditor / read-aloud / scene coherence):
 ```
-Strict cryptic editor judging ONLY surface realism (`clue-style.md` §1b), the PASS/FAIL gate ranked
-ABOVE wit. The clues already pass the mechanical validator; you are NOT judging mechanics or wit.
+You are a strict <newspaper subeditor judging sentences for print | judge applying the read-aloud
+test | judge of scene coherence>. Read tmp/<surfaces-file>.json — a JSON array of items {id, text}.
+Each text is a short piece of English. Judge each item as PLAIN ENGLISH PROSE on its own; do not
+guess at any hidden meaning or purpose.
 
-Read `docs/clue-style.md` §1b in <ABSOLUTE REPO PATH>, then read `src/data/bank/part-<part>.json`.
-For EACH clue answer adversarially: "Read as plain English WITHOUT knowing the answer — is the surface
-ONE real, natural sentence a person would actually say or write? Yes or no?" Mark FAIL if any of:
-(a) it narrates a cryptic operation / reads like a recipe ("X minus its head leaves Y", "A threading
-through B"); (b) the definition is comma- or dash-tacked rather than integrated; (c) an orphan /
-decorative word does no cryptic work; (d) it is grammatical but surreal or incoherent; (e) it only
-"works" as crossword-ese you'd never meet in real writing. Be STRICT — default to FAIL if you would
-not say it out loud. Standard cryptic GK and fair misdirection are NOT faults.
+FAIL an item if: it is not really a sentence or natural phrase (words jammed together); it is
+grammatical but describes an incoherent scene no writer would intend; it is broken by interjections
+no one would write (", oddly," ", we hear," as filler); or it reads as comma-spliced fragments
+rather than one coherent statement. PASS generously anything a person could genuinely say: short
+imperatives, questions, compact noun phrases, jokes, whimsical-but-coherent scenes.
 
-Return a markdown table of FAILS only: ANSWER | surface (quoted) | failing test (a–e) | one-line fix
-direction (usually "change the device"). End with "N of M fail §1b". Read-only — judge, don't edit.
+OUTPUT: write a JSON array of FAILS ONLY to tmp/judge-<n>.json, each {"id","reason"}. Reply with
+just the fail count. Modify no other file.
 ```
-Each FAIL is then rebuilt **device-free** by a SETTER pass restricted to those answers, re-gated
-through the validator, and **read by a human** before assembling. This judge → fix → human-review
-sequence is mandatory, not optional.
+**Majority vote (≥2 of 3) decides.** Each majority FAIL is rebuilt **device-free** by a SETTER pass
+restricted to those answers, re-gated through the validator, re-judged blind, and **read by a human**
+before assembling. Judge → fix → re-judge → human-review is mandatory, not optional — single
+non-blind judges have repeatedly rubber-stamped fragments.
 
 ### SURFACE GRADER — one per part (read-only)
 ```

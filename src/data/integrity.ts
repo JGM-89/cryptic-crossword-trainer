@@ -131,8 +131,90 @@ export function validateClue(clue: Clue): string[] {
       if (initials !== sol) errors.push('solution is not the initials of the fodder');
       break;
     }
+    case 'alternation': {
+      // Alternate letters of the fodder (from either start position) must spell
+      // the solution, and — like anagram fodder — the fodder must be literal.
+      const odd = fodderLetters.split('').filter((_, i) => i % 2 === 0).join('');
+      const even = fodderLetters.split('').filter((_, i) => i % 2 === 1).join('');
+      if (odd !== sol && even !== sol) {
+        errors.push('alternation: alternate letters of the fodder do not spell the solution');
+      }
+      if (!clueLetters.includes(fodderLetters)) {
+        errors.push('alternation fodder is not literally present in the clue');
+      }
+      break;
+    }
     default:
-      break; // charade / container / homophone / double-def / cryptic-def / alternation / lit: checked via the parse.
+      break; // charade / container / homophone / double-def / cryptic-def / lit: see 5c/5d.
+  }
+
+  // 5c. Composition checks for assembled devices. A final `concat` must join
+  // pieces that prior operations actually produced, in order, into the solution;
+  // a final `insert` must place the contents STRICTLY INSIDE the container
+  // (an edge "insertion" is a concatenation wearing the wrong indicator).
+  const ops = clue.wordplay.operations;
+  const finalOp = ops[ops.length - 1];
+  const priorOutputs = new Set(ops.slice(0, -1).map((o) => lettersOnly(o.output)));
+  const surfaceWords = new Set(
+    clue.clue.replace(/\s*\([^)]*\)\s*$/, '').toUpperCase().split(/[^A-Z]+/).filter(Boolean),
+  );
+  // A piece is accounted for if a prior op produced it, OR it sits verbatim in
+  // the surface as a word (literal fodder, e.g. "taking me in" → ME), OR it is
+  // a single letter read straight off the surface (e.g. "a" → A).
+  const pieceAccounted = (p: string) => p.length <= 1 || priorOutputs.has(p) || surfaceWords.has(p);
+  if (finalOp?.op === 'concat') {
+    const pieces = finalOp.input.split('+').map(lettersOnly).filter(Boolean);
+    if (pieces.join('') !== sol) {
+      errors.push(`concat pieces "${finalOp.input}" do not compose to the solution`);
+    }
+    for (const p of pieces) {
+      if (!pieceAccounted(p)) {
+        errors.push(`concat piece "${p}" is not produced by any prior operation`);
+      }
+    }
+  }
+  if (finalOp?.op === 'insert') {
+    const inM = finalOp.input.match(/^(.+?)\s+(?:in|into|inside|within)\s+(.+)$/i);
+    const aroundM = finalOp.input.match(/^(.+?)\s+(?:around|about|outside)\s+(.+)$/i);
+    const inner = inM ? lettersOnly(inM[1]) : aroundM ? lettersOnly(aroundM[2]) : '';
+    const outer = inM ? lettersOnly(inM[2]) : aroundM ? lettersOnly(aroundM[1]) : '';
+    if (!inner || !outer) {
+      errors.push(`insert input "${finalOp.input}" is not in the "X in Y" / "Y around X" form`);
+    } else {
+      let internal = false;
+      for (let k = 1; k < outer.length; k++) {
+        if (outer.slice(0, k) + inner + outer.slice(k) === sol) internal = true;
+      }
+      if (!internal) {
+        errors.push(
+          `"${finalOp.input}" is not a true insertion yielding the solution (contents must sit strictly inside the container)`,
+        );
+      }
+      for (const p of [inner, outer]) {
+        if (!pieceAccounted(p)) {
+          errors.push(`insert piece "${p}" is not produced by any prior operation`);
+        }
+      }
+    }
+  }
+
+  // 5d. A "synonym"/"literal" piece that is really its own output word with a
+  // leading indefinite article is unindicated fodder: "a cake" → CAKE leaves
+  // the A unaccounted for (A is a standard letter-contributor, so the solver
+  // cannot tell whether it counts). A leading definite article is tolerated as
+  // conventional surface glue ("the bed" → BED).
+  for (const op of ops) {
+    if (op.op !== 'synonym' && op.op !== 'literal') continue;
+    const words = op.input.trim().toLowerCase().split(/\s+/);
+    if (
+      words.length >= 2 &&
+      (words[0] === 'a' || words[0] === 'an') &&
+      lettersOnly(words.slice(1).join('')) === lettersOnly(op.output)
+    ) {
+      errors.push(
+        `unindicated article "${words[0]}" swallowed by literal piece "${op.input}" → "${op.output}"`,
+      );
+    }
   }
 
   // 5b. Abbreviations must be fair: every `abbreviate` piece has to be a

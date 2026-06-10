@@ -77,40 +77,25 @@
   },
   {
     "answer": "LABORATORY",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Hard work landed a Tory in the research workshop (10)",
+    "clue": "Where solutions are developed? (10)",
     "def": {
-      "text": "research workshop",
-      "position": "end"
+      "text": "Where solutions are developed",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "LABOR + A + TORY",
+      "fodder": "pun: chemical solutions / answers to problems",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Hard work",
-          "output": "LABOR"
-        },
-        {
-          "op": "synonym",
-          "input": "a",
-          "output": "A"
-        },
-        {
-          "op": "synonym",
-          "input": "Tory",
-          "output": "TORY"
-        },
-        {
-          "op": "concat",
-          "input": "LABOR+A+TORY",
+          "op": "literal",
+          "input": "pun on solutions (chemical mixtures, not answers)",
           "output": "LABORATORY"
         }
       ]
     },
-    "parse": "LABOR (hard work) + A + TORY (a Tory) = LABORATORY; a 'research workshop'."
+    "parse": "Cryptic definition: a LABORATORY is where solutions — chemical ones, not answers to problems — are developed."
   },
   {
     "answer": "DEPARTMENT",
@@ -151,35 +136,25 @@
   },
   {
     "answer": "UNDERRATED",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Sedated and told off, yet undervalued (10)",
+    "clue": "Ad returned in error is not appreciated (10)",
     "def": {
-      "text": "undervalued",
+      "text": "not appreciated",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "UNDER + RATED",
+      "indicator": "in error",
+      "fodder": "Ad returned",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Sedated",
-          "output": "UNDER"
-        },
-        {
-          "op": "synonym",
-          "input": "told off",
-          "output": "RATED"
-        },
-        {
-          "op": "concat",
-          "input": "UNDER+RATED",
+          "op": "anagram",
+          "input": "AD RETURNED",
           "output": "UNDERRATED"
         }
       ]
     },
-    "parse": "UNDER (sedated, as in 'put under') + RATED (told off, scolded) = UNDERRATED, undervalued."
+    "parse": "Anagram of AD RETURNED (signalled by 'in error') = UNDERRATED, i.e. not appreciated. 'Returned' tempts you toward a reversal — it is fodder."
   },
   {
     "answer": "BRIDGEHEAD",
@@ -215,57 +190,47 @@
   },
   {
     "answer": "BARGAINING",
-    "clueType": "charade",
-    "difficulty": 4,
-    "clue": "The bar is gaining through haggling (10)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "Haggling shattered an aging brain (10)",
     "def": {
-      "text": "haggling",
-      "position": "end"
+      "text": "Haggling",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "BAR+GAINING",
+      "indicator": "shattered",
+      "fodder": "aging brain",
       "operations": [
         {
-          "op": "synonym",
-          "input": "The bar",
-          "output": "BAR"
-        },
-        {
-          "op": "synonym",
-          "input": "gaining",
-          "output": "GAINING"
-        },
-        {
-          "op": "concat",
-          "input": "BAR+GAINING",
+          "op": "anagram",
+          "input": "AGING BRAIN",
           "output": "BARGAINING"
         }
       ]
     },
-    "parse": "BAR + GAINING = BARGAINING, haggling."
+    "parse": "Anagram of AGING BRAIN (signalled by 'shattered') = BARGAINING; 'haggling' is the definition."
   },
   {
     "answer": "INFORMATION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Intelligence found in formation (11)",
+    "clue": "Fashionable line-up makes news (11)",
     "def": {
-      "text": "Intelligence",
-      "position": "start"
+      "text": "news",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
       "fodder": "IN + FORMATION",
       "operations": [
         {
-          "op": "literal",
-          "input": "in",
+          "op": "synonym",
+          "input": "Fashionable",
           "output": "IN"
         },
         {
           "op": "synonym",
-          "input": "formation",
+          "input": "line-up",
           "output": "FORMATION"
         },
         {
@@ -275,7 +240,7 @@
         }
       ]
     },
-    "parse": "Reading the surface 'in formation' as a charade: IN + FORMATION (an arrangement of troops) = INFORMATION, defined by 'Intelligence'."
+    "parse": "IN (fashionable, trendy) + FORMATION (line-up, arrangement) = INFORMATION; 'news'."
   },
   {
     "answer": "PRECAUTIONS",
@@ -312,10 +277,10 @@
   {
     "answer": "PARTNERSHIP",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Mate's vessel for a business collaboration (11)",
+    "difficulty": 2,
+    "clue": "Mate's vessel is a joint concern (11)",
     "def": {
-      "text": "a business collaboration",
+      "text": "joint concern",
       "position": "end"
     },
     "wordplay": {
@@ -339,39 +304,29 @@
         }
       ]
     },
-    "parse": "PARTNER (mate) + SHIP (vessel) = PARTNERSHIP, defined by 'a business collaboration'."
+    "parse": "PARTNER (mate) + SHIP (vessel) = PARTNERSHIP, a joint concern (a business held jointly)."
   },
   {
     "answer": "STOCKBROKER",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "The farm stock's agent is a shares dealer (11)",
+    "clue": "Dealer handling bulls and bears? (11)",
     "def": {
-      "text": "a shares dealer",
-      "position": "end"
+      "text": "Dealer handling bulls and bears",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "STOCK + BROKER",
+      "fodder": "pun: bull and bear markets, not livestock",
       "operations": [
         {
-          "op": "synonym",
-          "input": "farm stock",
-          "output": "STOCK"
-        },
-        {
-          "op": "synonym",
-          "input": "agent",
-          "output": "BROKER"
-        },
-        {
-          "op": "concat",
-          "input": "STOCK+BROKER",
+          "op": "literal",
+          "input": "pun on bulls and bears (market conditions, not animals)",
           "output": "STOCKBROKER"
         }
       ]
     },
-    "parse": "STOCK (farm stock, livestock) + BROKER (agent) = STOCKBROKER, a shares dealer."
+    "parse": "Cryptic definition: a STOCKBROKER deals through bull and bear markets — the surface misdirects to a livestock handler."
   },
   {
     "answer": "CONSTRAINED",
@@ -408,24 +363,24 @@
   {
     "answer": "RELATIONSHIP",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "A relation aboard ship sparked a budding romance (12)",
+    "difficulty": 2,
+    "clue": "Relative takes liner for romance (12)",
     "def": {
-      "text": "a budding romance",
+      "text": "romance",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "RELATION+SHIP",
+      "fodder": "RELATION + SHIP",
       "operations": [
         {
           "op": "synonym",
-          "input": "A relation",
+          "input": "Relative",
           "output": "RELATION"
         },
         {
           "op": "synonym",
-          "input": "ship",
+          "input": "liner",
           "output": "SHIP"
         },
         {
@@ -435,7 +390,7 @@
         }
       ]
     },
-    "parse": "RELATION (family member) + SHIP = RELATIONSHIP; a budding romance."
+    "parse": "RELATION (relative) + SHIP (liner) = RELATIONSHIP; 'romance'."
   },
   {
     "answer": "CONVERSATION",
@@ -549,9 +504,9 @@
     "answer": "ENTERTAINMENT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Amuse the men, given time, in show business (13)",
+    "clue": "Host the men this time — what a show! (13)",
     "def": {
-      "text": "show business",
+      "text": "show",
       "position": "end"
     },
     "wordplay": {
@@ -560,12 +515,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Amuse",
+          "input": "Host",
           "output": "ENTERTAIN"
         },
         {
-          "op": "synonym",
-          "input": "the men",
+          "op": "literal",
+          "input": "men",
           "output": "MEN"
         },
         {
@@ -580,44 +535,29 @@
         }
       ]
     },
-    "parse": "ENTERTAIN (amuse) + MEN + T (time) = ENTERTAINMENT, show business."
+    "parse": "ENTERTAIN (host) + MEN + T (time) = ENTERTAINMENT; 'show'."
   },
   {
     "answer": "THOUGHTLESSLY",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 4,
-    "clue": "With thought running low, somehow, he acted rashly (13)",
+    "clue": "They danced a ghostly hustle, without care (13)",
     "def": {
-      "text": "rashly",
+      "text": "without care",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "THOUGHT + LESS + LY",
+      "indicator": "danced",
+      "fodder": "ghostly hustle",
       "operations": [
         {
-          "op": "synonym",
-          "input": "thought",
-          "output": "THOUGHT"
-        },
-        {
-          "op": "synonym",
-          "input": "running low",
-          "output": "LESS"
-        },
-        {
-          "op": "synonym",
-          "input": "somehow",
-          "output": "LY"
-        },
-        {
-          "op": "concat",
-          "input": "THOUGHT+LESS+LY",
+          "op": "anagram",
+          "input": "GHOSTLY HUSTLE",
           "output": "THOUGHTLESSLY"
         }
       ]
     },
-    "parse": "THOUGHT + LESS (running low) + LY (somehow, in a manner) = THOUGHTLESSLY, rashly."
+    "parse": "(GHOSTLY HUSTLE)* 'danced' = THOUGHTLESSLY, without care."
   },
   {
     "answer": "GRANDMOTHERLY",

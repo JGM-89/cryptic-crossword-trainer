@@ -31,6 +31,9 @@ fails either scores zero regardless of the rest.** Axes 2–5 are 1–5.
    crop"); or (d) it's **grammatical but surreal/incoherent** ("part of the rectangle rises above
    the fisherman"). The fix is usually to **change the device** (the answer is fixed, the
    construction is free) — see §3. Ranked ABOVE wit: a plain real sentence beats a clever non-one.
+   *Note:* a compact natural **phrase** is fine where the device is the whole clue — double
+   definitions, cryptic definitions, and &lit are legitimately short ("Greet the breaker",
+   "Terribly evil"); judge them as phrases a person could say, not as failed sentences.
 
 1. **Soundness / fairness (PASS/FAIL).** Read the clue exactly as the wordplay demands. The
    cryptic grammar congeals; the definition is a true synonym at one end; every letter is
@@ -336,6 +339,24 @@ Rules the harness/validator enforce (so get these right or the candidate is reje
 
 **Self-check before submitting:** run `npx tsx scripts/validate-clue.ts <file.json>` (accepts one
 object or an array). `ok:true` means it passed the mechanical gate; fix any `errors` first.
+
+**The mechanical gate now also enforces (2026-06-10):**
+- `concat` pieces must compose, in order, to the answer, and every multi-letter piece must be the
+  output of a prior operation or a verbatim surface word.
+- `insert` must be a TRUE internal insertion (`"X in Y"` / `"Y around X"`); an edge-placement is a
+  concatenation wearing the wrong indicator and is rejected.
+- Alternation letters are checked (every-other from either start), and the fodder must be literal.
+- A `synonym`/`literal` piece may not swallow an indefinite article: `"a cake" → CAKE` is rejected
+  (the A is a standard letter-contributor, so leaving it unaccounted is unfair). A definite article
+  is tolerated (`"the bed" → BED`).
+- A **charade may not use containment words** (in/inside/into/about/around/holding…) as its glue —
+  that implies an insertion and can spell a false answer. Use order/addition language instead
+  (with, and, after, on, beside, takes, gets…).
+- The `indicator` must appear verbatim in the surface (it is quoted in the hint ladder).
+- **Orphan words are gated mechanically**: every surface word must be the definition, the
+  indicator, fodder, an operation's cue, or a genuine link word. A multi-word decorative span
+  ("…the warehouse staff…") fails the gate; even a single decorative word is lint-ranked for the
+  realism judges. Write surfaces where every word earns its keep.
 
 ---
 

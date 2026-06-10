@@ -1,5 +1,6 @@
-// CLI hard-gate for candidate clues — reuses the REAL validator + surface lint,
-// so the clue-quality pipeline never ships anything integrity.ts would reject.
+// CLI hard-gate for candidate clues — reuses the REAL validator + surface gate,
+// so the clue-quality pipeline never ships anything integrity.ts or
+// surface-rules.ts would reject.
 //
 // Usage:
 //   npx tsx scripts/validate-clue.ts <path-to-json>
@@ -8,35 +9,15 @@
 //   { answer, clueType, difficulty, clue, def:{text,position}, wordplay:{indicator,fodder,operations[]}, parse }
 //
 // Prints a JSON report: [{ answer, ok, errors:[...] }].  ok === true means the
-// candidate passes the mechanical gate (validateClue) AND the surface lint.
+// candidate passes the mechanical gate (validateClue: letter mechanics,
+// abbreviations, composition/letter-accounting) AND the deterministic surface
+// gate (word-list/caps, charade containment-glue, indicator-in-surface,
+// flagrant orphan words).
 
 import { readFileSync } from 'node:fs';
 import { hydrateBankEntry, type BankEntry } from '../src/data/bank/index.ts';
 import { validateClue } from '../src/data/integrity.ts';
-
-// GATE subset — mirror of scripts/lint-surfaces.mjs (gateFlags) / surfaces.test.ts.
-// KEEP THE THREE IN SYNC. A bare word-list (no verb/connector at any length) or
-// raw all-caps fodder fails the gate; richer advisory heuristics live in the lint.
-const CONNECTORS = new Set(
-  ('a an the in on at of to for with by from and or but is are was makes make made gives give given ' +
-    'has have had as into out up over about after before during not no yes that this his her ' +
-    'its their our your my one some any each every it he she they we you i am be being been around ' +
-    'becomes become without within behind beside between through across back returns turning held ' +
-    'holding taking inside outside near seen shown sound heard say said we’re we\'re')
-    .split(/\s+/),
-);
-const connectorish = (w: string) => {
-  const lw = w.toLowerCase().replace(/[^a-z’']/g, '');
-  return CONNECTORS.has(lw) || (lw.length > 3 && /(ed|es|ing|ly|en|s)$/.test(lw));
-};
-function badSurface(clue: string): string[] {
-  const body = clue.replace(/\s*\([^)]*\)\s*$/, '').trim();
-  const words = body.split(/\s+/).filter((t) => /[a-z]/i.test(t));
-  const out: string[] = [];
-  if (words.length && !words.some(connectorish)) out.push('bare word-list');
-  if (/\b[A-Z]{3,}\b/.test(body)) out.push('raw caps fodder');
-  return out;
-}
+import { fromBankEntry, surfaceGateFlags } from '../src/data/surface-rules.ts';
 
 function readInput(): string {
   const arg = process.argv[2];
@@ -55,7 +36,11 @@ function main() {
     } catch (err) {
       errors.push(`hydrate/validate threw: ${(err as Error).message}`);
     }
-    errors.push(...badSurface(e.clue).map((s) => `surface: ${s}`));
+    try {
+      errors.push(...surfaceGateFlags(fromBankEntry(e)).map((s) => `surface: ${s}`));
+    } catch (err) {
+      errors.push(`surface gate threw: ${(err as Error).message}`);
+    }
     return { answer: e.answer, ok: errors.length === 0, errors };
   });
   process.stdout.write(JSON.stringify(report, null, 2) + '\n');

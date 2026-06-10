@@ -2,10 +2,10 @@
   {
     "answer": "ICON",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "One con makes a saint's image (4)",
+    "difficulty": 2,
+    "clue": "One prisoner becomes a celebrity (4)",
     "def": {
-      "text": "a saint's image",
+      "text": "celebrity",
       "position": "end"
     },
     "wordplay": {
@@ -19,7 +19,7 @@
         },
         {
           "op": "synonym",
-          "input": "con",
+          "input": "prisoner",
           "output": "CON"
         },
         {
@@ -29,7 +29,7 @@
         }
       ]
     },
-    "parse": "I (one) + CON (swindle) = ICON, a saint's image; \"makes\" links wordplay to definition."
+    "parse": "I (one) + CON (prisoner) = ICON, a celebrity; 'becomes' links wordplay to definition."
   },
   {
     "answer": "SMOG",
@@ -131,24 +131,24 @@
   },
   {
     "answer": "ASTRONOMERS",
-    "clueType": "lit",
-    "difficulty": 4,
-    "clue": "Moon starers organised? (11)",
+    "clueType": "anagram",
+    "difficulty": 3,
+    "clue": "No more stars, sadly, for stargazers (11)",
     "def": {
-      "text": "Moon starers organised?",
-      "position": "start"
+      "text": "stargazers",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "organised",
-      "fodder": "MOON STARERS",
+      "indicator": "sadly",
+      "fodder": "no more stars",
       "operations": [
         {
           "op": "anagram",
-          "input": "MOONSTARERS",
+          "input": "NOMORESTARS",
           "output": "ASTRONOMERS"
         }
       ]
     },
-    "parse": "(MOON STARERS)* = ASTRONOMERS — and the whole clue defines them. A famous &lit."
+    "parse": "(NO MORE STARS)* rearranged ('sadly') = ASTRONOMERS, the stargazers; 'for' links wordplay to definition."
   }
 ]

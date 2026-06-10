@@ -23,25 +23,25 @@
   },
   {
     "answer": "BAT",
-    "clueType": "reversal",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Cricketer's club from a returned bill (3)",
+    "clue": "Flier in acrobatics (3)",
     "def": {
-      "text": "Cricketer's club",
+      "text": "Flier",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "returned",
-      "fodder": "tab",
+      "indicator": "in",
+      "fodder": "acrobatics",
       "operations": [
         {
-          "op": "reverse",
-          "input": "TAB",
+          "op": "hidden",
+          "input": "acro<BAT>ics",
           "output": "BAT"
         }
       ]
     },
-    "parse": "TAB (a bill) reversed by 'returned' = BAT, the cricketer's club."
+    "parse": "BAT is hidden in 'acroBATics' ('in' signals the hidden run). A bat is a flier — the flying mammal — while the surface evokes the flier in an acrobatic troupe."
   },
   {
     "answer": "PEN",
@@ -265,25 +265,35 @@
   },
   {
     "answer": "BAR",
-    "clueType": "double-definition",
+    "clueType": "charade",
     "difficulty": 2,
-    "clue": "Lawyers bent on barring nobody (3)",
+    "clue": "Graduate runs the pub (3)",
     "def": {
-      "text": "Lawyers",
-      "position": "start"
+      "text": "pub",
+      "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Lawyers / barring nobody",
+      "fodder": "BA + R",
       "operations": [
         {
-          "op": "literal",
-          "input": "two definitions",
+          "op": "abbreviate",
+          "input": "graduate",
+          "output": "BA"
+        },
+        {
+          "op": "abbreviate",
+          "input": "runs",
+          "output": "R"
+        },
+        {
+          "op": "concat",
+          "input": "BA+R",
           "output": "BAR"
         }
       ]
     },
-    "parse": "Double definition: the BAR (the legal profession, lawyers), and to BAR (exclude). Surface paints lawyers determined to shut no one out."
+    "parse": "BA (graduate) + R (runs, from cricket scorecards) = BAR, the pub."
   },
   {
     "answer": "RED",
@@ -353,25 +363,25 @@
   },
   {
     "answer": "LIME",
-    "clueType": "anagram",
+    "clueType": "double-definition",
     "difficulty": 2,
-    "clue": "Sharp citrus from a jumbled mile (4)",
+    "clue": "Citrus tree? (4)",
     "def": {
-      "text": "Sharp citrus",
+      "text": "Citrus",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "jumbled",
-      "fodder": "mile",
+      "indicator": "",
+      "fodder": "Citrus / tree",
       "operations": [
         {
-          "op": "anagram",
-          "input": "MILE",
+          "op": "literal",
+          "input": "two definitions",
           "output": "LIME"
         }
       ]
     },
-    "parse": "Anagram of MILE (jumbled) = LIME, a sharp citrus."
+    "parse": "Double definition: a LIME is a citrus (the sharp green fruit), and the LIME — the linden — is a tree; two unrelated roots sharing one spelling. The '?' flags that each is a definition by example."
   },
   {
     "answer": "TAME",
@@ -551,35 +561,25 @@
   },
   {
     "answer": "HERB",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Sage, perhaps, is her bishop (4)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Some rather bitter seasoning (4)",
     "def": {
-      "text": "Sage, perhaps",
-      "position": "start"
+      "text": "seasoning",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "HER + B",
+      "indicator": "Some",
+      "fodder": "rather bitter",
       "operations": [
         {
-          "op": "literal",
-          "input": "her",
-          "output": "HER"
-        },
-        {
-          "op": "abbreviate",
-          "input": "bishop",
-          "output": "B"
-        },
-        {
-          "op": "concat",
-          "input": "HER+B",
+          "op": "hidden",
+          "input": "rat<HER B>itter",
           "output": "HERB"
         }
       ]
     },
-    "parse": "HER + B (bishop, in chess) = HERB; sage is a herb, so 'perhaps' flags the definition by example. Surface: a woman's chess bishop is hers."
+    "parse": "HERB hides inside 'ratHER Bitter' ('Some' tells you to take part of it); a herb is a seasoning."
   },
   {
     "answer": "CHAT",
@@ -813,25 +813,25 @@
   },
   {
     "answer": "OVEN",
-    "clueType": "hidden",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "A cooker features in every proven kitchen (4)",
+    "clue": "Place for a bun? (4)",
     "def": {
-      "text": "A cooker",
+      "text": "Place for a bun?",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "in",
-      "fodder": "proven",
+      "indicator": "",
+      "fodder": "Place for a bun?",
       "operations": [
         {
-          "op": "hidden",
-          "input": "pr<OVEN>",
+          "op": "literal",
+          "input": "pun on 'a bun in the oven'",
           "output": "OVEN"
         }
       ]
     },
-    "parse": "OVEN is hidden in 'prOVEN' (in every proven kitchen); a cooker."
+    "parse": "Cryptic definition: an oven is literally where a bun bakes — and idiomatically 'a bun in the oven' means a baby on the way. The '?' signals the pun."
   },
   {
     "answer": "EDIT",

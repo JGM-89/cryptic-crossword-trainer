@@ -68,6 +68,27 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
   - **C** — bank-wide §1b realism pass: **100 clues rebuilt** across parts f/d/e/h/i.
 - **2026-06-07** — Reset: this doc made the single source of truth; began the bounded Play-repetition
   pass (#1 above).
+- **2026-06-10 — clue-quality enforcement overhaul (mechanics + blind judging) + full rebuild of the
+  failing tail:**
+  - **Mechanical gate extended** (`integrity.ts`): charade `concat` composition (pieces must be
+    produced by prior ops or sit verbatim in the surface and join to the answer), TRUE-internal
+    `insert` verification, alternation letter-check, and rejection of swallowed indefinite articles
+    ("a cake"→CAKE). Caught 9 unfair shipped clues immediately.
+  - **New `src/data/surface-rules.ts`** — the single shared source for all surface checks (replaces
+    the old 3-way copy-sync across lint/test/CLI): orphan-word coverage (with a budget for
+    synonym-mediated cues), charade containment-glue detection, indicator-in-surface, plus the old
+    word-list/caps gate. Flagrant hits now FAIL CI (`surfaces.test.ts`) and the pipeline gate
+    (`validate-clue.ts`); single decorative words rank in the lint (`npm run clues:lint`).
+  - **Lint triage fixed**: double-defs/cryptic-defs/&lit are legitimately short and no longer rank
+    as "weakest"; gate hits top the list instead.
+  - **Blind multi-judge realism protocol** (now in `docs/clue-pipeline.md` §4b): ≥3 independent
+    judges over bare surfaces (no answers), majority vote — replaces the single rubber-stamping
+    judge. First full run failed 109/410 surfaces by majority.
+  - **Rebuilt 130 bank clues + 21 teaching clues** (union of mechanical fails, judge-majority
+    fails, and a manual §1b review) via parallel setter agents hard-gated through the extended
+    validator; teaching swaps per §1c (CATKIN→BARGAIN, THRONE→CARTON, SCREAM→PIRATE, ONSET→EVENT,
+    BARK→RULER, PUPIL→SAFE, SHED→CHAR, PAINT→VOICE). Verified by a second blind judge round +
+    semantic audit + human read-through.
 
 ## Hard rules (clue/bank editing)
 

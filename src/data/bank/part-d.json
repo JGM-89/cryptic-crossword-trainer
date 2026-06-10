@@ -25,13 +25,13 @@
     "answer": "DESSERT",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "Saint lost in the desert dreams of pudding (7)",
+    "clue": "Saint enters wilderness for pudding (7)",
     "def": {
       "text": "pudding",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "in",
+      "indicator": "enters",
       "fodder": "S in DESERT",
       "operations": [
         {
@@ -41,7 +41,7 @@
         },
         {
           "op": "synonym",
-          "input": "desert",
+          "input": "wilderness",
           "output": "DESERT"
         },
         {
@@ -51,29 +51,29 @@
         }
       ]
     },
-    "parse": "S (saint) inserted into DESERT (the desert) = DE-S-SERT = DESSERT; a 'pudding'."
+    "parse": "S (Saint) enters DESERT (wilderness) = DES-S-ERT = DESSERT, a pudding."
   },
   {
     "answer": "EARNEST",
-    "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Eastern faith, shaken, stays sincere (7)",
+    "clueType": "double-definition",
+    "difficulty": 4,
+    "clue": "Serious money down? (7)",
     "def": {
-      "text": "sincere",
-      "position": "end"
+      "text": "Serious",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "shaken",
-      "fodder": "Eastern",
+      "indicator": "",
+      "fodder": "Serious / money down",
       "operations": [
         {
-          "op": "anagram",
-          "input": "EASTERN",
+          "op": "literal",
+          "input": "two definitions",
           "output": "EARNEST"
         }
       ]
     },
-    "parse": "(EASTERN)* = EARNEST, meaning sincere; 'shaken' is the anagram indicator and 'Eastern faith' misdirects towards religion."
+    "parse": "Double definition: EARNEST means serious; an earnest is also money down — a deposit paid to seal a deal (earnest money)."
   },
   {
     "answer": "NEUTRAL",
@@ -197,35 +197,25 @@
   },
   {
     "answer": "PANCAKE",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Critics pan a cake tossed on Shrove Tuesday (7)",
+    "clueType": "cryptic-definition",
+    "difficulty": 2,
+    "clue": "Flipping good breakfast? (7)",
     "def": {
-      "text": "tossed on Shrove Tuesday",
-      "position": "end"
+      "text": "Flipping good breakfast?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "PAN + CAKE",
+      "fodder": "",
       "operations": [
         {
-          "op": "synonym",
-          "input": "pan",
-          "output": "PAN"
-        },
-        {
-          "op": "synonym",
-          "input": "a cake",
-          "output": "CAKE"
-        },
-        {
-          "op": "concat",
-          "input": "PAN+CAKE",
+          "op": "literal",
+          "input": "pun: a breakfast you flip in the pan",
           "output": "PANCAKE"
         }
       ]
     },
-    "parse": "PAN (to pan, criticise) + CAKE = PANCAKE, tossed on Shrove Tuesday."
+    "parse": "Cryptic definition: read 'flipping' literally — the breakfast that is flipped in the pan is a PANCAKE."
   },
   {
     "answer": "CARPORT",
@@ -389,67 +379,57 @@
   },
   {
     "answer": "PASSAGE",
-    "clueType": "charade",
+    "clueType": "container",
     "difficulty": 3,
-    "clue": "The pass shows its age along this corridor (7)",
+    "clue": "Corridor where the page keeps his donkey (7)",
     "def": {
-      "text": "this corridor",
-      "position": "end"
+      "text": "Corridor",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "PASS + AGE",
+      "indicator": "keeps",
+      "fodder": "ASS in PAGE",
       "operations": [
         {
           "op": "synonym",
-          "input": "The pass",
-          "output": "PASS"
+          "input": "donkey",
+          "output": "ASS"
         },
         {
           "op": "synonym",
-          "input": "its age",
-          "output": "AGE"
+          "input": "page",
+          "output": "PAGE"
         },
         {
-          "op": "concat",
-          "input": "PASS+AGE",
+          "op": "insert",
+          "input": "ASS in PAGE",
           "output": "PASSAGE"
         }
       ]
     },
-    "parse": "PASS (mountain pass) + AGE = PASSAGE, a corridor."
+    "parse": "PAGE keeps (holds) ASS (donkey) = P(ASS)AGE = PASSAGE, a corridor."
   },
   {
     "answer": "EARRING",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Through the ear, a ring of bright jewellery (7)",
+    "clue": "Some swear rings are jewellery (7)",
     "def": {
-      "text": "bright jewellery",
+      "text": "jewellery",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "EAR + RING",
+      "indicator": "Some",
+      "fodder": "swear rings",
       "operations": [
         {
-          "op": "synonym",
-          "input": "the ear",
-          "output": "EAR"
-        },
-        {
-          "op": "synonym",
-          "input": "a ring",
-          "output": "RING"
-        },
-        {
-          "op": "concat",
-          "input": "EAR+RING",
+          "op": "hidden",
+          "input": "sw<EAR RING>s",
           "output": "EARRING"
         }
       ]
     },
-    "parse": "EAR + RING = EARRING, a piece of bright jewellery."
+    "parse": "Hidden ('Some') in sw-EAR RING-s = EARRING, jewellery."
   },
   {
     "answer": "PIRATES",
@@ -475,35 +455,35 @@
   },
   {
     "answer": "BRACKET",
-    "clueType": "container",
-    "difficulty": 4,
-    "clue": "Instrument of torture held in a bet, a tax band (7)",
+    "clueType": "charade",
+    "difficulty": 3,
+    "clue": "Bishop's fiddle provides support (7)",
     "def": {
-      "text": "a tax band",
+      "text": "support",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "held in",
-      "fodder": "RACK in BET",
+      "indicator": "",
+      "fodder": "B + RACKET",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Instrument of torture",
-          "output": "RACK"
+          "op": "abbreviate",
+          "input": "Bishop",
+          "output": "B"
         },
         {
           "op": "synonym",
-          "input": "a bet",
-          "output": "BET"
+          "input": "fiddle",
+          "output": "RACKET"
         },
         {
-          "op": "insert",
-          "input": "RACK in BET",
+          "op": "concat",
+          "input": "B+RACKET",
           "output": "BRACKET"
         }
       ]
     },
-    "parse": "RACK (instrument of torture) inside BET = BRACKET; a tax band."
+    "parse": "B (bishop, chess) + RACKET (fiddle, a swindle) = BRACKET, a support."
   },
   {
     "answer": "PORTRAY",
@@ -541,13 +521,13 @@
     "answer": "BLASTED",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Strangely, the stabled lad got slated (7)",
+    "clue": "Damned horse stabled awkwardly (7)",
     "def": {
-      "text": "slated",
-      "position": "end"
+      "text": "Damned",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "Strangely",
+      "indicator": "awkwardly",
       "fodder": "stabled",
       "operations": [
         {
@@ -557,16 +537,16 @@
         }
       ]
     },
-    "parse": "(STABLED)* 'Strangely' = BLASTED, meaning slated or severely criticised."
+    "parse": "(STABLED)* 'awkwardly' = BLASTED, damned (the groom curses the badly stabled horse)."
   },
   {
     "answer": "BRANDED",
     "clueType": "container",
-    "difficulty": 4,
-    "clue": "A rand hidden in the bed left him marked (7)",
+    "difficulty": 3,
+    "clue": "Marked South African cash hidden in bed (7)",
     "def": {
-      "text": "marked",
-      "position": "end"
+      "text": "Marked",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "hidden in",
@@ -574,12 +554,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "A rand",
+          "input": "South African cash",
           "output": "RAND"
         },
         {
           "op": "synonym",
-          "input": "the bed",
+          "input": "bed",
           "output": "BED"
         },
         {
@@ -589,16 +569,16 @@
         }
       ]
     },
-    "parse": "RAND (South African money) inside BED = B(RAND)ED = BRANDED, marked."
+    "parse": "RAND (South African cash) hidden in BED = B(RAND)ED = BRANDED, marked."
   },
   {
     "answer": "BROADEN",
     "clueType": "container",
     "difficulty": 3,
-    "clue": "A road through the Ben will widen your view (7)",
+    "clue": "Widen the way through the mountain (7)",
     "def": {
-      "text": "widen your view",
-      "position": "end"
+      "text": "Widen",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "through",
@@ -606,12 +586,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "A road",
+          "input": "way",
           "output": "ROAD"
         },
         {
           "op": "synonym",
-          "input": "the Ben",
+          "input": "mountain",
           "output": "BEN"
         },
         {
@@ -621,39 +601,29 @@
         }
       ]
     },
-    "parse": "ROAD inside BEN (a Scottish mountain) = B(ROAD)EN = BROADEN, to widen your view."
+    "parse": "ROAD (way) through BEN (mountain) = B(ROAD)EN = BROADEN, to widen."
   },
   {
     "answer": "NOWHERE",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Now, here, we seem to be getting no place (7)",
+    "clue": "Where also-rans finish? (7)",
     "def": {
-      "text": "no place",
-      "position": "end"
+      "text": "Where also-rans finish?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "NOW + HERE",
+      "fodder": "",
       "operations": [
         {
           "op": "literal",
-          "input": "Now",
-          "output": "NOW"
-        },
-        {
-          "op": "synonym",
-          "input": "here",
-          "output": "HERE"
-        },
-        {
-          "op": "concat",
-          "input": "NOW+HERE",
+          "input": "pun: a horse out of the places is said to finish nowhere",
           "output": "NOWHERE"
         }
       ]
     },
-    "parse": "NOW + HERE = NOWHERE; the surface splits the answer into 'now here', the definition is 'no place'."
+    "parse": "Cryptic definition: in racing, a horse that fails to place is said to finish NOWHERE."
   },
   {
     "answer": "EARLOBE",

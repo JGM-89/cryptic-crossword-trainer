@@ -3,23 +3,23 @@
     "answer": "CREATING",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "A culture reacting wildly is forming (8)",
+    "clue": "Making a mess of catering (8)",
     "def": {
-      "text": "forming",
-      "position": "end"
+      "text": "Making",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "wildly",
-      "fodder": "REACTING",
+      "indicator": "a mess of",
+      "fodder": "catering",
       "operations": [
         {
           "op": "anagram",
-          "input": "REACTING",
+          "input": "CATERING",
           "output": "CREATING"
         }
       ]
     },
-    "parse": "Anagram of REACTING (wildly) = CREATING; forming. Surface: a culture (bacterial) reacting wildly and forming — REACTING anchored to a real subject."
+    "parse": "Anagram of CATERING ('a mess of') = CREATING; making. Surface: botching the buffet."
   },
   {
     "answer": "RELATION",
@@ -155,25 +155,35 @@
   },
   {
     "answer": "MINISTER",
-    "clueType": "anagram",
+    "clueType": "container",
     "difficulty": 3,
-    "clue": "Clergyman, oddly, able to remit sin (8)",
+    "clue": "The vicar sees one inside the minster (8)",
     "def": {
-      "text": "Clergyman",
+      "text": "The vicar",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "remit sin",
+      "indicator": "inside",
+      "fodder": "I in MINSTER",
       "operations": [
         {
-          "op": "anagram",
-          "input": "REMITSIN",
+          "op": "abbreviate",
+          "input": "one",
+          "output": "I"
+        },
+        {
+          "op": "literal",
+          "input": "minster",
+          "output": "MINSTER"
+        },
+        {
+          "op": "insert",
+          "input": "I in MINSTER",
           "output": "MINISTER"
         }
       ]
     },
-    "parse": "(REMIT SIN)* 'oddly' = MINISTER; a clergyman — who does indeed remit sin (semi-&lit)."
+    "parse": "I (one) inside MINSTER = MIN·I·STER = MINISTER, the vicar."
   },
   {
     "answer": "RESIDENT",
@@ -199,35 +209,25 @@
   },
   {
     "answer": "REACTION",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Engineers see action and provoke a response (8)",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Backlash over wrecked creation (8)",
     "def": {
-      "text": "a response",
-      "position": "end"
+      "text": "Backlash",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "RE + ACTION",
+      "indicator": "wrecked",
+      "fodder": "creation",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Engineers",
-          "output": "RE"
-        },
-        {
-          "op": "synonym",
-          "input": "action",
-          "output": "ACTION"
-        },
-        {
-          "op": "concat",
-          "input": "RE+ACTION",
+          "op": "anagram",
+          "input": "CREATION",
           "output": "REACTION"
         }
       ]
     },
-    "parse": "RE (Royal Engineers) + ACTION (combat) = REACTION, a response."
+    "parse": "Anagram of CREATION ('wrecked') = REACTION; a backlash. Surface: public outcry over a destroyed artwork."
   },
   {
     "answer": "CONTAINER",
@@ -254,24 +254,24 @@
   {
     "answer": "GRADIENTS",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Scattered red giants chart the slopes (9)",
+    "difficulty": 3,
+    "clue": "Dragnet is spread over the slopes (9)",
     "def": {
       "text": "the slopes",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Scattered",
-      "fodder": "red giants",
+      "indicator": "spread",
+      "fodder": "Dragnet is",
       "operations": [
         {
           "op": "anagram",
-          "input": "REDGIANTS",
+          "input": "DRAGNETIS",
           "output": "GRADIENTS"
         }
       ]
     },
-    "parse": "(RED GIANTS)* 'Scattered' = GRADIENTS, the slopes."
+    "parse": "Anagram of DRAGNET IS ('spread') = GRADIENTS; the slopes. Surface: a police search net cast across the hillside."
   },
   {
     "answer": "ORGANISES",
@@ -330,15 +330,15 @@
   {
     "answer": "CORRELATE",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "Cartel ore, refined, ought to tally (9)",
+    "difficulty": 3,
+    "clue": "Refined cartel ore should tally (9)",
     "def": {
       "text": "tally",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "refined",
-      "fodder": "Cartel ore",
+      "indicator": "Refined",
+      "fodder": "cartel ore",
       "operations": [
         {
           "op": "anagram",
@@ -347,7 +347,7 @@
         }
       ]
     },
-    "parse": "(CARTEL ORE)* 'refined' = CORRELATE, to tally or match up."
+    "parse": "Anagram of CARTEL ORE ('refined') = CORRELATE; to tally, match up. Surface: an auditor expecting the cartel's refined ore to square with the books."
   },
   {
     "answer": "ASCERTAIN",
@@ -373,43 +373,33 @@
   },
   {
     "answer": "HARDSHIP",
-    "clueType": "charade",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "Stiff vessel runs into trouble (8)",
+    "clue": "Trouble found in orchard shipment (8)",
     "def": {
-      "text": "trouble",
-      "position": "end"
+      "text": "Trouble",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "HARD+SHIP",
+      "indicator": "in",
+      "fodder": "orchard shipment",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Stiff",
-          "output": "HARD"
-        },
-        {
-          "op": "synonym",
-          "input": "vessel",
-          "output": "SHIP"
-        },
-        {
-          "op": "concat",
-          "input": "HARD+SHIP",
+          "op": "hidden",
+          "input": "orc<HARD SHIP>ment",
           "output": "HARDSHIP"
         }
       ]
     },
-    "parse": "HARD (stiff) + SHIP (vessel) = HARDSHIP, meaning trouble."
+    "parse": "Hidden in 'orcHARD SHIPment' = HARDSHIP; trouble. Surface: inspectors finding pests in a fruit consignment."
   },
   {
     "answer": "FORECAST",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "At the front, the cast read out the weather (8)",
+    "clue": "Front company makes a prediction (8)",
     "def": {
-      "text": "the weather",
+      "text": "prediction",
       "position": "end"
     },
     "wordplay": {
@@ -418,12 +408,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "At the front",
+          "input": "Front",
           "output": "FORE"
         },
         {
           "op": "synonym",
-          "input": "the cast",
+          "input": "company",
           "output": "CAST"
         },
         {
@@ -433,77 +423,57 @@
         }
       ]
     },
-    "parse": "FORE (at the front) + CAST (the actors) = FORECAST, the weather."
+    "parse": "FORE (front) + CAST (company — of actors) = FORECAST; a prediction. Surface: a shell company issuing a forecast."
   },
   {
     "answer": "SPEARMINT",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "A spear of mint adds a fresh flavour (9)",
+    "clue": "Eccentric Ms Painter provides the herb (9)",
     "def": {
-      "text": "a fresh flavour",
+      "text": "herb",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "SPEAR + MINT",
+      "indicator": "Eccentric",
+      "fodder": "Ms Painter",
       "operations": [
         {
-          "op": "synonym",
-          "input": "A spear",
-          "output": "SPEAR"
-        },
-        {
-          "op": "synonym",
-          "input": "mint",
-          "output": "MINT"
-        },
-        {
-          "op": "concat",
-          "input": "SPEAR+MINT",
+          "op": "anagram",
+          "input": "MSPAINTER",
           "output": "SPEARMINT"
         }
       ]
     },
-    "parse": "SPEAR + MINT = SPEARMINT, a fresh flavour."
+    "parse": "Anagram of MS PAINTER ('eccentric') = SPEARMINT; a herb. Surface: the village eccentric supplying herbs from her garden."
   },
   {
     "answer": "CHAIRLIFT",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Preside, then nick a ride up the slope (9)",
+    "clue": "High chair for skiers? (9)",
     "def": {
-      "text": "a ride up the slope",
-      "position": "end"
+      "text": "High chair for skiers?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CHAIR + LIFT",
+      "fodder": "",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Preside",
-          "output": "CHAIR"
-        },
-        {
-          "op": "synonym",
-          "input": "nick",
-          "output": "LIFT"
-        },
-        {
-          "op": "concat",
-          "input": "CHAIR+LIFT",
+          "op": "literal",
+          "input": "pun on a chair raised high",
           "output": "CHAIRLIFT"
         }
       ]
     },
-    "parse": "CHAIR (to preside) + LIFT (to nick, steal) = CHAIRLIFT, a ride up the slope."
+    "parse": "Cryptic definition: a chairlift really is a chair riding high, for skiers — misdirecting to a baby's highchair."
   },
   {
     "answer": "HANDPRINT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Deck-crew member's press leaves its mark (9)",
+    "clue": "Worker's etching makes its mark (9)",
     "def": {
       "text": "mark",
       "position": "end"
@@ -514,12 +484,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "Deck-crew member",
+          "input": "Worker",
           "output": "HAND"
         },
         {
           "op": "synonym",
-          "input": "press",
+          "input": "etching",
           "output": "PRINT"
         },
         {
@@ -529,7 +499,7 @@
         }
       ]
     },
-    "parse": "HAND (deck-crew member) + PRINT (the press) = HANDPRINT; a mark. Surface: the deck-hand's press leaves its mark."
+    "parse": "HAND (worker) + PRINT (etching) = HANDPRINT; a mark. Surface: an artisan's etching winning acclaim."
   },
   {
     "answer": "OVERBOARD",
@@ -565,43 +535,43 @@
   },
   {
     "answer": "CARPENTER",
-    "clueType": "charade",
+    "clueType": "container",
     "difficulty": 3,
-    "clue": "Joiner has fish coming in (9)",
+    "clue": "The carter keeps a pen for the joiner (9)",
     "def": {
-      "text": "Joiner",
-      "position": "start"
+      "text": "the joiner",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "CARP + ENTER",
+      "indicator": "keeps",
+      "fodder": "PEN in CARTER",
       "operations": [
         {
-          "op": "synonym",
-          "input": "fish",
-          "output": "CARP"
+          "op": "literal",
+          "input": "carter",
+          "output": "CARTER"
         },
         {
-          "op": "synonym",
-          "input": "coming in",
-          "output": "ENTER"
+          "op": "literal",
+          "input": "pen",
+          "output": "PEN"
         },
         {
-          "op": "concat",
-          "input": "CARP+ENTER",
+          "op": "insert",
+          "input": "PEN in CARTER",
           "output": "CARPENTER"
         }
       ]
     },
-    "parse": "CARP (fish) + ENTER (coming in) = CARPENTER, a joiner."
+    "parse": "PEN held inside CARTER = CAR·PEN·TER = CARPENTER, the joiner."
   },
   {
     "answer": "STARGAZER",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "The celebrity's onlooker turns out a dreamer (9)",
+    "difficulty": 2,
+    "clue": "Celebrity watcher is a dreamer (9)",
     "def": {
-      "text": "a dreamer",
+      "text": "dreamer",
       "position": "end"
     },
     "wordplay": {
@@ -610,12 +580,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "The celebrity",
+          "input": "Celebrity",
           "output": "STAR"
         },
         {
           "op": "synonym",
-          "input": "onlooker",
+          "input": "watcher",
           "output": "GAZER"
         },
         {
@@ -625,15 +595,15 @@
         }
       ]
     },
-    "parse": "STAR (celebrity) + GAZER (onlooker) = STARGAZER, a dreamer."
+    "parse": "STAR (celebrity) + GAZER (watcher) = STARGAZER; a dreamer. Surface: the celebrity-spotter with their head in the clouds."
   },
   {
     "answer": "FOOTPRINT",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "A measure of newsprint left as a trace (9)",
+    "clue": "Pay to publish a track (9)",
     "def": {
-      "text": "trace",
+      "text": "track",
       "position": "end"
     },
     "wordplay": {
@@ -642,12 +612,12 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "A measure",
+          "input": "Pay",
           "output": "FOOT"
         },
         {
           "op": "synonym",
-          "input": "newsprint",
+          "input": "publish",
           "output": "PRINT"
         },
         {
@@ -657,7 +627,7 @@
         }
       ]
     },
-    "parse": "FOOT (a measure, twelve inches) + PRINT (newsprint, the press) = FOOTPRINT; a trace left behind."
+    "parse": "FOOT (pay, as in foot the bill) + PRINT (publish) = FOOTPRINT; a track. Surface: a musician paying to release a song."
   },
   {
     "answer": "WATERFALL",
@@ -747,35 +717,25 @@
   },
   {
     "answer": "STEALING",
-    "clueType": "container",
-    "difficulty": 3,
-    "clue": "A teal in full song, caught thieving (8)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Thieving in West Ealing? (8)",
     "def": {
-      "text": "thieving",
-      "position": "end"
+      "text": "Thieving",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "in",
-      "fodder": "TEAL in SING",
+      "fodder": "West Ealing",
       "operations": [
         {
-          "op": "synonym",
-          "input": "A teal",
-          "output": "TEAL"
-        },
-        {
-          "op": "synonym",
-          "input": "full song",
-          "output": "SING"
-        },
-        {
-          "op": "insert",
-          "input": "TEAL in SING",
+          "op": "hidden",
+          "input": "We<ST EALING>",
           "output": "STEALING"
         }
       ]
     },
-    "parse": "TEAL (a duck) inside SING (full song) = S-TEAL-ING = STEALING, thieving."
+    "parse": "Hidden in 'weST EALING' = STEALING; thieving. Surface: a local-paper headline about crime in the London suburb."
   },
   {
     "answer": "SWEARING",
@@ -811,35 +771,25 @@
   },
   {
     "answer": "STARLING",
-    "clueType": "container",
-    "difficulty": 3,
-    "clue": "A sailor laid up in a sling sings like a songbird? (8)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Bird in superstar lingo (8)",
     "def": {
-      "text": "a songbird",
-      "position": "end"
+      "text": "Bird",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "in",
-      "fodder": "TAR in SLING",
+      "fodder": "superstar lingo",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "sailor",
-          "output": "TAR"
-        },
-        {
-          "op": "synonym",
-          "input": "a sling",
-          "output": "SLING"
-        },
-        {
-          "op": "insert",
-          "input": "TAR in SLING",
+          "op": "hidden",
+          "input": "super<STAR LING>o",
           "output": "STARLING"
         }
       ]
     },
-    "parse": "TAR (sailor) inside SLING = S-TAR-LING = STARLING; a songbird (the '?' flags definition by example)."
+    "parse": "Hidden in 'superSTAR LINGo' = STARLING; a bird. Surface: 'bird' is exactly the sort of word a rock star's slang would use."
   },
   {
     "answer": "SHEARING",
@@ -887,35 +837,25 @@
   },
   {
     "answer": "OVERHAUL",
-    "clueType": "charade",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Finished dragging the wreck in for a refit (8)",
+    "clue": "Examine thoroughly and overtake (8)",
     "def": {
-      "text": "a refit",
-      "position": "end"
+      "text": "Examine thoroughly",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "OVER + HAUL",
+      "fodder": "Examine thoroughly / overtake",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Finished",
-          "output": "OVER"
-        },
-        {
-          "op": "synonym",
-          "input": "dragging",
-          "output": "HAUL"
-        },
-        {
-          "op": "concat",
-          "input": "OVER+HAUL",
+          "op": "literal",
+          "input": "two definitions",
           "output": "OVERHAUL"
         }
       ]
     },
-    "parse": "OVER (finished) + HAUL (dragging) = OVERHAUL; a refit. Surface: a salvaged wreck finished being dragged in, ready for a refit."
+    "parse": "Double definition: OVERHAUL = to examine thoroughly (service), and OVERHAUL = to overtake (catch up with)."
   },
   {
     "answer": "OVERNIGHT",
@@ -1006,10 +946,10 @@
   {
     "answer": "STRESSED",
     "clueType": "reversal",
-    "difficulty": 3,
-    "clue": "Under pressure, puddings sent back (8)",
+    "difficulty": 2,
+    "clue": "Tense when puddings are sent back (8)",
     "def": {
-      "text": "Under pressure",
+      "text": "Tense",
       "position": "start"
     },
     "wordplay": {
@@ -1017,12 +957,17 @@
       "fodder": "DESSERTS",
       "operations": [
         {
+          "op": "synonym",
+          "input": "puddings",
+          "output": "DESSERTS"
+        },
+        {
           "op": "reverse",
           "input": "DESSERTS",
           "output": "STRESSED"
         }
       ]
     },
-    "parse": "DESSERTS (puddings) reversed (sent back) = STRESSED, under pressure."
+    "parse": "DESSERTS (puddings) reversed ('sent back') = STRESSED; tense. Surface: the chef's nerves when diners return the puddings."
   }
 ]

@@ -12,6 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "clues:validate": "tsx scripts/validate-clue.ts",
+    "clues:lint": "tsx scripts/lint-surfaces.ts",
     "clues:chunk": "node scripts/clue-chunk.mjs",
     "clues:assemble": "node scripts/clue-assemble.mjs",
     "clues:patch": "node scripts/clue-patch.mjs",

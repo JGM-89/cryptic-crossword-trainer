@@ -33,34 +33,34 @@
   },
   {
     "answer": "TRACE",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "Crate smashed leaves a faint mark (5)",
+    "clueType": "double-definition",
+    "difficulty": 3,
+    "clue": "Track down the faintest sign (5)",
     "def": {
-      "text": "a faint mark",
-      "position": "end"
+      "text": "Track down",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "smashed",
-      "fodder": "Crate",
+      "indicator": "",
+      "fodder": "Track down / the faintest sign",
       "operations": [
         {
-          "op": "anagram",
-          "input": "CRATE",
+          "op": "literal",
+          "input": "two definitions",
           "output": "TRACE"
         }
       ]
     },
-    "parse": "Anagram of CRATE (indicated by 'smashed') = TRACE; a faint mark."
+    "parse": "Double definition: to TRACE is to track down (as police trace a call); a TRACE is the faintest sign (vanished without a trace)."
   },
   {
     "answer": "REACT",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "A broken crate makes the warehouse staff respond (5)",
+    "difficulty": 2,
+    "clue": "Respond when the crate is broken (5)",
     "def": {
-      "text": "respond",
-      "position": "end"
+      "text": "Respond",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "broken",
@@ -73,7 +73,7 @@
         }
       ]
     },
-    "parse": "Anagram ('broken') of CRATE = REACT; to respond."
+    "parse": "Anagram of CRATE (indicated by 'broken') = REACT; to respond."
   },
   {
     "answer": "DROVE",
@@ -101,23 +101,23 @@
     "answer": "ALERT",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Rashly alter, but stay on guard (5)",
+    "clue": "Later, he was drunk but still sharp (5)",
     "def": {
-      "text": "stay on guard",
+      "text": "sharp",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Rashly",
-      "fodder": "alter",
+      "indicator": "drunk",
+      "fodder": "Later",
       "operations": [
         {
           "op": "anagram",
-          "input": "ALTER",
+          "input": "LATER",
           "output": "ALERT"
         }
       ]
     },
-    "parse": "Anagram of ALTER (rashly) = ALERT, to stay on guard."
+    "parse": "Anagram of LATER (indicated by 'drunk') = ALERT; sharp, mentally on the ball."
   },
   {
     "answer": "ANGEL",
@@ -219,35 +219,25 @@
   },
   {
     "answer": "MANGO",
-    "clueType": "charade",
+    "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Watch the man go to fetch a tropical fruit (5)",
+    "clue": "Found rotten among the fruit (5)",
     "def": {
-      "text": "a tropical fruit",
+      "text": "fruit",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "MAN + GO",
+      "indicator": "rotten",
+      "fodder": "among",
       "operations": [
         {
-          "op": "synonym",
-          "input": "man",
-          "output": "MAN"
-        },
-        {
-          "op": "synonym",
-          "input": "go",
-          "output": "GO"
-        },
-        {
-          "op": "concat",
-          "input": "MAN+GO",
+          "op": "anagram",
+          "input": "AMONG",
           "output": "MANGO"
         }
       ]
     },
-    "parse": "MAN (man) + GO (go) = MANGO, a tropical fruit."
+    "parse": "Anagram of AMONG (indicated by 'rotten') = MANGO; the fruit — found rotten among the fruit, fittingly."
   },
   {
     "answer": "PANIC",
@@ -319,23 +309,28 @@
     "answer": "TENOR",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Ten or so in the choir caught the general drift (5)",
+    "clue": "Net returned gold for the singer (5)",
     "def": {
-      "text": "the general drift",
+      "text": "the singer",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "TEN + OR",
+      "indicator": "returned",
+      "fodder": "net + gold",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Ten",
+          "op": "literal",
+          "input": "net",
+          "output": "NET"
+        },
+        {
+          "op": "reverse",
+          "input": "NET",
           "output": "TEN"
         },
         {
-          "op": "synonym",
-          "input": "or",
+          "op": "abbreviate",
+          "input": "gold",
           "output": "OR"
         },
         {
@@ -345,39 +340,29 @@
         }
       ]
     },
-    "parse": "TEN + OR (ten or so) = TENOR; the general drift or purport."
+    "parse": "NET 'returned' = TEN, + OR (gold, heraldry) = TENOR, the singer."
   },
   {
     "answer": "DRAIN",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Daughter caught in a downpour will sap one's strength (5)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Gutter takes some hard rain (5)",
     "def": {
-      "text": "sap one's strength",
-      "position": "end"
+      "text": "Gutter",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "D + RAIN",
+      "indicator": "some",
+      "fodder": "hard rain",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Daughter",
-          "output": "D"
-        },
-        {
-          "op": "synonym",
-          "input": "downpour",
-          "output": "RAIN"
-        },
-        {
-          "op": "concat",
-          "input": "D+RAIN",
+          "op": "hidden",
+          "input": "har<D RAIN>",
           "output": "DRAIN"
         }
       ]
     },
-    "parse": "D (daughter) + RAIN (a downpour) = DRAIN; to sap one's strength."
+    "parse": "Hidden ('some') in 'harD RAIN' = DRAIN; a gutter."
   },
   {
     "answer": "PLANT",
@@ -414,8 +399,8 @@
   {
     "answer": "CHARM",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "The Church's long arm has real appeal (5)",
+    "difficulty": 2,
+    "clue": "Church arm has appeal (5)",
     "def": {
       "text": "appeal",
       "position": "end"
@@ -426,7 +411,7 @@
       "operations": [
         {
           "op": "abbreviate",
-          "input": "Church",
+          "input": "church",
           "output": "CH"
         },
         {
@@ -441,29 +426,29 @@
         }
       ]
     },
-    "parse": "CH (Church) + ARM (the long arm) = CHARM; appeal."
+    "parse": "CH (church) + ARM (from the surface) = CHARM; appeal. The surface reads as a church branch launching a fundraising appeal."
   },
   {
     "answer": "STAIN",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Satin worked into a mark (5)",
+    "difficulty": 2,
+    "clue": "A corrupt saint leaves a blot (5)",
     "def": {
-      "text": "a mark",
+      "text": "blot",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "worked",
-      "fodder": "Satin",
+      "indicator": "corrupt",
+      "fodder": "saint",
       "operations": [
         {
           "op": "anagram",
-          "input": "Satin",
+          "input": "SAINT",
           "output": "STAIN"
         }
       ]
     },
-    "parse": "Anagram of SATIN (indicated by 'worked') gives STAIN, a mark."
+    "parse": "Anagram of SAINT (indicated by 'corrupt') = STAIN; a blot."
   },
   {
     "answer": "STAIR",
@@ -513,23 +498,23 @@
     "answer": "ASHEN",
     "clueType": "hidden",
     "difficulty": 2,
-    "clue": "A flash entered, leaving him pale (5)",
+    "clue": "Some cash envelopes make you pale (5)",
     "def": {
       "text": "pale",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "entered",
-      "fodder": "flash entered",
+      "indicator": "Some",
+      "fodder": "cash envelopes",
       "operations": [
         {
           "op": "hidden",
-          "input": "fl<ASH EN>tered",
+          "input": "c<ASH EN>velopes",
           "output": "ASHEN"
         }
       ]
     },
-    "parse": "Hidden in 'flASH ENtered' = ASHEN, pale."
+    "parse": "Hidden ('some') in 'cASH ENvelopes' = ASHEN; pale."
   },
   {
     "answer": "ORGAN",
@@ -557,13 +542,13 @@
     "answer": "EAGER",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Queuing fans agree wildly, so keen (5)",
+    "clue": "Keen to agree, surprisingly (5)",
     "def": {
-      "text": "keen",
-      "position": "end"
+      "text": "Keen",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "wildly",
+      "indicator": "surprisingly",
       "fodder": "agree",
       "operations": [
         {
@@ -573,29 +558,29 @@
         }
       ]
     },
-    "parse": "Anagram ('wildly') of AGREE = EAGER; keen."
+    "parse": "Anagram of AGREE (indicated by 'surprisingly') = EAGER; keen."
   },
   {
     "answer": "NADIR",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "A drain, ruined, hits the lowest point (5)",
+    "clue": "Dinar collapsed to its lowest point (5)",
     "def": {
-      "text": "the lowest point",
+      "text": "lowest point",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "ruined",
-      "fodder": "drain",
+      "indicator": "collapsed",
+      "fodder": "Dinar",
       "operations": [
         {
           "op": "anagram",
-          "input": "DRAIN",
+          "input": "DINAR",
           "output": "NADIR"
         }
       ]
     },
-    "parse": "Anagram of DRAIN (ruined) = NADIR; the lowest point."
+    "parse": "Anagram of DINAR (indicated by 'collapsed') = NADIR; the lowest point."
   },
   {
     "answer": "REPEL",
@@ -720,15 +705,15 @@
   {
     "answer": "RANGE",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Anger boiled over into a mountain chain (5)",
+    "difficulty": 2,
+    "clue": "The stove stirred up anger (5)",
     "def": {
-      "text": "a mountain chain",
-      "position": "end"
+      "text": "The stove",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "boiled over",
-      "fodder": "Anger",
+      "indicator": "stirred up",
+      "fodder": "anger",
       "operations": [
         {
           "op": "anagram",
@@ -737,7 +722,7 @@
         }
       ]
     },
-    "parse": "Anagram (boiled over) of ANGER gives RANGE, a mountain chain."
+    "parse": "Anagram of ANGER (indicated by 'stirred up') = RANGE; the stove (a kitchen range)."
   },
   {
     "answer": "EARTH",
@@ -764,8 +749,8 @@
   {
     "answer": "WHERE",
     "clueType": "homophone",
-    "difficulty": 3,
-    "clue": "Clothes to wear, we hear, but in what place? (5)",
+    "difficulty": 2,
+    "clue": "You wear it, we hear — but in what place? (5)",
     "def": {
       "text": "in what place",
       "position": "end"
@@ -781,7 +766,7 @@
         }
       ]
     },
-    "parse": "WEAR (clothes to wear) sounds like (we hear) WHERE; in what place."
+    "parse": "WEAR ('you wear it') sounds like ('we hear') WHERE; in what place."
   },
   {
     "answer": "LIGHT",
@@ -896,14 +881,14 @@
   {
     "answer": "WAIST",
     "clueType": "homophone",
-    "difficulty": 3,
-    "clue": "A waste, we hear, around the middle (5)",
+    "difficulty": 2,
+    "clue": "Waste reportedly found around the middle (5)",
     "def": {
       "text": "middle",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "we hear",
+      "indicator": "reportedly",
       "fodder": "waste",
       "operations": [
         {
@@ -913,6 +898,6 @@
         }
       ]
     },
-    "parse": "WASTE sounds like WAIST ('we hear') = WAIST; the 'middle' of the body. The surface plays on a 'waste around the middle'."
+    "parse": "WASTE sounds like ('reportedly') WAIST; the middle of the body."
   }
 ]

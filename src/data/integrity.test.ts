@@ -63,6 +63,172 @@ describe('validateClue catches broken clues', () => {
     expect(errors.join(' ')).toMatch(/unrecognised abbreviation/);
   });
 
+  it('flags a charade whose concat pieces do not compose to the solution', () => {
+    const broken = {
+      ...good,
+      clueType: 'charade' as const,
+      solution: 'PANCAKE',
+      enumeration: '7',
+      wordplay: {
+        indicator: '',
+        fodder: 'PAN + CAKE',
+        operations: [
+          { op: 'synonym' as const, input: 'pan', output: 'PAN' },
+          { op: 'synonym' as const, input: 'a cake', output: 'COKE' },
+          { op: 'concat' as const, input: 'PAN+CAKE', output: 'PANCAKE' },
+        ],
+      },
+    };
+    expect(validateClue(broken).join(' ')).toMatch(/concat piece/);
+  });
+
+  it('accepts a charade whose concat pieces compose, including via a chained op', () => {
+    const chained = {
+      ...good,
+      clueType: 'charade' as const,
+      solution: 'REGALE',
+      enumeration: '6',
+      clue: 'Returned beer with energy to entertain (6)',
+      definitionSpan: { text: 'entertain', start: 30, end: 39, position: 'end' as const },
+      wordplay: {
+        indicator: 'Returned',
+        fodder: 'LAGER + E',
+        operations: [
+          { op: 'synonym' as const, input: 'beer', output: 'LAGER' },
+          { op: 'reverse' as const, input: 'LAGER', output: 'REGAL' },
+          { op: 'abbreviate' as const, input: 'energy', output: 'E' },
+          { op: 'concat' as const, input: 'REGAL+E', output: 'REGALE' },
+        ],
+      },
+    };
+    expect(validateClue(chained).join(' ')).not.toMatch(/concat piece/);
+  });
+
+  it('flags an insert that is not a true internal insertion', () => {
+    const broken = {
+      ...good,
+      clueType: 'container' as const,
+      solution: 'OVICE',
+      enumeration: '5',
+      wordplay: {
+        indicator: 'about',
+        fodder: 'O in VICE',
+        operations: [
+          { op: 'abbreviate' as const, input: 'nothing', output: 'O' },
+          { op: 'synonym' as const, input: 'wickedness', output: 'VICE' },
+          { op: 'insert' as const, input: 'O in VICE', output: 'OVICE' },
+        ],
+      },
+    };
+    expect(validateClue(broken).join(' ')).toMatch(/not a true insertion|insert/);
+  });
+
+  it('accepts a genuine internal insertion (O in VICE = VOICE)', () => {
+    const ok = {
+      ...good,
+      clueType: 'container' as const,
+      solution: 'VOICE',
+      enumeration: '5',
+      clue: "Utter nothing when there's wickedness about (5)",
+      definitionSpan: { text: 'Utter', start: 0, end: 5, position: 'start' as const },
+      wordplay: {
+        indicator: 'about',
+        fodder: 'O in VICE',
+        operations: [
+          { op: 'abbreviate' as const, input: 'nothing', output: 'O' },
+          { op: 'synonym' as const, input: 'wickedness', output: 'VICE' },
+          { op: 'insert' as const, input: 'O in VICE', output: 'VOICE' },
+        ],
+      },
+    };
+    expect(validateClue(ok).join(' ')).not.toMatch(/insertion|insert piece/);
+  });
+
+  it('accepts an insert piece that appears literally in the surface ("taking me in")', () => {
+    const ok = {
+      ...good,
+      clueType: 'container' as const,
+      solution: 'DEMEAN',
+      enumeration: '6',
+      clue: 'Cathedral head taking me in to degrade (6)',
+      definitionSpan: { text: 'degrade', start: 31, end: 38, position: 'end' as const },
+      wordplay: {
+        indicator: 'taking ... in',
+        fodder: 'ME in DEAN',
+        operations: [
+          { op: 'synonym' as const, input: 'Cathedral head', output: 'DEAN' },
+          { op: 'insert' as const, input: 'ME in DEAN', output: 'DEMEAN' },
+        ],
+      },
+    };
+    expect(validateClue(ok).join(' ')).not.toMatch(/insert piece/);
+  });
+
+  it('flags an unindicated article swallowed by a literal piece ("a cake" → CAKE)', () => {
+    const broken = {
+      ...good,
+      clueType: 'charade' as const,
+      solution: 'PANCAKE',
+      enumeration: '7',
+      wordplay: {
+        indicator: '',
+        fodder: 'PAN + CAKE',
+        operations: [
+          { op: 'synonym' as const, input: 'pan', output: 'PAN' },
+          { op: 'synonym' as const, input: 'a cake', output: 'CAKE' },
+          { op: 'concat' as const, input: 'PAN+CAKE', output: 'PANCAKE' },
+        ],
+      },
+    };
+    expect(validateClue(broken).join(' ')).toMatch(/unindicated article/);
+  });
+
+  it('tolerates a definite article before a literal piece ("the bed" → BED)', () => {
+    const ok = {
+      ...good,
+      wordplay: {
+        ...good.wordplay,
+        operations: [
+          ...good.wordplay.operations,
+          { op: 'synonym' as const, input: 'the bed', output: 'BED' },
+        ],
+      },
+    };
+    expect(validateClue(ok).join(' ')).not.toMatch(/unindicated article/);
+  });
+
+  it('flags an alternation whose alternate letters do not spell the solution', () => {
+    const broken = {
+      ...good,
+      clueType: 'alternation' as const,
+      solution: 'BRAIN',
+      enumeration: '5',
+      wordplay: {
+        indicator: 'Regularly',
+        fodder: 'barbarous',
+        operations: [{ op: 'alternate' as const, input: 'barbarous', output: 'BRAIN' }],
+      },
+    };
+    expect(validateClue(broken).join(' ')).toMatch(/alternation/);
+  });
+
+  it('accepts an alternation whose alternate letters spell the solution', () => {
+    const ok = {
+      ...good,
+      clueType: 'alternation' as const,
+      solution: 'BRAIN',
+      enumeration: '5',
+      clue: 'Regularly barbarian in mind (5)',
+      definitionSpan: { text: 'mind', start: 23, end: 27, position: 'end' as const },
+      wordplay: {
+        indicator: 'Regularly',
+        fodder: 'barbarian',
+        operations: [{ op: 'alternate' as const, input: 'barbarian', output: 'BRAIN' }],
+      },
+    };
+    expect(validateClue(ok).join(' ')).not.toMatch(/alternation/);
+  });
+
   it('accepts a first-letter device (boy primarily → B)', () => {
     const charade = CLUES.find((c) => c.clueType === 'charade') ?? good;
     const clue = {

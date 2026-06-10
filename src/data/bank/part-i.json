@@ -177,25 +177,25 @@
   },
   {
     "answer": "HARE",
-    "clueType": "anagram",
-    "difficulty": 2,
-    "clue": "A runner you might hear, oddly (4)",
+    "clueType": "cryptic-definition",
+    "difficulty": 3,
+    "clue": "Runner greyhounds chase but never catch? (4)",
     "def": {
-      "text": "A runner",
+      "text": "Runner greyhounds chase but never catch?",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "hear",
+      "indicator": "",
+      "fodder": "",
       "operations": [
         {
-          "op": "anagram",
-          "input": "HEAR",
+          "op": "literal",
+          "input": "pun on the mechanical hare at a greyhound track",
           "output": "HARE"
         }
       ]
     },
-    "parse": "(HEAR)* 'oddly' = HARE, a runner."
+    "parse": "Cryptic definition: at the dog track the greyhounds chase a mechanical HARE that is never caught — and a hare is a runner."
   },
   {
     "answer": "NEST",
@@ -265,35 +265,25 @@
   },
   {
     "answer": "MEND",
-    "clueType": "charade",
+    "clueType": "lit",
     "difficulty": 3,
-    "clue": "Chaps' daughter starts to recover (4)",
+    "clue": "Initially make every nick disappear? (4)",
     "def": {
-      "text": "recover",
-      "position": "end"
+      "text": "Initially make every nick disappear?",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "MEN + D",
+      "indicator": "Initially",
+      "fodder": "make every nick disappear",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Chaps",
-          "output": "MEN"
-        },
-        {
-          "op": "abbreviate",
-          "input": "daughter",
-          "output": "D"
-        },
-        {
-          "op": "concat",
-          "input": "MEN+D",
+          "op": "initials",
+          "input": "Make Every Nick Disappear",
           "output": "MEND"
         }
       ]
     },
-    "parse": "MEN (chaps) + D (daughter) = MEND; to 'recover' from illness."
+    "parse": "&lit: 'Initially' takes the first letters of Make Every Nick Disappear = MEND — and the whole clue describes what mending does."
   },
   {
     "answer": "RIFE",
@@ -671,13 +661,13 @@
     "answer": "CLOUD",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Could, possibly, cast a shadow (5)",
+    "clue": "Could be upset by gloom (5)",
     "def": {
-      "text": "cast a shadow",
+      "text": "gloom",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "possibly",
+      "indicator": "upset",
       "fodder": "Could",
       "operations": [
         {
@@ -687,7 +677,7 @@
         }
       ]
     },
-    "parse": "Anagram (possibly) of COULD = CLOUD; to cast a shadow, to obscure."
+    "parse": "COULD 'upset' (anagrammed) = CLOUD, a gloom (as in 'a cloud over the proceedings')."
   },
   {
     "answer": "CASTLE",
@@ -736,24 +726,24 @@
   {
     "answer": "SILVER",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "Beaten out, the sliver shines as metal (6)",
+    "difficulty": 2,
+    "clue": "Cooked livers provide metal (6)",
     "def": {
       "text": "metal",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Beaten out",
-      "fodder": "sliver",
+      "indicator": "Cooked",
+      "fodder": "livers",
       "operations": [
         {
           "op": "anagram",
-          "input": "SLIVER",
+          "input": "LIVERS",
           "output": "SILVER"
         }
       ]
     },
-    "parse": "(SLIVER)* 'Beaten out' = SILVER, a metal."
+    "parse": "(LIVERS)* 'Cooked' = SILVER, a metal. The surface misdirects to iron-rich liver."
   },
   {
     "answer": "ISLAND",
@@ -801,25 +791,25 @@
   },
   {
     "answer": "SADDLE",
-    "clueType": "double-definition",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Burden the rider's seat (6)",
+    "clue": "Burden for the horse? (6)",
     "def": {
-      "text": "the rider's seat",
-      "position": "end"
+      "text": "Burden for the horse?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Burden / the rider's seat",
+      "fodder": "",
       "operations": [
         {
           "op": "literal",
-          "input": "two definitions",
+          "input": "pun: a saddle is literally a burden a horse carries, and to saddle is to burden",
           "output": "SADDLE"
         }
       ]
     },
-    "parse": "Double definition: to SADDLE is to burden, and a SADDLE is the rider's seat."
+    "parse": "Cryptic definition: a SADDLE is the burden a horse carries — and to saddle someone is to burden them."
   },
   {
     "answer": "PIGEON",
@@ -912,14 +902,14 @@
   {
     "answer": "MARBLE",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "A ramble, oddly, over the stone (6)",
+    "difficulty": 2,
+    "clue": "Stone found on a wild ramble (6)",
     "def": {
-      "text": "the stone",
-      "position": "end"
+      "text": "Stone",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "oddly",
+      "indicator": "wild",
       "fodder": "ramble",
       "operations": [
         {
@@ -929,20 +919,20 @@
         }
       ]
     },
-    "parse": "(RAMBLE)* 'oddly' = MARBLE, a stone."
+    "parse": "(RAMBLE)* 'wild' = MARBLE, a stone."
   },
   {
     "answer": "PEPPER",
     "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Spice up, or spray with gunfire (6)",
+    "clue": "Bombard with hot spice (6)",
     "def": {
-      "text": "Spice up",
+      "text": "Bombard",
       "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Spice up / spray with gunfire",
+      "fodder": "Bombard / hot spice",
       "operations": [
         {
           "op": "literal",
@@ -951,29 +941,29 @@
         }
       ]
     },
-    "parse": "Double definition: to PEPPER is to spice up, and to PEPPER is to spray, as with gunfire."
+    "parse": "Double definition: to PEPPER is to bombard (with shots or questions), and PEPPER is a hot spice."
   },
   {
     "answer": "CANDLE",
-    "clueType": "anagram",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Lanced, strangely, it lit up like a taper (6)",
+    "clue": "The overworked burn it at both ends? (6)",
     "def": {
-      "text": "a taper",
-      "position": "end"
+      "text": "The overworked burn it at both ends?",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "strangely",
-      "fodder": "Lanced",
+      "indicator": "",
+      "fodder": "",
       "operations": [
         {
-          "op": "anagram",
-          "input": "LANCED",
+          "op": "literal",
+          "input": "pun on the idiom 'burn the candle at both ends'",
           "output": "CANDLE"
         }
       ]
     },
-    "parse": "(LANCED)* 'strangely' = CANDLE, a taper."
+    "parse": "Cryptic definition: the overworked 'burn the CANDLE at both ends' — the 'it' is a candle."
   },
   {
     "answer": "ORANGE",
@@ -1000,46 +990,46 @@
   {
     "answer": "DESIGN",
     "clueType": "anagram",
-    "difficulty": 3,
-    "clue": "A plan from the singed sketch, redrawn (6)",
+    "difficulty": 2,
+    "clue": "Badly signed drawing (6)",
     "def": {
-      "text": "A plan",
-      "position": "start"
+      "text": "drawing",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "redrawn",
-      "fodder": "singed",
+      "indicator": "Badly",
+      "fodder": "signed",
       "operations": [
         {
           "op": "anagram",
-          "input": "SINGED",
+          "input": "SIGNED",
           "output": "DESIGN"
         }
       ]
     },
-    "parse": "(SINGED)* 'redrawn' = DESIGN, a plan."
+    "parse": "(SIGNED)* 'Badly' = DESIGN, a drawing."
   },
   {
     "answer": "MENTOR",
     "clueType": "hidden",
-    "difficulty": 3,
-    "clue": "A specimen, torn, reveals the guide (6)",
+    "difficulty": 2,
+    "clue": "Guide found in a moment or two (6)",
     "def": {
-      "text": "the guide",
-      "position": "end"
+      "text": "Guide",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "reveals",
-      "fodder": "specimen torn",
+      "indicator": "found in",
+      "fodder": "moment or two",
       "operations": [
         {
           "op": "hidden",
-          "input": "speci<MEN TOR>n",
+          "input": "mo<MENT OR>two",
           "output": "MENTOR"
         }
       ]
     },
-    "parse": "Hidden in 'speciMEN TORn' = MENTOR, the guide."
+    "parse": "Hidden in 'moMENT ORtwo' = MENTOR, a guide."
   },
   {
     "answer": "CHARITY",
@@ -1103,24 +1093,24 @@
   {
     "answer": "PYRAMID",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "My rapid building of a tomb (7)",
+    "difficulty": 3,
+    "clue": "Ancient tomb may drip horribly (7)",
     "def": {
-      "text": "a tomb",
-      "position": "end"
+      "text": "Ancient tomb",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "building",
-      "fodder": "My rapid",
+      "indicator": "horribly",
+      "fodder": "may drip",
       "operations": [
         {
           "op": "anagram",
-          "input": "MYRAPID",
+          "input": "MAYDRIP",
           "output": "PYRAMID"
         }
       ]
     },
-    "parse": "(MY RAPID)* = PYRAMID, a tomb."
+    "parse": "(MAY DRIP)* 'horribly' = PYRAMID, an ancient tomb."
   },
   {
     "answer": "CISTERN",
@@ -1148,55 +1138,60 @@
     "answer": "MONARCH",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "On Monday, by the arch, we hailed the sovereign (7)",
+    "clue": "Butterfly seen by man on arch? (7)",
     "def": {
-      "text": "the sovereign",
-      "position": "end"
+      "text": "Butterfly",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "MON + ARCH",
+      "fodder": "M + ON + ARCH",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Monday",
-          "output": "MON"
+          "op": "abbreviate",
+          "input": "man",
+          "output": "M"
         },
         {
-          "op": "synonym",
-          "input": "the arch",
+          "op": "literal",
+          "input": "on",
+          "output": "ON"
+        },
+        {
+          "op": "literal",
+          "input": "arch",
           "output": "ARCH"
         },
         {
           "op": "concat",
-          "input": "MON+ARCH",
+          "input": "M+ON+ARCH",
           "output": "MONARCH"
         }
       ]
     },
-    "parse": "MON (Monday) + ARCH (curved gateway) = MONARCH, the sovereign."
+    "parse": "M (man) + ON + ARCH = MONARCH, a butterfly (flagged with '?' as a definition by example)."
   },
   {
     "answer": "OUTLINE",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Not at home, stuck in a queue, I gave the summary (7)",
+    "clue": "Profile that's out of line? (7)",
     "def": {
-      "text": "the summary",
-      "position": "end"
+      "text": "Profile",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "OUT+LINE",
+      "fodder": "OUT + LINE",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Not at home",
+          "op": "literal",
+          "input": "out",
           "output": "OUT"
         },
         {
-          "op": "synonym",
-          "input": "a queue",
+          "op": "literal",
+          "input": "line",
           "output": "LINE"
         },
         {
@@ -1206,7 +1201,7 @@
         }
       ]
     },
-    "parse": "OUT (not at home) + LINE (a queue) = OUTLINE, the summary."
+    "parse": "OUT + LINE (read 'out of line') = OUTLINE, a profile."
   },
   {
     "answer": "CEILING",
@@ -1298,35 +1293,25 @@
   },
   {
     "answer": "PANTHER",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Gasp at her, the sleek cat (7)",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Big cat destroyed hen trap (7)",
     "def": {
-      "text": "the sleek cat",
-      "position": "end"
+      "text": "Big cat",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "PANT + HER",
+      "indicator": "destroyed",
+      "fodder": "hen trap",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Gasp",
-          "output": "PANT"
-        },
-        {
-          "op": "synonym",
-          "input": "her",
-          "output": "HER"
-        },
-        {
-          "op": "concat",
-          "input": "PANT+HER",
+          "op": "anagram",
+          "input": "HENTRAP",
           "output": "PANTHER"
         }
       ]
     },
-    "parse": "PANT (gasp) + HER = PANTHER, a sleek big cat."
+    "parse": "(HEN TRAP)* 'destroyed' = PANTHER, a big cat."
   },
   {
     "answer": "THUNDER",
@@ -1354,14 +1339,14 @@
     "answer": "HARVEST",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Her vats, stirred, yield the crop (7)",
+    "clue": "Her vats spilled over the crop (7)",
     "def": {
-      "text": "the crop",
+      "text": "crop",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "stirred",
-      "fodder": "Her vats",
+      "indicator": "spilled",
+      "fodder": "her vats",
       "operations": [
         {
           "op": "anagram",
@@ -1370,7 +1355,7 @@
         }
       ]
     },
-    "parse": "Anagram of HER VATS (stirred) = HARVEST, the crop."
+    "parse": "(HER VATS)* 'spilled' = HARVEST, the crop."
   },
   {
     "answer": "BLANKET",
@@ -1474,18 +1459,18 @@
     "answer": "PASSWORD",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Get through promise to give the login code (8)",
+    "clue": "Succeed with a promise? That's the secret code (8)",
     "def": {
-      "text": "the login code",
+      "text": "secret code",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "PASS+WORD",
+      "fodder": "PASS + WORD",
       "operations": [
         {
           "op": "synonym",
-          "input": "Get through",
+          "input": "Succeed",
           "output": "PASS"
         },
         {
@@ -1500,19 +1485,19 @@
         }
       ]
     },
-    "parse": "PASS (get through) + WORD (a promise, as in 'give my word') = PASSWORD, the login code."
+    "parse": "PASS (succeed, as in an exam) + WORD (promise, as in 'give my word') = PASSWORD, the secret code."
   },
   {
     "answer": "DESSERTS",
     "clueType": "reversal",
-    "difficulty": 3,
-    "clue": "Worried, going back over the puddings (8)",
+    "difficulty": 2,
+    "clue": "Stressed, we turned to sweets (8)",
     "def": {
-      "text": "the puddings",
+      "text": "sweets",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "going back",
+      "indicator": "turned",
       "fodder": "stressed",
       "operations": [
         {
@@ -1522,33 +1507,33 @@
         }
       ]
     },
-    "parse": "STRESSED (worried) reversed = DESSERTS, the puddings."
+    "parse": "STRESSED 'turned' (reversed) = DESSERTS, sweets (the pudding course)."
   },
   {
     "answer": "CHAMPION",
     "clueType": "charade",
     "difficulty": 3,
-    "clue": "Eat noisily while I'm on, like a winner (8)",
+    "clue": "Support the champ taking one on (8)",
     "def": {
-      "text": "a winner",
-      "position": "end"
+      "text": "Support",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
       "fodder": "CHAMP + I + ON",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Eat noisily",
+          "op": "literal",
+          "input": "champ",
           "output": "CHAMP"
         },
         {
-          "op": "literal",
-          "input": "I",
+          "op": "abbreviate",
+          "input": "one",
           "output": "I"
         },
         {
-          "op": "synonym",
+          "op": "literal",
           "input": "on",
           "output": "ON"
         },
@@ -1559,20 +1544,20 @@
         }
       ]
     },
-    "parse": "CHAMP (eat noisily) + I + ON (performing) = CHAMPION, a winner."
+    "parse": "CHAMP + I (one) + ON = CHAMPION; to support (champion a cause)."
   },
   {
     "answer": "DECANTER",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Having recanted, oddly, he filled the wine holder (8)",
+    "clue": "Recanted drunkenly over a carafe (8)",
     "def": {
-      "text": "the wine holder",
+      "text": "carafe",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "oddly",
-      "fodder": "recanted",
+      "indicator": "drunkenly",
+      "fodder": "Recanted",
       "operations": [
         {
           "op": "anagram",
@@ -1581,29 +1566,29 @@
         }
       ]
     },
-    "parse": "(RECANTED)* 'oddly' = DECANTER, the wine holder."
+    "parse": "(RECANTED)* 'drunkenly' = DECANTER, a carafe for wine."
   },
   {
     "answer": "NEWSPAPER",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Bulletin's report covering the daily (9)",
+    "difficulty": 2,
+    "clue": "The latest on paper makes the daily (9)",
     "def": {
-      "text": "the daily",
+      "text": "daily",
       "position": "end"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "NEWS+PAPER",
+      "fodder": "NEWS + PAPER",
       "operations": [
         {
           "op": "synonym",
-          "input": "Bulletin's report",
+          "input": "the latest",
           "output": "NEWS"
         },
         {
-          "op": "synonym",
-          "input": "covering",
+          "op": "literal",
+          "input": "paper",
           "output": "PAPER"
         },
         {
@@ -1613,7 +1598,7 @@
         }
       ]
     },
-    "parse": "NEWS (a bulletin's report) + PAPER (covering, as in wallpaper) = NEWSPAPER, the daily."
+    "parse": "NEWS (the latest) + PAPER = NEWSPAPER, the daily."
   },
   {
     "answer": "DISCOVERY",
@@ -1704,15 +1689,15 @@
   {
     "answer": "FORTUNATE",
     "clueType": "anagram",
-    "difficulty": 4,
-    "clue": "A true font, redesigned, turns out lucky (9)",
+    "difficulty": 3,
+    "clue": "Lucky to have redesigned a true font (9)",
     "def": {
-      "text": "lucky",
-      "position": "end"
+      "text": "Lucky",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "redesigned",
-      "fodder": "A true font",
+      "fodder": "a true font",
       "operations": [
         {
           "op": "anagram",

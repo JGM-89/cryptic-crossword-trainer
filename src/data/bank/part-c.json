@@ -89,67 +89,57 @@
     "answer": "SILENT",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Tinsel strewn across the floor, the house now quiet (6)",
+    "clue": "Wordless, we listen out (6)",
     "def": {
-      "text": "quiet",
-      "position": "end"
+      "text": "Wordless",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "strewn",
-      "fodder": "Tinsel",
+      "indicator": "out",
+      "fodder": "listen",
       "operations": [
         {
           "op": "anagram",
-          "input": "TINSEL",
+          "input": "LISTEN",
           "output": "SILENT"
         }
       ]
     },
-    "parse": "(TINSEL)* indicated by 'strewn' = SILENT; quiet. Surface: tinsel strewn after the party, the house now silent."
+    "parse": "(LISTEN)* indicated by 'out' = SILENT; wordless. Surface: standing wordless, we listen out for a sound."
   },
   {
     "answer": "DEARTH",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Daughter digs the earth and finds a shortage (6)",
+    "clueType": "anagram",
+    "difficulty": 2,
+    "clue": "Hatred stirred up a famine (6)",
     "def": {
-      "text": "a shortage",
+      "text": "famine",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "D + EARTH",
+      "indicator": "stirred up",
+      "fodder": "Hatred",
       "operations": [
         {
-          "op": "abbreviate",
-          "input": "Daughter",
-          "output": "D"
-        },
-        {
-          "op": "synonym",
-          "input": "the earth",
-          "output": "EARTH"
-        },
-        {
-          "op": "concat",
-          "input": "D+EARTH",
+          "op": "anagram",
+          "input": "HATRED",
           "output": "DEARTH"
         }
       ]
     },
-    "parse": "D (daughter) + EARTH (the earth, the ground) = DEARTH; a shortage."
+    "parse": "(HATRED)* indicated by 'stirred up' = DEARTH; a famine (a dearth of food). Surface: ethnic hatred stirred up a famine."
   },
   {
     "answer": "RESCUE",
     "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Coastguards work to secure, somehow, a saving (6)",
+    "clue": "Somehow secure our deliverance (6)",
     "def": {
-      "text": "a saving",
+      "text": "deliverance",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "somehow",
+      "indicator": "Somehow",
       "fodder": "secure",
       "operations": [
         {
@@ -159,7 +149,7 @@
         }
       ]
     },
-    "parse": "(SECURE)* indicated by 'somehow' = RESCUE; a saving. Surface: coastguards working to secure a saving (a rescue at sea)."
+    "parse": "(SECURE)* indicated by 'Somehow' = RESCUE; deliverance. Surface: we must somehow secure our deliverance."
   },
   {
     "answer": "GARDEN",
@@ -207,57 +197,47 @@
   },
   {
     "answer": "CARPET",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "The car's pet has shed all over the rug (6)",
+    "clue": "Pile on the floor? (6)",
     "def": {
-      "text": "the rug",
-      "position": "end"
+      "text": "Pile on the floor?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "CAR + PET",
+      "fodder": "Pile on the floor",
       "operations": [
         {
-          "op": "synonym",
-          "input": "The car",
-          "output": "CAR"
-        },
-        {
-          "op": "synonym",
-          "input": "pet",
-          "output": "PET"
-        },
-        {
-          "op": "concat",
-          "input": "CAR+PET",
+          "op": "literal",
+          "input": "pun: a carpet's surface is its pile, and it lies on the floor",
           "output": "CARPET"
         }
       ]
     },
-    "parse": "CAR + PET = CARPET; the rug. Surface: the dog that rides in the car has shed hair all over the carpet."
+    "parse": "Cryptic definition: not a heap of mess but a PILE (the nap of a carpet) on the floor = CARPET."
   },
   {
     "answer": "PANTRY",
     "clueType": "hidden",
-    "difficulty": 3,
-    "clue": "Sampling Japan, trying the larder (6)",
+    "difficulty": 2,
+    "clue": "Rampant rye hides the food store (6)",
     "def": {
-      "text": "the larder",
+      "text": "food store",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "Sampling",
-      "fodder": "Japan trying",
+      "indicator": "hides",
+      "fodder": "Rampant rye",
       "operations": [
         {
           "op": "hidden",
-          "input": "Ja<PAN TRY>ing",
+          "input": "ram<PANT RY>e",
           "output": "PANTRY"
         }
       ]
     },
-    "parse": "Hidden in 'jaPAN TRYing', indicated by 'Sampling' = PANTRY; the larder. Surface: a traveller sampling Japan, trying the larder."
+    "parse": "Hidden in 'ramPANT RYe', indicated by 'hides' = PANTRY; a food store. Surface: rye grown wild conceals the storehouse."
   },
   {
     "answer": "OUTFIT",
@@ -338,11 +318,11 @@
   {
     "answer": "FORGET",
     "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Leave the smithy in time and lose track (6)",
+    "difficulty": 2,
+    "clue": "Leave behind the smithy with time (6)",
     "def": {
-      "text": "lose track",
-      "position": "end"
+      "text": "Leave behind",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
@@ -350,7 +330,7 @@
       "operations": [
         {
           "op": "synonym",
-          "input": "the smithy",
+          "input": "smithy",
           "output": "FORGE"
         },
         {
@@ -365,7 +345,7 @@
         }
       ]
     },
-    "parse": "FORGE (the smithy) + T (time) = FORGET; to lose track of."
+    "parse": "FORGE (smithy) + T (time) = FORGET, to leave behind."
   },
   {
     "answer": "INKPOT",
@@ -424,24 +404,24 @@
   {
     "answer": "PLANET",
     "clueType": "container",
-    "difficulty": 3,
-    "clue": "Energy bottled up in the works, a whole world (6)",
+    "difficulty": 2,
+    "clue": "Plant takes in energy to make a world (6)",
     "def": {
-      "text": "a whole world",
+      "text": "world",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "bottled up in",
+      "indicator": "takes in",
       "fodder": "E in PLANT",
       "operations": [
         {
           "op": "abbreviate",
-          "input": "Energy",
+          "input": "energy",
           "output": "E"
         },
         {
           "op": "synonym",
-          "input": "the works",
+          "input": "plant",
           "output": "PLANT"
         },
         {
@@ -451,71 +431,51 @@
         }
       ]
     },
-    "parse": "E (energy) inside PLANT (the works), indicated by 'bottled up in' = PLANET; a whole world."
+    "parse": "PLANT takes in E (energy) = PLAN(E)T = PLANET; a world. Surface: photosynthesis — a plant takes in energy."
   },
   {
     "answer": "MARKET",
-    "clueType": "container",
-    "difficulty": 4,
-    "clue": "The Met arrests vessel at the bazaar (6)",
+    "clueType": "hidden",
+    "difficulty": 3,
+    "clue": "A fair part of Denmark, etc. (6)",
     "def": {
-      "text": "bazaar",
-      "position": "end"
+      "text": "fair",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "arrests",
-      "fodder": "ARK in MET",
+      "indicator": "part of",
+      "fodder": "Denmark, etc.",
       "operations": [
         {
-          "op": "synonym",
-          "input": "vessel",
-          "output": "ARK"
-        },
-        {
-          "op": "synonym",
-          "input": "The Met",
-          "output": "MET"
-        },
-        {
-          "op": "insert",
-          "input": "ARK in MET",
+          "op": "hidden",
+          "input": "den<MARK ET>c",
           "output": "MARKET"
         }
       ]
     },
-    "parse": "ARK (vessel) inside MET (the Met, London's police), indicated by 'arrests' = MARKET; a bazaar."
+    "parse": "Hidden in 'denMARK ETc' = MARKET, a fair; the surface reads 'a sizeable part of Denmark'."
   },
   {
     "answer": "BASKET",
-    "clueType": "charade",
+    "clueType": "double-definition",
     "difficulty": 3,
-    "clue": "Sunbathe with the alien carrying a hamper (6)",
+    "clue": "Hamper a slam dunk? (6)",
     "def": {
-      "text": "a hamper",
-      "position": "end"
+      "text": "Hamper",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "BASK + ET",
+      "fodder": "Hamper / a slam dunk",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Sunbathe",
-          "output": "BASK"
-        },
-        {
-          "op": "synonym",
-          "input": "the alien",
-          "output": "ET"
-        },
-        {
-          "op": "concat",
-          "input": "BASK+ET",
+          "op": "literal",
+          "input": "two definitions",
           "output": "BASKET"
         }
       ]
     },
-    "parse": "BASK (sunbathe) + ET (the alien) = BASKET; a hamper."
+    "parse": "Double definition: a HAMPER (picnic basket) and what a slam dunk scores in basketball — a BASKET. Surface reads 'hamper' as the verb."
   },
   {
     "answer": "HAMPER",
@@ -541,57 +501,47 @@
   },
   {
     "answer": "WALLET",
-    "clueType": "charade",
-    "difficulty": 3,
-    "clue": "Scaling the wall, an alien grabbed my billfold (6)",
+    "clueType": "hidden",
+    "difficulty": 2,
+    "clue": "Wall etchings hide a purse (6)",
     "def": {
-      "text": "my billfold",
+      "text": "purse",
       "position": "end"
     },
     "wordplay": {
-      "indicator": "",
-      "fodder": "WALL+ET",
+      "indicator": "hide",
+      "fodder": "Wall etchings",
       "operations": [
         {
-          "op": "synonym",
-          "input": "the wall",
-          "output": "WALL"
-        },
-        {
-          "op": "synonym",
-          "input": "an alien",
-          "output": "ET"
-        },
-        {
-          "op": "concat",
-          "input": "WALL+ET",
+          "op": "hidden",
+          "input": "<WALL ET>chings",
           "output": "WALLET"
         }
       ]
     },
-    "parse": "WALL (the wall) + ET (an alien) = WALLET; my billfold."
+    "parse": "Hidden in 'WALL ETchings', indicated by 'hide' = WALLET; a purse."
   },
   {
     "answer": "PARSON",
-    "clueType": "hidden",
+    "clueType": "anagram",
     "difficulty": 2,
-    "clue": "Clergyman seen in cheap arson cases (6)",
+    "clue": "Preacher's aprons in a twist (6)",
     "def": {
-      "text": "Clergyman",
+      "text": "Preacher",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "cases",
-      "fodder": "cheap arson",
+      "indicator": "in a twist",
+      "fodder": "aprons",
       "operations": [
         {
-          "op": "hidden",
-          "input": "chea<P ARSON> cases",
+          "op": "anagram",
+          "input": "APRONS",
           "output": "PARSON"
         }
       ]
     },
-    "parse": "Hidden in chea(P ARSON) cases = PARSON, a clergyman."
+    "parse": "(APRONS)* indicated by 'in a twist' = PARSON; a preacher. Surface: the vicar flustered at the church fete."
   },
   {
     "answer": "ESTATE",
@@ -628,19 +578,24 @@
   {
     "answer": "DEMEAN",
     "clueType": "container",
-    "difficulty": 3,
-    "clue": "Cathedral head taking me in to degrade (6)",
+    "difficulty": 2,
+    "clue": "Humble dean embraces me (6)",
     "def": {
-      "text": "degrade",
-      "position": "end"
+      "text": "Humble",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "taking ... in",
+      "indicator": "embraces",
       "fodder": "ME in DEAN",
       "operations": [
         {
+          "op": "literal",
+          "input": "me",
+          "output": "ME"
+        },
+        {
           "op": "synonym",
-          "input": "Cathedral head",
+          "input": "dean",
           "output": "DEAN"
         },
         {
@@ -650,7 +605,7 @@
         }
       ]
     },
-    "parse": "ME inside DEAN (cathedral head) = DEMEAN, to degrade."
+    "parse": "DEAN embraces ME = DE(ME)AN = DEMEAN; to humble (the verb, not the adjective the surface suggests)."
   },
   {
     "answer": "REWARD",
@@ -676,47 +631,57 @@
   },
   {
     "answer": "DENIER",
-    "clueType": "double-definition",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Stocking's gauge for one refusing to admit it (6)",
+    "clue": "One who won't take yes for an answer? (6)",
     "def": {
-      "text": "one refusing to admit it",
-      "position": "end"
+      "text": "One who won't take yes for an answer?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "Stocking's gauge / one refusing to admit it",
+      "fodder": "One who won't take yes for an answer",
       "operations": [
         {
           "op": "literal",
-          "input": "two definitions",
+          "input": "pun on the idiom 'won't take no for an answer'",
           "output": "DENIER"
         }
       ]
     },
-    "parse": "Double definition: DENIER, the gauge of a stocking's yarn, and one who denies."
+    "parse": "Cryptic definition, flipping the idiom 'won't take no for an answer': a DENIER rejects every affirmation — told 'yes, it's true', he still says no."
   },
   {
     "answer": "REPAID",
-    "clueType": "reversal",
+    "clueType": "charade",
     "difficulty": 2,
-    "clue": "Settled up, with nappy turned over (6)",
+    "clue": "Rep takes aid and is refunded (6)",
     "def": {
-      "text": "Settled up",
-      "position": "start"
+      "text": "refunded",
+      "position": "end"
     },
     "wordplay": {
-      "indicator": "turned over",
-      "fodder": "diaper",
+      "indicator": "",
+      "fodder": "REP + AID",
       "operations": [
         {
-          "op": "reverse",
-          "input": "DIAPER",
+          "op": "literal",
+          "input": "Rep",
+          "output": "REP"
+        },
+        {
+          "op": "literal",
+          "input": "aid",
+          "output": "AID"
+        },
+        {
+          "op": "concat",
+          "input": "REP+AID",
           "output": "REPAID"
         }
       ]
     },
-    "parse": "DIAPER (nappy) reversed = REPAID, settled up."
+    "parse": "REP + AID = REPAID; refunded. Surface: the sales rep accepts assistance and gets reimbursed."
   },
   {
     "answer": "ANGLER",
@@ -744,67 +709,67 @@
     "answer": "EARNED",
     "clueType": "anagram",
     "difficulty": 3,
-    "clue": "Got to endear oneself, working hard (6)",
+    "clue": "Pulled in when the end erratically neared (6)",
     "def": {
-      "text": "Got",
+      "text": "Pulled in",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "working",
-      "fodder": "endear",
+      "indicator": "erratically",
+      "fodder": "neared",
       "operations": [
         {
           "op": "anagram",
-          "input": "ENDEAR",
+          "input": "NEARED",
           "output": "EARNED"
         }
       ]
     },
-    "parse": "Anagram (indicated by 'working') of ENDEAR = EARNED; 'got', as in earned a living."
+    "parse": "(NEARED)* 'erratically' = EARNED, pulled in (as wages)."
   },
   {
     "answer": "PLEASE",
-    "clueType": "anagram",
+    "clueType": "homophone",
     "difficulty": 3,
-    "clue": "Delight to find the baby asleep, disturbed (6)",
+    "clue": "Suit appeals, by the sound of it (6)",
     "def": {
-      "text": "Delight",
+      "text": "Suit",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "disturbed",
-      "fodder": "asleep",
+      "indicator": "by the sound of it",
+      "fodder": "pleas",
       "operations": [
         {
-          "op": "anagram",
-          "input": "ASLEEP",
+          "op": "homophone",
+          "input": "pleas",
           "output": "PLEASE"
         }
       ]
     },
-    "parse": "Anagram (indicated by 'disturbed') of ASLEEP = PLEASE; to delight."
+    "parse": "Sounds like PLEAS (appeals), indicated by 'by the sound of it' = PLEASE; to suit (whatever pleases you suits you)."
   },
   {
     "answer": "BATTER",
-    "clueType": "hidden",
-    "difficulty": 3,
-    "clue": "Pummel some combat terrorists (6)",
+    "clueType": "double-definition",
+    "difficulty": 2,
+    "clue": "Beat the pancake mix? (6)",
     "def": {
-      "text": "Pummel",
+      "text": "Beat",
       "position": "start"
     },
     "wordplay": {
-      "indicator": "some",
-      "fodder": "combat terrorists",
+      "indicator": "",
+      "fodder": "Beat / pancake mix",
       "operations": [
         {
-          "op": "hidden",
-          "input": "com<BAT TER>rorists",
+          "op": "literal",
+          "input": "two definitions",
           "output": "BATTER"
         }
       ]
     },
-    "parse": "BATTER is hidden in 'comBAT TERrorists' (indicated by 'some'); to pummel."
+    "parse": "Double definition: to BEAT (batter, pummel) and the pancake mix (BATTER). The whole clue also reads as one real recipe instruction."
   },
   {
     "answer": "TENDER",
