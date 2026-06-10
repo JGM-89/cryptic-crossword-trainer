@@ -32,7 +32,7 @@ export function SolvePage() {
       else {
         setPuzzle(p);
         setDone(isCompleted(p.id));
-        track('puzzle_start', { puzzle: String(id) });
+        track('puzzle_start', { puzzle: p.id });
       }
     });
     // Pull the band + next puzzle in the same tier for the completion card.
