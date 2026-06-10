@@ -16,7 +16,8 @@
     "clues:chunk": "node scripts/clue-chunk.mjs",
     "clues:assemble": "node scripts/clue-assemble.mjs",
     "clues:patch": "node scripts/clue-patch.mjs",
-    "clues:regen": "node scripts/generate-puzzles.mjs"
+    "clues:regen": "node scripts/generate-puzzles.mjs",
+    "daily:gen": "node scripts/generate-daily.mjs"
   },
   "dependencies": {
     "idb": "^8.0.0",
