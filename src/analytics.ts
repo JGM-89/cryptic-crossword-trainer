@@ -16,7 +16,7 @@ declare global {
 const SCRIPT_SRC = 'https://cloud.umami.is/script.js';
 
 function websiteId(): string | undefined {
-  return import.meta.env.VITE_UMAMI_WEBSITE_ID as string | undefined;
+  return import.meta.env.VITE_UMAMI_WEBSITE_ID;
 }
 
 export function analyticsEnabled(): boolean {
@@ -27,7 +27,7 @@ export function analyticsEnabled(): boolean {
 export function initAnalytics(): void {
   const id = websiteId();
   if (!id || typeof document === 'undefined') return;
-  if (document.querySelector('script[data-website-id]')) return;
+  if (document.querySelector(`script[data-website-id="${id}"]`)) return;
   const s = document.createElement('script');
   s.defer = true;
   s.src = SCRIPT_SRC;
