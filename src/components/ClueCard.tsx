@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import type { Clue } from '../types';
 import { CLUE_TYPE_LABELS } from '../types';
 import type { Scaffolding, SolveOutcome } from '../engine/fading';
+import { track } from '../analytics';
 import { AnswerStrip } from './AnswerStrip';
 import { ClueText, type Highlight } from './ClueText';
 import { HintLadder } from './HintLadder';
@@ -11,6 +12,8 @@ interface Props {
   scaffolding: Scaffolding;
   alreadySolved?: boolean;
   onSolved: (clue: Clue, outcome: SolveOutcome) => void;
+  /** Where this card lives, for analytics ('learn' lessons by default). */
+  source?: 'learn' | 'daily';
 }
 
 const lettersOnly = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
@@ -22,7 +25,7 @@ function locate(clue: string, phrase: string): { start: number; end: number } | 
   return idx === -1 ? null : { start: idx, end: idx + phrase.length };
 }
 
-export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) {
+export function ClueCard({ clue, scaffolding, alreadySolved, onSolved, source = 'learn' }: Props) {
   const target = useMemo(() => lettersOnly(clue.solution), [clue.solution]);
   const [value, setValue] = useState<string[]>(() => Array(target.length).fill(''));
   const [status, setStatus] = useState<'correct' | 'wrong' | undefined>(
@@ -67,6 +70,12 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
     setSolved(true);
     setStatus('correct');
     onSolved(clue, outcome);
+    track('clue_solved', {
+      type: clue.clueType,
+      hints: outcome.hintsUsed ?? 0,
+      revealed: (outcome.hintsUsed ?? 0) >= 4,
+      source,
+    });
   }
 
   function check() {
@@ -83,12 +92,15 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved }: Props) 
     setValue(target.split(''));
     setRevealed(true);
     setHintUsed(true);
+    track('give_up', { type: clue.clueType, source });
     finish({ usedHint: true, hintsUsed: 4, timeMs: Date.now() - startRef.current });
   }
 
   function revealNextHint() {
     if (!hintUsed) setHintUsed(true);
-    setRevealedCount((n) => Math.min(n + 1, offeredTiers.length));
+    const next = Math.min(revealedCount + 1, offeredTiers.length);
+    if (next !== revealedCount) track('hint_revealed', { type: clue.clueType, tier: offeredTiers[revealedCount], source });
+    setRevealedCount(next);
   }
 
   return (
