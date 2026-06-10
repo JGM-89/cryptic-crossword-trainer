@@ -30,6 +30,9 @@ describe('analytics', () => {
   });
 
   it('initAnalytics() is a no-op without a website id', async () => {
+    // Force the env empty so the test is hermetic — a real id in `.env` is
+    // loaded into import.meta.env during tests and would otherwise inject here.
+    vi.stubEnv('VITE_UMAMI_WEBSITE_ID', '');
     const { initAnalytics } = await import('./analytics');
     initAnalytics();
     expect(document.querySelector('script[data-website-id]')).toBeNull();
