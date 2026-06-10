@@ -59,11 +59,11 @@ export function HomePage() {
           solving a full grid unaided.
         </p>
         <div className="home-cta">
-          <Link className="btn btn-primary btn-lg" to="/learn">
-            {started ? 'Keep learning' : 'Start learning'} →
+          <Link className="btn btn-primary btn-lg" to="/daily">
+            Today’s clue →
           </Link>
-          <Link className="btn btn-ghost btn-lg" to="/play">
-            Play a cryptic
+          <Link className="btn btn-ghost btn-lg" to="/learn">
+            {started ? 'Keep learning' : 'Start learning'}
           </Link>
         </div>
       </section>
