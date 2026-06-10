@@ -177,6 +177,10 @@ npm run build
   steps. It uses `solution`/`id` (not `answer`/none) and validates through `integrity.test.ts`, not
   the bank harness. Teaching answers are NOT grid-locked, so swap an answer freely when a word can't
   reach the bar in its device.
+- **Bank answers changed (added/removed)? Re-run `npm run daily:gen`** — the daily schedule
+  (`src/data/daily-schedule.json`) references bank answers and `daily.test.ts` fails on drift.
+  Clue-TEXT edits don't need a regen (the schedule stores answers, not clues). NEVER change the
+  schedule's epoch or seed: they rewrite every user's daily history and streaks.
 - `tmp/` is gitignored scratch space; never commit it. The committed durable assets are the style
   guide, the harness, and the three pipeline scripts.
 

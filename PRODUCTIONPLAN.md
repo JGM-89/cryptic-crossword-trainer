@@ -28,7 +28,8 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
    crossers, so a few short words dominate (ART ~58% of puzzles, AGE 57%, EAR 53%). True ≤15% needs
    more short words; until then we reduce demand + flatten.
 3. **Learn is thin.** Good engine, but only 44 lessons, a cliff from Stage A to real puzzles, and no
-   review/spaced-repetition.
+   review/spaced-repetition. The **Daily Clue** (live from 2026-06-15) is the first bridge across
+   the cliff and the retention loop; review mode should build on it ("weak-device day").
 
 ## ▶ Committed priority order (do these in order)
 
@@ -39,9 +40,13 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
    hint-rung revealed by device, give-up) + honest HomePage copy. Provider-agnostic; activates when a
    Plausible/Umami snippet is added (the one decision the owner makes). Unblocks evidence.
    _← DONE 2026-06-10 (dark until Umami id pasted into .env)_
-3. **Teaching depth.** Review mode (spaced-repetition-lite — a pure `src/engine/review.ts` scheduler
-   reusing `progress.ts` + `fading.ts`) + a weak-device "your devices" readout.
-4. **Corpus growth (more 3-4 letter words) — ONLY if analytics shows Play is where users are.** The
+3. **Daily Clue.** One bank clue/day (top-80 Play answers excluded), local streaks, share button,
+   competence-fed scaffolding; epoch 2026-06-15 = Daily #1. _← DONE 2026-06-10 (first daily lands
+   2026-06-15)_
+4. **Teaching depth.** Review mode (spaced-repetition-lite — a pure `src/engine/review.ts` scheduler
+   reusing `progress.ts` + `fading.ts`) + a weak-device "your devices" readout. Design it against
+   the Daily surface after the first week of analytics.
+5. **Corpus growth (more 3-4 letter words) — ONLY if analytics shows Play is where users are.** The
    only real fix for ≤15% repetition, but it's many hard-to-keep-original short clues; don't pay for it
    without evidence.
 
@@ -98,6 +103,12 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
   LessonPage (`lesson_view`) and SolvePage (`puzzle_start`/`puzzle_complete`), honest
   Home/About copy. Owner action: create the site at cloud.umami.is, paste the Website ID,
   rebuild.
+- **2026-06-10 — Daily Clue (live 2026-06-15):** `/daily` — one bank clue per day for everyone
+  (`scripts/generate-daily.mjs` → frozen seeded schedule of 286 answers, top-80 Play-frequent
+  excluded; epoch/seed are FROZEN), local-date day numbering, localStorage streaks
+  (`src/state/dailyProgress.ts`), share button (hash-router-safe URL), competence-fed scaffolding
+  via the existing ClueCard/fading engine, homepage primary CTA, `daily_start/solved/shared`
+  events. Bank answer-set changes require `npm run daily:gen` (drift gated by `daily.test.ts`).
 
 ## Hard rules (clue/bank editing)
 
