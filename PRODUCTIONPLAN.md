@@ -16,12 +16,14 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
 - **Play** — a generated puzzle archive. ~300 interlocking crosswords (50× 7×7, 50× 9×9, 200× 13×13)
   compiled from a **366-word hand-clued bank** so every grid is fillable by real bank words.
 - **Tech** — fully static. Progress saved in the browser (IndexedDB/localStorage). No backend, no
-  accounts, **no analytics yet**.
+  accounts, privacy-first analytics (dark until owner pastes Umami id).
 
 ## Current problems (priority order)
 
-1. **We're blind.** Zero analytics — no idea if anyone uses it or where they drop off. Every content
-   decision is a guess.
+1. **Analytics run dark.** Privacy-first analytics (`src/analytics.ts`, Umami Cloud, no cookies) is
+   wired and deployed but inactive. One manual step to activate: create a site at cloud.umami.is,
+   paste the Website ID into `.env` as `VITE_UMAMI_WEBSITE_ID`, rebuild + deploy. Until then every
+   content decision is still a guess.
 2. **Play repetition.** The bank has only **14 three-letter words**, but 13×13 grids need many short
    crossers, so a few short words dominate (ART ~58% of puzzles, AGE 57%, EAR 53%). True ≤15% needs
    more short words; until then we reduce demand + flatten.
@@ -36,6 +38,7 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
 2. **Analytics (privacy-first).** `src/analytics.ts` + a few key events (lesson/puzzle start+complete,
    hint-rung revealed by device, give-up) + honest HomePage copy. Provider-agnostic; activates when a
    Plausible/Umami snippet is added (the one decision the owner makes). Unblocks evidence.
+   _← DONE 2026-06-10 (dark until Umami id pasted into .env)_
 3. **Teaching depth.** Review mode (spaced-repetition-lite — a pure `src/engine/review.ts` scheduler
    reusing `progress.ts` + `fading.ts`) + a weak-device "your devices" readout.
 4. **Corpus growth (more 3-4 letter words) — ONLY if analytics shows Play is where users are.** The
@@ -89,6 +92,12 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
     validator; teaching swaps per §1c (CATKIN→BARGAIN, THRONE→CARTON, SCREAM→PIRATE, ONSET→EVENT,
     BARK→RULER, PUPIL→SAFE, SHED→CHAR, PAINT→VOICE). Verified by a second blind judge round +
     semantic audit + human read-through.
+- **2026-06-10 — privacy-first analytics (dark launch):** provider-agnostic `src/analytics.ts`
+  (Umami Cloud; no cookies; activates when `VITE_UMAMI_WEBSITE_ID` is set in `.env`), events
+  wired through ClueCard (`clue_solved`/`hint_revealed`/`give_up` with a `source` prop),
+  LessonPage (`lesson_view`) and SolvePage (`puzzle_start`/`puzzle_complete`), honest
+  Home/About copy. Owner action: create the site at cloud.umami.is, paste the Website ID,
+  rebuild.
 
 ## Hard rules (clue/bank editing)
 
