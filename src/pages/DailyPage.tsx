@@ -12,7 +12,7 @@ import { ClueCard } from '../components/ClueCard';
 import { track } from '../analytics';
 import type { Clue } from '../types';
 
-const SITE = 'https://jgm-89.github.io/cryptic-crossword-trainer/daily';
+const SITE = 'https://jgm-89.github.io/cryptic-crossword-trainer/#/daily';
 
 export function DailyPage() {
   const today = dateKey();
@@ -59,7 +59,7 @@ export function DailyPage() {
     const how = !r
       ? ''
       : r.revealed
-        ? 'it beat me today'
+        ? 'needed every hint'
         : r.hintsUsed === 0
           ? 'solved unaided'
           : `solved with ${r.hintsUsed} hint${r.hintsUsed === 1 ? '' : 's'}`;
@@ -68,17 +68,27 @@ export function DailyPage() {
 
   async function share() {
     const text = shareText();
-    track('daily_shared', { number: daily!.number });
-    try {
-      if (navigator.share) {
+    if (navigator.share) {
+      try {
         await navigator.share({ text });
-        return;
+        track('daily_shared', { number: daily!.number });
+      } catch (err) {
+        if (err instanceof Error && err.name === 'AbortError') return;
+        /* unexpected error — fall through to clipboard */
+        try {
+          await navigator.clipboard.writeText(text);
+          track('daily_shared', { number: daily!.number });
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        } catch {
+          /* clipboard unavailable — nothing sensible to do */
+        }
       }
-    } catch {
-      /* fall through to clipboard */
+      return;
     }
     try {
       await navigator.clipboard.writeText(text);
+      track('daily_shared', { number: daily!.number });
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
