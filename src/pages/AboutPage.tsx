@@ -65,7 +65,8 @@ export function AboutPage() {
         <p>
           Everything is stored locally in your browser (IndexedDB) — there is no account
           and no server. You have solved <strong>{solvedCount}</strong> clue
-          {solvedCount === 1 ? '' : 's'} so far.
+          {solvedCount === 1 ? '' : 's'} so far.{' '}
+          We collect anonymous, cookie-less usage counts (which lessons and puzzles get played) to decide what to build next — never anything personal.
         </p>
         <button
           type="button"

@@ -113,7 +113,7 @@ export function HomePage() {
       <hr className="rule" />
       <section className="home-foot">
         <p className="muted">
-          Free, open-source, and fully in your browser — no account, nothing sent to a server.{' '}
+          Free and open-source — no account, your progress stays in your browser. We count anonymous usage (privacy-friendly, no cookies, nothing personal).{' '}
           <Link to="/about">How it works →</Link>
         </p>
       </section>
