@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { allLessons, findLesson, getAnyClue } from '../data';
 import { STAGE_LABELS, type Clue } from '../types';
@@ -6,6 +6,7 @@ import { useProgress } from '../state/ProgressContext';
 import { effectiveStage, scaffoldingFor } from '../engine/fading';
 import { isClueSolved, isLessonComplete } from '../engine/progress';
 import { ClueCard } from '../components/ClueCard';
+import { track } from '../analytics';
 
 export function LessonPage() {
   const { lessonId } = useParams();
@@ -17,6 +18,10 @@ export function LessonPage() {
     const idx = lessons.findIndex((l) => l.id === lessonId);
     return idx >= 0 && idx + 1 < lessons.length ? lessons[idx + 1].id : undefined;
   }, [lessonId]);
+
+  useEffect(() => {
+    if (found) track('lesson_view', { lesson: found.lesson.id, stage: found.stage });
+  }, [lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!found) {
     return (

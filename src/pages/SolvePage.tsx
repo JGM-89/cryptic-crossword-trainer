@@ -5,6 +5,7 @@ import type { Puzzle } from '../types';
 import { MiniGrid } from '../components/MiniGrid';
 import { PuzzleComplete, type CompleteAction } from '../components/PuzzleComplete';
 import { fillKey, isCompleted, markCompleted } from '../state/playProgress';
+import { track } from '../analytics';
 
 export function SolvePage() {
   const { puzzleId } = useParams();
@@ -31,6 +32,7 @@ export function SolvePage() {
       else {
         setPuzzle(p);
         setDone(isCompleted(p.id));
+        track('puzzle_start', { puzzle: String(id) });
       }
     });
     // Pull the band + next puzzle in the same tier for the completion card.
@@ -99,6 +101,7 @@ export function SolvePage() {
         }
         onComplete={() => {
           markCompleted(puzzle.id);
+          track('puzzle_complete', { puzzle: puzzle.id });
           if (!done) setJustSolved(true); // celebrate only on a fresh solve
           setDone(true);
         }}
