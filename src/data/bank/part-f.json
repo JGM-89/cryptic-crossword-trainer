@@ -502,40 +502,25 @@
   },
   {
     "answer": "ENTERTAINMENT",
-    "clueType": "charade",
+    "clueType": "cryptic-definition",
     "difficulty": 3,
-    "clue": "Host the men this time — what a show! (13)",
+    "clue": "What keeps an audience coming back for more? (13)",
     "def": {
-      "text": "show",
-      "position": "end"
+      "text": "What keeps an audience coming back for more?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "ENTERTAIN + MEN + T",
+      "fodder": "",
       "operations": [
         {
-          "op": "synonym",
-          "input": "Host",
-          "output": "ENTERTAIN"
-        },
-        {
           "op": "literal",
-          "input": "men",
-          "output": "MEN"
-        },
-        {
-          "op": "abbreviate",
-          "input": "time",
-          "output": "T"
-        },
-        {
-          "op": "concat",
-          "input": "ENTERTAIN+MEN+T",
+          "input": "whole-clue definition: the thing audiences return for",
           "output": "ENTERTAINMENT"
         }
       ]
     },
-    "parse": "ENTERTAIN (host) + MEN + T (time) = ENTERTAINMENT; 'show'."
+    "parse": "Cryptic definition — the thing that keeps an audience coming back is the ENTERTAINMENT."
   },
   {
     "answer": "THOUGHTLESSLY",
@@ -561,39 +546,24 @@
   },
   {
     "answer": "GRANDMOTHERLY",
-    "clueType": "charade",
-    "difficulty": 4,
-    "clue": "A splendid mother is, in a way, warmly indulgent (13)",
+    "clueType": "cryptic-definition",
+    "difficulty": 3,
+    "clue": "Inclined to spoil you rotten between rounds of knitting? (13)",
     "def": {
-      "text": "warmly indulgent",
-      "position": "end"
+      "text": "Inclined to spoil you rotten between rounds of knitting?",
+      "position": "start"
     },
     "wordplay": {
       "indicator": "",
-      "fodder": "GRAND + MOTHER + LY",
+      "fodder": "",
       "operations": [
         {
-          "op": "synonym",
-          "input": "A splendid",
-          "output": "GRAND"
-        },
-        {
-          "op": "synonym",
-          "input": "mother",
-          "output": "MOTHER"
-        },
-        {
-          "op": "synonym",
-          "input": "in a way",
-          "output": "LY"
-        },
-        {
-          "op": "concat",
-          "input": "GRAND+MOTHER+LY",
+          "op": "literal",
+          "input": "whole-clue definition by picture: the indulgent knitting nan",
           "output": "GRANDMOTHERLY"
         }
       ]
     },
-    "parse": "GRAND (splendid) + MOTHER + LY (in a way) = GRANDMOTHERLY, warmly indulgent."
+    "parse": "Cryptic definition — the spoiling, knitting figure is a grandmother; behaving so is GRANDMOTHERLY."
   }
 ]

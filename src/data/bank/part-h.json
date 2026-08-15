@@ -574,25 +574,25 @@
   },
   {
     "answer": "BERTH",
-    "clueType": "homophone",
+    "clueType": "hidden",
     "difficulty": 2,
-    "clue": "A birth, by the sound of it, in a ship's bunk (5)",
+    "clue": "My bunk’s in hut number three (5)",
     "def": {
-      "text": "a ship's bunk",
-      "position": "end"
+      "text": "My bunk",
+      "position": "start"
     },
     "wordplay": {
-      "indicator": "by the sound of it",
-      "fodder": "birth",
+      "indicator": "in",
+      "fodder": "number three",
       "operations": [
         {
-          "op": "homophone",
-          "input": "birth",
+          "op": "hidden",
+          "input": "num<BER TH>ree",
           "output": "BERTH"
         }
       ]
     },
-    "parse": "BIRTH sounds like BERTH, a ship's bunk."
+    "parse": "Hidden in “numBER THree” = BERTH, my bunk — tucked inside its own hut number."
   },
   {
     "answer": "ROGUE",
