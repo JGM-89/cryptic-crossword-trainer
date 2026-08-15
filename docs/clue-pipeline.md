@@ -1,5 +1,12 @@
 # Clue Pipeline — runbook
 
+> **Per-answer authoring now lives in the `clue-writer` skill**
+> (`.claude/skills/clue-writer/SKILL.md`): device analysis → surface-first drafting → mechanical
+> gate → blind 3-judge realism majority → broadsheet ceiling panel (median surface ≥ 4) →
+> originality → semantic audit → owner reads every clue. Clues are ALWAYS authored by Claude
+> through that skill (owner decision, 2026-08-15). This file remains the loop for whole-part
+> batch rebuilds and the agent prompt templates it references.
+
 How to author, check, fix, and expand the Cruci clue bank using AI agents. This is the
 **operational** companion to [`clue-style.md`](./clue-style.md) (which is the per-clue *contract*
 agents write to). If you're a fresh session continuing this work: read this file first, then

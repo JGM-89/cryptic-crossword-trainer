@@ -17,3 +17,10 @@ coverage
 # TS build info
 *.tsbuildinfo
 tmp/
+
+# The clue-writer skill is a durable project asset (owner decision 2026-08-15):
+# clues are always authored by Claude through it. Keep skills versioned.
+!.claude/
+.claude/*
+!.claude/skills/
+!.claude/launch.json

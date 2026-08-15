@@ -20,32 +20,37 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
 
 ## Current problems (priority order)
 
-1. **Analytics run dark.** Privacy-first analytics (`src/analytics.ts`, Umami Cloud, no cookies) is
-   wired and deployed but inactive. One manual step to activate: create a site at cloud.umami.is,
-   paste the Website ID into `.env` as `VITE_UMAMI_WEBSITE_ID`, rebuild + deploy. Until then every
-   content decision is still a guess.
+1. **Zero users.** Analytics (active since 2026-06-10) recorded **one visitor in two months — the
+   owner**. The site has never been shared or indexed anywhere; every retention feature is idle.
+   Owner's decision: no money (domain, app-store fees) until the website passes the quality gate
+   (see committed order #3), then distribution.
 2. **Play repetition.** The bank has only **14 three-letter words**, but 13×13 grids need many short
-   crossers, so a few short words dominate (ART ~58% of puzzles, AGE 57%, EAR 53%). True ≤15% needs
-   more short words; until then we reduce demand + flatten.
-3. **Learn is thin.** Good engine, but only 44 lessons, a cliff from Stage A to real puzzles, and no
-   review/spaced-repetition. The **Daily Clue** (live from 2026-06-15) is the first bridge across
-   the cliff and the retention loop; review mode should build on it ("weak-device day").
+   crossers (top answer ~30% of puzzles after the 2026-06-07 cap). True ≤15% needs more short
+   words — now unblocked by the Clue Writer (#1 below), but still evidence-gated.
+3. **Learn is thin.** Good engine, but only 44 lessons and no review/spaced-repetition. The Daily
+   (live since 2026-06-15) bridges the Stage-A cliff; review mode should build on it
+   ("weak-device day").
 
 ## ▶ Committed priority order (do these in order)
 
-1. **Play repetition — bounded pragmatic pass.** Rebalance `scripts/generate-puzzles.mjs` toward more
-   small puzzles + fewer dense 13×13, with usage-weighting + a moderate ~30% cap. Regenerate ONCE,
-   accept the outcome (~ART 58% → ~25-30%), ship. ≤15% is deferred to corpus growth (#4). _← IN PROGRESS_
-2. **Analytics (privacy-first).** `src/analytics.ts` + a few key events (lesson/puzzle start+complete,
-   hint-rung revealed by device, give-up) + honest HomePage copy. Provider-agnostic; activates when a
-   Plausible/Umami snippet is added (the one decision the owner makes). Unblocks evidence.
-   _← DONE 2026-06-10 (dark until Umami id pasted into .env)_
-3. **Daily Clue.** One bank clue/day (top-80 Play answers excluded), local streaks, share button,
-   competence-fed scaffolding; epoch 2026-06-15 = Daily #1. _← DONE 2026-06-10 (first daily lands
-   2026-06-15)_
-4. **Teaching depth.** Review mode (spaced-repetition-lite — a pure `src/engine/review.ts` scheduler
-   reusing `progress.ts` + `fading.ts`) + a weak-device "your devices" readout. Design it against
-   the Daily surface after the first week of analytics.
+1. **The Clue Writer.** A durable, Claude-authored clue-writing system (`.claude/skills/clue-writer/`)
+   that reliably produces great clues: device analysis → surface-first drafting → mechanical gate
+   (`clues:validate`) → blind 3-judge realism majority → **broadsheet-panel ceiling gate** (median
+   surface score ≥ 4) → originality check → semantic audit → owner reads every clue. The owner's
+   standing decision: clues are ALWAYS authored by Claude through this skill — no offline pipeline.
+   Proven on the bank's documented workmanlike tail as its first workout. _← IN PROGRESS 2026-08-15_
+2. **Accounts (Phase 2 of the daily-first spec,** `docs/superpowers/specs/2026-08-15-daily-first-ux-design.md`
+   **§4).** Optional sign-in to sync streaks/progress, local-first, Supabase free tier, dark until
+   the owner creates the project and adds the public URL + anon key to `.env`. Merge policy: union
+   of solved items; streak recomputed honestly from merged history.
+3. **Quality gate (Phase 3).** Structured heuristic review of every journey (spec §6) at 375px +
+   1280px, light + dark, fresh + returning + synced profiles. **Passing this gate is the
+   precondition for spending money** (domain `cruci.app`, app-store fees) and for the launch posts.
+4. **Distribution.** After the gate: domain + BrowserRouter/sitemap cutover, then launch posts
+   (r/crosswords, r/crypticcrosswords, Show HN). The daily + share loop is already built for this.
+5. **Teaching depth.** Review mode (spaced-repetition-lite — a pure `src/engine/review.ts` scheduler
+   reusing `progress.ts` + `fading.ts`) as a "weak-device day" on the Daily surface + a "your
+   devices" readout. Design after the first week of real-user analytics.
 5. **Corpus growth (more 3-4 letter words) — ONLY if analytics shows Play is where users are.** The
    only real fix for ≤15% repetition, but it's many hard-to-keep-original short clues; don't pay for it
    without evidence.
@@ -109,6 +114,15 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
   (`src/state/dailyProgress.ts`), share button (hash-router-safe URL), competence-fed scaffolding
   via the existing ClueCard/fading engine, homepage primary CTA, `daily_start/solved/shared`
   events. Bank answer-set changes require `npm run daily:gen` (drift gated by `daily.test.ts`).
+
+- **2026-08-15 — return after 2 months; audit + daily-first phase 1:** whole-clue hint fix (live
+  Daily #62 bug, owner-reported); mobile nav "More" disclosure; "Daily Cryptic №1"→"Graduation
+  Cryptic №1" (name collision); Play "Surprise me"; CI Node 20→24 (Sept deadline); analytics read
+  for the first time — **1 visitor in 2 months (the owner)** → distribution is the bottleneck, but
+  owner gates all spend on website quality first. **Daily-first UX phase 1 shipped** (spec + plan in
+  docs/superpowers/): one language system ("the Daily", enforced by `src/ux-language.test.ts`),
+  state-aware Home, post-solve bridges (weakest-device lesson via `src/data/weakest.ts` + shared
+  surprise picker), site-wide streak chip, dead-end fixes. 74/74 tests.
 
 ## Hard rules (clue/bank editing)
 
