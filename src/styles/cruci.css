@@ -329,6 +329,20 @@ a:hover { color: var(--accent-deep); }
 .nav-link:hover { background: var(--surface-sunken); color: var(--ink); }
 .nav-link.active { background: var(--accent); color: #fff; }
 
+/* Secondary destinations: inline on desktop, behind a "More" disclosure on
+   narrow screens (six inline links overflow a phone topbar). */
+.nav-rest { display: contents; }
+.nav-more { display: none; position: relative; }
+.nav-more-btn { border: 0; background: transparent; font-family: inherit; cursor: pointer; }
+.nav-menu {
+  position: absolute; right: 0; top: calc(100% + 0.4rem);
+  display: flex; flex-direction: column; gap: 2px;
+  min-width: 9.5rem; padding: 0.3rem;
+  background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: var(--radius); box-shadow: var(--shadow); z-index: 60;
+}
+.nav-menu .nav-link { padding: 0.5rem 0.8rem; }
+
 .content {
   flex: 1; width: 100%; max-width: var(--maxw);
   margin: 0 auto; padding: clamp(1.2rem, 4vw, 2.6rem);
@@ -394,14 +408,16 @@ a:hover { color: var(--accent-deep); }
 
 @media (max-width: 760px) {
   .topbar { gap: var(--space-2); padding: var(--space-3) var(--space-4); }
-  .nav { gap: 0; min-width: 0; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-  .nav::-webkit-scrollbar { display: none; }
+  .nav { gap: 0; min-width: 0; flex-wrap: nowrap; }
   .nav-link { padding: 0.35rem 0.55rem; font-size: var(--fs-400); white-space: nowrap; }
+  /* Collapse secondary links into the More disclosure. */
+  .nav-rest { display: none; }
+  .nav-more { display: block; }
 }
 @media (max-width: 560px) {
-  /* keep the cell-C as the compact brand; drop just the "ruci" so nav fits */
+  /* keep the cell-C as the compact brand; drop just the "ruci" */
   .brand .wm-word { display: none; }
-  .nav-link { padding: 0.3rem 0.42rem; font-size: 0.72rem; letter-spacing: -0.005em; }
+  .nav-link { padding: 0.32rem 0.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

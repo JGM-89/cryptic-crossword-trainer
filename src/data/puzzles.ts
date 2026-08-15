@@ -175,7 +175,7 @@ const entries: PuzzleEntry[] = rawEntries.map((e) => ({
 export const PUZZLES: Puzzle[] = [
   {
     id: 'daily-001',
-    title: 'Daily Cryptic №1',
+    title: 'Graduation Cryptic №1',
     stage: 'D',
     rows: 5,
     cols: 5,

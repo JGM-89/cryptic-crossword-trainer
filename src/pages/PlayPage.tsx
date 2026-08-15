@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loadArchiveMeta, type ArchiveMeta, type DifficultyBand, type Tier } from '../data/archive';
 import { PUZZLES } from '../data';
 import { getCompleted } from '../state/playProgress';
@@ -35,6 +35,17 @@ export function PlayPage() {
   );
 
   const featured = PUZZLES[0]; // the hand-crafted showcase mini
+  const navigate = useNavigate();
+
+  // One-click start: a random unsolved puzzle from the current tier + filter
+  // (falls back to any matching puzzle once everything is solved).
+  function surpriseMe() {
+    const pool = filtered.filter((p) => !completed.has(`archive-${p.id}`));
+    const pick = (pool.length ? pool : filtered)[
+      Math.floor(Math.random() * (pool.length ? pool.length : filtered.length))
+    ];
+    if (pick) navigate(`/play/${pick.id}`);
+  }
 
   return (
     <div className="page play">
@@ -43,7 +54,12 @@ export function PlayPage() {
         <p className="lede">
           An archive of cryptic crosswords — quick <strong>Mini</strong> grids and full{' '}
           <strong>Large</strong> ones. Every grid interlocks real, hand-clued answers, each
-          checked for fairness. Pick one and solve.
+          checked for fairness. Pick one and solve — or let us pick.
+        </p>
+        <p>
+          <button type="button" className="btn btn-primary" onClick={surpriseMe} disabled={!meta}>
+            Surprise me →
+          </button>
         </p>
       </header>
 

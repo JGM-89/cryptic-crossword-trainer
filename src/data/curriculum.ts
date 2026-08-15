@@ -122,11 +122,11 @@ export const CURRICULUM: Curriculum = {
     { stage: 'C', title: 'Coached — full mix', lessons: stageCLessons },
     {
       stage: 'D',
-      title: 'Independent — the daily cryptic',
+      title: 'Independent — your first full grid',
       lessons: [
         {
           id: 'D-daily-001',
-          title: 'Daily Cryptic №1',
+          title: 'Graduation Cryptic №1',
           clueType: 'mixed',
           blurb: 'A real interlocking grid. No hints by default — you are solving for yourself now.',
           clueIds: [], // grid puzzle, handled by the puzzle view
