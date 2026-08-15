@@ -231,7 +231,10 @@ function main() {
   // roughly halving the worst repeaters (ART was 58%). Tighten once the bank has
   // more short words (Phase 2 corpus growth).
   const totalTarget = TIERS.reduce((s, t) => s + t.count, 0);
-  const cap = Math.ceil(totalTarget * 0.30);
+  // 2026-08-15: cap lowered 30% → 18% after the bank's 3-letter supply grew
+  // 14 → 36 words (part-j). The cap was the binding constraint once supply
+  // existed; generation still fills fine (soft cap falls back if starved).
+  const cap = Math.ceil(totalTarget * 0.18);
   const usage = new Map();
 
   for (const cfg of TIERS) {

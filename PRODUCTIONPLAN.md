@@ -38,7 +38,7 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
    (`clues:validate`) → blind 3-judge realism majority → **broadsheet-panel ceiling gate** (median
    surface score ≥ 4) → originality check → semantic audit → owner reads every clue. The owner's
    standing decision: clues are ALWAYS authored by Claude through this skill — no offline pipeline.
-   Proven on the bank's documented workmanlike tail as its first workout. _← IN PROGRESS 2026-08-15_
+   Proven on the bank's documented workmanlike tail as its first workout. _← DONE 2026-08-15 (skill shipped + first workout + 50-clue expansion)_
 2. **Accounts (Phase 2 of the daily-first spec,** `docs/superpowers/specs/2026-08-15-daily-first-ux-design.md`
    **§4).** Optional sign-in to sync streaks/progress, local-first, Supabase free tier, dark until
    the owner creates the project and adds the public URL + anon key to `.env`. Merge policy: union
@@ -123,6 +123,13 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
   docs/superpowers/): one language system ("the Daily", enforced by `src/ux-language.test.ts`),
   state-aware Home, post-solve bridges (weakest-device lesson via `src/data/weakest.ts` + shared
   surprise picker), site-wide streak chip, dead-end fixes. 74/74 tests.
+
+- **2026-08-15 — Clue Writer expansion: +50 answers (part-j), Daily opened to every clue, repetition
+  30% → 18%:** 50 new short-word clues (22×3, 18×4, 10×5 letters) authored through the full writer
+  gauntlet (3 judging rounds; 43 passed the ceiling panel, 7 shipped at competent-tier with owner
+  visibility); 8 semantic-audit fixes applied. Bank 366 → 416; 3-letter supply 14 → 36. Daily
+  schedule regenerated with EXCLUDE_TOP=0 → all 416 answers rotate (was 286). Archive usage cap
+  30% → 18% now supply exists; top answer share 30% → 18%; zero intra-puzzle duplicate answers.
 
 ## Hard rules (clue/bank editing)
 

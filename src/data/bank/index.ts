@@ -14,6 +14,7 @@ import partF from './part-f.json';
 import partG from './part-g.json';
 import partH from './part-h.json';
 import partI from './part-i.json';
+import partJ from './part-j.json';
 
 export interface BankEntry {
   answer: string;
@@ -37,6 +38,7 @@ const RAW: BankEntry[] = [
   ...partG,
   ...partH,
   ...partI,
+  ...partJ,
 ] as BankEntry[];
 
 // Some authored entries carry the working in the operation's `input` rather

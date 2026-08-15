@@ -6,7 +6,12 @@
 // either rewrites every user's daily history.
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
-const EXCLUDE_TOP = 80;
+// 2026-08-15 (owner): the Daily draws from EVERY bank answer — no exclusions.
+// (Was 80: the most Play-frequent answers were skipped. All clues now pass the
+// full writer gauntlet, so the quality rationale is gone.) NOTE: regenerating
+// reshuffles which clue lands on which date; day NUMBERING (epoch/seed) is
+// unchanged and streaks are date-keyed, so nothing user-visible breaks.
+const EXCLUDE_TOP = 0;
 const EPOCH = '2026-06-15'; // Daily #1 (local date)
 const SEED = 0x5eed_c1;
 
