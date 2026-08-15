@@ -9,6 +9,7 @@ import { loadDaily, recordDailySolve, type DailyState } from '../state/dailyProg
 import { useProgress } from '../state/ProgressContext';
 import { scaffoldingFor, type SolveOutcome } from '../engine/fading';
 import { ClueCard } from '../components/ClueCard';
+import { DailyBridges } from '../components/DailyBridges';
 import { track } from '../analytics';
 import type { Clue } from '../types';
 
@@ -28,7 +29,7 @@ export function DailyPage() {
   if (!daily) {
     return (
       <div className="page daily-page">
-        <h1>Daily Clue</h1>
+        <h1>The Daily</h1>
         <p className="lede">
           The first Daily arrives on 15 June 2026. Warm up in <Link to="/learn">Learn</Link>{' '}
           meanwhile.
@@ -99,7 +100,7 @@ export function DailyPage() {
   return (
     <div className="page daily-page">
       <header className="lesson-page-head">
-        <h1>Daily Clue #{daily.number}</h1>
+        <h1>Daily #{daily.number}</h1>
         <p className="lede">
           One clue a day — hints fade as you improve.
           {state.streak > 0 && (
@@ -124,12 +125,12 @@ export function DailyPage() {
       {result && (
         <div className="lesson-complete">
           <p>
-            <strong>That’s today’s.</strong> Come back tomorrow — or keep going in{' '}
-            <Link to="/learn">Learn</Link>.
+            <strong>That’s today’s.</strong> Daily #{daily.number + 1} lands at midnight.
           </p>
           <button type="button" className="btn btn-primary" onClick={share}>
             {copied ? 'Copied!' : 'Share result'}
           </button>
+          <DailyBridges />
         </div>
       )}
     </div>

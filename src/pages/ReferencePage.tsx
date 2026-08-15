@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { ABBREVIATIONS, INDICATORS } from '../data/reference';
 
@@ -88,6 +89,9 @@ export function ReferencePage() {
         </table>
         {abbreviations.length === 0 && <p className="muted">No abbreviations match.</p>}
       </section>
+      <p className="page-foot muted">
+        Done here? <Link to="/daily">Solve today’s Daily →</Link>
+      </p>
     </div>
   );
 }

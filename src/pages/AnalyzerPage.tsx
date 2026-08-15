@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useMemo, useState } from 'react';
 import { CLUES } from '../data';
 import { INDICATORS } from '../data/reference';
@@ -152,6 +153,9 @@ export function AnalyzerPage() {
           )}
         </div>
       </div>
+      <p className="page-foot muted">
+        Done here? <Link to="/daily">Solve today’s Daily →</Link>
+      </p>
     </div>
   );
 }

@@ -1,0 +1,37 @@
+// Enforce docs/ux-language.md: one name per concept in user-facing copy.
+// Scans page/component SOURCES (not built output) for banned phrasings.
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { describe, expect, it } from 'vitest';
+
+const DIRS = ['src/pages', 'src/components'];
+
+// Banned phrase → the approved word (see docs/ux-language.md).
+const BANNED: { re: RegExp; useInstead: string }[] = [
+  { re: /today[’']s clue/i, useInstead: 'the Daily / Solve today’s Daily' },
+  { re: /daily clue/i, useInstead: 'the Daily (page title: Daily #N)' },
+  { re: /daily cryptic/i, useInstead: 'the Daily (or Graduation Cryptic №1 for the hand-built grid)' },
+];
+
+function sources(): { file: string; text: string }[] {
+  const out: { file: string; text: string }[] = [];
+  for (const dir of DIRS) {
+    for (const f of readdirSync(dir).filter((f) => f.endsWith('.tsx'))) {
+      out.push({ file: join(dir, f), text: readFileSync(join(dir, f), 'utf8') });
+    }
+  }
+  return out;
+}
+
+describe('UX language glossary', () => {
+  it('no banned phrasing in page/component copy', () => {
+    const hits: string[] = [];
+    for (const { file, text } of sources()) {
+      for (const { re, useInstead } of BANNED) {
+        const m = text.match(re);
+        if (m) hits.push(`${file}: "${m[0]}" — use ${useInstead}`);
+      }
+    }
+    expect(hits).toEqual([]);
+  });
+});

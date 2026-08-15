@@ -4,6 +4,9 @@ import { topStage } from '../engine/progress';
 import { STAGE_LABELS } from '../types';
 import { getCompleted } from '../state/playProgress';
 import { CLUES } from '../data';
+import { dailyClue, dateKey } from '../data/daily';
+import { loadDaily } from '../state/dailyProgress';
+import { DailyBridges } from '../components/DailyBridges';
 
 const CARDS = [
   {
@@ -43,6 +46,66 @@ export function HomePage() {
   const stage = topStage(state);
   const started = solvedClues > 0 || solvedPuzzles > 0;
 
+  // The ritual's state drives the page: first-timers get the pitch; returning
+  // solvers get today's Daily front and centre (spec §2, daily-first).
+  const dailyState = loadDaily();
+  const today = dateKey();
+  const daily = dailyClue(today);
+  const todayResult = dailyState.history[today];
+  const returning = started || dailyState.lastDate !== null;
+
+  if (returning && daily) {
+    return (
+      <div className="page home">
+        <section className="home-hero home-hero-compact">
+          <p className="home-eyebrow">British cryptic crosswords, taught properly</p>
+          <div className="daily-card">
+            {todayResult ? (
+              <>
+                <h1>
+                  Daily #{daily.number} — solved
+                  {todayResult.revealed
+                    ? ' (revealed)'
+                    : todayResult.hintsUsed > 0
+                      ? ` with ${todayResult.hintsUsed} hint${todayResult.hintsUsed === 1 ? '' : 's'}`
+                      : ' unaided'}
+                </h1>
+                <p className="lede">
+                  {dailyState.streak > 1 && (
+                    <>
+                      Streak: <strong>{dailyState.streak}</strong>.{' '}
+                    </>
+                  )}
+                  Daily #{daily.number + 1} lands at midnight. Meanwhile —
+                </p>
+                <DailyBridges />
+              </>
+            ) : (
+              <>
+                <h1>Daily #{daily.number} is up.</h1>
+                <p className="lede">
+                  One clue a day — hints fade as you improve.
+                  {dailyState.streak > 0 && (
+                    <>
+                      {' '}
+                      Your streak: <strong>{dailyState.streak}</strong>.
+                    </>
+                  )}
+                </p>
+                <div className="home-cta">
+                  <Link className="btn btn-primary btn-lg" to="/daily">
+                    Solve today’s Daily →
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
+        </section>
+        <HomeBody stage={stage} solvedClues={solvedClues} solvedPuzzles={solvedPuzzles} started={started} />
+      </div>
+    );
+  }
+
   return (
     <div className="page home">
       <section className="home-hero">
@@ -60,14 +123,32 @@ export function HomePage() {
         </p>
         <div className="home-cta">
           <Link className="btn btn-primary btn-lg" to="/daily">
-            Today’s clue →
+            Solve today’s Daily →
           </Link>
           <Link className="btn btn-ghost btn-lg" to="/learn">
             {started ? 'Keep learning' : 'Start learning'}
           </Link>
         </div>
       </section>
+      <HomeBody stage={stage} solvedClues={solvedClues} solvedPuzzles={solvedPuzzles} started={started} />
+    </div>
+  );
+}
 
+// Everything below the hero — shared by the first-visit and returning layouts.
+function HomeBody({
+  stage,
+  solvedClues,
+  solvedPuzzles,
+  started,
+}: {
+  stage: ReturnType<typeof topStage>;
+  solvedClues: number;
+  solvedPuzzles: number;
+  started: boolean;
+}) {
+  return (
+    <>
       <section className="home-stats" aria-label="Your progress">
         <div className="stat">
           <span className={`cc-stage stage-${stage}`} aria-hidden>
@@ -94,7 +175,7 @@ export function HomePage() {
 
       <div className="section-head">
         <h2>Four ways in</h2>
-        <span className="muted">Pick up wherever you left off</span>
+        <span className="muted">{started ? 'Pick up wherever you left off' : 'Choose your door'}</span>
       </div>
 
       <section className="home-cards">
@@ -117,6 +198,6 @@ export function HomePage() {
           <Link to="/about">How it works →</Link>
         </p>
       </section>
-    </div>
+    </>
   );
 }

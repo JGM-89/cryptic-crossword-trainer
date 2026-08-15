@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
+import { StreakChip } from './components/StreakChip';
 import { ThemeToggle } from './components/ThemeToggle';
 import { HomePage } from './pages/HomePage';
 import { DailyPage } from './pages/DailyPage';
@@ -102,6 +103,7 @@ export function App() {
               )}
             </div>
           </nav>
+          <StreakChip />
           <ThemeToggle />
         </div>
       </header>

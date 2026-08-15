@@ -44,7 +44,7 @@ export function AboutPage() {
           The support <em>fades per device</em>, driven by how you actually perform.
           Solve a device cleanly a couple of times and its scaffolding steps back — the
           definition stops being highlighted, then the hints retreat behind a tap, until
-          you reach a plain daily cryptic with no help at all. Because it is tracked per
+          you are solving a plain cryptic with no help at all. Because it is tracked per
           device, you can be <strong>Independent</strong> at anagrams while still being{' '}
           <strong>Taught</strong> at homophones. This mirrors the learning-science finding
           (McNeill, Lizotte, Krajcik &amp; Marx, 2006) that <em>faded</em> support builds

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { loadArchiveMeta, type ArchiveMeta, type DifficultyBand, type Tier } from '../data/archive';
 import { PUZZLES } from '../data';
 import { getCompleted } from '../state/playProgress';
+import { pickSurprise } from '../state/surprise';
 
 const BANDS: (DifficultyBand | 'All')[] = ['All', 'Gentle', 'Moderate', 'Tougher'];
 const TIERS: { key: Tier; label: string; note: string }[] = [
@@ -37,14 +38,10 @@ export function PlayPage() {
   const featured = PUZZLES[0]; // the hand-crafted showcase mini
   const navigate = useNavigate();
 
-  // One-click start: a random unsolved puzzle from the current tier + filter
-  // (falls back to any matching puzzle once everything is solved).
+  // One-click start: a random unsolved puzzle from the current tier + filter.
   function surpriseMe() {
-    const pool = filtered.filter((p) => !completed.has(`archive-${p.id}`));
-    const pick = (pool.length ? pool : filtered)[
-      Math.floor(Math.random() * (pool.length ? pool.length : filtered.length))
-    ];
-    if (pick) navigate(`/play/${pick.id}`);
+    const id = pickSurprise(filtered, completed);
+    if (id) navigate(`/play/${id}`);
   }
 
   return (

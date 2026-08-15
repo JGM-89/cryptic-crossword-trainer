@@ -69,12 +69,23 @@ export function PuzzlePage() {
         solvedEntries={solvedEntries}
       />
 
+      {done && (
+        <p className="page-foot">
+          <Link className="btn btn-primary" to="/daily">
+            Solve today’s Daily →
+          </Link>{' '}
+          <Link className="btn btn-ghost" to="/play">
+            Play the archive
+          </Link>
+        </p>
+      )}
+
       <PuzzleComplete
         open={justSolved}
         title="Grid complete!"
-        subtitle={`${puzzle.title} — you solved a full cryptic, unaided where it counts.`}
+        subtitle={`${puzzle.title} — you solved a full cryptic, unaided where it counts. You’re ready for the Daily.`}
         actions={[
-          { label: 'Back to Learn →', to: '/learn', primary: true },
+          { label: 'Solve today’s Daily →', to: '/daily', primary: true },
           { label: 'Play the archive', to: '/play' },
         ]}
         onClose={() => setJustSolved(false)}
