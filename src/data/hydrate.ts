@@ -164,11 +164,22 @@ function tier3Text(clueType: ClueType, wp: Wordplay): string {
 export function hydrateClue(raw: RawClue): Clue {
   const definitionSpan = locateDefinition(raw.clue, raw.def);
 
+  // Whole-clue devices (cryptic definition, &lit) have no separate definition
+  // half — saying "the definition is at the START" and quoting the entire clue
+  // back is technically true but reads as a bug. Say what's actually going on.
+  const wholeClueHint =
+    raw.clueType === 'cryptic-definition'
+      ? 'There is no separate wordplay here — the WHOLE clue is one playful definition. Re-read it looking for the pun.'
+      : raw.clueType === 'lit'
+        ? 'The WHOLE clue is the definition — and the very same words are also the wordplay (an “&lit”).'
+        : undefined;
+
   const hint1: Hint = {
     tier: 1,
     label: 'Definition',
     text:
       raw.hintOverrides?.[1] ??
+      wholeClueHint ??
       `The definition is at the ${raw.def.position === 'start' ? 'START' : 'END'}: “${raw.def.text}”.${defExampleNote(raw.clue, definitionSpan)}`,
   };
   const hint2: Hint = {
