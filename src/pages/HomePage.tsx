@@ -101,7 +101,7 @@ export function HomePage() {
             )}
           </div>
         </section>
-        <HomeBody stage={stage} solvedClues={solvedClues} solvedPuzzles={solvedPuzzles} started={started} />
+        <HomeBody stage={stage} solvedClues={solvedClues} solvedPuzzles={solvedPuzzles} started={started} showStats={returning} />
       </div>
     );
   }
@@ -122,15 +122,15 @@ export function HomePage() {
           solving a full grid unaided.
         </p>
         <div className="home-cta">
-          <Link className="btn btn-primary btn-lg" to="/daily">
-            Solve today’s Daily →
+          <Link className="btn btn-primary btn-lg" to="/learn">
+            Start learning →
           </Link>
-          <Link className="btn btn-ghost btn-lg" to="/learn">
-            {started ? 'Keep learning' : 'Start learning'}
+          <Link className="btn btn-ghost btn-lg" to="/daily">
+            Or try today’s Daily
           </Link>
         </div>
       </section>
-      <HomeBody stage={stage} solvedClues={solvedClues} solvedPuzzles={solvedPuzzles} started={started} />
+      <HomeBody stage={stage} solvedClues={solvedClues} solvedPuzzles={solvedPuzzles} started={started} showStats={returning} />
     </div>
   );
 }
@@ -141,14 +141,19 @@ function HomeBody({
   solvedClues,
   solvedPuzzles,
   started,
+  showStats,
 }: {
   stage: ReturnType<typeof topStage>;
   solvedClues: number;
   solvedPuzzles: number;
   started: boolean;
+  /** A first-time visitor has nothing to report — a row of zeros and an
+   *  unearned mastery badge only makes the promise look emptier. */
+  showStats: boolean;
 }) {
   return (
     <>
+      {showStats && (
       <section className="home-stats" aria-label="Your progress">
         <div className="stat">
           <span className={`cc-stage stage-${stage}`} aria-hidden>
@@ -172,6 +177,7 @@ function HomeBody({
           <span className="stat-label">Hand-clued teaching clues</span>
         </div>
       </section>
+      )}
 
       <div className="section-head">
         <h2>Four ways in</h2>

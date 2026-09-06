@@ -18,7 +18,7 @@ const SITE = 'https://jgm-89.github.io/cryptic-crossword-trainer/#/daily';
 export function DailyPage() {
   const today = dateKey();
   const daily = useMemo(() => dailyClue(today), [today]);
-  const { competenceFor, solveClue } = useProgress();
+  const { state: progress, competenceFor, solveClue } = useProgress();
   const [state, setState] = useState<DailyState>(loadDaily);
   const [copied, setCopied] = useState(false);
 
@@ -39,6 +39,9 @@ export function DailyPage() {
   }
 
   const result = state.history[today];
+  // No lessons solved and no Daily ever completed = a genuine first-timer.
+  const brandNew =
+    Object.keys(progress.solvedClues).length === 0 && Object.keys(state.history).length === 0;
   const scaffolding = scaffoldingFor(competenceFor(daily.clue.clueType).stage);
 
   function onSolved(clue: Clue, outcome: SolveOutcome) {
@@ -111,6 +114,14 @@ export function DailyPage() {
             </>
           )}
         </p>
+        {/* The Daily is a real cryptic, not a tutorial. Someone who has never
+            solved one lands here with nine empty boxes and no idea what a
+            charade is — give them the shallow end instead of a wall. */}
+        {brandNew && (
+          <p className="daily-newcomer">
+            <Link to="/learn">New to cryptics? Start with lesson one →</Link>
+          </p>
+        )}
       </header>
 
       <ClueCard

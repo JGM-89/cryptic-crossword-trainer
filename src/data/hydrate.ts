@@ -35,7 +35,7 @@ export interface RawClue {
   hintOverrides?: Partial<Record<1 | 2 | 3, string>>;
 }
 
-const DEVICE_DESCRIPTIONS: Record<ClueType, string> = {
+export const DEVICE_DESCRIPTIONS: Record<ClueType, string> = {
   hidden: 'The answer is concealed in consecutive letters of the clue.',
   anagram: 'The answer is the letters of the fodder rearranged.',
   charade: 'The answer is built by joining shorter pieces end to end.',
@@ -191,12 +191,12 @@ export function hydrateClue(raw: RawClue): Clue {
   };
   const hint3: Hint = {
     tier: 3,
-    label: 'Indicator & fodder',
+    label: 'The wordplay',
     text:
       (raw.hintOverrides?.[3] ?? tier3Text(raw.clueType, raw.wordplay)) +
       abbreviationNote(raw.wordplay),
   };
-  const hint4: Hint = { tier: 4, label: 'Full parse', text: raw.parse };
+  const hint4: Hint = { tier: 4, label: 'Full solution', text: raw.parse };
 
   return {
     id: raw.id,

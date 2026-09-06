@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import type { Clue } from '../types';
 import { CLUE_TYPE_LABELS } from '../types';
+import { DEVICE_DESCRIPTIONS } from '../data/hydrate';
 import type { Scaffolding, SolveOutcome } from '../engine/fading';
 import { track } from '../analytics';
 import { AnswerStrip } from './AnswerStrip';
@@ -110,7 +111,10 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved, source = 
           <ClueText clue={clue.clue} highlights={highlights} />
         </p>
         {scaffolding.showClueTypeBadge && (
-          <span className={`badge badge-${clue.clueType}`}>
+          <span
+            className={`badge badge-${clue.clueType}`}
+            title={DEVICE_DESCRIPTIONS[clue.clueType]}
+          >
             {CLUE_TYPE_LABELS[clue.clueType]}
           </span>
         )}
