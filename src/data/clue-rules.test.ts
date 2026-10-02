@@ -1,7 +1,7 @@
 // The Clue Bible's machine rules (docs/clue-bible/03-rules-and-flags.md).
 // Each fixture is a real failure the 2026-10-02 audit found (or its fixed form).
 import { describe, expect, it } from 'vitest';
-import { batchHits, checkRules, ruleIds, type RuleEntry } from './clue-rules';
+import { batchHits, checkRules, isBlocking, ruleIds, type RuleEntry } from './clue-rules';
 
 const entry = (o: Partial<RuleEntry> & Pick<RuleEntry, 'answer' | 'clueType' | 'clue'>): RuleEntry => ({
   id: `t-${o.answer.toLowerCase()}`,
@@ -78,7 +78,8 @@ describe('R-HIDDEN-IND', () => {
     expect(ruleIds(checkRules(e))).toContain('R-HIDDEN-IND');
   });
   it('passes standard hidden indicators', () => {
-    for (const ind of ['in', 'Some of', 'conceals', 'at the heart of', 'held by']) {
+    // Including ones a hand-written list once wrongly failed: real setters use them.
+    for (const ind of ['in', 'Some of', 'conceals', 'held by', 'through', 'skirts', 'lurking in']) {
       const e = entry({ answer: 'BAT', clueType: 'hidden', clue: `x ${ind} y (3)`, indicator: ind });
       expect(ruleIds(checkRules(e))).not.toContain('R-HIDDEN-IND');
     }
@@ -107,14 +108,16 @@ describe('R-CD-CONTRACT', () => {
   });
 });
 
-describe('R-IDLE', () => {
-  it('fails a single word that does no work in the parse', () => {
+describe('F-IDLE (a flag: judgement call, never blocks)', () => {
+  it('flags a single word that does no work in the parse', () => {
     const e = entry({
       answer: 'EARTH', clueType: 'anagram', defText: 'our planet',
       clue: 'Heart pounding wildly for our planet (5)', indicator: 'pounding', fodder: 'Heart',
       ops: [{ op: 'anagram', input: 'HEART', output: 'EARTH' }],
     });
-    expect(ruleIds(checkRules(e))).toContain('R-IDLE');
+    const hits = checkRules(e);
+    expect(ruleIds(hits)).toContain('F-IDLE');
+    expect(hits.some(isBlocking)).toBe(false);
   });
 });
 
@@ -140,5 +143,21 @@ describe('batch rules', () => {
   it('B-REPEAT: the same indicator more than twice', () => {
     const batch = [mk('B1', 'hidden', 'in'), mk('B2', 'hidden', 'in'), mk('B3', 'hidden', 'In')];
     expect(batchHits(batch).map((h) => h.rule)).toContain('B-REPEAT');
+  });
+});
+
+describe('waivers', () => {
+  it('a rule waived with a written reason no longer blocks, but stays visible', () => {
+    const e = entry({
+      answer: 'COB', clueType: 'hidden', clue: 'Swan gliding past disco bar (3)', indicator: 'past',
+      waivers: [{ rule: 'R-HIDDEN-IND', reason: 'test: reason recorded for the auditor' }],
+    });
+    const hit = checkRules(e).find((h) => h.rule === 'R-HIDDEN-IND');
+    expect(hit?.waived).toMatch(/reason/);
+    expect(isBlocking(hit!)).toBe(false);
+  });
+  it('an empty reason does not waive', () => {
+    const e = entry({ answer: 'COB', clueType: 'hidden', clue: 'x (3)', indicator: 'past', waivers: [{ rule: 'R-HIDDEN-IND', reason: ' ' }] });
+    expect(checkRules(e).some(isBlocking)).toBe(true);
   });
 });

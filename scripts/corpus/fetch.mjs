@@ -10,6 +10,8 @@
 // - Everyday English sentences: Tatoeba English export (CC-BY 2.0 FR).
 //   https://tatoeba.org/  — used as real-prose decoys and for word-pair
 //   attestation.
+// - Moby Thesaurus II (public domain, Project Gutenberg #3202) — broad
+//   synonym coverage for definition evidence and raw material.
 // - WordNet comes from the `wordnet-db` npm devDependency (no fetch needed).
 
 import { createWriteStream, existsSync, mkdirSync, statSync } from 'node:fs';
@@ -25,6 +27,7 @@ const SOURCES = [
     file: `${DIR}/eng_sentences.tsv.bz2`,
     unpack: `${DIR}/eng_sentences.tsv`,
   },
+  { url: 'https://www.gutenberg.org/files/3202/files/mthesaur.txt', file: `${DIR}/moby-thesaurus.txt` },
 ];
 
 mkdirSync(DIR, { recursive: true });

@@ -2,6 +2,13 @@
 // Pure and corpus-free so they run in CI and the browser test suite. Each rule
 // encodes a failure found in real Cruci clues (docs/clue-bible/06-case-law.md).
 //
+// FAIRNESS (owner, 2026-10-02): rules must never make clues arbitrarily harder.
+//   • A RULE is only for an unambiguous fault; anything needing judgement is a FLAG.
+//   • Every rule is precision-tested against published broadsheet clues
+//     (scripts/rules-precision.mjs); one that fires on professional clues is demoted.
+//   • Any rule can be waived per clue with a written reason (`waivers`), which the
+//     exam's auditor checks and case law records.
+//
 //   R-*  RULE  — fails the clue. Candidates: zero tolerance (scripts/validate-clue.ts).
 //               Shipped bank: ratcheted by clue-rules.baseline.json (may only shrink).
 //   F-*  FLAG  — needs an exam step or a recorded reason; never blocks on its own.
@@ -9,9 +16,9 @@
 // Corpus-backed flags (F-CHESTNUT, F-UNATTESTED, F-DEF-EVIDENCE) live in
 // scripts/clue-flags.mjs; exam-derived ones (F-QUIZ) in scripts/exam/.
 import { orphanSpans, tokens, type SurfaceEntry } from './surface-rules';
+import hiddenIndicators from './indicators/hidden.json';
 
 export type RuleId =
-  | 'R-IDLE'
   | 'R-PRINTED'
   | 'R-ANSWER-IN-CLUE'
   | 'R-FODDER-LETTERS'
@@ -19,6 +26,7 @@ export type RuleId =
   | 'R-HIDDEN-IND'
   | 'R-CD-CONTRACT'
   | 'F-PRINTED'
+  | 'F-IDLE'
   | 'F-AMERICANISM'
   | 'B-DEVICE-MIX'
   | 'B-REPEAT';
@@ -26,6 +34,14 @@ export type RuleId =
 export interface RuleHit {
   rule: RuleId;
   detail: string;
+  /** Set when the clue carries a waiver for this rule (it then never blocks). */
+  waived?: string;
+}
+
+/** A per-clue exemption from one rule, with the reason (audited in the exam). */
+export interface Waiver {
+  rule: RuleId;
+  reason: string;
 }
 
 export interface RuleEntry {
@@ -39,6 +55,7 @@ export interface RuleEntry {
   ops: { op: string; input: string; output: string }[];
   /** Required for cryptic definitions: the two readings the pun plays on. */
   pun?: { misleading: string; true: string };
+  waivers?: Waiver[];
 }
 
 /** Adapter: a bank entry (part-*.json shape) → RuleEntry. */
@@ -49,6 +66,7 @@ export function ruleEntryFromBank(e: {
   def: { text: string };
   wordplay: { indicator?: string; fodder?: string; operations: { op: string; input: string; output: string }[] };
   pun?: { misleading: string; true: string };
+  waivers?: Waiver[];
 }): RuleEntry {
   return {
     id: `bank-${e.answer.toLowerCase()}`,
@@ -60,6 +78,7 @@ export function ruleEntryFromBank(e: {
     fodder: e.wordplay.fodder ?? '',
     ops: e.wordplay.operations,
     ...(e.pun ? { pun: e.pun } : {}),
+    ...(e.waivers ? { waivers: e.waivers } : {}),
   };
 }
 
@@ -89,24 +108,18 @@ export function ruleEntryFromClue(c: {
 const letters = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
 const sorted = (s: string) => letters(s).split('').sort().join('');
 
-// ── R-HIDDEN-IND: hidden-word indicator families (02-devices/hidden.md) ─────
-// Phrases are matched whole (case-insensitive); single words by stem.
-const HIDDEN_PHRASES = [
-  'in', 'into', 'inside', 'within', 'some', 'some of', 'part of', 'partly', 'in part',
-  'found in', 'found', 'held by', 'hidden by', 'hidden in', 'hid in', 'lurking', 'lurking in',
-  'at the heart of', 'from', 'among', 'amid', 'a bit of', 'piece of', 'sample of',
-];
-const HIDDEN_STEMS = [
-  'conceal', 'hide', 'hides', 'hiding', 'hidden', 'shelter', 'keep', 'cover', 'hold', 'house',
-  'harbour', 'reveal', 'show', 'display', 'contain', 'bury', 'buried', 'carri', 'carry',
-  'store', 'stock', 'feature', 'include', 'lurk', 'embrace', 'grip', 'clutch', 'capture', 'secrete',
-];
+// ── R-HIDDEN-IND: hidden-word indicators real setters use ─────────────────
+// src/data/indicators/hidden.json = every hidden indicator published broadsheet
+// setters used ≥2× (scripts/corpus/indicators.mjs). A phrase passes if it is on
+// the list, or if any of its words is a single-word indicator on the list
+// ("lurking" → "lurking in"). Only an indicator nobody uses fails (COB: "past").
+const HIDDEN = new Set<string>(hiddenIndicators as string[]);
 
 function validHiddenIndicator(ind: string): boolean {
   const i = ind.toLowerCase().trim();
   if (!i) return false;
-  if (HIDDEN_PHRASES.includes(i)) return true;
-  return i.split(/\s+/).some((w) => HIDDEN_STEMS.some((s) => w.startsWith(s)));
+  if (HIDDEN.has(i)) return true;
+  return i.split(/\s+/).some((w) => HIDDEN.has(w) && !['a', 'the', 'of', 'to', 'and'].includes(w));
 }
 
 // ── R-INDICATOR-DIR: Down-only reversal indicators (02-devices/reversal.md) ──
@@ -121,14 +134,17 @@ const US_SPELLINGS = new Set(
     'diaper faucet sidewalk gasoline').split(/\s+/),
 );
 
-const INFLECTIONS = ['', 's', 'es', 'd', 'ed', 'ing', 'er', 'ers', 'ly'];
+// Plain inflections only: "learner" minus ER for LEARN is a fair deletion
+// (published broadsheet usage), so -er/-ly forms are deliberately excluded.
+const INFLECTIONS = ['', 's', 'es', 'd', 'ed', 'ing'];
 
 export function checkRules(e: RuleEntry): RuleHit[] {
   const hits: RuleHit[] = [];
   const answer = letters(e.answer);
   const clueToks = tokens(e.clue);
 
-  // R-IDLE: any word the cryptic reading never pays for.
+  // F-IDLE: words the cryptic reading never pays for. A FLAG, not a rule —
+  // deciding "idle" needs judgement (a decorative word can carry the scene).
   const surface: SurfaceEntry = {
     id: e.id,
     clue: e.clue,
@@ -140,7 +156,7 @@ export function checkRules(e: RuleEntry): RuleHit[] {
   };
   const idle = orphanSpans(surface);
   if (idle.length) {
-    hits.push({ rule: 'R-IDLE', detail: `idle: ${idle.map((s) => `"${s.join(' ')}"`).join(', ')}` });
+    hits.push({ rule: 'F-IDLE', detail: `idle: ${idle.map((s) => `"${s.join(' ')}"`).join(', ')}` });
   }
 
   // R-PRINTED / F-PRINTED: answer pieces printed as themselves in the surface.
@@ -208,6 +224,10 @@ export function checkRules(e: RuleEntry): RuleHit[] {
   const us = clueToks.filter((t) => US_SPELLINGS.has(t));
   if (us.length) hits.push({ rule: 'F-AMERICANISM', detail: `US usage: ${us.join(', ')}` });
 
+  for (const h of hits) {
+    const w = e.waivers?.find((x) => x.rule === h.rule && x.reason.trim());
+    if (w) h.waived = w.reason;
+  }
   return hits;
 }
 
@@ -234,4 +254,4 @@ export function batchHits(batch: RuleEntry[]): RuleHit[] {
 }
 
 export const ruleIds = (hits: RuleHit[]) => hits.map((h) => h.rule);
-export const isBlocking = (h: RuleHit) => h.rule.startsWith('R-');
+export const isBlocking = (h: RuleHit) => h.rule.startsWith('R-') && !h.waived;

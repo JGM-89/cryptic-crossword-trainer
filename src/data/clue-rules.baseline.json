@@ -8,15 +8,6 @@
   "bank-bell": [
     "R-CD-CONTRACT"
   ],
-  "bank-blasted": [
-    "R-IDLE"
-  ],
-  "bank-breath": [
-    "R-IDLE"
-  ],
-  "bank-brighten": [
-    "R-IDLE"
-  ],
   "bank-candle": [
     "R-CD-CONTRACT"
   ],
@@ -27,36 +18,13 @@
     "R-CD-CONTRACT"
   ],
   "bank-cartridge": [
-    "R-IDLE",
     "R-PRINTED"
-  ],
-  "bank-cater": [
-    "R-IDLE"
-  ],
-  "bank-cedar": [
-    "R-IDLE"
-  ],
-  "bank-ceiling": [
-    "R-IDLE"
   ],
   "bank-chairlift": [
     "R-CD-CONTRACT"
   ],
-  "bank-champion": [
-    "R-IDLE"
-  ],
-  "bank-charity": [
-    "R-IDLE"
-  ],
-  "bank-chasm": [
-    "R-IDLE"
-  ],
-  "bank-chat": [
-    "R-HIDDEN-IND",
-    "R-IDLE"
-  ],
-  "bank-cistern": [
-    "R-IDLE"
+  "bank-chess": [
+    "R-HIDDEN-IND"
   ],
   "bank-cob": [
     "R-HIDDEN-IND"
@@ -64,26 +32,14 @@
   "bank-cod": [
     "R-CD-CONTRACT"
   ],
-  "bank-conversation": [
-    "R-IDLE"
-  ],
-  "bank-crave": [
-    "R-IDLE"
-  ],
   "bank-craving": [
     "R-PRINTED"
-  ],
-  "bank-deliver": [
-    "R-IDLE"
   ],
   "bank-denier": [
     "R-CD-CONTRACT"
   ],
-  "bank-despair": [
-    "R-IDLE"
-  ],
-  "bank-detail": [
-    "R-IDLE"
+  "bank-desk": [
+    "R-HIDDEN-IND"
   ],
   "bank-dew": [
     "R-CD-CONTRACT"
@@ -91,17 +47,11 @@
   "bank-door": [
     "R-CD-CONTRACT"
   ],
-  "bank-dream": [
-    "R-IDLE"
-  ],
   "bank-drum": [
     "R-CD-CONTRACT"
   ],
-  "bank-earned": [
-    "R-IDLE"
-  ],
-  "bank-earning": [
-    "R-IDLE"
+  "bank-earlobe": [
+    "R-HIDDEN-IND"
   ],
   "bank-ego": [
     "R-CD-CONTRACT"
@@ -111,6 +61,9 @@
   ],
   "bank-entertainment": [
     "R-CD-CONTRACT"
+  ],
+  "bank-fir": [
+    "R-HIDDEN-IND"
   ],
   "bank-flag": [
     "R-CD-CONTRACT"
@@ -128,23 +81,13 @@
     "R-FODDER-LETTERS"
   ],
   "bank-ghost": [
-    "R-IDLE",
     "R-PRINTED"
   ],
   "bank-glove": [
     "R-CD-CONTRACT"
   ],
-  "bank-graduate": [
-    "R-IDLE"
-  ],
   "bank-grandmotherly": [
     "R-CD-CONTRACT"
-  ],
-  "bank-grenade": [
-    "R-IDLE"
-  ],
-  "bank-habitat": [
-    "R-IDLE"
   ],
   "bank-ham": [
     "R-CD-CONTRACT"
@@ -152,14 +95,8 @@
   "bank-hare": [
     "R-CD-CONTRACT"
   ],
-  "bank-hatred": [
-    "R-IDLE"
-  ],
   "bank-hay": [
     "R-CD-CONTRACT"
-  ],
-  "bank-hermit": [
-    "R-IDLE"
   ],
   "bank-heron": [
     "R-CD-CONTRACT"
@@ -170,14 +107,14 @@
   "bank-ink": [
     "R-CD-CONTRACT"
   ],
+  "bank-inkpot": [
+    "R-HIDDEN-IND"
+  ],
   "bank-ivy": [
     "R-CD-CONTRACT"
   ],
   "bank-laboratory": [
     "R-CD-CONTRACT"
-  ],
-  "bank-land": [
-    "R-IDLE"
   ],
   "bank-law": [
     "R-CD-CONTRACT"
@@ -188,21 +125,8 @@
   "bank-maple": [
     "R-CD-CONTRACT"
   ],
-  "bank-meadow": [
-    "R-IDLE"
-  ],
-  "bank-minister": [
-    "R-IDLE"
-  ],
-  "bank-moat": [
-    "R-HIDDEN-IND",
-    "R-IDLE"
-  ],
   "bank-moon": [
     "R-CD-CONTRACT"
-  ],
-  "bank-mushroom": [
-    "R-IDLE"
   ],
   "bank-nail": [
     "R-CD-CONTRACT"
@@ -210,100 +134,62 @@
   "bank-nest": [
     "R-HIDDEN-IND"
   ],
-  "bank-neutral": [
-    "R-IDLE"
-  ],
   "bank-nowhere": [
     "R-CD-CONTRACT"
   ],
   "bank-oak": [
     "R-CD-CONTRACT"
   ],
-  "bank-offshore": [
-    "R-IDLE"
+  "bank-often": [
+    "R-HIDDEN-IND"
   ],
-  "bank-once": [
-    "R-IDLE"
-  ],
-  "bank-organ": [
-    "R-IDLE"
-  ],
-  "bank-organises": [
-    "R-IDLE"
+  "bank-otter": [
+    "R-HIDDEN-IND"
   ],
   "bank-outline": [
     "R-PRINTED"
   ],
   "bank-outlook": [
-    "R-IDLE",
     "R-PRINTED"
   ],
   "bank-oven": [
     "R-CD-CONTRACT"
   ],
-  "bank-overboard": [
-    "R-IDLE"
-  ],
-  "bank-overhead": [
-    "R-IDLE"
-  ],
-  "bank-overnight": [
-    "R-IDLE"
-  ],
-  "bank-paddock": [
-    "R-IDLE"
-  ],
-  "bank-paint": [
-    "R-IDLE"
+  "bank-owl": [
+    "R-HIDDEN-IND"
   ],
   "bank-pancake": [
     "R-CD-CONTRACT"
   ],
+  "bank-pantry": [
+    "R-HIDDEN-IND"
+  ],
   "bank-path": [
     "R-CD-CONTRACT"
-  ],
-  "bank-rat": [
-    "R-IDLE"
   ],
   "bank-repaid": [
     "R-PRINTED"
   ],
   "bank-reward": [
-    "R-IDLE",
     "R-INDICATOR-DIR"
-  ],
-  "bank-rife": [
-    "R-IDLE"
   ],
   "bank-river": [
     "R-CD-CONTRACT"
   ],
-  "bank-rogue": [
-    "R-IDLE"
-  ],
   "bank-roof": [
     "R-CD-CONTRACT"
-  ],
-  "bank-sacred": [
-    "R-IDLE"
   ],
   "bank-saddle": [
     "R-CD-CONTRACT"
   ],
-  "bank-salt": [
-    "R-IDLE"
-  ],
   "bank-sand": [
     "R-CD-CONTRACT"
-  ],
-  "bank-shearing": [
-    "R-IDLE"
   ],
   "bank-sky": [
     "R-CD-CONTRACT"
   ],
-  "bank-smile": [
-    "R-IDLE"
+  "bank-smog": [
+    "R-HIDDEN-IND"
   ],
   "bank-snow": [
     "R-CD-CONTRACT"
@@ -314,41 +200,17 @@
   "bank-spine": [
     "R-PRINTED"
   ],
-  "bank-stair": [
-    "R-IDLE"
-  ],
-  "bank-starlet": [
-    "R-IDLE"
-  ],
-  "bank-startled": [
-    "R-IDLE"
-  ],
   "bank-stockbroker": [
     "R-CD-CONTRACT"
-  ],
-  "bank-stone": [
-    "R-IDLE"
   ],
   "bank-storm": [
     "R-CD-CONTRACT"
   ],
-  "bank-strange": [
-    "R-IDLE"
-  ],
-  "bank-streaming": [
-    "R-IDLE"
-  ],
-  "bank-swearing": [
-    "R-IDLE"
-  ],
   "bank-tea": [
     "R-CD-CONTRACT"
   ],
-  "bank-teachers": [
-    "R-IDLE"
-  ],
-  "bank-thunder": [
-    "R-IDLE"
+  "bank-terrain": [
+    "R-HIDDEN-IND"
   ],
   "bank-tiger": [
     "R-CD-CONTRACT"
@@ -356,11 +218,8 @@
   "bank-tip": [
     "R-INDICATOR-DIR"
   ],
-  "bank-toad": [
-    "R-IDLE"
-  ],
-  "bank-understanding": [
-    "R-IDLE"
+  "bank-wallet": [
+    "R-HIDDEN-IND"
   ],
   "bank-whirlpool": [
     "R-CD-CONTRACT"
@@ -369,8 +228,7 @@
     "R-CD-CONTRACT"
   ],
   "bank-wonder": [
-    "R-ANSWER-IN-CLUE",
-    "R-IDLE"
+    "R-ANSWER-IN-CLUE"
   ],
   "bank-zebra": [
     "R-CD-CONTRACT"
@@ -386,8 +244,5 @@
   ],
   "cryptic-definition-004": [
     "R-CD-CONTRACT"
-  ],
-  "hidden-001": [
-    "R-IDLE"
   ]
 }
