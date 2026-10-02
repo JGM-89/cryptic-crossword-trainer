@@ -23,9 +23,6 @@
   "bank-chairlift": [
     "R-CD-CONTRACT"
   ],
-  "bank-chess": [
-    "R-HIDDEN-IND"
-  ],
   "bank-cob": [
     "R-HIDDEN-IND"
   ],
@@ -38,9 +35,6 @@
   "bank-denier": [
     "R-CD-CONTRACT"
   ],
-  "bank-desk": [
-    "R-HIDDEN-IND"
-  ],
   "bank-dew": [
     "R-CD-CONTRACT"
   ],
@@ -50,9 +44,6 @@
   "bank-drum": [
     "R-CD-CONTRACT"
   ],
-  "bank-earlobe": [
-    "R-HIDDEN-IND"
-  ],
   "bank-ego": [
     "R-CD-CONTRACT"
   ],
@@ -61,9 +52,6 @@
   ],
   "bank-entertainment": [
     "R-CD-CONTRACT"
-  ],
-  "bank-fir": [
-    "R-HIDDEN-IND"
   ],
   "bank-flag": [
     "R-CD-CONTRACT"
@@ -107,9 +95,6 @@
   "bank-ink": [
     "R-CD-CONTRACT"
   ],
-  "bank-inkpot": [
-    "R-HIDDEN-IND"
-  ],
   "bank-ivy": [
     "R-CD-CONTRACT"
   ],
@@ -140,12 +125,6 @@
   "bank-oak": [
     "R-CD-CONTRACT"
   ],
-  "bank-often": [
-    "R-HIDDEN-IND"
-  ],
-  "bank-otter": [
-    "R-HIDDEN-IND"
-  ],
   "bank-outline": [
     "R-PRINTED"
   ],
@@ -155,14 +134,8 @@
   "bank-oven": [
     "R-CD-CONTRACT"
   ],
-  "bank-owl": [
-    "R-HIDDEN-IND"
-  ],
   "bank-pancake": [
     "R-CD-CONTRACT"
-  ],
-  "bank-pantry": [
-    "R-HIDDEN-IND"
   ],
   "bank-path": [
     "R-CD-CONTRACT"
@@ -188,9 +161,6 @@
   "bank-sky": [
     "R-CD-CONTRACT"
   ],
-  "bank-smog": [
-    "R-HIDDEN-IND"
-  ],
   "bank-snow": [
     "R-CD-CONTRACT"
   ],
@@ -209,17 +179,11 @@
   "bank-tea": [
     "R-CD-CONTRACT"
   ],
-  "bank-terrain": [
-    "R-HIDDEN-IND"
-  ],
   "bank-tiger": [
     "R-CD-CONTRACT"
   ],
   "bank-tip": [
     "R-INDICATOR-DIR"
-  ],
-  "bank-wallet": [
-    "R-HIDDEN-IND"
   ],
   "bank-whirlpool": [
     "R-CD-CONTRACT"

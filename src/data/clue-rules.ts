@@ -110,16 +110,40 @@ const sorted = (s: string) => letters(s).split('').sort().join('');
 
 // ── R-HIDDEN-IND: hidden-word indicators real setters use ─────────────────
 // src/data/indicators/hidden.json = every hidden indicator published broadsheet
-// setters used ≥2× (scripts/corpus/indicators.mjs). A phrase passes if it is on
+// setters used (scripts/corpus/indicators.mjs). A phrase passes if it is on
 // the list, or if any of its words is a single-word indicator on the list
 // ("lurking" → "lurking in"). Only an indicator nobody uses fails (COB: "past").
 const HIDDEN = new Set<string>(hiddenIndicators as string[]);
+// Word forms are equivalent: "hides" = "hide" = "hidden" = "hiding".
+const stem = (w: string) => w.replace(/(ing|ed|en|es|s)$/, '').replace(/e$/, '');
+const HIDDEN_STEMS = new Set(
+  [...HIDDEN].filter((x) => !x.includes(' ')).map(stem).filter((x) => x.length >= 3),
+);
+const FILLER = new Set(['a', 'an', 'the', 'of', 'to', 'and', 'by', 'at', 'it']);
+// The published table only covers blog-annotated clues, so it misses standard
+// indicators ("shelters", "hidden by", "at the heart of"). Accept the standard
+// families from crossword references too (02-devices/hidden.md); only an
+// indicator in neither source fails.
+const HIDDEN_FAMILIES = [
+  'conceal', 'hid', 'shelter', 'keep', 'kept', 'cover', 'hold', 'held', 'house', 'harbour',
+  'reveal', 'show', 'display', 'contain', 'bur', 'carr', 'store', 'stock', 'feature', 'includ',
+  'lurk', 'embrac', 'grip', 'clutch', 'captur', 'secret', 'heart', 'part', 'some', 'piece', 'bit',
+  'sample', 'section', 'inside', 'within', 'among', 'amid', 'found', 'from', 'in', 'into',
+];
 
 function validHiddenIndicator(ind: string): boolean {
   const i = ind.toLowerCase().trim();
   if (!i) return false;
   if (HIDDEN.has(i)) return true;
-  return i.split(/\s+/).some((w) => HIDDEN.has(w) && !['a', 'the', 'of', 'to', 'and'].includes(w));
+  return i
+    .split(/\s+/)
+    .filter((w) => !FILLER.has(w))
+    .some(
+      (w) =>
+        HIDDEN.has(w) ||
+        HIDDEN_STEMS.has(stem(w)) ||
+        HIDDEN_FAMILIES.some((f) => (f.length <= 4 ? w === f || w.startsWith(f) && f.length >= 3 : w.startsWith(f))),
+    );
 }
 
 // ── R-INDICATOR-DIR: Down-only reversal indicators (02-devices/reversal.md) ──

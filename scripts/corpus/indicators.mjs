@@ -8,7 +8,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { publishedIndicators } from './lib.mjs';
 
-const MIN = 2;
+const MIN = 1;
 const DEVICES = ['hidden', 'anagram', 'container', 'insertion', 'reversal', 'deletion', 'homophone', 'alternation'];
 
 mkdirSync('src/data/indicators', { recursive: true });
