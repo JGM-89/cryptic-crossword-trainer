@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { CLUES } from './corpus';
 import { PUZZLES } from './puzzles';
+import { BANK } from './bank/index';
 import { validateAll, validateClue } from './integrity';
 import { CLUE_TYPE_ORDER } from '../types';
 
@@ -8,6 +9,10 @@ describe('clue corpus integrity', () => {
   it('every teaching clue passes the fairness checks', () => {
     const errors = validateAll(CLUES);
     expect(errors).toEqual({});
+  });
+
+  it('every bank clue passes the fairness checks', () => {
+    expect(validateAll(BANK)).toEqual({});
   });
 
   it('every puzzle entry passes the fairness checks', () => {

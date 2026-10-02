@@ -100,6 +100,10 @@ export function validateClue(clue: Clue): string[] {
       if (!fodderLetters.includes(sol)) {
         errors.push('hidden answer is not a contiguous substring of the fodder');
       }
+      // The carrier must be in the clue — otherwise the letters come from nowhere.
+      if (!clueLetters.includes(fodderLetters)) {
+        errors.push('hidden carrier (fodder) is not in the clue');
+      }
       break;
     }
     case 'reversal': {
@@ -109,15 +113,24 @@ export function validateClue(clue: Clue): string[] {
       break;
     }
     case 'deletion': {
-      // Solution must be a subsequence of the fodder, and strictly shorter.
-      if (sol.length >= fodderLetters.length || !isSubsequence(sol, fodderLetters)) {
-        errors.push('solution is not a deletion (subsequence) of the fodder');
+      // A fair deletion removes ONE specified part — the head, the tail, both
+      // ends, or one contiguous run (heart, a named letter/abbreviation) — not
+      // scattered letters (CARTS → CAT is not a deletion any indicator describes).
+      if (sol.length >= fodderLetters.length || !isContiguousDeletion(sol, fodderLetters)) {
+        errors.push('solution is not a deletion of one contiguous part (or both ends) of the fodder');
       }
-      // No indirect deletion: the fodder (the longer source word the solver
-      // shortens) must appear literally in the surface, not be reached via a
-      // synonym/definition first. Same fairness rule as indirect anagram.
-      if (!clueLetters.includes(fodderLetters)) {
-        errors.push('deletion fodder is not literally present in the clue (indirect deletion)');
+      // The source word must be in the clue, or produced from a clue word by a
+      // prior synonym op. Synonym-then-precise-deletion is a standard, fair
+      // construction (celebrity → STAR, beheaded → TAR); it is not like an
+      // indirect anagram, because the deletion is tightly specified.
+      const viaSynonym = clue.wordplay.operations.some(
+        (o) =>
+          (o.op === 'synonym' || o.op === 'abbreviate') &&
+          lettersOnly(o.output) === fodderLetters &&
+          clueLetters.includes(lettersOnly(o.input)),
+      );
+      if (!clueLetters.includes(fodderLetters) && !viaSynonym) {
+        errors.push('deletion source is neither in the clue nor produced from a clue word');
       }
       break;
     }
@@ -159,9 +172,9 @@ export function validateClue(clue: Clue): string[] {
     clue.clue.replace(/\s*\([^)]*\)\s*$/, '').toUpperCase().split(/[^A-Z]+/).filter(Boolean),
   );
   // A piece is accounted for if a prior op produced it, OR it sits verbatim in
-  // the surface as a word (literal fodder, e.g. "taking me in" → ME), OR it is
-  // a single letter read straight off the surface (e.g. "a" → A).
-  const pieceAccounted = (p: string) => p.length <= 1 || priorOutputs.has(p) || surfaceWords.has(p);
+  // the surface as a word (literal fodder: "taking me in" → ME; "a" → A).
+  // Single letters get no free pass — each must come from an op or the surface.
+  const pieceAccounted = (p: string) => priorOutputs.has(p) || surfaceWords.has(p);
   if (finalOp?.op === 'concat') {
     const pieces = finalOp.input.split('+').map(lettersOnly).filter(Boolean);
     if (pieces.join('') !== sol) {
@@ -238,13 +251,16 @@ export function validateClue(clue: Clue): string[] {
   return errors;
 }
 
-function isSubsequence(sub: string, full: string): boolean {
-  let i = 0;
-  for (const ch of full) {
-    if (ch === sub[i]) i++;
-    if (i === sub.length) return true;
+/** `sol` = `full` with one contiguous run removed, or with both ends trimmed. */
+function isContiguousDeletion(sol: string, full: string): boolean {
+  const cut = full.length - sol.length;
+  for (let i = 0; i + cut <= full.length; i++) {
+    if (full.slice(0, i) + full.slice(i + cut) === sol) return true; // head / tail / heart / named run
   }
-  return i === sub.length;
+  for (let h = 1; h < cut; h++) {
+    if (full.slice(h, h + sol.length) === sol) return true; // both ends ("topless and tailless")
+  }
+  return false;
 }
 
 export function validateAll(clues: Clue[]): Record<string, string[]> {
