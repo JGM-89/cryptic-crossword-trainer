@@ -3,9 +3,9 @@
 // wordplay — each once) and letter reveals, every one costing 1. Wrong guesses
 // are free. Score = hints + letters, read against the clue's par.
 // Learn/Play keep ClueCard and its competence-based fading.
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Clue } from '../types';
-import type { DailyResult } from '../state/dailyProgress';
+import { clearAttempt, loadAttempt, saveAttempt, type DailyResult } from '../state/dailyProgress';
 import { scoreLabel } from '../data/par';
 import { track } from '../analytics';
 import { AnswerStrip } from './AnswerStrip';
@@ -27,6 +27,8 @@ interface Props {
   par: number;
   /** An earlier result for this Daily — renders the finished state. */
   result?: DailyResult;
+  /** Date key: remembers hints/letters taken on an unfinished Daily across visits. */
+  attemptKey?: string;
   onFinished: (r: DailyFinish) => void;
 }
 
@@ -40,21 +42,31 @@ const LABEL: Record<ExplainKind, string> = {
 
 const lettersOnly = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
 
-export function DailyClueCard({ clue, par, result, onFinished }: Props) {
+export function DailyClueCard({ clue, par, result, attemptKey, onFinished }: Props) {
   const target = useMemo(() => lettersOnly(clue.solution), [clue.solution]);
   const done = Boolean(result);
+  // An unfinished attempt from an earlier visit (only if its shape still fits).
+  const [saved] = useState(() => {
+    const a = !done && attemptKey ? loadAttempt(attemptKey) : null;
+    return a && a.value.length === target.length ? a : null;
+  });
   const [value, setValue] = useState<string[]>(() =>
-    done ? target.split('') : Array(target.length).fill(''),
+    done ? target.split('') : (saved?.value ?? Array(target.length).fill('')),
   );
-  const [locked, setLocked] = useState<boolean[]>(() => Array(target.length).fill(false));
-  const [taken, setTaken] = useState<ExplainKind[]>([]);
-  const [letters, setLetters] = useState(0);
+  const [locked, setLocked] = useState<boolean[]>(() => saved?.locked ?? Array(target.length).fill(false));
+  const [taken, setTaken] = useState<ExplainKind[]>(() => (saved?.taken ?? []) as ExplainKind[]);
+  const [letters, setLetters] = useState(saved?.letters ?? 0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [status, setStatus] = useState<'correct' | 'wrong' | undefined>(done ? 'correct' : undefined);
   const [solved, setSolved] = useState(done);
   const [revealed, setRevealed] = useState(Boolean(result?.revealed));
   const [finalScore, setFinalScore] = useState<number | undefined>(result?.score);
   const startRef = useRef(Date.now());
+
+  useEffect(() => {
+    if (!attemptKey || solved) return;
+    if (taken.length || letters || value.some(Boolean)) saveAttempt(attemptKey, { taken, letters, value, locked });
+  }, [attemptKey, solved, taken, letters, value, locked]);
 
   const score = solved && finalScore !== undefined ? finalScore : taken.length + letters;
   const shownPar = result?.par ?? par;
@@ -80,6 +92,7 @@ export function DailyClueCard({ clue, par, result, onFinished }: Props) {
     setStatus('correct');
     setMenuOpen(false);
     setFinalScore(s);
+    if (attemptKey) clearAttempt(attemptKey);
     onFinished({
       score: s,
       par,

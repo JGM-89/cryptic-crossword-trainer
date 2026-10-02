@@ -25,7 +25,19 @@ const SITE = 'https://jgm-89.github.io/cryptic-crossword-trainer/#/daily';
 
 export function DailyPage() {
   const { number } = useParams();
-  const todayNumber = dayNumber(dateKey());
+  // Re-check the date when the tab comes back into view, so a page left open
+  // overnight moves on to the new Daily (an unfinished attempt is saved).
+  const [todayKey, setTodayKey] = useState(dateKey);
+  useEffect(() => {
+    const refresh = () => setTodayKey(dateKey());
+    document.addEventListener('visibilitychange', refresh);
+    window.addEventListener('focus', refresh);
+    return () => {
+      document.removeEventListener('visibilitychange', refresh);
+      window.removeEventListener('focus', refresh);
+    };
+  }, []);
+  const todayNumber = dayNumber(todayKey);
 
   if (number !== undefined) {
     const n = Number(number);
@@ -114,7 +126,8 @@ function DailyView({ daily, catchUp }: ViewProps) {
         : r.score !== undefined
           ? scoreLabel(r.score, r.par ?? par)
           : 'solved';
-    const url = catchUp ? `${SITE}/${daily.number}` : SITE;
+    // Always the numbered page: a friend opening the link tomorrow sees THIS Daily.
+    const url = `${SITE}/${daily.number}`;
     return `Cruci Daily #${daily.number} — ${how}\n${url}`;
   }
 
@@ -186,7 +199,13 @@ function DailyView({ daily, catchUp }: ViewProps) {
         )}
       </header>
 
-      <DailyClueCard clue={daily.clue} par={par} result={result} onFinished={onFinished} />
+      <DailyClueCard
+        clue={daily.clue}
+        par={par}
+        result={result}
+        attemptKey={daily.date}
+        onFinished={onFinished}
+      />
 
       {result && (
         <div className="lesson-complete">

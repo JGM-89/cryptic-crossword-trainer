@@ -26,6 +26,8 @@ export interface BankEntry {
   parse: string;
   /** Rubric-set par for the Daily (docs/clue-style.md §7b), 2–6. */
   par: number;
+  /** Optional clue-specific hint text (tiers 1–3), replacing the generated text. */
+  hintOverrides?: Partial<Record<1 | 2 | 3, string>>;
 }
 
 const lettersOnly = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
@@ -66,6 +68,7 @@ function toRawClue(e: BankEntry): RawClue {
     wordplay: { ...e.wordplay, fodder: deriveFodder(e) },
     parse: e.parse,
     par: e.par,
+    ...(e.hintOverrides ? { hintOverrides: e.hintOverrides } : {}),
   };
 }
 

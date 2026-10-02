@@ -82,3 +82,49 @@ export function recordArchiveSolve(key: string, result: DailyResult): DailyState
 export function resultFor(state: DailyState, key: string): DailyResult | undefined {
   return state.history[key] ?? state.archive[key];
 }
+
+// ── Unfinished attempts ─────────────────────────────────────────────────────
+// Hints and letters taken on an unfinished Daily survive leaving the page, so
+// navigating away can never reset the score. Cleared when the Daily is finished.
+const ATTEMPT_KEY = 'cct:daily-attempt:v1';
+const KEEP_ATTEMPTS = 10;
+
+export interface DailyAttempt {
+  taken: string[];
+  letters: number;
+  value: string[];
+  locked: boolean[];
+}
+
+function loadAttempts(): Record<string, DailyAttempt> {
+  try {
+    return JSON.parse(localStorage.getItem(ATTEMPT_KEY) ?? '{}') as Record<string, DailyAttempt>;
+  } catch {
+    return {};
+  }
+}
+
+export function loadAttempt(key: string): DailyAttempt | null {
+  return loadAttempts()[key] ?? null;
+}
+
+export function saveAttempt(key: string, attempt: DailyAttempt): void {
+  const all = { ...loadAttempts(), [key]: attempt };
+  const keep = Object.keys(all).sort().slice(-KEEP_ATTEMPTS);
+  try {
+    localStorage.setItem(ATTEMPT_KEY, JSON.stringify(Object.fromEntries(keep.map((k) => [k, all[k]]))));
+  } catch {
+    /* ignore quota/privacy-mode errors */
+  }
+}
+
+export function clearAttempt(key: string): void {
+  const all = loadAttempts();
+  if (!(key in all)) return;
+  delete all[key];
+  try {
+    localStorage.setItem(ATTEMPT_KEY, JSON.stringify(all));
+  } catch {
+    /* ignore */
+  }
+}

@@ -89,3 +89,21 @@ describe('DailyClueCard', () => {
     expect(screen.getByRole('status').textContent).not.toMatch(/par/);
   });
 });
+
+describe('an unfinished Daily survives leaving the page', () => {
+  it('hints and letters taken are remembered, so leaving cannot reset the score', () => {
+    localStorage.clear();
+    const props = { clue, par: 3, attemptKey: '2026-07-01', onFinished: () => {} };
+    const first = render(<DailyClueCard {...props} />);
+    fireEvent.click(screen.getByRole('button', { name: /hints/i }));
+    fireEvent.click(screen.getByRole('button', { name: /name the device/i }));
+    fireEvent.click(screen.getByRole('button', { name: /hints/i }));
+    fireEvent.click(screen.getByRole('button', { name: /show a letter/i }));
+    first.unmount();
+
+    render(<DailyClueCard {...props} />);
+    expect(score()).toBe('Score 2, par 3');
+    expect(screen.getByText(clue.hints[1].text)).toBeTruthy();
+    expect((screen.getByLabelText('Letter 1') as HTMLInputElement).value).toBe(answer[0]);
+  });
+});

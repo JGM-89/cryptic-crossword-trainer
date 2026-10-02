@@ -135,7 +135,9 @@ export function ClueCard({ clue, scaffolding, alreadySolved, onSolved, source = 
         ) : (
           <span className="solved-flag" role="status">
             ✓ {clue.solution}
-            {revealed ? ' (revealed)' : hintUsed ? ' (with help)' : ' — unaided!'}
+            {/* A card restored from an earlier visit doesn't know how it was solved —
+                claim nothing rather than a false "unaided!". */}
+            {alreadySolved ? '' : revealed ? ' (revealed)' : hintUsed ? ' (with help)' : ' — unaided!'}
           </span>
         )}
       </div>
