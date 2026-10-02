@@ -189,7 +189,7 @@ export function hydrateClue(raw: RawClue): Clue {
     label: 'Clue type',
     text:
       raw.hintOverrides?.[2] ??
-      `This is a ${CLUE_TYPE_LABELS[raw.clueType].toUpperCase()}. ${DEVICE_DESCRIPTIONS[raw.clueType]}`,
+      `This is ${/^[aeiou&]/i.test(CLUE_TYPE_LABELS[raw.clueType]) ? 'an' : 'a'} ${CLUE_TYPE_LABELS[raw.clueType].toUpperCase()}. ${DEVICE_DESCRIPTIONS[raw.clueType]}`,
   };
   const hint3: Hint = {
     tier: 3,

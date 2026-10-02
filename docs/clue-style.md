@@ -370,6 +370,33 @@ object or an array). `ok:true` means it passed the mechanical gate; fix any `err
 - **5 (Hard):** multi-step constructions, &lit, subtle definitions — sparingly.
 Match `difficulty` honestly; it feeds the puzzle difficulty bands.
 
+## 7b. Par rubric (the Daily's target score, 2–6)
+
+Every bank clue carries `par`: the hints + letters a capable improver (could finish a broadsheet
+cryptic with a little help) would spend on the Daily. Averaging par means you're ready for full
+puzzles. Researched against Minute Cryptic (par as a "crossword benchmark" built on checking
+letters; CONTEST (7) = par 3) and Times Quick Cryptic editorial guidance (oblique definitions,
+unfamiliar wordplay elements and complex constructions are what make clues hard).
+
+**par = A + B + C + D + E, clamped to 2–6**
+
+| | Factor | Score | Set by |
+|---|---|---|---|
+| A | Crossing-letter allowance — a grid checks ~half the letters; par allows half of those | 3–6 letters: 1 · 7–10: 2 · 11+: 3 | `scripts/par-baseline.mjs` |
+| B | One hint | 1 | fixed |
+| C | Layered wordplay — ≥2 real operations, any abbreviation, or a cryptic definition | 0/1 | `scripts/par-baseline.mjs` |
+| D | Oblique definition — not the obvious synonym; disguised part of speech; def by example; hard-to-see whole-clue pun | 0/1 | 3 blind judges, majority |
+| E | Misdirection / hard to see — surface steers wrong, indicator hiding as a natural word, unfamiliar vocabulary or crossword-ese | 0/1 | 3 blind judges, majority |
+
+**Process:** `node scripts/par-baseline.mjs` → three independent judge agents (editor, coach,
+newer-solver lenses) score D/E per clue into `tmp/par/judge-{1,2,3}-batch-{1,2}.json` →
+`node scripts/par-apply.mjs` writes `par` into the bank and flags pars out of line with
+`difficulty` (difficulty ≤ 2 with par ≥ 5, or ≥ 4 with par 2). The editor resolves flags by hand
+in the script's `OVERRIDES` (with a reason). `bank.par.test.ts` fails if any clue lacks a par.
+First run (2026-10-02): judges unanimous on 88% of D and 80% of E; spread par 2 ×108, 3 ×167,
+4 ×97, 5 ×33, 6 ×10. **Later:** once Daily analytics (`daily_solved` score) has enough plays,
+re-judge any clue whose median player score sits ≥ 2 from its par.
+
 ---
 
 ## 8. The writing loop (per answer, best-of-N)

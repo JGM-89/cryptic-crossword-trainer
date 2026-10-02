@@ -11,6 +11,7 @@ const BANNED: { re: RegExp; useInstead: string }[] = [
   { re: /today[’']s clue/i, useInstead: 'the Daily / Solve today’s Daily' },
   { re: /daily clue/i, useInstead: 'the Daily (page title: Daily #N)' },
   { re: /daily cryptic/i, useInstead: 'the Daily (or Graduation Cryptic №1 for the hand-built grid)' },
+  { re: /back catalogue|old clues/i, useInstead: 'the Daily archive' },
 ];
 
 function sources(): { file: string; text: string }[] {

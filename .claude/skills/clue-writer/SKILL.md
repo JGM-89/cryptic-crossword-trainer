@@ -66,7 +66,10 @@ bar is *our wording*.
 
 **7. Winner + artifacts.** Pick by penny-drop among survivors. Write the full `parse` (it is
 hint rung 4), honest `difficulty`, and check the `indicator` appears VERBATIM in the surface
-(it is quoted in rung 3).
+(it is quoted in rung 3). Bank clues also need a **`par`** (the Daily's target score) set
+through the par rubric in `docs/clue-style.md` §7b: A/B/C from the rubric, D/E by three
+blind judges (majority). For a whole batch, re-run `scripts/par-baseline.mjs` → judges →
+`scripts/par-apply.mjs`; `bank.par.test.ts` fails on any clue without one.
 
 **8. Semantic audit.** One auditor agent over the finished batch: every synonym real, both
 dd senses genuine, homophones true in BrE, definition a real synonym in the right part of

@@ -131,6 +131,16 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
   schedule regenerated with EXCLUDE_TOP=0 → all 416 answers rotate (was 286). Archive usage cap
   30% → 18% now supply exists; top answer share 30% → 18%; zero intra-puzzle duplicate answers.
 
+- **2026-10-02 — the Daily plays by par + the Daily archive** (spec + plan in docs/superpowers/,
+  modelled on Minute Cryptic): no free help on the Daily — everyone gets the bare clue, a hints
+  menu (definition / device / wordplay) and **Show a letter**, each costing 1; wrong guesses free;
+  score vs the clue's **par** (`Par`, `1 under par`), shared in the result. Par is set per bank
+  clue by a researched rubric (`docs/clue-style.md` §7b): length allowance + one hint + layered
+  wordplay (mechanical) + oblique definition + misdirection (3 blind judges, majority); editor
+  resolved 4 flags. **Daily archive** at `/daily/archive`; `/daily/:n` plays any past Daily as a
+  catch-up that never touches the streak (separate `archive` map in `dailyProgress.ts`).
+  Learn/Play keep ClueCard and competence fading.
+
 ## Hard rules (clue/bank editing)
 
 - Bank edits keep answers identical (grids stay valid) and **require** `npm run clues:regen` (the

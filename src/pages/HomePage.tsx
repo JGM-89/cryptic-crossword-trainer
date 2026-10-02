@@ -6,6 +6,7 @@ import { getCompleted } from '../state/playProgress';
 import { CLUES } from '../data';
 import { dailyClue, dateKey } from '../data/daily';
 import { loadDaily } from '../state/dailyProgress';
+import { parFor, scoreLabel } from '../data/par';
 import { DailyBridges } from '../components/DailyBridges';
 
 const CARDS = [
@@ -66,9 +67,11 @@ export function HomePage() {
                   Daily #{daily.number} — solved
                   {todayResult.revealed
                     ? ' (revealed)'
-                    : todayResult.hintsUsed > 0
-                      ? ` with ${todayResult.hintsUsed} hint${todayResult.hintsUsed === 1 ? '' : 's'}`
-                      : ' unaided'}
+                    : todayResult.score !== undefined
+                      ? `, ${scoreLabel(todayResult.score, todayResult.par ?? parFor(daily.clue)).toLowerCase()}`
+                      : todayResult.hintsUsed > 0
+                        ? ` with ${todayResult.hintsUsed} hint${todayResult.hintsUsed === 1 ? '' : 's'}`
+                        : ' unaided'}
                 </h1>
                 <p className="lede">
                   {dailyState.streak > 1 && (
@@ -84,7 +87,7 @@ export function HomePage() {
               <>
                 <h1>Daily #{daily.number} is up.</h1>
                 <p className="lede">
-                  One clue a day — hints fade as you improve.
+                  One clue a day. Par is {parFor(daily.clue)} — beat it.
                   {dailyState.streak > 0 && (
                     <>
                       {' '}
