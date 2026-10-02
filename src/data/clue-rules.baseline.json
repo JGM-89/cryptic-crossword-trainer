@@ -17,9 +17,6 @@
   "bank-carpet": [
     "R-CD-CONTRACT"
   ],
-  "bank-cartridge": [
-    "R-PRINTED"
-  ],
   "bank-chairlift": [
     "R-CD-CONTRACT"
   ],
@@ -28,9 +25,6 @@
   ],
   "bank-cod": [
     "R-CD-CONTRACT"
-  ],
-  "bank-craving": [
-    "R-PRINTED"
   ],
   "bank-denier": [
     "R-CD-CONTRACT"
@@ -68,9 +62,6 @@
   "bank-general": [
     "R-FODDER-LETTERS"
   ],
-  "bank-ghost": [
-    "R-PRINTED"
-  ],
   "bank-glove": [
     "R-CD-CONTRACT"
   ],
@@ -88,9 +79,6 @@
   ],
   "bank-heron": [
     "R-CD-CONTRACT"
-  ],
-  "bank-hill": [
-    "R-PRINTED"
   ],
   "bank-ink": [
     "R-CD-CONTRACT"
@@ -125,12 +113,6 @@
   "bank-oak": [
     "R-CD-CONTRACT"
   ],
-  "bank-outline": [
-    "R-PRINTED"
-  ],
-  "bank-outlook": [
-    "R-PRINTED"
-  ],
   "bank-oven": [
     "R-CD-CONTRACT"
   ],
@@ -139,9 +121,6 @@
   ],
   "bank-path": [
     "R-CD-CONTRACT"
-  ],
-  "bank-repaid": [
-    "R-PRINTED"
   ],
   "bank-reward": [
     "R-INDICATOR-DIR"
@@ -166,9 +145,6 @@
   ],
   "bank-soap": [
     "R-CD-CONTRACT"
-  ],
-  "bank-spine": [
-    "R-PRINTED"
   ],
   "bank-stockbroker": [
     "R-CD-CONTRACT"

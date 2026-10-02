@@ -31,8 +31,8 @@ describe('R-FODDER-LETTERS', () => {
   });
 });
 
-describe('R-PRINTED', () => {
-  it('fails when a charade piece is printed as itself (OUTLOOK: out + look)', () => {
+describe('F-PRINTED (a flag: weak disguise, not unfair)', () => {
+  it('flags a charade whose pieces are printed as themselves (OUTLOOK: out + look)', () => {
     const e = entry({
       answer: 'OUTLOOK', clueType: 'charade', defText: 'what lies ahead',
       clue: 'Once out, look at what lies ahead (7)', fodder: 'OUT + LOOK',
@@ -42,7 +42,9 @@ describe('R-PRINTED', () => {
         { op: 'concat', input: 'OUT+LOOK', output: 'OUTLOOK' },
       ],
     });
-    expect(ruleIds(checkRules(e))).toContain('R-PRINTED');
+    const hits = checkRules(e);
+    expect(ruleIds(hits)).toContain('F-PRINTED');
+    expect(hits.some(isBlocking)).toBe(false);
   });
   it('allows short literal pieces like "a" or "on"', () => {
     const e = entry({
@@ -54,7 +56,7 @@ describe('R-PRINTED', () => {
         { op: 'concat', input: 'CHAR+A', output: 'CHARA' },
       ],
     });
-    expect(ruleIds(checkRules(e))).not.toContain('R-PRINTED');
+    expect(ruleIds(checkRules(e))).not.toContain('F-PRINTED');
   });
 });
 

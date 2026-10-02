@@ -19,7 +19,6 @@ import { orphanSpans, tokens, type SurfaceEntry } from './surface-rules';
 import hiddenIndicators from './indicators/hidden.json';
 
 export type RuleId =
-  | 'R-PRINTED'
   | 'R-ANSWER-IN-CLUE'
   | 'R-FODDER-LETTERS'
   | 'R-INDICATOR-DIR'
@@ -183,11 +182,10 @@ export function checkRules(e: RuleEntry): RuleHit[] {
     hits.push({ rule: 'F-IDLE', detail: `idle: ${idle.map((s) => `"${s.join(' ')}"`).join(', ')}` });
   }
 
-  // R-PRINTED / F-PRINTED: answer pieces printed as themselves in the surface.
-  // Only pieces that sit unchanged in the answer count (fodder that is then
-  // reversed, anagrammed or split by an insertion is fair). If printed pieces
-  // spell out ≥75% of the answer the clue is on display (REP+AID) → RULE;
-  // a single printed piece (CH+ARM) is a FLAG for the tournament to weigh.
+  // F-PRINTED: answer pieces printed as themselves in the surface. A FLAG only
+  // (spec revision 2): printing a component is weak disguise, not unfairness —
+  // the tournament weighs it. Only pieces that sit unchanged in the answer count
+  // (fodder that is then reversed, anagrammed or split by an insertion is fine).
   const printed = e.ops
     .filter((o) => o.op === 'synonym' || o.op === 'literal')
     .map((o) => letters(o.output))
@@ -202,7 +200,7 @@ export function checkRules(e: RuleEntry): RuleHit[] {
   if (printed.length) {
     const covered = printed.reduce((n, p) => n + p.length, 0) / answer.length;
     hits.push({
-      rule: covered >= 0.75 ? 'R-PRINTED' : 'F-PRINTED',
+      rule: 'F-PRINTED',
       detail: `printed piece(s) ${printed.join('+')} show ${Math.round(covered * 100)}% of the answer`,
     });
   }
