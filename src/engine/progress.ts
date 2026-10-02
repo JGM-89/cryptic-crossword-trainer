@@ -36,10 +36,12 @@ export function applySolve(
   clue: Clue,
   outcome: SolveOutcome,
 ): ProgressState {
-  const competence = {
-    ...state.competence,
-    [clue.clueType]: recordSolve(state.competence[clue.clueType], outcome),
-  };
+  // Competence tracks only the nine taught devices; advanced devices (&lit,
+  // initialism, alternation) appear in the Daily/Play but have no record.
+  const rec = state.competence[clue.clueType];
+  const competence = rec
+    ? { ...state.competence, [clue.clueType]: recordSolve(rec, outcome) }
+    : state.competence;
   return {
     ...state,
     competence,
