@@ -27,11 +27,28 @@ export function dayNumber(key: string = dateKey()): number {
   return Math.round(ms / 86_400_000) + 1;
 }
 
+/** The calendar date key of Daily #n (inverse of dayNumber). */
+export function dateForNumber(n: number): string {
+  const [ey, em, ed] = SCHEDULE.epoch.split('-').map(Number);
+  return new Date(Date.UTC(ey, em - 1, ed + n - 1)).toISOString().slice(0, 10);
+}
+
+function clueForNumber(n: number): Clue | null {
+  const answer = SCHEDULE.answers[(n - 1) % SCHEDULE.answers.length];
+  return BANK.find((c) => c.id === `bank-${answer.toLowerCase()}`) ?? null;
+}
+
 /** The clue for a date, or null before the epoch. Same for everyone. */
 export function dailyClue(key: string = dateKey()): { clue: Clue; number: number } | null {
   const n = dayNumber(key);
   if (n < 1) return null;
-  const answer = SCHEDULE.answers[(n - 1) % SCHEDULE.answers.length];
-  const clue = BANK.find((c) => c.id === `bank-${answer.toLowerCase()}`) ?? null;
+  const clue = clueForNumber(n);
   return clue ? { clue, number: n } : null;
+}
+
+/** Daily #n with its date (for the archive), or null before #1. */
+export function dailyByNumber(n: number): { clue: Clue; number: number; date: string } | null {
+  if (!Number.isInteger(n) || n < 1) return null;
+  const clue = clueForNumber(n);
+  return clue ? { clue, number: n, date: dateForNumber(n) } : null;
 }

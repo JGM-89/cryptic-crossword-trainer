@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dailyClue, dateKey, dayNumber } from './daily';
+import { dailyByNumber, dailyClue, dateForNumber, dateKey, dayNumber } from './daily';
 import schedule from './daily-schedule.json';
 import { BANK } from './bank/index';
 
@@ -39,5 +39,23 @@ describe('day numbering (local dates)', () => {
   });
   it('dateKey formats a local date as YYYY-MM-DD', () => {
     expect(dateKey(new Date(2026, 5, 15, 23, 59))).toBe('2026-06-15');
+  });
+});
+
+describe('looking up a Daily by number (the archive)', () => {
+  it('maps numbers back to their local date', () => {
+    expect(dateForNumber(1)).toBe('2026-06-15');
+    expect(dateForNumber(17)).toBe('2026-07-01');
+  });
+  it('round-trips with dayNumber across month and year boundaries', () => {
+    for (let n = 1; n <= 500; n++) expect(dayNumber(dateForNumber(n))).toBe(n);
+  });
+  it('returns the same clue as the date lookup', () => {
+    expect(dailyByNumber(17)?.clue.id).toBe(dailyClue('2026-07-01')?.clue.id);
+    expect(dailyByNumber(17)?.date).toBe('2026-07-01');
+  });
+  it('has no Daily before #1', () => {
+    expect(dailyByNumber(0)).toBeNull();
+    expect(dailyByNumber(-3)).toBeNull();
   });
 });
