@@ -36,6 +36,9 @@ clues for the same answer**, so "good" means "at least as good as what professio
   an unfair clue can't win.
 - **Two model families.** Claude and Astra judge every step. Same-model judges share blind
   spots, and a 2-of-3 vote among clones behaves like one judge (audit 01).
+- **The cold solver checks uniqueness and difficulty, not fairness.** Calibration showed solvers
+  reach the answer from the definition even when the wordplay is broken (83% vs 83%). Fairness is
+  judged by the wit judges, who must parse both clues. See `calibration-results.md`.
 - **The cold solver must show its working.** A right answer reached by guessing from the
   definition isn't evidence the wordplay works. Solving a double definition from one half is
   normal, not a defect.
@@ -99,5 +102,7 @@ The exam is only trusted for a decision once it has passed calibration:
    numbers reported. Tuning on held-out data would just teach the exam to pass its own test.
 
 **Target:** on held-out pairs, ≥ 80% separation for each corruption type, and ≤ 10% false
-alarms on originals. Results are recorded in `calibration-results.md` with the date, template
-versions and judge models.
+alarms on originals. Results are recorded in [`calibration-results.md`](calibration-results.md)
+with the date, template versions and judge models. **Run 1 (2026-10-03) passed:** on held-out
+pairs, 15/15 unnatural copies and every genuinely unfair copy were caught, with 0/30 false
+alarms.
