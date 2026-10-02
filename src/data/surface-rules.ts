@@ -109,7 +109,8 @@ const LINK_WORDS = new Set(
     'makes make made making gives give given giving produces produce produced ' +
     'yields yield provides provide brings bring becomes become became ' +
     'leaves leave shows show means reveals reveal spells spell seen found ' +
-    'takes take adds add so such still quite all just').split(/\s+/),
+    'takes take adds add so such still quite all just ' +
+    'leaving giving serving serves serve gets get getting producing').split(/\s+/),
 );
 
 // Containment language — correct for container/hidden devices, WRONG as the
@@ -129,7 +130,7 @@ const norm = (w: string) =>
     .toLowerCase()
     .replace(/[’']s$/, '')
     .replace(/[^a-z]/g, '');
-const tokens = (s: string) => stripEnum(s).split(/\s+/).map(norm).filter(Boolean);
+export const tokens = (s: string) => stripEnum(s).split(/\s+/).map(norm).filter(Boolean);
 
 const connectorish = (w: string) => {
   const lw = w.toLowerCase().replace(/[^a-z’']/g, '');
@@ -179,7 +180,7 @@ export function indicatorAbsent(e: SurfaceEntry): boolean {
 // appear in the surface (a synonym-mediated cue like "beer" → LAGER) buys ONE
 // contiguous span of otherwise-uncovered words — the surface words standing in
 // for it. Anything left over is decoration the cryptic reading never pays for.
-function orphanSpans(e: SurfaceEntry): string[][] {
+export function orphanSpans(e: SurfaceEntry): string[][] {
   if (WHOLE_CLUE_DEVICES.has(e.clueType)) return [];
   const clueToks = tokens(e.clue);
   const covered = new Set([...tokens(e.defText), ...tokens(e.indicator), ...tokens(e.fodder)]);

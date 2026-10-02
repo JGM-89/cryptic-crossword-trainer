@@ -17,7 +17,8 @@
     "clues:assemble": "node scripts/clue-assemble.mjs",
     "clues:patch": "node scripts/clue-patch.mjs",
     "clues:regen": "node scripts/generate-puzzles.mjs",
-    "daily:gen": "node scripts/generate-daily.mjs"
+    "daily:gen": "node scripts/generate-daily.mjs",
+    "corpus:fetch": "node scripts/corpus/fetch.mjs"
   },
   "dependencies": {
     "idb": "^8.0.0",
@@ -36,6 +37,7 @@
     "tsx": "^4.22.4",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
-    "vitest": "^2.1.2"
+    "vitest": "^2.1.2",
+    "wordnet-db": "^3.1.14"
   }
 }

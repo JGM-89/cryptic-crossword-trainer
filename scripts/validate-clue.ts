@@ -8,7 +8,7 @@
 // where the JSON is a single BankEntry or an array of BankEntry objects:
 //   { answer, clueType, difficulty, clue, def:{text,position}, wordplay:{indicator,fodder,operations[]}, parse }
 //
-// Prints a JSON report: [{ answer, ok, errors:[...] }].  ok === true means the
+// Prints a JSON report: { clues: [{ answer, ok, errors:[...], warnings:[...] }], batch: [...] }.  ok === true means the
 // candidate passes the mechanical gate (validateClue: letter mechanics,
 // abbreviations, composition/letter-accounting) AND the deterministic surface
 // gate (word-list/caps, charade containment-glue, indicator-in-surface,
@@ -18,6 +18,7 @@ import { readFileSync } from 'node:fs';
 import { hydrateBankEntry, type BankEntry } from '../src/data/bank/index.ts';
 import { validateClue } from '../src/data/integrity.ts';
 import { fromBankEntry, surfaceGateFlags } from '../src/data/surface-rules.ts';
+import { batchHits, checkRules, isBlocking, ruleEntryFromBank } from '../src/data/clue-rules.ts';
 
 function readInput(): string {
   const arg = process.argv[2];
@@ -41,10 +42,21 @@ function main() {
     } catch (err) {
       errors.push(`surface gate threw: ${(err as Error).message}`);
     }
-    return { answer: e.answer, ok: errors.length === 0, errors };
+    // Clue Bible rules (docs/clue-bible/03-rules-and-flags.md): R-* block, F-* warn.
+    const warnings: string[] = [];
+    try {
+      for (const h of checkRules(ruleEntryFromBank(e))) {
+        (isBlocking(h) ? errors : warnings).push(`${h.rule}: ${h.detail}`);
+      }
+    } catch (err) {
+      errors.push(`clue rules threw: ${(err as Error).message}`);
+    }
+    return { answer: e.answer, ok: errors.length === 0, errors, warnings };
   });
-  process.stdout.write(JSON.stringify(report, null, 2) + '\n');
-  const anyBad = report.some((r) => !r.ok);
+  // Batch rules apply when validating a set of new clues together.
+  const batch = entries.length > 1 ? batchHits(entries.map(ruleEntryFromBank)) : [];
+  process.stdout.write(JSON.stringify({ clues: report, batch }, null, 2) + '\n');
+  const anyBad = report.some((r) => !r.ok) || batch.some((h) => h.rule === 'B-DEVICE-MIX');
   process.exit(anyBad ? 1 : 0);
 }
 

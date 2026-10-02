@@ -24,3 +24,6 @@ tmp/
 .claude/*
 !.claude/skills/
 !.claude/launch.json
+
+# Local reference corpora (checking only; never committed or shipped)
+.corpus/
