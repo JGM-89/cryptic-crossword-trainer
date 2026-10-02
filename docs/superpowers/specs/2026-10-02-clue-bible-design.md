@@ -163,3 +163,49 @@ Fixed steps in `05-writer-method.md`, run by the Clue Writer skill:
 
 Beta testers, feedback forms and an agentic support back office (later, after accounts);
 rebuilding Play's grids (separate project, audit 06); Learn changes (audit 05).
+
+## Revision 2 (2026-10-02, after the owner's fairness instruction and Astra's audit)
+
+Astra's audit is `docs/audit/2026-10-02/08-astra-chatgpt.md`; its findings were verified before adoption.
+
+**Fairness principles (owner).** Rules must never make clues arbitrarily harder:
+- A RULE is only for an unambiguous fault. Anything needing judgement is a FLAG.
+- Every rule is precision-tested on published broadsheet clues (`scripts/rules-precision.mjs`).
+- Every rule is waivable per clue with a written reason.
+- New failures become **regression examples first**. A rule follows only once its precision is
+  shown.
+- Originality blocks only near-verbatim copies (`R-COPY`); a shared construction is
+  informational.
+
+**Changes adopted:**
+1. **Examples are executable.** Every worked example in the Bible lives in
+   `docs/clue-bible/examples/*.json` and is validated in CI. The old style guide taught broken
+   examples: CHAIR given as CHAR+A, and UNDERMINED with incomplete fodder.
+2. **Validator loopholes closed**, each with a test. Hidden fodder must occur in the clue; a
+   deletion must remove exactly what its indicator specifies; composition pieces must come from
+   an operation or the clue. Synonym-then-precise-deletion (STAR→TAR) is **allowed** — it's a
+   standard construction.
+3. **Demoted to flags:** printed answer pieces (`F-PRINTED`), idle words (`F-IDLE`), the batch
+   device mix and indicator repeats.
+4. **Rejected after testing:** `F-UNATTESTED` (published clues trip it more than ours: 62% vs
+   34%).
+5. **Exam changes:**
+   - The cold solver must give the **correct parse**, not just the answer. Uniqueness is checked
+     by testing named competing answers against both definition and wordplay. Solving a
+     DD/CD from one half is *not* a defect.
+   - Naturalness uses paired comparisons plus a "paraphrase the literal scene" check, not a
+     spot-the-crossword decoy (which measures genre cues).
+   - Calibration uses **matched pairs** (sound clue vs minimally corrupted copy; fluent-unfair vs
+     awkward-fair; easy-good vs obscure-hard) and a **held-out set** never used for prompt
+     tuning. Report false-pass and false-reject counts at the chosen threshold, not just AUC.
+6. **The owner also solves the finalists** and reads the explanation, as well as the blind
+   surface sessions.
+7. **Second opinions** go to Astra (ChatGPT, via Codex CLI), not the owner.
+8. **External human solvers:** deferred to the beta phase (owner decision). Until then, the
+   exam's scores are labelled *AI-calibrated, not human-validated*.
+
+**Deferred** (recorded in case law, not built now):
+- span-linked executable parses (Astra's "checkable construction");
+- immutable published clue revisions for past Dailies;
+- multi-word bank answers;
+- explanation checks in Learn.
