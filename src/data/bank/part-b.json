@@ -29,7 +29,8 @@
         }
       ]
     },
-    "parse": "S (small) + TEAM (side) = STEAM; a head of pressure."
+    "parse": "S (small) + TEAM (side) = STEAM; a head of pressure.",
+    "par": 5
   },
   {
     "answer": "TRACE",
@@ -51,7 +52,8 @@
         }
       ]
     },
-    "parse": "Double definition: to TRACE is to track down (as police trace a call); a TRACE is the faintest sign (vanished without a trace)."
+    "parse": "Double definition: to TRACE is to track down (as police trace a call); a TRACE is the faintest sign (vanished without a trace).",
+    "par": 2
   },
   {
     "answer": "REACT",
@@ -73,7 +75,8 @@
         }
       ]
     },
-    "parse": "Anagram of CRATE (indicated by 'broken') = REACT; to respond."
+    "parse": "Anagram of CRATE (indicated by 'broken') = REACT; to respond.",
+    "par": 2
   },
   {
     "answer": "DROVE",
@@ -95,7 +98,8 @@
         }
       ]
     },
-    "parse": "Double definition: a drove (herd), and drove — took to the open road, past tense of drive."
+    "parse": "Double definition: a drove (herd), and drove — took to the open road, past tense of drive.",
+    "par": 4
   },
   {
     "answer": "ALERT",
@@ -117,7 +121,8 @@
         }
       ]
     },
-    "parse": "Anagram of LATER (indicated by 'drunk') = ALERT; sharp, mentally on the ball."
+    "parse": "Anagram of LATER (indicated by 'drunk') = ALERT; sharp, mentally on the ball.",
+    "par": 2
   },
   {
     "answer": "ANGEL",
@@ -139,7 +144,8 @@
         }
       ]
     },
-    "parse": "Double definition: an angel (heavenly being), and an angel — the financial backer of a theatre show."
+    "parse": "Double definition: an angel (heavenly being), and an angel — the financial backer of a theatre show.",
+    "par": 3
   },
   {
     "answer": "PALER",
@@ -171,7 +177,8 @@
         }
       ]
     },
-    "parse": "PAL (friend) + ER (hesitation) = PALER; looking more wan."
+    "parse": "PAL (friend) + ER (hesitation) = PALER; looking more wan.",
+    "par": 3
   },
   {
     "answer": "SLATE",
@@ -193,7 +200,8 @@
         }
       ]
     },
-    "parse": "Double definition: to slate (pan, criticise harshly), and slate the roofing material."
+    "parse": "Double definition: to slate (pan, criticise harshly), and slate the roofing material.",
+    "par": 3
   },
   {
     "answer": "OFTEN",
@@ -215,7 +223,8 @@
         }
       ]
     },
-    "parse": "OFTEN hidden in 'roOFTENt' (roof tent), indicated by 'shelters'; frequently."
+    "parse": "OFTEN hidden in 'roOFTENt' (roof tent), indicated by 'shelters'; frequently.",
+    "par": 2
   },
   {
     "answer": "MANGO",
@@ -237,7 +246,8 @@
         }
       ]
     },
-    "parse": "Anagram of AMONG (indicated by 'rotten') = MANGO; the fruit — found rotten among the fruit, fittingly."
+    "parse": "Anagram of AMONG (indicated by 'rotten') = MANGO; the fruit — found rotten among the fruit, fittingly.",
+    "par": 3
   },
   {
     "answer": "PANIC",
@@ -259,7 +269,8 @@
         }
       ]
     },
-    "parse": "PANIC hidden in 'marziPAN ICing', spanning the word break; alarm."
+    "parse": "PANIC hidden in 'marziPAN ICing', spanning the word break; alarm.",
+    "par": 2
   },
   {
     "answer": "CATER",
@@ -281,7 +292,8 @@
         }
       ]
     },
-    "parse": "Anagram ('smashed') of CRATE = CATER; providing the food."
+    "parse": "Anagram ('smashed') of CRATE = CATER; providing the food.",
+    "par": 2
   },
   {
     "answer": "SPEAR",
@@ -303,7 +315,8 @@
         }
       ]
     },
-    "parse": "Anagram ('broken') of SPARE = SPEAR; a weapon."
+    "parse": "Anagram ('broken') of SPARE = SPEAR; a weapon.",
+    "par": 2
   },
   {
     "answer": "TENOR",
@@ -340,7 +353,8 @@
         }
       ]
     },
-    "parse": "NET 'returned' = TEN, + OR (gold, heraldry) = TENOR, the singer."
+    "parse": "NET 'returned' = TEN, + OR (gold, heraldry) = TENOR, the singer.",
+    "par": 4
   },
   {
     "answer": "DRAIN",
@@ -362,7 +376,8 @@
         }
       ]
     },
-    "parse": "Hidden ('some') in 'harD RAIN' = DRAIN; a gutter."
+    "parse": "Hidden ('some') in 'harD RAIN' = DRAIN; a gutter.",
+    "par": 2
   },
   {
     "answer": "PLANT",
@@ -394,7 +409,8 @@
         }
       ]
     },
-    "parse": "PLAN (scheme) + T (time) = PLANT, the factory."
+    "parse": "PLAN (scheme) + T (time) = PLANT, the factory.",
+    "par": 5
   },
   {
     "answer": "CHARM",
@@ -426,7 +442,8 @@
         }
       ]
     },
-    "parse": "CH (church) + ARM (from the surface) = CHARM; appeal. The surface reads as a church branch launching a fundraising appeal."
+    "parse": "CH (church) + ARM (from the surface) = CHARM; appeal. The surface reads as a church branch launching a fundraising appeal.",
+    "par": 4
   },
   {
     "answer": "STAIN",
@@ -448,7 +465,8 @@
         }
       ]
     },
-    "parse": "Anagram of SAINT (indicated by 'corrupt') = STAIN; a blot."
+    "parse": "Anagram of SAINT (indicated by 'corrupt') = STAIN; a blot.",
+    "par": 2
   },
   {
     "answer": "STAIR",
@@ -470,7 +488,8 @@
         }
       ]
     },
-    "parse": "Anagram ('tossed about') of SITAR = STAIR; a step."
+    "parse": "Anagram ('tossed about') of SITAR = STAIR; a step.",
+    "par": 2
   },
   {
     "answer": "PAINT",
@@ -492,7 +511,8 @@
         }
       ]
     },
-    "parse": "Anagram ('spilt') of PINTA (a pint of milk) = PAINT; the fresh coat."
+    "parse": "Anagram ('spilt') of PINTA (a pint of milk) = PAINT; the fresh coat.",
+    "par": 4
   },
   {
     "answer": "ASHEN",
@@ -514,7 +534,8 @@
         }
       ]
     },
-    "parse": "Hidden ('some') in 'cASH ENvelopes' = ASHEN; pale."
+    "parse": "Hidden ('some') in 'cASH ENvelopes' = ASHEN; pale.",
+    "par": 2
   },
   {
     "answer": "ORGAN",
@@ -536,7 +557,8 @@
         }
       ]
     },
-    "parse": "Anagram ('upset') of GROAN = ORGAN; the party paper (an organ being a party's official publication)."
+    "parse": "Anagram ('upset') of GROAN = ORGAN; the party paper (an organ being a party's official publication).",
+    "par": 4
   },
   {
     "answer": "EAGER",
@@ -558,7 +580,8 @@
         }
       ]
     },
-    "parse": "Anagram of AGREE (indicated by 'surprisingly') = EAGER; keen."
+    "parse": "Anagram of AGREE (indicated by 'surprisingly') = EAGER; keen.",
+    "par": 2
   },
   {
     "answer": "NADIR",
@@ -580,7 +603,8 @@
         }
       ]
     },
-    "parse": "Anagram of DINAR (indicated by 'collapsed') = NADIR; the lowest point."
+    "parse": "Anagram of DINAR (indicated by 'collapsed') = NADIR; the lowest point.",
+    "par": 2
   },
   {
     "answer": "REPEL",
@@ -602,7 +626,8 @@
         }
       ]
     },
-    "parse": "LEPER (social outcast) reversed (going the wrong way) gives REPEL, to drive off."
+    "parse": "LEPER (social outcast) reversed (going the wrong way) gives REPEL, to drive off.",
+    "par": 3
   },
   {
     "answer": "STRAW",
@@ -624,7 +649,8 @@
         }
       ]
     },
-    "parse": "STRAW: a tube you sip through, and the proverbial last straw that breaks the camel's back. Double definition."
+    "parse": "STRAW: a tube you sip through, and the proverbial last straw that breaks the camel's back. Double definition.",
+    "par": 2
   },
   {
     "answer": "DEVIL",
@@ -656,7 +682,8 @@
         }
       ]
     },
-    "parse": "D (daughter) + EVIL (wicked) = DEVIL, otherwise known as Old Nick."
+    "parse": "D (daughter) + EVIL (wicked) = DEVIL, otherwise known as Old Nick.",
+    "par": 5
   },
   {
     "answer": "REGAL",
@@ -678,7 +705,8 @@
         }
       ]
     },
-    "parse": "LAGER (beer) reversed (sent back) gives REGAL, befitting a queen."
+    "parse": "LAGER (beer) reversed (sent back) gives REGAL, befitting a queen.",
+    "par": 2
   },
   {
     "answer": "CRAVE",
@@ -700,7 +728,8 @@
         }
       ]
     },
-    "parse": "Anagram (up) of CARVE gives CRAVE, to hunger for."
+    "parse": "Anagram (up) of CARVE gives CRAVE, to hunger for.",
+    "par": 3
   },
   {
     "answer": "RANGE",
@@ -722,7 +751,8 @@
         }
       ]
     },
-    "parse": "Anagram of ANGER (indicated by 'stirred up') = RANGE; the stove (a kitchen range)."
+    "parse": "Anagram of ANGER (indicated by 'stirred up') = RANGE; the stove (a kitchen range).",
+    "par": 3
   },
   {
     "answer": "EARTH",
@@ -744,7 +774,8 @@
         }
       ]
     },
-    "parse": "Anagram (pounding) of HEART gives EARTH, our planet."
+    "parse": "Anagram (pounding) of HEART gives EARTH, our planet.",
+    "par": 2
   },
   {
     "answer": "WHERE",
@@ -766,7 +797,8 @@
         }
       ]
     },
-    "parse": "WEAR ('you wear it') sounds like ('we hear') WHERE; in what place."
+    "parse": "WEAR ('you wear it') sounds like ('we hear') WHERE; in what place.",
+    "par": 3
   },
   {
     "answer": "LIGHT",
@@ -788,7 +820,8 @@
         }
       ]
     },
-    "parse": "Double definition: LIGHT as a verb meaning 'set fire to'; and LIGHT the noun, a lamp."
+    "parse": "Double definition: LIGHT as a verb meaning 'set fire to'; and LIGHT the noun, a lamp.",
+    "par": 2
   },
   {
     "answer": "STERN",
@@ -810,7 +843,8 @@
         }
       ]
     },
-    "parse": "Double definition: STERN, 'grim'; and the stern, the rear end of a boat."
+    "parse": "Double definition: STERN, 'grim'; and the stern, the rear end of a boat.",
+    "par": 2
   },
   {
     "answer": "TRUNK",
@@ -832,7 +866,8 @@
         }
       ]
     },
-    "parse": "Double definition: TRUNK, a chest; and a TRUNK, what a bull elephant raises (its nose)."
+    "parse": "Double definition: TRUNK, a chest; and a TRUNK, what a bull elephant raises (its nose).",
+    "par": 3
   },
   {
     "answer": "SOUND",
@@ -854,7 +889,8 @@
         }
       ]
     },
-    "parse": "Double definition: SOUND, 'sensible'; and to SOUND, to probe (as one sounds a wound or a depth)."
+    "parse": "Double definition: SOUND, 'sensible'; and to SOUND, to probe (as one sounds a wound or a depth).",
+    "par": 3
   },
   {
     "answer": "GUEST",
@@ -876,7 +912,8 @@
         }
       ]
     },
-    "parse": "GUEST is hidden in 'vaGUE STipulations' (indicated by 'Some'); a visitor is admitted."
+    "parse": "GUEST is hidden in 'vaGUE STipulations' (indicated by 'Some'); a visitor is admitted.",
+    "par": 2
   },
   {
     "answer": "WAIST",
@@ -898,6 +935,7 @@
         }
       ]
     },
-    "parse": "WASTE sounds like ('reportedly') WAIST; the middle of the body."
+    "parse": "WASTE sounds like ('reportedly') WAIST; the middle of the body.",
+    "par": 2
   }
 ]

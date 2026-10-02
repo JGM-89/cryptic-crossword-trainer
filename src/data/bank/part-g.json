@@ -29,7 +29,8 @@
         }
       ]
     },
-    "parse": "I (one) + CON (prisoner) = ICON, a celebrity; 'becomes' links wordplay to definition."
+    "parse": "I (one) + CON (prisoner) = ICON, a celebrity; 'becomes' links wordplay to definition.",
+    "par": 3
   },
   {
     "answer": "SMOG",
@@ -51,7 +52,8 @@
         }
       ]
     },
-    "parse": "Hidden in famouSMOGul = SMOG, pollution."
+    "parse": "Hidden in famouSMOGul = SMOG, pollution.",
+    "par": 2
   },
   {
     "answer": "SCAMP",
@@ -83,7 +85,8 @@
         }
       ]
     },
-    "parse": "S (son) + CAMP (pitched a tent) = SCAMP, a young rogue."
+    "parse": "S (son) + CAMP (pitched a tent) = SCAMP, a young rogue.",
+    "par": 3
   },
   {
     "answer": "BRAIN",
@@ -105,7 +108,8 @@
         }
       ]
     },
-    "parse": "(BAIRN)* = BRAIN, a fine mind."
+    "parse": "(BAIRN)* = BRAIN, a fine mind.",
+    "par": 3
   },
   {
     "answer": "VILE",
@@ -127,7 +131,8 @@
         }
       ]
     },
-    "parse": "(EVIL)* = VILE — and “terribly evil” defines VILE too. An &lit."
+    "parse": "(EVIL)* = VILE — and “terribly evil” defines VILE too. An &lit.",
+    "par": 2
   },
   {
     "answer": "ASTRONOMERS",
@@ -149,6 +154,7 @@
         }
       ]
     },
-    "parse": "(NO MORE STARS)* rearranged ('sadly') = ASTRONOMERS, the stargazers; 'for' links wordplay to definition."
+    "parse": "(NO MORE STARS)* rearranged ('sadly') = ASTRONOMERS, the stargazers; 'for' links wordplay to definition.",
+    "par": 4
   }
 ]

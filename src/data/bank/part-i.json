@@ -19,7 +19,8 @@
         }
       ]
     },
-    "parse": "Double definition: to MILK is to get all you can out of something (exploit it), and to MILK is what you do to a cow."
+    "parse": "Double definition: to MILK is to get all you can out of something (exploit it), and to MILK is what you do to a cow.",
+    "par": 2
   },
   {
     "answer": "GIFT",
@@ -41,7 +42,8 @@
         }
       ]
     },
-    "parse": "GIFT: a present, and a natural talent."
+    "parse": "GIFT: a present, and a natural talent.",
+    "par": 2
   },
   {
     "answer": "KNEE",
@@ -63,7 +65,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'druNK NEEds' = KNEE; a 'joint'."
+    "parse": "Hidden in 'druNK NEEds' = KNEE; a 'joint'.",
+    "par": 4
   },
   {
     "answer": "FOAL",
@@ -85,7 +88,8 @@
         }
       ]
     },
-    "parse": "(LOAF)* = FOAL; a 'young horse'."
+    "parse": "(LOAF)* = FOAL; a 'young horse'.",
+    "par": 2
   },
   {
     "answer": "MIST",
@@ -107,7 +111,8 @@
         }
       ]
     },
-    "parse": "Hidden in optiMIST = MIST, a morning haze."
+    "parse": "Hidden in optiMIST = MIST, a morning haze.",
+    "par": 2
   },
   {
     "answer": "REEF",
@@ -129,7 +134,8 @@
         }
       ]
     },
-    "parse": "REEF: a reef knot, and a ridge of coral near the surface of the sea."
+    "parse": "REEF: a reef knot, and a ridge of coral near the surface of the sea.",
+    "par": 3
   },
   {
     "answer": "SOAP",
@@ -151,7 +157,8 @@
         }
       ]
     },
-    "parse": "SOAP: a soap opera is drama, and soap is what you wash with — one word, two senses."
+    "parse": "SOAP: a soap opera is drama, and soap is what you wash with — one word, two senses.",
+    "par": 4
   },
   {
     "answer": "MOAT",
@@ -173,7 +180,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'liMO AT' = MOAT, the castle's defence."
+    "parse": "Hidden in 'liMO AT' = MOAT, the castle's defence.",
+    "par": 3
   },
   {
     "answer": "HARE",
@@ -195,7 +203,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: at the dog track the greyhounds chase a mechanical HARE that is never caught — and a hare is a runner."
+    "parse": "Cryptic definition: at the dog track the greyhounds chase a mechanical HARE that is never caught — and a hare is a runner.",
+    "par": 4
   },
   {
     "answer": "NEST",
@@ -217,7 +226,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'keeNEST' = NEST, a home for birds."
+    "parse": "Hidden in 'keeNEST' = NEST, a home for birds.",
+    "par": 2
   },
   {
     "answer": "HYMN",
@@ -239,7 +249,8 @@
         }
       ]
     },
-    "parse": "HIM sounds like HYMN (reportedly), a religious song."
+    "parse": "HIM sounds like HYMN (reportedly), a religious song.",
+    "par": 2
   },
   {
     "answer": "TOAD",
@@ -261,7 +272,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'TO ADmire' = TOAD, an amphibian."
+    "parse": "Hidden in 'TO ADmire' = TOAD, an amphibian.",
+    "par": 2
   },
   {
     "answer": "MEND",
@@ -283,7 +295,8 @@
         }
       ]
     },
-    "parse": "&lit: 'Initially' takes the first letters of Make Every Nick Disappear = MEND — and the whole clue describes what mending does."
+    "parse": "&lit: 'Initially' takes the first letters of Make Every Nick Disappear = MEND — and the whole clue describes what mending does.",
+    "par": 4
   },
   {
     "answer": "RIFE",
@@ -305,7 +318,8 @@
         }
       ]
     },
-    "parse": "(FIRE)* 'spread about' = RIFE, widespread."
+    "parse": "(FIRE)* 'spread about' = RIFE, widespread.",
+    "par": 2
   },
   {
     "answer": "HOUSE",
@@ -327,7 +341,8 @@
         }
       ]
     },
-    "parse": "Double definition: to house (accommodate, give lodging to), and a House (a royal dynasty, e.g. the House of Tudor)."
+    "parse": "Double definition: to house (accommodate, give lodging to), and a House (a royal dynasty, e.g. the House of Tudor).",
+    "par": 2
   },
   {
     "answer": "OCEAN",
@@ -349,7 +364,8 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'wrecked') of CANOE = OCEAN; the open sea."
+    "parse": "Anagram (indicated by 'wrecked') of CANOE = OCEAN; the open sea.",
+    "par": 3
   },
   {
     "answer": "STONE",
@@ -371,7 +387,8 @@
         }
       ]
     },
-    "parse": "Hidden in froST ONE night = STONE; a rock."
+    "parse": "Hidden in froST ONE night = STONE; a rock.",
+    "par": 2
   },
   {
     "answer": "EAGLE",
@@ -393,7 +410,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'bEAGLE' (indicated by 'keeps') = EAGLE, a bird of prey."
+    "parse": "Hidden in 'bEAGLE' (indicated by 'keeps') = EAGLE, a bird of prey.",
+    "par": 2
   },
   {
     "answer": "GRAPE",
@@ -415,7 +433,8 @@
         }
       ]
     },
-    "parse": "(PAGER)* 'goes off' = GRAPE, the fruit."
+    "parse": "(PAGER)* 'goes off' = GRAPE, the fruit.",
+    "par": 2
   },
   {
     "answer": "FLAME",
@@ -437,7 +456,8 @@
         }
       ]
     },
-    "parse": "FLAME: an old flame is a former sweetheart, and one rekindles a flame — the pun fuses both senses."
+    "parse": "FLAME: an old flame is a former sweetheart, and one rekindles a flame — the pun fuses both senses.",
+    "par": 4
   },
   {
     "answer": "CROWN",
@@ -459,7 +479,8 @@
         }
       ]
     },
-    "parse": "Double definition: a CROWN is royal headgear, and to CROWN a tooth is to cap it (a dental crown)."
+    "parse": "Double definition: a CROWN is royal headgear, and to CROWN a tooth is to cap it (a dental crown).",
+    "par": 2
   },
   {
     "answer": "DREAM",
@@ -481,7 +502,8 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'rebels') of ARMED = DREAM; an ambition or aspiration."
+    "parse": "Anagram (indicated by 'rebels') of ARMED = DREAM; an ambition or aspiration.",
+    "par": 3
   },
   {
     "answer": "SMILE",
@@ -503,7 +525,8 @@
         }
       ]
     },
-    "parse": "(MILES)* 'off' = SMILE, a beam."
+    "parse": "(MILES)* 'off' = SMILE, a beam.",
+    "par": 3
   },
   {
     "answer": "GHOST",
@@ -535,7 +558,8 @@
         }
       ]
     },
-    "parse": "G (good) + HOST = GHOST; a spirit, an apparition."
+    "parse": "G (good) + HOST = GHOST; a spirit, an apparition.",
+    "par": 3
   },
   {
     "answer": "OTTER",
@@ -557,7 +581,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'hOT TERrace' (indicated by 'shelters') = OTTER, a river swimmer."
+    "parse": "Hidden in 'hOT TERrace' (indicated by 'shelters') = OTTER, a river swimmer.",
+    "par": 3
   },
   {
     "answer": "PEACH",
@@ -579,7 +604,8 @@
         }
       ]
     },
-    "parse": "Double definition: a PEACH is a real beauty, and to PEACH is to snitch, to inform on someone."
+    "parse": "Double definition: a PEACH is a real beauty, and to PEACH is to snitch, to inform on someone.",
+    "par": 3
   },
   {
     "answer": "NURSE",
@@ -601,7 +627,8 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'cast') of RUNES = NURSE; one who tends the sick."
+    "parse": "Anagram (indicated by 'cast') of RUNES = NURSE; one who tends the sick.",
+    "par": 2
   },
   {
     "answer": "CHESS",
@@ -623,7 +650,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'suCH ESSays' = CHESS, the board game."
+    "parse": "Hidden in 'suCH ESSays' = CHESS, the board game.",
+    "par": 2
   },
   {
     "answer": "BREAD",
@@ -655,7 +683,8 @@
         }
       ]
     },
-    "parse": "B (bachelor) + READ (devoured, as a book is devoured) = BREAD; dough, money."
+    "parse": "B (bachelor) + READ (devoured, as a book is devoured) = BREAD; dough, money.",
+    "par": 5
   },
   {
     "answer": "CLOUD",
@@ -677,7 +706,8 @@
         }
       ]
     },
-    "parse": "COULD 'upset' (anagrammed) = CLOUD, a gloom (as in 'a cloud over the proceedings')."
+    "parse": "COULD 'upset' (anagrammed) = CLOUD, a gloom (as in 'a cloud over the proceedings').",
+    "par": 3
   },
   {
     "answer": "CASTLE",
@@ -699,7 +729,8 @@
         }
       ]
     },
-    "parse": "(CLEATS)* 'scattered' = CASTLE, the stronghold."
+    "parse": "(CLEATS)* 'scattered' = CASTLE, the stronghold.",
+    "par": 2
   },
   {
     "answer": "FOREST",
@@ -721,7 +752,8 @@
         }
       ]
     },
-    "parse": "Hidden in beFORE STorms = FOREST; a wood."
+    "parse": "Hidden in beFORE STorms = FOREST; a wood.",
+    "par": 2
   },
   {
     "answer": "SILVER",
@@ -743,7 +775,8 @@
         }
       ]
     },
-    "parse": "(LIVERS)* 'Cooked' = SILVER, a metal. The surface misdirects to iron-rich liver."
+    "parse": "(LIVERS)* 'Cooked' = SILVER, a metal. The surface misdirects to iron-rich liver.",
+    "par": 2
   },
   {
     "answer": "ISLAND",
@@ -765,7 +798,8 @@
         }
       ]
     },
-    "parse": "Hidden in thIS LANDscape = ISLAND; an isle."
+    "parse": "Hidden in thIS LANDscape = ISLAND; an isle.",
+    "par": 2
   },
   {
     "answer": "MASTER",
@@ -787,7 +821,8 @@
         }
       ]
     },
-    "parse": "Double definition: to master is to get the better of; and a master is an old hand, an expert."
+    "parse": "Double definition: to master is to get the better of; and a master is an old hand, an expert.",
+    "par": 2
   },
   {
     "answer": "SADDLE",
@@ -809,7 +844,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: a SADDLE is the burden a horse carries — and to saddle someone is to burden them."
+    "parse": "Cryptic definition: a SADDLE is the burden a horse carries — and to saddle someone is to burden them.",
+    "par": 4
   },
   {
     "answer": "PIGEON",
@@ -831,7 +867,8 @@
         }
       ]
     },
-    "parse": "Double definition: a PIGEON is a bird, and a PIGEON is an easy target, a dupe."
+    "parse": "Double definition: a PIGEON is a bird, and a PIGEON is an easy target, a dupe.",
+    "par": 3
   },
   {
     "answer": "BREATH",
@@ -853,7 +890,8 @@
         }
       ]
     },
-    "parse": "Anagram (troubled) of BATHER = BREATH; a puff of air."
+    "parse": "Anagram (troubled) of BATHER = BREATH; a puff of air.",
+    "par": 2
   },
   {
     "answer": "THREAD",
@@ -875,7 +913,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'fourTH READing' = THREAD, a strand."
+    "parse": "Hidden in 'fourTH READing' = THREAD, a strand.",
+    "par": 3
   },
   {
     "answer": "WONDER",
@@ -897,7 +936,8 @@
         }
       ]
     },
-    "parse": "WONDERS with its last letter dropped ('endlessly') = WONDER, awe."
+    "parse": "WONDERS with its last letter dropped ('endlessly') = WONDER, awe.",
+    "par": 2
   },
   {
     "answer": "MARBLE",
@@ -919,7 +959,8 @@
         }
       ]
     },
-    "parse": "(RAMBLE)* 'wild' = MARBLE, a stone."
+    "parse": "(RAMBLE)* 'wild' = MARBLE, a stone.",
+    "par": 2
   },
   {
     "answer": "PEPPER",
@@ -941,7 +982,8 @@
         }
       ]
     },
-    "parse": "Double definition: to PEPPER is to bombard (with shots or questions), and PEPPER is a hot spice."
+    "parse": "Double definition: to PEPPER is to bombard (with shots or questions), and PEPPER is a hot spice.",
+    "par": 2
   },
   {
     "answer": "CANDLE",
@@ -963,7 +1005,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: the overworked 'burn the CANDLE at both ends' — the 'it' is a candle."
+    "parse": "Cryptic definition: the overworked 'burn the CANDLE at both ends' — the 'it' is a candle.",
+    "par": 4
   },
   {
     "answer": "ORANGE",
@@ -985,7 +1028,8 @@
         }
       ]
     },
-    "parse": "Anagram (turned) of AN OGRE = ORANGE, a fruit — the fairy-tale brute transformed."
+    "parse": "Anagram (turned) of AN OGRE = ORANGE, a fruit — the fairy-tale brute transformed.",
+    "par": 2
   },
   {
     "answer": "DESIGN",
@@ -1007,7 +1051,8 @@
         }
       ]
     },
-    "parse": "(SIGNED)* 'Badly' = DESIGN, a drawing."
+    "parse": "(SIGNED)* 'Badly' = DESIGN, a drawing.",
+    "par": 2
   },
   {
     "answer": "MENTOR",
@@ -1029,7 +1074,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'moMENT ORtwo' = MENTOR, a guide."
+    "parse": "Hidden in 'moMENT ORtwo' = MENTOR, a guide.",
+    "par": 2
   },
   {
     "answer": "CHARITY",
@@ -1066,7 +1112,8 @@
         }
       ]
     },
-    "parse": "CHAR (cleaner) + IT (sex appeal) + Y (year) = CHARITY, good works."
+    "parse": "CHAR (cleaner) + IT (sex appeal) + Y (year) = CHARITY, good works.",
+    "par": 5
   },
   {
     "answer": "DIAMOND",
@@ -1088,7 +1135,8 @@
         }
       ]
     },
-    "parse": "Hidden in inDIA MONDay = DIAMOND, a gem."
+    "parse": "Hidden in inDIA MONDay = DIAMOND, a gem.",
+    "par": 3
   },
   {
     "answer": "PYRAMID",
@@ -1110,7 +1158,8 @@
         }
       ]
     },
-    "parse": "(MAY DRIP)* 'horribly' = PYRAMID, an ancient tomb."
+    "parse": "(MAY DRIP)* 'horribly' = PYRAMID, an ancient tomb.",
+    "par": 3
   },
   {
     "answer": "CISTERN",
@@ -1132,7 +1181,8 @@
         }
       ]
     },
-    "parse": "(CRETINS)* (foolishly) = CISTERN, the water tank — idiots wading in it."
+    "parse": "(CRETINS)* (foolishly) = CISTERN, the water tank — idiots wading in it.",
+    "par": 3
   },
   {
     "answer": "MONARCH",
@@ -1169,7 +1219,8 @@
         }
       ]
     },
-    "parse": "M (man) + ON + ARCH = MONARCH, a butterfly (flagged with '?' as a definition by example)."
+    "parse": "M (man) + ON + ARCH = MONARCH, a butterfly (flagged with '?' as a definition by example).",
+    "par": 6
   },
   {
     "answer": "OUTLINE",
@@ -1201,7 +1252,8 @@
         }
       ]
     },
-    "parse": "OUT + LINE (read 'out of line') = OUTLINE, a profile."
+    "parse": "OUT + LINE (read 'out of line') = OUTLINE, a profile.",
+    "par": 4
   },
   {
     "answer": "CEILING",
@@ -1223,7 +1275,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'offICE I LINGer' = CEILING; the 'upper limit'. 'In' signals the concealment."
+    "parse": "Hidden in 'offICE I LINGer' = CEILING; the 'upper limit'. 'In' signals the concealment.",
+    "par": 4
   },
   {
     "answer": "SARDINE",
@@ -1245,7 +1298,8 @@
         }
       ]
     },
-    "parse": "Hidden in caeSAR DINEd = SARDINE, a small fish."
+    "parse": "Hidden in caeSAR DINEd = SARDINE, a small fish.",
+    "par": 3
   },
   {
     "answer": "HABITAT",
@@ -1267,7 +1321,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'HABIT ATtracts' (Some) = HABITAT, a creature's home."
+    "parse": "Hidden in 'HABIT ATtracts' (Some) = HABITAT, a creature's home.",
+    "par": 3
   },
   {
     "answer": "CHAMBER",
@@ -1289,7 +1344,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'riCH AMBER' (Some) = CHAMBER, the room."
+    "parse": "Hidden in 'riCH AMBER' (Some) = CHAMBER, the room.",
+    "par": 3
   },
   {
     "answer": "PANTHER",
@@ -1311,7 +1367,8 @@
         }
       ]
     },
-    "parse": "(HEN TRAP)* 'destroyed' = PANTHER, a big cat."
+    "parse": "(HEN TRAP)* 'destroyed' = PANTHER, a big cat.",
+    "par": 3
   },
   {
     "answer": "THUNDER",
@@ -1333,7 +1390,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'earTH UNDER' = THUNDER, a storm's roar."
+    "parse": "Hidden in 'earTH UNDER' = THUNDER, a storm's roar.",
+    "par": 3
   },
   {
     "answer": "HARVEST",
@@ -1355,7 +1413,8 @@
         }
       ]
     },
-    "parse": "(HER VATS)* 'spilled' = HARVEST, the crop."
+    "parse": "(HER VATS)* 'spilled' = HARVEST, the crop.",
+    "par": 3
   },
   {
     "answer": "BLANKET",
@@ -1377,7 +1436,8 @@
         }
       ]
     },
-    "parse": "Double definition: a BLANKET = a cover, and BLANKET = total, covering absolutely everything (a blanket ban)."
+    "parse": "Double definition: a BLANKET = a cover, and BLANKET = total, covering absolutely everything (a blanket ban).",
+    "par": 4
   },
   {
     "answer": "MUSHROOM",
@@ -1409,7 +1469,8 @@
         }
       ]
     },
-    "parse": "MUSH (sentimental drivel) + ROOM = MUSHROOM, a fungus."
+    "parse": "MUSH (sentimental drivel) + ROOM = MUSHROOM, a fungus.",
+    "par": 3
   },
   {
     "answer": "SHOULDER",
@@ -1431,7 +1492,8 @@
         }
       ]
     },
-    "parse": "Double definition: to SHOULDER (carry the burden), and the SHOULDER where a soldier rests his rifle."
+    "parse": "Double definition: to SHOULDER (carry the burden), and the SHOULDER where a soldier rests his rifle.",
+    "par": 3
   },
   {
     "answer": "ELEPHANT",
@@ -1453,7 +1515,8 @@
         }
       ]
     },
-    "parse": "(THE PANEL)* 'reorganised' = ELEPHANT, a jumbo."
+    "parse": "(THE PANEL)* 'reorganised' = ELEPHANT, a jumbo.",
+    "par": 4
   },
   {
     "answer": "PASSWORD",
@@ -1485,7 +1548,8 @@
         }
       ]
     },
-    "parse": "PASS (succeed, as in an exam) + WORD (promise, as in 'give my word') = PASSWORD, the secret code."
+    "parse": "PASS (succeed, as in an exam) + WORD (promise, as in 'give my word') = PASSWORD, the secret code.",
+    "par": 3
   },
   {
     "answer": "DESSERTS",
@@ -1507,7 +1571,8 @@
         }
       ]
     },
-    "parse": "STRESSED 'turned' (reversed) = DESSERTS, sweets (the pudding course)."
+    "parse": "STRESSED 'turned' (reversed) = DESSERTS, sweets (the pudding course).",
+    "par": 3
   },
   {
     "answer": "CHAMPION",
@@ -1544,7 +1609,8 @@
         }
       ]
     },
-    "parse": "CHAMP + I (one) + ON = CHAMPION; to support (champion a cause)."
+    "parse": "CHAMP + I (one) + ON = CHAMPION; to support (champion a cause).",
+    "par": 6
   },
   {
     "answer": "DECANTER",
@@ -1566,7 +1632,8 @@
         }
       ]
     },
-    "parse": "(RECANTED)* 'drunkenly' = DECANTER, a carafe for wine."
+    "parse": "(RECANTED)* 'drunkenly' = DECANTER, a carafe for wine.",
+    "par": 3
   },
   {
     "answer": "NEWSPAPER",
@@ -1598,7 +1665,8 @@
         }
       ]
     },
-    "parse": "NEWS (the latest) + PAPER = NEWSPAPER, the daily."
+    "parse": "NEWS (the latest) + PAPER = NEWSPAPER, the daily.",
+    "par": 4
   },
   {
     "answer": "DISCOVERY",
@@ -1630,7 +1698,8 @@
         }
       ]
     },
-    "parse": "DISCO + VERY (really) = DISCOVERY, a breakthrough; 'is' links wordplay to definition."
+    "parse": "DISCO + VERY (really) = DISCOVERY, a breakthrough; 'is' links wordplay to definition.",
+    "par": 3
   },
   {
     "answer": "WORKSHEET",
@@ -1662,7 +1731,8 @@
         }
       ]
     },
-    "parse": "WORK (operate) + SHEET (a mainsail's rope, a sheet) = WORKSHEET, the class exercise."
+    "parse": "WORK (operate) + SHEET (a mainsail's rope, a sheet) = WORKSHEET, the class exercise.",
+    "par": 4
   },
   {
     "answer": "DANGEROUS",
@@ -1684,7 +1754,8 @@
         }
       ]
     },
-    "parse": "(NOSE GUARD)* = DANGEROUS, meaning risky."
+    "parse": "(NOSE GUARD)* = DANGEROUS, meaning risky.",
+    "par": 3
   },
   {
     "answer": "FORTUNATE",
@@ -1706,7 +1777,8 @@
         }
       ]
     },
-    "parse": "(A TRUE FONT)* 'redesigned' = FORTUNATE, lucky."
+    "parse": "(A TRUE FONT)* 'redesigned' = FORTUNATE, lucky.",
+    "par": 3
   },
   {
     "answer": "ADVENTURE",
@@ -1728,7 +1800,8 @@
         }
       ]
     },
-    "parse": "Hidden in lADVENTUREd = ADVENTURE, an exciting exploit."
+    "parse": "Hidden in lADVENTUREd = ADVENTURE, an exciting exploit.",
+    "par": 3
   },
   {
     "answer": "CHALLENGE",
@@ -1750,6 +1823,7 @@
         }
       ]
     },
-    "parse": "Double definition: a sentry's CHALLENGE (his 'Who goes there?'), and a CHALLENGE, a test that takes nerve."
+    "parse": "Double definition: a sentry's CHALLENGE (his 'Who goes there?'), and a CHALLENGE, a test that takes nerve.",
+    "par": 5
   }
 ]

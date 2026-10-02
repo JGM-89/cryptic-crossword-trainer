@@ -29,7 +29,8 @@
         }
       ]
     },
-    "parse": "D (daughter) + ANGER (rage) = DANGER, a hazard."
+    "parse": "D (daughter) + ANGER (rage) = DANGER, a hazard.",
+    "par": 3
   },
   {
     "answer": "SACRED",
@@ -61,7 +62,8 @@
         }
       ]
     },
-    "parse": "SAC (bag) + RED = SACRED, meaning holy."
+    "parse": "SAC (bag) + RED = SACRED, meaning holy.",
+    "par": 2
   },
   {
     "answer": "STREAM",
@@ -83,7 +85,8 @@
         }
       ]
     },
-    "parse": "(MASTER)* with anagram indicator 'swimming' = STREAM; a 'brook'. 'Swimming' both signals the anagram and paints a watery scene."
+    "parse": "(MASTER)* with anagram indicator 'swimming' = STREAM; a 'brook'. 'Swimming' both signals the anagram and paints a watery scene.",
+    "par": 2
   },
   {
     "answer": "SILENT",
@@ -105,7 +108,8 @@
         }
       ]
     },
-    "parse": "(LISTEN)* indicated by 'out' = SILENT; wordless. Surface: standing wordless, we listen out for a sound."
+    "parse": "(LISTEN)* indicated by 'out' = SILENT; wordless. Surface: standing wordless, we listen out for a sound.",
+    "par": 3
   },
   {
     "answer": "DEARTH",
@@ -127,7 +131,8 @@
         }
       ]
     },
-    "parse": "(HATRED)* indicated by 'stirred up' = DEARTH; a famine (a dearth of food). Surface: ethnic hatred stirred up a famine."
+    "parse": "(HATRED)* indicated by 'stirred up' = DEARTH; a famine (a dearth of food). Surface: ethnic hatred stirred up a famine.",
+    "par": 2
   },
   {
     "answer": "RESCUE",
@@ -149,7 +154,8 @@
         }
       ]
     },
-    "parse": "(SECURE)* indicated by 'Somehow' = RESCUE; deliverance. Surface: we must somehow secure our deliverance."
+    "parse": "(SECURE)* indicated by 'Somehow' = RESCUE; deliverance. Surface: we must somehow secure our deliverance.",
+    "par": 2
   },
   {
     "answer": "GARDEN",
@@ -171,7 +177,8 @@
         }
       ]
     },
-    "parse": "(GANDER)* = GARDEN, a plot."
+    "parse": "(GANDER)* = GARDEN, a plot.",
+    "par": 3
   },
   {
     "answer": "LISTEN",
@@ -193,7 +200,8 @@
         }
       ]
     },
-    "parse": "(SILENT)* = LISTEN; to heed. 'Broadcast' is the anagram indicator, the surface hinting at radio."
+    "parse": "(SILENT)* = LISTEN; to heed. 'Broadcast' is the anagram indicator, the surface hinting at radio.",
+    "par": 2
   },
   {
     "answer": "CARPET",
@@ -215,7 +223,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: not a heap of mess but a PILE (the nap of a carpet) on the floor = CARPET."
+    "parse": "Cryptic definition: not a heap of mess but a PILE (the nap of a carpet) on the floor = CARPET.",
+    "par": 5
   },
   {
     "answer": "PANTRY",
@@ -237,7 +246,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'ramPANT RYe', indicated by 'hides' = PANTRY; a food store. Surface: rye grown wild conceals the storehouse."
+    "parse": "Hidden in 'ramPANT RYe', indicated by 'hides' = PANTRY; a food store. Surface: rye grown wild conceals the storehouse.",
+    "par": 2
   },
   {
     "answer": "OUTFIT",
@@ -259,7 +269,8 @@
         }
       ]
     },
-    "parse": "Double definition: a get-up (clothing), and an outfit — a team, group or unit."
+    "parse": "Double definition: a get-up (clothing), and an outfit — a team, group or unit.",
+    "par": 2
   },
   {
     "answer": "HATRED",
@@ -281,7 +292,8 @@
         }
       ]
     },
-    "parse": "(THREAD)* indicated by 'frayed' = HATRED; loathing. Surface: loathing running through it like a frayed thread."
+    "parse": "(THREAD)* indicated by 'frayed' = HATRED; loathing. Surface: loathing running through it like a frayed thread.",
+    "par": 3
   },
   {
     "answer": "MANAGE",
@@ -313,7 +325,8 @@
         }
       ]
     },
-    "parse": "MAN (fellow) + AGE (grow older) = MANAGE, to cope."
+    "parse": "MAN (fellow) + AGE (grow older) = MANAGE, to cope.",
+    "par": 2
   },
   {
     "answer": "FORGET",
@@ -345,7 +358,8 @@
         }
       ]
     },
-    "parse": "FORGE (smithy) + T (time) = FORGET, to leave behind."
+    "parse": "FORGE (smithy) + T (time) = FORGET, to leave behind.",
+    "par": 4
   },
   {
     "answer": "INKPOT",
@@ -367,7 +381,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'thINK POTters', indicated by 'keep' = INKPOT; one kept on the writing desk."
+    "parse": "Hidden in 'thINK POTters', indicated by 'keep' = INKPOT; one kept on the writing desk.",
+    "par": 4
   },
   {
     "answer": "SECRET",
@@ -399,7 +414,8 @@
         }
       ]
     },
-    "parse": "SECT (the cult) is broken open ('breaks up') to admit RE (about): S-E-C-RE-T = SECRET; a hidden matter."
+    "parse": "SECT (the cult) is broken open ('breaks up') to admit RE (about): S-E-C-RE-T = SECRET; a hidden matter.",
+    "par": 4
   },
   {
     "answer": "PLANET",
@@ -431,7 +447,8 @@
         }
       ]
     },
-    "parse": "PLANT takes in E (energy) = PLAN(E)T = PLANET; a world. Surface: photosynthesis — a plant takes in energy."
+    "parse": "PLANT takes in E (energy) = PLAN(E)T = PLANET; a world. Surface: photosynthesis — a plant takes in energy.",
+    "par": 3
   },
   {
     "answer": "MARKET",
@@ -453,7 +470,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'denMARK ETc' = MARKET, a fair; the surface reads 'a sizeable part of Denmark'."
+    "parse": "Hidden in 'denMARK ETc' = MARKET, a fair; the surface reads 'a sizeable part of Denmark'.",
+    "par": 4
   },
   {
     "answer": "BASKET",
@@ -475,7 +493,8 @@
         }
       ]
     },
-    "parse": "Double definition: a HAMPER (picnic basket) and what a slam dunk scores in basketball — a BASKET. Surface reads 'hamper' as the verb."
+    "parse": "Double definition: a HAMPER (picnic basket) and what a slam dunk scores in basketball — a BASKET. Surface reads 'hamper' as the verb.",
+    "par": 4
   },
   {
     "answer": "HAMPER",
@@ -497,7 +516,8 @@
         }
       ]
     },
-    "parse": "Double definition: a hamper (picnic basket), and a hamper / to hamper (a hindrance, to hinder)."
+    "parse": "Double definition: a hamper (picnic basket), and a hamper / to hamper (a hindrance, to hinder).",
+    "par": 2
   },
   {
     "answer": "WALLET",
@@ -519,7 +539,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'WALL ETchings', indicated by 'hide' = WALLET; a purse."
+    "parse": "Hidden in 'WALL ETchings', indicated by 'hide' = WALLET; a purse.",
+    "par": 2
   },
   {
     "answer": "PARSON",
@@ -541,7 +562,8 @@
         }
       ]
     },
-    "parse": "(APRONS)* indicated by 'in a twist' = PARSON; a preacher. Surface: the vicar flustered at the church fete."
+    "parse": "(APRONS)* indicated by 'in a twist' = PARSON; a preacher. Surface: the vicar flustered at the church fete.",
+    "par": 2
   },
   {
     "answer": "ESTATE",
@@ -573,7 +595,8 @@
         }
       ]
     },
-    "parse": "E (Eastern) + STATE (country) = ESTATE, a house and grounds."
+    "parse": "E (Eastern) + STATE (country) = ESTATE, a house and grounds.",
+    "par": 3
   },
   {
     "answer": "DEMEAN",
@@ -605,7 +628,8 @@
         }
       ]
     },
-    "parse": "DEAN embraces ME = DE(ME)AN = DEMEAN; to humble (the verb, not the adjective the surface suggests)."
+    "parse": "DEAN embraces ME = DE(ME)AN = DEMEAN; to humble (the verb, not the adjective the surface suggests).",
+    "par": 3
   },
   {
     "answer": "REWARD",
@@ -627,7 +651,8 @@
         }
       ]
     },
-    "parse": "DRAWER reversed = REWARD, a prize."
+    "parse": "DRAWER reversed = REWARD, a prize.",
+    "par": 3
   },
   {
     "answer": "DENIER",
@@ -649,7 +674,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition, flipping the idiom 'won't take no for an answer': a DENIER rejects every affirmation — told 'yes, it's true', he still says no."
+    "parse": "Cryptic definition, flipping the idiom 'won't take no for an answer': a DENIER rejects every affirmation — told 'yes, it's true', he still says no.",
+    "par": 5
   },
   {
     "answer": "REPAID",
@@ -681,7 +707,8 @@
         }
       ]
     },
-    "parse": "REP + AID = REPAID; refunded. Surface: the sales rep accepts assistance and gets reimbursed."
+    "parse": "REP + AID = REPAID; refunded. Surface: the sales rep accepts assistance and gets reimbursed.",
+    "par": 2
   },
   {
     "answer": "ANGLER",
@@ -703,7 +730,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: an ANGLER casts about on the riverbank, and a schemer is said to have an 'angle'."
+    "parse": "Cryptic definition: an ANGLER casts about on the riverbank, and a schemer is said to have an 'angle'.",
+    "par": 5
   },
   {
     "answer": "EARNED",
@@ -725,7 +753,8 @@
         }
       ]
     },
-    "parse": "(NEARED)* 'erratically' = EARNED, pulled in (as wages)."
+    "parse": "(NEARED)* 'erratically' = EARNED, pulled in (as wages).",
+    "par": 3
   },
   {
     "answer": "PLEASE",
@@ -747,7 +776,8 @@
         }
       ]
     },
-    "parse": "Sounds like PLEAS (appeals), indicated by 'by the sound of it' = PLEASE; to suit (whatever pleases you suits you)."
+    "parse": "Sounds like PLEAS (appeals), indicated by 'by the sound of it' = PLEASE; to suit (whatever pleases you suits you).",
+    "par": 4
   },
   {
     "answer": "BATTER",
@@ -769,7 +799,8 @@
         }
       ]
     },
-    "parse": "Double definition: to BEAT (batter, pummel) and the pancake mix (BATTER). The whole clue also reads as one real recipe instruction."
+    "parse": "Double definition: to BEAT (batter, pummel) and the pancake mix (BATTER). The whole clue also reads as one real recipe instruction.",
+    "par": 2
   },
   {
     "answer": "TENDER",
@@ -801,7 +832,8 @@
         }
       ]
     },
-    "parse": "TEND (mind, look after) + ER (the Queen) = TENDER; gentle."
+    "parse": "TEND (mind, look after) + ER (the Queen) = TENDER; gentle.",
+    "par": 4
   },
   {
     "answer": "SECOND",
@@ -823,7 +855,8 @@
         }
       ]
     },
-    "parse": "Double definition: SECOND, to back or support a motion; and a second, a flawed article sold cheap."
+    "parse": "Double definition: SECOND, to back or support a motion; and a second, a flawed article sold cheap.",
+    "par": 4
   },
   {
     "answer": "MEDDLE",
@@ -845,6 +878,7 @@
         }
       ]
     },
-    "parse": "MEDAL (an Olympic prize) sounds like MEDDLE, indicated by 'by the sound of it'; to interfere."
+    "parse": "MEDAL (an Olympic prize) sounds like MEDDLE, indicated by 'by the sound of it'; to interfere.",
+    "par": 2
   }
 ]

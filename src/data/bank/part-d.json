@@ -19,7 +19,8 @@
         }
       ]
     },
-    "parse": "(SENATOR)* = TREASON, a betrayal of the crown."
+    "parse": "(SENATOR)* = TREASON, a betrayal of the crown.",
+    "par": 3
   },
   {
     "answer": "DESSERT",
@@ -51,7 +52,8 @@
         }
       ]
     },
-    "parse": "S (Saint) enters DESERT (wilderness) = DES-S-ERT = DESSERT, a pudding."
+    "parse": "S (Saint) enters DESERT (wilderness) = DES-S-ERT = DESSERT, a pudding.",
+    "par": 5
   },
   {
     "answer": "EARNEST",
@@ -73,7 +75,8 @@
         }
       ]
     },
-    "parse": "Double definition: EARNEST means serious; an earnest is also money down — a deposit paid to seal a deal (earnest money)."
+    "parse": "Double definition: EARNEST means serious; an earnest is also money down — a deposit paid to seal a deal (earnest money).",
+    "par": 4
   },
   {
     "answer": "NEUTRAL",
@@ -95,7 +98,8 @@
         }
       ]
     },
-    "parse": "(RUN LATE)* with 'somehow' = NEUTRAL, impartial."
+    "parse": "(RUN LATE)* with 'somehow' = NEUTRAL, impartial.",
+    "par": 4
   },
   {
     "answer": "MONSTER",
@@ -117,7 +121,8 @@
         }
       ]
     },
-    "parse": "(MENTORS)* = MONSTER, a fiend."
+    "parse": "(MENTORS)* = MONSTER, a fiend.",
+    "par": 3
   },
   {
     "answer": "GENERAL",
@@ -139,7 +144,8 @@
         }
       ]
     },
-    "parse": "(ENLARGE)* 'wildly' = GENERAL, the commander; the surface misdirects to an enlarged map."
+    "parse": "(ENLARGE)* 'wildly' = GENERAL, the commander; the surface misdirects to an enlarged map.",
+    "par": 4
   },
   {
     "answer": "CRAVING",
@@ -171,7 +177,8 @@
         }
       ]
     },
-    "parse": "C (caught) + RAVING (delirious) = CRAVING, desire."
+    "parse": "C (caught) + RAVING (delirious) = CRAVING, desire.",
+    "par": 5
   },
   {
     "answer": "RECITAL",
@@ -193,7 +200,8 @@
         }
       ]
     },
-    "parse": "(ARTICLE)* = RECITAL, a concert performance; 'badly edited' is the anagram indicator."
+    "parse": "(ARTICLE)* = RECITAL, a concert performance; 'badly edited' is the anagram indicator.",
+    "par": 3
   },
   {
     "answer": "PANCAKE",
@@ -215,7 +223,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: read 'flipping' literally — the breakfast that is flipped in the pan is a PANCAKE."
+    "parse": "Cryptic definition: read 'flipping' literally — the breakfast that is flipped in the pan is a PANCAKE.",
+    "par": 4
   },
   {
     "answer": "CARPORT",
@@ -247,7 +256,8 @@
         }
       ]
     },
-    "parse": "CAR (motor) + PORT (left, nautical) = CARPORT, where a motor is kept under cover."
+    "parse": "CAR (motor) + PORT (left, nautical) = CARPORT, where a motor is kept under cover.",
+    "par": 5
   },
   {
     "answer": "FORWARD",
@@ -279,7 +289,8 @@
         }
       ]
     },
-    "parse": "FOR (in favour of) + WARD = FORWARD, pressing ahead."
+    "parse": "FOR (in favour of) + WARD = FORWARD, pressing ahead.",
+    "par": 3
   },
   {
     "answer": "HEADWAY",
@@ -311,7 +322,8 @@
         }
       ]
     },
-    "parse": "HEAD (lead) + WAY (the way) = HEADWAY, real progress."
+    "parse": "HEAD (lead) + WAY (the way) = HEADWAY, real progress.",
+    "par": 3
   },
   {
     "answer": "WARFARE",
@@ -343,7 +355,8 @@
         }
       ]
     },
-    "parse": "WAR (fighting) + FARE (price) = WARFARE; the definition is 'endless conflict'."
+    "parse": "WAR (fighting) + FARE (price) = WARFARE; the definition is 'endless conflict'.",
+    "par": 3
   },
   {
     "answer": "OUTLOOK",
@@ -375,7 +388,8 @@
         }
       ]
     },
-    "parse": "OUT + LOOK = OUTLOOK, what lies ahead (a prospect)."
+    "parse": "OUT + LOOK = OUTLOOK, what lies ahead (a prospect).",
+    "par": 3
   },
   {
     "answer": "PASSAGE",
@@ -407,7 +421,8 @@
         }
       ]
     },
-    "parse": "PAGE keeps (holds) ASS (donkey) = P(ASS)AGE = PASSAGE, a corridor."
+    "parse": "PAGE keeps (holds) ASS (donkey) = P(ASS)AGE = PASSAGE, a corridor.",
+    "par": 3
   },
   {
     "answer": "EARRING",
@@ -429,7 +444,8 @@
         }
       ]
     },
-    "parse": "Hidden ('Some') in sw-EAR RING-s = EARRING, jewellery."
+    "parse": "Hidden ('Some') in sw-EAR RING-s = EARRING, jewellery.",
+    "par": 3
   },
   {
     "answer": "PIRATES",
@@ -451,7 +467,8 @@
         }
       ]
     },
-    "parse": "(TRAIPSE)* = PIRATES, sea robbers."
+    "parse": "(TRAIPSE)* = PIRATES, sea robbers.",
+    "par": 3
   },
   {
     "answer": "BRACKET",
@@ -483,7 +500,8 @@
         }
       ]
     },
-    "parse": "B (bishop, chess) + RACKET (fiddle, a swindle) = BRACKET, a support."
+    "parse": "B (bishop, chess) + RACKET (fiddle, a swindle) = BRACKET, a support.",
+    "par": 5
   },
   {
     "answer": "PORTRAY",
@@ -515,7 +533,8 @@
         }
       ]
     },
-    "parse": "PORT (fortified wine) + RAY (a little sunshine) = PORTRAY, to paint a picture."
+    "parse": "PORT (fortified wine) + RAY (a little sunshine) = PORTRAY, to paint a picture.",
+    "par": 3
   },
   {
     "answer": "BLASTED",
@@ -537,7 +556,8 @@
         }
       ]
     },
-    "parse": "(STABLED)* 'awkwardly' = BLASTED, damned (the groom curses the badly stabled horse)."
+    "parse": "(STABLED)* 'awkwardly' = BLASTED, damned (the groom curses the badly stabled horse).",
+    "par": 5
   },
   {
     "answer": "BRANDED",
@@ -569,7 +589,8 @@
         }
       ]
     },
-    "parse": "RAND (South African cash) hidden in BED = B(RAND)ED = BRANDED, marked."
+    "parse": "RAND (South African cash) hidden in BED = B(RAND)ED = BRANDED, marked.",
+    "par": 4
   },
   {
     "answer": "BROADEN",
@@ -601,7 +622,8 @@
         }
       ]
     },
-    "parse": "ROAD (way) through BEN (mountain) = B(ROAD)EN = BROADEN, to widen."
+    "parse": "ROAD (way) through BEN (mountain) = B(ROAD)EN = BROADEN, to widen.",
+    "par": 4
   },
   {
     "answer": "NOWHERE",
@@ -623,7 +645,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: in racing, a horse that fails to place is said to finish NOWHERE."
+    "parse": "Cryptic definition: in racing, a horse that fails to place is said to finish NOWHERE.",
+    "par": 6
   },
   {
     "answer": "EARLOBE",
@@ -645,7 +668,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'wEAR LOBElias' = EARLOBE, a bit of the ear."
+    "parse": "Hidden in 'wEAR LOBElias' = EARLOBE, a bit of the ear.",
+    "par": 3
   },
   {
     "answer": "CARAVAN",
@@ -667,7 +691,8 @@
         }
       ]
     },
-    "parse": "Hidden in viCAR A VANdal = CARAVAN, the holiday home."
+    "parse": "Hidden in viCAR A VANdal = CARAVAN, the holiday home.",
+    "par": 3
   },
   {
     "answer": "DELIVER",
@@ -689,7 +714,8 @@
         }
       ]
     },
-    "parse": "REVILED (insulted) reversed = DELIVER; to deliver is to save the day."
+    "parse": "REVILED (insulted) reversed = DELIVER; to deliver is to save the day.",
+    "par": 5
   },
   {
     "answer": "GATEMAN",
@@ -711,7 +737,8 @@
         }
       ]
     },
-    "parse": "NAMETAG (luggage label) reversed = GATEMAN; a porter or doorkeeper."
+    "parse": "NAMETAG (luggage label) reversed = GATEMAN; a porter or doorkeeper.",
+    "par": 5
   },
   {
     "answer": "EARNING",
@@ -733,7 +760,8 @@
         }
       ]
     },
-    "parse": "(NEARING)* = EARNING, bringing in a wage; 'collapse' is the anagram indicator."
+    "parse": "(NEARING)* = EARNING, bringing in a wage; 'collapse' is the anagram indicator.",
+    "par": 3
   },
   {
     "answer": "STRANGE",
@@ -755,7 +783,8 @@
         }
       ]
     },
-    "parse": "Anagram of GARNETS (cut oddly) gives STRANGE, meaning unfamiliar."
+    "parse": "Anagram of GARNETS (cut oddly) gives STRANGE, meaning unfamiliar.",
+    "par": 3
   },
   {
     "answer": "STARLET",
@@ -787,7 +816,8 @@
         }
       ]
     },
-    "parse": "STAR (celebrity) + LET (rented out) = STARLET, a budding actress."
+    "parse": "STAR (celebrity) + LET (rented out) = STARLET, a budding actress.",
+    "par": 3
   },
   {
     "answer": "BATTERY",
@@ -809,7 +839,8 @@
         }
       ]
     },
-    "parse": "Double definition: battery is the offence of unlawful assault, and an artillery battery — a row of guns."
+    "parse": "Double definition: battery is the offence of unlawful assault, and an artillery battery — a row of guns.",
+    "par": 3
   },
   {
     "answer": "CRICKET",
@@ -831,7 +862,8 @@
         }
       ]
     },
-    "parse": "Double definition: the hopping, chirping insect, and the bat-and-ball sport of long innings."
+    "parse": "Double definition: the hopping, chirping insect, and the bat-and-ball sport of long innings.",
+    "par": 3
   },
   {
     "answer": "CHARGER",
@@ -853,6 +885,7 @@
         }
       ]
     },
-    "parse": "Double definition: a charger is a knight's warhorse, and the device keeping a phone alive."
+    "parse": "Double definition: a charger is a knight's warhorse, and the device keeping a phone alive.",
+    "par": 3
   }
 ]

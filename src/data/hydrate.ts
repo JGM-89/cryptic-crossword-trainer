@@ -33,6 +33,8 @@ export interface RawClue {
   parse: string;
   /** Optional overrides for the auto-generated tier 1–3 hint text. */
   hintOverrides?: Partial<Record<1 | 2 | 3, string>>;
+  /** The Daily's rubric-set par (bank clues; docs/clue-style.md §7b). */
+  par?: number;
 }
 
 export const DEVICE_DESCRIPTIONS: Record<ClueType, string> = {
@@ -208,5 +210,6 @@ export function hydrateClue(raw: RawClue): Clue {
     definitionSpan,
     wordplay: raw.wordplay,
     hints: [hint1, hint2, hint3, hint4],
+    ...(raw.par !== undefined ? { par: raw.par } : {}),
   };
 }

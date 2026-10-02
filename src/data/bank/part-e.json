@@ -19,7 +19,8 @@
         }
       ]
     },
-    "parse": "Anagram of CATERING ('a mess of') = CREATING; making. Surface: botching the buffet."
+    "parse": "Anagram of CATERING ('a mess of') = CREATING; making. Surface: botching the buffet.",
+    "par": 4
   },
   {
     "answer": "RELATION",
@@ -41,7 +42,8 @@
         }
       ]
     },
-    "parse": "Anagram of ORIENTAL (novel) = RELATION; a family connection."
+    "parse": "Anagram of ORIENTAL (novel) = RELATION; a family connection.",
+    "par": 3
   },
   {
     "answer": "TEACHERS",
@@ -63,7 +65,8 @@
         }
       ]
     },
-    "parse": "Anagram of CHEATERS (surprisingly) gives TEACHERS, instructors."
+    "parse": "Anagram of CHEATERS (surprisingly) gives TEACHERS, instructors.",
+    "par": 3
   },
   {
     "answer": "GRADUATE",
@@ -85,7 +88,8 @@
         }
       ]
     },
-    "parse": "Anagram of A RUDE TAG (awkwardly) gives GRADUATE, a degree holder."
+    "parse": "Anagram of A RUDE TAG (awkwardly) gives GRADUATE, a degree holder.",
+    "par": 3
   },
   {
     "answer": "PLEASURE",
@@ -107,7 +111,8 @@
         }
       ]
     },
-    "parse": "Anagram of PURE ALES (brewed) gives PLEASURE, meaning delight."
+    "parse": "Anagram of PURE ALES (brewed) gives PLEASURE, meaning delight.",
+    "par": 3
   },
   {
     "answer": "PAINTERS",
@@ -129,7 +134,8 @@
         }
       ]
     },
-    "parse": "Anagram of PANTRIES (rebuilt) = PAINTERS; decorators. Surface: the pantries were rebuilt by the decorators."
+    "parse": "Anagram of PANTRIES (rebuilt) = PAINTERS; decorators. Surface: the pantries were rebuilt by the decorators.",
+    "par": 3
   },
   {
     "answer": "STRANGER",
@@ -151,7 +157,8 @@
         }
       ]
     },
-    "parse": "Double definition: a STRANGER (newcomer) and 'more bizarre' (stranger, the comparative of strange)."
+    "parse": "Double definition: a STRANGER (newcomer) and 'more bizarre' (stranger, the comparative of strange).",
+    "par": 3
   },
   {
     "answer": "MINISTER",
@@ -183,7 +190,8 @@
         }
       ]
     },
-    "parse": "I (one) inside MINSTER = MIN·I·STER = MINISTER, the vicar."
+    "parse": "I (one) inside MINSTER = MIN·I·STER = MINISTER, the vicar.",
+    "par": 4
   },
   {
     "answer": "RESIDENT",
@@ -205,7 +213,8 @@
         }
       ]
     },
-    "parse": "(TRENDIES)* 'resettle' = RESIDENT, a local."
+    "parse": "(TRENDIES)* 'resettle' = RESIDENT, a local.",
+    "par": 3
   },
   {
     "answer": "REACTION",
@@ -227,7 +236,8 @@
         }
       ]
     },
-    "parse": "Anagram of CREATION ('wrecked') = REACTION; a backlash. Surface: public outcry over a destroyed artwork."
+    "parse": "Anagram of CREATION ('wrecked') = REACTION; a backlash. Surface: public outcry over a destroyed artwork.",
+    "par": 3
   },
   {
     "answer": "CONTAINER",
@@ -249,7 +259,8 @@
         }
       ]
     },
-    "parse": "(ANCIENT OR)* 'refurbished' = CONTAINER, a vessel."
+    "parse": "(ANCIENT OR)* 'refurbished' = CONTAINER, a vessel.",
+    "par": 4
   },
   {
     "answer": "GRADIENTS",
@@ -271,7 +282,8 @@
         }
       ]
     },
-    "parse": "Anagram of DRAGNET IS ('spread') = GRADIENTS; the slopes. Surface: a police search net cast across the hillside."
+    "parse": "Anagram of DRAGNET IS ('spread') = GRADIENTS; the slopes. Surface: a police search net cast across the hillside.",
+    "par": 3
   },
   {
     "answer": "ORGANISES",
@@ -293,7 +305,8 @@
         }
       ]
     },
-    "parse": "Anagram of ROSE GAINS (surprisingly) = ORGANISES; runs the show. Surface: Rose, the underdog, surprisingly gains ground and now runs the show."
+    "parse": "Anagram of ROSE GAINS (surprisingly) = ORGANISES; runs the show. Surface: Rose, the underdog, surprisingly gains ground and now runs the show.",
+    "par": 4
   },
   {
     "answer": "DETERMINE",
@@ -325,7 +338,8 @@
         }
       ]
     },
-    "parse": "DETER (discourage) + MINE (tunnelling, to mine) = DETERMINE; settle the matter. Surface: discourage tunnelling and settle the matter — one coherent directive."
+    "parse": "DETER (discourage) + MINE (tunnelling, to mine) = DETERMINE; settle the matter. Surface: discourage tunnelling and settle the matter — one coherent directive.",
+    "par": 3
   },
   {
     "answer": "CORRELATE",
@@ -347,7 +361,8 @@
         }
       ]
     },
-    "parse": "Anagram of CARTEL ORE ('refined') = CORRELATE; to tally, match up. Surface: an auditor expecting the cartel's refined ore to square with the books."
+    "parse": "Anagram of CARTEL ORE ('refined') = CORRELATE; to tally, match up. Surface: an auditor expecting the cartel's refined ore to square with the books.",
+    "par": 3
   },
   {
     "answer": "ASCERTAIN",
@@ -369,7 +384,8 @@
         }
       ]
     },
-    "parse": "(A CANISTER)* with anagram indicator 'Shake' = ASCERTAIN; to 'find out'."
+    "parse": "(A CANISTER)* with anagram indicator 'Shake' = ASCERTAIN; to 'find out'.",
+    "par": 3
   },
   {
     "answer": "HARDSHIP",
@@ -391,7 +407,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'orcHARD SHIPment' = HARDSHIP; trouble. Surface: inspectors finding pests in a fruit consignment."
+    "parse": "Hidden in 'orcHARD SHIPment' = HARDSHIP; trouble. Surface: inspectors finding pests in a fruit consignment.",
+    "par": 3
   },
   {
     "answer": "FORECAST",
@@ -423,7 +440,8 @@
         }
       ]
     },
-    "parse": "FORE (front) + CAST (company — of actors) = FORECAST; a prediction. Surface: a shell company issuing a forecast."
+    "parse": "FORE (front) + CAST (company — of actors) = FORECAST; a prediction. Surface: a shell company issuing a forecast.",
+    "par": 4
   },
   {
     "answer": "SPEARMINT",
@@ -445,7 +463,8 @@
         }
       ]
     },
-    "parse": "Anagram of MS PAINTER ('eccentric') = SPEARMINT; a herb. Surface: the village eccentric supplying herbs from her garden."
+    "parse": "Anagram of MS PAINTER ('eccentric') = SPEARMINT; a herb. Surface: the village eccentric supplying herbs from her garden.",
+    "par": 3
   },
   {
     "answer": "CHAIRLIFT",
@@ -467,7 +486,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: a chairlift really is a chair riding high, for skiers — misdirecting to a baby's highchair."
+    "parse": "Cryptic definition: a chairlift really is a chair riding high, for skiers — misdirecting to a baby's highchair.",
+    "par": 5
   },
   {
     "answer": "HANDPRINT",
@@ -499,7 +519,8 @@
         }
       ]
     },
-    "parse": "HAND (worker) + PRINT (etching) = HANDPRINT; a mark. Surface: an artisan's etching winning acclaim."
+    "parse": "HAND (worker) + PRINT (etching) = HANDPRINT; a mark. Surface: an artisan's etching winning acclaim.",
+    "par": 5
   },
   {
     "answer": "OVERBOARD",
@@ -531,7 +552,8 @@
         }
       ]
     },
-    "parse": "OVER (finished with) + BOARD (the directors) = OVERBOARD, into the sea."
+    "parse": "OVER (finished with) + BOARD (the directors) = OVERBOARD, into the sea.",
+    "par": 3
   },
   {
     "answer": "CARPENTER",
@@ -563,7 +585,8 @@
         }
       ]
     },
-    "parse": "PEN held inside CARTER = CAR·PEN·TER = CARPENTER, the joiner."
+    "parse": "PEN held inside CARTER = CAR·PEN·TER = CARPENTER, the joiner.",
+    "par": 3
   },
   {
     "answer": "STARGAZER",
@@ -595,7 +618,8 @@
         }
       ]
     },
-    "parse": "STAR (celebrity) + GAZER (watcher) = STARGAZER; a dreamer. Surface: the celebrity-spotter with their head in the clouds."
+    "parse": "STAR (celebrity) + GAZER (watcher) = STARGAZER; a dreamer. Surface: the celebrity-spotter with their head in the clouds.",
+    "par": 4
   },
   {
     "answer": "FOOTPRINT",
@@ -627,7 +651,8 @@
         }
       ]
     },
-    "parse": "FOOT (pay, as in foot the bill) + PRINT (publish) = FOOTPRINT; a track. Surface: a musician paying to release a song."
+    "parse": "FOOT (pay, as in foot the bill) + PRINT (publish) = FOOTPRINT; a track. Surface: a musician paying to release a song.",
+    "par": 5
   },
   {
     "answer": "WATERFALL",
@@ -659,7 +684,8 @@
         }
       ]
     },
-    "parse": "WATER (the drink) + FALL (a tumble) = WATERFALL; Niagara, say."
+    "parse": "WATER (the drink) + FALL (a tumble) = WATERFALL; Niagara, say.",
+    "par": 4
   },
   {
     "answer": "BRIGHTEN",
@@ -681,7 +707,8 @@
         }
       ]
     },
-    "parse": "(BERTHING)* 'clumsily' = BRIGHTEN, to cheer up."
+    "parse": "(BERTHING)* 'clumsily' = BRIGHTEN, to cheer up.",
+    "par": 3
   },
   {
     "answer": "STARTLED",
@@ -713,7 +740,8 @@
         }
       ]
     },
-    "parse": "START (beginning) + LED (to be led, guided) = STARTLED; took fright. Surface: a colt first being led takes fright."
+    "parse": "START (beginning) + LED (to be led, guided) = STARTLED; took fright. Surface: a colt first being led takes fright.",
+    "par": 4
   },
   {
     "answer": "STEALING",
@@ -735,7 +763,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'weST EALING' = STEALING; thieving. Surface: a local-paper headline about crime in the London suburb."
+    "parse": "Hidden in 'weST EALING' = STEALING; thieving. Surface: a local-paper headline about crime in the London suburb.",
+    "par": 4
   },
   {
     "answer": "SWEARING",
@@ -767,7 +796,8 @@
         }
       ]
     },
-    "parse": "W (wife) inside SEARING (searing pain) = S-W-EARING = SWEARING; cursing."
+    "parse": "W (wife) inside SEARING (searing pain) = S-W-EARING = SWEARING; cursing.",
+    "par": 4
   },
   {
     "answer": "STARLING",
@@ -789,7 +819,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'superSTAR LINGo' = STARLING; a bird. Surface: 'bird' is exactly the sort of word a rock star's slang would use."
+    "parse": "Hidden in 'superSTAR LINGo' = STARLING; a bird. Surface: 'bird' is exactly the sort of word a rock star's slang would use.",
+    "par": 3
   },
   {
     "answer": "SHEARING",
@@ -811,7 +842,8 @@
         }
       ]
     },
-    "parse": "(HEARINGS)* 'rescheduled' = SHEARING, a fleecing."
+    "parse": "(HEARINGS)* 'rescheduled' = SHEARING, a fleecing.",
+    "par": 4
   },
   {
     "answer": "INTEREST",
@@ -833,7 +865,8 @@
         }
       ]
     },
-    "parse": "Double definition: INTEREST as 'concern' (a matter that interests one) and INTEREST as the charge a bank levies or pays."
+    "parse": "Double definition: INTEREST as 'concern' (a matter that interests one) and INTEREST as the charge a bank levies or pays.",
+    "par": 3
   },
   {
     "answer": "OVERHAUL",
@@ -855,7 +888,8 @@
         }
       ]
     },
-    "parse": "Double definition: OVERHAUL = to examine thoroughly (service), and OVERHAUL = to overtake (catch up with)."
+    "parse": "Double definition: OVERHAUL = to examine thoroughly (service), and OVERHAUL = to overtake (catch up with).",
+    "par": 4
   },
   {
     "answer": "OVERNIGHT",
@@ -887,7 +921,8 @@
         }
       ]
     },
-    "parse": "OVER (play over, cricket) + NIGHT = OVERNIGHT, stayed till dawn."
+    "parse": "OVER (play over, cricket) + NIGHT = OVERNIGHT, stayed till dawn.",
+    "par": 3
   },
   {
     "answer": "OVERHEAD",
@@ -919,7 +954,8 @@
         }
       ]
     },
-    "parse": "OVER (too much) + HEAD (froth on a pint) = OVERHEAD, a running cost."
+    "parse": "OVER (too much) + HEAD (froth on a pint) = OVERHEAD, a running cost.",
+    "par": 3
   },
   {
     "answer": "ASTRONOMY",
@@ -941,7 +977,8 @@
         }
       ]
     },
-    "parse": "(ARTSY MOON)* 'badly sketched' = ASTRONOMY, the study of stars."
+    "parse": "(ARTSY MOON)* 'badly sketched' = ASTRONOMY, the study of stars.",
+    "par": 3
   },
   {
     "answer": "STRESSED",
@@ -968,6 +1005,7 @@
         }
       ]
     },
-    "parse": "DESSERTS (puddings) reversed ('sent back') = STRESSED; tense. Surface: the chef's nerves when diners return the puddings."
+    "parse": "DESSERTS (puddings) reversed ('sent back') = STRESSED; tense. Surface: the chef's nerves when diners return the puddings.",
+    "par": 3
   }
 ]

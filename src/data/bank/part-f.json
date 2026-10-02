@@ -19,7 +19,8 @@
         }
       ]
     },
-    "parse": "(DIRE CLAIMS)* = DISCLAIMER; a 'legal waiver'."
+    "parse": "(DIRE CLAIMS)* = DISCLAIMER; a 'legal waiver'.",
+    "par": 3
   },
   {
     "answer": "NIGHTMARES",
@@ -51,7 +52,8 @@
         }
       ]
     },
-    "parse": "NIGHT (after dark) + MARES (the horses) = NIGHTMARES; 'worst dreams'."
+    "parse": "NIGHT (after dark) + MARES (the horses) = NIGHTMARES; 'worst dreams'.",
+    "par": 3
   },
   {
     "answer": "TELEVISION",
@@ -73,7 +75,8 @@
         }
       ]
     },
-    "parse": "(NOVELISE IT)* = TELEVISION, with 'broadcast' as the anagram signal; 'the box'."
+    "parse": "(NOVELISE IT)* = TELEVISION, with 'broadcast' as the anagram signal; 'the box'.",
+    "par": 4
   },
   {
     "answer": "LABORATORY",
@@ -95,7 +98,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: a LABORATORY is where solutions — chemical ones, not answers to problems — are developed."
+    "parse": "Cryptic definition: a LABORATORY is where solutions — chemical ones, not answers to problems — are developed.",
+    "par": 6
   },
   {
     "answer": "DEPARTMENT",
@@ -132,7 +136,8 @@
         }
       ]
     },
-    "parse": "DEPART (leave) + MEN (the men) + T (time) = DEPARTMENT, a ministry."
+    "parse": "DEPART (leave) + MEN (the men) + T (time) = DEPARTMENT, a ministry.",
+    "par": 5
   },
   {
     "answer": "UNDERRATED",
@@ -154,7 +159,8 @@
         }
       ]
     },
-    "parse": "Anagram of AD RETURNED (signalled by 'in error') = UNDERRATED, i.e. not appreciated. 'Returned' tempts you toward a reversal — it is fodder."
+    "parse": "Anagram of AD RETURNED (signalled by 'in error') = UNDERRATED, i.e. not appreciated. 'Returned' tempts you toward a reversal — it is fodder.",
+    "par": 4
   },
   {
     "answer": "BRIDGEHEAD",
@@ -186,7 +192,8 @@
         }
       ]
     },
-    "parse": "BRIDGE (a span) + HEAD (a headland) = BRIDGEHEAD, a foothold secured in enemy territory."
+    "parse": "BRIDGE (a span) + HEAD (a headland) = BRIDGEHEAD, a foothold secured in enemy territory.",
+    "par": 4
   },
   {
     "answer": "BARGAINING",
@@ -208,7 +215,8 @@
         }
       ]
     },
-    "parse": "Anagram of AGING BRAIN (signalled by 'shattered') = BARGAINING; 'haggling' is the definition."
+    "parse": "Anagram of AGING BRAIN (signalled by 'shattered') = BARGAINING; 'haggling' is the definition.",
+    "par": 3
   },
   {
     "answer": "INFORMATION",
@@ -240,7 +248,8 @@
         }
       ]
     },
-    "parse": "IN (fashionable, trendy) + FORMATION (line-up, arrangement) = INFORMATION; 'news'."
+    "parse": "IN (fashionable, trendy) + FORMATION (line-up, arrangement) = INFORMATION; 'news'.",
+    "par": 5
   },
   {
     "answer": "PRECAUTIONS",
@@ -272,7 +281,8 @@
         }
       ]
     },
-    "parse": "PRE (ahead of) + CAUTIONS (warnings) = PRECAUTIONS; 'safety measures'."
+    "parse": "PRE (ahead of) + CAUTIONS (warnings) = PRECAUTIONS; 'safety measures'.",
+    "par": 4
   },
   {
     "answer": "PARTNERSHIP",
@@ -304,7 +314,8 @@
         }
       ]
     },
-    "parse": "PARTNER (mate) + SHIP (vessel) = PARTNERSHIP, a joint concern (a business held jointly)."
+    "parse": "PARTNER (mate) + SHIP (vessel) = PARTNERSHIP, a joint concern (a business held jointly).",
+    "par": 4
   },
   {
     "answer": "STOCKBROKER",
@@ -326,7 +337,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: a STOCKBROKER deals through bull and bear markets — the surface misdirects to a livestock handler."
+    "parse": "Cryptic definition: a STOCKBROKER deals through bull and bear markets — the surface misdirects to a livestock handler.",
+    "par": 6
   },
   {
     "answer": "CONSTRAINED",
@@ -358,7 +370,8 @@
         }
       ]
     },
-    "parse": "CON (convict) + STRAINED (tense) = CONSTRAINED; 'held in check'."
+    "parse": "CON (convict) + STRAINED (tense) = CONSTRAINED; 'held in check'.",
+    "par": 4
   },
   {
     "answer": "RELATIONSHIP",
@@ -390,7 +403,8 @@
         }
       ]
     },
-    "parse": "RELATION (relative) + SHIP (liner) = RELATIONSHIP; 'romance'."
+    "parse": "RELATION (relative) + SHIP (liner) = RELATIONSHIP; 'romance'.",
+    "par": 4
   },
   {
     "answer": "CONVERSATION",
@@ -412,7 +426,8 @@
         }
       ]
     },
-    "parse": "(CONSERVATION)* 'reformed' = CONVERSATION; 'mere talk' (a chat)."
+    "parse": "(CONSERVATION)* 'reformed' = CONVERSATION; 'mere talk' (a chat).",
+    "par": 4
   },
   {
     "answer": "HEADQUARTERS",
@@ -444,7 +459,8 @@
         }
       ]
     },
-    "parse": "HEAD (boss) + QUARTERS (lodges, billets officers) = HEADQUARTERS; the command centre."
+    "parse": "HEAD (boss) + QUARTERS (lodges, billets officers) = HEADQUARTERS; the command centre.",
+    "par": 5
   },
   {
     "answer": "UNDERSTANDING",
@@ -476,7 +492,8 @@
         }
       ]
     },
-    "parse": "UNDER (beneath) + STANDING (one's reputation) = UNDERSTANDING; 'sympathy'."
+    "parse": "UNDER (beneath) + STANDING (one's reputation) = UNDERSTANDING; 'sympathy'.",
+    "par": 5
   },
   {
     "answer": "CONSIDERATION",
@@ -498,7 +515,8 @@
         }
       ]
     },
-    "parse": "(ICONS RATIONED)* 'out' = CONSIDERATION; 'regard for others' (thoughtfulness)."
+    "parse": "(ICONS RATIONED)* 'out' = CONSIDERATION; 'regard for others' (thoughtfulness).",
+    "par": 4
   },
   {
     "answer": "ENTERTAINMENT",
@@ -520,7 +538,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition — the thing that keeps an audience coming back is the ENTERTAINMENT."
+    "parse": "Cryptic definition — the thing that keeps an audience coming back is the ENTERTAINMENT.",
+    "par": 6
   },
   {
     "answer": "THOUGHTLESSLY",
@@ -542,7 +561,8 @@
         }
       ]
     },
-    "parse": "(GHOSTLY HUSTLE)* 'danced' = THOUGHTLESSLY, without care."
+    "parse": "(GHOSTLY HUSTLE)* 'danced' = THOUGHTLESSLY, without care.",
+    "par": 4
   },
   {
     "answer": "GRANDMOTHERLY",
@@ -564,6 +584,7 @@
         }
       ]
     },
-    "parse": "Cryptic definition — the spoiling, knitting figure is a grandmother; behaving so is GRANDMOTHERLY."
+    "parse": "Cryptic definition — the spoiling, knitting figure is a grandmother; behaving so is GRANDMOTHERLY.",
+    "par": 6
   }
 ]

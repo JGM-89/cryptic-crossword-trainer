@@ -102,6 +102,8 @@ export interface Clue {
   wordplay: Wordplay;
   /** The four-rung hint ladder. Always exactly four tiers. */
   hints: [Hint, Hint, Hint, Hint];
+  /** The Daily's rubric-set par (bank clues only; docs/clue-style.md §7b). */
+  par?: number;
 }
 
 /** A lesson teaches one clue type (Stage A/B) or mixes them (Stage C/D). */

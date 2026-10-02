@@ -24,6 +24,8 @@ export interface BankEntry {
   def: { text: string; position: 'start' | 'end' };
   wordplay: Wordplay;
   parse: string;
+  /** Rubric-set par for the Daily (docs/clue-style.md §7b), 2–6. */
+  par: number;
 }
 
 const lettersOnly = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
@@ -63,6 +65,7 @@ function toRawClue(e: BankEntry): RawClue {
     def: e.def as { text: string; position: DefinitionSpan['position'] },
     wordplay: { ...e.wordplay, fodder: deriveFodder(e) },
     parse: e.parse,
+    par: e.par,
   };
 }
 

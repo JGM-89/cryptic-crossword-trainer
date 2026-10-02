@@ -19,7 +19,8 @@
         }
       ]
     },
-    "parse": "Double definition: an ear catches a whisper (the organ that hears), and an ear grows on a cob (of corn). Both halves read as one description of the same thing."
+    "parse": "Double definition: an ear catches a whisper (the organ that hears), and an ear grows on a cob (of corn). Both halves read as one description of the same thing.",
+    "par": 3
   },
   {
     "answer": "BAT",
@@ -41,7 +42,8 @@
         }
       ]
     },
-    "parse": "BAT is hidden in 'acroBATics' ('in' signals the hidden run). A bat is a flier — the flying mammal — while the surface evokes the flier in an acrobatic troupe."
+    "parse": "BAT is hidden in 'acroBATics' ('in' signals the hidden run). A bat is a flier — the flying mammal — while the surface evokes the flier in an acrobatic troupe.",
+    "par": 3
   },
   {
     "answer": "PEN",
@@ -63,7 +65,8 @@
         }
       ]
     },
-    "parse": "Double definition: a writing implement, and an enclosure for sheep."
+    "parse": "Double definition: a writing implement, and an enclosure for sheep.",
+    "par": 2
   },
   {
     "answer": "NET",
@@ -85,7 +88,8 @@
         }
       ]
     },
-    "parse": "TEN reversed by 'knocked over' = NET; what's left, the net amount."
+    "parse": "TEN reversed by 'knocked over' = NET; what's left, the net amount.",
+    "par": 3
   },
   {
     "answer": "ART",
@@ -107,7 +111,8 @@
         }
       ]
     },
-    "parse": "ART hidden in 'guitAR Tuner', spanning two words, flagged by 'shows'; ART as in real skill."
+    "parse": "ART hidden in 'guitAR Tuner', spanning two words, flagged by 'shows'; ART as in real skill.",
+    "par": 3
   },
   {
     "answer": "OWL",
@@ -129,7 +134,8 @@
         }
       ]
     },
-    "parse": "OWL hidden in 'belOW Ledges', spanning two words; a bird."
+    "parse": "OWL hidden in 'belOW Ledges', spanning two words; a bird.",
+    "par": 2
   },
   {
     "answer": "GOD",
@@ -151,7 +157,8 @@
         }
       ]
     },
-    "parse": "DOG reversed by 'rolls over' = GOD; a deity. Surface: a dog rolls over on command."
+    "parse": "DOG reversed by 'rolls over' = GOD; a deity. Surface: a dog rolls over on command.",
+    "par": 2
   },
   {
     "answer": "TIP",
@@ -173,7 +180,8 @@
         }
       ]
     },
-    "parse": "PIT reversed ('rising', in a down clue) = TIP; a pointer or hint."
+    "parse": "PIT reversed ('rising', in a down clue) = TIP; a pointer or hint.",
+    "par": 4
   },
   {
     "answer": "RAT",
@@ -195,7 +203,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'piRATe's' = RAT; an informer."
+    "parse": "Hidden in 'piRATe's' = RAT; an informer.",
+    "par": 3
   },
   {
     "answer": "CAR",
@@ -217,7 +226,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'MadagasCAR' = CAR; an old banger (informal for a car)."
+    "parse": "Hidden in 'MadagasCAR' = CAR; an old banger (informal for a car).",
+    "par": 3
   },
   {
     "answer": "AGE",
@@ -239,7 +249,8 @@
         }
       ]
     },
-    "parse": "AGE is hidden in 'vintAGE' (read in any vintage); a generation. The wine surface points away from time."
+    "parse": "AGE is hidden in 'vintAGE' (read in any vintage); a generation. The wine surface points away from time.",
+    "par": 3
   },
   {
     "answer": "COB",
@@ -261,7 +272,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'disCO Bar' = COB; a male swan."
+    "parse": "Hidden in 'disCO Bar' = COB; a male swan.",
+    "par": 4
   },
   {
     "answer": "BAR",
@@ -293,7 +305,8 @@
         }
       ]
     },
-    "parse": "BA (graduate) + R (runs, from cricket scorecards) = BAR, the pub."
+    "parse": "BA (graduate) + R (runs, from cricket scorecards) = BAR, the pub.",
+    "par": 4
   },
   {
     "answer": "RED",
@@ -315,7 +328,8 @@
         }
       ]
     },
-    "parse": "Double definition: red (embarrassed, as in going red), and a Red (revolutionary/communist)."
+    "parse": "Double definition: red (embarrassed, as in going red), and a Red (revolutionary/communist).",
+    "par": 3
   },
   {
     "answer": "MEAN",
@@ -337,7 +351,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'deMEANour' = MEAN; cruel."
+    "parse": "Hidden in 'deMEANour' = MEAN; cruel.",
+    "par": 2
   },
   {
     "answer": "TIDE",
@@ -359,7 +374,8 @@
         }
       ]
     },
-    "parse": "Anagram (in knots) of TIED = TIDE; the current/flow of the sea."
+    "parse": "Anagram (in knots) of TIED = TIDE; the current/flow of the sea.",
+    "par": 3
   },
   {
     "answer": "LIME",
@@ -381,7 +397,8 @@
         }
       ]
     },
-    "parse": "Double definition: a LIME is a citrus (the sharp green fruit), and the LIME — the linden — is a tree; two unrelated roots sharing one spelling. The '?' flags that each is a definition by example."
+    "parse": "Double definition: a LIME is a citrus (the sharp green fruit), and the LIME — the linden — is a tree; two unrelated roots sharing one spelling. The '?' flags that each is a definition by example.",
+    "par": 4
   },
   {
     "answer": "TAME",
@@ -403,7 +420,8 @@
         }
       ]
     },
-    "parse": "Anagram (playing) of TEAM = TAME; dull or unexciting."
+    "parse": "Anagram (playing) of TEAM = TAME; dull or unexciting.",
+    "par": 2
   },
   {
     "answer": "STAR",
@@ -425,7 +443,8 @@
         }
       ]
     },
-    "parse": "Double definition: a star is the asterisk symbol (*), and a star is the leading actor. The typographic surface misdirects from the showbiz sense."
+    "parse": "Double definition: a star is the asterisk symbol (*), and a star is the leading actor. The typographic surface misdirects from the showbiz sense.",
+    "par": 2
   },
   {
     "answer": "DRAW",
@@ -447,7 +466,8 @@
         }
       ]
     },
-    "parse": "Double definition: to sketch; and a tie (a drawn game)."
+    "parse": "Double definition: to sketch; and a tie (a drawn game).",
+    "par": 3
   },
   {
     "answer": "HEAR",
@@ -469,7 +489,8 @@
         }
       ]
     },
-    "parse": "Anagram (wild) of HARE = HEAR; to take in / to listen."
+    "parse": "Anagram (wild) of HARE = HEAR; to take in / to listen.",
+    "par": 3
   },
   {
     "answer": "SOLE",
@@ -491,7 +512,8 @@
         }
       ]
     },
-    "parse": "Double definition: sole meaning only, and the sole on the underside of a shoe."
+    "parse": "Double definition: sole meaning only, and the sole on the underside of a shoe.",
+    "par": 3
   },
   {
     "answer": "LAND",
@@ -513,7 +535,8 @@
         }
       ]
     },
-    "parse": "Hidden in smaL-L-AND-tidy → LAND; to touch down."
+    "parse": "Hidden in smaL-L-AND-tidy → LAND; to touch down.",
+    "par": 2
   },
   {
     "answer": "VEIN",
@@ -535,7 +558,8 @@
         }
       ]
     },
-    "parse": "Hidden in ca-VE-IN-terior (found in) = VEIN; a blood channel."
+    "parse": "Hidden in ca-VE-IN-terior (found in) = VEIN; a blood channel.",
+    "par": 2
   },
   {
     "answer": "ONCE",
@@ -557,7 +581,8 @@
         }
       ]
     },
-    "parse": "ONCE is hidden in 'scONCE' (a candle in the sconce); meaning long ago/formerly."
+    "parse": "ONCE is hidden in 'scONCE' (a candle in the sconce); meaning long ago/formerly.",
+    "par": 3
   },
   {
     "answer": "HERB",
@@ -579,7 +604,8 @@
         }
       ]
     },
-    "parse": "HERB hides inside 'ratHER Bitter' ('Some' tells you to take part of it); a herb is a seasoning."
+    "parse": "HERB hides inside 'ratHER Bitter' ('Some' tells you to take part of it); a herb is a seasoning.",
+    "par": 2
   },
   {
     "answer": "CHAT",
@@ -601,7 +627,8 @@
         }
       ]
     },
-    "parse": "CHAT runs through 'suCH A Tale'; gossip/a natter."
+    "parse": "CHAT runs through 'suCH A Tale'; gossip/a natter.",
+    "par": 2
   },
   {
     "answer": "SCAR",
@@ -623,7 +650,8 @@
         }
       ]
     },
-    "parse": "(CARS)* = SCAR; a lasting mark."
+    "parse": "(CARS)* = SCAR; a lasting mark.",
+    "par": 2
   },
   {
     "answer": "WARM",
@@ -655,7 +683,8 @@
         }
       ]
     },
-    "parse": "W (western) + ARM (a branch, as of a family) = WARM; welcoming. Surface: the western branch of the family is welcoming."
+    "parse": "W (western) + ARM (a branch, as of a family) = WARM; welcoming. Surface: the western branch of the family is welcoming.",
+    "par": 4
   },
   {
     "answer": "FLAT",
@@ -677,7 +706,8 @@
         }
       ]
     },
-    "parse": "Double definition: FLAT (level) and FLAT (an apartment). 'A level' misdirects toward the exam."
+    "parse": "Double definition: FLAT (level) and FLAT (an apartment). 'A level' misdirects toward the exam.",
+    "par": 3
   },
   {
     "answer": "WAVE",
@@ -699,7 +729,8 @@
         }
       ]
     },
-    "parse": "Double definition: to wave (greet), and a breaker (a wave) at sea."
+    "parse": "Double definition: to wave (greet), and a breaker (a wave) at sea.",
+    "par": 3
   },
   {
     "answer": "MINE",
@@ -721,7 +752,8 @@
         }
       ]
     },
-    "parse": "Double definition: a mine (explosive device), and mine (not yours, i.e. belonging to me)."
+    "parse": "Double definition: a mine (explosive device), and mine (not yours, i.e. belonging to me).",
+    "par": 2
   },
   {
     "answer": "DATE",
@@ -743,7 +775,8 @@
         }
       ]
     },
-    "parse": "Double definition: a DATE is the sticky fruit, and a DATE is a romantic evening out. The whole phrase reads as one idiom, masking the split."
+    "parse": "Double definition: a DATE is the sticky fruit, and a DATE is a romantic evening out. The whole phrase reads as one idiom, masking the split.",
+    "par": 3
   },
   {
     "answer": "WIND",
@@ -765,7 +798,8 @@
         }
       ]
     },
-    "parse": "Double definition: to WIND is to coil, and a WIND is a gale. The two senses sound different (rhyming with 'mind' vs 'pinned'), sharpening the penny-drop. Surface paints a coil tightened in a gale, with no false 'gale brings a coil' causality."
+    "parse": "Double definition: to WIND is to coil, and a WIND is a gale. The two senses sound different (rhyming with 'mind' vs 'pinned'), sharpening the penny-drop. Surface paints a coil tightened in a gale, with no false 'gale brings a coil' causality.",
+    "par": 3
   },
   {
     "answer": "SPAR",
@@ -787,7 +821,8 @@
         }
       ]
     },
-    "parse": "RAPS (criticism — knocks, rebukes) reversed by 'turned back' = SPAR, to trade blows."
+    "parse": "RAPS (criticism — knocks, rebukes) reversed by 'turned back' = SPAR, to trade blows.",
+    "par": 3
   },
   {
     "answer": "HEAT",
@@ -809,7 +844,8 @@
         }
       ]
     },
-    "parse": "HEAT is concealed in an unbroken run across 'tHE heATher', flagged by 'Some of'. Definition: warmth."
+    "parse": "HEAT is concealed in an unbroken run across 'tHE heATher', flagged by 'Some of'. Definition: warmth.",
+    "par": 2
   },
   {
     "answer": "OVEN",
@@ -831,7 +867,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: an oven is literally where a bun bakes — and idiomatically 'a bun in the oven' means a baby on the way. The '?' signals the pun."
+    "parse": "Cryptic definition: an oven is literally where a bun bakes — and idiomatically 'a bun in the oven' means a baby on the way. The '?' signals the pun.",
+    "par": 4
   },
   {
     "answer": "EDIT",
@@ -853,7 +890,8 @@
         }
       ]
     },
-    "parse": "TIDE reversed by 'turns' = EDIT, to revise. 'as the tide turns' is a natural idiom doing the cryptic work."
+    "parse": "TIDE reversed by 'turns' = EDIT, to revise. 'as the tide turns' is a natural idiom doing the cryptic work.",
+    "par": 3
   },
   {
     "answer": "HARM",
@@ -885,7 +923,8 @@
         }
       ]
     },
-    "parse": "H (hard) + ARM (limb) = HARM, to do damage."
+    "parse": "H (hard) + ARM (limb) = HARM, to do damage.",
+    "par": 4
   },
   {
     "answer": "BLOT",
@@ -907,6 +946,7 @@
         }
       ]
     },
-    "parse": "BOLT, with letters loosened by 'comes loose', rearranges to BLOT, a stain."
+    "parse": "BOLT, with letters loosened by 'comes loose', rearranges to BLOT, a stain.",
+    "par": 2
   }
 ]

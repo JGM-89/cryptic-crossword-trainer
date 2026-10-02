@@ -19,7 +19,8 @@
         }
       ]
     },
-    "parse": "Hidden in euRO PErformance = ROPE; a line."
+    "parse": "Hidden in euRO PErformance = ROPE; a line.",
+    "par": 3
   },
   {
     "answer": "DESK",
@@ -41,7 +42,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'cruDE SKetches' (indicated by 'conceal') = DESK, a bureau (writing desk)."
+    "parse": "Hidden in 'cruDE SKetches' (indicated by 'conceal') = DESK, a bureau (writing desk).",
+    "par": 2
   },
   {
     "answer": "FERN",
@@ -63,7 +65,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'coniFER Nursery' = FERN, a plant — while the surface points you at the conifers."
+    "parse": "Hidden in 'coniFER Nursery' = FERN, a plant — while the surface points you at the conifers.",
+    "par": 2
   },
   {
     "answer": "DRAB",
@@ -90,7 +93,8 @@
         }
       ]
     },
-    "parse": "BARD (poet) reversed ('looking back') = DRAB, dull."
+    "parse": "BARD (poet) reversed ('looking back') = DRAB, dull.",
+    "par": 3
   },
   {
     "answer": "LEAF",
@@ -112,7 +116,8 @@
         }
       ]
     },
-    "parse": "(FLEA)* = LEAF, a page of a book."
+    "parse": "(FLEA)* = LEAF, a page of a book.",
+    "par": 3
   },
   {
     "answer": "NEAR",
@@ -144,7 +149,8 @@
         }
       ]
     },
-    "parse": "N (new) + EAR (listening device) = NEAR, almost there."
+    "parse": "N (new) + EAR (listening device) = NEAR, almost there.",
+    "par": 4
   },
   {
     "answer": "ACRE",
@@ -166,7 +172,8 @@
         }
       ]
     },
-    "parse": "(RACE)* = ACRE; a plot of land."
+    "parse": "(RACE)* = ACRE; a plot of land.",
+    "par": 3
   },
   {
     "answer": "VOTE",
@@ -188,7 +195,8 @@
         }
       ]
     },
-    "parse": "VETO 'upset' (anagrammed) = VOTE, a ballot."
+    "parse": "VETO 'upset' (anagrammed) = VOTE, a ballot.",
+    "par": 2
   },
   {
     "answer": "GOAT",
@@ -210,7 +218,8 @@
         }
       ]
     },
-    "parse": "(TOGA)* 'oddly draped' = GOAT, a kid's parent."
+    "parse": "(TOGA)* 'oddly draped' = GOAT, a kid's parent.",
+    "par": 3
   },
   {
     "answer": "COIN",
@@ -242,7 +251,8 @@
         }
       ]
     },
-    "parse": "CO (company) + IN (from the surface) = COIN, money — disguised inside the idiom 'in the money'."
+    "parse": "CO (company) + IN (from the surface) = COIN, money — disguised inside the idiom 'in the money'.",
+    "par": 4
   },
   {
     "answer": "OPAL",
@@ -274,7 +284,8 @@
         }
       ]
     },
-    "parse": "O (old) + PAL (friend) = OPAL, a gem — the surface reads as praise for a dear friend."
+    "parse": "O (old) + PAL (friend) = OPAL, a gem — the surface reads as praise for a dear friend.",
+    "par": 4
   },
   {
     "answer": "MILD",
@@ -296,7 +307,8 @@
         }
       ]
     },
-    "parse": "Double definition: MILD = gentle, and MILD = a type of (dark) ale."
+    "parse": "Double definition: MILD = gentle, and MILD = a type of (dark) ale.",
+    "par": 2
   },
   {
     "answer": "REIN",
@@ -318,7 +330,8 @@
         }
       ]
     },
-    "parse": "REIGN (the king's rule) sounds like ('reportedly') REIN, to curb."
+    "parse": "REIGN (the king's rule) sounds like ('reportedly') REIN, to curb.",
+    "par": 2
   },
   {
     "answer": "IDOL",
@@ -340,7 +353,8 @@
         }
       ]
     },
-    "parse": "Lazy = IDLE, which 'sounds' like IDOL — a pop star."
+    "parse": "Lazy = IDLE, which 'sounds' like IDOL — a pop star.",
+    "par": 2
   },
   {
     "answer": "SAGE",
@@ -362,7 +376,8 @@
         }
       ]
     },
-    "parse": "SAGE: a culinary herb, and a wise old person."
+    "parse": "SAGE: a culinary herb, and a wise old person.",
+    "par": 2
   },
   {
     "answer": "SWAN",
@@ -384,7 +399,8 @@
         }
       ]
     },
-    "parse": "Double definition: to SWAN (drift gracefully) and a SWAN (a bird on the lake)."
+    "parse": "Double definition: to SWAN (drift gracefully) and a SWAN (a bird on the lake).",
+    "par": 3
   },
   {
     "answer": "PORT",
@@ -406,7 +422,8 @@
         }
       ]
     },
-    "parse": "PORT: the left side aboard ship, and a fortified wine."
+    "parse": "PORT: the left side aboard ship, and a fortified wine.",
+    "par": 4
   },
   {
     "answer": "GLEN",
@@ -428,7 +445,8 @@
         }
       ]
     },
-    "parse": "Hidden in eaGLE Nests = GLEN, a Scottish valley."
+    "parse": "Hidden in eaGLE Nests = GLEN, a Scottish valley.",
+    "par": 2
   },
   {
     "answer": "GLOVE",
@@ -450,7 +468,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: a GLOVE fits snugly ('fits like a glove') and is what a boxer wears — while the surface misdirects to boxer shorts."
+    "parse": "Cryptic definition: a GLOVE fits snugly ('fits like a glove') and is what a boxer wears — while the surface misdirects to boxer shorts.",
+    "par": 5
   },
   {
     "answer": "CRANE",
@@ -472,7 +491,8 @@
         }
       ]
     },
-    "parse": "Double definition: to crane (stretch the neck), and a crane (a long-necked wading bird)."
+    "parse": "Double definition: to crane (stretch the neck), and a crane (a long-necked wading bird).",
+    "par": 2
   },
   {
     "answer": "SPINE",
@@ -504,7 +524,8 @@
         }
       ]
     },
-    "parse": "S (son) + PINE (from the surface) = SPINE, backbone — and the spineless son of the surface yearns for some."
+    "parse": "S (son) + PINE (from the surface) = SPINE, backbone — and the spineless son of the surface yearns for some.",
+    "par": 4
   },
   {
     "answer": "TRACK",
@@ -526,7 +547,8 @@
         }
       ]
     },
-    "parse": "Double definition: to track (follow), and a track (a railway line)."
+    "parse": "Double definition: to track (follow), and a track (a railway line).",
+    "par": 2
   },
   {
     "answer": "GRAVE",
@@ -548,7 +570,8 @@
         }
       ]
     },
-    "parse": "Double definition: grave (serious, solemn), and a grave (a burial place for the dead)."
+    "parse": "Double definition: grave (serious, solemn), and a grave (a burial place for the dead).",
+    "par": 2
   },
   {
     "answer": "SHORE",
@@ -570,7 +593,8 @@
         }
       ]
     },
-    "parse": "Double definition: to SHORE (prop up, shore up), and the SHORE (the beach)."
+    "parse": "Double definition: to SHORE (prop up, shore up), and the SHORE (the beach).",
+    "par": 3
   },
   {
     "answer": "BERTH",
@@ -592,7 +616,8 @@
         }
       ]
     },
-    "parse": "Hidden in “numBER THree” = BERTH, my bunk — tucked inside its own hut number."
+    "parse": "Hidden in “numBER THree” = BERTH, my bunk — tucked inside its own hut number.",
+    "par": 3
   },
   {
     "answer": "ROGUE",
@@ -614,7 +639,8 @@
         }
       ]
     },
-    "parse": "(ROUGE)* 'oddly applied' = ROGUE, a rascal."
+    "parse": "(ROUGE)* 'oddly applied' = ROGUE, a rascal.",
+    "par": 2
   },
   {
     "answer": "MAGIC",
@@ -646,7 +672,8 @@
         }
       ]
     },
-    "parse": "GI (soldier) inside MAC (the raincoat) = MA-GI-C; MAGIC, enchanting."
+    "parse": "GI (soldier) inside MAC (the raincoat) = MA-GI-C; MAGIC, enchanting.",
+    "par": 4
   },
   {
     "answer": "NOBLE",
@@ -668,7 +695,8 @@
         }
       ]
     },
-    "parse": "(NOBEL)* 'confused' = NOBLE, dignified — a sly nod from the prize to the peerage."
+    "parse": "(NOBEL)* 'confused' = NOBLE, dignified — a sly nod from the prize to the peerage.",
+    "par": 2
   },
   {
     "answer": "FROST",
@@ -690,7 +718,8 @@
         }
       ]
     },
-    "parse": "Anagram (indicated by 'stormed') of FORTS = FROST; the cold, an icy coating."
+    "parse": "Anagram (indicated by 'stormed') of FORTS = FROST; the cold, an icy coating.",
+    "par": 3
   },
   {
     "answer": "PRIDE",
@@ -712,7 +741,8 @@
         }
       ]
     },
-    "parse": "Double definition: a PRIDE is a group of lions, and PRIDE is one of the seven deadly sins."
+    "parse": "Double definition: a PRIDE is a group of lions, and PRIDE is one of the seven deadly sins.",
+    "par": 4
   },
   {
     "answer": "SCOPE",
@@ -734,7 +764,8 @@
         }
       ]
     },
-    "parse": "'Doctor' (anagram indicator) COPES = SCOPE, room to operate — the doctor is the indicator, not the subject."
+    "parse": "'Doctor' (anagram indicator) COPES = SCOPE, room to operate — the doctor is the indicator, not the subject.",
+    "par": 4
   },
   {
     "answer": "WAGER",
@@ -756,7 +787,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'doWAGER' (indicated by 'held by') = WAGER, a bet."
+    "parse": "Hidden in 'doWAGER' (indicated by 'held by') = WAGER, a bet.",
+    "par": 2
   },
   {
     "answer": "ROAST",
@@ -778,7 +810,8 @@
         }
       ]
     },
-    "parse": "(ROTAS)* 'sorts out' = ROAST, to cook."
+    "parse": "(ROTAS)* 'sorts out' = ROAST, to cook.",
+    "par": 3
   },
   {
     "answer": "CHASM",
@@ -800,7 +833,8 @@
         }
       ]
     },
-    "parse": "Hidden in ditCH A SMall = CHASM; the gulf."
+    "parse": "Hidden in ditCH A SMall = CHASM; the gulf.",
+    "par": 3
   },
   {
     "answer": "STEEL",
@@ -822,7 +856,8 @@
         }
       ]
     },
-    "parse": "Rob = STEAL, which 'they say' sounds like STEEL — nerve, resolve. The capital letter disguises the verb as a man's name."
+    "parse": "Rob = STEAL, which 'they say' sounds like STEEL — nerve, resolve. The capital letter disguises the verb as a man's name.",
+    "par": 4
   },
   {
     "answer": "DROWN",
@@ -854,7 +889,8 @@
         }
       ]
     },
-    "parse": "DR (doctor) + OWN (admit to, as in own up) = DROWN; going under, sinking."
+    "parse": "DR (doctor) + OWN (admit to, as in own up) = DROWN; going under, sinking.",
+    "par": 5
   },
   {
     "answer": "THRONE",
@@ -876,7 +912,8 @@
         }
       ]
     },
-    "parse": "(HORNET)* 'wild' = THRONE, the royal seat — picture the court scattering."
+    "parse": "(HORNET)* 'wild' = THRONE, the royal seat — picture the court scattering.",
+    "par": 2
   },
   {
     "answer": "SQUASH",
@@ -898,7 +935,8 @@
         }
       ]
     },
-    "parse": "Double definition: to SQUASH (crush), and SQUASH (an orange cordial drink)."
+    "parse": "Double definition: to SQUASH (crush), and SQUASH (an orange cordial drink).",
+    "par": 2
   },
   {
     "answer": "TANGLE",
@@ -920,7 +958,8 @@
         }
       ]
     },
-    "parse": "Hidden in \"sulTAN GLEefully\" = TANGLE, the mess."
+    "parse": "Hidden in \"sulTAN GLEefully\" = TANGLE, the mess.",
+    "par": 2
   },
   {
     "answer": "CANTER",
@@ -942,7 +981,8 @@
         }
       ]
     },
-    "parse": "(TRANCE)* 'Broken' = CANTER, a gentle run."
+    "parse": "(TRANCE)* 'Broken' = CANTER, a gentle run.",
+    "par": 2
   },
   {
     "answer": "HERMIT",
@@ -964,7 +1004,8 @@
         }
       ]
     },
-    "parse": "Hidden in HER MITtens = HERMIT, a recluse."
+    "parse": "Hidden in HER MITtens = HERMIT, a recluse.",
+    "par": 2
   },
   {
     "answer": "DETAIL",
@@ -986,7 +1027,8 @@
         }
       ]
     },
-    "parse": "Anagram of DILATE (oddly) = DETAIL; one fine point."
+    "parse": "Anagram of DILATE (oddly) = DETAIL; one fine point.",
+    "par": 3
   },
   {
     "answer": "PARROT",
@@ -1018,7 +1060,8 @@
         }
       ]
     },
-    "parse": "PAR (standard) + ROT (nonsense) = PARROT; a copycat."
+    "parse": "PAR (standard) + ROT (nonsense) = PARROT; a copycat.",
+    "par": 4
   },
   {
     "answer": "MEADOW",
@@ -1040,7 +1083,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'caME A DOWager' = MEADOW; a 'pasture'. 'In' signals the concealment."
+    "parse": "Hidden in 'caME A DOWager' = MEADOW; a 'pasture'. 'In' signals the concealment.",
+    "par": 2
   },
   {
     "answer": "PADDLE",
@@ -1062,7 +1106,8 @@
         }
       ]
     },
-    "parse": "Double definition: to PADDLE is to wade in the shallows, and a PADDLE is a canoeist's oar."
+    "parse": "Double definition: to PADDLE is to wade in the shallows, and a PADDLE is a canoeist's oar.",
+    "par": 2
   },
   {
     "answer": "ORCHID",
@@ -1084,7 +1129,8 @@
         }
       ]
     },
-    "parse": "Hidden in senatOR CHIDed = ORCHID; a flower."
+    "parse": "Hidden in senatOR CHIDed = ORCHID; a flower.",
+    "par": 2
   },
   {
     "answer": "DAMSON",
@@ -1116,7 +1162,8 @@
         }
       ]
     },
-    "parse": "DAM (mother) + SON (boy) = DAMSON; a 'plum'."
+    "parse": "DAM (mother) + SON (boy) = DAMSON; a 'plum'.",
+    "par": 3
   },
   {
     "answer": "HAMLET",
@@ -1138,7 +1185,8 @@
         }
       ]
     },
-    "parse": "Double definition: the Melancholy Dane is Hamlet, Shakespeare's prince of Denmark; a hamlet is a village."
+    "parse": "Double definition: the Melancholy Dane is Hamlet, Shakespeare's prince of Denmark; a hamlet is a village.",
+    "par": 3
   },
   {
     "answer": "GARNET",
@@ -1170,7 +1218,8 @@
         }
       ]
     },
-    "parse": "(ANGER)* 'simmering' before T (time) = GARNET, a red stone."
+    "parse": "(ANGER)* 'simmering' before T (time) = GARNET, a red stone.",
+    "par": 4
   },
   {
     "answer": "PLUNGE",
@@ -1192,7 +1241,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'shar(P LUNGE)': PLUNGE, a dive."
+    "parse": "Hidden in 'shar(P LUNGE)': PLUNGE, a dive.",
+    "par": 2
   },
   {
     "answer": "DRAGON",
@@ -1224,7 +1274,8 @@
         }
       ]
     },
-    "parse": "RAG (tabloid) held inside DON = D(RAG)ON = DRAGON, a monster."
+    "parse": "RAG (tabloid) held inside DON = D(RAG)ON = DRAGON, a monster.",
+    "par": 3
   },
   {
     "answer": "MARGIN",
@@ -1256,7 +1307,8 @@
         }
       ]
     },
-    "parse": "MAR (spoil) + GIN = MARGIN, the profit."
+    "parse": "MAR (spoil) + GIN = MARGIN, the profit.",
+    "par": 3
   },
   {
     "answer": "MORNING",
@@ -1278,7 +1330,8 @@
         }
       ]
     },
-    "parse": "MOURNING (grieving) sounds like MORNING = the early hours."
+    "parse": "MOURNING (grieving) sounds like MORNING = the early hours.",
+    "par": 3
   },
   {
     "answer": "WEATHER",
@@ -1300,7 +1353,8 @@
         }
       ]
     },
-    "parse": "Double definition: to weather is to endure (weather the storm); the weather is the elements."
+    "parse": "Double definition: to weather is to endure (weather the storm); the weather is the elements.",
+    "par": 3
   },
   {
     "answer": "KITCHEN",
@@ -1322,7 +1376,8 @@
         }
       ]
     },
-    "parse": "'Stir' THICKEN (anagram) = KITCHEN, where meals are made."
+    "parse": "'Stir' THICKEN (anagram) = KITCHEN, where meals are made.",
+    "par": 3
   },
   {
     "answer": "GRENADE",
@@ -1344,7 +1399,8 @@
         }
       ]
     },
-    "parse": "(ENRAGED)* = GRENADE, an explosive."
+    "parse": "(ENRAGED)* = GRENADE, an explosive.",
+    "par": 3
   },
   {
     "answer": "CAPTAIN",
@@ -1366,7 +1422,8 @@
         }
       ]
     },
-    "parse": "IN A PACT 'entangled' (anagram) = CAPTAIN, the skipper."
+    "parse": "IN A PACT 'entangled' (anagram) = CAPTAIN, the skipper.",
+    "par": 3
   },
   {
     "answer": "GRANITE",
@@ -1388,7 +1445,8 @@
         }
       ]
     },
-    "parse": "(TEARING)* = GRANITE, a hard rock."
+    "parse": "(TEARING)* = GRANITE, a hard rock.",
+    "par": 4
   },
   {
     "answer": "DESPAIR",
@@ -1410,7 +1468,8 @@
         }
       ]
     },
-    "parse": "(PRAISED)* 'strangely' = DESPAIR, gloom."
+    "parse": "(PRAISED)* 'strangely' = DESPAIR, gloom.",
+    "par": 3
   },
   {
     "answer": "TERRAIN",
@@ -1432,7 +1491,8 @@
         }
       ]
     },
-    "parse": "Hidden in afTER RAINfall = TERRAIN; ground."
+    "parse": "Hidden in afTER RAINfall = TERRAIN; ground.",
+    "par": 3
   },
   {
     "answer": "MANKIND",
@@ -1464,7 +1524,8 @@
         }
       ]
     },
-    "parse": "MAN (fellow) + KIND (gentle) = MANKIND, humanity."
+    "parse": "MAN (fellow) + KIND (gentle) = MANKIND, humanity.",
+    "par": 3
   },
   {
     "answer": "CABINET",
@@ -1486,7 +1547,8 @@
         }
       ]
     },
-    "parse": "Double definition: the cabinet is the body of senior ministers; a cabinet is a cupboard."
+    "parse": "Double definition: the cabinet is the body of senior ministers; a cabinet is a cupboard.",
+    "par": 3
   },
   {
     "answer": "PADDOCK",
@@ -1518,7 +1580,8 @@
         }
       ]
     },
-    "parse": "PAD (quarters) + DOCK (wharf) = PADDOCK, a field."
+    "parse": "PAD (quarters) + DOCK (wharf) = PADDOCK, a field.",
+    "par": 4
   },
   {
     "answer": "STATION",
@@ -1540,7 +1603,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'deva(STATION)': STATION, one's position."
+    "parse": "Hidden in 'deva(STATION)': STATION, one's position.",
+    "par": 4
   },
   {
     "answer": "PRESENT",
@@ -1562,7 +1626,8 @@
         }
       ]
     },
-    "parse": "Double definition: PRESENT = a gift, and PRESENT = those in attendance (here)."
+    "parse": "Double definition: PRESENT = a gift, and PRESENT = those in attendance (here).",
+    "par": 3
   },
   {
     "answer": "RETREAT",
@@ -1584,7 +1649,8 @@
         }
       ]
     },
-    "parse": "Double definition: RETREAT = to withdraw, and RETREAT = a quiet sanctuary."
+    "parse": "Double definition: RETREAT = to withdraw, and RETREAT = a quiet sanctuary.",
+    "par": 3
   },
   {
     "answer": "HUSBAND",
@@ -1606,7 +1672,8 @@
         }
       ]
     },
-    "parse": "Double definition: HUSBAND = a spouse, and to HUSBAND = to conserve resources."
+    "parse": "Double definition: HUSBAND = a spouse, and to HUSBAND = to conserve resources.",
+    "par": 4
   },
   {
     "answer": "TROOPER",
@@ -1638,7 +1705,8 @@
         }
       ]
     },
-    "parse": "TROOP (soldiers) + ER (the Queen, Elizabeth Regina) = TROOPER; a mounted policeman."
+    "parse": "TROOP (soldiers) + ER (the Queen, Elizabeth Regina) = TROOPER; a mounted policeman.",
+    "par": 6
   },
   {
     "answer": "SCRAMBLE",
@@ -1660,7 +1728,8 @@
         }
       ]
     },
-    "parse": "CLAMBERS 'awkwardly' (anagram) = SCRAMBLE, a rush."
+    "parse": "CLAMBERS 'awkwardly' (anagram) = SCRAMBLE, a rush.",
+    "par": 3
   },
   {
     "answer": "RESIGNED",
@@ -1682,7 +1751,8 @@
         }
       ]
     },
-    "parse": "'Upset' DESIGNER (anagram) = RESIGNED, stepped down."
+    "parse": "'Upset' DESIGNER (anagram) = RESIGNED, stepped down.",
+    "par": 3
   },
   {
     "answer": "OVERSEAS",
@@ -1704,7 +1774,8 @@
         }
       ]
     },
-    "parse": "Hidden in 'discOVERSEASonal' = OVERSEAS, abroad."
+    "parse": "Hidden in 'discOVERSEASonal' = OVERSEAS, abroad.",
+    "par": 3
   },
   {
     "answer": "SNAPSHOT",
@@ -1736,7 +1807,8 @@
         }
       ]
     },
-    "parse": "SNAP (break) + SHOT (attempt) = SNAPSHOT, your photo."
+    "parse": "SNAP (break) + SHOT (attempt) = SNAPSHOT, your photo.",
+    "par": 4
   },
   {
     "answer": "CONTRACT",
@@ -1758,7 +1830,8 @@
         }
       ]
     },
-    "parse": "Double definition: a contract is binding; to contract is to shrink."
+    "parse": "Double definition: a contract is binding; to contract is to shrink.",
+    "par": 4
   },
   {
     "answer": "PHEASANT",
@@ -1790,7 +1863,8 @@
         }
       ]
     },
-    "parse": "H (hot) hidden inside PEASANT = P(H)EASANT = PHEASANT, a game bird."
+    "parse": "H (hot) hidden inside PEASANT = P(H)EASANT = PHEASANT, a game bird.",
+    "par": 3
   },
   {
     "answer": "OFFSHORE",
@@ -1822,7 +1896,8 @@
         }
       ]
     },
-    "parse": "OFF (gone off, rotten) + SHORE (beach) = OFFSHORE, out at sea."
+    "parse": "OFF (gone off, rotten) + SHORE (beach) = OFFSHORE, out at sea.",
+    "par": 3
   },
   {
     "answer": "ORCHESTRA",
@@ -1844,7 +1919,8 @@
         }
       ]
     },
-    "parse": "(CART HORSE)* = ORCHESTRA, which plays in the pit."
+    "parse": "(CART HORSE)* = ORCHESTRA, which plays in the pit.",
+    "par": 5
   },
   {
     "answer": "STREAMING",
@@ -1866,7 +1942,8 @@
         }
       ]
     },
-    "parse": "(EMIGRANTS)* 'resettle' = STREAMING, watching online."
+    "parse": "(EMIGRANTS)* 'resettle' = STREAMING, watching online.",
+    "par": 3
   },
   {
     "answer": "CARPENTRY",
@@ -1888,7 +1965,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: a 'chippy' is slang for a carpenter — so the chippy's trade is CARPENTRY (the chip-shop reading is the misdirection)."
+    "parse": "Cryptic definition: a 'chippy' is slang for a carpenter — so the chippy's trade is CARPENTRY (the chip-shop reading is the misdirection).",
+    "par": 6
   },
   {
     "answer": "WHIRLPOOL",
@@ -1910,7 +1988,8 @@
         }
       ]
     },
-    "parse": "Cryptic definition: 'spin cycle' suggests a washing machine, but a whirlpool is a bath whose water spins."
+    "parse": "Cryptic definition: 'spin cycle' suggests a washing machine, but a whirlpool is a bath whose water spins.",
+    "par": 6
   },
   {
     "answer": "MILESTONE",
@@ -1942,7 +2021,8 @@
         }
       ]
     },
-    "parse": "MILE (a distance) + STONE (a marker) = MILESTONE, a significant point."
+    "parse": "MILE (a distance) + STONE (a marker) = MILESTONE, a significant point.",
+    "par": 3
   },
   {
     "answer": "CARTRIDGE",
@@ -1974,7 +2054,8 @@
         }
       ]
     },
-    "parse": "CART + RIDGE = CARTRIDGE; a 'refill' (e.g. for a pen or printer)."
+    "parse": "CART + RIDGE = CARTRIDGE; a 'refill' (e.g. for a pen or printer).",
+    "par": 4
   },
   {
     "answer": "CROCODILE",
@@ -1996,6 +2077,7 @@
         }
       ]
     },
-    "parse": "Double definition: a CROCODILE is a snapping reptile (the '?' flags def by example) and a line of schoolchildren walking in pairs."
+    "parse": "Double definition: a CROCODILE is a snapping reptile (the '?' flags def by example) and a line of schoolchildren walking in pairs.",
+    "par": 5
   }
 ]
