@@ -1,6 +1,6 @@
 // Par for the Daily — the golf-style target of hints + letters a capable
 // improver would spend. Each bank clue carries a rubric-set `par`
-// (docs/clue-style.md §7b; set by scripts/par-baseline.mjs + blind judges +
+// (docs/clue-bible/01-qualities.md (par rubric); set by scripts/par-baseline.mjs + blind judges +
 // scripts/par-apply.mjs). These helpers are the runtime side of that rubric.
 import type { Clue } from '../types';
 

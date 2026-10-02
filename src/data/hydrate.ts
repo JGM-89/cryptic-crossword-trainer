@@ -33,7 +33,7 @@ export interface RawClue {
   parse: string;
   /** Optional overrides for the auto-generated tier 1–3 hint text. */
   hintOverrides?: Partial<Record<1 | 2 | 3, string>>;
-  /** The Daily's rubric-set par (bank clues; docs/clue-style.md §7b). */
+  /** The Daily's rubric-set par (bank clues; docs/clue-bible/01-qualities.md (par rubric)). */
   par?: number;
 }
 

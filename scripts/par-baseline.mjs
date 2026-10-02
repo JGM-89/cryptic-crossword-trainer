@@ -1,4 +1,4 @@
-// Par rubric — STEP 1: the mechanical factors (docs/clue-style.md §7b).
+// Par rubric — STEP 1: the mechanical factors (docs/clue-bible/01-qualities.md (par rubric)).
 //
 //   node scripts/par-baseline.mjs
 //

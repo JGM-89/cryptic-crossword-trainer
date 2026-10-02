@@ -60,8 +60,8 @@ A static Vite + React + TypeScript cryptic-crossword **trainer** (rebranded "Cru
 | Doc | Path | Purpose |
 |---|---|---|
 | **This file** | `PRODUCTIONPLAN.md` | Status + roadmap. The source of truth. |
-| Clue style guide | `docs/clue-style.md` | The clue bar: fairness, §1b surface realism, §1c gentle teaching register. |
-| Clue pipeline runbook | `docs/clue-pipeline.md` | How to author/edit clues (with agents). |
+| **Clue Bible** | `docs/clue-bible/` | THE clue standard: qualities, devices, rules & flags, the calibrated Exam, the Writer method, case law, executable examples. Replaces clue-style.md + clue-pipeline.md (now stubs). |
+| Audit 2026-10-02 | `docs/audit/2026-10-02/` | 7 Claude critics + Astra (ChatGPT); synthesis in 00-synthesis.md. |
 | Bank | `src/data/bank/part-a…i.json` | 366 hand-clued Play words. |
 | Teaching corpus | `src/data/clues.ts` | 44 Stage-A lesson clues. |
 | Compiler | `scripts/generate-puzzles.mjs` | Builds `public/archive.json`. Repetition controls live here. |

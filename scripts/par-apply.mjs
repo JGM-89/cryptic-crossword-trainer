@@ -1,5 +1,5 @@
 // Par rubric — STEP 3: combine the baseline with the blind judges' votes and
-// write `par` onto every bank entry (docs/clue-style.md §7b).
+// write `par` onto every bank entry (docs/clue-bible/01-qualities.md (par rubric)).
 //
 //   node scripts/par-apply.mjs
 //

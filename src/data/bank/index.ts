@@ -24,7 +24,7 @@ export interface BankEntry {
   def: { text: string; position: 'start' | 'end' };
   wordplay: Wordplay;
   parse: string;
-  /** Rubric-set par for the Daily (docs/clue-style.md §7b), 2–6. */
+  /** Rubric-set par for the Daily (docs/clue-bible/01-qualities.md (par rubric)), 2–6. */
   par: number;
   /** Optional clue-specific hint text (tiers 1–3), replacing the generated text. */
   hintOverrides?: Partial<Record<1 | 2 | 3, string>>;

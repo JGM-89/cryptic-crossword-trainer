@@ -1,4 +1,4 @@
-// Every bank clue carries a rubric-set par (docs/clue-style.md §7b). New or
+// Every bank clue carries a rubric-set par (docs/clue-bible/01-qualities.md (par rubric)). New or
 // rewritten clues must get one through the rubric before they ship.
 import { describe, expect, it } from 'vitest';
 import { BANK, BANK_RAW } from './bank/index';
