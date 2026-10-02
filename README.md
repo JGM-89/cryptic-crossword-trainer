@@ -33,17 +33,17 @@ A device advances a stage after a short streak of **unaided** solves; using a hi
 ## Features
 
 - **Learn** — a curriculum of nine devices (hidden → anagram → charade → container → reversal → deletion → homophone → double-definition → cryptic-definition), lessons that unlock in order, and a per-device mastery board.
-- **Play** — an archive of **250 cryptic crosswords** in two tiers: quick **Mini** grids (7×7 & 9×9) and full **Large** 13×13s. Each is a real interlocking grid assembled from a bank of ~415 hand-clued, verified answers spanning every device including **&lit**, **initialism** and **alternation**. Every clue is written to a documented style guide ([docs/clue-style.md](./docs/clue-style.md)) and machine-checked for fairness. Per-clue hints (definition highlight, then clue type), grid autosave, completion tracking, difficulty filters, and a hand-crafted showcase mini.
+- **Play** — an archive of **250 cryptic crosswords** in two tiers: quick **Mini** grids (7×7 & 9×9) and full **Large** 13×13s. Each is a real interlocking grid assembled from a bank of ~415 clued, verified answers spanning every device including **&lit**, **initialism** and **alternation**. Every clue is written to a documented style guide ([docs/clue-style.md](./docs/clue-style.md)) and machine-checked for fairness. Per-clue hints (definition highlight, then clue type), grid autosave, completion tracking, difficulty filters, and a showcase mini.
 - **Clue analyzer** — pick any clue and peel it apart: definition span, device, and the indicator words that give it away.
 - **Reference** — searchable indicator vocabulary and the standard abbreviation "code words".
 
 ### How the archive is built
 
-`scripts/generate-puzzles.mjs` is a build-time crossword compiler. It places answers from the verified bank (`src/data/bank/*.json`) so they cross one another — a real interlocking crossword that is *fillable by construction* because every entry is a hand-clued word. The result is written to `public/archive.json` (fetched lazily at runtime) and guarded by tests that re-validate every clue and check for drift. Regenerate with `node scripts/generate-puzzles.mjs 120`.
+`scripts/generate-puzzles.mjs` is a build-time crossword compiler. It places answers from the verified bank (`src/data/bank/*.json`) so they cross one another — a real interlocking crossword that is *fillable by construction* because every entry is a clued bank word. The result is written to `public/archive.json` (fetched lazily at runtime) and guarded by tests that re-validate every clue and check for drift. Regenerate with `node scripts/generate-puzzles.mjs 120`.
 
 ## The clues
 
-All teaching clues are **originally authored** and machine-checked for fairness by a runtime validator (`src/data/integrity.ts`, exercised in CI):
+All teaching clues are **original** and machine-checked for fairness by a runtime validator (`src/data/integrity.ts`, exercised in CI):
 
 - exactly one contiguous definition at the start or end;
 - wordplay that accounts for **every** letter of the answer;

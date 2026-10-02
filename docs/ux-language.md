@@ -15,3 +15,7 @@ UI copy uses these words verbatim. `src/ux-language.test.ts` enforces the banned
 | The letter-reveal hint | **Show a letter** | "reveal a letter", "letter hint" |
 
 When adding copy, check this table. When a concept is missing, add it here first.
+
+**Authorship (owner decision 2026-10-02):** UI copy never says who writes the clues — no
+"hand-clued", "originally authored", "AI-written". Say clues are *checked* / *verified* for
+fairness. Not hidden, just not a talking point. Enforced by `src/ux-language.test.ts`.

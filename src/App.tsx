@@ -134,7 +134,7 @@ export function App() {
             </span>
             <span className="wm-word">ruci</span>
           </span>{' '}
-          — find the seam. All clues originally authored and verified.{' '}
+          — find the seam. Every clue checked for fairness.{' '}
           <NavLink to="/about">How it works →</NavLink>
         </p>
       </footer>

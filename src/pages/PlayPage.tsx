@@ -35,7 +35,7 @@ export function PlayPage() {
     [meta, completed],
   );
 
-  const featured = PUZZLES[0]; // the hand-crafted showcase mini
+  const featured = PUZZLES[0]; // the showcase mini (Graduation Cryptic)
   const navigate = useNavigate();
 
   // One-click start: a random unsolved puzzle from the current tier + filter.
@@ -50,8 +50,7 @@ export function PlayPage() {
         <h1>Play</h1>
         <p className="lede">
           An archive of cryptic crosswords — quick <strong>Mini</strong> grids and full{' '}
-          <strong>Large</strong> ones. Every grid interlocks real, hand-clued answers, each
-          checked for fairness. Pick one and solve — or let us pick.
+          <strong>Large</strong> ones. Every clue in every grid is checked for fairness. Pick one and solve — or let us pick.
         </p>
         <p>
           <button type="button" className="btn btn-primary" onClick={surpriseMe} disabled={!meta}>
@@ -77,12 +76,12 @@ export function PlayPage() {
       </div>
 
       <section className="featured">
-        <h2>Featured — hand-crafted</h2>
+        <h2>Featured</h2>
         <Link to="/puzzle/daily-001" className="featured-card">
           <div>
             <h3>{featured.title}</h3>
             <p className="muted">
-              A hand-built, fully-checked mini cryptic — every cell crosses two answers.
+              The mini cryptic that rounds off Learn — a good first full puzzle.
             </p>
           </div>
           <span className="featured-go">Solve →</span>

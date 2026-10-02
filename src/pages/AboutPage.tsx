@@ -53,8 +53,7 @@ export function AboutPage() {
 
         <h2>The clues</h2>
         <p>
-          All {CLUES.length} teaching clues here are <strong>originally authored</strong>{' '}
-          and machine-checked for fairness: exactly one definition, wordplay that accounts
+          All {CLUES.length} teaching clues here are original and checked for fairness: exactly one definition, wordplay that accounts
           for every letter, no indirect anagrams, recognised indicators only, and an
           enumeration that matches the answer. The indicator and abbreviation lists are
           compiled from openly published conventions; George Ho’s openly-licensed clue

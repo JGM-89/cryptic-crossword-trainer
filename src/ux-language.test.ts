@@ -12,6 +12,8 @@ const BANNED: { re: RegExp; useInstead: string }[] = [
   { re: /daily clue/i, useInstead: 'the Daily (page title: Daily #N)' },
   { re: /daily cryptic/i, useInstead: 'the Daily (or Graduation Cryptic №1 for the hand-built grid)' },
   { re: /back catalogue|old clues/i, useInstead: 'the Daily archive' },
+  // Owner decision 2026-10-02: copy never says who writes the clues (human or AI).
+  { re: /hand-?(clued|crafted|built|written)|originally authored|written by (a )?(human|ai|machine)|ai[- ](written|generated)/i, useInstead: 'neutral copy — say clues are checked/verified, not who wrote them' },
 ];
 
 function sources(): { file: string; text: string }[] {

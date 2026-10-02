@@ -177,7 +177,7 @@ function HomeBody({
         </div>
         <div className="stat">
           <span className="stat-num">{CLUES.length}+</span>
-          <span className="stat-label">Hand-clued teaching clues</span>
+          <span className="stat-label">Teaching clues</span>
         </div>
       </section>
       )}
