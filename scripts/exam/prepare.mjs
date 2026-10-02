@@ -51,7 +51,7 @@ const ours = [];
 
 for (const e of entries) {
   const iid = id();
-  key[iid] = { kind: 'ours', answer: letters(e.answer), src: e.answer, clueType: e.clueType, label: e.label, pair: e.pair, clue: withEnum(e.clue, e.answer) };
+  key[iid] = { kind: 'ours', answer: letters(e.answer), src: e.answer, clueType: e.clueType, label: e.label, pair: e.pair, corruption: e.corruption, clue: withEnum(e.clue, e.answer) };
   ours.push(iid);
   const g = groups.get(key[iid].answer) ?? [];
   g.push(iid);
@@ -107,7 +107,7 @@ const files = {
 };
 
 // Evidence: definitions the dictionaries don't back, for the auditor.
-const evidence = entries
+const evidence = process.argv.includes('--no-evidence') ? [] : entries
   .filter((e) => !['cryptic-definition', 'lit'].includes(e.clueType) && e.def?.text && !wordnetLink(e.def.text, e.answer))
   .map((e) => ({ answer: letters(e.answer), clue: e.clue, definition: e.def.text, parse: e.parse }));
 writeFileSync(join(OUT, 'evidence.json'), JSON.stringify(evidence, null, 1));

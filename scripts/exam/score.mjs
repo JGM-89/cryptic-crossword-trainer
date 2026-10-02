@@ -106,6 +106,8 @@ const cards = Object.entries(card).map(([iid, c]) => {
     src: c.src,
     label: c.label,
     pair: c.pair,
+    corruption: c.corruption,
+    unfairVotes: c.wit.judged ? c.wit.unfair / c.wit.judged : null,
     solveRate,
     surfaceVsAnchor,
     witVsAnchor,
@@ -156,16 +158,20 @@ if (cards.some((c) => c.label)) {
   const byPair = {};
   for (const c of cards.filter((x) => x.pair)) (byPair[c.pair] ??= {})[c.label] = c;
   const pairsWith = Object.values(byPair).filter((p) => p.good && p.bad);
-  const sep = (f) => pairsWith.filter((p) => f(p.good) !== null && f(p.bad) !== null && f(p.good) > f(p.bad)).length;
+  const sep = (ps, f) => ps.filter((p) => f(p.good) !== null && f(p.bad) !== null && f(p.good) > f(p.bad)).length;
+  const unnatural = pairsWith.filter((p) => p.bad.corruption === 'unnatural');
+  const unfair = pairsWith.filter((p) => p.bad.corruption === 'unfair');
+  const n = (ps, f) => ps.filter(f).length;
   lines.push(
     '',
-    '## Calibration (matched pairs: good vs minimally corrupted)',
+    '## Calibration (matched pairs: original vs minimally corrupted copy)',
     '',
-    `- Pairs: ${pairsWith.length}`,
-    `- Surface prefers the good version: ${sep((c) => c.surfaceVsAll)}/${pairsWith.length}`,
-    `- Wit prefers the good version: ${sep((c) => c.witVsAll)}/${pairsWith.length}`,
-    `- Bad versions with an exam fault (caught): ${pairsWith.filter((p) => p.bad.faults.length).length}/${pairsWith.length}`,
-    `- Good versions with an exam fault (false alarms): ${pairsWith.filter((p) => p.good.faults.length).length}/${pairsWith.length}`,
+    `- Pairs: ${pairsWith.length} (${unnatural.length} unnatural, ${unfair.length} unfair)`,
+    `- **Unnatural copies — surface prefers the original:** ${sep(unnatural, (c) => c.surfaceVsAll)}/${unnatural.length}`,
+    `- **Unfair copies — judged unfair by most wit judges:** ${n(unfair, (p) => (p.bad.unfairVotes ?? 0) > 0.5)}/${unfair.length} (originals judged unfair: ${n(unfair, (p) => (p.good.unfairVotes ?? 0) > 0.5)}/${unfair.length})`,
+    `- Unfair copies — wit prefers the original: ${sep(unfair, (c) => c.witVsAll)}/${unfair.length}`,
+    `- Cold solve rate: originals ${pct(mean(pairsWith.map((p) => p.good.solveRate)))}, corrupted ${pct(mean(pairsWith.map((p) => p.bad.solveRate)))}`,
+    `- Any exam fault on corrupted copies (caught): ${n(pairsWith, (p) => p.bad.faults.length)}/${pairsWith.length}; on originals (false alarms): ${n(pairsWith, (p) => p.good.faults.length)}/${pairsWith.length}`,
   );
 }
 writeFileSync(join(DIR, 'report.md'), lines.join('\n') + '\n');
