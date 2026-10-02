@@ -5,6 +5,7 @@ import { StreakChip } from './components/StreakChip';
 import { ThemeToggle } from './components/ThemeToggle';
 import { HomePage } from './pages/HomePage';
 import { DailyPage } from './pages/DailyPage';
+import { DailyArchivePage } from './pages/DailyArchivePage';
 import { LearnPage } from './pages/LearnPage';
 import { LessonPage } from './pages/LessonPage';
 import { PuzzlePage } from './pages/PuzzlePage';
@@ -112,6 +113,8 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/daily" element={<DailyPage />} />
+          <Route path="/daily/archive" element={<DailyArchivePage />} />
+          <Route path="/daily/:number" element={<DailyPage />} />
           <Route path="/learn" element={<LearnPage />} />
           <Route path="/lesson/:lessonId" element={<LessonPage />} />
           <Route path="/puzzle/:puzzleId" element={<PuzzlePage />} />

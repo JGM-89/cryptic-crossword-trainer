@@ -532,3 +532,61 @@
 /* Beginner escape hatch on the Daily (a real cryptic is not a tutorial). */
 .daily-newcomer { margin-top: var(--space-3); font-size: var(--fs-500); }
 .daily-newcomer a { color: var(--accent-ink); font-family: var(--sans); }
+
+/* ── The Daily: par meter, hint menu, archive ─────────────────────────────── */
+.par-meter { display: flex; gap: 6px; align-items: flex-start; margin: 0 0 var(--space-4); min-height: 2rem; }
+.par-slot { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; }
+.par-dot {
+  width: 0.9rem; height: 0.9rem; border-radius: 3px;
+  border: 1.5px solid var(--line-strong); background: var(--surface);
+}
+.par-dot.spent { background: var(--accent); border-color: var(--accent); }
+.par-dot.over { background: var(--oxblood); border-color: var(--oxblood); }
+.par-mark {
+  font-family: var(--sans); font-size: var(--fs-300); font-weight: 700;
+  font-style: italic; color: var(--ink-soft); line-height: 1;
+}
+.hint-menu {
+  margin-top: var(--space-4); padding: var(--space-3);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: var(--surface-sunken); max-width: 26rem;
+}
+.hint-menu-title {
+  margin: 0 0 var(--space-2); font-family: var(--sans); font-size: var(--fs-300);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint);
+}
+.hint-menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-1); }
+.hint-menu-item {
+  width: 100%; min-height: 2.6rem; padding: 0 var(--space-3);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  font-family: var(--sans); font-size: var(--fs-500); font-weight: 600; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  cursor: pointer; text-align: left;
+}
+.hint-menu-item:hover:not(:disabled) { border-color: var(--accent); }
+.hint-menu-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.hint-menu-item:disabled { opacity: 0.5; cursor: default; text-decoration: line-through; }
+.hint-menu-cost { font-family: var(--mono); font-size: var(--fs-400); color: var(--ink-soft); }
+.daily-hints { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.daily-hints .hint { padding-left: 0.8rem; }
+.daily-explain { margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px dashed var(--line-strong); }
+.daily-explain .ladder-title { font-family: var(--sans); font-size: var(--fs-400); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); margin: 0; }
+.daily-links { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-2); font-family: var(--sans); font-size: var(--fs-500); }
+.daily-date { color: var(--ink-soft); font-family: var(--sans); font-size: var(--fs-500); margin: 0 0 var(--space-2); }
+.daily-archive { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.daily-archive a {
+  display: grid; grid-template-columns: 5.5rem 1fr auto; align-items: center; gap: var(--space-3);
+  min-height: 3rem; padding: var(--space-2) var(--space-4);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  color: var(--ink); text-decoration: none; font-family: var(--sans);
+}
+.daily-archive a:hover { border-color: var(--accent); }
+.daily-archive .num { font-weight: 700; font-family: var(--serif); font-size: var(--fs-700); }
+.daily-archive .date { color: var(--ink-soft); font-size: var(--fs-500); }
+.daily-archive .result { font-size: var(--fs-400); font-weight: 700; color: var(--ink-faint); text-align: right; }
+.daily-archive .result.done { color: var(--good-ink); }
+.daily-archive .result.today { color: var(--accent-ink); }
+@media (max-width: 480px) {
+  .daily-archive a { grid-template-columns: 3.6rem 1fr; }
+  .daily-archive .result { grid-column: 2; text-align: left; }
+}

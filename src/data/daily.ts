@@ -52,3 +52,15 @@ export function dailyByNumber(n: number): { clue: Clue; number: number; date: st
   const clue = clueForNumber(n);
   return clue ? { clue, number: n, date: dateForNumber(n) } : null;
 }
+
+/** "Thu 2 Jul 2026" for a YYYY-MM-DD key (calendar date, no timezone drift). */
+export function formatDateKey(key: string): string {
+  const [y, m, d] = key.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-GB', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}

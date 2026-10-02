@@ -5,7 +5,7 @@ import { DEVICE_DESCRIPTIONS } from '../data/hydrate';
 import type { Scaffolding, SolveOutcome } from '../engine/fading';
 import { track } from '../analytics';
 import { AnswerStrip } from './AnswerStrip';
-import { ClueText, type Highlight } from './ClueText';
+import { ClueText, locate, type Highlight } from './ClueText';
 import { HintLadder } from './HintLadder';
 
 interface Props {
@@ -18,13 +18,6 @@ interface Props {
 }
 
 const lettersOnly = (s: string) => s.toUpperCase().replace(/[^A-Z]/g, '');
-
-/** Locate a phrase in the clue (case-insensitive); null if absent. */
-function locate(clue: string, phrase: string): { start: number; end: number } | null {
-  if (!phrase) return null;
-  const idx = clue.toLowerCase().indexOf(phrase.toLowerCase());
-  return idx === -1 ? null : { start: idx, end: idx + phrase.length };
-}
 
 export function ClueCard({ clue, scaffolding, alreadySolved, onSolved, source = 'learn' }: Props) {
   const target = useMemo(() => lettersOnly(clue.solution), [clue.solution]);

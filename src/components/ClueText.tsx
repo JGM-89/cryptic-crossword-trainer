@@ -5,6 +5,13 @@ export interface Highlight {
   title?: string;
 }
 
+/** Locate a phrase in the clue (case-insensitive); null if absent. */
+export function locate(clue: string, phrase: string): { start: number; end: number } | null {
+  if (!phrase) return null;
+  const idx = clue.toLowerCase().indexOf(phrase.toLowerCase());
+  return idx === -1 ? null : { start: idx, end: idx + phrase.length };
+}
+
 interface Props {
   clue: string;
   /** Non-overlapping spans to highlight (e.g. definition, indicator). */
