@@ -1,0 +1,159 @@
+[
+  {
+    "id": "cd-tea",
+    "verdict": "pass",
+    "why": "Template. A British class and regional joke; the true reading is exact.",
+    "entry": {
+      "answer": "TEA",
+      "clueType": "cryptic-definition",
+      "difficulty": 3,
+      "clue": "What's a drink in London is dinner in Leeds? (3)",
+      "def": {
+        "text": "What's a drink in London is dinner in Leeds?",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "whole-clue: tea = drink (south) and evening meal (north)",
+            "output": "TEA"
+          }
+        ]
+      },
+      "parse": "Cryptic definition — TEA: a drink down south, the evening meal up north.",
+      "par": 4,
+      "pun": {
+        "misleading": "A riddle about a London–Leeds rivalry: what could be a mere drink in one city and a whole dinner in the other?",
+        "true": "TEA means the hot drink everywhere, and in the north of England it also means the evening meal."
+      }
+    }
+  },
+  {
+    "id": "cd-denier",
+    "verdict": "pass",
+    "why": "The idiom flip (\"won't take no for an answer\") misleads; the true reading defines a denier.",
+    "entry": {
+      "answer": "DENIER",
+      "clueType": "cryptic-definition",
+      "difficulty": 3,
+      "clue": "One who won't take yes for an answer? (6)",
+      "def": {
+        "text": "One who won't take yes for an answer?",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "One who won't take yes for an answer",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "pun on the idiom 'won't take no for an answer'",
+            "output": "DENIER"
+          }
+        ]
+      },
+      "parse": "Cryptic definition, flipping the idiom 'won't take no for an answer': a DENIER rejects every affirmation — told 'yes, it's true', he still says no.",
+      "par": 5,
+      "pun": {
+        "misleading": "A twist on the pushy salesman who won't take no for an answer: someone stubbornly refusing to accept agreement.",
+        "true": "A DENIER is one who denies: asked a question, they answer no, never yes."
+      }
+    }
+  },
+  {
+    "id": "cd-cod",
+    "verdict": "pass",
+    "why": "Battered (fish, not victim) and mocked (cod = sham, mock); both senses ride on one sentence.",
+    "entry": {
+      "answer": "COD",
+      "clueType": "cryptic-definition",
+      "difficulty": 3,
+      "clue": "Often battered, sometimes mocked? (3)",
+      "def": {
+        "text": "Often battered, sometimes mocked?",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "battered cod at the chip shop; cod = mock",
+            "output": "COD"
+          }
+        ]
+      },
+      "parse": "Cryptic definition — COD: battered at the chippy, and “cod” means mock.",
+      "par": 5,
+      "pun": {
+        "misleading": "Someone who is often beaten and sometimes ridiculed.",
+        "true": "COD is a fish usually served battered, and \"cod\" also means mock or sham (cod Latin)."
+      }
+    }
+  },
+  {
+    "id": "cd-candle",
+    "verdict": "pass",
+    "why": "Teaching register: one deceptive word (\"wicked\" = having a wick) carries the whole clue.",
+    "entry": {
+      "answer": "CANDLE",
+      "clueType": "cryptic-definition",
+      "difficulty": 3,
+      "par": 4,
+      "clue": "A wicked thing? (6)",
+      "def": {
+        "text": "A wicked thing?",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "wick-ed = having a wick",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "pun on “wicked”",
+            "output": "CANDLE"
+          }
+        ]
+      },
+      "parse": "A CANDLE is literally a “wick-ed” thing — it has a wick. The “?” flags the pun.",
+      "pun": {
+        "misleading": "An evil object.",
+        "true": "Wick-ed: a thing that has a wick, i.e. a CANDLE."
+      }
+    }
+  },
+  {
+    "id": "cd-map",
+    "verdict": "fail",
+    "failsWith": "R-CD-CONTRACT",
+    "why": "Bank clue (CL-030, CL-031) as shipped, with no pun contract. The deeper fault is judgement: delete the \"?\" and it is a plain, loose description (F-QUIZ); no honest `misleading` reading can be written.",
+    "entry": {
+      "answer": "MAP",
+      "clueType": "cryptic-definition",
+      "difficulty": 3,
+      "clue": "It shows you where to get off? (3)",
+      "def": {
+        "text": "It shows you where to get off?",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "whole-clue pun: where to get off the bus — and telling someone where to get off",
+            "output": "MAP"
+          }
+        ]
+      },
+      "parse": "Cryptic definition — a MAP literally shows you where to get off (the bus); the huffy idiom is the misdirection.",
+      "par": 5
+    }
+  }
+]

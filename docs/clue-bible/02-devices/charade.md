@@ -1,10 +1,14 @@
 # Charade (word sum)
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -24,46 +28,33 @@ link words, nothing else.
   swallowing, embracing, around, about, outside" tell the solver to insert, which can spell a
   different word ("Working in church" reads ON in CE = CONE, not ONCE). The surface gate rejects
   them in a charade.
-- **Pieces must be disguised.** A piece printed as itself ("out" for OUT) shows the answer
-  instead of hiding it (R-PRINTED, §5). Never split a compound answer at its natural seam and
-  print both halves.
+- **Pieces should be disguised.** A piece printed as itself ("out" for OUT) shows the answer
+  instead of hiding it (F-PRINTED, §5). That is weak disguise, not unfairness, so it is a flag
+  for the tournament to weigh, never a block (spec revision 2). Never split a compound answer at
+  its natural seam and print both halves.
 - One definition at one end; every word has a job (F-IDLE).
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "FORECAST",
-  "clueType": "charade",
-  "clue": "Front company makes a prediction (8)",
-  "def": { "text": "prediction", "position": "end",
-           "evidence": { "source": "wordnet", "sense": "forecast.n.01: a prediction about how something will develop" } },
-  "wordplay": {
-    "indicator": "",
-    "fodder": "FORE + CAST",
-    "operations": [
-      { "op": "synonym", "input": "Front", "output": "FORE",
-        "evidence": { "source": "wordnet", "sense": "fore.n.01: front part of a vessel or aircraft" } },
-      { "op": "synonym", "input": "company", "output": "CAST",
-        "evidence": { "source": "wordnet", "sense": "cast.n.01: the actors in a play" } },
-      { "op": "concat", "input": "FORE+CAST", "output": "FORECAST" }
-    ]
-  }
-}
-```
+Template: **`charade-forecast`** (`../examples/charade.json`), *Front company makes a prediction
+(8)*: two `synonym` ops (Front → FORE, company → CAST, each with `evidence`), then `concat`
+FORE+CAST → FORECAST; `indicator` "", `fodder` "FORE + CAST".
 
 - `indicator` = `""`, unless a piece is transformed (a reversed or shortened piece): then the
   sub-indicator, verbatim (TENOR "Net **returned** gold").
 - `fodder` = the pieces joined with ` + `.
 - Pieces: `synonym` (with `evidence`), `abbreviate`, `literal`, or a sub-device op (`reverse`,
   `delete`, `anagram`). The **final op is `concat`**.
-- **[validator]** the `concat` pieces, in order, spell the answer; every multi-letter piece is
-  the output of an earlier op or a whole surface word.
+- **[validator]** the `concat` pieces, in order, spell the answer; **every** piece, single
+  letters included, is the output of an earlier op or a whole surface word. (Single letters used
+  to get a free pass: Astra's audit showed *A dog (3)* passing as C+A+T. Closed in `6d41317`;
+  fail example `charade-cat-free-letters`.)
 - **Emit every printed piece as an explicit `literal` op** (`{"op":"literal","input":"ill",
   "output":"ILL"}`). Do not rely on the validator's shortcut that accepts a bare surface word as
-  a `concat` piece: R-PRINTED reads the `literal`/`synonym` ops, so a piece without an op hides a
-  printed piece from the rule. Hiding it is a fairness fault in itself.
-- **[surface gate]** no containment word as glue (`linkMismatchFlags`).
+  a `concat` piece: F-PRINTED reads the `literal`/`synonym` ops, so a piece without an op hides a
+  printed piece from the flag. Hiding it is a fault in itself.
+- **[surface gate]** no containment word as glue (`linkMismatchFlags`; fail example
+  `charade-once-cone`).
 
 ## 3. Order words and link words
 
@@ -118,41 +109,47 @@ Published example (one, attributed): *"Odin's son has a mark on map to denote tr
 
 ## 5. Typical failures
 
-**R-PRINTED, as implemented in `src/data/clue-rules.ts`:** a piece of ≥ 3 letters that appears
+**F-PRINTED, as implemented in `src/data/clue-rules.ts`:** a piece of ≥ 3 letters that appears
 unchanged in the answer and is printed as a whole surface word (a `synonym`/`literal` op whose
-input equals its output). If printed pieces cover **≥ 75%** of the answer's letters, it is
-**R-PRINTED (RULE)**; a smaller share is **F-PRINTED (FLAG)**, which the tournament weighs.
-Writers should treat F-PRINTED as a rewrite reason too.
+input equals its output). It is a **flag at any coverage** (spec revision 2; until then a piece
+covering ≥ 75% of the answer was the rule R-PRINTED). Printing a component is weak disguise, not
+unfairness: published setters do it, especially in easy clues. Writers should still treat
+F-PRINTED as a rewrite reason, and the tournament weighs it. None of the clues in the first two
+rows below is rejected by the machinery; they are judgement examples.
 
 | Failure | Bank example | Rule |
 |---|---|---|
-| Whole or most of the answer printed | OUTLOOK "Once **out, look**…", CARTRIDGE "Push the **cart** up the **ridge**…", REPAID "**Rep** takes **aid**…", CRAVING "Caught **raving**…", OUTLINE "…**out** of **line**?", SPINE "Son will **pine**…", GHOST "Good **host**…", HILL "Husband takes **ill**…" (all R-PRINTED in code today) | **R-PRINTED** |
-| Whole answer printed, but the bank ops hide it from the code | STARLET "The **star let**…", OVERNIGHT "Play **over, night** fell…", CHAMPION "Support the **champ** taking one **on**" (only F-PRINTED today), OFFSHORE "Gone **off** near the **shore**" (not caught: no `literal` ops) | **R-PRINTED** by hand; this is why every printed piece must be a `literal` op (§2) |
+| Whole or most of the answer printed | OUTLOOK "Once **out, look**…", CARTRIDGE "Push the **cart** up the **ridge**…", REPAID "**Rep** takes **aid**…", CRAVING "Caught **raving**…", OUTLINE "…**out** of **line**?", SPINE "Son will **pine**…", GHOST "Good **host**…", HILL "Husband takes **ill**…" (all F-PRINTED in code) | **F-PRINTED** (judgement) |
+| Whole answer printed, but the bank ops hide it from the code | STARLET "The **star let**…", OVERNIGHT "Play **over, night** fell…", CHAMPION "Support the **champ** taking one **on**" (only F-PRINTED today), OFFSHORE "Gone **off** near the **shore**" (not caught: no `literal` ops) | **F-PRINTED** by hand; this is why every printed piece must be a `literal` op (§2) |
 | One piece printed | NEWSPAPER "…on **paper**…", PADDOCK "…by the **dock**…", HEADWAY "Lead the **way**", CHARM "Church **arm**", STARTLED "…to be **led**…", MARGIN "Spoil **gin**…" | **F-PRINTED** (rewrite) |
 | Surface identical to a published clue for the same answer | OPAL "Old friend is a gem" (matches a published Guardian clue) | **R-COPY** (`scripts/clue-flags.mjs`) |
-| Containment word as glue | MUSHROOM "Sentimental mush **fills** the room" ("fills" signals insertion) | surface gate; house |
+| Containment word as glue | ONCE "Working **in** church, formerly" (reads ON in CE = CONE; fail example `charade-once-cone`); MUSHROOM "Sentimental mush **fills** the room" ("fills" signals insertion but is not on the gate's word list, so only F-IDLE flags it) | surface gate; house |
 | Words with no job | CHARITY "**had** … **all** … **doing**"; OVERNIGHT "**fell, so we stayed**"; HARM "**A** hard limb **can do** damage" (the A is unaccounted) | **F-IDLE** |
 | Wrong definition | STEAM "a head of pressure"; WARFARE "endless conflict"; WORKSHEET "the mainsail" (a sheet is a rope) | **F-DEF-EVIDENCE** |
 | Both pieces just restate the definition | MILESTONE "Distance marker shows a significant point" | F-DEF-EVIDENCE (no wordplay) |
 | Weak or non-standard abbreviation | MONARCH "man" → M | `_abbreviations.md` §3 (house) |
 | Direction-dependent order word | "A on B", "A over B" | house rule (§3), R-INDICATOR-DIR family |
 | Present-tense "the Queen" = ER | TENDER "Mind the Queen", TROOPER | house (`_abbreviations.md` §3) |
-| Same split repeated across the bank (STAR-, OVER-, NIGHT-) | STARLET, STARGAZER, STARTLED; OVERBOARD, OVERHEAD, OVERNIGHT | **F-TEMPLATE**; **B-REPEAT** |
+| Same split repeated across the bank (STAR-, OVER-, NIGHT-) | STARLET, STARGAZER, STARTLED; OVERBOARD, OVERHEAD, OVERNIGHT | **F-TEMPLATE**; **B-REPEAT** (batch flag) |
 
 ## 6. Exemplars from our bank
 
 **Best**
 - **FORECAST** — *Front company makes a prediction (8)*. FORE + CAST. Both pieces use their
-  less obvious sense; the surface is a business headline. Audit 4/4.
+  less obvious sense; the surface is a business headline. Audit 4/4. `charade-forecast`.
 - **BREAD** — *Bachelor devoured the dough (5)*. B + READ. "Devoured" for READ and "dough" for
-  money both mislead. Audit 4/4.
+  money both mislead. Audit 4/4. `charade-bread`.
 - **DEVIL** — *Old Nick's daughter is wicked (5)*. D + EVIL, defined by "Old Nick". A clean
-  picture. Audit 4/3.
+  picture. Audit 4/3. `charade-devil`.
 
 **Weak**
 - **OUTLOOK** — *Once out, look at what lies ahead (7)*. OUT and LOOK are printed side by side,
-  so the answer is on display; "Once" is padding. R-PRINTED, F-IDLE. The audit's direction:
-  disguise both halves (*Dismissed, watch the view*: OUT as in cricket, LOOK = watch).
+  so the answer is on display; "Once" is padding. **Judgement example:** it passes the machinery
+  (F-PRINTED and F-IDLE are flags), so it has no executable example; the tournament is what sinks
+  it. The audit's direction: disguise both halves (*Dismissed, watch the view*: OUT as in
+  cricket, LOOK = watch).
+- **CAT** — *A dog (3)*, declared as C + A + T. A synthetic regression from Astra's audit: C and T
+  come from nowhere. Fail example `charade-cat-free-letters`.
 
 ## 7. Cruci-specific notes
 
@@ -164,8 +161,8 @@ Writers should treat F-PRINTED as a rewrite reason too.
 - **Charade plus abbreviation** is the route to difficulty 4 (audit 02 §3.9): one disguised
   synonym piece plus one listed abbreviation, both from the scene.
 - **Teaching register (Stage A).** Two pieces, both everyday synonyms, no abbreviation or one
-  of the most familiar ones, and neither piece printed: *Follow Mother's teaching* (DOG + MA),
-  *Pub profit is a steal* (BAR + GAIN). The audit found CARTON and PIRATE (containers) breaking
+  of the most familiar ones, and neither piece printed: *Follow Mother's teaching* (DOG + MA,
+  `charade-dogma`), *Pub profit is a steal* (BAR + GAIN, `charade-bargain`). The audit found CARTON and PIRATE (containers) breaking
   the "parts disguised" rule; the same rule applies to charades.
 - **Par.** Two or more real operations, or any abbreviation, sets C = 1.
 
@@ -178,4 +175,4 @@ Writers should treat F-PRINTED as a rewrite reason too.
 - D. Hardcastle, PhD thesis (Ximenes' DAINTILY method; thematic association): https://dwhardcastle.wordpress.com/wp-content/uploads/2016/02/hardcastle-phd.pdf
 - Sadallah et al., COLING 2025: https://arxiv.org/abs/2412.09012
 - Audit 02 §2, §2b, §3.3, §3.9; audit 03 §1: `docs/audit/2026-10-02/`
-- Code: `src/data/integrity.ts` (§5c `concat`), `src/data/surface-rules.ts` (`linkMismatchFlags`), `src/data/clue-rules.ts` (R-PRINTED / F-PRINTED)
+- Code: `src/data/integrity.ts` (§5c `concat`), `src/data/surface-rules.ts` (`linkMismatchFlags`), `src/data/clue-rules.ts` (F-PRINTED)

@@ -1,0 +1,215 @@
+[
+  {
+    "id": "dd-piano",
+    "verdict": "pass",
+    "why": "Template (v2 form, one synonym op per half). Both halves are exact senses; \"grand\" first reads as an adjective; the \"?\" is earned.",
+    "entry": {
+      "answer": "PIANO",
+      "clueType": "double-definition",
+      "difficulty": 4,
+      "par": 4,
+      "clue": "Quietly grand? (5)",
+      "def": {
+        "text": "Quietly",
+        "position": "start",
+        "evidence": {
+          "source": "wiktionary",
+          "sense": "piano (adverb, music): softly, quietly"
+        }
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "Quietly / grand",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Quietly",
+            "output": "PIANO",
+            "evidence": {
+              "source": "wiktionary",
+              "sense": "piano (adverb, music): softly, quietly"
+            }
+          },
+          {
+            "op": "synonym",
+            "input": "grand",
+            "output": "PIANO",
+            "evidence": {
+              "source": "wordnet",
+              "sense": "grand piano: a piano with the strings on a horizontal harp-shaped frame (hyponym, flagged by '?')"
+            }
+          }
+        ]
+      },
+      "parse": "Double definition: PIANO = quietly (the musical marking), and a grand is a PIANO."
+    }
+  },
+  {
+    "id": "dd-second",
+    "verdict": "pass",
+    "why": "Senses from different worlds: to second = to back; a second = a flawed article.",
+    "entry": {
+      "answer": "SECOND",
+      "clueType": "double-definition",
+      "difficulty": 3,
+      "clue": "Back the flawed article (6)",
+      "def": {
+        "text": "Back",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "Back / the flawed article",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "two definitions",
+            "output": "SECOND"
+          }
+        ]
+      },
+      "parse": "Double definition: SECOND, to back or support a motion; and a second, a flawed article sold cheap.",
+      "par": 4
+    }
+  },
+  {
+    "id": "dd-earnest",
+    "verdict": "pass",
+    "why": "A mood, then a deposit: earnest money is money down.",
+    "entry": {
+      "answer": "EARNEST",
+      "clueType": "double-definition",
+      "difficulty": 4,
+      "clue": "Serious money down? (7)",
+      "def": {
+        "text": "Serious",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "Serious / money down",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "two definitions",
+            "output": "EARNEST"
+          }
+        ]
+      },
+      "parse": "Double definition: EARNEST means serious; an earnest is also money down — a deposit paid to seal a deal (earnest money).",
+      "par": 4
+    }
+  },
+  {
+    "id": "dd-sole",
+    "verdict": "pass",
+    "why": "Two abutting definitions, no glue.",
+    "entry": {
+      "answer": "SOLE",
+      "clueType": "double-definition",
+      "difficulty": 2,
+      "clue": "Only the underside of a shoe (4)",
+      "def": {
+        "text": "Only",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "Only / underside of a shoe",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "two definitions",
+            "output": "SOLE"
+          }
+        ]
+      },
+      "parse": "Double definition: sole meaning only, and the sole on the underside of a shoe.",
+      "par": 3
+    }
+  },
+  {
+    "id": "dd-crocodile",
+    "verdict": "pass",
+    "why": "Familiar senses, own wording, British flavour (a crocodile of schoolchildren).",
+    "entry": {
+      "answer": "CROCODILE",
+      "clueType": "double-definition",
+      "difficulty": 3,
+      "clue": "Snapper, or schoolchildren two by two? (9)",
+      "def": {
+        "text": "Snapper",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "Snapper / schoolchildren two by two",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "two definitions",
+            "output": "CROCODILE"
+          }
+        ]
+      },
+      "parse": "Double definition: a CROCODILE is a snapping reptile (the '?' flags def by example) and a line of schoolchildren walking in pairs.",
+      "par": 5
+    }
+  },
+  {
+    "id": "dd-fair",
+    "verdict": "pass",
+    "why": "Teaching register: two everyday senses, abutting, no link.",
+    "entry": {
+      "answer": "FAIR",
+      "clueType": "double-definition",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Just a carnival (4)",
+      "def": {
+        "text": "Just",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "FAIR = just / carnival",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "two definitions",
+            "output": "FAIR"
+          }
+        ]
+      },
+      "parse": "FAIR = “just” and FAIR = “a carnival”."
+    }
+  },
+  {
+    "id": "dd-stern",
+    "verdict": "pass",
+    "why": "Teaching register: \"part of a ship\" is the second definition, not glue.",
+    "entry": {
+      "answer": "STERN",
+      "clueType": "double-definition",
+      "difficulty": 3,
+      "par": 3,
+      "clue": "Severe part of a ship (5)",
+      "def": {
+        "text": "Severe",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "STERN = severe / ship’s rear",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "two definitions",
+            "output": "STERN"
+          }
+        ]
+      },
+      "parse": "STERN = “severe” and STERN = “rear part of a ship”."
+    }
+  }
+]

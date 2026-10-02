@@ -1,0 +1,157 @@
+[
+  {
+    "id": "deletion-oven",
+    "verdict": "pass",
+    "why": "Template. The indicator is an idiom the surface needs (\"lost its head over\"); COVEN is printed.",
+    "entry": {
+      "answer": "OVEN",
+      "clueType": "deletion",
+      "difficulty": 3,
+      "par": 3,
+      "clue": "The coven lost its head over the cooker (4)",
+      "def": {
+        "text": "the cooker",
+        "position": "end",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "oven.n.01: kitchen appliance used for baking or roasting"
+        }
+      },
+      "wordplay": {
+        "indicator": "lost its head",
+        "fodder": "coven",
+        "operations": [
+          {
+            "op": "delete",
+            "input": "COVEN − C",
+            "output": "OVEN"
+          }
+        ]
+      },
+      "parse": "COVEN with its head (first letter) removed = OVEN; “lost its head over” also reads as got carried away — the cooker."
+    }
+  },
+  {
+    "id": "deletion-star",
+    "verdict": "pass",
+    "why": "A plain, real sentence; STARE minus its last letter (\"Endless\").",
+    "entry": {
+      "answer": "STAR",
+      "clueType": "deletion",
+      "difficulty": 2,
+      "par": 2,
+      "clue": "Endless stare at a celebrity (4)",
+      "def": {
+        "text": "a celebrity",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "Endless",
+        "fodder": "STARE",
+        "operations": [
+          {
+            "op": "delete",
+            "input": "STARE − E",
+            "output": "STAR"
+          }
+        ]
+      },
+      "parse": "STARE without its last letter (“endless”) = STAR, a celebrity."
+    }
+  },
+  {
+    "id": "deletion-tar",
+    "verdict": "pass",
+    "why": "Synonym then precise deletion is allowed (CL-047): celebrity = STAR, beheaded = minus S. The construction is fair; the surface narrates the mechanic (\"Beheaded … is\"), so copy the construction, not the sentence.",
+    "entry": {
+      "answer": "TAR",
+      "clueType": "deletion",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Beheaded celebrity is sailor (3)",
+      "def": {
+        "text": "sailor",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "Beheaded",
+        "fodder": "STAR",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "celebrity",
+            "output": "STAR",
+            "evidence": {
+              "source": "wordnet",
+              "sense": "star.n.04: a performer who receives prominent billing"
+            }
+          },
+          {
+            "op": "delete",
+            "input": "STAR − S",
+            "output": "TAR"
+          }
+        ]
+      },
+      "parse": "STAR (celebrity) beheaded = TAR, a sailor."
+    }
+  },
+  {
+    "id": "deletion-wonder",
+    "verdict": "fail",
+    "failsWith": "R-ANSWER-IN-CLUE",
+    "why": "Bank clue (CL-014, CL-037): the longer word \"wonders\" is a plain inflection of the answer, so the answer is printed.",
+    "entry": {
+      "answer": "WONDER",
+      "clueType": "deletion",
+      "difficulty": 3,
+      "clue": "She wonders endlessly, lost in awe (6)",
+      "def": {
+        "text": "awe",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "endlessly",
+        "fodder": "wonders",
+        "operations": [
+          {
+            "op": "delete",
+            "input": "WONDERS − S",
+            "output": "WONDER"
+          }
+        ]
+      },
+      "parse": "WONDERS with its last letter dropped ('endlessly') = WONDER, awe.",
+      "par": 2
+    }
+  },
+  {
+    "id": "deletion-cat-scattered",
+    "verdict": "fail",
+    "failsWith": "not a deletion of one contiguous part",
+    "why": "Regression (Astra audit loophole 2, closed in 6d41317): \"endlessly\" removes the last letter, not R and S from the middle and end; a deletion must remove one specified part.",
+    "entry": {
+      "answer": "CAT",
+      "clueType": "deletion",
+      "difficulty": 1,
+      "par": 2,
+      "clue": "Carts endlessly provide a pet (3)",
+      "def": {
+        "text": "pet",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "endlessly",
+        "fodder": "carts",
+        "operations": [
+          {
+            "op": "delete",
+            "input": "CARTS − RS",
+            "output": "CAT"
+          }
+        ]
+      },
+      "parse": "Synthetic: CARTS minus R and S, which \"endlessly\" does not say."
+    }
+  }
+]

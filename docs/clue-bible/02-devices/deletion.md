@@ -1,10 +1,14 @@
 # Deletion (subtraction)
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -20,11 +24,19 @@ words, nothing else.
   not any interior letter.
 - If a named letter goes ("loveless" = without O), the letter's cue must be a listed
   abbreviation (`_abbreviations.md`).
-- **House rule (validator): a `deletion` clue's longer word must be printed in the clue.** The
-  validator rejects "indirect deletion" (finding a synonym, then shortening it), by the same
-  logic as the indirect-anagram rule. This is **stricter than broadsheet practice**, where
-  deleting from a synonym is routine (see the published example in §4). See §7 for how to
-  write a shortened synonym inside a charade or container instead.
+- **The longer word is printed, or it is a true synonym of a clue word.** Synonym then precise
+  deletion is a standard broadsheet construction and is **allowed** (spec revision 2, `6d41317`,
+  case law CL-047): *Beheaded celebrity is sailor* = STAR (celebrity) minus S = TAR
+  (`deletion-tar`). It is not like an indirect anagram: removing the first letter is a tightly
+  specified operation, so the solver has one checkable step after finding the synonym. Write the
+  synonym as a `synonym` op (with `evidence`) before the `delete` op. The old house rule that
+  banned this (CL-016) is superseded.
+- **One specified part goes, nothing else.** The validator accepts the head, the tail, both
+  ends, or one contiguous run (the heart, a named letter or abbreviation). Scattered letters are
+  not a deletion any indicator describes: *Carts endlessly provide a pet* (CARTS minus R and S =
+  CAT) fails (`deletion-cat-scattered`, a loophole from Astra's audit, closed in `6d41317`).
+  The code checks that one contiguous part goes; that it is the part **the indicator names** is
+  checked by hand and in the cold solve.
 - The longer word must be a **different word** from the answer, not a plain inflection of
   it: WONDERS → WONDER prints the answer (R-ANSWER-IN-CLUE checks the answer plus -s, -es,
   -d, -ed, -ing). A derived word is fine: LEARNER minus ER = LEARN is published usage, which is
@@ -33,27 +45,20 @@ words, nothing else.
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "OVEN",
-  "clueType": "deletion",
-  "clue": "The coven lost its head over the cooker (4)",
-  "def": { "text": "the cooker", "position": "end",
-           "evidence": { "source": "wordnet", "sense": "oven.n.01: kitchen appliance used for baking or roasting" } },
-  "wordplay": {
-    "indicator": "lost its head",
-    "fodder": "coven",
-    "operations": [ { "op": "delete", "input": "COVEN − C", "output": "OVEN" } ]
-  }
-}
-```
+Template (printed longer word): **`deletion-oven`** (`../examples/deletion.json`), *The coven
+lost its head over the cooker (4)*: `indicator` "lost its head", `fodder` "coven", one op
+`delete` "COVEN − C" → OVEN.
 
-- `fodder` = the longer word as printed.
+Template (synonym first): **`deletion-tar`**, *Beheaded celebrity is sailor (3)*: `synonym`
+celebrity → STAR (with `evidence`), then `delete` "STAR − S" → TAR; `fodder` "STAR".
+
+- `fodder` = the longer word: as printed, or (synonym first) the synonym's letters.
 - `operations[0].input` = `"FODDER − X"`: the full word, a minus sign (U+2212; en dash or hyphen
   also parse), the removed letter(s). `src/data/bank/index.ts` takes the part before the minus
   as the fodder if `fodder` is empty.
-- **[validator]** the answer is a strictly shorter subsequence of the fodder, **and** the fodder's
-  letters occur in the clue.
+- **[validator]** the answer is the fodder with **one contiguous part** removed (head, tail, a
+  run) or with both ends trimmed, **and** the fodder's letters occur in the clue or are the
+  output of a `synonym`/`abbreviate` op whose input is in the clue.
 - **[clue-rules]** R-ANSWER-IN-CLUE catches the answer plus -s/-es/-d/-ed/-ing as a
   surface word.
 - Named-letter deletion: add an `abbreviate` op for the cue first
@@ -97,25 +102,26 @@ head, opener, tail, end, conclusion, half, middle, centre*.
    at a celebrity* is a plausible sentence about fame.
 3. **Avoid the "beheaded X" treadmill.** A run of "beheaded", "headless", "endless" clues is
    formulaic (`docs/clue-style.md` §5, kept as a house rule). Vary which end, and vary the
-   family. B-REPEAT fails a batch that uses the same indicator more than twice.
+   family. B-REPEAT flags a batch that uses the same indicator more than twice.
 4. **Never print the answer.** If the only longer word is an inflection of the answer
    (WONDERS), change device.
 
 Published example (one, attributed): *"First of autumn leaves turning putrid (7)"*, ROTTING,
 Henry Hook, cited by David Astle ([Fond clues](https://davidastle.com/da-blog/fond-clues)):
-ROTATING ("turning") with A ("first of autumn") leaving. It is a model broadsheet deletion, and
-it is exactly the indirect form the Cruci validator rejects for `clueType: "deletion"`.
+ROTATING ("turning") with A ("first of autumn") leaving. It is a model broadsheet deletion of
+exactly the synonym-first form that is now allowed (CL-047).
 
 ## 5. Typical failures
 
 | Failure | Example | Rule |
 |---|---|---|
-| The longer word is an inflection of the answer | WONDER "She **wonders** endlessly, lost in awe" (the bank's only deletion) | **R-ANSWER-IN-CLUE** |
+| The longer word is an inflection of the answer | WONDER "She **wonders** endlessly, lost in awe" (the bank's only deletion; `deletion-wonder`) | **R-ANSWER-IN-CLUE** |
 | Words with no job | WONDER "**She** … **lost** in awe" | **F-IDLE** |
-| Indirect deletion (synonym first) as `clueType: "deletion"` | "Beheaded celebrity is sailor" (STAR − S = TAR; the old style-guide example: it fails the current validator because "star" is not printed) | validator (house rule) |
+| Scattered letters removed (no indicator describes them) | "Carts endlessly provide a pet" (CARTS − R, S = CAT; `deletion-cat-scattered`) | validator |
+| Synonym first, but the synonym is loose | — (the deletion is fine; the synonym needs `evidence`) | **F-DEF-EVIDENCE** |
 | Indicator does not say which letter goes ("loses a letter", "shortened" for a middle letter) | — | soundness (`01-qualities.md` §1) |
 | Deletion indicator read into the definition | WARFARE "endless conflict" | house (§3) |
-| Formulaic run | several "beheaded X" in one batch | **B-REPEAT**; **F-TEMPLATE** |
+| Formulaic run | several "beheaded X" in one batch | **B-REPEAT** (batch flag); **F-TEMPLATE** |
 | Article left unaccounted next to fodder | "A ranger loses his head…" (could a solver count the A?) | **F-IDLE** (judge by hand; the HARM case in `charade.md`) |
 
 ## 6. Exemplars
@@ -125,12 +131,20 @@ teaching corpus (`src/data/clues.ts`), which we also own.
 
 **Best**
 - **OVEN** (teaching) — *The coven lost its head over the cooker (4)*. COVEN − C. The indicator
-  is an idiom the surface needs. Audit 4/4.
+  is an idiom the surface needs. Audit 4/4. `deletion-oven`.
 - **STAR** (teaching) — *Endless stare at a celebrity (4)*. STARE − E. A plain, real sentence.
+  `deletion-star`.
+
+**Construction example**
+- **TAR** — *Beheaded celebrity is sailor (3)*. STAR (celebrity) − S. The old style guide's
+  example, wrongly rejected by the validator until `6d41317`. The construction is the lesson;
+  the surface narrates the mechanic ("Beheaded … is", teaching register rule 4), so do not copy
+  the sentence. `deletion-tar`.
 
 **Weak**
 - **WONDER** (bank) — *She wonders endlessly, lost in awe (6)*. The answer is printed
-  ("wonders"), and "She" and "lost" do nothing. R-ANSWER-IN-CLUE, F-IDLE. The audit proposed a
+  ("wonders"), and "She" and "lost" do nothing. R-ANSWER-IN-CLUE (fail example
+  `deletion-wonder`), F-IDLE. The audit proposed a
   charade instead (WON + DER) and a new deletion elsewhere (DELIVER: DELI + VER(y), a charade
   with a shortened piece).
 
@@ -140,12 +154,10 @@ teaching corpus (`src/data/clues.ts`), which we also own.
   02 §3.1). The audit's target is about 8 per 100 new clues.
 - **Shortened synonyms inside other devices.** Within a `charade` or `container`, a piece may
   be a synonym that is then shortened: a `synonym` op (with `evidence`), then a `delete` op
-  whose output is the piece, then the `concat`/`insert`. The validator's literal-fodder check
-  applies only to `clueType: "deletion"`, so this is the supported way to write the standard
-  broadsheet construction (e.g. DELI + VER(y) for DELIVER, with "very, nearly"). The deletion
-  indicator must sit next to the word it shortens.
-- **Open issue for case law:** whether whole-clue indirect deletion (ROTTING-style) should be
-  allowed. Until the owner decides, it is not.
+  whose output is the piece, then the `concat`/`insert` (e.g. DELI + VER(y) for DELIVER, with
+  "very, nearly"). The deletion indicator must sit next to the word it shortens.
+- **Whole-clue synonym deletion is allowed** (ROTTING, TAR). This was an open issue; the owner's
+  fairness instruction and Astra's audit settled it (CL-044, CL-047).
 - **Teaching register (Stage A).** One letter from one end, a common longer word that is a
   different word from the answer, and an indicator that is an idiom ("lost its head",
   "endless"). Never narrate ("Hedge, beheaded, is a border" is the old fault, §1c).
@@ -158,4 +170,4 @@ teaching corpus (`src/data/clues.ts`), which we also own.
 - D. Sutherland, *Spotting indicator words* (Dummies): https://www.dummies.com/article/home-auto-hobbies/games/puzzles/crosswords/spotting-indicator-words-when-solving-cryptic-crosswords-175680/
 - D. Astle, *Fond clues*: https://davidastle.com/da-blog/fond-clues
 - Audit 02 §2, §2b #25, #30, §3.1, §5: `docs/audit/2026-10-02/02-clue-sample.md`
-- Code: `src/data/integrity.ts` (case `deletion`: subsequence + literal fodder), `src/data/clue-rules.ts` (R-ANSWER-IN-CLUE), `src/data/bank/index.ts` (`deriveFodder`)
+- Code: `src/data/integrity.ts` (case `deletion`: one contiguous part + fodder printed or from a synonym op), `src/data/clue-rules.ts` (R-ANSWER-IN-CLUE), `src/data/bank/index.ts` (`deriveFodder`)

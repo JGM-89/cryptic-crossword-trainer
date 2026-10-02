@@ -1,0 +1,266 @@
+[
+  {
+    "id": "hidden-knee",
+    "verdict": "pass",
+    "why": "Template. The carrier spans a word boundary (drun|K NEE|ds); \"Some\" is a standard indicator; one pub scene with a pun on \"joint\".",
+    "entry": {
+      "answer": "KNEE",
+      "clueType": "hidden",
+      "difficulty": 2,
+      "clue": "Some drunk needs a joint (4)",
+      "def": {
+        "text": "joint",
+        "position": "end",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "knee.n.01: hinge joint in the human leg"
+        }
+      },
+      "wordplay": {
+        "indicator": "Some",
+        "fodder": "drunk needs",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "drun<K NEE>ds",
+            "output": "KNEE"
+          }
+        ]
+      },
+      "parse": "Hidden in 'druNK NEEds' = KNEE; a 'joint'.",
+      "par": 4
+    }
+  },
+  {
+    "id": "hidden-market",
+    "verdict": "pass",
+    "why": "Oblique definition (\"fair\" reads as an adjective) and a carrier that is a natural phrase (\"Denmark, etc.\"); \"etc.\" does real work.",
+    "entry": {
+      "answer": "MARKET",
+      "clueType": "hidden",
+      "difficulty": 3,
+      "clue": "A fair part of Denmark, etc. (6)",
+      "def": {
+        "text": "fair",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "part of",
+        "fodder": "Denmark, etc.",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "den<MARK ET>c",
+            "output": "MARKET"
+          }
+        ]
+      },
+      "parse": "Hidden in 'denMARK ETc' = MARKET, a fair; the surface reads 'a sizeable part of Denmark'.",
+      "par": 4
+    }
+  },
+  {
+    "id": "hidden-stealing",
+    "verdict": "pass",
+    "why": "A real place as the carrier (weST EALING); the \"?\" is earned by the joke about the district.",
+    "entry": {
+      "answer": "STEALING",
+      "clueType": "hidden",
+      "difficulty": 2,
+      "clue": "Thieving in West Ealing? (8)",
+      "def": {
+        "text": "Thieving",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "in",
+        "fodder": "West Ealing",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "We<ST EALING>",
+            "output": "STEALING"
+          }
+        ]
+      },
+      "parse": "Hidden in 'weST EALING' = STEALING; thieving. Surface: a local-paper headline about crime in the London suburb.",
+      "par": 4
+    }
+  },
+  {
+    "id": "hidden-chasm",
+    "verdict": "pass",
+    "why": "A vivid single scene (ditCH A SMall). Passes the gate but raises the flag F-IDLE on \"dinghy\": a GOOD scene, not a model of economy.",
+    "entry": {
+      "answer": "CHASM",
+      "clueType": "hidden",
+      "difficulty": 3,
+      "clue": "They had to ditch a small dinghy in the gulf (5)",
+      "def": {
+        "text": "the gulf",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "in",
+        "fodder": "ditch a small",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "dit<CH A SM>all",
+            "output": "CHASM"
+          }
+        ]
+      },
+      "parse": "Hidden in ditCH A SMall = CHASM; the gulf.",
+      "par": 3
+    }
+  },
+  {
+    "id": "hidden-undermined",
+    "verdict": "pass",
+    "why": "The corrected old style-guide example: the carrier must include \"Found\" (foUND ERMINE Deer). The old guide gave the fodder as \"ermine deer\" (see hidden-undermined-old).",
+    "entry": {
+      "answer": "UNDERMINED",
+      "clueType": "hidden",
+      "difficulty": 3,
+      "par": 4,
+      "clue": "Found ermine deer hides damaged (10)",
+      "def": {
+        "text": "damaged",
+        "position": "end",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "undermine.v.01: destroy property or hinder normal operations (past participle: damaged, weakened)"
+        }
+      },
+      "wordplay": {
+        "indicator": "hides",
+        "fodder": "Found ermine deer",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "fo<UND ERMINE D>eer",
+            "output": "UNDERMINED"
+          }
+        ]
+      },
+      "parse": "Hidden in 'foUND ERMINE Deer' ('hides') = UNDERMINED, damaged."
+    }
+  },
+  {
+    "id": "hidden-undermined-old",
+    "verdict": "fail",
+    "failsWith": "hidden answer is not a contiguous substring of the fodder",
+    "why": "Regression: the old style guide declared fodder \"ermine deer\", which does not contain UNDERMINED (the U, N, D come from \"Found\").",
+    "entry": {
+      "answer": "UNDERMINED",
+      "clueType": "hidden",
+      "difficulty": 3,
+      "par": 4,
+      "clue": "Found ermine deer hides damaged (10)",
+      "def": {
+        "text": "damaged",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "hides",
+        "fodder": "ermine deer",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "fo<UND ERMINE D>eer",
+            "output": "UNDERMINED"
+          }
+        ]
+      },
+      "parse": "As printed in docs/clue-style.md: fodder \"ermine deer\"."
+    }
+  },
+  {
+    "id": "hidden-cob",
+    "verdict": "fail",
+    "failsWith": "R-HIDDEN-IND",
+    "why": "Bank clue (CL-007): \"past\" means going by, not inside; no published setter uses it as a hidden indicator and it is in no standard family.",
+    "entry": {
+      "answer": "COB",
+      "clueType": "hidden",
+      "difficulty": 2,
+      "clue": "Swan gliding past disco bar (3)",
+      "def": {
+        "text": "Swan",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "past",
+        "fodder": "disco bar",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "dis<CO B>ar",
+            "output": "COB"
+          }
+        ]
+      },
+      "parse": "Hidden in 'disCO Bar' = COB; a male swan.",
+      "par": 4
+    }
+  },
+  {
+    "id": "hidden-nest",
+    "verdict": "fail",
+    "failsWith": "R-HIDDEN-IND",
+    "why": "Bank clue: a hidden with no indicator at all; nothing tells the solver to look inside \"keenest\".",
+    "entry": {
+      "answer": "NEST",
+      "clueType": "hidden",
+      "difficulty": 2,
+      "clue": "The keenest birds build a home (4)",
+      "def": {
+        "text": "a home",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "keenest",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "kee<NEST>",
+            "output": "NEST"
+          }
+        ]
+      },
+      "parse": "Hidden in 'keeNEST' = NEST, a home for birds.",
+      "par": 2
+    }
+  },
+  {
+    "id": "hidden-cat-absent-carrier",
+    "verdict": "fail",
+    "failsWith": "hidden carrier \\(fodder\\) is not in the clue",
+    "why": "Regression (Astra audit loophole 1, closed in 6d41317): the declared carrier \"cattle\" is not in the clue, so the letters come from nowhere.",
+    "entry": {
+      "answer": "CAT",
+      "clueType": "hidden",
+      "difficulty": 1,
+      "par": 2,
+      "clue": "Pet in fog (3)",
+      "def": {
+        "text": "Pet",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "in",
+        "fodder": "cattle",
+        "operations": [
+          {
+            "op": "hidden",
+            "input": "<CAT>tle",
+            "output": "CAT"
+          }
+        ]
+      },
+      "parse": "Synthetic: CAT \"hidden\" in a word that is not printed."
+    }
+  }
+]

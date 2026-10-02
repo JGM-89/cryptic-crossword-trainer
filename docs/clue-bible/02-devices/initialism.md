@@ -1,10 +1,14 @@
 # Initialism (acrostic, initial letters)
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -28,20 +32,14 @@ issue for case law. For a single first letter inside another device, use a first
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "APE",
-  "clueType": "initialism",
-  "clue": "Initially amiable person eats primate (3)",
-  "def": { "text": "primate", "position": "end",
-           "evidence": { "source": "wordnet", "sense": "ape.n.01: any of various primates with short tails or no tail at all (answer is a hyponym of the definition: no flag needed)" } },
-  "wordplay": {
-    "indicator": "Initially",
-    "fodder": "amiable person eats",
-    "operations": [ { "op": "initials", "input": "Amiable Person Eats", "output": "APE" } ]
-  }
-}
-```
+There is no executable `initialism` example yet (the bank has no acrostic). The op shape is the
+one in **`lit-mend`** (`../examples/lit.json`), *Initially make every nick disappear? (4)*:
+`indicator` "Initially", `fodder` "make every nick disappear", one op `initials` "Make Every
+Nick Disappear" → MEND. Filed as `initialism`, the same entry would carry a normal end-of-clue
+definition instead of the whole clue, and the validator would also check the initials.
+
+The old style guide's own template, APE *Initially amiable person eats primate (3)*, is
+mechanically sound but a weak clue (§6), so it is kept in prose only.
 
 - `fodder` = exactly the run of words, as printed, and nothing else (no indicator, no link).
 - `operations[0].input` = the same words with the initials capitalised.
@@ -97,7 +95,7 @@ Guardian Quick Cryptic 119
 | Indicator ambiguous with alternation ("oddly") | — | house (§3) |
 | Definition by example unflagged | — | **F-DEF-EVIDENCE** |
 | Surface is a word list | "Initially apple pear egg…" | surface gate (`gateFlags`); `01-qualities.md` |
-| Same indicator more than twice in a batch | "Initially" ×3 | **B-REPEAT** |
+| Same indicator more than twice in a batch | "Initially" ×3 | **B-REPEAT** (batch flag) |
 
 ## 6. Exemplars
 
@@ -106,12 +104,13 @@ The bank has **no** clue filed as `initialism` (audit 02 §3.1: 0 acrostics in 4
 **Best**
 - **MEND** (bank, filed as `lit`) — *Initially make every nick disappear? (4)*. First letters
   of "Make Every Nick Disappear"; the whole clue also describes mending. Audit 4/4. See
-  `lit.md`.
+  `lit.md`; executable example `lit-mend`.
 
 **Weak**
 - **APE** (the old style guide's own exemplar, `docs/clue-style.md` §5) — *Initially amiable
   person eats primate (3)*. Mechanically sound, but the scene is grim and odd (taste test), and
-  "primate" is a generic definition. Do not copy it.
+  "primate" is a generic definition. Do not copy it. **Judgement example:** the machinery
+  passes it, so it has no executable example.
 
 ## 7. Cruci-specific notes
 

@@ -1,0 +1,310 @@
+[
+  {
+    "id": "charade-forecast",
+    "verdict": "pass",
+    "why": "Template. Both pieces use their less obvious sense (FORE = front, CAST = company of actors); the surface is a business headline.",
+    "entry": {
+      "answer": "FORECAST",
+      "clueType": "charade",
+      "difficulty": 3,
+      "clue": "Front company makes a prediction (8)",
+      "def": {
+        "text": "prediction",
+        "position": "end",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "forecast.n.01: a prediction about how something will develop"
+        }
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "FORE + CAST",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Front",
+            "output": "FORE",
+            "evidence": {
+              "source": "wordnet",
+              "sense": "fore.n.01: front part of a vessel or aircraft"
+            }
+          },
+          {
+            "op": "synonym",
+            "input": "company",
+            "output": "CAST",
+            "evidence": {
+              "source": "wordnet",
+              "sense": "cast.n.01: the actors in a play"
+            }
+          },
+          {
+            "op": "concat",
+            "input": "FORE+CAST",
+            "output": "FORECAST"
+          }
+        ]
+      },
+      "parse": "FORE (front) + CAST (company — of actors) = FORECAST; a prediction. Surface: a shell company issuing a forecast.",
+      "par": 4
+    }
+  },
+  {
+    "id": "charade-bread",
+    "verdict": "pass",
+    "why": "Two deceptive senses from one scene: \"devoured\" = READ (a book), \"dough\" = money; B is a listed abbreviation.",
+    "entry": {
+      "answer": "BREAD",
+      "clueType": "charade",
+      "difficulty": 3,
+      "clue": "Bachelor devoured the dough (5)",
+      "def": {
+        "text": "the dough",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "B + READ",
+        "operations": [
+          {
+            "op": "abbreviate",
+            "input": "Bachelor",
+            "output": "B"
+          },
+          {
+            "op": "synonym",
+            "input": "devoured",
+            "output": "READ"
+          },
+          {
+            "op": "concat",
+            "input": "B+READ",
+            "output": "BREAD"
+          }
+        ]
+      },
+      "parse": "B (bachelor) + READ (devoured, as a book is devoured) = BREAD; dough, money.",
+      "par": 5
+    }
+  },
+  {
+    "id": "charade-devil",
+    "verdict": "pass",
+    "why": "D + EVIL with \"Old Nick\" as the definition; a clean, picturable sentence.",
+    "entry": {
+      "answer": "DEVIL",
+      "clueType": "charade",
+      "difficulty": 3,
+      "clue": "Old Nick's daughter is wicked (5)",
+      "def": {
+        "text": "Old Nick",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "D+EVIL",
+        "operations": [
+          {
+            "op": "abbreviate",
+            "input": "daughter",
+            "output": "D"
+          },
+          {
+            "op": "synonym",
+            "input": "wicked",
+            "output": "EVIL"
+          },
+          {
+            "op": "concat",
+            "input": "D+EVIL",
+            "output": "DEVIL"
+          }
+        ]
+      },
+      "parse": "D (daughter) + EVIL (wicked) = DEVIL, otherwise known as Old Nick.",
+      "par": 5
+    }
+  },
+  {
+    "id": "charade-dogma",
+    "verdict": "pass",
+    "why": "Teaching register: both pieces hidden in ordinary words (follow = DOG, Mother = MA); \"teaching\" is woven in.",
+    "entry": {
+      "answer": "DOGMA",
+      "clueType": "charade",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Follow Mother’s teaching (5)",
+      "def": {
+        "text": "teaching",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "DOG + MA",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Follow",
+            "output": "DOG"
+          },
+          {
+            "op": "synonym",
+            "input": "Mother",
+            "output": "MA"
+          },
+          {
+            "op": "concat",
+            "input": "DOG+MA",
+            "output": "DOGMA"
+          }
+        ]
+      },
+      "parse": "DOG (follow) + MA (mother) = DOGMA; the teaching you follow."
+    }
+  },
+  {
+    "id": "charade-bargain",
+    "verdict": "pass",
+    "why": "Teaching register: terse and natural; neither piece printed.",
+    "entry": {
+      "answer": "BARGAIN",
+      "clueType": "charade",
+      "difficulty": 2,
+      "par": 4,
+      "clue": "Pub profit is a steal (7)",
+      "def": {
+        "text": "a steal",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "BAR + GAIN",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Pub",
+            "output": "BAR"
+          },
+          {
+            "op": "synonym",
+            "input": "profit",
+            "output": "GAIN"
+          },
+          {
+            "op": "concat",
+            "input": "BAR+GAIN",
+            "output": "BARGAIN"
+          }
+        ]
+      },
+      "parse": "BAR (pub) + GAIN (profit) = BARGAIN, a steal."
+    }
+  },
+  {
+    "id": "charade-hogwash",
+    "verdict": "pass",
+    "why": "Teaching register: playful, disguised, one device.",
+    "entry": {
+      "answer": "HOGWASH",
+      "clueType": "charade",
+      "difficulty": 2,
+      "par": 4,
+      "clue": "A pig’s laundry? Nonsense! (7)",
+      "def": {
+        "text": "Nonsense",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "HOG + WASH",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "pig",
+            "output": "HOG"
+          },
+          {
+            "op": "synonym",
+            "input": "laundry",
+            "output": "WASH"
+          },
+          {
+            "op": "concat",
+            "input": "HOG+WASH",
+            "output": "HOGWASH"
+          }
+        ]
+      },
+      "parse": "HOG (pig) + WASH (laundry) = HOGWASH, meaning nonsense."
+    }
+  },
+  {
+    "id": "charade-cat-free-letters",
+    "verdict": "fail",
+    "failsWith": "concat piece \"C\" is not produced by any prior operation",
+    "why": "Regression (Astra audit loophole 3, closed in 6d41317): single letters used to get a free pass in a concat; C and T come from no operation and no surface word.",
+    "entry": {
+      "answer": "CAT",
+      "clueType": "charade",
+      "difficulty": 1,
+      "par": 2,
+      "clue": "A dog (3)",
+      "def": {
+        "text": "dog",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "C + A + T",
+        "operations": [
+          {
+            "op": "concat",
+            "input": "C+A+T",
+            "output": "CAT"
+          }
+        ]
+      },
+      "parse": "Synthetic: C + A + T with nothing supplying C or T."
+    }
+  },
+  {
+    "id": "charade-once-cone",
+    "verdict": "fail",
+    "failsWith": "containment word \"in\"",
+    "why": "Regression (CL-012): \"in\" glues a charade but tells the solver to insert, which spells CONE (ON in CE). The surface gate rejects containment glue in a charade.",
+    "entry": {
+      "answer": "ONCE",
+      "clueType": "charade",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Working in church, formerly (4)",
+      "def": {
+        "text": "formerly",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "",
+        "fodder": "ON + CE",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Working",
+            "output": "ON"
+          },
+          {
+            "op": "abbreviate",
+            "input": "church",
+            "output": "CE"
+          },
+          {
+            "op": "concat",
+            "input": "ON+CE",
+            "output": "ONCE"
+          }
+        ]
+      },
+      "parse": "ON (working) + CE (church) = ONCE, formerly. As shipped before 14ea5dd."
+    }
+  }
+]

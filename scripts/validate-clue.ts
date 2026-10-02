@@ -56,7 +56,7 @@ function main() {
   // Batch rules apply when validating a set of new clues together.
   const batch = entries.length > 1 ? batchHits(entries.map(ruleEntryFromBank)) : [];
   process.stdout.write(JSON.stringify({ clues: report, batch }, null, 2) + '\n');
-  const anyBad = report.some((r) => !r.ok) || batch.some((h) => h.rule === 'B-DEVICE-MIX');
+  const anyBad = report.some((r) => !r.ok); // batch rules are flags (spec revision 2)
   process.exit(anyBad ? 1 : 0);
 }
 

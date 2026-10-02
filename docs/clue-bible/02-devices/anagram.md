@@ -1,10 +1,14 @@
 # Anagram
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -35,20 +39,9 @@ written. Open issue for case law.
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "ASCERTAIN",
-  "clueType": "anagram",
-  "clue": "Shake a canister to find out (9)",
-  "def": { "text": "find out", "position": "end",
-           "evidence": { "source": "wordnet", "sense": "ascertain.v.01: establish after a calculation, investigation, experiment, survey, or study" } },
-  "wordplay": {
-    "indicator": "Shake",
-    "fodder": "a canister",
-    "operations": [ { "op": "anagram", "input": "A CANISTER", "output": "ASCERTAIN" } ]
-  }
-}
-```
+Template: **`anagram-ascertain`** (`../examples/anagram.json`), *Shake a canister to find out
+(9)*: `indicator` "Shake", `fodder` "a canister", one op `anagram` A CANISTER → ASCERTAIN, with
+`def.evidence` on "find out".
 
 - `fodder` = the fodder words exactly as printed, in order, and nothing else.
 - **[validator]** sorted letters of `fodder` = sorted letters of `answer`; the fodder's letters
@@ -99,7 +92,7 @@ an ambiguity); if you use one, the cold solvers must still find a single answer.
 1. **The fodder should read as a natural phrase.** ASCERTAIN's "a canister", CAPTAIN's "in a
    pact", DANGEROUS's "Nose guard": each is an ordinary word group. Invented fodder ("An artsy
    moon", "cartel ore") is the commonest anagram fault in the bank (audit 02 #21, #60); the
-   exam's DECOY and surface tournament catch it. `scripts/raw-material.mjs` lists fodder
+   exam's NATURALNESS step and surface tournament catch it. `scripts/raw-material.mjs` lists fodder
    phrases found in real sentences.
 2. **Pick the indicator that fits the fodder's scene.** Alberich: anagram clues are noteworthy
    "if the anagram indicator has some surface connection with the anagram fodder"
@@ -126,40 +119,45 @@ Three words, a place name as fodder, an indicator that reads as political commen
 
 | Failure | Bank example | Rule |
 |---|---|---|
-| Fodder letters do not match (spare or missing letter) | GENERAL "A wildly **enlarged** map guided the commander" (ENLARGE + D) | **R-FODDER-LETTERS** |
+| Fodder letters do not match (spare or missing letter) | GENERAL "A wildly **enlarged** map guided the commander" (ENLARGE + D) | **R-FODDER-LETTERS** (`anagram-general`) |
 | A dragged-in noun or a word with no job | DETAIL "**Pupils** dilate oddly…", ORGAN "**Members** groan, upset…", BLASTED "Damned **horse** stabled awkwardly", GRENADE "Enraged **soldier** hurls…", CEDAR "Raced wildly **round** the tree" | **F-IDLE** |
 | Narrative padding | ALERT "Later, **he was** drunk **but still** sharp"; CATER "A smashed crate **won't stop us**…"; SPEAR "…**can still serve as**…" | **F-IDLE** |
-| Invented fodder | ASTRONOMY "An artsy moon"; CORRELATE "Refined cartel ore" | exam: DECOY / TOURNAMENT-SURFACE (and F-IDLE for "An") |
+| Invented fodder | ASTRONOMY "An artsy moon"; CORRELATE "Refined cartel ore" | exam: NATURALNESS / TOURNAMENT-SURFACE (and F-IDLE for "An") |
 | Indirect anagram (synonym first) | — (none shipped; the validator blocks it) | R-FODDER-LETTERS |
 | "When X [indicator], they…" template | NEUTRAL, RESIDENT, STREAMING, ELEPHANT | **F-TEMPLATE**; **B-REPEAT** |
 | Indicator doubles as an alternation indicator | GOAT "A toga, **oddly** draped…"; DETAIL "dilate **oddly**" | house guidance (§3) |
 | Definition wrong part of speech | OCEAN "Canoe wrecked **at sea**" | **F-DEF-EVIDENCE** |
 | Chestnut fodder | TREASON/senator, LISTEN/silent, ASTRONOMERS/no more stars, CONVERSATION/conservation, ORCHESTRA/cart horse | **F-CHESTNUT** |
 | US spelling in fodder or surface | BARGAINING "an **aging** brain" | **F-AMERICANISM** |
-| Same indicator more than twice in a batch | "surprisingly", "wildly" | **B-REPEAT** |
+| Same indicator more than twice in a batch | "surprisingly", "wildly" | **B-REPEAT** (batch flag) |
 
 ## 6. Exemplars from our bank
 
 **Best**
 - **ASCERTAIN** — *Shake a canister to find out (9)*. (A CANISTER)*. The fodder is a natural
-  phrase and the indicator belongs to it. Audit 5/4.
+  phrase and the indicator belongs to it. Audit 5/4. `anagram-ascertain`.
 - **CAPTAIN** — *Skipper entangled in a pact (7)*. (IN A PACT)*. The fodder is cleverly found
-  inside an idiom. Audit 4/4.
+  inside an idiom. Audit 4/4. `anagram-captain`.
 - **DREAM** — *Armed rebels nurse an ambition (5)*. (ARMED)*. "Rebels" serves as the indicator.
   Audit 5/4. **Data fix needed:** the bank's `def.text` is "an ambition", which leaves "nurse"
   idle (F-IDLE). The definition is the verb phrase "nurse an ambition" = DREAM; set
-  `def.text` to that.
+  `def.text` to that. The example `anagram-dream` already has the corrected definition.
 
 **Weak**
 - **GENERAL** — *A wildly enlarged map guided the commander (7)*. The fodder has a spare D, and
   "map guided" does nothing. It passed the old validator only because "enlarge" is a substring
-  of "enlarged". R-FODDER-LETTERS, F-IDLE.
+  of "enlarged". R-FODDER-LETTERS (fail example `anagram-general`), F-IDLE.
+
+More executable anagram examples: `anagram-granite` (*Tearing up hard rock*),
+`anagram-underrated` (*Ad returned in error is not appreciated*), `anagram-design` (*Badly signed
+drawing*), `anagram-paint` (*A spilt pinta ruins the fresh coat*; passes, but F-IDLE flags
+"ruins"), `anagram-mean` (teaching, *Cruel name changed*).
 
 ## 7. Cruci-specific notes
 
 - **Share of the mix.** Anagrams are 26% of the bank, at the top of a broadsheet's 15–25%.
   Alberich suggests no more than four full anagrams in a 28–30 clue puzzle. Keep anagrams to
-  **at most 1 in 4** of any new batch.
+  **at most 1 in 4** of any new batch (a target, not a machine rule).
 - **Models over-produce anagrams.** Solving studies found LLMs over-predict anagram and hidden
   clue types (Sadallah et al., COLING 2025); expect the same bias when writing. The Writer
   method's device-locked setters exist to counter it.

@@ -1,10 +1,14 @@
 # Cryptic definition
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -23,12 +27,14 @@ Alberich's tests: the true reading must be an accurate definition; the surface m
 only one answer may fit; and it should be fresh, not a reworked classic
 ([Cryptic definitions](https://xteddy.org/mirror/alberichcrosswords/www.alberichcrosswords.com/pages/crypdef.html)).
 
-- **No false trail, no CD.** If the first reading already leads to the answer, the clue is a
-  quiz question with a "?" (F-QUIZ). Test: delete the "?". If what is left is a straight
-  definition or a trivia question, it is not a cryptic definition.
+- **No false trail, no CD.** If the first reading is already the true reading (nothing is read
+  in another sense), the clue is a quiz question with a "?" (F-QUIZ). Test: delete the "?".
+  If what is left is a straight definition or a trivia question, it is not a cryptic
+  definition.
 - **One answer.** A CD has no wordplay to confirm it, so it must not fit another word of the
-  same length (Alberich's "Rising alarm?" fits ACROPHOBIA and AEROPHOBIA). The cold solvers must
-  agree (`unique`).
+  same length (Alberich's "Rising alarm?" fits ACROPHOBIA and AEROPHOBIA). The exam names the
+  competing answers and tests each against the true reading; each must fail it (COLD-SOLVE,
+  spec revision 2). Solving a CD quickly is **not** a defect; having no false trail is.
 - **The "?"** is usual, not compulsory (Wikipedia: "often (though by no means always)"). It
   signals that the definition is playful. It does not make a plain definition cryptic.
 - **Not for obscure answers.** A solver with no wordplay cannot reach a rare word (Alberich's
@@ -36,30 +42,18 @@ only one answer may fit; and it should be fresh, not a reworked classic
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "TEA",
-  "clueType": "cryptic-definition",
-  "clue": "What's a drink in London is dinner in Leeds? (3)",
-  "def": { "text": "What's a drink in London is dinner in Leeds?", "position": "start" },
-  "wordplay": {
-    "indicator": "",
-    "fodder": "",
-    "operations": [ { "op": "literal", "input": "whole-clue: tea = drink (south) and evening meal (north)", "output": "TEA" } ]
-  },
-  "pun": {
-    "misleading": "A riddle about a London–Leeds rivalry: what could be a mere drink in one city and a whole dinner in the other?",
-    "true": "TEA means the hot drink everywhere, and in the north of England it also means the evening meal."
-  }
-}
-```
+Template: **`cd-tea`** (`../examples/cryptic-definition.json`), *What's a drink in London is
+dinner in Leeds? (3)*: `def.text` = the whole clue without `(n)`, `position: "start"`; one
+`literal` op summarising the pun; and the mandatory `pun`:
+`misleading` "A riddle about a London–Leeds rivalry…", `true` "TEA means the hot drink
+everywhere, and in the north of England it also means the evening meal."
 
 - `def.text` = the **whole clue** without the `(n)`, `"?"` included; `position: "start"`.
 - `indicator` = `""`. `fodder` = `""` or a one-line pun summary.
 - One `literal` op whose `input` summarises the pun and whose `output` is the answer.
 - **`pun` is mandatory** (R-CD-CONTRACT): both `misleading` and `true` non-empty, and they must
   describe different readings (`_json-contract.md` §6). `clue-rules.ts` fails a CD without
-  them.
+  them (fail example `cd-map`).
 - No `def.evidence`: the `pun.true` line does that job. If the true reading relies on a
   particular dictionary sense (WICKED = having a wick), name the sense in `pun.true`.
 - `parse` (hint rung 4) must state both readings: "Surface suggests X; really Y" (audit 02
@@ -103,32 +97,38 @@ literal kerb
 | Plain definition plus "?" (no false trail) | MAP "It shows you where to get off?"; ARC "The path of everything you throw?"; SAND "What runs out in an hourglass?"; ENTERTAINMENT "What keeps an audience coming back for more?" | **F-QUIZ** |
 | Trivia, not a pun | MAPLE "Tree whose leaf Canada flies?"; OAK "Royal tree on a thousand pub signs?" | **F-QUIZ** |
 | A stereotype description | GRANDMOTHERLY "Inclined to spoil you rotten between rounds of knitting?" | **F-QUIZ** |
-| No `pun` (or `misleading` = `true`) | every CD in the bank today (the field is new) | **R-CD-CONTRACT** |
-| The pun fits a different answer better | CALENDAR (teaching) "Where you're bound to find a date?" ("bound" fits DIARY, a bound book) | exam COLD-SOLVE (`unique`); pun.true check |
-| More than one answer fits | "Rising alarm?" (ACROPHOBIA / AEROPHOBIA) | exam COLD-SOLVE (`unique`) |
+| No `pun` (or `misleading` = `true`) | every CD in the bank today (the field is new); MAP as shipped (`cd-map`) | **R-CD-CONTRACT** |
+| The pun fits a different answer better | CALENDAR (teaching) "Where you're bound to find a date?" ("bound" fits DIARY, a bound book) | exam COLD-SOLVE (named competing answer); pun.true check |
+| More than one answer fits | "Rising alarm?" (ACROPHOBIA / AEROPHOBIA) | exam COLD-SOLVE (named competing answer) |
 | Chestnut | THAMES, CARPET, ANAESTHETIC, VILE-style classics | **F-CHESTNUT** |
-| Opening template | "What…?" ×10, "It…?" ×10 | **F-TEMPLATE**; **B-REPEAT** |
+| Opening template | "What…?" ×10, "It…?" ×10 | **F-TEMPLATE**; **B-REPEAT** (batch flag) |
 | American context | IVY "Green climber clinging to college walls?" (Ivy League) | **F-AMERICANISM** |
-| Too many CDs in a batch | part j: 33 of 49 clues are 3–5-letter CDs | **B-DEVICE-MIX** |
+| Too many CDs in a batch | part j: 33 of 49 clues are 3–5-letter CDs | **B-DEVICE-MIX** (batch flag) |
 
 ## 6. Exemplars from our bank
 
 **Best**
 - **TEA** — *What's a drink in London is dinner in Leeds? (3)*. British class and regional joke;
-  the true reading is exact. Audit 5/4, top tier.
+  the true reading is exact. Audit 5/4, top tier. `cd-tea`.
 - **DENIER** — *One who won't take yes for an answer? (6)*. The idiom flip misleads; the true
-  reading defines a denier. Audit 4/4, top tier.
+  reading defines a denier. Audit 4/4, top tier. `cd-denier`.
 - **CANDLE** (teaching) — *A wicked thing? (6)*. One deceptive word ("wicked" = having a wick)
-  carries the whole clue.
+  carries the whole clue. `cd-candle`.
 
 **Weak**
 - **MAP** — *It shows you where to get off? (3)*. Delete the "?" and it is a plain (and loose)
-  description of a map; there is no second reading. F-QUIZ; and today R-CD-CONTRACT (no `pun`).
-  The audit's direction: change device (a double definition, *Plan an atlas page*).
+  description of a map; there is no second reading. F-QUIZ; and, as shipped, R-CD-CONTRACT (no
+  `pun`), which is what the fail example `cd-map` checks. The contract is the mechanical part;
+  the real fault is judgement: no honest `misleading` reading exists. The audit's direction:
+  change device (a double definition, *Plan an atlas page*).
+
+Also executable: `cd-cod` (*Often battered, sometimes mocked?*, the penny-drop exemplar in
+`01-qualities.md` §7).
 
 ## 7. Cruci-specific notes
 
-- **Capped.** CD + DD at most **25% of any batch** (B-DEVICE-MIX, in code). CDs are 12.5% of the
+- **Capped (a target, flagged).** CD + DD at most **25% of a batch** (B-DEVICE-MIX, a batch flag
+  under spec revision 2; see `double-definition.md` §7). CDs are 12.5% of the
   bank against 0–7% in a broadsheet; the audit's target is about 6%. Add new CDs only as
   rewrites of existing CDs or where the answer suits nothing else (long -LY adverbs, abstract
   nouns: `.claude/skills/clue-writer/SKILL.md` step 2).
@@ -136,8 +136,10 @@ literal kerb
   hidden, a charade or a reversal.
 - **Write `pun.misleading` before the clue.** If you cannot describe a false scene in one
   sentence, you do not have a CD.
-- **The exam targets CDs.** The cold solver records `literalGiveaway`; a CD solved from the
-  literal reading is F-QUIZ (`04-exam.md`).
+- **The exam targets CDs.** F-QUIZ is raised when the clue has no false trail: the judges'
+  paraphrase of the literal scene already *is* the true reading, or no `pun.misleading` distinct
+  from `pun.true` can be written. A solver getting the answer quickly is not evidence either
+  way (spec revision 2; `04-exam.md`).
 - **Teaching register (Stage A).** One deceptive word, a well-known answer, a "?": CANDLE,
   THAMES, ANAESTHETIC are the canon and belong in teaching, not the bank. The hint ladder says
   "Re-read it looking for the pun" (`src/data/hydrate.ts`), so the pun must be findable.

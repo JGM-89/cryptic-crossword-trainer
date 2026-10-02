@@ -1,10 +1,14 @@
 # Homophone
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -25,31 +29,19 @@ The answer **sounds like** another word (the *sound-alike*), which the clue defi
   ([Tune in to homophones](https://www.crosswordunclued.com/2008/10/homophones.html)).
   **Cruci clues have no crossing letters** in the Daily, so the clue alone must settle it:
   put the indicator directly beside the sound-alike's clue, at the opposite end from the
-  definition, and check the cold solvers agree on one answer (exam COLD-SOLVE, `unique`).
+  definition. The exam's uniqueness check names the competing answer (RUDE for RUED) and tests
+  it against both the definition and the wordplay; it must fail one of them (COLD-SOLVE,
+  spec revision 2).
 - The sound-alike may be printed (HYMN "from **him**, reportedly") or clued by a synonym
   ("Olympic prize" → MEDAL).
 - One definition at one end; every word has a job (F-IDLE).
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "MEDDLE",
-  "clueType": "homophone",
-  "clue": "Interfere with an Olympic prize, by the sound of it (6)",
-  "def": { "text": "Interfere", "position": "start",
-           "evidence": { "source": "wordnet", "sense": "meddle.v.01: intrude in other people's affairs or business; interfere unwantedly" } },
-  "wordplay": {
-    "indicator": "by the sound of it",
-    "fodder": "medal",
-    "operations": [
-      { "op": "synonym", "input": "Olympic prize", "output": "MEDAL",
-        "evidence": { "source": "wordnet", "sense": "medal.n.01: an award for winning a championship" } },
-      { "op": "homophone", "input": "MEDAL", "output": "MEDDLE" }
-    ]
-  }
-}
-```
+Template: **`homophone-meddle`** (`../examples/homophone.json`), *Interfere with an Olympic prize,
+by the sound of it (6)*: `synonym` Olympic prize → MEDAL, then `homophone` MEDAL → MEDDLE;
+`indicator` "by the sound of it", `fodder` "medal", `def.evidence` on "Interfere". (The shipped
+bank entry has no `synonym` op; new entries add it, with `evidence`.)
 
 - `fodder` = the sound-alike word (the hint says *the answer sounds like "medal"*).
 - Add a `synonym` op (with `evidence`) when the sound-alike is not printed. The final op is
@@ -106,7 +98,7 @@ a commenters' favourite.
 |---|---|---|
 | Clue splits into two half-clues; a word does nothing | WHERE "**You** wear it, we hear — but in what place?" | **F-IDLE**; surface (`01-qualities.md`) |
 | Padding verb | KNIGHT (teaching) "We hear a dark period **awaits** the chess piece" | **F-IDLE** |
-| Indicator equally near both ends (which side is heard?) | "Expressed regret orally for having been impolite" (RUED/RUDE) | exam COLD-SOLVE (`unique`); house (§3) |
+| Indicator equally near both ends (which side is heard?) | "Expressed regret orally for having been impolite" (RUED/RUDE) | exam COLD-SOLVE (named competing answer); house (§3) |
 | The pair does not sound alike in RP | *cuff/cough* | semantic auditor (soundness) |
 | Sound-alike clued by a synonym with no `synonym` op / evidence | PLEASE "Suit appeals…" (fodder "pleas", no op) | **F-DEF-EVIDENCE** |
 | "Say" used as the indicator | — | house (§3) |
@@ -116,29 +108,30 @@ a commenters' favourite.
 
 **Best**
 - **MEDDLE** — *Interfere with an Olympic prize, by the sound of it (6)*. MEDAL sounds like
-  MEDDLE. A natural sentence; the indicator closes it. Audit 4/3.
+  MEDDLE. A natural sentence; the indicator closes it. Audit 4/3. `homophone-meddle`.
 - **STEEL** — *Rob, they say, shows nerve (5)*. STEAL sounds like STEEL; "Rob" reads as a name
-  (the capitalisation trick), and "nerve" is an oblique definition.
+  (the capitalisation trick), and "nerve" is an oblique definition. `homophone-steel`.
 - **REIN** — *Curb the king's rule, reportedly (4)*. REIGN sounds like REIN; the political
-  surface holds together.
+  surface holds together. `homophone-rein`.
 
 **Weak**
 - **WHERE** — *You wear it, we hear — but in what place? (5)*. Two half-clues glued by a dash,
   "You" does nothing (F-IDLE), and the surface is not a sentence anyone would say. The audit's
-  direction: change device (*Wife present? In what place?*, W + HERE).
+  direction: change device (*Wife present? In what place?*, W + HERE). **Judgement example:**
+  every fault is a flag or a judge's call, so the machinery passes it.
 
 ## 7. Cruci-specific notes
 
 - **Under-supplied.** Homophones are 2% of the bank (9 clues) against 11% in the Guardian
   Quick Cryptics the audit fetched (audit 02 §3.1). They suit learners. Add them.
 - **No crossers.** The Daily shows one clue alone, so a homophone must be unambiguous without
-  checking letters. This is the device most exposed to that; the cold solve must return one
-  answer.
+  checking letters. This is the device most exposed to that; any named competing answer must
+  fail the definition or the wordplay.
 - **British English.** Cruci is a British puzzle. Use RP; never rely on an American merger
   (MARY/MARRY/MERRY) or a regional one.
 - **Teaching register (Stage A).** A common pair, the plainest indicators (*we hear*,
   *reportedly*), the indicator at the end or the start, never mid-sentence padding: *Perfume
-  sent over, we hear* (SCENT).
+  sent over, we hear* (SCENT, `homophone-scent`).
 - **Par.** A printed sound-alike is one operation (C = 0); a synonym then a homophone is two
   (C = 1).
 

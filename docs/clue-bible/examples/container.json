@@ -1,0 +1,319 @@
+[
+  {
+    "id": "container-broaden",
+    "verdict": "pass",
+    "why": "Template. ROAD (way) inside BEN (mountain); both pieces disguised; the surface is a road-building sentence.",
+    "entry": {
+      "answer": "BROADEN",
+      "clueType": "container",
+      "difficulty": 3,
+      "clue": "Widen the way through the mountain (7)",
+      "def": {
+        "text": "Widen",
+        "position": "start",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "broaden.v.01: make broader"
+        }
+      },
+      "wordplay": {
+        "indicator": "through",
+        "fodder": "ROAD in BEN",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "way",
+            "output": "ROAD",
+            "evidence": {
+              "source": "wordnet",
+              "sense": "road.n.01: an open way for travel"
+            }
+          },
+          {
+            "op": "synonym",
+            "input": "mountain",
+            "output": "BEN",
+            "evidence": {
+              "source": "collins",
+              "sense": "ben (Scot.): a mountain peak"
+            }
+          },
+          {
+            "op": "insert",
+            "input": "ROAD in BEN",
+            "output": "BROADEN"
+          }
+        ]
+      },
+      "parse": "ROAD (way) through BEN (mountain) = B(ROAD)EN = BROADEN, to widen.",
+      "par": 4
+    }
+  },
+  {
+    "id": "container-passage",
+    "verdict": "pass",
+    "why": "A coherent, slightly comic image; the indicator \"keeps\" does surface work. PAGE is printed as the outer piece (allowed: it is split by the insertion).",
+    "entry": {
+      "answer": "PASSAGE",
+      "clueType": "container",
+      "difficulty": 3,
+      "clue": "Corridor where the page keeps his donkey (7)",
+      "def": {
+        "text": "Corridor",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "keeps",
+        "fodder": "ASS in PAGE",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "donkey",
+            "output": "ASS"
+          },
+          {
+            "op": "synonym",
+            "input": "page",
+            "output": "PAGE"
+          },
+          {
+            "op": "insert",
+            "input": "ASS in PAGE",
+            "output": "PASSAGE"
+          }
+        ]
+      },
+      "parse": "PAGE keeps (holds) ASS (donkey) = P(ASS)AGE = PASSAGE, a corridor.",
+      "par": 3
+    }
+  },
+  {
+    "id": "container-dragon",
+    "verdict": "pass",
+    "why": "RAG (tabloid) inside DON; \"Don\" reads as a person and only later as the letters.",
+    "entry": {
+      "answer": "DRAGON",
+      "clueType": "container",
+      "difficulty": 3,
+      "clue": "Don holding a tabloid is a monster (6)",
+      "def": {
+        "text": "a monster",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "holding",
+        "fodder": "RAG in DON",
+        "operations": [
+          {
+            "op": "literal",
+            "input": "Don",
+            "output": "DON"
+          },
+          {
+            "op": "synonym",
+            "input": "tabloid",
+            "output": "RAG"
+          },
+          {
+            "op": "insert",
+            "input": "RAG in DON",
+            "output": "DRAGON"
+          }
+        ]
+      },
+      "parse": "RAG (tabloid) held inside DON = D(RAG)ON = DRAGON, a monster.",
+      "par": 3
+    }
+  },
+  {
+    "id": "container-voice",
+    "verdict": "pass",
+    "why": "A true internal insertion (V·O·ICE) with a correctly typed indicator; O = nothing is a listed abbreviation.",
+    "entry": {
+      "answer": "VOICE",
+      "clueType": "container",
+      "difficulty": 3,
+      "par": 4,
+      "clue": "Utter nothing when there’s wickedness about (5)",
+      "def": {
+        "text": "Utter",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "about",
+        "fodder": "O in VICE",
+        "operations": [
+          {
+            "op": "abbreviate",
+            "input": "nothing",
+            "output": "O"
+          },
+          {
+            "op": "synonym",
+            "input": "wickedness",
+            "output": "VICE"
+          },
+          {
+            "op": "insert",
+            "input": "O in VICE",
+            "output": "VOICE"
+          }
+        ]
+      },
+      "parse": "O (nothing) inside VICE (wickedness) = V·O·ICE = VOICE; to utter."
+    }
+  },
+  {
+    "id": "container-chair-1",
+    "verdict": "pass",
+    "why": "CHAIR ladder, rung 1 (weak surface): sound mechanics (I in CHAR), but crossword-ese no one would say.",
+    "entry": {
+      "answer": "CHAIR",
+      "clueType": "container",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Piece of furniture one in daily (5)",
+      "def": {
+        "text": "Piece of furniture",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "in",
+        "fodder": "I in CHAR",
+        "operations": [
+          {
+            "op": "abbreviate",
+            "input": "one",
+            "output": "I"
+          },
+          {
+            "op": "synonym",
+            "input": "daily",
+            "output": "CHAR"
+          },
+          {
+            "op": "insert",
+            "input": "I in CHAR",
+            "output": "CHAIR"
+          }
+        ]
+      },
+      "parse": "I (one) in CHAR (daily, a cleaner) = CHA(I)R = CHAIR, a piece of furniture."
+    }
+  },
+  {
+    "id": "container-chair-2",
+    "verdict": "pass",
+    "why": "CHAIR ladder, rung 2 (middling): the same parse, grammatical, but no picture.",
+    "entry": {
+      "answer": "CHAIR",
+      "clueType": "container",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Burn around one piece of furniture (5)",
+      "def": {
+        "text": "piece of furniture",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "around",
+        "fodder": "I in CHAR",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Burn",
+            "output": "CHAR"
+          },
+          {
+            "op": "abbreviate",
+            "input": "one",
+            "output": "I"
+          },
+          {
+            "op": "insert",
+            "input": "CHAR around I",
+            "output": "CHAIR"
+          }
+        ]
+      },
+      "parse": "CHAR (burn) around I (one) = CHA(I)R = CHAIR, a piece of furniture."
+    }
+  },
+  {
+    "id": "container-chair-3",
+    "verdict": "pass",
+    "why": "CHAIR ladder, rung 3 (good): the same parse as a real, picturable statement. Replaces the old guide's \"holds a position\", which supplied A, not I.",
+    "entry": {
+      "answer": "CHAIR",
+      "clueType": "container",
+      "difficulty": 3,
+      "par": 4,
+      "clue": "Cleaning lady holds one position of authority (5)",
+      "def": {
+        "text": "position of authority",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "holds",
+        "fodder": "I in CHAR",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Cleaning lady",
+            "output": "CHAR"
+          },
+          {
+            "op": "abbreviate",
+            "input": "one",
+            "output": "I"
+          },
+          {
+            "op": "insert",
+            "input": "CHAR around I",
+            "output": "CHAIR"
+          }
+        ]
+      },
+      "parse": "CHAR (cleaning lady) holds I (one) = CHA(I)R = CHAIR, a position of authority (the chair of a meeting)."
+    }
+  },
+  {
+    "id": "container-chair-old",
+    "verdict": "fail",
+    "failsWith": "not a true insertion yielding the solution",
+    "why": "Regression: the old style guide's CHAIR ladder declared CHAR + A. A inside CHAR cannot make CHAIR; the insertion needs I (one).",
+    "entry": {
+      "answer": "CHAIR",
+      "clueType": "container",
+      "difficulty": 3,
+      "par": 4,
+      "clue": "Cleaning lady holds a position of authority (5)",
+      "def": {
+        "text": "position of authority",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "holds",
+        "fodder": "A in CHAR",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Cleaning lady",
+            "output": "CHAR"
+          },
+          {
+            "op": "literal",
+            "input": "a",
+            "output": "A"
+          },
+          {
+            "op": "insert",
+            "input": "CHAR around A",
+            "output": "CHAIR"
+          }
+        ]
+      },
+      "parse": "As printed in docs/clue-style.md §3: \"CHAR + A\"."
+    }
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "lit-mend",
+    "verdict": "pass",
+    "why": "Template. Initials of \"Make Every Nick Disappear\", and the whole sentence describes mending. The code does not letter-check `lit`; check the initials as `initialism` too.",
+    "entry": {
+      "answer": "MEND",
+      "clueType": "lit",
+      "difficulty": 3,
+      "clue": "Initially make every nick disappear? (4)",
+      "def": {
+        "text": "Initially make every nick disappear?",
+        "position": "start",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "repair.v.01 (mend): restore by replacing a part or putting together what is torn or broken"
+        }
+      },
+      "wordplay": {
+        "indicator": "Initially",
+        "fodder": "make every nick disappear",
+        "operations": [
+          {
+            "op": "initials",
+            "input": "Make Every Nick Disappear",
+            "output": "MEND"
+          }
+        ]
+      },
+      "parse": "&lit: 'Initially' takes the first letters of Make Every Nick Disappear = MEND — and the whole clue describes what mending does.",
+      "par": 4
+    }
+  }
+]

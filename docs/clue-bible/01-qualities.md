@@ -9,14 +9,14 @@ measuring protocol lives in `04-exam.md`; the writing procedure lives in `05-wri
 
 | # | Quality | One-line test | Measured by | Pass bar |
 |---|---|---|---|---|
-| 1 | **Soundness** (gate) | Read exactly as the wordplay demands, does it give this answer and only this answer, with every word and letter accounted for? | RULES, COLD-SOLVE, EVIDENCE | 0 RULE failures; solved by ≥ 2 of 3 cold solvers; unique |
+| 1 | **Soundness** (gate) | Read exactly as the wordplay demands, does it give this answer and only this answer, with every word and letter accounted for? | RULES, COLD-SOLVE, EVIDENCE | 0 unwaived RULE failures; ≥ 2 of 3 cold solvers give the correct parse; every named competing answer fails the definition or the wordplay |
 | 2 | **Definition precision** | Is the definition a true, dictionary-backed equivalent of the answer, in the same part of speech, at one end? | EVIDENCE, COLD-SOLVE, RULES | Sense line on file; no near-equal alternative answer |
-| 3 | **Surface naturalness** | Could this sentence appear, unchanged, outside a crossword? | DECOY, TOURNAMENT-SURFACE, RULES (flags) | Passes DECOY at or above the median good anchor; beats or ties the median anchor in TOURNAMENT-SURFACE |
-| 4 | **Scene** | Can a reader picture one situation in which every word belongs? | TOURNAMENT-SURFACE, DECOY | Judges name the same scene; beats or ties the median anchor |
-| 5 | **Misdirection** | Does the surface steer the solver to a wrong reading of at least one key word? | COLD-SOLVE, TOURNAMENT-WIT, RULES | No literal giveaway; CD contract present; beats or ties the median anchor in TOURNAMENT-WIT |
-| 6 | **Economy** | Delete any word: does the cryptic reading break? | RULES | 0 R-IDLE, 0 R-PRINTED |
+| 3 | **Surface naturalness** | Could this sentence appear, unchanged, outside a crossword? | NATURALNESS, TOURNAMENT-SURFACE, RULES (flags) | At or above the median good anchor in NATURALNESS; beats or ties the median anchor in TOURNAMENT-SURFACE |
+| 4 | **Scene** | Can a reader picture one situation in which every word belongs? | TOURNAMENT-SURFACE, NATURALNESS | Judges' paraphrases name the same scene; beats or ties the median anchor |
+| 5 | **Misdirection** | Does the surface steer the solver to a wrong reading of at least one key word? | COLD-SOLVE, TOURNAMENT-WIT, RULES | A real second reading (no F-QUIZ); CD contract present; beats or ties the median anchor in TOURNAMENT-WIT |
+| 6 | **Economy** | Delete any word: does the cryptic reading break? | RULES (flags) | Every F-IDLE and F-PRINTED fixed or answered with a recorded reason |
 | 7 | **Penny-drop** | Once the answer and parse are shown, is there a moment of delight? | TOURNAMENT-WIT | Beats or ties the median anchor of its device |
-| 8 | **Originality** | Is the wording ours, and not a chestnut or a bank template? | RULES (F-CHESTNUT, F-TEMPLATE, B-REPEAT) | No unresolved flag |
+| 8 | **Originality** | Is the wording ours, and not a chestnut or a bank template? | RULES (R-COPY, F-CHESTNUT, F-TEMPLATE, B-REPEAT) | No R-COPY; no unresolved flag |
 | 9 | **Difficulty honesty** | Do `difficulty` and `par` say truthfully how hard it is, and is the hardness fair? | Par rubric, COLD-SOLVE | Par present and consistent; no hardness from unfairness |
 | 10 | **Teaching register** (Stage-A only) | Is it a fully real cryptic clue that is gentle only in vocabulary and device? | All of the above, plus the five register rules | All five rules pass |
 
@@ -29,20 +29,37 @@ measuring protocol lives in `04-exam.md`; the writing procedure lives in `05-wri
   selection criterion: it must be true, not high.
 - **Exam step names** (defined fully in `04-exam.md`):
   - **RULES**: the machine rules (RULE = fails the clue) and flags (FLAG = needs an exam step or a
-    recorded rewrite reason) catalogued in `03-rules-and-flags.md`.
-  - **COLD-SOLVE**: three fresh solver agents see only `clue (enum)` and return their top three
-    answers with confidence, their parse, and whether the literal reading alone gave the answer.
-  - **DECOY**: the bare surface is mixed with real English sentences (headlines, prose,
-    overheard speech); judges say which lines came from a crossword. Model judges sit it at
-    scale; the owner sits it in short sessions.
+    recorded rewrite reason) catalogued in `03-rules-and-flags.md`. Fairness principles (owner,
+    2026-10-02, case law CL-044): a RULE is only for an **unambiguous** fault, anything needing
+    judgement is a FLAG; every rule is precision-tested on published broadsheet clues; every
+    rule can be **waived for one clue with a written reason**, which the exam's auditor checks.
+    The blocking rules today are R-ANSWER-IN-CLUE, R-FODDER-LETTERS, R-INDICATOR-DIR,
+    R-HIDDEN-IND, R-CD-CONTRACT (`src/data/clue-rules.ts`) and R-COPY (near-verbatim copies of a
+    published clue only, `scripts/clue-flags.mjs`), plus the validator's letter checks and the
+    surface gate.
+  - **COLD-SOLVE**: three fresh solver agents see only `clue (enum)` and return their answer,
+    confidence and **parse**. A solve counts only with the **correct parse**; a right answer from a
+    guess does not show the wordplay works. Uniqueness is tested by asking for **named competing
+    answers** and checking each against both the definition and the wordplay. Solve success is
+    recorded separately from fairness: failing to solve can mean difficulty or a weak solver.
+    Solving a DD or CD from one half is **not** a defect (spec revision 2).
+  - **NATURALNESS**: paired comparisons of bare surfaces ("which reads more naturally?", both
+    orders) plus a **"paraphrase the literal scene"** check: a judge restates what the sentence
+    literally says and names any awkward join. It replaces the old DECOY test (spot the crossword
+    line among real sentences), which measured genre cues as much as naturalness. Model judges
+    sit it at scale; the owner sits it in short sessions.
   - **TOURNAMENT-SURFACE**: pairwise comparison of finalists and published anchors, both orders,
     **no answer shown**, aggregated with Bradley–Terry. The owner may take part.
   - **TOURNAMENT-WIT**: the same, but with the **answer and parse revealed**.
   - **EVIDENCE**: every definition, double-definition half and synonym operation carries a
     dictionary sense line (WordNet / Wiktionary checked automatically; misses go to an auditor).
 - **Status of the numbers.** Every pass bar that depends on a judge is trusted only after the
-  calibration run shows the exam separates good from bad anchors (AUC ≥ 0.80, see
-  `04-exam.md`). Until the exam tooling is built, run the steps by hand as described in
+  calibration run shows the exam separates good from bad clues. Calibration uses **matched
+  pairs** (a sound clue vs a minimally corrupted copy; fluent-but-unfair vs awkward-but-fair;
+  easy-good vs obscure-hard) and a **held-out set** never used to tune prompts, and reports the
+  false-pass and false-reject counts at the chosen threshold, not just AUC (target AUC ≥ 0.80,
+  see `04-exam.md`). Until external human solvers check them (deferred to the beta phase), exam
+  scores are labelled **"AI-calibrated, not human-validated"**. Until the exam tooling is built, run the steps by hand as described in
   `04-exam.md`. The old absolute 1–5 thresholds ("surface ≥ 4", "surface + wit ≥ 7", "median
   panel ≥ 4") are **retired**: the audit showed absolute model scores bunch at 4 and cannot
   see wit ([audit 01](../audit/2026-10-02/01-clue-system.md)).
@@ -51,6 +68,12 @@ measuring protocol lives in `04-exam.md`; the writing procedure lives in `05-wri
   cryptic; GOOD ≈ clean, Quick-Cryptic grade; WEAK = fails this quality. A WEAK clue quoted here
   is a teaching case, not a clue to copy. Where a WEAK clue has since been rebuilt, the
   quotation is the version the audit graded.
+- **Executable examples.** An exemplar tagged with an `id` (e.g. `hidden-knee`) is a full
+  entry in `examples/<device>.json`, run through the validator, surface gate and blocking rules
+  in CI (`src/data/bible-examples.test.ts`). "fails: `id`" marks a WEAK clue the machinery
+  rejects, with the precise error. A WEAK clue tagged *judgement example* passes the machinery:
+  its fault is a flag or a judge's call, so it lives in prose only and must never be cited as a
+  rule failure.
 
 ---
 
@@ -89,39 +112,50 @@ definition by `[answer]` (the placeholder test).
 
 **How it is measured.**
 - **RULES**: the validator (`scripts/validate-clue.ts`) plus every RULE in
-  `03-rules-and-flags.md`, including R-IDLE, R-PRINTED, R-ANSWER-IN-CLUE, R-FODDER-LETTERS,
-  R-INDICATOR-DIR, R-HIDDEN-IND and R-CD-CONTRACT.
-- **COLD-SOLVE**: three independent solvers. Records `solved`, `unique`, `alternatives`.
+  `03-rules-and-flags.md`: R-ANSWER-IN-CLUE, R-FODDER-LETTERS, R-INDICATOR-DIR, R-HIDDEN-IND,
+  R-CD-CONTRACT and R-COPY. The flags F-IDLE (a word with no role) and F-PRINTED (an answer
+  piece printed as itself) need a fix or a recorded reason.
+- **COLD-SOLVE**: three independent solvers. Records `solved` (with the correct parse),
+  `competitors` (named alternative answers, each tested against definition and wordplay).
 - **EVIDENCE**: every definition and synonym operation is backed by a dictionary sense.
 
-**Pass bar.** Zero RULE failures (any RULE failure ends the exam). Solved by at least 2 of 3 cold
-solvers. Unique: no solver gives a near-equal alternative that also fits the enumeration and the
-wordplay. EVIDENCE complete (see §2).
+**Pass bar.** Zero unwaived RULE failures (any RULE failure ends the exam). At least 2 of 3 cold
+solvers give the correct parse. Unique: every named competing answer fails the definition or
+the wordplay. EVIDENCE complete (see §2).
 
 **Exemplars.**
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | KNEE — *Some drunk needs a joint (4)* | Hidden in "drunK NEEds"; "Some" is a valid hidden indicator; every word has one job. |
-| GREAT | PASSAGE — *Corridor where the page keeps his donkey (7)* | PAGE around ASS; container indicator "keeps" reads naturally; definition clean at the start. |
-| GOOD | FORECAST — *Front company makes a prediction (8)* | FORE + CAST; standard link "makes"; nothing left over. |
-| GOOD | VOICE (teaching) — *Utter nothing when there's wickedness about (5)* | O inside VICE, a true internal insertion with a correctly typed indicator. |
-| WEAK | GENERAL — *A wildly enlarged map guided the commander (7)* | The fodder printed is "enlarged", which supplies a stray D. Letters do not account. |
-| WEAK | HARM — *A hard limb can do damage (4)* | The leading "A" is unaccounted for (H + ARM uses only "hard" and "limb"). |
-| WEAK | COB — *Swan gliding past disco bar (3)* | "past" is not a hidden indicator. |
+| GREAT | KNEE — *Some drunk needs a joint (4)* · `hidden-knee` | Hidden in "drunK NEEds"; "Some" is a valid hidden indicator; every word has one job. |
+| GREAT | PASSAGE — *Corridor where the page keeps his donkey (7)* · `container-passage` | PAGE around ASS; container indicator "keeps" reads naturally; definition clean at the start. |
+| GOOD | FORECAST — *Front company makes a prediction (8)* · `charade-forecast` | FORE + CAST; standard link "makes"; nothing left over. |
+| GOOD | VOICE (teaching) — *Utter nothing when there's wickedness about (5)* · `container-voice` | O inside VICE, a true internal insertion with a correctly typed indicator. |
+| WEAK | GENERAL — *A wildly enlarged map guided the commander (7)* · fails: `anagram-general` | The fodder printed is "enlarged", which supplies a stray D. Letters do not account. |
+| WEAK | HARM — *A hard limb can do damage (4)* · *judgement example* | The leading "A" is unaccounted for (H + ARM uses only "hard" and "limb"). |
+| WEAK | COB — *Swan gliding past disco bar (3)* · fails: `hidden-cob` | "past" is not a hidden indicator. |
 
 **Common failure modes.**
 - **A single idle word that looks like wordplay material**: "*Pupils* dilate oddly" (DETAIL),
   "*Members* groan" (ORGAN), "Damned *horse* stabled" (BLASTED), "Enraged *soldier* hurls"
   (GRENADE). These are fairness failures, not just padding: the solver tries to use the word.
-  About 71 bank clues (17%) had at least one idle word ([audit 02 §3.2](../audit/2026-10-02/02-clue-sample.md)). Now R-IDLE.
-- **Fodder that is a substring, not an exact match** (GENERAL from "enlarged"). Now R-FODDER-LETTERS.
-- **Wrong-sense or invalid indicators**: "past" (COB), "skirts" (MOAT), "crossing" (MEADOW). Now R-HIDDEN-IND.
+  About 71 bank clues (17%) had at least one idle word ([audit 02 §3.2](../audit/2026-10-02/02-clue-sample.md)). Now the
+  flag F-IDLE, not a rule: deciding that a word is idle needs judgement (a decorative word can
+  carry the scene), so the exam's auditor resolves each one.
+- **Fodder that is a substring, not an exact match** (GENERAL from "enlarged"). Now R-FODDER-LETTERS
+  (`anagram-general`).
+- **Wrong-sense or invalid indicators**: "past" (COB) fails R-HIDDEN-IND (`hidden-cob`). "skirts"
+  (MOAT) and "crossing" (MEADOW) are published hidden indicators, so the machinery accepts them;
+  whether they read as *inside* in those clues is for the exam.
 - **Direction-bound indicators in a bank with no grid**: "rising" (TIP), "turned up" (REWARD).
-  The Daily serves single clues with no Across/Down. Now R-INDICATOR-DIR.
+  The Daily serves single clues with no Across/Down. Now R-INDICATOR-DIR (`reversal-tip`).
 - **Whole-clue devices escaping the gate.** Cryptic and double definitions bypassed the old
   mechanical checks entirely, and part-j collapsed to 90% whole-clue devices
   ([audit 01](../audit/2026-10-02/01-clue-system.md)). COLD-SOLVE and R-CD-CONTRACT now cover them.
+- **Validator loopholes** (Astra's audit, closed in `6d41317`, case law CL-046): a hidden whose
+  carrier is not in the clue (`hidden-cat-absent-carrier`), a deletion of scattered letters
+  (`deletion-cat-scattered`), and single-letter charade pieces from nowhere
+  (`charade-cat-free-letters`).
 
 ---
 
@@ -166,13 +200,13 @@ alternative answer in COLD-SOLVE.
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | MARKET — *A fair part of Denmark, etc. (6)* | "fair" is exact and oblique: it reads as an adjective, means a market. |
-| GREAT | PIANO — *Quietly grand? (5)* | Both halves are exact senses (*piano* = quietly; a grand is a piano), from different roots. |
-| GOOD | SECOND — *Back the flawed article (6)* | Both senses real (to second = to back; a second = a flawed article). |
-| GOOD | CAPTAIN — *Skipper entangled in a pact (7)* | Precise, ordinary definition at the start. |
-| WEAK | STEAM — *Small side built up a head of pressure (5)* | A "head of steam" is not STEAM. |
-| WEAK | OCEAN — *Canoe wrecked at sea (5)* | "at sea" is an adverbial phrase; OCEAN is a noun. |
-| WEAK | JAM — *Preserve stuck in traffic? (3)* | "stuck in traffic" defines *in a jam*, not JAM. |
+| GREAT | MARKET — *A fair part of Denmark, etc. (6)* · `hidden-market` | "fair" is exact and oblique: it reads as an adjective, means a market. |
+| GREAT | PIANO — *Quietly grand? (5)* · `dd-piano` | Both halves are exact senses (*piano* = quietly; a grand is a piano), from different roots. |
+| GOOD | SECOND — *Back the flawed article (6)* · `dd-second` | Both senses real (to second = to back; a second = a flawed article). |
+| GOOD | CAPTAIN — *Skipper entangled in a pact (7)* · `anagram-captain` | Precise, ordinary definition at the start. |
+| WEAK | STEAM — *Small side built up a head of pressure (5)* · *judgement example* | A "head of steam" is not STEAM. |
+| WEAK | OCEAN — *Canoe wrecked at sea (5)* · *judgement example* | "at sea" is an adverbial phrase; OCEAN is a noun. |
+| WEAK | JAM — *Preserve stuck in traffic? (3)* · *judgement example* | "stuck in traffic" defines *in a jam*, not JAM. |
 
 **Common failure modes** ([audit 02 §3.6](../audit/2026-10-02/02-clue-sample.md)).
 - **Near-miss senses**: STEAM "a head of pressure"; WARFARE "endless conflict"; PADDLE "for an
@@ -206,7 +240,9 @@ double definitions, cryptic definitions and &lit, judged as phrases a person cou
 - A good surface is meaningful and plausible, and exists to distract from the cryptic reading
   ([Crossword Unclued, surface vs cryptic reading](https://www.crosswordunclued.com/2009/06/surface-reading-cryptic-reading.html)).
 - Alberich's search-engine test: if a phrase appears nowhere in real writing, the surface is
-  probably crosswordy (same Alberich page). We mechanise it as F-UNATTESTED.
+  probably crosswordy (same Alberich page). We tried to mechanise it as F-UNATTESTED and
+  **rejected** it: published broadsheet clues tripped the word-pair test more often than ours
+  (62% vs 34%), so it measures nothing useful (case law CL-050). Apply the test by hand.
 - LLM prose has documented habits (cliché, lack of specificity) that professional writers flag
   ([Chakrabarty et al., CHI 2025, LAMP](https://arxiv.org/abs/2409.14509)), and model judges share
   the writer's blind spots and favour their own output ([Panickssery et al., NeurIPS 2024](https://arxiv.org/abs/2404.13076)).
@@ -219,30 +255,30 @@ double definitions, cryptic definitions and &lit, judged as phrases a person cou
   house rule.
 
 **How it is measured.**
-- **DECOY**: the bare surface (no enumeration) among real sentences; score = the rate at which
-  judges mistake it for real prose.
+- **NATURALNESS**: the bare surface (no enumeration) in paired comparisons against rival
+  candidates and anchors, plus a paraphrase of its literal scene with awkward joins named.
 - **TOURNAMENT-SURFACE**: pairwise against rival candidates and published anchors of the same
   device; no answer shown.
-- **RULES** (flags): F-UNATTESTED (central word join never attested in n-gram data), F-TEMPLATE
-  (over-used bank template), F-AMERICANISM.
+- **RULES** (flags): F-TEMPLATE (over-used bank template), F-AMERICANISM.
 
-**Pass bar.** DECOY: mistaken for real prose at least as often as the median good anchor of its
-device (model judges). Any owner DECOY call of "crossword" on a finalist blocks it unless no
-candidate for that answer passes, in which case the decision is recorded in case law (house
-rule). TOURNAMENT-SURFACE: beats or ties the median anchor of its device. Every flag resolved
+**Pass bar.** NATURALNESS: at or above the median good anchor of its device (model judges), and
+a paraphrase that needs no apology. If the owner, in a blind session, marks a finalist as not
+real English, it is blocked unless no candidate for that answer passes, in which case the
+decision is recorded in case law (house rule). A natural sentence *fragment* is fine; do not pad
+a surface to complete its grammar (Alberich). TOURNAMENT-SURFACE: beats or ties the median anchor of its device. Every flag resolved
 or answered with a recorded reason.
 
 **Exemplars.**
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | ASCERTAIN — *Shake a canister to find out (9)* | The fodder is a natural phrase; the whole line is an ordinary instruction. |
-| GREAT | TEA — *What's a drink in London is dinner in Leeds? (3)* | A real remark about British class and regional usage. |
-| GOOD | PAINT — *A spilt pinta ruins the fresh coat (5)* | Natural British register ("pinta"); clear image. |
-| GOOD | MEDDLE — *Interfere with an Olympic prize, by the sound of it (6)* | Reads as a sentence; the indicator phrase is idiomatic. |
-| WEAK | TENOR — *Net returned gold for the singer (5)* | Crossword-ese: an abbreviation pile that exists only inside puzzles. |
-| WEAK | CORRELATE — *Refined cartel ore should tally (9)* | Invented fodder no one would write. |
-| WEAK | ASTRONOMY — *An artsy moon, badly sketched, hints at the study of stars (9)* | Narrates the anagram; invented fodder; weak link "hints at". |
+| GREAT | ASCERTAIN — *Shake a canister to find out (9)* · `anagram-ascertain` | The fodder is a natural phrase; the whole line is an ordinary instruction. |
+| GREAT | TEA — *What's a drink in London is dinner in Leeds? (3)* · `cd-tea` | A real remark about British class and regional usage. |
+| GOOD | PAINT — *A spilt pinta ruins the fresh coat (5)* · `anagram-paint` | Natural British register ("pinta"); clear image. |
+| GOOD | MEDDLE — *Interfere with an Olympic prize, by the sound of it (6)* · `homophone-meddle` | Reads as a sentence; the indicator phrase is idiomatic. |
+| WEAK | TENOR — *Net returned gold for the singer (5)* · *judgement example* | Crossword-ese: an abbreviation pile that exists only inside puzzles. |
+| WEAK | CORRELATE — *Refined cartel ore should tally (9)* · *judgement example* | Invented fodder no one would write. |
+| WEAK | ASTRONOMY — *An artsy moon, badly sketched, hints at the study of stars (9)* · *judgement example* | Narrates the anagram; invented fodder; weak link "hints at". |
 
 **Common failure modes.**
 - **Naturalness bought with padding.** The old judges rewarded idle words because they make a
@@ -287,27 +323,28 @@ Concrete nouns and real verbs beat abstractions ("thing", "matter", "business").
 - Taste: avoid grim or unhappy scenes; solvers may be living through them (Alberich, surface page).
 
 **How it is measured.**
-- **TOURNAMENT-SURFACE**: each judge also writes the scene in one line ("a waiter clearing a
-  table"). A surface for which judges cannot name a scene, or name different scenes, loses Scene
+- **TOURNAMENT-SURFACE** and **NATURALNESS**: each judge also paraphrases the scene in one line
+  ("a waiter clearing a table"). A surface for which judges cannot name a scene, or name different scenes, loses Scene
   regardless of its pairwise result (house rule; the judge prompt is in `04-exam.md`).
-- **DECOY**: surreal-but-grammatical surfaces are the ones judges pick out as crossword lines.
+- **NATURALNESS**: surreal-but-grammatical surfaces show up as paraphrases that make no sense
+  ("someone wears lobelias over their ear").
 - The scene brief from the writer method (`05-writer-method.md`, step 2) is recorded in the ledger
   so the judges' scene can be compared with the intended one.
 
-**Pass bar.** At least 2 of 3 judges name the same scene, and the clue beats or ties the median
+**Pass bar.** At least 2 of 3 judges' paraphrases describe the same scene, and the clue beats or ties the median
 anchor of its device in TOURNAMENT-SURFACE.
 
 **Exemplars.**
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | NET — *What's left when ten's knocked over (3)* | One scene (ten-pin bowling); "What's left" and "knocked over" both belong to it. |
-| GREAT | DREAM — *Armed rebels nurse an ambition (5)* | A whole political scene; the anagram indicator "rebels" is part of it. |
-| GOOD | STEALING — *Thieving in West Ealing? (8)* | A real place and a real crime; the "?" is earned. |
-| GOOD | CHASM — *They had to ditch a small dinghy in the gulf (5)* | Vivid scene, but "They had to" and "dinghy" are decorative (fails Economy). |
-| WEAK | EARLOBE — *Wear lobelias and you cover a bit of the ear (7)* | Grammatical but surreal: no one wears lobelias over their ear. |
-| WEAK | STARLET — *The star let her flat to a budding actress (7)* | An odd non-scene invented to print the answer. |
-| WEAK | MUSHROOM — *Sentimental mush fills the room, like a fungus (8)* | Three ideas joined by "like"; no single picture. |
+| GREAT | NET — *What's left when ten's knocked over (3)* · `reversal-net` | One scene (ten-pin bowling); "What's left" and "knocked over" both belong to it. |
+| GREAT | DREAM — *Armed rebels nurse an ambition (5)* · `anagram-dream` | A whole political scene; the anagram indicator "rebels" is part of it. |
+| GOOD | STEALING — *Thieving in West Ealing? (8)* · `hidden-stealing` | A real place and a real crime; the "?" is earned. |
+| GOOD | CHASM — *They had to ditch a small dinghy in the gulf (5)* · `hidden-chasm` | Vivid scene, but "They had to" and "dinghy" are decorative (fails Economy). |
+| WEAK | EARLOBE — *Wear lobelias and you cover a bit of the ear (7)* · *judgement example* | Grammatical but surreal: no one wears lobelias over their ear. |
+| WEAK | STARLET — *The star let her flat to a budding actress (7)* · *judgement example* | An odd non-scene invented to print the answer. |
+| WEAK | MUSHROOM — *Sentimental mush fills the room, like a fungus (8)* · *judgement example* | Three ideas joined by "like"; no single picture. |
 
 **Common failure modes.**
 - **Pieces picked for letters, not for their world**: TENOR's "net… gold… singer".
@@ -349,27 +386,30 @@ matters to the parse, while the cryptic reading stays fair. Approved moves:
   ([Astle, "Fond clues"](https://davidastle.com/da-blog/fond-clues)).
 
 **How it is measured.**
-- **COLD-SOLVE**: `literalGiveaway` (the literal reading alone gave the answer). On a CD or DD
-  this raises F-QUIZ. Solvers also report their first, wrong reading; none means no misdirection.
-- **RULES**: R-CD-CONTRACT (a cryptic definition must declare `pun: {misleading, true}`);
-  R-PRINTED (a printed piece cannot misdirect).
+- **COLD-SOLVE**: solvers report their first, wrong reading; none means no misdirection. A CD or
+  DD with no distinct second sense (the literal paraphrase already *is* the answer's definition)
+  raises F-QUIZ. Solving it quickly, or from one half of a DD, is **not** a defect (spec revision
+  2): F-QUIZ asks whether a reinterpretation exists, not how fast it was found.
+- **RULES**: R-CD-CONTRACT (a cryptic definition must declare `pun: {misleading, true}`;
+  `cd-map` fails it); F-PRINTED (a printed piece does not misdirect; a flag the tournament
+  weighs).
 - **TOURNAMENT-WIT**: misdirection is half of what makes the reveal satisfying.
 - Par factor E (§9) records it for difficulty.
 
-**Pass bar.** No literal giveaway on any device. For a CD: the `pun` contract filled and no
-F-QUIZ. In TOURNAMENT-WIT: beats or ties the median anchor of its device.
+**Pass bar.** A real second reading on every device. For a CD: the `pun` contract filled and
+no F-QUIZ. In TOURNAMENT-WIT: beats or ties the median anchor of its device.
 
 **Exemplars.**
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | GRANITE — *Tearing up hard rock (7)* | "Tearing up" reads as crying; it is the anagram indicator. |
-| GREAT | BREAD — *Bachelor devoured the dough (5)* | "devoured" = READ (a book), "dough" = money; two deceptive senses. |
-| GOOD | UNDERRATED — *Ad returned in error is not appreciated (10)* | "Ad returned" looks like a reversal; it is anagram fodder. |
-| GOOD | DENIER — *One who won't take yes for an answer? (6)* | A twisted idiom that hides the true sense. |
-| WEAK | MAP — *It shows you where to get off? (3)* | No false reading; the "?" decorates a plain definition (a quiz question). |
-| WEAK | OUTLOOK — *Once out, look at what lies ahead (7)* | The answer is printed whole; nothing to see through. |
-| WEAK | REGAL — *Beer sent back, befitting a queen (5)* | The mechanism is spelt out and the definition tacked on. |
+| GREAT | GRANITE — *Tearing up hard rock (7)* · `anagram-granite` | "Tearing up" reads as crying; it is the anagram indicator. |
+| GREAT | BREAD — *Bachelor devoured the dough (5)* · `charade-bread` | "devoured" = READ (a book), "dough" = money; two deceptive senses. |
+| GOOD | UNDERRATED — *Ad returned in error is not appreciated (10)* · `anagram-underrated` | "Ad returned" looks like a reversal; it is anagram fodder. |
+| GOOD | DENIER — *One who won't take yes for an answer? (6)* · `cd-denier` | A twisted idiom that hides the true sense. |
+| WEAK | MAP — *It shows you where to get off? (3)* · fails: `cd-map` | No false reading; the "?" decorates a plain definition (a quiz question). |
+| WEAK | OUTLOOK — *Once out, look at what lies ahead (7)* · *judgement example* | The answer is printed whole; nothing to see through. |
+| WEAK | REGAL — *Beer sent back, befitting a queen (5)* · *judgement example* | The mechanism is spelt out and the definition tacked on. |
 
 **Common failure modes.**
 - **Quiz-question cryptic definitions**: about 16 bank CDs are plain definitions with a "?":
@@ -378,7 +418,8 @@ F-QUIZ. In TOURNAMENT-WIT: beats or ties the median anchor of its device.
   question ([audit 02 §3.4](../audit/2026-10-02/02-clue-sample.md)).
 - **Printed charade pieces**: 31 of 75 charades print a ≥3-letter piece; OVERNIGHT, OUTLOOK,
   STARLET, WONDER and CHARM print the whole answer. Compound answers split at their seam are the
-  worst case. Now R-PRINTED.
+  worst case. Now the flag F-PRINTED: printing a component is weak disguise, not unfairness, so
+  it never blocks on its own (spec revision 2).
 - **Answer-screaming definitions** that the solver reads straight off.
 - **Device pile-ups** that mislead by confusion rather than by a fair second reading.
 
@@ -399,23 +440,26 @@ one idle word fails. An indefinite article that the wordplay does not account fo
 - Published Quick Cryptic clues are terse (4–6 words, nothing idle); the average Cruci clue runs
   5.9 words, and the extra word is usually padding ([audit 02 §4](../audit/2026-10-02/02-clue-sample.md)).
 
-**How it is measured.** **RULES** only: R-IDLE (any single word with no role; extends the old
-multi-word span check), R-PRINTED, and the article rule in the validator. Economy is deterministic;
-no judge decides it.
+**How it is measured.** **RULES**: the flags F-IDLE (any single word with no role) and F-PRINTED,
+the surface gate's orphan check (a multi-word idle span, or two idle words, fails the gate), and
+the validator's article rule (an article swallowed inside an op fails). F-IDLE was specified as
+the rule R-IDLE and demoted to a flag (spec revision 2): whether a word is idle can need
+judgement, so the exam's auditor rules on each flag.
 
-**Pass bar.** Zero R-IDLE and zero R-PRINTED failures.
+**Pass bar.** No surface-gate or article failure; every F-IDLE and F-PRINTED fixed, or answered
+with a recorded reason the auditor accepts.
 
 **Exemplars.**
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | PIANO — *Quietly grand? (5)* | Two words, both definitions. |
-| GREAT | CAPTAIN — *Skipper entangled in a pact (7)* | Definition, indicator, fodder; nothing else. |
-| GOOD | DESIGN — *Badly signed drawing (6)* | Three words, three jobs; a little flat. |
-| GOOD | SOLE — *Only the underside of a shoe (4)* | Two abutting definitions, no glue. |
-| WEAK | ALERT — *Later, he was drunk but still sharp (5)* | "he was", "but still" do nothing. |
-| WEAK | SPEAR — *A broken spare can still serve as a weapon (5)* | "can still serve as" is padding. |
-| WEAK | CHARITY — *The cleaner had it all year, doing good works (7)* | "had", "all", "doing" do nothing in CHAR + IT + Y. |
+| GREAT | PIANO — *Quietly grand? (5)* · `dd-piano` | Two words, both definitions. |
+| GREAT | CAPTAIN — *Skipper entangled in a pact (7)* · `anagram-captain` | Definition, indicator, fodder; nothing else. |
+| GOOD | DESIGN — *Badly signed drawing (6)* · `anagram-design` | Three words, three jobs; a little flat. |
+| GOOD | SOLE — *Only the underside of a shoe (4)* · `dd-sole` | Two abutting definitions, no glue. |
+| WEAK | ALERT — *Later, he was drunk but still sharp (5)* · *judgement example* | "he was", "but still" do nothing. |
+| WEAK | SPEAR — *A broken spare can still serve as a weapon (5)* · *judgement example* | "can still serve as" is padding. |
+| WEAK | CHARITY — *The cleaner had it all year, doing good works (7)* · *judgement example* | "had", "all", "doing" do nothing in CHAR + IT + Y. |
 
 **Common failure modes** ([audit 02 §3.2, §3.5](../audit/2026-10-02/02-clue-sample.md)).
 - **"…he was / she still / they still managed to / won't stop us…"** story padding around an anagram.
@@ -456,12 +500,12 @@ Bradley–Terry over finalists plus anchors of the same device.
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | MARKET — *A fair part of Denmark, etc. (6)* | "etc." does real work; "fair" flips from adjective to noun. |
-| GREAT | PIANO — *Quietly grand? (5)* | Both meanings fit "grand" at once. |
-| GOOD | COD — *Often battered, sometimes mocked? (3)* | Battered fish; *cod* = mock. |
-| GOOD | EARNEST — *Serious money down? (7)* | Earnest money is money down. |
-| WEAK | GRANDMOTHERLY — *Inclined to spoil you rotten between rounds of knitting? (13)* | A stereotype with a "?"; nothing clicks. |
-| WEAK | SAND — *What runs out in an hourglass? (4)* | A straight definition; the reveal is a shrug. |
+| GREAT | MARKET — *A fair part of Denmark, etc. (6)* · `hidden-market` | "etc." does real work; "fair" flips from adjective to noun. |
+| GREAT | PIANO — *Quietly grand? (5)* · `dd-piano` | Both meanings fit "grand" at once. |
+| GOOD | COD — *Often battered, sometimes mocked? (3)* · `cd-cod` | Battered fish; *cod* = mock. |
+| GOOD | EARNEST — *Serious money down? (7)* · `dd-earnest` | Earnest money is money down. |
+| WEAK | GRANDMOTHERLY — *Inclined to spoil you rotten between rounds of knitting? (13)* · *judgement example* | A stereotype with a "?"; nothing clicks. |
+| WEAK | SAND — *What runs out in an hourglass? (4)* · *judgement example* | A straight definition; the reveal is a shrug. |
 
 **Common failure modes.**
 - **The "?" habit**: 75 clues (18%) end in "?"; part-j is 33 of 49 CDs, reading like a riddle book.
@@ -494,11 +538,13 @@ new.
   remain the publishers' copyright, used for checking only, never shipped)
   ([cryptics.georgeho.org](https://cryptics.georgeho.org/)).
 
-**How it is measured.** **RULES**: F-CHESTNUT (fuzzy near-match against published clues for the
-same answer, or a known chestnut pair), F-TEMPLATE (over-used bank n-gram template), B-REPEAT
-(the same indicator or scene template more than twice in a batch).
+**How it is measured.** **RULES**: R-COPY blocks only a **near-verbatim copy** of a published
+clue for the same answer (`scripts/clue-flags.mjs`); a shared construction or similar wording is
+not copying (owner, 2026-10-02). F-CHESTNUT (informational: a key wordplay word shared with ≥ 3
+published clues for the answer, or a known chestnut pair), F-TEMPLATE (over-used bank n-gram
+template), B-REPEAT (a batch flag: the same indicator or scene template more than twice).
 
-**Pass bar.** No unresolved F-CHESTNUT, F-TEMPLATE or B-REPEAT. A flag is resolved by rewording,
+**Pass bar.** No R-COPY. No unresolved F-CHESTNUT, F-TEMPLATE or B-REPEAT. A flag is resolved by rewording,
 by changing device, or (teaching corpus only, where the canon is the lesson) by a recorded decision
 in case law.
 
@@ -506,12 +552,12 @@ in case law.
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | TEA — *What's a drink in London is dinner in Leeds? (3)* | A fresh angle on a three-letter answer that is usually clued the same few ways. |
-| GREAT | NET — *What's left when ten's knocked over (3)* | The TEN/NET reversal is common; the bowling scene is not. |
-| GOOD | CROCODILE — *Snapper, or schoolchildren two by two? (9)* | Familiar senses, own wording, British flavour. |
-| WEAK | STRESSED — *Tense when puddings are sent back (8)* | STRESSED/DESSERTS appears three times across bank and teaching corpus. |
-| WEAK | ORCHESTRA — *Cart horse trained for the pit (9)* | The very chestnut Alberich names. |
-| WEAK | VILE — *Terribly evil (4)* | The textbook example, known to every solver. |
+| GREAT | TEA — *What's a drink in London is dinner in Leeds? (3)* · `cd-tea` | A fresh angle on a three-letter answer that is usually clued the same few ways. |
+| GREAT | NET — *What's left when ten's knocked over (3)* · `reversal-net` | The TEN/NET reversal is common; the bowling scene is not. |
+| GOOD | CROCODILE — *Snapper, or schoolchildren two by two? (9)* · `dd-crocodile` | Familiar senses, own wording, British flavour. |
+| WEAK | STRESSED — *Tense when puddings are sent back (8)* · *judgement example* | STRESSED/DESSERTS appears three times across bank and teaching corpus. |
+| WEAK | ORCHESTRA — *Cart horse trained for the pit (9)* · *judgement example* | The very chestnut Alberich names. |
+| WEAK | VILE — *Terribly evil (4)* · *judgement example* | The textbook example, known to every solver. |
 
 **Common failure modes** ([audit 02 §3.7](../audit/2026-10-02/02-clue-sample.md)).
 - **About 15 chestnuts**: REGAL/lager, STRESSED/DESSERTS, VILE, ASTRONOMERS/moon starers,
@@ -598,11 +644,11 @@ par 2–3), the clue is reviewed and the outcome recorded.
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | EARNEST — *Serious money down? (7)* — d4, p4 | Hard for fair reasons: a disguised second definition. |
-| GREAT | BREAD — *Bachelor devoured the dough (5)* — d3, p5 | Abbreviation + deceptive senses; par reflects real misdirection. |
-| GOOD | CAPTAIN — *Skipper entangled in a pact (7)* — d3, p3 | One anagram with real misdirection: a textbook 3. |
-| WEAK | MONARCH — *Butterfly seen by man on arch? (7)* — d3, p6 | High par driven by a weak abbreviation (man → M) and a decorative "?": hardness from unfairness. |
-| WEAK | TIP — *Pointer rising from the pit (3)* — d2, p4 | A 3-letter difficulty 2 made harder by a direction indicator with no grid. |
+| GREAT | EARNEST — *Serious money down? (7)* — d4, p4 · `dd-earnest` | Hard for fair reasons: a disguised second definition. |
+| GREAT | BREAD — *Bachelor devoured the dough (5)* — d3, p5 · `charade-bread` | Abbreviation + deceptive senses; par reflects real misdirection. |
+| GOOD | CAPTAIN — *Skipper entangled in a pact (7)* — d3, p3 · `anagram-captain` | One anagram with real misdirection: a textbook 3. |
+| WEAK | MONARCH — *Butterfly seen by man on arch? (7)* — d3, p6 · *judgement example* | High par driven by a weak abbreviation (man → M) and a decorative "?": hardness from unfairness. |
+| WEAK | TIP — *Pointer rising from the pit (3)* — d2, p4 · fails: `reversal-tip` | A 3-letter difficulty 2 made harder by a direction indicator with no grid. |
 
 **Common failure modes.**
 - **Compression at 3**: labelling by habit rather than by the rubric.
@@ -638,7 +684,8 @@ terse, fully cryptic and lean on acrostics, hiddens and homophones
 [Quick Cryptic 103](https://fifteensquared.net/2026/03/21/guardian-quick-cryptic-103-by-ludwig/)).
 
 **How it is measured.** The same exam as the bank, with these differences: `difficulty` 1–2;
-R-PRINTED applies to **every** piece of any length (rule 1); TOURNAMENT anchors are published
+F-PRINTED is checked by hand for **every** piece of any length (rule 1; the code only sees pieces of
+3+ letters); TOURNAMENT anchors are published
 Quick Cryptic clues of the same device; a newer-solver lens is one of the three COLD-SOLVE agents
 and must solve it. Teaching answers are not grid-locked: if an answer cannot reach the bar in its
 device, **swap the answer and keep the device** (PIGTAIL → DOGMA, MANKIND → HOGWASH,
@@ -651,13 +698,13 @@ EACH → ANGER), keeping at least one clue per device. Validate with `integrity.
 
 | Grade | Clue | Why |
 |---|---|---|
-| GREAT | DOGMA — *Follow Mother's teaching (5)* | DOG + MA, both hidden in ordinary words; "teaching" is woven in. |
-| GREAT | OVEN — *The coven lost its head over the cooker (4)* | The deletion idiom does double duty as a real phrase. |
-| GOOD | BARGAIN — *Pub profit is a steal (7)* | BAR + GAIN; terse and natural. |
-| GOOD | HOGWASH — *A pig's laundry? Nonsense! (7)* | Playful, disguised, one device. |
-| WEAK | EVENT — *Seven tents partly cover the event (5)* | The definition is the answer word itself. |
-| WEAK | CARTON — *The con hides art in a box (6)* | CON and ART printed: the answer is spelt out (breaks rule 1). |
-| WEAK | PADLOCK — *Apartment's key feature is a security device (7)* | "key feature" → LOCK is a pun, not a definition. |
+| GREAT | DOGMA — *Follow Mother's teaching (5)* · `charade-dogma` | DOG + MA, both hidden in ordinary words; "teaching" is woven in. |
+| GREAT | OVEN — *The coven lost its head over the cooker (4)* · `deletion-oven` | The deletion idiom does double duty as a real phrase. |
+| GOOD | BARGAIN — *Pub profit is a steal (7)* · `charade-bargain` | BAR + GAIN; terse and natural. |
+| GOOD | HOGWASH — *A pig's laundry? Nonsense! (7)* · `charade-hogwash` | Playful, disguised, one device. |
+| WEAK | EVENT — *Seven tents partly cover the event (5)* · *judgement example* | The definition is the answer word itself. |
+| WEAK | CARTON — *The con hides art in a box (6)* · *judgement example* | CON and ART printed: the answer is spelt out (breaks rule 1). |
+| WEAK | PADLOCK — *Apartment's key feature is a security device (7)* · *judgement example* | "key feature" → LOCK is a pun, not a definition. |
 
 **Common failure modes.** Transparent give-aways; narrated mechanics ("sent back, spell…");
 printed parts (CARTON, PIRATE); duplicating bank answers and fodder (15 overlaps, about 8 with the

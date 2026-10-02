@@ -1,0 +1,118 @@
+[
+  {
+    "id": "homophone-meddle",
+    "verdict": "pass",
+    "why": "Template. MEDAL (Olympic prize) sounds like MEDDLE; the indicator closes a natural sentence.",
+    "entry": {
+      "answer": "MEDDLE",
+      "clueType": "homophone",
+      "difficulty": 2,
+      "clue": "Interfere with an Olympic prize, by the sound of it (6)",
+      "def": {
+        "text": "Interfere",
+        "position": "start",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "meddle.v.01: intrude in other people's affairs or business; interfere unwantedly"
+        }
+      },
+      "wordplay": {
+        "indicator": "by the sound of it",
+        "fodder": "medal",
+        "operations": [
+          {
+            "op": "homophone",
+            "input": "medal",
+            "output": "MEDDLE"
+          }
+        ]
+      },
+      "parse": "MEDAL (an Olympic prize) sounds like MEDDLE, indicated by 'by the sound of it'; to interfere.",
+      "par": 2
+    }
+  },
+  {
+    "id": "homophone-steel",
+    "verdict": "pass",
+    "why": "\"Rob\" reads as a name (capitalisation trick); STEAL sounds like STEEL; \"nerve\" is oblique.",
+    "entry": {
+      "answer": "STEEL",
+      "clueType": "homophone",
+      "difficulty": 3,
+      "clue": "Rob, they say, shows nerve (5)",
+      "def": {
+        "text": "nerve",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "they say",
+        "fodder": "steal",
+        "operations": [
+          {
+            "op": "homophone",
+            "input": "steal",
+            "output": "STEEL"
+          }
+        ]
+      },
+      "parse": "Rob = STEAL, which 'they say' sounds like STEEL — nerve, resolve. The capital letter disguises the verb as a man's name.",
+      "par": 4
+    }
+  },
+  {
+    "id": "homophone-rein",
+    "verdict": "pass",
+    "why": "REIGN (the king's rule) sounds like REIN; the indicator is part of the sentence, not an aside.",
+    "entry": {
+      "answer": "REIN",
+      "clueType": "homophone",
+      "difficulty": 3,
+      "clue": "Curb the king's rule, reportedly (4)",
+      "def": {
+        "text": "Curb",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "reportedly",
+        "fodder": "reign",
+        "operations": [
+          {
+            "op": "homophone",
+            "input": "REIGN",
+            "output": "REIN"
+          }
+        ]
+      },
+      "parse": "REIGN (the king's rule) sounds like ('reportedly') REIN, to curb.",
+      "par": 2
+    }
+  },
+  {
+    "id": "homophone-scent",
+    "verdict": "pass",
+    "why": "Teaching register: a common pair, the plainest indicator at the end.",
+    "entry": {
+      "answer": "SCENT",
+      "clueType": "homophone",
+      "difficulty": 3,
+      "par": 2,
+      "clue": "Perfume sent over, we hear (5)",
+      "def": {
+        "text": "Perfume",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "we hear",
+        "fodder": "sent",
+        "operations": [
+          {
+            "op": "homophone",
+            "input": "SENT",
+            "output": "SCENT"
+          }
+        ]
+      },
+      "parse": "SENT sounds like SCENT, a perfume."
+    }
+  }
+]

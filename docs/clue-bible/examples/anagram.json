@@ -1,0 +1,259 @@
+[
+  {
+    "id": "anagram-ascertain",
+    "verdict": "pass",
+    "why": "Template. The fodder is a natural phrase (\"a canister\") and the indicator (\"Shake\") belongs to it.",
+    "entry": {
+      "answer": "ASCERTAIN",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "Shake a canister to find out (9)",
+      "def": {
+        "text": "find out",
+        "position": "end",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "ascertain.v.01: establish after a calculation, investigation, experiment, survey, or study"
+        }
+      },
+      "wordplay": {
+        "indicator": "Shake",
+        "fodder": "a canister",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "ACANISTER",
+            "output": "ASCERTAIN"
+          }
+        ]
+      },
+      "parse": "(A CANISTER)* with anagram indicator 'Shake' = ASCERTAIN; to 'find out'.",
+      "par": 3
+    }
+  },
+  {
+    "id": "anagram-captain",
+    "verdict": "pass",
+    "why": "Fodder found inside an idiom (\"entangled in a pact\"); definition, indicator, fodder and nothing else.",
+    "entry": {
+      "answer": "CAPTAIN",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "Skipper entangled in a pact (7)",
+      "def": {
+        "text": "Skipper",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "entangled",
+        "fodder": "in a pact",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "INAPACT",
+            "output": "CAPTAIN"
+          }
+        ]
+      },
+      "parse": "IN A PACT 'entangled' (anagram) = CAPTAIN, the skipper.",
+      "par": 3
+    }
+  },
+  {
+    "id": "anagram-dream",
+    "verdict": "pass",
+    "why": "The indicator \"rebels\" poses as a noun. Definition corrected to the verb phrase \"nurse an ambition\"; the bank's \"an ambition\" leaves \"nurse\" idle (F-IDLE).",
+    "entry": {
+      "answer": "DREAM",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "Armed rebels nurse an ambition (5)",
+      "def": {
+        "text": "nurse an ambition",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "rebels",
+        "fodder": "Armed",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "ARMED",
+            "output": "DREAM"
+          }
+        ]
+      },
+      "parse": "Anagram (indicated by 'rebels') of ARMED = DREAM; an ambition or aspiration.",
+      "par": 3
+    }
+  },
+  {
+    "id": "anagram-granite",
+    "verdict": "pass",
+    "why": "\"Tearing up\" reads as crying but is the anagram indicator (a phrasal verb with an anagram sense, not bare \"up\").",
+    "entry": {
+      "answer": "GRANITE",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "Tearing up hard rock (7)",
+      "def": {
+        "text": "hard rock",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "up",
+        "fodder": "Tearing",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "TEARING",
+            "output": "GRANITE"
+          }
+        ]
+      },
+      "parse": "(TEARING)* = GRANITE, a hard rock.",
+      "par": 4
+    }
+  },
+  {
+    "id": "anagram-underrated",
+    "verdict": "pass",
+    "why": "\"Ad returned\" looks like a reversal instruction but is anagram fodder.",
+    "entry": {
+      "answer": "UNDERRATED",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "Ad returned in error is not appreciated (10)",
+      "def": {
+        "text": "not appreciated",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "in error",
+        "fodder": "Ad returned",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "AD RETURNED",
+            "output": "UNDERRATED"
+          }
+        ]
+      },
+      "parse": "Anagram of AD RETURNED (signalled by 'in error') = UNDERRATED, i.e. not appreciated. 'Returned' tempts you toward a reversal — it is fodder.",
+      "par": 4
+    }
+  },
+  {
+    "id": "anagram-design",
+    "verdict": "pass",
+    "why": "Three words, three jobs: indicator, fodder, definition. Sound but a little flat.",
+    "entry": {
+      "answer": "DESIGN",
+      "clueType": "anagram",
+      "difficulty": 2,
+      "clue": "Badly signed drawing (6)",
+      "def": {
+        "text": "drawing",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "Badly",
+        "fodder": "signed",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "SIGNED",
+            "output": "DESIGN"
+          }
+        ]
+      },
+      "parse": "(SIGNED)* 'Badly' = DESIGN, a drawing.",
+      "par": 2
+    }
+  },
+  {
+    "id": "anagram-paint",
+    "verdict": "pass",
+    "why": "Natural British register (\"pinta\"). Passes the gate but raises the flag F-IDLE on \"ruins\": a GOOD surface, not a model of economy.",
+    "entry": {
+      "answer": "PAINT",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "A spilt pinta ruins the fresh coat (5)",
+      "def": {
+        "text": "the fresh coat",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "spilt",
+        "fodder": "pinta",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "PINTA",
+            "output": "PAINT"
+          }
+        ]
+      },
+      "parse": "Anagram ('spilt') of PINTA (a pint of milk) = PAINT; the fresh coat.",
+      "par": 4
+    }
+  },
+  {
+    "id": "anagram-mean",
+    "verdict": "pass",
+    "why": "Teaching register: one common word as fodder, a plain indicator, a definition people use.",
+    "entry": {
+      "answer": "MEAN",
+      "clueType": "anagram",
+      "difficulty": 1,
+      "par": 2,
+      "clue": "Cruel name changed (4)",
+      "def": {
+        "text": "Cruel",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "changed",
+        "fodder": "name",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "NAME",
+            "output": "MEAN"
+          }
+        ]
+      },
+      "parse": "(NAME)* = MEAN, meaning cruel."
+    }
+  },
+  {
+    "id": "anagram-general",
+    "verdict": "fail",
+    "failsWith": "R-FODDER-LETTERS",
+    "why": "Bank clue (CL-002, CL-037): \"enlarged\" is printed but the fodder is \"enlarge\"; the spare D means the letters do not account.",
+    "entry": {
+      "answer": "GENERAL",
+      "clueType": "anagram",
+      "difficulty": 3,
+      "clue": "A wildly enlarged map guided the commander (7)",
+      "def": {
+        "text": "the commander",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "wildly",
+        "fodder": "enlarge",
+        "operations": [
+          {
+            "op": "anagram",
+            "input": "ENLARGE",
+            "output": "GENERAL"
+          }
+        ]
+      },
+      "parse": "(ENLARGE)* 'wildly' = GENERAL, the commander; the surface misdirects to an enlarged map.",
+      "par": 4
+    }
+  }
+]

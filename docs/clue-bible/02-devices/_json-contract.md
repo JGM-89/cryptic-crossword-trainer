@@ -3,7 +3,9 @@
 *Clue Bible, chapter 02 (devices), shared file. It replaces `docs/clue-style.md` §6. Rule IDs
 (R-…, F-…, B-…) are defined in `03-rules-and-flags.md`. Status: v1, 2026-10-02.*
 
-Every clue an agent writes is emitted as one **BankEntry** JSON object. The shape below is the
+Every clue an agent writes is emitted as one **BankEntry** JSON object. Worked examples of the
+shape, one per device, live in `../examples/*.json` and are checked in CI
+(`src/data/bible-examples.test.ts`); the full shape below is `container-broaden`. The shape below is the
 current one (`src/data/bank/index.ts` → `BankEntry`) plus three additions from the Clue Bible
 design (`docs/superpowers/specs/2026-10-02-clue-bible-design.md` §2–3): `evidence`, `pun` and a
 mandatory `par`.
@@ -11,8 +13,10 @@ mandatory `par`.
 > **Code status (2026-10-02).** `scripts/validate-clue.ts` runs three layers:
 > `src/data/integrity.ts` (letter mechanics, abbreviations, composition: marked
 > **[validator]** below), `src/data/surface-rules.ts` (surface gate) and
-> `src/data/clue-rules.ts` (the Bible's R-/F-/B- rules: R-* are errors, F-* are warnings, and a
-> B-DEVICE-MIX batch hit fails the run). `pun` is already read by `clue-rules.ts`
+> `src/data/clue-rules.ts` (the Bible's R-/F-/B- rules: unwaived R-* are errors, F-* are
+> warnings). Under spec revision 2 the batch checks (B-*) are flags; note that
+> `scripts/validate-clue.ts` still exits non-zero on a B-DEVICE-MIX hit, so record the reason
+> and treat that exit as a flag until the script is changed. `pun` is already read by `clue-rules.ts`
 > (R-CD-CONTRACT). `evidence` is not read by code yet (it will be by `scripts/clue-flags.mjs`,
 > F-DEF-EVIDENCE; `scripts/clue-flags.mjs` currently checks the definition against WordNet and
 > Moby). Emit every **[new]** field now anyway: a candidate without them fails the
@@ -84,13 +88,13 @@ The `op` field is one of the twelve values in `src/types.ts` → `WordplayOp`:
 |---|---|---|
 | `synonym` | surface word(s) → LETTERS | Needs `evidence`. Must not swallow an indefinite article (`"a cake"` → `CAKE` is rejected by the validator; `"the bed"` → `BED` is tolerated). |
 | `abbreviate` | surface cue → LETTERS | Cue→letters must be in `src/data/abbreviations.ts`, or be a first-letter device. The cue must be a surface word. See `_abbreviations.md`. No `evidence` needed: the table is the evidence. |
-| `literal` | surface word → same LETTERS | A piece read straight off the surface (e.g. `"me"` → `ME`). Also the legacy op for CD and DD (below). R-PRINTED limits how much of an answer may come from literal pieces. |
+| `literal` | surface word → same LETTERS | A piece read straight off the surface (e.g. `"me"` → `ME`). Also the legacy op for CD and DD (below). F-PRINTED flags a literal piece printed as part of the answer. |
 | `anagram` | FODDER LETTERS → ANSWER | Letters must match exactly (R-FODDER-LETTERS). |
-| `hidden` | carrier with the answer upper-cased, e.g. `"den<MARK ET>c"` → ANSWER | |
-| `concat` | `"A+B+C"` → joined | Pieces must join, in order, to the output; each multi-letter piece must be the output of an earlier op or a whole surface word. |
+| `hidden` | carrier with the answer upper-cased, e.g. `"den<MARK ET>c"` → ANSWER | The carrier (`fodder`) must be in the clue and contain the answer. The op input itself is not checked, so keep every carrier letter in it. |
+| `concat` | `"A+B+C"` → joined | Pieces must join, in order, to the output; **every** piece, single letters included, must be the output of an earlier op or a whole surface word. |
 | `insert` | `"X in Y"` (also `into`/`inside`/`within`) or `"Y around X"` (also `about`/`outside`) → result | X must sit strictly inside Y. Use these keywords here even if the surface indicator is "holding" or "enters". |
 | `reverse` | LETTERS → reversed | |
-| `delete` | `"FODDER − X"` (minus sign U+2212, en dash or hyphen) → result | |
+| `delete` | `"FODDER − X"` (minus sign U+2212, en dash or hyphen) → result | Removes one contiguous part (head, tail, a run) or both ends. FODDER is printed, or is the output of a `synonym` op on a clue word (synonym then precise deletion is allowed). |
 | `homophone` | the sound-alike word → ANSWER | |
 | `initials` | `"Make Every Nick Disappear"` → `MEND` | |
 | `alternate` | `"bArBaRiAn"` (picked letters upper-cased) → `BRAIN` | |
@@ -152,6 +156,9 @@ overwrites the value before shipping.
 }
 ```
 
+Executable examples: `cd-tea`, `cd-denier`, `cd-cod`, `cd-candle` (pass) and `cd-map` (fails
+R-CD-CONTRACT: no `pun`).
+
 - Both keys are required non-empty strings, and they must describe **different** readings.
   An empty or missing `pun` fails R-CD-CONTRACT in code; two readings that say the same thing
   fail it at the evidence auditor.
@@ -165,13 +172,13 @@ overwrites the value before shipping.
 
 ## 6a. `waivers` (optional)
 
-Any rule may be waived for one clue with a written reason. A waived R-* hit stays visible in
-the report but no longer blocks (`isBlocking` in `src/data/clue-rules.ts`); an empty reason
+Any rule may be waived for one clue with a written reason (owner's fairness instruction, case
+law CL-044). A waived R-* hit stays visible in the report but no longer blocks (`isBlocking` in `src/data/clue-rules.ts`); an empty reason
 does not waive. The exam's auditor reads every waiver and case law records it.
 
 ```json
 "waivers": [
-  { "rule": "R-HIDDEN-IND", "reason": "'hides' is a standard hidden indicator (Wikipedia lists it) missing from src/data/indicators/hidden.json" }
+  { "rule": "R-HIDDEN-IND", "reason": "'<indicator>' is used as a hidden indicator by published setters (<citation>) but is in neither hidden.json nor the standard families" }
 ]
 ```
 
@@ -190,7 +197,7 @@ Each device file gives its template in full. Summary:
 | charade | `""` | `"A + B"` | pieces (`synonym`/`abbreviate`/`literal`/…), then `concat` |
 | container | the container indicator | `"X in Y"` | pieces, then `insert` |
 | reversal | the reversal indicator | the word that is reversed | (`synonym` if not literal), then `reverse` |
-| deletion | the deletion indicator | the literal longer word | `[delete]` |
+| deletion | the deletion indicator | the longer word (printed, or the synonym's letters) | (`synonym` if not printed), then `delete` |
 | homophone | the homophone indicator | the sound-alike word | (`synonym` if not literal), then `homophone` |
 | double-definition | `""` | `"half one / half two"` | two `synonym` ops, one per half (§8) |
 | cryptic-definition | `""` | `""` or the pun summary | `[literal]`, plus `pun` |
@@ -233,8 +240,10 @@ there too. Hint rungs 1–3 are generated by `src/data/hydrate.ts` from `def`, `
 1. `npx tsx scripts/validate-clue.ts <file.json>` returns `ok: true` (it accepts one object or
    an array). Read its `warnings` (F-* flags) too: each needs a fix or a reason.
 2. `npx tsx scripts/clue-flags.mjs <file.json>` (needs `npm run corpus:fetch`) shows no
-   R-COPY (a near-verbatim copy of a published clue for the same answer); read its F-CHESTNUT
-   and F-DEF-EVIDENCE flags.
-3. You have read the clue word by word and named the job of every word (F-IDLE).
+   R-COPY (a near-verbatim copy of a published clue for the same answer; a shared
+   construction or a similar wording is fine); read its F-CHESTNUT (informational) and
+   F-DEF-EVIDENCE flags.
+3. You have read the clue word by word and named the job of every word (F-IDLE is a flag:
+   fix the word or record why it earns its place).
 4. `evidence` is present on `def` and on every `synonym` op; `pun` on every CD.
 5. The device file's "typical failures" list has been checked item by item.

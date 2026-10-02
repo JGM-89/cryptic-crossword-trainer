@@ -1,10 +1,14 @@
 # Alternation (alternate letters)
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -27,21 +31,10 @@ words, nothing else.
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "BRAIN",
-  "clueType": "alternation",
-  "clue": "… (5)",
-  "def": { "text": "…", "position": "start", "evidence": { "source": "wordnet", "sense": "…" } },
-  "wordplay": {
-    "indicator": "oddly",
-    "fodder": "barbarian",
-    "operations": [ { "op": "alternate", "input": "BaRbArIaN", "output": "BRAIN" } ]
-  }
-}
-```
-
-(Mechanism only: no Cruci clue for BRAIN exists. Do not ship a clue without the Writer method.)
+There is no Cruci alternation clue, so there is no executable example yet (the first one written
+through the Writer method goes in `../examples/alternation.json`). The shape, mechanism only:
+`indicator` "oddly", `fodder` "barbarian", one op `alternate` "BaRbArIaN" → BRAIN, plus a
+`def` with `evidence`.
 
 - `fodder` = the printed word(s), exactly.
 - `operations[0].input` = the fodder with the picked letters upper-cased and the skipped ones

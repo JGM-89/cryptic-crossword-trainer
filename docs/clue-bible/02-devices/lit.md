@@ -1,10 +1,14 @@
 # &lit (all-in-one)
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -34,20 +38,10 @@ also means vile.
 
 ## 2. JSON the validator expects
 
-```json
-{
-  "answer": "MEND",
-  "clueType": "lit",
-  "clue": "Initially make every nick disappear? (4)",
-  "def": { "text": "Initially make every nick disappear?", "position": "start",
-           "evidence": { "source": "wordnet", "sense": "repair.v.01 (mend): restore by replacing a part or putting together what is torn or broken" } },
-  "wordplay": {
-    "indicator": "Initially",
-    "fodder": "make every nick disappear",
-    "operations": [ { "op": "initials", "input": "Make Every Nick Disappear", "output": "MEND" } ]
-  }
-}
-```
+Template: **`lit-mend`** (`../examples/lit.json`), *Initially make every nick disappear? (4)*:
+`clueType` "lit", `def.text` = the whole clue without `(n)` (with `evidence` for the sense the
+sentence describes), `indicator` "Initially", `fodder` "make every nick disappear", one op
+`initials` "Make Every Nick Disappear" → MEND.
 
 - `clueType` = `"lit"`; `def.text` = the whole clue without `(n)`, `position: "start"`.
 - `indicator`, `fodder`, `operations` = exactly what the underlying device's file specifies.
@@ -106,12 +100,12 @@ I'M ONE + COST whose whole sentence also describes an economist.
 
 **Best**
 - **MEND** — *Initially make every nick disappear? (4)*. Initials of "Make Every Nick
-  Disappear"; the sentence also describes mending. Audit 4/4.
+  Disappear"; the sentence also describes mending. Audit 4/4. `lit-mend`.
 
 **Weak**
 - **VILE** — *Terribly evil (4)*. Sound and neat, but it is the textbook example clue that
   every solver knows (audit 02 #70). F-CHESTNUT. Fine in the teaching corpus as canon; it does
-  not belong in the bank.
+  not belong in the bank. **Judgement example:** the machinery passes it.
 
 ## 7. Cruci-specific notes
 

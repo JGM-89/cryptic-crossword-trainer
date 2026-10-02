@@ -25,9 +25,10 @@ seems pedantic, find its entry here and read the clue that caused it.
    audit); any change to a judge prompt or threshold, including each calibration iteration (plan
    D5); and any owner decision.
 3. **Owner decisions are recorded the same day**, as entries with status *Standing decision*.
-4. **If the pattern can be detected mechanically, the entry must name a rule or flag ID**, either
-   an existing one or a new one added to `03-rules-and-flags.md`. It must also give at least one
-   failing clue to use as a test fixture in `src/data/clue-rules.test.ts`.
+4. **If the pattern can be detected mechanically, the entry must give a regression example
+   first**: at least one failing clue in `examples/<device>.json` (verdict `fail`, with the exact
+   error), and the existing rule or flag ID that catches it. A **new** rule is added to
+   `03-rules-and-flags.md` only once its precision on published clues is shown (CL-044).
 5. **Entries are append-only.** IDs never change and entries are never deleted. To correct or
    retire an entry, add a new one and set the old one's status to *Superseded by CL-NNN*.
 6. **Superseded clue texts named here are bad anchors.** `scripts/exam/bad-anchors.mjs`
@@ -57,42 +58,49 @@ seems pedantic, find its entry here and read the clue that caused it.
 Where an entry has several parts, it gets a composite status (e.g. "Closed (gate); Open
 (content)").
 
+**Rule names in older entries.** Entries are append-only, so entries up to CL-043 keep the rule
+IDs that were specified at the time. Current names (spec revision 2, CL-051): R-IDLE is now the
+flag **F-IDLE**; R-PRINTED is now the flag **F-PRINTED**; batch checks (B-*) are flags;
+F-UNATTESTED was rejected (CL-050); the DECOY test is replaced by **NATURALNESS**; F-QUIZ means
+"no distinct second reading". Every rule can be waived for one clue with a written reason
+(CL-044). The statuses below point to the entry that supersedes each part.
+
 ## Index
 
 | ID | Date | Title | Rules / exam steps | Status |
 |---|---|---|---|---|
 | CL-001 | 06-03 | Unlisted abbreviations passed as "machine-checked" | ABBR gate | Closed |
-| CL-002 | 06-03 | Nonsense anagram fodder | F-UNATTESTED, R-FODDER-LETTERS | Rule specified; Open |
+| CL-002 | 06-03 | Nonsense anagram fodder | F-UNATTESTED (rejected), R-FODDER-LETTERS | Rule specified; Open; F-UNATTESTED superseded by CL-050 |
 | CL-003 | 06-03 | Invented synonyms: the validator can't see meaning | F-DEF-EVIDENCE, EVIDENCE | Rule specified |
 | CL-004 | 06-03 | The stored indicator wasn't in the surface, so the hints lied | indicator-in-surface gate | Closed |
 | CL-005 | 06-03 | Best-of-N from one context is the mode, not the best | Writer method step 3 | Process specified |
 | CL-006 | 06-03 | A clean report from one auditor | EVIDENCE, calibration | Superseded by CL-032 |
-| CL-007 | 06-03 | COB's hidden indicator "past" | R-HIDDEN-IND | Rule specified; Open |
+| CL-007 | 06-03 | COB's hidden indicator "past" | R-HIDDEN-IND | Rule specified; Open (COB); superseded in part by CL-049 |
 | CL-008 | 06-03 | Down-only reversal indicators in a bank with no grid direction | R-INDICATOR-DIR | Rule specified; Open |
-| CL-009 | 06-03 | Ending the "beheaded X" treadmill killed off a device | B-DEVICE-MIX, B-REPEAT | Rule specified |
-| CL-010 | 06-03 | OVERNIGHT: five versions, still among the worst | R-PRINTED, R-ANSWER-IN-CLUE | Open |
+| CL-009 | 06-03 | Ending the "beheaded X" treadmill killed off a device | B-DEVICE-MIX, B-REPEAT (now flags) | Rule specified; superseded in part by CL-051 |
+| CL-010 | 06-03 | OVERNIGHT: five versions, still among the worst | F-PRINTED (was R-PRINTED), R-ANSWER-IN-CLUE | Open |
 | CL-011 | 06-04 | Indicators of the wrong type for their device | R-HIDDEN-IND, device chapters | Partly closed |
 | CL-012 | 06-04 | Containment glue in a charade (ONCE → CONE) | containment-glue gate | Closed (gate); Open (MUSHROOM) |
 | CL-013 | 06-04 | Unflagged definition by example | F-DEF-EVIDENCE | Rule specified; Open |
-| CL-014 | 06-04 | A polish with the device locked produced padding | R-IDLE | Rule specified; Open |
+| CL-014 | 06-04 | A polish with the device locked produced padding | F-IDLE (was R-IDLE) | Rule specified; Open; superseded in part by CL-051 |
 | CL-015 | 06-04 | Three copies of the gate; three copies of the standard | the Bible; `surface-rules.ts` | Closed (code); Bible in progress |
-| CL-016 | 06-05 | Indirect deletions | deletion fodder-in-surface gate | Closed |
+| CL-016 | 06-05 | Indirect deletions | deletion fodder-in-surface gate | Closed; superseded in part by CL-047 |
 | CL-017 | 06-05 | Teaching clues: "beginner" read as "transparent" | §1c register | Closed |
 | CL-018 | 06-05 | Surfaces that copy published clues | F-CHESTNUT | Rule specified |
-| CL-019 | 06-05 | Decision: realism above wit; the device is free | quality: Surface naturalness | Superseded in part by CL-042 |
-| CL-020 | 06-05 | Realism bought by printing the answer's pieces | R-PRINTED, R-IDLE, R-ANSWER-IN-CLUE | Rule specified; Open |
-| CL-021 | 06-07 | A single judge reading full entries rubber-stamped REIN | DECOY, blind judging | Superseded by CL-032 |
+| CL-019 | 06-05 | Decision: realism above wit; the device is free | quality: Surface naturalness | Superseded in part by CL-042, CL-051 |
+| CL-020 | 06-05 | Realism bought by printing the answer's pieces | F-PRINTED, F-IDLE (were R-), R-ANSWER-IN-CLUE | Rule specified; Open; superseded in part by CL-051 |
+| CL-021 | 06-07 | A single judge reading full entries rubber-stamped REIN | DECOY (now NATURALNESS), blind judging | Superseded by CL-032 |
 | CL-022 | 06-10 | Assembled devices weren't letter-checked | composition gates | Closed |
-| CL-023 | 06-10 | Swallowed and free-floating articles | R-IDLE | Partly closed |
-| CL-024 | 06-10 | Single orphan words: 17% of the bank is padded | R-IDLE, F-TEMPLATE | Rule specified; Open |
-| CL-025 | 06-10 | Teaching swaps that print their own answer | R-ANSWER-IN-CLUE, R-PRINTED | Rule specified; Open |
+| CL-023 | 06-10 | Swallowed and free-floating articles | F-IDLE (was R-IDLE) | Partly closed; superseded in part by CL-051 |
+| CL-024 | 06-10 | Single orphan words: 17% of the bank is padded | F-IDLE (was R-IDLE), F-TEMPLATE | Rule specified; Open; superseded in part by CL-051 |
+| CL-025 | 06-10 | Teaching swaps that print their own answer | R-ANSWER-IN-CLUE, F-PRINTED (was R-PRINTED) | Rule specified; Open |
 | CL-026 | 06-10 | Chestnuts: STRESSED/DESSERTS three times | F-CHESTNUT | Rule specified; Open |
 | CL-027 | 08-15 | The whole-clue hint bug (Daily #62) | device coverage | Closed |
 | CL-028 | 08-15 | Owner decision: clues are always written through the system | — | Standing decision |
 | CL-029 | 08-15 | Wit was judged without the answer | TOURNAMENT-WIT | Exam specified |
-| CL-030 | 08-15 | The first workout shipped two quiz-question CDs | F-QUIZ, R-CD-CONTRACT, COLD-SOLVE | Rule specified; Open |
-| CL-031 | 08-15 | Part-j collapsed into cryptic and double definitions | B-DEVICE-MIX, F-QUIZ, COLD-SOLVE | Rule specified; Open |
-| CL-032 | 08-15 | Same-model judges are correlated; zero fails is a warning | calibration, anchors | Exam specified |
+| CL-030 | 08-15 | The first workout shipped two quiz-question CDs | F-QUIZ, R-CD-CONTRACT, COLD-SOLVE | Rule specified; Open; F-QUIZ redefined by CL-051 |
+| CL-031 | 08-15 | Part-j collapsed into cryptic and double definitions | B-DEVICE-MIX (flag), F-QUIZ, COLD-SOLVE | Rule specified; Open; superseded in part by CL-051 |
+| CL-032 | 08-15 | Same-model judges are correlated; zero fails is a warning | calibration, anchors | Exam specified; amended by CL-051 |
 | CL-033 | 08-15 | Definitions that fail a dictionary check | F-DEF-EVIDENCE, EVIDENCE | Rule specified; Open |
 | CL-034 | 08-15 | The ceiling panel's escape hatch | tournament bar vs anchors | Exam specified |
 | CL-035 | 08-15 | The owner gate was designed wrongly | Owner surface session | Superseded by CL-042 |
@@ -102,8 +110,16 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
 | CL-039 | 10-02 | Americanisms and dated register | F-AMERICANISM | Rule specified; Open |
 | CL-040 | 10-02 | The &lit crash: the app didn't cover every device | device coverage | Closed |
 | CL-041 | 10-02 | Owner decision: site copy never says who wrote the clues | `ux-language.test.ts` | Standing decision; Closed (test) |
-| CL-042 | 10-02 | Owner decision: the owner reads surfaces, blind, and nothing else | Owner surface session, DECOY, TOURNAMENT-SURFACE | Standing decision |
+| CL-042 | 10-02 | Owner decision: the owner reads surfaces, blind, and nothing else | Owner surface session, DECOY (now NATURALNESS), TOURNAMENT-SURFACE | Standing decision; amended by CL-051 |
 | CL-043 | 10-02 | Nothing was auditable | ledger | Exam specified |
+| CL-044 | 10-02 | Owner decision: rules must never make clues arbitrarily harder | every rule; waivers; precision test | Standing decision |
+| CL-045 | 10-02 | The old style guide taught broken examples (CHAIR, UNDERMINED, TAR) | executable examples | Closed (test) |
+| CL-046 | 10-02 | Three validator loopholes | validator (`integrity.ts`) | Closed |
+| CL-047 | 10-02 | Synonym-then-precise-deletion was wrongly banned | validator (deletion) | Closed |
+| CL-048 | 10-02 | Daily hints reset when leaving an unfinished clue | Daily state | Closed |
+| CL-049 | 10-02 | The hidden-indicator rule wrongly failed 12 clues | R-HIDDEN-IND | Closed |
+| CL-050 | 10-02 | F-UNATTESTED tested and rejected | — | Closed (rejected) |
+| CL-051 | 10-02 | Spec revision 2: demotions to flags, and exam changes | F-IDLE, F-PRINTED, B-*, F-QUIZ, COLD-SOLVE, NATURALNESS, calibration | Standing decision; Exam specified |
 
 ---
 
@@ -142,7 +158,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   letters exactly). F-UNATTESTED (fodder and central joins checked against n-gram data).
   `scripts/raw-material.mjs` mines attested fodder phrases before drafting.
 - **Status:** Rule specified; Open (content): GENERAL, CORRELATE, ASTRONOMY and STARLING are
-  still shipped.
+  still shipped. The F-UNATTESTED part is superseded by CL-050 (rejected after testing).
+  R-FODDER-LETTERS fail example: `anagram-general`.
 
 ### CL-003 · Invented synonyms: the validator can't see meaning
 - **Date:** 2026-06-03
@@ -214,7 +231,10 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   merely sound like movement near the words.
 - **Change:** R-HIDDEN-IND: hidden indicators must come from the allowed family list in
   `02-devices/hidden.md`.
-- **Status:** Rule specified; Open (content): COB, MOAT and MEADOW are still shipped.
+- **Status:** Rule specified; Open (content): COB, MOAT and MEADOW are still shipped. Superseded in
+  part by CL-049: the indicator test is now published usage or a standard family, so MOAT
+  ("skirts") and MEADOW ("crossing") pass it and are judged in the exam; COB still fails
+  (`hidden-cob`).
 
 ### CL-008 · Down-only reversal indicators in a bank with no grid direction
 - **Date:** 2026-06-03 (TIP), 2026-06-04 (REWARD); found 2026-10-02
@@ -244,7 +264,7 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
 - **Change:** B-DEVICE-MIX (every batch spans ≥ 4 devices; CD + DD ≤ 25%). B-REPEAT (the same
   indicator or scene template no more than twice per batch). The device chapters give fresh
   deletion and acrostic treatments.
-- **Status:** Rule specified.
+- **Status:** Rule specified. Superseded in part by CL-051: B-DEVICE-MIX and B-REPEAT are flags.
 
 ### CL-010 · OVERNIGHT: five versions, still among the worst
 - **Date:** 2026-06-03 to 06-05 (found 2026-10-02)
@@ -262,7 +282,7 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   device.
 - **Change:** R-PRINTED and R-ANSWER-IN-CLUE (see CL-020). The scene brief and alternative-sense
   table in Writer method step 2.
-- **Status:** Open (content).
+- **Status:** Open (content). R-PRINTED is now the flag F-PRINTED (CL-051).
 
 ---
 
@@ -331,7 +351,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
 - **Change:** "The device is free" (CL-019). R-IDLE (CL-024). The Bible's Writer method has no
   device-locked polish step.
 - **Status:** Rule specified; Open (content): DETAIL, ORGAN, WONDER and WARFARE are still
-  shipped.
+  shipped. R-IDLE is now the flag F-IDLE (CL-051); WONDER fails R-ANSWER-IN-CLUE
+  (`deletion-wonder`).
 
 ### CL-015 · Three copies of the gate; three copies of the standard
 - **Date:** 2026-06-04 (code); 2026-10-02 (docs)
@@ -364,7 +385,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   applies to the others.
 - **Change:** The fodder-in-surface guard for deletion (`integrity.ts`, `199f972`), and for
   alternation in `f883696`.
-- **Status:** Closed.
+- **Status:** Closed. Superseded in part by CL-047: a deletion's source may also be a synonym
+  of a clue word, provided one specified part is removed.
 
 ### CL-017 · Teaching clues: "beginner" read as "transparent"
 - **Date:** 2026-06-05
@@ -413,7 +435,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   enforced as rules (R-IDLE, R-PRINTED), so that neither quality can be bought at the other's
   expense.
 - **Status:** Superseded in part: the priority order was replaced by the exam (`04-exam.md`). The
-  rule that the device is free stands.
+  rule that the device is free stands. DECOY is replaced by NATURALNESS, and R-IDLE/R-PRINTED
+  are flags (CL-051).
 
 ### CL-020 · Realism bought by printing the answer's pieces
 - **Date:** 2026-06-05 to 06-07 (found 2026-10-02)
@@ -436,7 +459,9 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   verbatim in the clue fails (the audit's proposed exception: answers of 9+ letters where the
   piece is ≤ ⅓ of the answer). R-ANSWER-IN-CLUE: the answer, or a word sharing its stem, fails.
   R-IDLE: see CL-024. Plan B1 fixtures include OUTLOOK.
-- **Status:** Rule specified; Open (content): every clue named above is still shipped.
+- **Status:** Rule specified; Open (content): every clue named above is still shipped. Superseded
+  in part by CL-051: R-PRINTED and R-IDLE are the flags F-PRINTED and F-IDLE, so these clues pass
+  the machinery and are judgement examples.
 
 ### CL-021 · A single judge reading full entries rubber-stamped REIN
 - **Date:** 2026-06-07 (lesson recorded 2026-06-10)
@@ -487,7 +512,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   merely padding.
 - **Change:** R-IDLE: an article counts as idle unless it contributes a letter or belongs to the
   definition. Fixture: HARM.
-- **Status:** Partly closed (swallowed inside an op); Open (content): HARM, SOUP.
+- **Status:** Partly closed (swallowed inside an op); Open (content): HARM, SOUP. R-IDLE is now the
+  flag F-IDLE (CL-051); a free-floating article is judged by the auditor.
 
 ### CL-024 · Single orphan words: 17% of the bank is padded
 - **Date:** 2026-06-10 (design choice); found 2026-10-02
@@ -511,7 +537,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   allow-list of true link words (no pronouns or auxiliaries as padding). F-TEMPLATE catches the
   "…, he was / still / won't stop us" and "When X…, they…" templates. Judge briefs now say a
   sentence bought with an idle word scores lower. Fixtures: "Members groan", BLASTED.
-- **Status:** Rule specified; Open (content).
+- **Status:** Rule specified; Open (content). Superseded in part by CL-051: R-IDLE is now the flag
+  F-IDLE.
 
 ### CL-025 · Teaching swaps that print their own answer
 - **Date:** 2026-06-10 (found 2026-10-02)
@@ -527,7 +554,7 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   every candidate.
 - **Change:** R-ANSWER-IN-CLUE (EVENT). R-PRINTED applies to container pieces as well as charade
   pieces (CARTON, PIRATE). F-DEF-EVIDENCE (PADLOCK). Teaching clues sit the full exam.
-- **Status:** Rule specified; Open (content).
+- **Status:** Rule specified; Open (content). R-PRINTED is now the flag F-PRINTED (CL-051).
 
 ### CL-026 · Chestnuts: STRESSED/DESSERTS three times
 - **Date:** 2026-06-10 (the current texts); found 2026-10-02
@@ -607,7 +634,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
 - **Change:** R-CD-CONTRACT: a CD must declare `pun: {misleading, true}`; empty fails.
   F-QUIZ: a cold solver who gets the answer from the literal reading flags the clue.
   COLD-SOLVE runs before any wit judging.
-- **Status:** Rule specified; Open (content): both clues are still shipped.
+- **Status:** Rule specified; Open (content): both clues are still shipped. F-QUIZ redefined by
+  CL-051: it means "no distinct second reading", not "solved from the literal reading".
 
 ### CL-031 · Part-j collapsed into cryptic and double definitions
 - **Date:** 2026-08-15 (found 2026-10-02)
@@ -628,7 +656,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
 - **Change:** B-DEVICE-MIX (CD + DD ≤ 25% per batch, ≥ 4 devices). R-CD-CONTRACT, F-QUIZ,
   COLD-SOLVE (unsolved by 2 of 3 solvers, or not unique, means unfair). Re-examine part-j's 33
   CDs and its dubious DDs (expect 10–20 rebuilds, audit 01 §4).
-- **Status:** Rule specified; Open (content).
+- **Status:** Rule specified; Open (content). Superseded in part by CL-051: B-DEVICE-MIX is a flag,
+  and COLD-SOLVE counts a solve only with the correct parse.
 
 ### CL-032 · Same-model judges are correlated; zero fails is a warning
 - **Date:** 2026-08-15 (lesson recorded 2026-10-02)
@@ -649,7 +678,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   scored. Re-run whenever a prompt or model changes, and record each prompt iteration here.
   Pairwise comparisons in both orders replace absolute scores. Use a judge from another model
   family where one is available. Track the fail rate for each batch.
-- **Status:** Exam specified (plan D2–D5).
+- **Status:** Exam specified (plan D2–D5). Amended by CL-051: matched pairs and a held-out set,
+  with false-pass and false-reject counts reported.
 
 ### CL-033 · Definitions that fail a dictionary check
 - **Date:** 2026-06-04 to 2026-08-15 (found 2026-10-02)
@@ -766,6 +796,11 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   In the teaching corpus: EVENT (definition = answer), PADLOCK ("key feature" ≠ LOCK); see
   CL-025. Also graded F in the sample but outside §7.1: MONARCH "Butterfly seen by man on arch?"
   (weak man → M, printed pieces, a "?" doing no work; `f883696`).
+
+  *Note (CL-045, CL-051):* the Rule column gives the IDs as specified on 2026-10-02. Today the
+  machinery rejects five of these clues (GENERAL, COB, WONDER, TIP, REWARD), each kept as a fail
+  example; the other fifteen pass it (R-IDLE and R-PRINTED are now flags) and are judgement
+  examples.
 - **Evidence:** audit 02 §0, §2, §6, §7; "Since" from `git log -S` on each clue text.
 - **Lesson:** Every one of these passed the gates of its day, and most passed a semantic audit
   and a realism judge as well. Almost every fault is mechanical (an idle word, a printed piece,
@@ -856,7 +891,8 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   never in TOURNAMENT-WIT, COLD-SOLVE or EVIDENCE. Success measure: the owner's blind picks agree
   with the tournament winner ≥ 70% of the time. Owner picks feed a house-taste exemplar file
   (audit 01 P2.2).
-- **Status:** Standing decision.
+- **Status:** Standing decision. Amended by CL-051: the owner also solves the finalists and reads
+  the explanation, after the blind surface sessions.
 
 ### CL-043 · Nothing was auditable
 - **Date:** 2026-10-02 (it applies to every batch since 2026-06-03)
@@ -875,3 +911,204 @@ Where an entry has several parts, it gets a composite status (e.g. "Closed (gate
   model, date and decisions. Every case-law entry from now on cites a ledger run ID as well as
   a commit.
 - **Status:** Exam specified (plan D4).
+---
+
+## 2026-10-02 (later): the owner's fairness instruction and Astra's audit
+
+### CL-044 · Owner decision: rules must never make clues arbitrarily harder
+- **Date:** 2026-10-02
+- **What happened:** The first run of the Bible's rules failed shipped clues that used indicators
+  and constructions professional setters use. The owner instructed that the rules must never
+  make clues arbitrarily harder than published practice.
+- **Evidence:** spec revision 2, "Fairness principles (owner)" (`1e12301`); `198c29f`
+  (published-usage indicator lists, waivers, precision check); the header of
+  `src/data/clue-rules.ts`; `scripts/rules-precision.mjs`.
+- **Lesson:** A rule encodes an unambiguous fault, not a taste. A rule that fires on professional
+  clues is wrong, not strict.
+- **Change:** (1) A RULE is only for an unambiguous fault; anything needing judgement is a FLAG.
+  (2) Every rule is precision-tested on published broadsheet clues
+  (`scripts/rules-precision.mjs`); one that fires on professional clues is demoted. (3) Every rule
+  can be waived for one clue with a written reason (`waivers`; `isBlocking` ignores a waived
+  hit), which the exam's auditor checks and case law records. (4) A new failure becomes a
+  **regression example first** (`examples/<device>.json`); a rule follows only once its precision
+  is shown (the standing rule's point 4 above is amended to match). (5) Originality blocks only
+  near-verbatim copies (R-COPY); a shared construction is informational (F-CHESTNUT).
+- **Status:** Standing decision.
+
+### CL-045 · The old style guide taught broken examples
+- **Date:** 2026-10-02 (found by Astra's audit)
+- **What happened:** Astra (ChatGPT, via Codex CLI) found that `docs/clue-style.md`, the
+  agents' source of truth, taught examples its own validator contradicted. The CHAIR
+  "improvement ladder" declared CHAR + A, which cannot make CHAIR (it is CHA(I)R: CHAR around
+  I), and its best rung, "Cleaning-lady holds a position of authority", supplies A where the
+  insertion needs I. The UNDERMINED hidden gave the fodder as "ermine deer", which does not
+  contain the answer; the carrier starts in "Found". "Beheaded celebrity is sailor" (STAR − S =
+  TAR) was correct, but the validator rejected it (CL-047). Astra reproduced the last two.
+- **Evidence:** audit 08 (`docs/audit/2026-10-02/08-astra-chatgpt.md`, "What the earlier audit
+  missed"); `docs/clue-style.md` §3 and §5. Verified before adoption (spec revision 2).
+- **Lesson:** An example is an instruction, and agents imitate examples more readily than rules.
+  A wrong example teaches with the Bible's full authority; consolidating the documents would
+  have preserved the defects.
+- **Change:** Every worked example is data in `docs/clue-bible/examples/<device>.json`, run in
+  CI by `src/data/bible-examples.test.ts` through the validator, the surface gate and the
+  blocking rules (`2ff7200`). Chapters cite example ids instead of pasting JSON. A bad clue is a
+  "fail" example only if the machinery really rejects it, with the exact error; a bad clue the
+  machinery accepts is a *judgement example*, kept in prose. Corrected examples:
+  `container-chair-1` to `-3` (the ladder rebuilt on CHA(I)R), `container-chair-old` (fail),
+  `hidden-undermined`, `hidden-undermined-old` (fail), `deletion-tar`. The first set has 62
+  examples: 48 pass, 14 fail. Of the 20 clues in CL-037, the machinery rejects five (GENERAL,
+  COB, WONDER, TIP, REWARD: `anagram-general`, `hidden-cob`, `deletion-wonder`,
+  `reversal-tip`, `reversal-reward`); the other fifteen are judgement examples (most raise
+  F-IDLE, a flag).
+- **Status:** Closed (test). `docs/clue-style.md` still contains the wrong versions until it is
+  retired to a stub (plan G1).
+
+### CL-046 · Three validator loopholes
+- **Date:** 2026-10-02 (found by Astra's audit)
+- **What happened:** Astra ran deliberately broken candidates through the integrity and surface
+  gates, and all three passed. "Pet in fog (3)" = CAT hidden in "cattle", a word absent from the
+  clue. "Carts endlessly provide a pet (3)" = CARTS minus R and S, which "endlessly" does not
+  authorise (the check only asked for a subsequence). "A dog (3)" = C + A + T, with nothing
+  supplying C or T (single-letter pieces were accepted automatically). All 415 bank clues passed
+  the gates, which showed conformity to the implementation, not fairness.
+- **Evidence:** audit 08 (the validator table); `6d41317`.
+- **Lesson:** A check that accepts the writer's declared output is an assertion, not a check.
+  Test the checker with deliberately broken inputs, and keep them as regressions.
+- **Change:** `integrity.ts` (`6d41317`): the hidden carrier must be in the clue; a deletion
+  removes one contiguous part or both ends; every `concat`/`insert` piece, single letters
+  included, comes from a prior op or a whole surface word. All 415 bank clues still pass, and the
+  bank is validated in CI. Regression examples: `hidden-cat-absent-carrier`,
+  `deletion-cat-scattered`, `charade-cat-free-letters`. The deletion check confirms that one
+  contiguous part goes, not that it is the part the indicator names; that is checked by hand and
+  in the cold solve. Deferred (spec revision 2): span-linked executable parses, Astra's
+  "checkable construction" (which occurrence of which word supplies which letters).
+- **Status:** Closed (`integrity.ts`); span-linked parses deferred.
+
+### CL-047 · Synonym-then-precise-deletion was wrongly banned
+- **Date:** 2026-06-05 (the ban, CL-016); lifted 2026-10-02
+- **What happened:** CL-016 made a deletion's longer word mandatory in the surface, treating
+  "find a synonym, then shorten it" like an indirect anagram. That rejected the old style
+  guide's own correct example (*Beheaded celebrity is sailor*: STAR − S = TAR) and published
+  model clues (ROTTING = ROTATING − A), and helped leave the bank with one deletion (CL-009).
+  Astra: a synonym followed by a precisely specified deletion is a normal construction, and it
+  is not like an indirect anagram, because removing the first letter is tightly constrained
+  ([Crossword Unclued, deletions](https://www.crosswordunclued.com/2009/03/deletions.html)).
+- **Evidence:** audit 08; `6d41317` (`viaSynonym` in `integrity.ts`); `02-devices/deletion.md`.
+- **Lesson:** An analogy to a real fault is not evidence of a fault. Test a ban against published
+  practice before adopting it (CL-044).
+- **Change:** A deletion's source word may be printed or produced by a `synonym`/`abbreviate`
+  op from a clue word; the deletion must still remove one specified part. Example
+  `deletion-tar`. CL-016 is superseded in part: literal fodder is still required for anagrams,
+  hiddens and alternations.
+- **Status:** Closed (`integrity.ts`).
+
+### CL-048 · Daily hints reset when leaving an unfinished clue
+- **Date:** 2026-10-02 (found by Astra's audit, from code)
+- **What happened:** Hints taken, letters revealed and letters typed on the Daily lived only in
+  component state; only finished results persisted. Leaving an unfinished clue and returning
+  lost the work and could turn a helped solve into a zero-help score. The same audit found that
+  today's share link pointed at `/daily` (a moving target), that a page left open past midnight
+  kept yesterday's clue, that restored Learn cards claimed "unaided!", and that bank
+  `hintOverrides` were dropped by the loader.
+- **Evidence:** audit 08 (code findings table); `b1a83b2`.
+- **Lesson:** A score is honest only if the help behind it is remembered. Anything that affects
+  a score must persist with it, and restored state must restore its provenance.
+- **Change:** `b1a83b2`: attempts are saved per day and cleared on finish; share links use
+  `/daily/N`; the date is re-checked on focus and visibility; restored Learn cards no longer
+  claim "unaided!"; bank `hintOverrides` reach hydration. Recorded here because hints and par
+  depend on it. Deferred (spec revision 2): immutable published clue revisions for past Dailies.
+- **Status:** Closed.
+
+### CL-049 · The hidden-indicator rule wrongly failed 12 clues
+- **Date:** 2026-10-02
+- **What happened:** R-HIDDEN-IND first accepted only indicators in
+  `src/data/indicators/hidden.json`, mined from blog-annotated published clues. That table
+  misses textbook indicators, so the rule failed "hides", "conceal", "keep", "cover",
+  "shelters", "lurking", "hidden by", "at the heart of" and "revealed": 12 shipped clues
+  (WALLET, PANTRY, DESK, INKPOT, CHESS, OFTEN, OTTER, OWL, SMOG, FIR, EARLOBE, TERRAIN) that a
+  setter would accept. The device chapter at first told writers to work round the "gaps" or
+  waive them.
+- **Evidence:** `37c2455` (ratchet baseline 82 → 70); the earlier `02-devices/hidden.md` §3.2.
+- **Lesson:** A mined list is a sample of usage, not the whole of it. A rule built on a sample
+  must also accept the standard references, or it rejects what professionals do (CL-044).
+- **Change:** `validHiddenIndicator` accepts published usage (word forms equivalent: hides =
+  hide = hidden = hiding) **or** a standard family from the references (`HIDDEN_FAMILIES`).
+  Only an indicator in neither fails; in the bank, COB "past" and NEST (no indicator). Fail
+  examples `hidden-cob`, `hidden-nest`.
+- **Status:** Closed (`clue-rules.ts`).
+
+### CL-050 · F-UNATTESTED tested and rejected
+- **Date:** 2026-10-02
+- **What happened:** The spec proposed F-UNATTESTED: flag a surface whose central word joins
+  never occur in real text (Alberich's search-engine test, mechanised with a word-pair corpus).
+  Before adoption it was run on published broadsheet clues and on ours. Published clues tripped
+  it **more** often than Cruci's: 62% against 34%.
+- **Evidence:** `scripts/clue-flags.mjs` header ("tried and REJECTED 2026-10-02"); spec revision 2,
+  "Rejected after testing"; `cb91616`.
+- **Lesson:** A check that fires more on the professionals than on us measures nothing we want.
+  Precision-test before adopting (CL-044). Alberich's test stays a writer's habit, not a flag.
+- **Change:** No flag. Invented fodder and carriers (ASTRONOMY "An artsy moon", STARLING
+  "superstar lingo") are judged in the exam (NATURALNESS, TOURNAMENT-SURFACE). The F-UNATTESTED
+  part of CL-002 is superseded.
+- **Status:** Closed (rejected).
+
+### CL-051 · Spec revision 2: demotions to flags, and exam changes
+- **Date:** 2026-10-02
+- **What happened:** After CL-044 and Astra's audit (each finding verified before adoption), the
+  design spec was revised. Astra's points: printing a component, a short familiar construction
+  and solving a double definition from one half are low ambition, not invalidity; "unsolved by 2
+  of 3 cold solvers" can punish difficulty and reward a lucky guess; a spot-the-crossword decoy
+  measures genre cues; calibrating published favourites against our rejects confounds quality
+  with provenance; revising prompts until they pass the same anchors is tuning to the exam.
+- **Evidence:** `1e12301` (spec, "Revision 2"); audit 08 ("The Bible: worthwhile consolidation,
+  flawed acceptance system"); `2ff7200` (R-PRINTED removed from `clue-rules.ts`).
+- **Lesson:** Keep validity, naturalness, difficulty and delight separate, and never let a
+  measure of one stand in for another.
+- **Change:**
+  - **Flags, not rules.** R-PRINTED → **F-PRINTED** at any coverage; R-IDLE → **F-IDLE**; the
+    batch checks B-DEVICE-MIX and B-REPEAT are flags (diversity targets apply to what the learner
+    actually meets). `scripts/validate-clue.ts` still exits non-zero on B-DEVICE-MIX (open).
+  - **COLD-SOLVE.** A solve counts only with the correct parse. Uniqueness: named competing
+    answers, each tested against definition and wordplay. Solve success is recorded separately.
+    Solving a DD or CD from one half is not a defect; **F-QUIZ** now means "no distinct second
+    reading", not "solved from the literal reading".
+  - **NATURALNESS** replaces DECOY: paired comparisons plus "paraphrase the literal scene".
+  - **Calibration.** Matched pairs (a sound clue vs a minimally corrupted copy; fluent-unfair vs
+    awkward-fair; easy-good vs obscure-hard) and a held-out set never used for prompt tuning;
+    report false-pass and false-reject counts at the chosen threshold, not just AUC.
+  - **Owner.** He also solves the finalists and reads the explanation, after the blind surface
+    sessions (amends CL-042). Second opinions go to Astra, not the owner.
+  - **Labels.** External human solvers are deferred to the beta phase (owner decision); until
+    then exam scores are labelled **"AI-calibrated, not human-validated"**.
+  - **Deferred:** span-linked executable parses; immutable published clue revisions; multi-word
+    bank answers; explanation checks in Learn.
+- **Status:** Standing decision; Exam specified.
+
+
+### CL-052 · Calibration split collided with the corruptor's alternation
+
+- **Date:** 2026-10-03
+- **What happened:** The calibration set (`scripts/exam/calibration-set.mjs`) split dev and
+  held-out by alternating pair numbers. The corruptor agent was told to alternate corruption
+  type by pair number too, so dev got only *unfair* copies and held-out only *unnatural* ones.
+  Caught when the first dev report showed "0 unnatural".
+- **Evidence:** `docs/clue-bible/calibration-results.md` (run 1, finding 5).
+- **Lesson:** Splits must be independent of every other alternation in the pipeline. Check the
+  composition of each split (types, devices, lengths) before running judges.
+- **Change:** Re-split by pair number mod 4, before any template decision; held-out judged fresh.
+  Calibration now reports its composition at the top of the section.
+- **Status:** Resolved.
+
+### CL-053 · Cold solving does not detect unfairness; corruptors make mistakes too
+
+- **Date:** 2026-10-03
+- **What happened:** In calibration, cold solvers solved originals and unfair copies at the same
+  rate (83% vs 83% held-out, 89% vs 89% dev). Solvers reach the answer from the definition
+  whatever the wordplay does. Separately, 2 of 30 "unfair" corruptions were still fair clues
+  (APLOMB "follows"; PLUTOCRAT "Fool" = PRAT), and the judges were right to pass them.
+- **Evidence:** `docs/clue-bible/calibration-results.md`.
+- **Lesson:** Fairness is measured by judges who must PARSE (TOURNAMENT-WIT), not by solve
+  rates. The cold solver's job is uniqueness and difficulty. Matched-pair corruptions need a
+  mechanical check where possible.
+- **Change:** `04-exam.md` updated; scoring never treats a solve rate as a fairness signal.
+- **Status:** Standing.

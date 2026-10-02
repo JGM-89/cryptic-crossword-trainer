@@ -1,10 +1,14 @@
 # Reversal
 
-*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md`; the JSON contract is
-`_json-contract.md`. Rule-ID note (2026-10-02): rule names follow `src/data/clue-rules.ts`
-and `scripts/clue-flags.mjs`. Idle words are **F-IDLE** (the design spec's R-IDLE, demoted to a
-flag by the owner's fairness decision); F-UNATTESTED was tried and rejected as an automatic
-check, so invented phrases are judged in the exam (DECOY, TOURNAMENT-SURFACE). Status: v1.*
+*Clue Bible, chapter 02. Rule IDs are defined in `03-rules-and-flags.md` and implemented in
+`src/data/clue-rules.ts` / `scripts/clue-flags.mjs`; the JSON contract is `_json-contract.md`.
+Rule-ID note (spec revision 2, 2026-10-02): idle words (**F-IDLE**, formerly R-IDLE) and printed
+answer pieces (**F-PRINTED**, formerly R-PRINTED) are flags, not rules; batch checks (B-*) are
+flags; any rule can be waived for one clue with a written reason (`_json-contract.md` §6a).
+F-UNATTESTED was tested and rejected (case law CL-050), so invented phrases are judged in the
+exam (NATURALNESS, TOURNAMENT-SURFACE). Worked examples are executable: each `id` cited below is
+an entry in `../examples/<device>.json`, checked in CI by `src/data/bible-examples.test.ts`.
+Status: v1.*
 
 ## 1. What it is and the fair form
 
@@ -25,36 +29,12 @@ word it reverses), with optional link words, nothing else.
 
 ## 2. JSON the validator expects
 
-Literal word:
+Template (literal word): **`reversal-net`** (`../examples/reversal.json`), *What's left when
+ten's knocked over (3)*: `indicator` "knocked over", `fodder` "ten", one op `reverse` TEN → NET.
 
-```json
-{
-  "answer": "NET",
-  "clueType": "reversal",
-  "clue": "What's left when ten's knocked over (3)",
-  "def": { "text": "What's left", "position": "start",
-           "evidence": { "source": "wordnet", "sense": "net.n.02: the excess of revenues over outlays" } },
-  "wordplay": {
-    "indicator": "knocked over",
-    "fodder": "ten",
-    "operations": [ { "op": "reverse", "input": "TEN", "output": "NET" } ]
-  }
-}
-```
-
-Via a synonym (add the `synonym` op first, with `evidence`):
-
-```json
-"wordplay": {
-  "indicator": "Returned",
-  "fodder": "LAGER",
-  "operations": [
-    { "op": "synonym", "input": "beer", "output": "LAGER",
-      "evidence": { "source": "wordnet", "sense": "lager.n.02: a general term for beer made with bottom fermenting yeast" } },
-    { "op": "reverse", "input": "LAGER", "output": "REGAL" }
-  ]
-}
-```
+Template (via a synonym): **`reversal-lever`**, *Party comes back for a bar (5)*: `synonym` Party
+→ REVEL (with `evidence`), then `reverse` REVEL → LEVER; `fodder` "REVEL". (The old template
+here used REGAL from "beer"; that pair is a chestnut, so the template now uses LEVER.)
 
 - `fodder` = the word that is reversed, in letters (**not** the surface synonym).
 - **[validator]** the fodder's letters reversed equal the answer.
@@ -128,9 +108,9 @@ mirror" are allowed: Wikipedia's Across examples include them, but they name no 
 
 | Failure | Bank example | Rule |
 |---|---|---|
-| Down-only indicator in a direction-free clue | TIP "Pointer **rising** from the pit"; REWARD "Carpenter's drawer **turned up** a prize" | **R-INDICATOR-DIR** |
+| Down-only indicator in a direction-free clue | TIP "Pointer **rising** from the pit" (`reversal-tip`); REWARD "Carpenter's drawer **turned up** a prize" (`reversal-reward`) | **R-INDICATOR-DIR** |
 | Across-only indicator | — | **R-INDICATOR-DIR** (by hand) |
-| Chestnut pair | REGAL "Beer sent back…"; STRESSED "Tense when puddings are sent back"; DESSERTS "Stressed, we turned to sweets" | **F-CHESTNUT**; **B-REPEAT** |
+| Chestnut pair | REGAL "Beer sent back…"; STRESSED "Tense when puddings are sent back"; DESSERTS "Stressed, we turned to sweets" | **F-CHESTNUT**; **B-REPEAT** (batch flag); judgement (the machinery passes them) |
 | Padding | DELIVER "Reviled **at first, he** turned **it** around **to save the day**" ("at first" also looks like a first-letter indicator) | **F-IDLE** |
 | Definition comma-tacked on the end | REGAL "…, befitting a queen" | `01-qualities.md` (surface) |
 | Reversed word clued by a synonym without a `synonym` op | SPAR (fodder "raps", surface "criticism", no op) | **F-DEF-EVIDENCE** (no evidence possible); contract §2 |
@@ -140,14 +120,14 @@ mirror" are allowed: Wikipedia's Across examples include them, but they name no 
 
 **Best**
 - **NET** — *What's left when ten's knocked over (3)*. TEN reversed. "What's left" and
-  "knocked over" belong to one picture. Audit 4/4, top tier.
-- **EDIT** — *Revise as the tide turns (4)*. TIDE reversed; "the tide turns" is an idiom.
+  "knocked over" belong to one picture. Audit 4/4, top tier. `reversal-net`.
+- **EDIT** — *Revise as the tide turns (4)*. TIDE reversed; "the tide turns" is an idiom. `reversal-edit`.
 - **DIAL** (teaching corpus) — *Laid back to make a call (4)*. LAID reversed; "laid back" reads
-  as *relaxed*. A model beginner clue (`docs/clue-style.md` §1c).
+  as *relaxed*. A model beginner clue (`docs/clue-style.md` §1c). `reversal-dial`.
 
 **Weak**
 - **TIP** — *Pointer rising from the pit (3)*. "Rising" only works in a Down clue, and Cruci
-  clues have no direction. R-INDICATOR-DIR. The audit's direction: a generic indicator (*Point
+  clues have no direction. R-INDICATOR-DIR (fail example `reversal-tip`). The audit's direction: a generic indicator (*Point
   back at the pit*).
 
 ## 7. Cruci-specific notes
@@ -159,7 +139,7 @@ mirror" are allowed: Wikipedia's Across examples include them, but they name no 
 - **Reversals inside other devices** (a reversed piece in a charade or container) are how the
   bank gets its difficulty-4 tail; the indicator rules here apply to those pieces too.
 - **Teaching register (Stage A).** A literal word whose reversal is a common word, an indicator
-  hidden in an idiom (*Party comes back for a bar*, LEVER; *Laid back to make a call*, DIAL).
+  hidden in an idiom (*Party comes back for a bar*, LEVER, `reversal-lever`; *Laid back to make a call*, DIAL).
   Never narrate ("Warts, sent back, spell a drinking tube" is the old fault, §1c). The teaching
   corpus already teaches STRESSED/DESSERTS; the bank must not repeat it.
 - **Par.** A literal reversal is one operation (C = 0); a synonym then a reversal is two (C = 1).

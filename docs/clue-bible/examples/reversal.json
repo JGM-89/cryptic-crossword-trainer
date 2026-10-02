@@ -1,0 +1,185 @@
+[
+  {
+    "id": "reversal-net",
+    "verdict": "pass",
+    "why": "Template (literal word). \"What's left\" and \"knocked over\" belong to one ten-pin picture; \"knocked over\" is direction-free (rotation).",
+    "entry": {
+      "answer": "NET",
+      "clueType": "reversal",
+      "difficulty": 2,
+      "clue": "What's left when ten's knocked over (3)",
+      "def": {
+        "text": "What's left",
+        "position": "start",
+        "evidence": {
+          "source": "wordnet",
+          "sense": "net.n.02: the excess of revenues over outlays"
+        }
+      },
+      "wordplay": {
+        "indicator": "knocked over",
+        "fodder": "ten",
+        "operations": [
+          {
+            "op": "reverse",
+            "input": "TEN",
+            "output": "NET"
+          }
+        ]
+      },
+      "parse": "TEN reversed by 'knocked over' = NET; what's left, the net amount.",
+      "par": 3
+    }
+  },
+  {
+    "id": "reversal-edit",
+    "verdict": "pass",
+    "why": "TIDE reversed; \"as the tide turns\" is a set phrase hiding the indicator.",
+    "entry": {
+      "answer": "EDIT",
+      "clueType": "reversal",
+      "difficulty": 3,
+      "clue": "Revise as the tide turns (4)",
+      "def": {
+        "text": "Revise",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "turns",
+        "fodder": "tide",
+        "operations": [
+          {
+            "op": "reverse",
+            "input": "TIDE",
+            "output": "EDIT"
+          }
+        ]
+      },
+      "parse": "TIDE reversed by 'turns' = EDIT, to revise. 'as the tide turns' is a natural idiom doing the cryptic work.",
+      "par": 3
+    }
+  },
+  {
+    "id": "reversal-dial",
+    "verdict": "pass",
+    "why": "Teaching register: \"laid back\" reads as relaxed; LAID reversed.",
+    "entry": {
+      "answer": "DIAL",
+      "clueType": "reversal",
+      "difficulty": 2,
+      "par": 3,
+      "clue": "Laid back to make a call (4)",
+      "def": {
+        "text": "make a call",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "back",
+        "fodder": "LAID",
+        "operations": [
+          {
+            "op": "reverse",
+            "input": "LAID",
+            "output": "DIAL"
+          }
+        ]
+      },
+      "parse": "LAID reversed = DIAL, to make a call."
+    }
+  },
+  {
+    "id": "reversal-lever",
+    "verdict": "pass",
+    "why": "Template (via a synonym). Party = REVEL, reversed (\"comes back\"); a synonym is fair before a reversal because reversing is one checkable step.",
+    "entry": {
+      "answer": "LEVER",
+      "clueType": "reversal",
+      "difficulty": 3,
+      "par": 3,
+      "clue": "Party comes back for a bar (5)",
+      "def": {
+        "text": "a bar",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "comes back",
+        "fodder": "REVEL",
+        "operations": [
+          {
+            "op": "synonym",
+            "input": "Party",
+            "output": "REVEL",
+            "evidence": {
+              "source": "wordnet",
+              "sense": "revel.n.01: unrestrained merrymaking"
+            }
+          },
+          {
+            "op": "reverse",
+            "input": "REVEL",
+            "output": "LEVER"
+          }
+        ]
+      },
+      "parse": "REVEL (party) “comes back” — reversed = LEVER, a bar."
+    }
+  },
+  {
+    "id": "reversal-tip",
+    "verdict": "fail",
+    "failsWith": "R-INDICATOR-DIR",
+    "why": "Bank clue (CL-008): \"rising\" only works in a Down clue; Cruci clues have no direction.",
+    "entry": {
+      "answer": "TIP",
+      "clueType": "reversal",
+      "difficulty": 2,
+      "clue": "Pointer rising from the pit (3)",
+      "def": {
+        "text": "Pointer",
+        "position": "start"
+      },
+      "wordplay": {
+        "indicator": "rising",
+        "fodder": "pit",
+        "operations": [
+          {
+            "op": "reverse",
+            "input": "PIT",
+            "output": "TIP"
+          }
+        ]
+      },
+      "parse": "PIT reversed ('rising', in a down clue) = TIP; a pointer or hint.",
+      "par": 4
+    }
+  },
+  {
+    "id": "reversal-reward",
+    "verdict": "fail",
+    "failsWith": "R-INDICATOR-DIR",
+    "why": "Bank clue (CL-008): \"turned up\" is a Down-only reversal indicator.",
+    "entry": {
+      "answer": "REWARD",
+      "clueType": "reversal",
+      "difficulty": 2,
+      "clue": "Carpenter's drawer turned up a prize (6)",
+      "def": {
+        "text": "prize",
+        "position": "end"
+      },
+      "wordplay": {
+        "indicator": "turned up",
+        "fodder": "drawer",
+        "operations": [
+          {
+            "op": "reverse",
+            "input": "DRAWER",
+            "output": "REWARD"
+          }
+        ]
+      },
+      "parse": "DRAWER reversed = REWARD, a prize.",
+      "par": 3
+    }
+  }
+]
