@@ -163,3 +163,13 @@ describe('waivers', () => {
     expect(checkRules(e).some(isBlocking)).toBe(true);
   });
 });
+
+describe('surface gate fairness (CL-056)', () => {
+  it('a compact double definition is not rejected as a bare word list', async () => {
+    const { surfaceGateFlags } = await import('./surface-rules');
+    const dd = { id: 'x', clue: 'Fancy wax (5)', clueType: 'double-definition', defText: 'Fancy', indicator: '', fodder: '', opInputs: [] };
+    expect(surfaceGateFlags(dd).some((f) => f.startsWith('bare word-list'))).toBe(false);
+    const anagram = { ...dd, clueType: 'anagram' };
+    expect(surfaceGateFlags(anagram).some((f) => f.startsWith('bare word-list'))).toBe(true);
+  });
+});

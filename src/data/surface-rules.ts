@@ -229,7 +229,13 @@ export function coverageFlags(e: SurfaceEntry): string[] {
 
 /** All gate checks for one entry (the CI/pipeline hard gate). */
 export function surfaceGateFlags(e: SurfaceEntry): string[] {
-  const out = [...gateFlags(e.clue), ...linkMismatchFlags(e), ...coverageFlags(e)];
+  // Compact whole-clue devices ("Fancy wax", "Polish grit") are standard
+  // broadsheet practice: 2.5% of published clues trip the bare-word-list check,
+  // nearly all of them double definitions (case law CL-056). Exempt them.
+  const gate = WHOLE_CLUE_DEVICES.has(e.clueType)
+    ? gateFlags(e.clue).filter((f) => !f.startsWith('bare word-list'))
+    : gateFlags(e.clue);
+  const out = [...gate, ...linkMismatchFlags(e), ...coverageFlags(e)];
   if (indicatorAbsent(e)) out.push(`indicator "${e.indicator}" absent from the surface`);
   return out;
 }

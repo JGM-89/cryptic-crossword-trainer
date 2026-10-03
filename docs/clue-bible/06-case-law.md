@@ -1137,3 +1137,37 @@ F-UNATTESTED was rejected (CL-050); the DECOY test is replaced by **NATURALNESS*
   surface 0.5 / wit 0.5.
 - **Status:** Probe built and running on the baseline. Daily bar to be finalised with the
   baseline report.
+
+### CL-055 · Cryptic definition vs quiz clue: the exam isn't fooled head to head
+
+- **Date:** 2026-10-03
+- **What happened:** The baseline scored our cryptic definitions highest of any device, while
+  the audits said many were quiz clues. Calibration run 2 matched 13 real published CDs with
+  quiz versions (plain descriptions with a "?").
+- **Evidence:** `calibration-results.md`, run 2. Wit preferred the real CD 13/13. The
+  definition-only probe flagged quiz versions 11/13, but also real CDs 6/13.
+- **Lesson:** Head to head, the wit tournament separates real puns from quiz clues. The
+  definition-only probe is weak for CDs (their definition is the whole clue). The CD baseline
+  advantage may come from uneven anchors (anchors for the same answer are usually other
+  devices).
+- **Change:** For CDs, rely on TOURNAMENT-WIT plus R-CD-CONTRACT. In writer runs, give CD
+  candidates a published-CD anchor where one exists.
+- **Status:** Open (anchor-mix effect to check).
+
+### CL-056 · The bare-word-list gate blocked compact double definitions (fairness)
+
+- **Date:** 2026-10-03
+- **What happened:** In Writer run 1, two independent setters hit the surface gate's "bare
+  word-list — no verb/connector" check on two-word double definitions ("Polish grit", "Dock
+  job", "Public officer"). The work setter reworded 14 of them.
+- **Evidence:** precision check on 20,000 published UK clues. The check fires on 2.5%, nearly
+  all compact double definitions ("Fancy wax", "Deny female opinion"): standard broadsheet
+  practice.
+- **Lesson:** A check that blocks a form professionals use routinely makes clues harder to
+  write for no gain (owner's fairness principle). The word-list check is right for wordplay
+  surfaces and wrong for whole-clue devices.
+- **Change:** `surfaceGateFlags` exempts double definitions, cryptic definitions and &lit from
+  the bare-word-list check (test in `clue-rules.test.ts`). Also noted: the raw-capitals check
+  fires on 0.6% of published clues (acronyms like ITV, NATO). It's kept for now; revisit if it
+  blocks fair clues.
+- **Status:** Resolved.
