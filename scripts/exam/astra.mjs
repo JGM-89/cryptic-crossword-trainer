@@ -20,7 +20,14 @@ const input = arg('in');
 const effort = arg('effort', 'medium');
 if (!template || !input) throw new Error('usage: --template <cold-solver|surface|wit|evidence> --in <batch.json>');
 
-const body = readFileSync(`docs/clue-bible/judges/${template}.md`, 'utf8').split('\n---\n').slice(1).join('\n---\n');
+// Normalise line endings first: a Windows-saved template (CRLF) once silently
+// produced an empty prompt and every Astra batch failed (case law CL-058).
+const body = readFileSync(`docs/clue-bible/judges/${template}.md`, 'utf8')
+  .replace(/\r\n/g, '\n')
+  .split('\n---\n')
+  .slice(1)
+  .join('\n---\n');
+if (!body.trim()) throw new Error(`judge template ${template}.md has no instructions after its '---' line`);
 const prompt = body
   .replaceAll('{IN}', resolve(input))
   .replace(/Write ONLY a JSON array to \{OUT\}/, 'Reply with ONLY the JSON array (no prose, no code fences)')
@@ -34,7 +41,7 @@ for (let attempt = 1; attempt <= ATTEMPTS && !rows; attempt++) {
   execFileSync(
     'codex',
     ['exec', '-m', 'gpt-6-astra', '-c', `model_reasoning_effort="${effort}"`, '-s', 'read-only', '-C', '.', '-o', lastMsg, '--color', 'never', '-'],
-    { input: prompt, stdio: ['pipe', 'ignore', 'ignore'], maxBuffer: 64 * 1024 * 1024, shell: process.platform === 'win32' },
+    { input: prompt, stdio: ['pipe', 'ignore', 'pipe'], maxBuffer: 64 * 1024 * 1024, shell: process.platform === 'win32' },
   );
   const text = readFileSync(lastMsg, 'utf8');
   try {

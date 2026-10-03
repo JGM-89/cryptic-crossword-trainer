@@ -1191,3 +1191,18 @@ F-UNATTESTED was rejected (CL-050); the DECOY test is replaced by **NATURALNESS*
     batch": it's used only to shortlist finalists, Astra judges independently, and the owner
     sees the finalists.
 - **Status:** Resolved for future runs.
+
+### CL-058 · A Windows line-ending change silently emptied every Astra prompt
+
+- **Date:** 2026-10-03
+- **What happened:** Appending the v1.1 rule to `judges/surface.md` and `judges/wit.md` with
+  Python on Windows rewrote them with CRLF line endings. `astra.mjs` split the template on
+  `\n---\n`, found nothing, sent an empty prompt, and every Astra batch failed in about 2
+  seconds. Claude judges, given the file path, were unaffected. Caught when Astra's count stopped
+  rising.
+- **Lesson:** Tooling must not depend on line endings, and an empty prompt must be an error, not
+  a silent no-op. A judge panel missing one model family is the self-preference trap (baseline:
+  Claude-only wit 55% vs mixed 48%), so a silent failure there matters.
+- **Change:** `astra.mjs` normalises CRLF and throws if a template has no instructions after
+  `---`. It also keeps codex's stderr.
+- **Status:** Resolved; the w1 Astra queue was restarted.
