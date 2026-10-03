@@ -1,4 +1,4 @@
-# Judge template: TOURNAMENT-SURFACE (v1)
+# Judge template: TOURNAMENT-SURFACE (v1.1)
 
 Use verbatim. Replace {IN} and {OUT}. Judges see bare sentences only: no answers, no device,
 no sign of which line is ours.
@@ -17,3 +17,6 @@ For EACH pair:
 
 Write ONLY a JSON array to {OUT}: [{pair, paraphraseA, paraphraseB, winner, reason}], covering
 every pair.
+
+Judge every pair as a direct comparison of those two clues. Never score clues one at a time and
+derive winners from the scores — that is absolute scoring, which this exam deliberately avoids.

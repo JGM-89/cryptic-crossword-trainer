@@ -70,7 +70,7 @@ export function corpusChecks(e) {
 }
 
 // ── CLI ────────────────────────────────────────────────────────────────────
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, '/')}` || process.argv[1]?.endsWith('clue-flags.mjs')) {
+if (process.argv[1]?.endsWith('clue-flags.mjs')) {
   let entries;
   if (process.argv.includes('--bank')) {
     entries = readdirSync('src/data/bank')

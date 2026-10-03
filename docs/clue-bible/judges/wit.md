@@ -1,4 +1,4 @@
-# Judge template: TOURNAMENT-WIT (v1)
+# Judge template: TOURNAMENT-WIT (v1.1)
 
 Use verbatim. Replace {IN} and {OUT}. The answer is revealed; neither clue's parse is supplied,
 so the judge works both out (symmetry: anchors carry no parse either).
@@ -16,3 +16,6 @@ For EACH pair:
 
 Write ONLY a JSON array to {OUT}: [{pair, parseA, parseB, fairA, fairB, winner, reason}], with
 fairA/fairB true or false, covering every pair.
+
+Judge every pair as a direct comparison of those two clues. Never score clues one at a time and
+derive winners from the scores — that is absolute scoring, which this exam deliberately avoids.
