@@ -80,6 +80,19 @@ for (const dim of ['surface', 'wit']) {
   }
 }
 
+// ── Definition-only probe (CL-054) ─────────────────────────────────────────
+const defOnly = {}; // item → {votes, judges}
+for (const { rows } of outputs('defonly-')) {
+  for (const r of rows) {
+    const c = card[r.item];
+    if (!c) continue;
+    const top = (r.guesses ?? [])[0];
+    const d = (defOnly[r.item] ??= { votes: 0, judges: 0 });
+    d.judges++;
+    if (top && letters(top.answer) === c.answer && Number(top.confidence) >= 0.5) d.votes++;
+  }
+}
+
 // ── Evidence ───────────────────────────────────────────────────────────────
 const evidence = {};
 for (const { judge, rows } of outputs('evidence')) {
@@ -115,6 +128,8 @@ const cards = Object.entries(card).map(([iid, c]) => {
     witVsAll: rate(c.wit.vsAll),
     evidence: ev.map((x) => x.verdict),
     faults,
+    // FLAG (not a fault): the definition alone gives the answer away (CL-054).
+    defGiveaway: defOnly[iid] ? defOnly[iid].votes / defOnly[iid].judges : null,
     beatsAnchors: surfaceVsAnchor !== null && witVsAnchor !== null ? surfaceVsAnchor >= 0.5 && witVsAnchor >= 0.5 : null,
   };
 });
@@ -140,6 +155,7 @@ const lines = [
   `- Mean wit win rate vs published anchors: ${pct(mean(ours.map((c) => c.witVsAnchor)))}`,
   `- Beat or tie the anchors on both surface and wit: ${ours.filter((c) => c.beatsAnchors).length}/${ours.filter((c) => c.beatsAnchors !== null).length}`,
   `- Clues with an exam fault: ${ours.filter((c) => c.faults.length).length}`,
+  `- Definition gives the answer away (majority of def-only solvers, CL-054): ours ${pct(mean(ours.filter((c) => c.defGiveaway !== null).map((c) => (c.defGiveaway > 0.5 ? 1 : 0))))}, published anchors ${pct(mean(cards.filter((c) => c.kind === 'anchor' && c.defGiveaway !== null).map((c) => (c.defGiveaway > 0.5 ? 1 : 0))))}`,
   '',
   '## Faults',
   '',

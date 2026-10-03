@@ -19,6 +19,7 @@ clues for the same answer**, so "good" means "at least as good as what professio
 | **TOURNAMENT-SURFACE** | Which reads as more natural English? Does it describe a coherent situation? | Two bare surfaces, no answers, no labels | `judges/surface.md` |
 | **TOURNAMENT-WIT** | Which gives the better, fairer "aha"? | The answer plus both clues; the judge parses both | `judges/wit.md` |
 | **EVIDENCE** | Is the definition a real sense of the answer? | Definition, answer, clue, parse | `judges/evidence.md` |
+| **DEFINITION-ONLY** | Does the definition alone, plus the letter count, give the answer away? (FLAG; CL-054) | The definition words and letter count only | `judges/def-only.md` (batches: `node scripts/exam/defonly.mjs --run ID`) |
 
 ### Design choices, and why
 

@@ -1112,3 +1112,28 @@ F-UNATTESTED was rejected (CL-050); the DECOY test is replaced by **NATURALNESS*
   mechanical check where possible.
 - **Change:** `04-exam.md` updated; scoring never treats a solve rate as a fairness signal.
 - **Status:** Standing.
+
+### CL-054 · The definition gave it away: Daily #111 TELEVISION (owner, playing live)
+
+- **Date:** 2026-10-03
+- **What happened:** The owner solved Daily #111, "Novelise it for broadcast on the box (10)",
+  without ever noticing the anagram: "the box" plus 10 letters is TELEVISION. In his words: "the
+  answer is in the sentence… I didn't even realise it was an anagram indicator, it just sounded
+  like 'the box' was television". The wordplay was irrelevant. The exam had scored it a tie
+  with published clues (surface 50%, wit 50%), and "beat or tie" let it through.
+- **Lesson:**
+  1. A clue whose definition alone, plus the letter count, gives the answer isn't working as a
+     cryptic. The solver never needs the trick, which is the whole point, and, for a trainer,
+     the thing being taught.
+  2. A tie with published clues isn't good enough for the Daily, the one clue everyone sees.
+- **Change:**
+  - New exam step **DEFINITION-ONLY** (`judges/def-only.md`, `scripts/exam/defonly.mjs`): solvers
+    see only the definition and letter count. If most get the answer confidently, the clue gets
+    the FLAG *definition gives it away*.
+  - Published anchors get the same probe, so the rate is compared with professional practice.
+    Easy beginner clues are allowed, so it's a flag, not a rule.
+  - The Daily bar is raised (05: Daily selection).
+- **Evidence:** the owner's report and screenshot, 2026-10-03; baseline scorecard TELEVISION
+  surface 0.5 / wit 0.5.
+- **Status:** Probe built and running on the baseline. Daily bar to be finalised with the
+  baseline report.

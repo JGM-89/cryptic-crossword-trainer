@@ -26,15 +26,26 @@ const prompt = body
   .replace(/Write ONLY a JSON array to \{OUT\}/, 'Reply with ONLY the JSON array (no prose, no code fences)')
   .replaceAll('{OUT}', 'your reply');
 
-const lastMsg = join(mkdtempSync(join(tmpdir(), 'astra-')), 'last.txt');
-execFileSync(
-  'codex',
-  ['exec', '-m', 'gpt-6-astra', '-c', `model_reasoning_effort="${effort}"`, '-s', 'read-only', '-C', '.', '-o', lastMsg, '--color', 'never', '-'],
-  { input: prompt, stdio: ['pipe', 'ignore', 'inherit'], maxBuffer: 64 * 1024 * 1024, shell: process.platform === 'win32' },
-);
-const text = readFileSync(lastMsg, 'utf8');
-const json = text.slice(text.indexOf('['), text.lastIndexOf(']') + 1);
-const rows = JSON.parse(json);
 const out = input.replace(/\.json$/, '.astra.out.json');
+const ATTEMPTS = 3;
+let rows;
+for (let attempt = 1; attempt <= ATTEMPTS && !rows; attempt++) {
+  const lastMsg = join(mkdtempSync(join(tmpdir(), 'astra-')), 'last.txt');
+  execFileSync(
+    'codex',
+    ['exec', '-m', 'gpt-6-astra', '-c', `model_reasoning_effort="${effort}"`, '-s', 'read-only', '-C', '.', '-o', lastMsg, '--color', 'never', '-'],
+    { input: prompt, stdio: ['pipe', 'ignore', 'ignore'], maxBuffer: 64 * 1024 * 1024, shell: process.platform === 'win32' },
+  );
+  const text = readFileSync(lastMsg, 'utf8');
+  try {
+    rows = JSON.parse(text.slice(text.indexOf('['), text.lastIndexOf(']') + 1));
+  } catch (err) {
+    // Astra occasionally emits slightly malformed JSON on long batches: keep the
+    // raw reply for inspection and try again.
+    writeFileSync(out.replace(/\.out\.json$/, `.raw-${attempt}.txt`), text);
+    console.error(`astra ${template}: attempt ${attempt} gave invalid JSON (${err.message}); ${attempt < ATTEMPTS ? 'retrying' : 'giving up'}`);
+  }
+}
+if (!rows) process.exit(1);
 writeFileSync(out, JSON.stringify(rows, null, 1));
 console.log(`astra ${template}: ${rows.length} rows → ${out}`);
