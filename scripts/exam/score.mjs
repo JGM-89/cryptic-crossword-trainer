@@ -28,8 +28,8 @@ for (const [iid, it] of Object.entries(items)) {
   card[iid] = {
     ...it,
     solve: { solvers: 0, solved: 0, alternatives: [] },
-    surface: { vsAnchor: [0, 0], vsAll: [0, 0], incoherent: 0, judged: 0 },
-    wit: { vsAnchor: [0, 0], vsAll: [0, 0], unfair: 0, judged: 0 },
+    surface: { vsAnchor: [0, 0], vsIncumbent: [0, 0], vsAll: [0, 0], incoherent: 0, judged: 0 },
+    wit: { vsAnchor: [0, 0], vsIncumbent: [0, 0], vsAll: [0, 0], unfair: 0, judged: 0 },
   };
 }
 
@@ -67,6 +67,10 @@ for (const dim of ['surface', 'wit']) {
         if (other.kind === 'anchor') {
           me[dim].vsAnchor[0] += s;
           me[dim].vsAnchor[1] += 1;
+        }
+        if (other.kind === 'incumbent') {
+          me[dim].vsIncumbent[0] += s;
+          me[dim].vsIncumbent[1] += 1;
         }
       }
       if (dim === 'surface') {
@@ -124,6 +128,8 @@ const cards = Object.entries(card).map(([iid, c]) => {
     solveRate,
     surfaceVsAnchor,
     witVsAnchor,
+    surfaceVsIncumbent: rate(c.surface.vsIncumbent),
+    witVsIncumbent: rate(c.wit.vsIncumbent),
     surfaceVsAll: rate(c.surface.vsAll),
     witVsAll: rate(c.wit.vsAll),
     evidence: ev.map((x) => x.verdict),
@@ -177,6 +183,7 @@ if (cards.some((c) => c.label)) {
   const sep = (ps, f) => ps.filter((p) => f(p.good) !== null && f(p.bad) !== null && f(p.good) > f(p.bad)).length;
   const unnatural = pairsWith.filter((p) => p.bad.corruption === 'unnatural');
   const unfair = pairsWith.filter((p) => p.bad.corruption === 'unfair');
+  const quiz = pairsWith.filter((p) => p.bad.corruption === 'quiz');
   const n = (ps, f) => ps.filter(f).length;
   lines.push(
     '',
@@ -187,6 +194,12 @@ if (cards.some((c) => c.label)) {
     `- **Unfair copies — judged unfair by most wit judges:** ${n(unfair, (p) => (p.bad.unfairVotes ?? 0) > 0.5)}/${unfair.length} (originals judged unfair: ${n(unfair, (p) => (p.good.unfairVotes ?? 0) > 0.5)}/${unfair.length})`,
     `- Unfair copies — wit prefers the original: ${sep(unfair, (c) => c.witVsAll)}/${unfair.length}`,
     `- Cold solve rate: originals ${pct(mean(pairsWith.map((p) => p.good.solveRate)))}, corrupted ${pct(mean(pairsWith.map((p) => p.bad.solveRate)))}`,
+    ...(quiz.length
+      ? [
+          `- **Quiz clue vs real cryptic definition — wit prefers the real CD:** ${sep(quiz, (c) => c.witVsAll)}/${quiz.length}`,
+          `- Definition gives it away (majority): real CDs ${n(quiz, (p) => (p.good.defGiveaway ?? 0) > 0.5)}/${quiz.length}, quiz versions ${n(quiz, (p) => (p.bad.defGiveaway ?? 0) > 0.5)}/${quiz.length}`,
+        ]
+      : []),
     `- Any exam fault on corrupted copies (caught): ${n(pairsWith, (p) => p.bad.faults.length)}/${pairsWith.length}; on originals (false alarms): ${n(pairsWith, (p) => p.good.faults.length)}/${pairsWith.length}`,
   );
 }

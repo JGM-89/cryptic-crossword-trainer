@@ -2,32 +2,41 @@
 // Setters start from material, not memory: this gathers what a human setter
 // would hunt for, from local corpora (npm run corpus:fetch).
 //
-//   npx tsx scripts/raw-material.mjs ANSWER [--json]
+//   npx tsx scripts/raw-material.mjs ANSWER [ANSWER…] [--json] [--out DIR]
+//   (several answers share one corpus load; --out writes DIR/<ANSWER>.json)
 //
 // Sections: senses (definition candidates), anagrams (words + attested two-word
 // phrases), hidden carriers (real sentences containing the answer across a word
 // break), charade & container splits (pieces with synonym cues), reversal,
 // and the published indicator vocabulary per device (src/data/indicators/).
-import { readFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { ABBR } from '../src/data/abbreviations.ts';
 import { bigramCount, lemmas, senses, sentences, thesaurus, words } from './corpus/lib.mjs';
 
-const ANSWER = (process.argv[2] ?? '').toUpperCase().replace(/[^A-Z]/g, '');
-if (!ANSWER) throw new Error('usage: npx tsx scripts/raw-material.mjs ANSWER [--json]');
-const lower = ANSWER.toLowerCase();
+const outIdx = process.argv.indexOf('--out');
+const OUT = outIdx === -1 ? null : process.argv[outIdx + 1];
+const ANSWERS = process.argv
+  .slice(2)
+  .filter((a, i, all) => !a.startsWith('--') && all[i - 1] !== '--out')
+  .map((a) => a.toUpperCase().replace(/[^A-Z]/g, ''))
+  .filter(Boolean);
+if (!ANSWERS.length) throw new Error('usage: npx tsx scripts/raw-material.mjs ANSWER [ANSWER…] [--json] [--out DIR]');
 const sortL = (s) => s.toLowerCase().replace(/[^a-z]/g, '').split('').sort().join('');
 
 // ── Vocabulary with everyday frequency (Tatoeba) ────────────────────────────
 const freq = new Map();
 for (const s of sentences()) for (const w of words(s)) if (/^[a-z]+$/.test(w)) freq.set(w, (freq.get(w) || 0) + 1);
 const vocab = [...new Set([...lemmas()].filter((w) => /^[a-z]+$/.test(w)))].filter((w) => (freq.get(w) || 0) >= 3);
-const isWord = (w) => (freq.get(w) || 0) >= 3 && vocab.includes(w);
+const vocabSet = new Set(vocab);
+const isWord = (w) => (freq.get(w) || 0) >= 3 && vocabSet.has(w);
 const common = (xs, n) => [...new Set(xs)].filter((w) => /^[a-z]+$/.test(w)).sort((a, b) => (freq.get(b) || 0) - (freq.get(a) || 0)).slice(0, n);
 
 // Abbreviation cues: letters → cue words (the allowed list only).
 const abbrCues = new Map();
 for (const [cue, outs] of Object.entries(ABBR)) for (const o of outs) (abbrCues.get(o) ?? abbrCues.set(o, []).get(o)).push(cue);
 
+function mine(ANSWER) {
+const lower = ANSWER.toLowerCase();
 // ── Senses (definition candidates) ──────────────────────────────────────────
 const sense = senses(lower).map((s) => `${s.pos}: ${s.gloss.split(';')[0]} [${s.lemmas.filter((l) => l !== lower).slice(0, 4).join(', ')}]`);
 const synonyms = common(thesaurus(lower).filter((w) => !w.includes(' ')), 25);
@@ -100,7 +109,7 @@ const pieceCues = (p) => {
   for (const c of abbrCues.get(p) ?? []) cues.push(`${c} (abbr)`);
   return cues;
 };
-const usable = (p) => p.length >= 1 && (isWord(p.toLowerCase()) && p.length >= 2 || abbrCues.has(p));
+function usable(p) { return p.length >= 1 && (isWord(p.toLowerCase()) && p.length >= 2 || abbrCues.has(p)); }
 const charades = [];
 for (let i = 1; i < ANSWER.length; i++) {
   const [a, b] = [ANSWER.slice(0, i), ANSWER.slice(i)];
@@ -138,7 +147,11 @@ const result = {
   note: 'Raw material only. Published clues are never material: originality is checked separately (R-COPY).',
 };
 
-if (process.argv.includes('--json')) console.log(JSON.stringify(result, null, 1));
+if (OUT) {
+  mkdirSync(OUT, { recursive: true });
+  writeFileSync(`${OUT}/${ANSWER}.json`, JSON.stringify(result, null, 1));
+  console.log(`raw material: ${ANSWER} → ${OUT}/${ANSWER}.json`);
+} else if (process.argv.includes('--json')) console.log(JSON.stringify(result, null, 1));
 else {
   console.log(`# Raw material: ${ANSWER}\n`);
   console.log(`Senses:\n  ${result.senses.join('\n  ') || '—'}\nSynonyms: ${synonyms.join(', ')}\n`);
@@ -149,3 +162,6 @@ else {
   console.log(`Containers:\n  ${containers.slice(0, 8).map((c) => `${c.inner} in ${c.outer}  ←  ${c.cues.map((x) => x.slice(0, 4).join('/') || '?').join(' in ')}`).join('\n  ') || '—'}\n`);
   console.log(`Reversal: ${reversal ? `${reversal.reversed} ← ${reversal.cues.slice(0, 6).join('/')}` : '—'}`);
 }
+}
+
+for (const a of ANSWERS) mine(a);

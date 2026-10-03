@@ -63,3 +63,33 @@ whose surfaces are equally natural by design, so roughly 45/60 is the ceiling th
    one in held-out, because both the corruptor and the split alternated by pair number. The set
    was re-split (pair number mod 4) before any template decisions, and the held-out run used
    fresh judging. Recorded in case law.
+
+## Run 2 — 2026-10-03: cryptic definition vs quiz clue (CL-055)
+
+**Why:** the baseline scored our cryptic definitions highest of any device (surface 92%, wit
+68% vs anchors), while the audits found many were "quiz" clues: a plain definition with a "?"
+added. Is the exam biased towards them?
+
+**Set:** 30 published Times/Fifteensquared clues marked as whole-clue definitions; an agent
+classified 13 as true cryptic definitions and skipped 17 (DDs, &lits, bad data). For each, the
+agent wrote a matched **quiz version**: an accurate, plain description with a "?" and no pun.
+Judges: 2 Claude per step (wit; definition-only).
+
+| Measure | Result |
+|---|---|
+| Wit tournament prefers the real cryptic definition | **13/13** |
+| Definition-only probe flags the quiz version | 11/13 |
+| Definition-only probe flags the real cryptic definition | 6/13 |
+
+**Findings:**
+1. **Head to head, the exam isn't fooled by quiz clues.** The wit judges preferred the
+   genuine pun every time.
+2. **The definition-only probe is a weak signal for cryptic definitions.** Their "definition"
+   is the whole clue, and half of real published CDs are solvable from a straight reading. For
+   CDs, rely on TOURNAMENT-WIT and the `pun` contract (R-CD-CONTRACT), not on the probe.
+3. **Still open:** why our CDs beat their *anchors* so often in the baseline. The anchors for
+   the same answer are often other devices (and sometimes weak published surfaces), so the
+   comparison may be uneven rather than biased. Check in the first workout by giving every CD
+   candidate at least one published-CD anchor where one exists.
+
+Small n (13 pairs): treat as indicative.

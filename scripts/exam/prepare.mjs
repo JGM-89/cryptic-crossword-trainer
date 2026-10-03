@@ -51,8 +51,9 @@ const ours = [];
 
 for (const e of entries) {
   const iid = id();
-  key[iid] = { kind: 'ours', answer: letters(e.answer), src: e.answer, clueType: e.clueType, label: e.label, pair: e.pair, corruption: e.corruption, clue: withEnum(e.clue, e.answer) };
-  ours.push(iid);
+  // `incumbent: true` = the clue currently shipped for this answer (a rewrite's bar).
+  key[iid] = { kind: e.incumbent ? 'incumbent' : 'ours', answer: letters(e.answer), src: e.answer, clueType: e.clueType, label: e.label, pair: e.pair, corruption: e.corruption, def: e.def?.text, clue: withEnum(e.clue, e.answer) };
+  if (!e.incumbent) ours.push(iid);
   const g = groups.get(key[iid].answer) ?? [];
   g.push(iid);
   groups.set(key[iid].answer, g);
@@ -78,6 +79,8 @@ for (const [answer, ids] of groups) {
   for (let i = 0; i < ids.length; i++) {
     for (let j = i + 1; j < ids.length; j++) {
       if (key[ids[i]].kind !== 'ours' && key[ids[j]].kind !== 'ours') continue;
+      // --no-peer: candidates meet only anchors and the incumbent, not each other.
+      if (process.argv.includes('--no-peer') && key[ids[i]].kind === 'ours' && key[ids[j]].kind === 'ours') continue;
       comparisons.push({ answer, a: ids[i], b: ids[j] }, { answer, a: ids[j], b: ids[i] });
     }
   }
@@ -99,7 +102,7 @@ const write = (name, arr) => {
   return files;
 };
 
-const solveItems = shuffle(Object.keys(key).filter((k) => key[k].kind === 'ours' || key[k].label)).map((k) => ({ item: k, clue: key[k].clue }));
+const solveItems = shuffle(Object.keys(key).filter((k) => key[k].kind !== 'anchor' || key[k].label)).map((k) => ({ item: k, clue: key[k].clue }));
 const files = {
   coldsolve: write('coldsolve', solveItems),
   surface: write('surface', allPairs.map((c) => ({ pair: c.pair, A: key[c.a].clue.replace(/\s*\([^)]*\)\s*$/, ''), B: key[c.b].clue.replace(/\s*\([^)]*\)\s*$/, '') }))),
