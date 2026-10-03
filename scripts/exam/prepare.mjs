@@ -102,11 +102,39 @@ const write = (name, arr) => {
   return files;
 };
 
+// Comparison batches: no clue may appear twice in one batch (case law CL-057).
+// When the same clue recurs within a batch, judges rate it once and derive the
+// pair verdicts from those ratings — absolute scoring by the back door. Greedy
+// packing: each batch takes comparisons whose two clues it hasn't used yet.
+const packPairs = (name, pairs, toRow) => {
+  const left = pairs.slice();
+  const files = [];
+  while (left.length) {
+    const used = new Set();
+    const batch = [];
+    for (let i = 0; i < left.length && batch.length < BATCH; ) {
+      const c = left[i];
+      if (used.has(c.a) || used.has(c.b)) {
+        i++;
+        continue;
+      }
+      used.add(c.a);
+      used.add(c.b);
+      batch.push(c);
+      left.splice(i, 1);
+    }
+    const f = `${name}-${files.length + 1}.json`;
+    writeFileSync(join(OUT, f), JSON.stringify(batch.map(toRow), null, 1));
+    files.push(f);
+  }
+  return files;
+};
+
 const solveItems = shuffle(Object.keys(key).filter((k) => key[k].kind !== 'anchor' || key[k].label)).map((k) => ({ item: k, clue: key[k].clue }));
 const files = {
   coldsolve: write('coldsolve', solveItems),
-  surface: write('surface', allPairs.map((c) => ({ pair: c.pair, A: key[c.a].clue.replace(/\s*\([^)]*\)\s*$/, ''), B: key[c.b].clue.replace(/\s*\([^)]*\)\s*$/, '') }))),
-  wit: write('wit', allPairs.map((c) => ({ pair: c.pair, answer: c.answer, A: key[c.a].clue, B: key[c.b].clue }))),
+  surface: packPairs('surface', allPairs, (c) => ({ pair: c.pair, A: key[c.a].clue.replace(/\s*\([^)]*\)\s*$/, ''), B: key[c.b].clue.replace(/\s*\([^)]*\)\s*$/, '') })),
+  wit: packPairs('wit', allPairs, (c) => ({ pair: c.pair, answer: c.answer, A: key[c.a].clue, B: key[c.b].clue })),
 };
 
 // Evidence: definitions the dictionaries don't back, for the auditor.

@@ -1171,3 +1171,23 @@ F-UNATTESTED was rejected (CL-050); the DECOY test is replaced by **NATURALNESS*
   fires on 0.6% of published clues (acronyms like ITV, NATO). It's kept for now; revisit if it
   blocks fair clues.
 - **Status:** Resolved.
+
+### CL-057 · Judges rated clues once and derived the pair verdicts (absolute scoring by the back door)
+
+- **Date:** 2026-10-03
+- **What happened:** In Writer run 1 (`w1`), every incumbent and anchor appeared in about 30
+  comparisons within the same batch. Three Claude wit judges (batches 1–2, 3–4, 5–6) said they
+  scored each distinct clue once and built the pair verdicts from the scores. That's absolute
+  scoring, which the exam avoids because it's the weakest signal (04-exam). One of them also
+  wrongly called "Broad shifts near leg" unfair (NEAR LEG *is* an anagram of GENERAL).
+- **Lesson:** A judge given the same clue many times in one batch will optimise. Instructions
+  alone aren't enough; the batch design must make the shortcut pointless. Repeated-sentence
+  detection can't tell shortcuts from honest work when clues recur, so the fix has to be
+  structural.
+- **Change:**
+  - Judge templates v1.1 say so explicitly.
+  - `prepare.mjs` packs comparison batches so **no clue appears twice in one batch**.
+  - In w1, batches 1–4 were re-judged. Batch 5–6 data was kept, labelled "partly rated within
+    batch": it's used only to shortlist finalists, Astra judges independently, and the owner
+    sees the finalists.
+- **Status:** Resolved for future runs.
